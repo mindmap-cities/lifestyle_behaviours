@@ -12,16 +12,120 @@ output: html_document
 # Alcohol consumption subdomain
 
 ### **Variable label**:   
-**Variable name**:   
-**Variable description**:  
-**Value type**:  
-**Variable unit**:  
+**Variable name**: LSB_ALC_CUR  
+**Variable description**:  Current consumption of alcohol  
+**Value type**: integer  
+**Variable unit**: N/A  
 **Category coding**:  
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   
-1 |   
+0 |  no, does not currently drink alcohol   
+1 |  yes, currently drinks alcohol  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```
+
+### **Variable label**:   
+**Variable name**: LSB_ALC_EVER  
+**Variable description**:  Ever consumption of alcohol  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never consumed alcohol  
+1 |   Ever consumed alcohol  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```
+
+### **Variable label**:   
+**Variable name**: LSB_ALC_BINGE  
+**Variable description**:  Frequency of binge drinking  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+1 |  less than monthly  
+2 |  monthly   
+3 |  weekly  
+4 |  daily  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```
+
+### **Variable label**:   
+**Variable name**: LSB_ALC_TOTAL  
+**Variable description**:  Average number of alcoholic drinks (total) per week  
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```
+
+### **Variable label**:   
+**Variable name**: LSB_ALC_WINE  
+**Variable description**:  Average number of alcoholic drinks (wine) per week  
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```
+
+### **Variable label**:   
+**Variable name**: LSB_ALC_BEER  
+**Variable description**:  Average number of alcoholic drinks (beer) per week  
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+ 
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```
+
+### **Variable label**:   
+**Variable name**: LSB_ALC_LIQ  
+**Variable description**:  Average number of alcoholic drinks (liquor) per week  
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+ 
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -34,16 +138,117 @@ output: html_document
 # Tobacco consumption subdomain
 
 ### **Variable label**:  
-**Variable name**:  
-**Variable description**:  
-**Value type**:  
-**Variable unit**:  
+**Variable name**:  LSB_SMOK_CUR  
+**Variable description**:  Current tobakko smoking  
+**Value type**:  integer  
+**Variable unit**:  N/A  
 **Category coding**:  
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   
-1 |   
+0 |   no, does not currently smokes tobacco  
+1 |   yes, smokes currently tobacco  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```
+
+### **Variable label**:  
+**Variable name**:  LSB_SMOK_CAT  
+**Variable description**:  Smoking status  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never smoker  
+1 |   Former smoker  
+3 |   Current smoker  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```
+
+### **Variable label**:  
+**Variable name**:  LSB_SMOK_EVER  
+**Variable description**:  Ever tobacco smoking  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never smoked tobacco  
+1 |   Ever smoked tobacco  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```
+
+### **Variable label**:  
+**Variable name**:  LSB_SMOK_CIG  
+**Variable description**:  Average number of cigarettes smoked per day  
+**Value type**:  integer  
+**Variable unit**:  number of cigarettes per day  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```
+
+### **Variable label**:  
+**Variable name**:  LSB_SMOK_START  
+**Variable description**:  Age at which started smoking  
+**Value type**:  integer  
+**Variable unit**:  age in years  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```
+
+### **Variable label**:  
+**Variable name**:  LSB_SMOK_STOP  
+**Variable description**:  Age at which stopped smoking
+**Value type**:  integer  
+**Variable unit**:  age in years  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```
+
+### **Variable label**:  
+**Variable name**:  LSB_SMOK_PY  
+**Variable description**:  Pack years - equivalent of years smoking twenty cigarettes per day  
+**Value type**:  integer  
+**Variable unit**:  pack years (years smoking twenty cigarettes per day)  
+**Category coding**:  
 
 **Harmonization status**:  
 **Harmonization comment**:   
