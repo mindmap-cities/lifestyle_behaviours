@@ -444,17 +444,72 @@ output: html_document
 
 # Diet and nutrition subdomain
 
-### **Variable label**:  
-**Variable name**:  
-**Variable description**:  
-**Value type**:  
-**Variable unit**:  
+### **Variable label**:  Daily vegetable consumption  
+**Variable name**:  LSB_VEGETABLE  
+**Variable description**:  Indicator of whether the participant currently consumes vegetables on a daily basis.   
+**Value type**:  integer  
+**Variable unit**:  N/A  
 **Category coding**:  
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   
-1 |   
+0 |   Does not consume vegetables on a daily basis
+1 |   Consumes vegetables on a daily basis
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```
+
+### **Variable label**:  Daily fruit consumption  
+**Variable name**:  LSB_FRUIT  
+**Variable description**:  Indicator of whether the participant currently consumes fruit on a daily basis.   
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not consume fruit on a daily basis
+1 |   Consumes fruit on a daily basis
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```
+
+### **Variable label**:  Daily water consumption  
+**Variable name**:  LSB_WATER  
+**Variable description**:  Indicator of whether the participant currently drinks water on a daily basis.   
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not drinks water on a daily basis
+1 |   Drinks water on a daily basis
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```
+
+### **Variable label**:  Daily coffeee consumption  
+**Variable name**:  LSB_WATER  
+**Variable description**:  Current quantity of coffee consumed per day.   
+**Value type**:  integer  
+**Variable unit**:  cups per day  
+**Category coding**:  N/A  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -466,17 +521,12 @@ output: html_document
 
 # Sleep quality subdomain
 
-### **Variable label**:  
-**Variable name**:  
-**Variable description**:  
-**Value type**:  
-**Variable unit**:  
-**Category coding**:  
-
-**Code** | **Category Label**  
-------------- | -------------  
-0 |   
-1 |   
+### **Variable label**:  Average hours of sleep per night  
+**Variable name**:  LSB_SLEEP_HOURS  
+**Variable description**:  Average hours of sleep per night.  
+**Value type**:  integer  
+**Variable unit**:  hours  
+**Category coding**:  N/A  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -487,6 +537,47 @@ output: html_document
 #3rd change using fork
 ```
 
+### **Variable label**:  Difficulty falling a sleep  
+**Variable name**:  LSB_SLEEP_FALLING  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Never has difficulty falling a sleep
+1 |  Sometimes has difficulty falling a sleep
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+#small change
+#3rd change using fork
+```
+
+### **Variable label**:  Having trouble sleeping  
+**Variable name**:  LSB_SLEEP_TROUBLE  
+**Variable description**:  Indicator of whether the participant has any trouble with sleeping.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Has no trouble sleeping 
+1 |  Has trouble sleeping 
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+#small change
+#3rd change using fork
+```
 
 
 
