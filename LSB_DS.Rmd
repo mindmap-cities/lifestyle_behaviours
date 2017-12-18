@@ -13,15 +13,15 @@ output: html_document
 
 ### **Variable label**:  Current consumption of alcohol  
 **Variable name**: LSB_ALC_CUR  
-**Variable description**:  Current consumption of alcohol  
+**Variable description**:  Indicator of whether the participant currently consumes alcohol.  
 **Value type**: integer  
 **Variable unit**: N/A  
 **Category coding**:  
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  no, does not currently drink alcohol   
-1 |  yes, currently drinks alcohol  
+0 |  Does not currently consumes alcohol   
+1 |  Currently consumes alcohol  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -33,7 +33,7 @@ output: html_document
 
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: LSB_ALC_EVER  
-**Variable description**:  Ever consumption of alcohol  
+**Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
 **Value type**: integer  
 **Variable unit**: N/A  
 **Category coding**:  
@@ -53,17 +53,17 @@ output: html_document
 
 ### **Variable label**:   Frequency of binge drinking  
 **Variable name**: LSB_ALC_BINGE  
-**Variable description**:  Frequency of binge drinking  
+**Variable description**:  Frequency of binge drinking.  
 **Value type**: integer  
 **Variable unit**: N/A  
 **Category coding**:  
 
 **Code** | **Category Label**  
 ------------- | -------------  
-1 |  less than monthly  
-2 |  monthly   
-3 |  weekly  
-4 |  daily  
+1 |  Less than monthly  
+2 |  Monthly   
+3 |  Weekly  
+4 |  (Almost) daily  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -73,9 +73,9 @@ output: html_document
 
 ```
 
-### **Variable label**:   Number of drinks per week  
+### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: LSB_ALC_TOTAL  
-**Variable description**:  Average number of alcoholic drinks (total) per week  
+**Variable description**:  Current quantity of alcoholic beverages consumed per week. The definition of quantity per drink may differ across studies.  
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -88,9 +88,9 @@ output: html_document
 
 ```
 
-### **Variable label**:   Number of wines per week  
+### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: LSB_ALC_WINE  
-**Variable description**:  Average number of alcoholic drinks (wine) per week  
+**Variable description**:  Current quantity of  wine consumed per week. The definition of quantity per drink may differ across studies.  
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -103,9 +103,9 @@ output: html_document
 
 ```
 
-### **Variable label**:   Nymber of beers per week
+### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: LSB_ALC_BEER  
-**Variable description**:  Average number of alcoholic drinks (beer) per week  
+**Variable description**:  Current quantity of beer consumed per week. The definition of quantity per drink may differ across studies.  
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -119,9 +119,9 @@ output: html_document
 
 ```
 
-### **Variable label**:   Number of liquor per week  
+### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: LSB_ALC_LIQ  
-**Variable description**:  Average number of alcoholic drinks (liquor) per week  
+**Variable description**:  Current quantity of liquor consumed per week. The definition of quantity per drink may differ across studies.  
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -139,15 +139,15 @@ output: html_document
 
 ### **Variable label**:  Current tobakko smoking  
 **Variable name**:  LSB_SMOK_CUR  
-**Variable description**:  Current tobakko smoking  
+**Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   no, does not currently smokes tobacco  
-1 |   yes, smokes currently tobacco  
+0 |   Does not smoked any tobacco product  
+1 |   Currently smokes any tobacco product  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -159,7 +159,7 @@ output: html_document
 
 ### **Variable label**:  Smoking status  
 **Variable name**:  LSB_SMOK_CAT  
-**Variable description**:  Smoking status  
+**Variable description**:  Smoking status.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
@@ -180,7 +180,7 @@ output: html_document
 
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  LSB_SMOK_EVER  
-**Variable description**:  Ever tobacco smoking  
+**Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
@@ -200,7 +200,7 @@ output: html_document
 
 ### **Variable label**:  Cigarettes smoked    
 **Variable name**:  LSB_SMOK_CIG  
-**Variable description**:  Average number of cigarettes smoked per day  
+**Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
 **Variable unit**:  number of cigarettes per day  
 **Category coding**:  
@@ -215,7 +215,7 @@ output: html_document
 
 ### **Variable label**:  Smoking initiation age    
 **Variable name**:  LSB_SMOK_START  
-**Variable description**:  Age at which started smoking  
+**Variable description**:  Age at which the participant started smoking any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  age in years  
 **Category coding**:  
@@ -230,7 +230,7 @@ output: html_document
 
 ### **Variable label**:  Smoking cessation age  
 **Variable name**:  LSB_SMOK_STOP  
-**Variable description**:  Age at which stopped smoking  
+**Variable description**:  Age at which the participant last smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  age in years  
 **Category coding**:  
@@ -245,7 +245,7 @@ output: html_document
 
 ### **Variable label**:  Pack years  
 **Variable name**:  LSB_SMOK_PY  
-**Variable description**:  Pack years - equivalent of years smoking twenty cigarettes per day  
+**Variable description**:  Pack years - equivalent of years smoking twenty cigarettes per day - NOTE: no differentiation in number of cigarettes across the smoking period.  
 **Value type**:  integer  
 **Variable unit**:  pack years (years smoking twenty cigarettes per day)  
 **Category coding**:  
@@ -261,8 +261,8 @@ output: html_document
 # Physical activity subdomain
 
 ### **Variable label**: Walking per week  
-**Variable name**:    LSB_WALK_DAYS  
-**Variable description**:  Average days a week in which a participates walks  
+**Variable name**:    LSB_PA_WALK_DAYS  
+**Variable description**:  Average days a week in which a participates walks.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
@@ -283,8 +283,8 @@ output: html_document
 ```
 
 ### **Variable label**:  Walking per day   
-**Variable name**:   LSB_WALK_TIME  
-**Variable description**:  Average time a day spent walking  
+**Variable name**:   LSB_PA_WALK_TIME  
+**Variable description**:  Average time a day spent walking.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
@@ -306,8 +306,8 @@ output: html_document
 ```
 
 ### **Variable label**:  Walking for transport  
-**Variable name**:  LSB_WALK_TRANS  
-**Variable description**:  Minutes per week spent on walking for transport (utilitarian wlaking)  
+**Variable name**:  LSB_PA_WALK_TRANS  
+**Variable description**:  Minutes per week spent on walking for transport (utilitarian wlaking).  
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
@@ -321,8 +321,8 @@ output: html_document
 ```
 
 ### **Variable label**:  Walking for leisure  
-**Variable name**:  LSB_WALK_LEIS  
-**Variable description**:  Minutes per week spent on walking for leisure  
+**Variable name**:  LSB_PA_WALK_LEIS  
+**Variable description**:  Minutes per week spent on walking for leisure.  
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
@@ -336,8 +336,8 @@ output: html_document
 ```
 
 ### **Variable label**:  Cycling per week  
-**Variable name**:  LSB_CYCLE  
-**Variable description**:  Minutes per week spent on cycling  
+**Variable name**:  LSB_PA_CYCLE  
+**Variable description**:  Minutes per week spent on cycling.  
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
@@ -351,8 +351,8 @@ output: html_document
 ```
 
 ### **Variable label**:  Does any gardening  
-**Variable name**:  LSB_GARD_ANY
-**Variable description**:  Does any gardening activities
+**Variable name**:  LSB_PA_GARD_ANY
+**Variable description**:  Does any gardening activities that require some sort of physical activity.
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
@@ -371,8 +371,8 @@ output: html_document
 ```
 
 ### **Variable label**:  Times spent gardening  
-**Variable name**:  LSB_GARD_TIME  
-**Variable description**:  
+**Variable name**:  LSB_PA_GARD_TIME  
+**Variable description**:  Minutes per week spend on gardening activities that require some sort of physical activity.  
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
@@ -386,8 +386,8 @@ output: html_document
 ```
 
 ### **Variable label**:  Does any household activities  
-**Variable name**:  LSB_HOUSE_ANY  
-**Variable description**:  Does any household activities   
+**Variable name**:  LSB_PA_HOUSE_ANY  
+**Variable description**:  Does any household activities that require some sort of physical activity.   
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
@@ -406,8 +406,8 @@ output: html_document
 ```
 
 ### **Variable label**:  Times spent doing household activities      
-**Variable name**:  LSB_HOUSE_TIME  
-**Variable description**:  
+**Variable name**:  LSB_PA_HOUSE_TIME  
+**Variable description**:  Minutes per week spent on household activities that require some sort of physical activity.  
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
@@ -422,7 +422,7 @@ output: html_document
 
 ### **Variable label**:  Sports or exercise participation       
 **Variable name**:  LSB_SPORT  
-**Variable description**:  
+**Variable description**:  Time spent a week exercising or doing sport activities.  
 **Value type**:  
 **Variable unit**:  
 **Category coding**:  
