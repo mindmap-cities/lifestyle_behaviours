@@ -533,8 +533,7 @@ output: html_document
 **R script**:  
 ```{r, echo=TRUE}
 #This is where the R-script will be written
-#small change
-#3rd change using fork
+
 ```
 
 ### **Variable label**:  Difficulty falling a sleep  
@@ -554,8 +553,7 @@ output: html_document
 **R script**:  
 ```{r, echo=TRUE}
 #This is where the R-script will be written
-#small change
-#3rd change using fork
+
 ```
 
 ### **Variable label**:  Having trouble sleeping  
@@ -575,8 +573,7 @@ output: html_document
 **R script**:  
 ```{r, echo=TRUE}
 #This is where the R-script will be written
-#small change
-#3rd change using fork
+
 ```
 
 
