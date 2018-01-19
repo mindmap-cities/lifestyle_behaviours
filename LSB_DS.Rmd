@@ -12,7 +12,7 @@ output: html_document
 # Alcohol consumption subdomain
 
 ### **Variable label**:  Current consumption of alcohol  
-**Variable name**: LSB_ALC_CUR  
+**Variable name**: lsb_alc_cur_0  
 **Variable description**:  Indicator of whether the participant currently consumes alcohol.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -21,7 +21,8 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Does not currently consumes alcohol   
-1 |  Currently consumes alcohol  
+1 |  Currently consumes alcohol
+-7 | Not applicable
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -32,7 +33,7 @@ output: html_document
 ```
 
 ### **Variable label**:   Ever consumption of alcohol  
-**Variable name**: LSB_ALC_EVER  
+**Variable name**: lsb_alc_ever_0    
 **Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -49,21 +50,18 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
-
-### **Variable label**:   Frequency of binge drinking  
-**Variable name**: LSB_ALC_BINGE  
-**Variable description**:  Frequency of binge drinking.  
+```  
+### **Variable label**:   Ever consumption of alcohol  
+**Variable name**: lsb_alc_ever_1    
+**Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
 **Value type**: integer  
 **Variable unit**: N/A  
 **Category coding**:  
 
 **Code** | **Category Label**  
 ------------- | -------------  
-1 |  Less than monthly  
-2 |  Monthly   
-3 |  Weekly  
-4 |  (Almost) daily  
+0 |   Never consumed alcohol  
+1 |   Ever consumed alcohol  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -71,11 +69,247 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:   Ever consumption of alcohol  
+**Variable name**: lsb_alc_ever_2    
+**Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
 
-### **Variable label**:   Current quantity of alcohol consumed per week (total)  
-**Variable name**: LSB_ALC_TOTAL  
-**Variable description**:  Current quantity of alcoholic beverages consumed per week. The definition of quantity per drink may differ across studies.  
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never consumed alcohol  
+1 |   Ever consumed alcohol  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Ever consumption of alcohol  
+**Variable name**: lsb_alc_ever_3    
+**Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never consumed alcohol  
+1 |   Ever consumed alcohol  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Ever consumption of alcohol  
+**Variable name**: lsb_alc_ever_4    
+**Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never consumed alcohol  
+1 |   Ever consumed alcohol  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Ever consumption of alcohol  
+**Variable name**: lsb_alc_ever_5    
+**Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never consumed alcohol  
+1 |   Ever consumed alcohol  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Ever consumption of alcohol  
+**Variable name**: lsb_alc_ever_6    
+**Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never consumed alcohol  
+1 |   Ever consumed alcohol  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+
+### **Variable label**:   Frequency of binge drinking  
+**Variable name**: lsb_alc_binge_0  
+**Variable description**:  Frequency of drinking 4 or more drinks in one day.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+1 |  0 to 3 times a month  
+2 |  1 to 3 times a week   
+3 |  3 times a week or more  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Frequency of binge drinking  
+**Variable name**: lsb_alc_binge_1  
+**Variable description**:  Frequency of drinking 4 or more drinks in one day.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+1 |  0 to 3 times a month  
+2 |  1 to 3 times a week   
+3 |  3 times a week or more  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Frequency of binge drinking  
+**Variable name**: lsb_alc_binge_2  
+**Variable description**:  Frequency of drinking 4 or more drinks in one day.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+1 |  0 to 3 times a month  
+2 |  1 to 3 times a week   
+3 |  3 times a week or more  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Frequency of binge drinking  
+**Variable name**: lsb_alc_binge_3  
+**Variable description**:  Frequency of drinking 4 or more drinks in one day.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+1 |  0 to 3 times a month  
+2 |  1 to 3 times a week   
+3 |  3 times a week or more  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Frequency of binge drinking  
+**Variable name**: lsb_alc_binge_4  
+**Variable description**:  Frequency of drinking 4 or more drinks in one day.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+1 |  0 to 3 times a month  
+2 |  1 to 3 times a week   
+3 |  3 times a week or more  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Frequency of binge drinking  
+**Variable name**: lsb_alc_binge_5  
+**Variable description**:  Frequency of drinking 4 or more drinks in one day.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+1 |  0 to 3 times a month  
+2 |  1 to 3 times a week   
+3 |  3 times a week or more  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Frequency of binge drinking  
+**Variable name**: lsb_alc_binge_6  
+**Variable description**:  Frequency of drinking 4 or more drinks in one day.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+1 |  0 to 3 times a month  
+2 |  1 to 3 times a week   
+3 |  3 times a week or more  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+
+### **Variable label**:   Current quantity of alcohol consumed per week    
+**Variable name**: lsb_total_0  
+**Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -86,11 +320,53 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:   Current quantity of alcohol consumed per week (total)  
+**Variable name**: lsb_total_1  
+**Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Current quantity of alcohol consumed per week (total)  
+**Variable name**: lsb_total_2  
+**Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Current quantity of alcohol consumed per week (total)  
+**Variable name**: lsb_total_3  
+**Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:   Current quantity of wine consumed per week  
-**Variable name**: LSB_ALC_WINE  
-**Variable description**:  Current quantity of  wine consumed per week. The definition of quantity per drink may differ across studies.  
+**Variable name**: lsb_alc_wine_0  
+**Variable description**:  Current quantity of wine consumed per week. The definition of quantity per drink may differ across studies.  
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -101,10 +377,52 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:   Current quantity of wine consumed per week  
+**Variable name**: lsb_alc_wine_1  
+**Variable description**:  Current quantity of wine consumed per week. The definition of quantity per drink may differ across studies.  
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Current quantity of wine consumed per week  
+**Variable name**: lsb_alc_wine_2  
+**Variable description**:  Current quantity of wine consumed per week. The definition of quantity per drink may differ across studies.  
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Current quantity of wine consumed per week  
+**Variable name**: lsb_alc_wine_3  
+**Variable description**:  Current quantity of wine consumed per week. The definition of quantity per drink may differ across studies.  
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:   Current quantity of beer consumed per week  
-**Variable name**: LSB_ALC_BEER  
+**Variable name**: lsb_alc_beer_0  
 **Variable description**:  Current quantity of beer consumed per week. The definition of quantity per drink may differ across studies.  
 **Value type**: integer  
 **Variable unit**: drinks per week  
@@ -117,10 +435,55 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:   Current quantity of beer consumed per week  
+**Variable name**: lsb_alc_beer_1  
+**Variable description**:  Current quantity of beer consumed per week. The definition of quantity per drink may differ across studies.  
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+ 
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Current quantity of beer consumed per week  
+**Variable name**: lsb_alc_beer_2  
+**Variable description**:  Current quantity of beer consumed per week. The definition of quantity per drink may differ across studies.  
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+ 
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Current quantity of beer consumed per week  
+**Variable name**: lsb_alc_beer_3  
+**Variable description**:  Current quantity of beer consumed per week. The definition of quantity per drink may differ across studies.  
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+ 
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:   Current quantity of liquor consumed per week  
-**Variable name**: LSB_ALC_LIQ  
+**Variable name**: lsb_alc_liq_0  
 **Variable description**:  Current quantity of liquor consumed per week. The definition of quantity per drink may differ across studies.  
 **Value type**: integer  
 **Variable unit**: drinks per week  
@@ -133,12 +496,57 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:   Current quantity of liquor consumed per week  
+**Variable name**: lsb_alc_liq_1  
+**Variable description**:  Current quantity of liquor consumed per week. The definition of quantity per drink may differ across studies.  
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+ 
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Current quantity of liquor consumed per week  
+**Variable name**: lsb_alc_liq_2  
+**Variable description**:  Current quantity of liquor consumed per week. The definition of quantity per drink may differ across studies.  
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+ 
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:   Current quantity of liquor consumed per week  
+**Variable name**: lsb_alc_liq_3  
+**Variable description**:  Current quantity of liquor consumed per week. The definition of quantity per drink may differ across studies.  
+**Value type**: integer  
+**Variable unit**: drinks per week  
+**Category coding**:  N/A  
+ 
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 # Tobacco consumption subdomain
 
-### **Variable label**:  Current tobakko smoking  
-**Variable name**:  LSB_SMOK_CUR  
+### **Variable label**:  Current tobacco smoking  
+**Variable name**:  lsb_tob_cur_0  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -146,7 +554,7 @@ output: html_document
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not smoked any tobacco product  
+0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
 **Harmonization status**:  
@@ -155,11 +563,125 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Current tobacco smoking  
+**Variable name**:  lsb_tob_cur_1  
+**Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Currently does not smoke any tobacco product  
+1 |   Currently smokes any tobacco product  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Current tobacco smoking  
+**Variable name**:  lsb_tob_cur_2  
+**Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Currently does not smoke any tobacco product  
+1 |   Currently smokes any tobacco product  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Current tobacco smoking  
+**Variable name**:  lsb_tob_cur_3  
+**Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Currently does not smoke any tobacco product  
+1 |   Currently smokes any tobacco product  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Current tobacco smoking  
+**Variable name**:  lsb_tob_cur_4  
+**Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Currently does not smoke any tobacco product  
+1 |   Currently smokes any tobacco product  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Current tobacco smoking  
+**Variable name**:  lsb_tob_cur_5  
+**Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Currently does not smoke any tobacco product  
+1 |   Currently smokes any tobacco product  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Current tobacco smoking  
+**Variable name**:  lsb_tob_cur_6  
+**Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Currently does not smoke any tobacco product  
+1 |   Currently smokes any tobacco product  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:  Smoking status  
-**Variable name**:  LSB_SMOK_CAT  
-**Variable description**:  Smoking status.  
+**Variable name**:  lsb_smk_status_0  
+**Variable description**:  Smoking status of the participant.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
@@ -176,10 +698,130 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Smoking status  
+**Variable name**:  lsb_smk_status_1  
+**Variable description**:  Smoking status of the participant.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never smoker  
+1 |   Former smoker  
+3 |   Current smoker  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Smoking status  
+**Variable name**:  lsb_smk_status_2  
+**Variable description**:  Smoking status of the participant.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never smoker  
+1 |   Former smoker  
+3 |   Current smoker  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Smoking status  
+**Variable name**:  lsb_smk_status_3  
+**Variable description**:  Smoking status of the participant.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never smoker  
+1 |   Former smoker  
+3 |   Current smoker  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Smoking status  
+**Variable name**:  lsb_smk_status_4  
+**Variable description**:  Smoking status of the participant.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never smoker  
+1 |   Former smoker  
+3 |   Current smoker  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Smoking status  
+**Variable name**:  lsb_smk_status_5  
+**Variable description**:  Smoking status of the participant.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never smoker  
+1 |   Former smoker  
+3 |   Current smoker  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Smoking status  
+**Variable name**:  lsb_smk_status_6  
+**Variable description**:  Smoking status of the participant.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never smoker  
+1 |   Former smoker  
+3 |   Current smoker  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:  Ever tobacco smoking  
-**Variable name**:  LSB_SMOK_EVER  
+**Variable name**:  lsb_smk_ever_0    
 **Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -196,13 +838,127 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Ever tobacco smoking  
+**Variable name**:  lsb_smk_ever_1    
+**Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
 
-### **Variable label**:  Cigarettes smoked    
-**Variable name**:  LSB_SMOK_CIG  
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never smoked tobacco  
+1 |   Ever smoked tobacco  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Ever tobacco smoking  
+**Variable name**:  lsb_smk_ever_2    
+**Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never smoked tobacco  
+1 |   Ever smoked tobacco  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Ever tobacco smoking  
+**Variable name**:  lsb_smk_ever_3    
+**Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never smoked tobacco  
+1 |   Ever smoked tobacco  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Ever tobacco smoking  
+**Variable name**:  lsb_smk_ever_4    
+**Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never smoked tobacco  
+1 |   Ever smoked tobacco  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Ever tobacco smoking  
+**Variable name**:  lsb_smk_ever_5    
+**Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never smoked tobacco  
+1 |   Ever smoked tobacco  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Ever tobacco smoking  
+**Variable name**:  lsb_smk_ever_6    
+**Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never smoked tobacco  
+1 |   Ever smoked tobacco  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+
+### **Variable label**:  Quantity cigarettes smoked    
+**Variable name**:  lsb_cig_qty_0   
 **Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
-**Variable unit**:  number of cigarettes per day  
+**Variable unit**:  cigarettes per day  
 **Category coding**:  
 
 **Harmonization status**:  
@@ -211,13 +967,97 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Quantity cigarettes smoked    
+**Variable name**:  lsb_cig_qty_1   
+**Variable description**:  Current average number of cigarettes smoked per day.  
+**Value type**:  integer  
+**Variable unit**:  cigarettes per day  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Quantity cigarettes smoked    
+**Variable name**:  lsb_cig_qty_2   
+**Variable description**:  Current average number of cigarettes smoked per day.  
+**Value type**:  integer  
+**Variable unit**:  cigarettes per day  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Quantity cigarettes smoked    
+**Variable name**:  lsb_cig_qty_3   
+**Variable description**:  Current average number of cigarettes smoked per day.  
+**Value type**:  integer  
+**Variable unit**:  cigarettes per day  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Quantity cigarettes smoked    
+**Variable name**:  lsb_cig_qty_4   
+**Variable description**:  Current average number of cigarettes smoked per day.  
+**Value type**:  integer  
+**Variable unit**:  cigarettes per day  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Quantity cigarettes smoked    
+**Variable name**:  lsb_cig_qty_5   
+**Variable description**:  Current average number of cigarettes smoked per day.  
+**Value type**:  integer  
+**Variable unit**:  cigarettes per day  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Quantity cigarettes smoked    
+**Variable name**:  lsb_cig_qty_6   
+**Variable description**:  Current average number of cigarettes smoked per day.  
+**Value type**:  integer  
+**Variable unit**:  cigarettes per day  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:  Smoking initiation age    
-**Variable name**:  LSB_SMOK_START  
+**Variable name**:  lsb_smk_start_0    
 **Variable description**:  Age at which the participant started smoking any tobacco product.  
 **Value type**:  integer  
-**Variable unit**:  age in years  
+**Variable unit**:  years  
 **Category coding**:  
 
 **Harmonization status**:  
@@ -226,13 +1066,97 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Smoking initiation age    
+**Variable name**:  lsb_smk_start_1    
+**Variable description**:  Age at which the participant started smoking any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  years  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Smoking initiation age    
+**Variable name**:  lsb_smk_start_2    
+**Variable description**:  Age at which the participant started smoking any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  years  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Smoking initiation age    
+**Variable name**:  lsb_smk_start_3    
+**Variable description**:  Age at which the participant started smoking any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  years  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Smoking initiation age    
+**Variable name**:  lsb_smk_start_4    
+**Variable description**:  Age at which the participant started smoking any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  years  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Smoking initiation age    
+**Variable name**:  lsb_smk_start_5    
+**Variable description**:  Age at which the participant started smoking any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  years  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Smoking initiation age    
+**Variable name**:  lsb_smk_start_6    
+**Variable description**:  Age at which the participant started smoking any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  years  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:  Smoking cessation age  
-**Variable name**:  LSB_SMOK_STOP  
+**Variable name**:  lsb_smk_stop_0   
 **Variable description**:  Age at which the participant last smoked any tobacco product.  
 **Value type**:  integer  
-**Variable unit**:  age in years  
+**Variable unit**:  years  
 **Category coding**:  
 
 **Harmonization status**:  
@@ -241,13 +1165,97 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Smoking cessation age  
+**Variable name**:  lsb_smk_stop_1   
+**Variable description**:  Age at which the participant last smoked any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  years  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Smoking cessation age  
+**Variable name**:  lsb_smk_stop_2   
+**Variable description**:  Age at which the participant last smoked any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  years  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Smoking cessation age  
+**Variable name**:  lsb_smk_stop_3   
+**Variable description**:  Age at which the participant last smoked any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  years  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Smoking cessation age  
+**Variable name**:  lsb_smk_stop_4   
+**Variable description**:  Age at which the participant last smoked any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  years  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Smoking cessation age  
+**Variable name**:  lsb_smk_stop_5   
+**Variable description**:  Age at which the participant last smoked any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  years  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Smoking cessation age  
+**Variable name**:  lsb_smk_stop_6   
+**Variable description**:  Age at which the participant last smoked any tobacco product.  
+**Value type**:  integer  
+**Variable unit**:  years  
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:  Pack years  
-**Variable name**:  LSB_SMOK_PY  
-**Variable description**:  Pack years - equivalent of years smoking twenty cigarettes per day - NOTE: no differentiation in number of cigarettes across the smoking period.  
+**Variable name**:  lsb_smk_py_0    
+**Variable description**:  Number of packs years - equivalent of years smoking twenty cigarettes per day - NOTE: no differentiation in number of cigarettes across the smoking period.  
 **Value type**:  integer  
-**Variable unit**:  pack years (years smoking twenty cigarettes per day)  
+**Variable unit**:  pack years    
 **Category coding**:  
 
 **Harmonization status**:  
@@ -256,7 +1264,35 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Pack years  
+**Variable name**:  lsb_smk_py_1    
+**Variable description**:  Number of packs years - equivalent of years smoking twenty cigarettes per day - NOTE: no differentiation in number of cigarettes across the smoking period.  
+**Value type**:  integer  
+**Variable unit**:  pack years    
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Pack years  
+**Variable name**:  lsb_smk_py_2    
+**Variable description**:  Number of packs years - equivalent of years smoking twenty cigarettes per day - NOTE: no differentiation in number of cigarettes across the smoking period.  
+**Value type**:  integer  
+**Variable unit**:  pack years    
+**Category coding**:  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 # Physical activity subdomain
 
@@ -445,7 +1481,7 @@ output: html_document
 # Diet and nutrition subdomain
 
 ### **Variable label**:  Daily vegetable consumption  
-**Variable name**:  LSB_VEGETABLE  
+**Variable name**:  lsb_veg_day_0    
 **Variable description**:  Indicator of whether the participant currently consumes vegetables on a daily basis.   
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -453,8 +1489,8 @@ output: html_document
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not consume vegetables on a daily basis
-1 |   Consumes vegetables on a daily basis
+0 |   Does not consume vegetables on a daily basis  
+1 |   Consumes vegetables on a daily basis  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -462,10 +1498,48 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Daily vegetable consumption  
+**Variable name**:  lsb_veg_day_1    
+**Variable description**:  Indicator of whether the participant currently consumes vegetables on a daily basis.   
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not consume vegetables on a daily basis  
+1 |   Consumes vegetables on a daily basis  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Daily vegetable consumption  
+**Variable name**:  lsb_veg_day_2    
+**Variable description**:  Indicator of whether the participant currently consumes vegetables on a daily basis.   
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not consume vegetables on a daily basis  
+1 |   Consumes vegetables on a daily basis  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:  Daily fruit consumption  
-**Variable name**:  LSB_FRUIT  
+**Variable name**:  lsb_fruit_day_0  
 **Variable description**:  Indicator of whether the participant currently consumes fruit on a daily basis.   
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -474,7 +1548,7 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not consume fruit on a daily basis
-1 |   Consumes fruit on a daily basis
+1 |   Consumes fruit on a daily basis  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -482,7 +1556,45 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Daily fruit consumption  
+**Variable name**:  lsb_fruit_day_1  
+**Variable description**:  Indicator of whether the participant currently consumes fruit on a daily basis.   
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not consume fruit on a daily basis
+1 |   Consumes fruit on a daily basis  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Daily fruit consumption  
+**Variable name**:  lsb_fruit_day_2  
+**Variable description**:  Indicator of whether the participant currently consumes fruit on a daily basis.   
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not consume fruit on a daily basis
+1 |   Consumes fruit on a daily basis  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:  Daily water consumption  
 **Variable name**:  LSB_WATER  
@@ -505,7 +1617,7 @@ output: html_document
 ```
 
 ### **Variable label**:  Daily coffeee consumption  
-**Variable name**:  LSB_WATER  
+**Variable name**:  lsb_coffee_qty_0  
 **Variable description**:  Current quantity of coffee consumed per day.   
 **Value type**:  integer  
 **Variable unit**:  cups per day  
@@ -517,7 +1629,63 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Daily coffeee consumption  
+**Variable name**:  lsb_coffee_qty_1  
+**Variable description**:  Current quantity of coffee consumed per day.   
+**Value type**:  integer  
+**Variable unit**:  cups per day  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Daily coffeee consumption  
+**Variable name**:  lsb_coffee_qty_2  
+**Variable description**:  Current quantity of coffee consumed per day.   
+**Value type**:  integer  
+**Variable unit**:  cups per day  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Daily coffeee consumption  
+**Variable name**:  lsb_coffee_qty_3  
+**Variable description**:  Current quantity of coffee consumed per day.   
+**Value type**:  integer  
+**Variable unit**:  cups per day  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Daily coffeee consumption  
+**Variable name**:  lsb_coffee_qty_4  
+**Variable description**:  Current quantity of coffee consumed per day.   
+**Value type**:  integer  
+**Variable unit**:  cups per day  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 # Sleep quality subdomain
 
