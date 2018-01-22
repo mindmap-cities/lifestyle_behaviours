@@ -13,7 +13,7 @@ output: html_document
 
 ### **Variable label**:  Current consumption of alcohol  
 **Variable name**: lsb_alc_cur_0  
-**Variable description**:  Indicator of whether the participant currently consumes alcohol.  
+**Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
 **Value type**: integer  
 **Variable unit**: N/A  
 **Category coding**:  
@@ -30,7 +30,127 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Current consumption of alcohol  
+**Variable name**: lsb_alc_cur_1  
+**Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Does not currently consumes alcohol   
+1 |  Currently consumes alcohol
+-7 | Not applicable
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Current consumption of alcohol  
+**Variable name**: lsb_alc_cur_2  
+**Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Does not currently consumes alcohol   
+1 |  Currently consumes alcohol
+-7 | Not applicable
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Current consumption of alcohol  
+**Variable name**: lsb_alc_cur_3  
+**Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Does not currently consumes alcohol   
+1 |  Currently consumes alcohol
+-7 | Not applicable
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Current consumption of alcohol  
+**Variable name**: lsb_alc_cur_4  
+**Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Does not currently consumes alcohol   
+1 |  Currently consumes alcohol
+-7 | Not applicable
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Current consumption of alcohol  
+**Variable name**: lsb_alc_cur_5  
+**Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Does not currently consumes alcohol   
+1 |  Currently consumes alcohol
+-7 | Not applicable
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Current consumption of alcohol  
+**Variable name**: lsb_alc_cur_6  
+**Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
+**Value type**: integer  
+**Variable unit**: N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Does not currently consumes alcohol   
+1 |  Currently consumes alcohol
+-7 | Not applicable
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_0    
@@ -366,7 +486,7 @@ output: html_document
 
 ### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: lsb_alc_wine_0  
-**Variable description**:  Current quantity of wine consumed per week. The definition of quantity per drink may differ across studies.  
+**Variable description**:  Current quantity of wine consumed per week.    
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -380,7 +500,7 @@ output: html_document
 ```  
 ### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: lsb_alc_wine_1  
-**Variable description**:  Current quantity of wine consumed per week. The definition of quantity per drink may differ across studies.  
+**Variable description**:  Current quantity of wine consumed per week.    
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -394,7 +514,7 @@ output: html_document
 ```  
 ### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: lsb_alc_wine_2  
-**Variable description**:  Current quantity of wine consumed per week. The definition of quantity per drink may differ across studies.  
+**Variable description**:  Current quantity of wine consumed per week.    
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -408,7 +528,7 @@ output: html_document
 ```  
 ### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: lsb_alc_wine_3  
-**Variable description**:  Current quantity of wine consumed per week. The definition of quantity per drink may differ across studies.  
+**Variable description**:  Current quantity of wine consumed per week.    
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -423,7 +543,7 @@ output: html_document
 
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_0  
-**Variable description**:  Current quantity of beer consumed per week. The definition of quantity per drink may differ across studies.  
+**Variable description**:  Current quantity of beer consumed per week.   
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -438,7 +558,7 @@ output: html_document
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_1  
-**Variable description**:  Current quantity of beer consumed per week. The definition of quantity per drink may differ across studies.  
+**Variable description**:  Current quantity of beer consumed per week.    
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -453,7 +573,7 @@ output: html_document
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_2  
-**Variable description**:  Current quantity of beer consumed per week. The definition of quantity per drink may differ across studies.  
+**Variable description**:  Current quantity of beer consumed per week.    
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -468,7 +588,7 @@ output: html_document
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_3  
-**Variable description**:  Current quantity of beer consumed per week. The definition of quantity per drink may differ across studies.  
+**Variable description**:  Current quantity of beer consumed per week.    
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -484,7 +604,7 @@ output: html_document
 
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_0  
-**Variable description**:  Current quantity of liquor consumed per week. The definition of quantity per drink may differ across studies.  
+**Variable description**:  Current quantity of liquor consumed per week.    
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -499,7 +619,7 @@ output: html_document
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_1  
-**Variable description**:  Current quantity of liquor consumed per week. The definition of quantity per drink may differ across studies.  
+**Variable description**:  Current quantity of liquor consumed per week.   
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -514,7 +634,7 @@ output: html_document
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_2  
-**Variable description**:  Current quantity of liquor consumed per week. The definition of quantity per drink may differ across studies.  
+**Variable description**:  Current quantity of liquor consumed per week.    
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -529,7 +649,7 @@ output: html_document
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_3  
-**Variable description**:  Current quantity of liquor consumed per week. The definition of quantity per drink may differ across studies.  
+**Variable description**:  Current quantity of liquor consumed per week.   
 **Value type**: integer  
 **Variable unit**: drinks per week  
 **Category coding**:  N/A  
@@ -1296,19 +1416,19 @@ output: html_document
 
 # Physical activity subdomain
 
-### **Variable label**: Walking per week  
-**Variable name**:    LSB_PA_WALK_DAYS  
-**Variable description**:  Average days a week in which a participates walks.  
+### **Variable label**: Frequency of walking    
+**Variable name**:    lsb_pa_walk_days_0    
+**Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  never  
-1 |  seldom (1-2 dyas)  
-3 |  sometimes (3-4 days)  
-4 |  often (5-7 days  
+0 |  Never  
+1 |  Seldom (1-2 dyas)  
+3 |  Sometimes (3-4 days)  
+4 |  Often (5-7 days)  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1316,18 +1436,144 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
-
-### **Variable label**:  Walking per day   
-**Variable name**:   LSB_PA_WALK_TIME  
-**Variable description**:  Average time a day spent walking.  
+```  
+### **Variable label**: Frequency of walking    
+**Variable name**:    lsb_pa_walk_days_1    
+**Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  less than 30 minutes  
+0 |  Never  
+1 |  Seldom (1-2 dyas)  
+3 |  Sometimes (3-4 days)  
+4 |  Often (5-7 days)  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**: Frequency of walking    
+**Variable name**:    lsb_pa_walk_days_2    
+**Variable description**:  Number of times the participant went for a walk in last week.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Never  
+1 |  Seldom (1-2 dyas)  
+3 |  Sometimes (3-4 days)  
+4 |  Often (5-7 days)  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**: Frequency of walking    
+**Variable name**:    lsb_pa_walk_days_3    
+**Variable description**:  Number of times the participant went for a walk in last week.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Never  
+1 |  Seldom (1-2 dyas)  
+3 |  Sometimes (3-4 days)  
+4 |  Often (5-7 days)  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**: Frequency of walking    
+**Variable name**:    lsb_pa_walk_days_4    
+**Variable description**:  Number of times the participant went for a walk in last week.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Never  
+1 |  Seldom (1-2 dyas)  
+3 |  Sometimes (3-4 days)  
+4 |  Often (5-7 days)  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**: Frequency of walking    
+**Variable name**:    lsb_pa_walk_days_5    
+**Variable description**:  Number of times the participant went for a walk in last week.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Never  
+1 |  Seldom (1-2 dyas)  
+3 |  Sometimes (3-4 days)  
+4 |  Often (5-7 days)  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**: Frequency of walking    
+**Variable name**:    lsb_pa_walk_days_6    
+**Variable description**:  Number of times the participant went for a walk in last week.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Never  
+1 |  Seldom (1-2 dyas)  
+3 |  Sometimes (3-4 days)  
+4 |  Often (5-7 days)  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+
+### **Variable label**:  Average time walking   
+**Variable name**:   lsb_pa_walk_time_0  
+**Variable description**:  Average time the participatn spends walking per day.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Less than 30 minutes  
 1 |  30 minutes but less than 1 hour  
 3 |  1 hour but less than 2 hours
 4 |  2 hours but less than 4 hours  
@@ -1339,11 +1585,143 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Average time walking   
+**Variable name**:   lsb_pa_walk_time_1  
+**Variable description**:  Average time the participatn spends walking per day.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
 
-### **Variable label**:  Walking for transport  
-**Variable name**:  LSB_PA_WALK_TRANS  
-**Variable description**:  Minutes per week spent on walking for transport (utilitarian wlaking).  
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Less than 30 minutes  
+1 |  30 minutes but less than 1 hour  
+3 |  1 hour but less than 2 hours
+4 |  2 hours but less than 4 hours  
+5 |  4 hours or more  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average time walking   
+**Variable name**:   lsb_pa_walk_time_2  
+**Variable description**:  Average time the participatn spends walking per day.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Less than 30 minutes  
+1 |  30 minutes but less than 1 hour  
+3 |  1 hour but less than 2 hours
+4 |  2 hours but less than 4 hours  
+5 |  4 hours or more  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average time walking   
+**Variable name**:   lsb_pa_walk_time_3  
+**Variable description**:  Average time the participatn spends walking per day.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Less than 30 minutes  
+1 |  30 minutes but less than 1 hour  
+3 |  1 hour but less than 2 hours
+4 |  2 hours but less than 4 hours  
+5 |  4 hours or more  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average time walking   
+**Variable name**:   lsb_pa_walk_time_4  
+**Variable description**:  Average time the participatn spends walking per day.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Less than 30 minutes  
+1 |  30 minutes but less than 1 hour  
+3 |  1 hour but less than 2 hours
+4 |  2 hours but less than 4 hours  
+5 |  4 hours or more  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average time walking   
+**Variable name**:   lsb_pa_walk_time_5  
+**Variable description**:  Average time the participatn spends walking per day.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Less than 30 minutes  
+1 |  30 minutes but less than 1 hour  
+3 |  1 hour but less than 2 hours
+4 |  2 hours but less than 4 hours  
+5 |  4 hours or more  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average time walking   
+**Variable name**:   lsb_pa_walk_time_6  
+**Variable description**:  Average time the participatn spends walking per day.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Less than 30 minutes  
+1 |  30 minutes but less than 1 hour  
+3 |  1 hour but less than 2 hours
+4 |  2 hours but less than 4 hours  
+5 |  4 hours or more  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+
+### **Variable label**:  Walking for transportation  
+**Variable name**:  lsb_pa_walk_trans_0    
+**Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
@@ -1354,11 +1732,53 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Walking for transportation    
+**Variable name**:  lsb_pa_walk_trans_1    
+**Variable description**: Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Walking for transportation    
+**Variable name**:  lsb_pa_walk_trans_2    
+**Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Walking for transportation    
+**Variable name**:  lsb_pa_walk_trans_4    
+**Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:  Walking for leisure  
-**Variable name**:  LSB_PA_WALK_LEIS  
-**Variable description**:  Minutes per week spent on walking for leisure.  
+**Variable name**:  lsb_pa_walk_leis_0    
+**Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
@@ -1369,11 +1789,10 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
-
-### **Variable label**:  Cycling per week  
-**Variable name**:  LSB_PA_CYCLE  
-**Variable description**:  Minutes per week spent on cycling.  
+```  
+### **Variable label**:  Walking for leisure  
+**Variable name**:  lsb_pa_walk_leis_2    
+**Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
@@ -1384,19 +1803,146 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Walking for leisure  
+**Variable name**:  lsb_pa_walk_leis_3    
+**Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Walking for leisure  
+**Variable name**:  lsb_pa_walk_leis_4    
+**Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+
+### **Variable label**:  Average cycling time    
+**Variable name**:  lsb_pa_cycle_week_0  
+**Variable description**:  Average minutes per week the participant spent on cycling in the last week.  
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average cycling time    
+**Variable name**:  lsb_pa_cycle_week_1  
+**Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average cycling time    
+**Variable name**:  lsb_pa_cycle_week_2  
+**Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average cycling time    
+**Variable name**:  lsb_pa_cycle_week_3  
+**Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average cycling time    
+**Variable name**:  lsb_pa_cycle_week_4  
+**Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average cycling time    
+**Variable name**:  lsb_pa_cycle_week_5  
+**Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average cycling time    
+**Variable name**:  lsb_pa_cycle_week_6  
+**Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:  Does any gardening  
-**Variable name**:  LSB_PA_GARD_ANY
-**Variable description**:  Does any gardening activities that require some sort of physical activity.
+**Variable name**:  lsb_pa_garden_0
+**Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   no, does not do any gardening activities  
-1 |   yes, does any gardeing activities  
+0 |   Does not do any gardening activities  
+1 |   Does any gardeing activities  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1404,11 +1950,124 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Does any gardening  
+**Variable name**:  lsb_pa_garden_1
+**Variable description**:  Indicator of whether the participant does any gardening activities.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
 
-### **Variable label**:  Times spent gardening  
-**Variable name**:  LSB_PA_GARD_TIME  
-**Variable description**:  Minutes per week spend on gardening activities that require some sort of physical activity.  
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not do any gardening activities  
+1 |   Does any gardeing activities  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Does any gardening  
+**Variable name**:  lsb_pa_garden_2
+**Variable description**:  Indicator of whether the participant does any gardening activities.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not do any gardening activities  
+1 |   Does any gardeing activities  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Does any gardening  
+**Variable name**:  lsb_pa_garden_3
+**Variable description**:  Indicator of whether the participant does any gardening activities.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not do any gardening activities  
+1 |   Does any gardeing activities  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Does any gardening  
+**Variable name**:  lsb_pa_garden_4
+**Variable description**:  Indicator of whether the participant does any gardening activities.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not do any gardening activities  
+1 |   Does any gardeing activities  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Does any gardening  
+**Variable name**:  lsb_pa_garden_5
+**Variable description**:  Indicator of whether the participant does any gardening activities.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not do any gardening activities  
+1 |   Does any gardeing activities  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Does any gardening  
+**Variable name**:  lsb_pa_garden_6
+**Variable description**:  Indicator of whether the participant does any gardening activities.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not do any gardening activities  
+1 |   Does any gardeing activities  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average gardening time    
+**Variable name**:  lsb_pa_garden_time_0    
+**Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.    
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
@@ -1419,19 +2078,103 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Average gardening time    
+**Variable name**:  lsb_pa_garden_time_1    
+**Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average gardening time    
+**Variable name**:  lsb_pa_garden_time_2    
+**Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average gardening time    
+**Variable name**:  lsb_pa_garden_time_3    
+**Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average gardening time    
+**Variable name**:  lsb_pa_garden_time_4    
+**Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average gardening time    
+**Variable name**:  lsb_pa_garden_time_5    
+**Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average gardening time    
+**Variable name**:  lsb_pa_garden_time_6    
+**Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:  Does any household activities  
-**Variable name**:  LSB_PA_HOUSE_ANY  
-**Variable description**:  Does any household activities that require some sort of physical activity.   
+**Variable name**:  lsb_pa_house_any_0  
+**Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   no, does not do any household activities  
-1 |   yes, does any household activities  
+0 |   Does not do any household activities  
+1 |   Does any household activities  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1439,11 +2182,125 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Does any household activities  
+**Variable name**:  lsb_pa_house_any_1  
+**Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
 
-### **Variable label**:  Times spent doing household activities      
-**Variable name**:  LSB_PA_HOUSE_TIME  
-**Variable description**:  Minutes per week spent on household activities that require some sort of physical activity.  
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not do any household activities  
+1 |   Does any household activities  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Does any household activities  
+**Variable name**:  lsb_pa_house_any_2  
+**Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not do any household activities  
+1 |   Does any household activities  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Does any household activities  
+**Variable name**:  lsb_pa_house_any_3  
+**Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not do any household activities  
+1 |   Does any household activities  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Does any household activities  
+**Variable name**:  lsb_pa_house_any_4  
+**Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not do any household activities  
+1 |   Does any household activities  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Does any household activities  
+**Variable name**:  lsb_pa_house_any_5  
+**Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not do any household activities  
+1 |   Does any household activities  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Does any household activities  
+**Variable name**:  lsb_pa_house_any_6  
+**Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not do any household activities  
+1 |   Does any household activities  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+
+### **Variable label**:  Average houshold activities time      
+**Variable name**:  lsb_pa_house_time_0  
+**Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
@@ -1454,11 +2311,228 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Average houshold activities time      
+**Variable name**:  lsb_pa_house_time_1  
+**Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
 
-### **Variable label**:  Sports or exercise participation       
-**Variable name**:  LSB_SPORT  
-**Variable description**:  Time spent a week exercising or doing sport activities.  
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average houshold activities time      
+**Variable name**:  lsb_pa_house_time_2  
+**Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average houshold activities time      
+**Variable name**:  lsb_pa_house_time_3  
+**Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average houshold activities time      
+**Variable name**:  lsb_pa_house_time_4  
+**Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average houshold activities time      
+**Variable name**:  lsb_pa_house_time_5  
+**Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average houshold activities time      
+**Variable name**:  lsb_pa_house_time_6  
+**Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
+**Value type**:  integer  
+**Variable unit**:  minutes per week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**: Does sprots or exercise      
+**Variable name**:  lsb_pa_sport_0  
+**Variable description**:  Indicator of whether the participant does any sports or exercise.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Does not do any sports or exercise   
+1 |  Does any sports or exercise
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```   
+### **Variable label**: Does sprots or exercise      
+**Variable name**:  lsb_pa_sport_1  
+**Variable description**:  Indicator of whether the participant does any sports or exercise.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Does not do any sports or exercise   
+1 |  Does any sports or exercise
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```   
+### **Variable label**: Does sprots or exercise      
+**Variable name**:  lsb_pa_sport_2  
+**Variable description**:  Indicator of whether the participant does any sports or exercise.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Does not do any sports or exercise   
+1 |  Does any sports or exercise
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```   
+### **Variable label**: Does sprots or exercise      
+**Variable name**:  lsb_pa_sport_3  
+**Variable description**:  Indicator of whether the participant does any sports or exercise.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Does not do any sports or exercise   
+1 |  Does any sports or exercise
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```   
+### **Variable label**: Does sprots or exercise      
+**Variable name**:  lsb_pa_sport_4  
+**Variable description**:  Indicator of whether the participant does any sports or exercise.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Does not do any sports or exercise   
+1 |  Does any sports or exercise
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```   
+### **Variable label**: Does sprots or exercise      
+**Variable name**:  lsb_pa_sport_5  
+**Variable description**:  Indicator of whether the participant does any sports or exercise.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Does not do any sports or exercise   
+1 |  Does any sports or exercise
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```   
+### **Variable label**: Does sprots or exercise      
+**Variable name**:  lsb_pa_sport_6  
+**Variable description**:  Indicator of whether the participant does any sports or exercise.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Does not do any sports or exercise   
+1 |  Does any sports or exercise
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```   
+
+### **Variable label**:  Sports or exercise time       
+**Variable name**:  lsb_pa_sport_time_0  
+**Variable description**:  Average time a week the participant spent on sports or exercise.    
 **Value type**:  
 **Variable unit**:  
 **Category coding**:  
@@ -1476,7 +2550,133 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Sports or exercise time       
+**Variable name**:  lsb_pa_sport_time_1  
+**Variable description**:  Average time a week the participant spent on sports or exercise.    
+**Value type**:  
+**Variable unit**:  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  never   
+1 |  less than 1 hour a week   
+3 |  between 1 and 2 hours a week   
+4 |  more than 2 hours a week  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Sports or exercise time       
+**Variable name**:  lsb_pa_sport_time_2  
+**Variable description**:  Average time a week the participant spent on sports or exercise.    
+**Value type**:  
+**Variable unit**:  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  never   
+1 |  less than 1 hour a week   
+3 |  between 1 and 2 hours a week   
+4 |  more than 2 hours a week  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Sports or exercise time       
+**Variable name**:  lsb_pa_sport_time_3  
+**Variable description**:  Average time a week the participant spent on sports or exercise.    
+**Value type**:  
+**Variable unit**:  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  never   
+1 |  less than 1 hour a week   
+3 |  between 1 and 2 hours a week   
+4 |  more than 2 hours a week  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Sports or exercise time       
+**Variable name**:  lsb_pa_sport_time_4  
+**Variable description**:  Average time a week the participant spent on sports or exercise.    
+**Value type**:  
+**Variable unit**:  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  never   
+1 |  less than 1 hour a week   
+3 |  between 1 and 2 hours a week   
+4 |  more than 2 hours a week  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Sports or exercise time       
+**Variable name**:  lsb_pa_sport_time_5  
+**Variable description**:  Average time a week the participant spent on sports or exercise.    
+**Value type**:  
+**Variable unit**:  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  never   
+1 |  less than 1 hour a week   
+3 |  between 1 and 2 hours a week   
+4 |  more than 2 hours a week  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Sports or exercise time       
+**Variable name**:  lsb_pa_sport_time_6  
+**Variable description**:  Average time a week the participant spent on sports or exercise.    
+**Value type**:  
+**Variable unit**:  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  never   
+1 |  less than 1 hour a week   
+3 |  between 1 and 2 hours a week   
+4 |  more than 2 hours a week  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 # Diet and nutrition subdomain
 
@@ -1597,8 +2797,8 @@ output: html_document
 ```  
 
 ### **Variable label**:  Daily water consumption  
-**Variable name**:  LSB_WATER  
-**Variable description**:  Indicator of whether the participant currently drinks water on a daily basis.   
+**Variable name**:  lsb_water_0    
+**Variable description**:  Indicator of whether the participant drinks water on a daily basis.   
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
@@ -1614,7 +2814,64 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Daily water consumption  
+**Variable name**:  lsb_water_1    
+**Variable description**:  Indicator of whether the participant drinks water on a daily basis.   
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not drinks water on a daily basis
+1 |   Drinks water on a daily basis
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Daily water consumption  
+**Variable name**:  lsb_water_2    
+**Variable description**:  Indicator of whether the participant drinks water on a daily basis.   
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not drinks water on a daily basis
+1 |   Drinks water on a daily basis
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Daily water consumption  
+**Variable name**:  lsb_water_4    
+**Variable description**:  Indicator of whether the participant drinks water on a daily basis.   
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not drinks water on a daily basis
+1 |   Drinks water on a daily basis
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:  Daily coffeee consumption  
 **Variable name**:  lsb_coffee_qty_0  
@@ -1690,7 +2947,7 @@ output: html_document
 # Sleep quality subdomain
 
 ### **Variable label**:  Average hours of sleep per night  
-**Variable name**:  LSB_SLEEP_HOURS  
+**Variable name**:  lsb_sleep_hours_0  
 **Variable description**:  Average hours of sleep per night.  
 **Value type**:  integer  
 **Variable unit**:  hours  
@@ -1702,10 +2959,80 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Average hours of sleep per night  
+**Variable name**:  lsb_sleep_hours_1  
+**Variable description**:  Average hours of sleep per night.  
+**Value type**:  integer  
+**Variable unit**:  hours  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average hours of sleep per night  
+**Variable name**:  lsb_sleep_hours_2  
+**Variable description**:  Average hours of sleep per night.  
+**Value type**:  integer  
+**Variable unit**:  hours  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average hours of sleep per night  
+**Variable name**:  lsb_sleep_hours_3  
+**Variable description**:  Average hours of sleep per night.  
+**Value type**:  integer  
+**Variable unit**:  hours  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average hours of sleep per night  
+**Variable name**:  lsb_sleep_hours_4  
+**Variable description**:  Average hours of sleep per night.  
+**Value type**:  integer  
+**Variable unit**:  hours  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average hours of sleep per night  
+**Variable name**:  lsb_sleep_hours_5  
+**Variable description**:  Average hours of sleep per night.  
+**Value type**:  integer  
+**Variable unit**:  hours  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 ### **Variable label**:  Difficulty falling a sleep  
-**Variable name**:  LSB_SLEEP_FALLING  
+**Variable name**:  lsb_sleep_diff_fall_0  
 **Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1721,20 +3048,98 @@ output: html_document
 **R script**:  
 ```{r, echo=TRUE}
 #This is where the R-script will be written
-
-```
-
-### **Variable label**:  Having trouble sleeping  
-**Variable name**:  LSB_SLEEP_TROUBLE  
-**Variable description**:  Indicator of whether the participant has any trouble with sleeping.    
+   
+```  
+### **Variable label**:  Difficulty falling a sleep  
+**Variable name**:  lsb_sleep_diff_fall_1  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Has no trouble sleeping 
-1 |  Has trouble sleeping 
+0 |  Never has difficulty falling a sleep
+1 |  Sometimes has difficulty falling a sleep
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+   
+```  
+### **Variable label**:  Difficulty falling a sleep  
+**Variable name**:  lsb_sleep_diff_fall_3  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Never has difficulty falling a sleep
+1 |  Sometimes has difficulty falling a sleep
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+   
+```  
+### **Variable label**:  Difficulty falling a sleep  
+**Variable name**:  lsb_sleep_diff_fall_4  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Never has difficulty falling a sleep
+1 |  Sometimes has difficulty falling a sleep
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+   
+```  
+### **Variable label**:  Difficulty falling a sleep  
+**Variable name**:  lsb_sleep_diff_fall_5  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Never has difficulty falling a sleep
+1 |  Sometimes has difficulty falling a sleep
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+   
+```  
+
+### **Variable label**:  Quality of sleep  
+**Variable name**:  lsb_sleep_qlty_0  
+**Variable description**:  Quality of sleep of the participant.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Very bad 
+1 |  Fairly bad
+2 |  Fairly good
+3 |  Very good  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1742,7 +3147,70 @@ output: html_document
 ```{r, echo=TRUE}
 #This is where the R-script will be written
 
-```
+```  
+### **Variable label**:  Quality of sleep  
+**Variable name**:  lsb_sleep_qlty_3  
+**Variable description**:  Quality of sleep of the participant.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Very bad 
+1 |  Fairly bad
+2 |  Fairly good
+3 |  Very good  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Quality of sleep  
+**Variable name**:  lsb_sleep_qlty_4  
+**Variable description**:  Quality of sleep of the participant.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Very bad 
+1 |  Fairly bad
+2 |  Fairly good
+3 |  Very good  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Quality of sleep  
+**Variable name**:  lsb_sleep_qlty_5  
+**Variable description**:  Quality of sleep of the participant.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Very bad 
+1 |  Fairly bad
+2 |  Fairly good
+3 |  Very good  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
 
 
 
