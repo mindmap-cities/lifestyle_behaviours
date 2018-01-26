@@ -427,7 +427,7 @@ output: html_document
 
 ```  
 
-### **Variable label**:   Current quantity of alcohol consumed per week    
+### **Variable label**:   Current quantity of alcohol consumed per week (total)      
 **Variable name**: lsb_total_0  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
 **Value type**: integer  
