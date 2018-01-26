@@ -810,7 +810,7 @@ output: html_document
 ------------- | -------------  
 0 |   Never smoker  
 1 |   Former smoker  
-3 |   Current smoker  
+2 |   Current smoker  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -830,7 +830,7 @@ output: html_document
 ------------- | -------------  
 0 |   Never smoker  
 1 |   Former smoker  
-3 |   Current smoker  
+2 |   Current smoker  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -850,7 +850,7 @@ output: html_document
 ------------- | -------------  
 0 |   Never smoker  
 1 |   Former smoker  
-3 |   Current smoker  
+2 |   Current smoker  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -870,7 +870,7 @@ output: html_document
 ------------- | -------------  
 0 |   Never smoker  
 1 |   Former smoker  
-3 |   Current smoker  
+2 |   Current smoker  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -890,7 +890,7 @@ output: html_document
 ------------- | -------------  
 0 |   Never smoker  
 1 |   Former smoker  
-3 |   Current smoker  
+2 |   Current smoker  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -910,7 +910,7 @@ output: html_document
 ------------- | -------------  
 0 |   Never smoker  
 1 |   Former smoker  
-3 |   Current smoker  
+2 |   Current smoker  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -930,7 +930,7 @@ output: html_document
 ------------- | -------------  
 0 |   Never smoker  
 1 |   Former smoker  
-3 |   Current smoker  
+2 |   Current smoker  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1427,8 +1427,8 @@ output: html_document
 ------------- | -------------  
 0 |  Never  
 1 |  Seldom (1-2 dyas)  
-3 |  Sometimes (3-4 days)  
-4 |  Often (5-7 days)  
+2 |  Sometimes (3-4 days)  
+3 |  Often (5-7 days)  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1448,8 +1448,8 @@ output: html_document
 ------------- | -------------  
 0 |  Never  
 1 |  Seldom (1-2 dyas)  
-3 |  Sometimes (3-4 days)  
-4 |  Often (5-7 days)  
+2 |  Sometimes (3-4 days)  
+3 |  Often (5-7 days)  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1469,8 +1469,8 @@ output: html_document
 ------------- | -------------  
 0 |  Never  
 1 |  Seldom (1-2 dyas)  
-3 |  Sometimes (3-4 days)  
-4 |  Often (5-7 days)  
+2 |  Sometimes (3-4 days)  
+3 |  Often (5-7 days)    
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1490,8 +1490,8 @@ output: html_document
 ------------- | -------------  
 0 |  Never  
 1 |  Seldom (1-2 dyas)  
-3 |  Sometimes (3-4 days)  
-4 |  Often (5-7 days)  
+2 |  Sometimes (3-4 days)  
+3 |  Often (5-7 days)    
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1511,8 +1511,8 @@ output: html_document
 ------------- | -------------  
 0 |  Never  
 1 |  Seldom (1-2 dyas)  
-3 |  Sometimes (3-4 days)  
-4 |  Often (5-7 days)  
+2 |  Sometimes (3-4 days)  
+3 |  Often (5-7 days)    
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1532,8 +1532,8 @@ output: html_document
 ------------- | -------------  
 0 |  Never  
 1 |  Seldom (1-2 dyas)  
-3 |  Sometimes (3-4 days)  
-4 |  Often (5-7 days)  
+2 |  Sometimes (3-4 days)  
+3 |  Often (5-7 days)    
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1553,8 +1553,8 @@ output: html_document
 ------------- | -------------  
 0 |  Never  
 1 |  Seldom (1-2 dyas)  
-3 |  Sometimes (3-4 days)  
-4 |  Often (5-7 days)  
+2 |  Sometimes (3-4 days)  
+3 |  Often (5-7 days)    
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1575,9 +1575,9 @@ output: html_document
 ------------- | -------------  
 0 |  Less than 30 minutes  
 1 |  30 minutes but less than 1 hour  
-3 |  1 hour but less than 2 hours
-4 |  2 hours but less than 4 hours  
-5 |  4 hours or more  
+2 |  1 hour but less than 2 hours
+3 |  2 hours but less than 4 hours  
+4 |  4 hours or more  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1597,9 +1597,9 @@ output: html_document
 ------------- | -------------  
 0 |  Less than 30 minutes  
 1 |  30 minutes but less than 1 hour  
-3 |  1 hour but less than 2 hours
-4 |  2 hours but less than 4 hours  
-5 |  4 hours or more  
+2 |  1 hour but less than 2 hours
+3 |  2 hours but less than 4 hours  
+4 |  4 hours or more   
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1619,9 +1619,9 @@ output: html_document
 ------------- | -------------  
 0 |  Less than 30 minutes  
 1 |  30 minutes but less than 1 hour  
-3 |  1 hour but less than 2 hours
-4 |  2 hours but less than 4 hours  
-5 |  4 hours or more  
+2 |  1 hour but less than 2 hours
+3 |  2 hours but less than 4 hours  
+4 |  4 hours or more   
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1641,9 +1641,9 @@ output: html_document
 ------------- | -------------  
 0 |  Less than 30 minutes  
 1 |  30 minutes but less than 1 hour  
-3 |  1 hour but less than 2 hours
-4 |  2 hours but less than 4 hours  
-5 |  4 hours or more  
+2 |  1 hour but less than 2 hours
+3 |  2 hours but less than 4 hours  
+4 |  4 hours or more   
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1663,9 +1663,9 @@ output: html_document
 ------------- | -------------  
 0 |  Less than 30 minutes  
 1 |  30 minutes but less than 1 hour  
-3 |  1 hour but less than 2 hours
-4 |  2 hours but less than 4 hours  
-5 |  4 hours or more  
+2 |  1 hour but less than 2 hours
+3 |  2 hours but less than 4 hours  
+4 |  4 hours or more     
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1685,9 +1685,9 @@ output: html_document
 ------------- | -------------  
 0 |  Less than 30 minutes  
 1 |  30 minutes but less than 1 hour  
-3 |  1 hour but less than 2 hours
-4 |  2 hours but less than 4 hours  
-5 |  4 hours or more  
+2 |  1 hour but less than 2 hours
+3 |  2 hours but less than 4 hours  
+4 |  4 hours or more     
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1707,9 +1707,9 @@ output: html_document
 ------------- | -------------  
 0 |  Less than 30 minutes  
 1 |  30 minutes but less than 1 hour  
-3 |  1 hour but less than 2 hours
-4 |  2 hours but less than 4 hours  
-5 |  4 hours or more  
+2 |  1 hour but less than 2 hours
+3 |  2 hours but less than 4 hours  
+4 |  4 hours or more    
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2541,8 +2541,8 @@ output: html_document
 ------------- | -------------  
 0 |  never   
 1 |  less than 1 hour a week   
-3 |  between 1 and 2 hours a week   
-4 |  more than 2 hours a week  
+2 |  between 1 and 2 hours a week   
+3 |  more than 2 hours a week  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2562,8 +2562,8 @@ output: html_document
 ------------- | -------------  
 0 |  never   
 1 |  less than 1 hour a week   
-3 |  between 1 and 2 hours a week   
-4 |  more than 2 hours a week  
+2 |  between 1 and 2 hours a week   
+3 |  more than 2 hours a week   
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2583,8 +2583,8 @@ output: html_document
 ------------- | -------------  
 0 |  never   
 1 |  less than 1 hour a week   
-3 |  between 1 and 2 hours a week   
-4 |  more than 2 hours a week  
+2 |  between 1 and 2 hours a week   
+3 |  more than 2 hours a week    
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2604,8 +2604,8 @@ output: html_document
 ------------- | -------------  
 0 |  never   
 1 |  less than 1 hour a week   
-3 |  between 1 and 2 hours a week   
-4 |  more than 2 hours a week  
+2 |  between 1 and 2 hours a week   
+3 |  more than 2 hours a week    
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2625,8 +2625,8 @@ output: html_document
 ------------- | -------------  
 0 |  never   
 1 |  less than 1 hour a week   
-3 |  between 1 and 2 hours a week   
-4 |  more than 2 hours a week  
+2 |  between 1 and 2 hours a week   
+3 |  more than 2 hours a week    
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2646,8 +2646,8 @@ output: html_document
 ------------- | -------------  
 0 |  never   
 1 |  less than 1 hour a week   
-3 |  between 1 and 2 hours a week   
-4 |  more than 2 hours a week  
+2 |  between 1 and 2 hours a week   
+3 |  more than 2 hours a week    
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2667,8 +2667,8 @@ output: html_document
 ------------- | -------------  
 0 |  never   
 1 |  less than 1 hour a week   
-3 |  between 1 and 2 hours a week   
-4 |  more than 2 hours a week  
+2 |  between 1 and 2 hours a week   
+3 |  more than 2 hours a week    
 
 **Harmonization status**:  
 **Harmonization comment**:   
