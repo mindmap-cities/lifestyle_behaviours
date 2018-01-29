@@ -1834,7 +1834,7 @@ output: html_document
 ```  
 
 ### **Variable label**:  Average cycling time    
-**Variable name**:  lsb_pa_cycle_week_0  
+**Variable name**:  lsb_pa_cycle_0  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.  
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
@@ -1848,7 +1848,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Average cycling time    
-**Variable name**:  lsb_pa_cycle_week_1  
+**Variable name**:  lsb_pa_cycle_1  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
@@ -1862,7 +1862,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Average cycling time    
-**Variable name**:  lsb_pa_cycle_week_2  
+**Variable name**:  lsb_pa_cycle_2  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
@@ -1876,7 +1876,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Average cycling time    
-**Variable name**:  lsb_pa_cycle_week_3  
+**Variable name**:  lsb_pa_cycle_3  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
@@ -1890,7 +1890,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Average cycling time    
-**Variable name**:  lsb_pa_cycle_week_4  
+**Variable name**:  lsb_pa_cycle_4  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
@@ -1904,7 +1904,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Average cycling time    
-**Variable name**:  lsb_pa_cycle_week_5  
+**Variable name**:  lsb_pa_cycle_5  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
@@ -1918,7 +1918,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Average cycling time    
-**Variable name**:  lsb_pa_cycle_week_6  
+**Variable name**:  lsb_pa_cycle_6  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  integer  
 **Variable unit**:  minutes per week  
@@ -1933,7 +1933,7 @@ output: html_document
 ```  
 
 ### **Variable label**:  Does any gardening  
-**Variable name**:  lsb_pa_garden_0
+**Variable name**:  lsb_pa_garden_0  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1952,7 +1952,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Does any gardening  
-**Variable name**:  lsb_pa_garden_1
+**Variable name**:  lsb_pa_garden_1  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1971,7 +1971,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Does any gardening  
-**Variable name**:  lsb_pa_garden_2
+**Variable name**:  lsb_pa_garden_2  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1990,7 +1990,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Does any gardening  
-**Variable name**:  lsb_pa_garden_3
+**Variable name**:  lsb_pa_garden_3  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2009,7 +2009,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Does any gardening  
-**Variable name**:  lsb_pa_garden_4
+**Variable name**:  lsb_pa_garden_4  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2028,7 +2028,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Does any gardening  
-**Variable name**:  lsb_pa_garden_5
+**Variable name**:  lsb_pa_garden_5  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2047,7 +2047,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Does any gardening  
-**Variable name**:  lsb_pa_garden_6
+**Variable name**:  lsb_pa_garden_6  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2533,7 +2533,7 @@ output: html_document
 ### **Variable label**:  Sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_0  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
-**Value type**:  
+**Value type**: integer  
 **Variable unit**:  
 **Category coding**:  
 
@@ -2554,7 +2554,7 @@ output: html_document
 ### **Variable label**:  Sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_1  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
-**Value type**:  
+**Value type**: integer    
 **Variable unit**:  
 **Category coding**:  
 
@@ -2575,7 +2575,7 @@ output: html_document
 ### **Variable label**:  Sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_2  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
-**Value type**:  
+**Value type**: integer   
 **Variable unit**:  
 **Category coding**:  
 
@@ -2596,7 +2596,7 @@ output: html_document
 ### **Variable label**:  Sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_3  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
-**Value type**:  
+**Value type**: integer    
 **Variable unit**:  
 **Category coding**:  
 
@@ -2617,7 +2617,7 @@ output: html_document
 ### **Variable label**:  Sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_4  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
-**Value type**:  
+**Value type**: integer   
 **Variable unit**:  
 **Category coding**:  
 
@@ -2638,7 +2638,7 @@ output: html_document
 ### **Variable label**:  Sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_5  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
-**Value type**:  
+**Value type**: integer   
 **Variable unit**:  
 **Category coding**:  
 
@@ -2659,7 +2659,7 @@ output: html_document
 ### **Variable label**:  Sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_6  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
-**Value type**:  
+**Value type**: integer   
 **Variable unit**:  
 **Category coding**:  
 
