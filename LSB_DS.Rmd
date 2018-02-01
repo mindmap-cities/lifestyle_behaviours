@@ -428,10 +428,10 @@ output: html_document
 ```  
 
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)      
-**Variable name**: lsb_total_0  
+**Variable name**: lsb_alc_total_0  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -442,10 +442,10 @@ output: html_document
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
-**Variable name**: lsb_total_1  
+**Variable name**: lsb_alc_total_1  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -456,10 +456,10 @@ output: html_document
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
-**Variable name**: lsb_total_2  
+**Variable name**: lsb_alc_total_2  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -470,10 +470,10 @@ output: html_document
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
-**Variable name**: lsb_total_3  
+**Variable name**: lsb_alc_total_3  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -488,7 +488,7 @@ output: html_document
 **Variable name**: lsb_alc_wine_0  
 **Variable description**:  Current quantity of wine consumed per week.    
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -502,7 +502,7 @@ output: html_document
 **Variable name**: lsb_alc_wine_1  
 **Variable description**:  Current quantity of wine consumed per week.    
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -516,7 +516,7 @@ output: html_document
 **Variable name**: lsb_alc_wine_2  
 **Variable description**:  Current quantity of wine consumed per week.    
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -530,7 +530,7 @@ output: html_document
 **Variable name**: lsb_alc_wine_3  
 **Variable description**:  Current quantity of wine consumed per week.    
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -545,7 +545,7 @@ output: html_document
 **Variable name**: lsb_alc_beer_0  
 **Variable description**:  Current quantity of beer consumed per week.   
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
 
@@ -560,7 +560,7 @@ output: html_document
 **Variable name**: lsb_alc_beer_1  
 **Variable description**:  Current quantity of beer consumed per week.    
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
 
@@ -575,7 +575,7 @@ output: html_document
 **Variable name**: lsb_alc_beer_2  
 **Variable description**:  Current quantity of beer consumed per week.    
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
 
@@ -590,7 +590,7 @@ output: html_document
 **Variable name**: lsb_alc_beer_3  
 **Variable description**:  Current quantity of beer consumed per week.    
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
 
@@ -606,7 +606,7 @@ output: html_document
 **Variable name**: lsb_alc_liq_0  
 **Variable description**:  Current quantity of liquor consumed per week.    
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
 
@@ -621,7 +621,7 @@ output: html_document
 **Variable name**: lsb_alc_liq_1  
 **Variable description**:  Current quantity of liquor consumed per week.   
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
 
@@ -636,7 +636,7 @@ output: html_document
 **Variable name**: lsb_alc_liq_2  
 **Variable description**:  Current quantity of liquor consumed per week.    
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
 
@@ -651,7 +651,7 @@ output: html_document
 **Variable name**: lsb_alc_liq_3  
 **Variable description**:  Current quantity of liquor consumed per week.   
 **Value type**: integer  
-**Variable unit**: drinks per week  
+**Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
 
@@ -666,7 +666,7 @@ output: html_document
 # Tobacco consumption subdomain
 
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_tob_cur_0  
+**Variable name**:  lsb_smk_cur_0  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -685,7 +685,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_tob_cur_1  
+**Variable name**:  lsb_smk_cur_1  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -704,7 +704,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_tob_cur_2  
+**Variable name**:  lsb_smk_cur_2  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -723,7 +723,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_tob_cur_3  
+**Variable name**:  lsb_smk_cur_3  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -742,7 +742,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_tob_cur_4  
+**Variable name**:  lsb_smk_cur_4  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -761,7 +761,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_tob_cur_5  
+**Variable name**:  lsb_smk_cur_5  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -780,7 +780,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_tob_cur_6  
+**Variable name**:  lsb_smk_cur_6  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1078,7 +1078,7 @@ output: html_document
 **Variable name**:  lsb_cig_qty_0   
 **Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
-**Variable unit**:  cigarettes per day  
+**Variable unit**:  cigarettes/day  
 **Category coding**:  
 
 **Harmonization status**:  
@@ -1092,7 +1092,7 @@ output: html_document
 **Variable name**:  lsb_cig_qty_1   
 **Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
-**Variable unit**:  cigarettes per day  
+**Variable unit**:  cigarettes/day  
 **Category coding**:  
 
 **Harmonization status**:  
@@ -1106,7 +1106,7 @@ output: html_document
 **Variable name**:  lsb_cig_qty_2   
 **Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
-**Variable unit**:  cigarettes per day  
+**Variable unit**:  cigarettes/day  
 **Category coding**:  
 
 **Harmonization status**:  
@@ -1120,7 +1120,7 @@ output: html_document
 **Variable name**:  lsb_cig_qty_3   
 **Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
-**Variable unit**:  cigarettes per day  
+**Variable unit**:  cigarettes/day  
 **Category coding**:  
 
 **Harmonization status**:  
@@ -1134,7 +1134,7 @@ output: html_document
 **Variable name**:  lsb_cig_qty_4   
 **Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
-**Variable unit**:  cigarettes per day  
+**Variable unit**:  cigarettes/day  
 **Category coding**:  
 
 **Harmonization status**:  
@@ -1148,7 +1148,7 @@ output: html_document
 **Variable name**:  lsb_cig_qty_5   
 **Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
-**Variable unit**:  cigarettes per day  
+**Variable unit**:  cigarettes/day  
 **Category coding**:  
 
 **Harmonization status**:  
@@ -1162,7 +1162,7 @@ output: html_document
 **Variable name**:  lsb_cig_qty_6   
 **Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
-**Variable unit**:  cigarettes per day  
+**Variable unit**:  cigarettes/day  
 **Category coding**:  
 
 **Harmonization status**:  
@@ -1373,9 +1373,9 @@ output: html_document
 
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_0    
-**Variable description**:  Number of packs years - equivalent of years smoking twenty cigarettes per day - NOTE: no differentiation in number of cigarettes across the smoking period.  
+**Variable description**:  Number of estimated pack years of the participant.   
 **Value type**:  integer  
-**Variable unit**:  pack years    
+**Variable unit**:  pack-years    
 **Category coding**:  
 
 **Harmonization status**:  
@@ -1387,9 +1387,9 @@ output: html_document
 ```  
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_1    
-**Variable description**:  Number of packs years - equivalent of years smoking twenty cigarettes per day - NOTE: no differentiation in number of cigarettes across the smoking period.  
+**Variable description**:  Number of estimated pack years of the participant.     
 **Value type**:  integer  
-**Variable unit**:  pack years    
+**Variable unit**:  pack-years    
 **Category coding**:  
 
 **Harmonization status**:  
@@ -1401,9 +1401,9 @@ output: html_document
 ```  
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_2    
-**Variable description**:  Number of packs years - equivalent of years smoking twenty cigarettes per day - NOTE: no differentiation in number of cigarettes across the smoking period.  
+**Variable description**:  Number of estimated pack years of the participant.     
 **Value type**:  integer  
-**Variable unit**:  pack years    
+**Variable unit**:  pack-years    
 **Category coding**:  
 
 **Harmonization status**:  
@@ -1417,7 +1417,7 @@ output: html_document
 # Physical activity subdomain
 
 ### **Variable label**: Frequency of walking    
-**Variable name**:    lsb_pa_walk_days_0    
+**Variable name**:    lsb_pa_walk_freq_0    
 **Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1438,7 +1438,7 @@ output: html_document
 
 ```  
 ### **Variable label**: Frequency of walking    
-**Variable name**:    lsb_pa_walk_days_1    
+**Variable name**:    lsb_pa_walk_freq_1    
 **Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1459,7 +1459,7 @@ output: html_document
 
 ```  
 ### **Variable label**: Frequency of walking    
-**Variable name**:    lsb_pa_walk_days_2    
+**Variable name**:    lsb_pa_walk_freq_2    
 **Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1480,7 +1480,7 @@ output: html_document
 
 ```  
 ### **Variable label**: Frequency of walking    
-**Variable name**:    lsb_pa_walk_days_3    
+**Variable name**:    lsb_pa_walk_freq_3    
 **Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1501,7 +1501,7 @@ output: html_document
 
 ```  
 ### **Variable label**: Frequency of walking    
-**Variable name**:    lsb_pa_walk_days_4    
+**Variable name**:    lsb_pa_walk_freq_4    
 **Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1522,7 +1522,7 @@ output: html_document
 
 ```  
 ### **Variable label**: Frequency of walking    
-**Variable name**:    lsb_pa_walk_days_5    
+**Variable name**:    lsb_pa_walk_freq_5    
 **Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1543,7 +1543,7 @@ output: html_document
 
 ```  
 ### **Variable label**: Frequency of walking    
-**Variable name**:    lsb_pa_walk_days_6    
+**Variable name**:    lsb_pa_walk_freq_6    
 **Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1564,9 +1564,9 @@ output: html_document
 
 ```  
 
-### **Variable label**:  Average time walking   
+### **Variable label**:  Average walking time     
 **Variable name**:   lsb_pa_walk_time_0  
-**Variable description**:  Average time the participatn spends walking per day.    
+**Variable description**:  Average time the participant spends walking per day.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
@@ -1586,9 +1586,9 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average time walking   
+### **Variable label**:  Average walking time   
 **Variable name**:   lsb_pa_walk_time_1  
-**Variable description**:  Average time the participatn spends walking per day.    
+**Variable description**:  Average time the participant spends walking per day.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
@@ -1608,9 +1608,9 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average time walking   
+### **Variable label**:  Average walking time    
 **Variable name**:   lsb_pa_walk_time_2  
-**Variable description**:  Average time the participatn spends walking per day.    
+**Variable description**:  Average time the participant spends walking per day.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
@@ -1630,9 +1630,9 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average time walking   
+### **Variable label**:  Average walking time     
 **Variable name**:   lsb_pa_walk_time_3  
-**Variable description**:  Average time the participatn spends walking per day.    
+**Variable description**:  Average time the participant spends walking per day.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
@@ -1652,9 +1652,9 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average time walking   
+### **Variable label**:  Average walking time    
 **Variable name**:   lsb_pa_walk_time_4  
-**Variable description**:  Average time the participatn spends walking per day.    
+**Variable description**:  Average time the participant spends walking per day.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
@@ -1674,9 +1674,9 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average time walking   
+### **Variable label**:  Average walking time     
 **Variable name**:   lsb_pa_walk_time_5  
-**Variable description**:  Average time the participatn spends walking per day.    
+**Variable description**:  Average time the participant spends walking per day.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
@@ -1696,9 +1696,9 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average time walking   
+### **Variable label**:  Average walking time     
 **Variable name**:   lsb_pa_walk_time_6  
-**Variable description**:  Average time the participatn spends walking per day.    
+**Variable description**:  Average time the participant spends walking per day.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:  
@@ -1719,11 +1719,11 @@ output: html_document
 
 ```  
 
-### **Variable label**:  Walking for transportation  
+### **Variable label**:  Average walking time for transportation  
 **Variable name**:  lsb_pa_walk_trans_0    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
 **Value type**:  integer  
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -1733,11 +1733,11 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Walking for transportation    
+### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_1    
 **Variable description**: Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
 **Value type**:  integer  
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -1747,11 +1747,11 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Walking for transportation    
+### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_2    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
 **Value type**:  integer  
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -1761,11 +1761,11 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Walking for transportation    
+### **Variable label**:  Average walking for transportation    
 **Variable name**:  lsb_pa_walk_trans_4    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
 **Value type**:  integer  
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -1776,11 +1776,11 @@ output: html_document
 
 ```  
 
-### **Variable label**:  Walking for leisure  
+### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_0    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
 **Value type**:  integer  
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -1790,11 +1790,11 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Walking for leisure  
+### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_2    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
 **Value type**:  integer  
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -1804,11 +1804,11 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Walking for leisure  
+### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_3    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
 **Value type**:  integer  
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -1818,11 +1818,11 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Walking for leisure  
+### **Variable label**:  Average walking for leisure  
 **Variable name**:  lsb_pa_walk_leis_4    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
 **Value type**:  integer  
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -1932,7 +1932,7 @@ output: html_document
 
 ```  
 
-### **Variable label**:  Does any gardening  
+### **Variable label**:  Gardening   
 **Variable name**:  lsb_pa_garden_0  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
@@ -1951,7 +1951,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Does any gardening  
+### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_1  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
@@ -1970,7 +1970,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Does any gardening  
+### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_2  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
@@ -1989,7 +1989,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Does any gardening  
+### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_3  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
@@ -2008,7 +2008,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Does any gardening  
+### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_4  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
@@ -2027,7 +2027,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Does any gardening  
+### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_5  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
@@ -2046,7 +2046,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Does any gardening  
+### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_6  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
@@ -2069,7 +2069,7 @@ output: html_document
 **Variable name**:  lsb_pa_garden_time_0    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.    
 **Value type**:  integer  
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2083,7 +2083,7 @@ output: html_document
 **Variable name**:  lsb_pa_garden_time_1    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
 **Value type**:  integer  
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2097,7 +2097,7 @@ output: html_document
 **Variable name**:  lsb_pa_garden_time_2    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
 **Value type**:  integer  
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2111,7 +2111,7 @@ output: html_document
 **Variable name**:  lsb_pa_garden_time_3    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
 **Value type**:  integer  
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2125,7 +2125,7 @@ output: html_document
 **Variable name**:  lsb_pa_garden_time_4    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
 **Value type**:  integer  
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2139,7 +2139,7 @@ output: html_document
 **Variable name**:  lsb_pa_garden_time_5    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
 **Value type**:  integer  
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2153,7 +2153,7 @@ output: html_document
 **Variable name**:  lsb_pa_garden_time_6    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
 **Value type**:  integer  
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2164,8 +2164,8 @@ output: html_document
 
 ```  
 
-### **Variable label**:  Does any household activities  
-**Variable name**:  lsb_pa_house_any_0  
+### **Variable label**:  Household activities  
+**Variable name**:  lsb_pa_house_0  
 **Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2183,8 +2183,8 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Does any household activities  
-**Variable name**:  lsb_pa_house_any_1  
+### **Variable label**:  Household activities  
+**Variable name**:  lsb_pa_house_1  
 **Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2202,8 +2202,8 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Does any household activities  
-**Variable name**:  lsb_pa_house_any_2  
+### **Variable label**:  Household activities  
+**Variable name**:  lsb_pa_house_2  
 **Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2221,8 +2221,8 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Does any household activities  
-**Variable name**:  lsb_pa_house_any_3  
+### **Variable label**:  Household activities  
+**Variable name**:  lsb_pa_house_3  
 **Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2240,8 +2240,8 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Does any household activities  
-**Variable name**:  lsb_pa_house_any_4  
+### **Variable label**:  Household activities  
+**Variable name**:  lsb_pa_house_4  
 **Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2259,8 +2259,8 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Does any household activities  
-**Variable name**:  lsb_pa_house_any_5  
+### **Variable label**:  Household activities  
+**Variable name**:  lsb_pa_house_5  
 **Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2278,8 +2278,8 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Does any household activities  
-**Variable name**:  lsb_pa_house_any_6  
+### **Variable label**:  Household activities  
+**Variable name**:  lsb_pa_house_6  
 **Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2298,7 +2298,7 @@ output: html_document
 
 ```  
 
-### **Variable label**:  Average houshold activities time      
+### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_0  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  integer  
@@ -2312,7 +2312,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average houshold activities time      
+### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_1  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  integer  
@@ -2326,7 +2326,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average houshold activities time      
+### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_2  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  integer  
@@ -2340,7 +2340,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average houshold activities time      
+### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_3  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  integer  
@@ -2354,7 +2354,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average houshold activities time      
+### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_4  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  integer  
@@ -2368,7 +2368,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average houshold activities time      
+### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_5  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  integer  
@@ -2382,7 +2382,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average houshold activities time      
+### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_6  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  integer  
@@ -2396,7 +2396,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**: Does sprots or exercise      
+### **Variable label**: Sprots or exercise      
 **Variable name**:  lsb_pa_sport_0  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2415,7 +2415,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Does sprots or exercise      
+### **Variable label**: Sprots or exercise      
 **Variable name**:  lsb_pa_sport_1  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2434,7 +2434,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Does sprots or exercise      
+### **Variable label**: Sprots or exercise      
 **Variable name**:  lsb_pa_sport_2  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2453,7 +2453,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Does sprots or exercise      
+### **Variable label**: Sprots or exercise      
 **Variable name**:  lsb_pa_sport_3  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2472,7 +2472,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Does sprots or exercise      
+### **Variable label**: Sprots or exercise      
 **Variable name**:  lsb_pa_sport_4  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2491,7 +2491,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Does sprots or exercise      
+### **Variable label**: Sprots or exercise      
 **Variable name**:  lsb_pa_sport_5  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2510,7 +2510,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Does sprots or exercise      
+### **Variable label**: Sprots or exercise      
 **Variable name**:  lsb_pa_sport_6  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2530,7 +2530,7 @@ output: html_document
 
 ```   
 
-### **Variable label**:  Sports or exercise time       
+### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_0  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
 **Value type**: integer  
@@ -2551,7 +2551,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Sports or exercise time       
+### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_1  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
 **Value type**: integer    
@@ -2572,7 +2572,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Sports or exercise time       
+### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_2  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
 **Value type**: integer   
@@ -2593,7 +2593,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Sports or exercise time       
+### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_3  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
 **Value type**: integer    
@@ -2614,7 +2614,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Sports or exercise time       
+### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_4  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
 **Value type**: integer   
@@ -2635,7 +2635,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Sports or exercise time       
+### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_5  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
 **Value type**: integer   
@@ -2656,7 +2656,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Sports or exercise time       
+### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_6  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
 **Value type**: integer   
@@ -2681,7 +2681,7 @@ output: html_document
 # Diet and nutrition subdomain
 
 ### **Variable label**:  Daily vegetable consumption  
-**Variable name**:  lsb_veg_day_0    
+**Variable name**:  lsb_veg_0    
 **Variable description**:  Indicator of whether the participant currently consumes vegetables on a daily basis.   
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2700,7 +2700,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Daily vegetable consumption  
-**Variable name**:  lsb_veg_day_1    
+**Variable name**:  lsb_veg_1    
 **Variable description**:  Indicator of whether the participant currently consumes vegetables on a daily basis.   
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2719,7 +2719,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Daily vegetable consumption  
-**Variable name**:  lsb_veg_day_2    
+**Variable name**:  lsb_veg_2    
 **Variable description**:  Indicator of whether the participant currently consumes vegetables on a daily basis.   
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2739,7 +2739,7 @@ output: html_document
 ```  
 
 ### **Variable label**:  Daily fruit consumption  
-**Variable name**:  lsb_fruit_day_0  
+**Variable name**:  lsb_fruit_0  
 **Variable description**:  Indicator of whether the participant currently consumes fruit on a daily basis.   
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2758,7 +2758,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Daily fruit consumption  
-**Variable name**:  lsb_fruit_day_1  
+**Variable name**:  lsb_fruit_1  
 **Variable description**:  Indicator of whether the participant currently consumes fruit on a daily basis.   
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2777,7 +2777,7 @@ output: html_document
 
 ```  
 ### **Variable label**:  Daily fruit consumption  
-**Variable name**:  lsb_fruit_day_2  
+**Variable name**:  lsb_fruit_2  
 **Variable description**:  Indicator of whether the participant currently consumes fruit on a daily basis.   
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2873,11 +2873,11 @@ output: html_document
 
 ```  
 
-### **Variable label**:  Daily coffeee consumption  
+### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_0  
-**Variable description**:  Current quantity of coffee consumed per day.   
+**Variable description**:  Current quantity of coffee the participant consumes per day.   
 **Value type**:  integer  
-**Variable unit**:  cups per day  
+**Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2887,11 +2887,11 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Daily coffeee consumption  
+### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_1  
-**Variable description**:  Current quantity of coffee consumed per day.   
+**Variable description**:  Current quantity of coffee the participant consumes per day.   
 **Value type**:  integer  
-**Variable unit**:  cups per day  
+**Variable unit**:  cups/day 
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2901,11 +2901,11 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Daily coffeee consumption  
+### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_2  
-**Variable description**:  Current quantity of coffee consumed per day.   
+**Variable description**:  Current quantity of coffee the participant consumes per day.   
 **Value type**:  integer  
-**Variable unit**:  cups per day  
+**Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2915,11 +2915,11 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Daily coffeee consumption  
+### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_3  
-**Variable description**:  Current quantity of coffee consumed per day.   
+**Variable description**:  Current quantity of coffee the participant consumes per day.   
 **Value type**:  integer  
-**Variable unit**:  cups per day  
+**Variable unit**:  cups/day 
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2929,11 +2929,11 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Daily coffeee consumption  
+### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_4  
-**Variable description**:  Current quantity of coffee consumed per day.   
+**Variable description**:  Current quantity of coffee the participant consumes per day.   
 **Value type**:  integer  
-**Variable unit**:  cups per day  
+**Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2946,11 +2946,11 @@ output: html_document
 
 # Sleep quality subdomain
 
-### **Variable label**:  Average hours of sleep per night  
+### **Variable label**:  Average sleep hours  
 **Variable name**:  lsb_sleep_hours_0  
-**Variable description**:  Average hours of sleep per night.  
+**Variable description**:  Average number of hours the participant sleeps per night.  
 **Value type**:  integer  
-**Variable unit**:  hours  
+**Variable unit**:  hours/night  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2960,11 +2960,11 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average hours of sleep per night  
+### **Variable label**:  Average sleep hours  
 **Variable name**:  lsb_sleep_hours_1  
-**Variable description**:  Average hours of sleep per night.  
+**Variable description**:  Average number of hours the participant sleeps per night.  
 **Value type**:  integer  
-**Variable unit**:  hours  
+**Variable unit**:  hours/night   
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2974,11 +2974,11 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average hours of sleep per night  
+### **Variable label**:  Average sleep hours  
 **Variable name**:  lsb_sleep_hours_2  
-**Variable description**:  Average hours of sleep per night.  
+**Variable description**:  Average number of hours the participant sleeps per night.  
 **Value type**:  integer  
-**Variable unit**:  hours  
+**Variable unit**:  hours/night 
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2988,11 +2988,11 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average hours of sleep per night  
+### **Variable label**:  Average sleep hours  
 **Variable name**:  lsb_sleep_hours_3  
-**Variable description**:  Average hours of sleep per night.  
+**Variable description**:  Average number of hours the participant sleeps per night.  
 **Value type**:  integer  
-**Variable unit**:  hours  
+**Variable unit**:  hours/night
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -3002,11 +3002,11 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average hours of sleep per night  
-**Variable name**:  lsb_sleep_hours_4  
-**Variable description**:  Average hours of sleep per night.  
+### **Variable label**:  Average sleep hours  
+**Variable name**:  lsb_sleep_hours_4    
+**Variable description**:  Average number of hours the participant sleeps per night.  
 **Value type**:  integer  
-**Variable unit**:  hours  
+**Variable unit**:  hours/night   
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -3016,11 +3016,11 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average hours of sleep per night  
+### **Variable label**:  Average sleep hours  
 **Variable name**:  lsb_sleep_hours_5  
-**Variable description**:  Average hours of sleep per night.  
+**Variable description**:  Average number of hours the participant sleeps per night.  
 **Value type**:  integer  
-**Variable unit**:  hours  
+**Variable unit**:  hours/night    
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -3032,7 +3032,7 @@ output: html_document
 ```  
 
 ### **Variable label**:  Difficulty falling a sleep  
-**Variable name**:  lsb_sleep_diff_fall_0  
+**Variable name**:  lsb_sleep_diff_0  
 **Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3051,7 +3051,7 @@ output: html_document
    
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
-**Variable name**:  lsb_sleep_diff_fall_1  
+**Variable name**:  lsb_sleep_diff_1  
 **Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3070,7 +3070,7 @@ output: html_document
    
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
-**Variable name**:  lsb_sleep_diff_fall_3  
+**Variable name**:  lsb_sleep_diff_3  
 **Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3089,7 +3089,7 @@ output: html_document
    
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
-**Variable name**:  lsb_sleep_diff_fall_4  
+**Variable name**:  lsb_sleep_diff_4  
 **Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3108,7 +3108,7 @@ output: html_document
    
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
-**Variable name**:  lsb_sleep_diff_fall_5  
+**Variable name**:  lsb_sleep_diff_5  
 **Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3129,7 +3129,7 @@ output: html_document
 
 ### **Variable label**:  Quality of sleep  
 **Variable name**:  lsb_sleep_qlty_0  
-**Variable description**:  Quality of sleep of the participant.    
+**Variable description**:  Indicator of the quality of sleep of the participant.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3150,7 +3150,7 @@ output: html_document
 ```  
 ### **Variable label**:  Quality of sleep  
 **Variable name**:  lsb_sleep_qlty_3  
-**Variable description**:  Quality of sleep of the participant.    
+**Variable description**:  Indicator of the quality of sleep of the participant.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3171,7 +3171,7 @@ output: html_document
 ```  
 ### **Variable label**:  Quality of sleep  
 **Variable name**:  lsb_sleep_qlty_4  
-**Variable description**:  Quality of sleep of the participant.    
+**Variable description**:  Indicator of the quality of sleep of the participant.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3192,7 +3192,7 @@ output: html_document
 ```  
 ### **Variable label**:  Quality of sleep  
 **Variable name**:  lsb_sleep_qlty_5  
-**Variable description**:  Quality of sleep of the participant.    
+**Variable description**:  Indicator of the quality of sleep of the participant.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
