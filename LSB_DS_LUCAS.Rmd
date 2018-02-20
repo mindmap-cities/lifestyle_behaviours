@@ -2,17 +2,13 @@
 title: "Lifestyle and behaviours DataSchema"
 output: html_document
 ---
-##Loging in to server, assigning study data, and loging out
-### Load Opal R library
+## Loging in to server and assigning study data
 ```{r, echo=FALSE}
+#Load Opal R library
 library(opal)
-``` 
-### Create an opal object with the login information
-```{r, echo=FALSE}
+# Create an opal object with the login information
 erasmus_opal <- opal.login()
-``` 
-### Login to Opal server and assign the content of the study table(s) to your RStudio environment
-```{r, echo=FALSE}
+#Login to Opal server and assign the content of the LUCAS table(s) to your RStudio environment
 opal.assign.table.tibble(erasmus_opal, 'LUCAS_w2data', 'LUCAS.LUCAS_Wave2')
 lucas_w2 <- opal.execute(erasmus_opal,'LUCAS_w2data')
 ```
