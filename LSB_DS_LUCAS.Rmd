@@ -2,7 +2,8 @@
 title: "Lifestyle and behaviours DataSchema"
 output: html_document
 ---
-## Loging in to server and assigning study data
+# Connecting with Opal data server
+## Login to server and assign study data
 ```{r, echo=FALSE}
 #Load Opal R library
 library(opal)
