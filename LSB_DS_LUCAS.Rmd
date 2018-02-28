@@ -12,7 +12,7 @@ library(epiDisplay)
 # Create an opal object with the login information
 erasmus_opal <- opal.login()
 #Login to Opal server and assign the content of the LUCAS table(s) to your RStudio environment
-opal.assign.table.tibble(erasmus_opal, 'LUCAS_w2data', 'LUCAS.LUCAS_Wave2')
+opal.assign.table.tibble(erasmus_opal, 'LUCAS_w2data', 'LUCAS.LUCAS_Wave2', variables = list('Lucas1_07','Lucas38_07','Lucas29_07','Lucas21a_07','Lucas21b_07','Lucas30a_07','Lucas31a_07'))
 lucas_w2 <- opal.execute(erasmus_opal,'LUCAS_w2data')
 ```
 ## Assign participant id as first column of your harmonized dataframes
@@ -38,14 +38,14 @@ opal.logout(erasmus_opal)
 **Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
 **Value type**: integer  
 **Variable unit**: N/A  
-**Category coding**:  
+**Category coding**:    
 
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -179,7 +179,7 @@ opal.logout(erasmus_opal)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -315,7 +315,7 @@ opal.logout(erasmus_opal)
 3 |  3 times a week or more  
 
 **Harmonization status**:  
-**Harmonization comment**:   
+**Harmonization comment**:   impossible  
 **R script**:  
 ```{r, echo=TRUE}
 #This is where the R-script will be written
@@ -450,7 +450,7 @@ opal.logout(erasmus_opal)
 **Category coding**:  N/A  
 
 **Harmonization status**:  
-**Harmonization comment**:   
+**Harmonization comment**:   impossible  
 **R script**:  
 ```{r, echo=TRUE}
 #This is where the R-script will be written
@@ -507,7 +507,7 @@ opal.logout(erasmus_opal)
 **Category coding**:  N/A  
 
 **Harmonization status**:  
-**Harmonization comment**:   
+**Harmonization comment**:   impossible  
 **R script**:  
 ```{r, echo=TRUE}
 #This is where the R-script will be written
@@ -564,7 +564,7 @@ opal.logout(erasmus_opal)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -625,7 +625,7 @@ opal.logout(erasmus_opal)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -692,7 +692,7 @@ opal.logout(erasmus_opal)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -827,7 +827,7 @@ opal.logout(erasmus_opal)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -967,7 +967,7 @@ opal.logout(erasmus_opal)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1096,7 +1096,7 @@ opal.logout(erasmus_opal)
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1195,7 +1195,7 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1294,7 +1294,7 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1393,7 +1393,7 @@ opal.logout(erasmus_opal)
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1441,16 +1441,16 @@ opal.logout(erasmus_opal)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 #This is where the R-script will be written
-
+lsb_LUCAS_0$lsb_pa_walk_freq_0<- lucas_w2$Lucas29_07
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_1    
@@ -1462,7 +1462,7 @@ opal.logout(erasmus_opal)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
@@ -1483,7 +1483,7 @@ opal.logout(erasmus_opal)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1504,7 +1504,7 @@ opal.logout(erasmus_opal)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1525,7 +1525,7 @@ opal.logout(erasmus_opal)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1546,7 +1546,7 @@ opal.logout(erasmus_opal)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1567,7 +1567,7 @@ opal.logout(erasmus_opal)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1594,7 +1594,7 @@ opal.logout(erasmus_opal)
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1741,7 +1741,7 @@ opal.logout(erasmus_opal)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1798,7 +1798,7 @@ opal.logout(erasmus_opal)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1855,7 +1855,7 @@ opal.logout(erasmus_opal)
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1959,7 +1959,7 @@ opal.logout(erasmus_opal)
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2087,7 +2087,7 @@ opal.logout(erasmus_opal)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2179,7 +2179,7 @@ opal.logout(erasmus_opal)
 
 ```  
 
-### **Variable label**:  Household activities  
+### **Variable label**: Household activities  
 **Variable name**:  lsb_pa_house_0  
 **Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
@@ -2191,12 +2191,12 @@ opal.logout(erasmus_opal)
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 #This is where the R-script will be written
-
+lsb_LUCAS_0$lsb_pa_house_0<- ifelse(lucas_w2$Lucas21a_07 == 0 & lucas_w2$Lucas21b_07 ==0, 0, ifelse(lucas_w2$Lucas21a_07==1 | lucas_w2$Lucas21b_07 ==1,1,NA))
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_1  
@@ -2320,7 +2320,7 @@ opal.logout(erasmus_opal)
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2423,12 +2423,12 @@ opal.logout(erasmus_opal)
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 #This is where the R-script will be written
-
+lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31a_07 ==0, 0, ifelse(lucas_w2$Lucas30a_07==1 | lucas_w2$Lucas31a_07 ==1,1,NA))
 ```   
 ### **Variable label**: Sprots or exercise      
 **Variable name**:  lsb_pa_sport_1  
@@ -2559,7 +2559,7 @@ opal.logout(erasmus_opal)
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2707,7 +2707,7 @@ opal.logout(erasmus_opal)
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2765,7 +2765,7 @@ opal.logout(erasmus_opal)
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2823,7 +2823,7 @@ opal.logout(erasmus_opal)
 0 |   Does not drinks water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2895,7 +2895,7 @@ opal.logout(erasmus_opal)
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2968,7 +2968,7 @@ opal.logout(erasmus_opal)
 **Variable unit**:  hours/night  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3058,7 +3058,7 @@ opal.logout(erasmus_opal)
 0 |  Never has difficulty falling a sleep
 1 |  Sometimes has difficulty falling a sleep
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3156,7 +3156,7 @@ opal.logout(erasmus_opal)
 2 |  Fairly good
 3 |  Very good  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
