@@ -11,18 +11,18 @@ library(opal)
 erasmus_opal <- opal.login()
 #Login to Opal server and assign the content of the RECORD table(s) to your RStudio environment
 # RECORD wave 1, part 1
-opal.assign.table.tibble(erasmus_opal, 'RECORD_w1_1', 'RECORD.RECORD_w1_1') 
+opal.assign.table.tibble(erasmus_opal, 'RECORD_w1_1', 'RECORD.RECORD_w1_1', variables= list('Q27_d_1','Q27_d_2','Q28_1_2','Q28_1_1','Q28_1_4','Q28_1_5','Q28_1_3','Q30','Q29','Qm13','Qm14','Qm77','Qm16','Qm17a')) 
 RECORD_w1_1 <- opal.execute(erasmus_opal,'RECORD_w1_1')
 # RECORD wave 1, part 2
-opal.assign.table.tibble(erasmus_opal, 'RECORD_w1_2', 'RECORD.RECORD_w1_2') 
+opal.assign.table.tibble(erasmus_opal, 'RECORD_w1_2', 'RECORD.RECORD_w1_2',variables=list('neverdrinker','nbglass_alcohol','drinker_cgi','quitdrinker','packyear_current','packyear_former','fume_pipe','smoker','nonsmoker','formsmoker','q27_glob_tot','q27_autre_qu2','q27_trav_nqu2','q27_autre_nqu2','q27_trav_qu2','q27_course_nqu2','q27_course_qu2','q27_course_tot','q27_autre_nqu2','q27_glob_nqu','q27_util_nqu','q27_util_tot','q27_util_qu','q27_promen_qu2','q27_promen_nqu2','q27_promen_tot','q28_81_2','q28_autre_8_1','q28_autre_4_1','q28_autre_8_2','q28_autre_4_2','q28_autre_7_1','q28_autre_7_2','q28_49_1','q28_49_2','fruitleg','fruits_inf1','fruits_1j2','fruits_sup3','fruits_2j3','consommation_eau','smoker','nonsmoker')) 
 RECORD_w1_2 <- opal.execute(erasmus_opal,'RECORD_w1_2')
 # RECORD wave 2
-opal.assign.table.tibble(erasmus_opal, 'RECORD_w2', 'RECORD.RECORD_W2') 
+opal.assign.table.tibble(erasmus_opal, 'RECORD_w2', 'RECORD.RECORD_W2', variables =list('P22_Q1_1443','P22_Q1_373','P22_Q2_1444','P22_Q2_374','P23_Q1_405','P23_Q1_404','P23_Q1_401','P26_Q2_647','P26_Q2_645','P26_Q2_646','Qm12','Qm13','Qm76','Qm75','P20_Q1_327','Qm10','Qm10b','Qm10a','Qm18','Qm19A','Qm19a','P26_Q4_655','P26_Q4_653','P26_Q4_654','P20_Q1_328','P20_Q1_329','P20_Q1_330')) 
 RECORD_w2 <- opal.execute(erasmus_opal,'RECORD_w2')
 ```
 ## Assign participant id as first column of your harmonized dataframes
 ```{r, echo=FALSE}
-lsb_RECORD_0 <- data.frame(id = RECORD_w1$id)
+lsb_RECORD_0 <- data.frame(id = RECORD_w1_1$id)
 lsb_RECORD_1 <- data.frame(id = RECORD_w2$id)
 ```
 
@@ -52,11 +52,11 @@ opal.logout(erasmus_opal)
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_0$lsb_alc_cur_0<- as.numeric(recode(RECORD_w1_2$drinker_cgi, drinker='1',neverdrinker='0',quitdrinker='0',softdrinker='1',.default = NA_character_))
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -71,11 +71,11 @@ opal.logout(erasmus_opal)
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol   
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_1$lsb_alc_cur_1<- recode(RECORD_w2$Qm10, O=1, N=0)
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -90,11 +90,11 @@ opal.logout(erasmus_opal)
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -113,7 +113,7 @@ opal.logout(erasmus_opal)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -128,11 +128,11 @@ opal.logout(erasmus_opal)
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -147,11 +147,10 @@ opal.logout(erasmus_opal)
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -166,11 +165,11 @@ opal.logout(erasmus_opal)
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -186,11 +185,11 @@ opal.logout(erasmus_opal)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_0$lsb_alc_ever_0<- recode(RECORD_w1_2$neverdrinker, '0'=1, '1'=0)
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -205,11 +204,12 @@ opal.logout(erasmus_opal)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  
+**Harmonization status**: complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10b == 1 & RECORD_w2$Qm10 == 'N', 0, ifelse(RECORD_w2$Qm10b == 2 | RECORD_w2$Qm10 == 'O', 1, NA))
+
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -224,11 +224,10 @@ opal.logout(erasmus_opal)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -243,11 +242,10 @@ opal.logout(erasmus_opal)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -262,11 +260,11 @@ opal.logout(erasmus_opal)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -281,11 +279,11 @@ opal.logout(erasmus_opal)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -300,11 +298,11 @@ opal.logout(erasmus_opal)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -321,11 +319,11 @@ opal.logout(erasmus_opal)
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -341,11 +339,11 @@ opal.logout(erasmus_opal)
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -361,11 +359,11 @@ opal.logout(erasmus_opal)
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -381,11 +379,11 @@ opal.logout(erasmus_opal)
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -401,11 +399,11 @@ opal.logout(erasmus_opal)
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -421,11 +419,11 @@ opal.logout(erasmus_opal)
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -441,11 +439,11 @@ opal.logout(erasmus_opal)
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -456,11 +454,11 @@ opal.logout(erasmus_opal)
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
@@ -470,11 +468,11 @@ opal.logout(erasmus_opal)
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
@@ -484,11 +482,10 @@ opal.logout(erasmus_opal)
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
@@ -498,11 +495,11 @@ opal.logout(erasmus_opal)
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -513,11 +510,11 @@ opal.logout(erasmus_opal)
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Current quantity of wine consumed per week  
@@ -527,11 +524,11 @@ opal.logout(erasmus_opal)
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Current quantity of wine consumed per week  
@@ -541,11 +538,10 @@ opal.logout(erasmus_opal)
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
 
 ```  
 ### **Variable label**:   Current quantity of wine consumed per week  
@@ -555,11 +551,10 @@ opal.logout(erasmus_opal)
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
 
 ```  
 
@@ -571,11 +566,11 @@ opal.logout(erasmus_opal)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
@@ -586,11 +581,11 @@ opal.logout(erasmus_opal)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
@@ -601,11 +596,11 @@ opal.logout(erasmus_opal)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
@@ -616,11 +611,11 @@ opal.logout(erasmus_opal)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -632,11 +627,11 @@ opal.logout(erasmus_opal)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
@@ -647,11 +642,11 @@ opal.logout(erasmus_opal)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
@@ -662,11 +657,11 @@ opal.logout(erasmus_opal)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
@@ -677,11 +672,11 @@ opal.logout(erasmus_opal)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -699,11 +694,11 @@ opal.logout(erasmus_opal)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_0$lsb_smk_cur_0<- recode(RECORD_w1_1$Qm16, '1'=0,'3'=0,'2'=1,'4'=1)
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -718,11 +713,11 @@ opal.logout(erasmus_opal)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_1$lsb_smk_cur_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=0,'4'=1)
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -737,11 +732,11 @@ opal.logout(erasmus_opal)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -756,11 +751,11 @@ opal.logout(erasmus_opal)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -775,11 +770,11 @@ opal.logout(erasmus_opal)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -794,11 +789,11 @@ opal.logout(erasmus_opal)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -813,11 +808,11 @@ opal.logout(erasmus_opal)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -834,11 +829,11 @@ opal.logout(erasmus_opal)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_0$lsb_smk_status_0<- recode(RECORD_w1_1$Qm16, '1'=0,'2'=2,'4'=2,'3'=1)
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -854,11 +849,11 @@ opal.logout(erasmus_opal)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_1$lsb_smk_status_1<- recode(RECORD_w2$Qm18,'1'=0,'2'=2,'4'=2,'3'=1)
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -874,11 +869,11 @@ opal.logout(erasmus_opal)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -894,11 +889,11 @@ opal.logout(erasmus_opal)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -914,11 +909,11 @@ opal.logout(erasmus_opal)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -934,11 +929,11 @@ opal.logout(erasmus_opal)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -954,11 +949,11 @@ opal.logout(erasmus_opal)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -974,11 +969,11 @@ opal.logout(erasmus_opal)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_0$lsb_smk_ever_0<- recode(RECORD_w1_1$Qm16, '1'=0,'2'=1,'3'=1,'4'=1)
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -993,12 +988,11 @@ opal.logout(erasmus_opal)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
-
+lsb_RECORD_1$lsb_smk_ever_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=1,'4'=1)
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_2    
@@ -1012,11 +1006,11 @@ opal.logout(erasmus_opal)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1031,11 +1025,11 @@ opal.logout(erasmus_opal)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1050,11 +1044,11 @@ opal.logout(erasmus_opal)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1069,11 +1063,11 @@ opal.logout(erasmus_opal)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1088,11 +1082,11 @@ opal.logout(erasmus_opal)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -1103,11 +1097,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_0$lsb_cig_qty_0<-RECORD_w1_1$Qm17a
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
@@ -1117,11 +1111,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
@@ -1131,11 +1125,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
@@ -1145,11 +1139,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
@@ -1159,11 +1153,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
@@ -1173,11 +1167,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
@@ -1187,11 +1181,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -1202,11 +1196,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking initiation age    
@@ -1216,11 +1210,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking initiation age    
@@ -1230,11 +1224,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking initiation age    
@@ -1244,11 +1238,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking initiation age    
@@ -1258,11 +1252,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking initiation age    
@@ -1272,11 +1266,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking initiation age    
@@ -1286,11 +1280,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -1301,11 +1295,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -1315,11 +1309,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -1329,11 +1323,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -1343,11 +1337,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -1357,11 +1351,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -1371,11 +1365,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -1385,11 +1379,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -1400,11 +1394,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_w1_2$packyear_current, RECORD_w1_2$packyear_former)
 
 ```  
 ### **Variable label**:  Pack years  
@@ -1414,11 +1408,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Pack years  
@@ -1428,11 +1422,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -1452,11 +1446,11 @@ opal.logout(erasmus_opal)
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**: Frequency of walking    
@@ -1473,11 +1467,11 @@ opal.logout(erasmus_opal)
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**: Frequency of walking    
@@ -1494,11 +1488,11 @@ opal.logout(erasmus_opal)
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**: Frequency of walking    
@@ -1515,11 +1509,11 @@ opal.logout(erasmus_opal)
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**: Frequency of walking    
@@ -1536,11 +1530,11 @@ opal.logout(erasmus_opal)
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**: Frequency of walking    
@@ -1557,11 +1551,11 @@ opal.logout(erasmus_opal)
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**: Frequency of walking    
@@ -1578,11 +1572,11 @@ opal.logout(erasmus_opal)
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -1601,12 +1595,18 @@ opal.logout(erasmus_opal)
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
-
+lsb_RECORD_0$lsb_pa_walk_time_0<-  ifelse( ((as.numeric(RECORD_w1_2$q27_glob_tot)/7))<30,0,
+                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>29 &
+                                             (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<60,1,
+                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>59&
+                                                  (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<120,2,
+                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>119 &
+                                                     (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<240,3,
+                                    ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>239,4,NA)))))
 ```  
 ### **Variable label**:  Average walking time   
 **Variable name**:   lsb_pa_walk_time_1  
@@ -1623,11 +1623,25 @@ opal.logout(erasmus_opal)
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more   
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+#converting P22_Q1_373 to proper foramt
+RECORD_w2$P_22_Q1_373_inter<- as.POSIXlt(RECORD_w2$P22_Q1_373, format="%H:%M")
+RECORD_w2$P_22_Q1_373_inter<- substring(RECORD_w2$P_22_Q1_373_inter,11,16)
+RECORD_w2$P_22_Q1_373_inter<-as.difftime(RECORD_w2$P_22_Q1_373_inter, format="%H:%M", units="mins")
+#converting P22_Q2_374 to proper foramt
+RECORD_w2$P_22_Q2_374_inter<- as.POSIXlt(RECORD_w2$P22_Q2_374, format="%H:%M")
+RECORD_w2$P_22_Q2_374_inter<- substring(RECORD_w2$P_22_Q2_374_inter,11,16)
+RECORD_w2$P_22_Q2_374_inter<-as.difftime(RECORD_w2$P_22_Q2_374_inter, format="%H:%M", units="mins")
+#average total walk time per day
+RECORD_w2$total_walk_time_pastweek_day<- round(((as.numeric(RECORD_w2$P_22_Q2_374_inter))+ (as.numeric(RECORD_w2$P_22_Q1_373_inter)))/7, digits=0)
+#Harmonized variable
+lsb_RECORD_1$lsb_pa_walk_time_1<- ifelse(RECORD_w2$total_walk_time_pastweek_day<30,0,
+ifelse(29<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pastweek_day<60,1,
+ifelse(59<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pastweek_day<120,2,
+ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pastweek_day<240,3,NA))))
 
 ```  
 ### **Variable label**:  Average walking time    
@@ -1645,11 +1659,11 @@ opal.logout(erasmus_opal)
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more   
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average walking time     
@@ -1667,11 +1681,11 @@ opal.logout(erasmus_opal)
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more   
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average walking time    
@@ -1689,11 +1703,11 @@ opal.logout(erasmus_opal)
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more     
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average walking time     
@@ -1711,11 +1725,11 @@ opal.logout(erasmus_opal)
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more     
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average walking time     
@@ -1733,11 +1747,11 @@ opal.logout(erasmus_opal)
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more    
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -1748,7 +1762,7 @@ opal.logout(erasmus_opal)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2714,11 +2728,12 @@ opal.logout(erasmus_opal)
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_0$lsb_veg_0<- ifelse(RECORD_w1_1$Q30 < 1, 0,
+                                ifelse(RECORD_w1_1$Q30 > 0,1,NA))
 
 ```  
 ### **Variable label**:  Daily vegetable consumption  
@@ -2733,11 +2748,12 @@ opal.logout(erasmus_opal)
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
-**Harmonization status**:  
+**Harmonization status**: complete 
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_1$lsb_veg_1<- ifelse(RECORD_w2$P26_Q2_647==1,0,
+                                ifelse(RECORD_w2$P26_Q2_646 == 1 | RECORD_w2$P26_Q2_645 ==1,1,NA))
 
 ```  
 ### **Variable label**:  Daily vegetable consumption  
@@ -2752,11 +2768,11 @@ opal.logout(erasmus_opal)
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -2772,11 +2788,12 @@ opal.logout(erasmus_opal)
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_0$lsb_fruit_0<- ifelse(RECORD_w1_1$Q29 < 1, 0,
+                                ifelse(RECORD_w1_1$Q29 > 0,1,NA))
 
 ```  
 ### **Variable label**:  Daily fruit consumption  
@@ -2791,11 +2808,12 @@ opal.logout(erasmus_opal)
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_1$lsb_fruit_1<- ifelse(RECORD_w2$P26_Q4_653==1,0,
+                                ifelse(RECORD_w2$P26_Q4_654 == 1 | RECORD_w2$P26_Q4_655 ==1,1,NA))
 
 ```  
 ### **Variable label**:  Daily fruit consumption  
@@ -2810,11 +2828,10 @@ opal.logout(erasmus_opal)
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
 
 ```  
 
@@ -2830,11 +2847,12 @@ opal.logout(erasmus_opal)
 0 |   Does not drinks water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_0$lsb_water_0<- ifelse(RECORD_w1_2$consommation_eau<1,0,
+                                  ifelse(RECORD_w1_2$consommation_eau>0,1,NA))
 
 ```  
 ### **Variable label**:  Daily water consumption  
@@ -2849,11 +2867,12 @@ opal.logout(erasmus_opal)
 0 |   Does not drinks water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 < 1, 0,
+                                  ifelse(RECORD_w2$Qm12 > 0, 1,NA))
 
 ```  
 ### **Variable label**:  Daily water consumption  
@@ -2868,11 +2887,11 @@ opal.logout(erasmus_opal)
 0 |   Does not drinks water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Daily water consumption  
@@ -2887,11 +2906,11 @@ opal.logout(erasmus_opal)
 0 |   Does not drinks water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -2902,11 +2921,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Quantity daily coffee  
@@ -2916,11 +2935,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  cups/day 
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Quantity daily coffee  
@@ -2930,11 +2949,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Quantity daily coffee  
@@ -2944,11 +2963,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  cups/day 
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Quantity daily coffee  
@@ -2958,11 +2977,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -2975,11 +2994,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  hours/night  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average sleep hours  
@@ -2989,11 +3008,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  hours/night   
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_1$lsb_sleep_hours_1 <- as.numeric(RECORD_w2$Qm76)
 
 ```  
 ### **Variable label**:  Average sleep hours  
@@ -3003,11 +3022,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  hours/night 
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average sleep hours  
@@ -3017,11 +3036,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  hours/night
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average sleep hours  
@@ -3031,11 +3050,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  hours/night   
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average sleep hours  
@@ -3045,11 +3064,11 @@ opal.logout(erasmus_opal)
 **Variable unit**:  hours/night    
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -3065,11 +3084,11 @@ opal.logout(erasmus_opal)
 0 |  Never has difficulty falling a sleep
 1 |  Sometimes has difficulty falling a sleep
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+lsb_RECORD_0$lsb_sleep_diff_0<- recode(RECORD_w1_1$Qm77, 'O'=1, 'N'=0)
    
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
@@ -3084,12 +3103,17 @@ opal.logout(erasmus_opal)
 0 |  Never has difficulty falling a sleep
 1 |  Sometimes has difficulty falling a sleep
 
-**Harmonization status**:  
+**Harmonization status**:  complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
-   
+#lsb_RECORD_1$lsb_sleep_diff_1<- ifelse(RECORD_w2$P20_Q1_327 == 1, 0,
+#       ifelse(RECORD_w2$P20_Q1_328 == 1 | RECORD_w2$P20_Q1_329==1 | RECORD_w2$P20_Q1_330==1,1,NA))
+#   0    1 <NA> 
+#2322 4136    0
+lsb_RECORD_1$lsb_sleep_diff_1 <- recode(RECORD_w2$Qm75, 'O'=1, 'N'=0)  
+# 0    1 <NA> 
+#4201 2116  141
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
 **Variable name**:  lsb_sleep_diff_3  
@@ -3103,11 +3127,11 @@ opal.logout(erasmus_opal)
 0 |  Never has difficulty falling a sleep
 1 |  Sometimes has difficulty falling a sleep
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
    
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
@@ -3122,11 +3146,11 @@ opal.logout(erasmus_opal)
 0 |  Never has difficulty falling a sleep
 1 |  Sometimes has difficulty falling a sleep
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
    
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
@@ -3141,11 +3165,11 @@ opal.logout(erasmus_opal)
 0 |  Never has difficulty falling a sleep
 1 |  Sometimes has difficulty falling a sleep
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
    
 ```  
 
@@ -3163,11 +3187,11 @@ opal.logout(erasmus_opal)
 2 |  Fairly good
 3 |  Very good  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Quality of sleep  
@@ -3184,11 +3208,11 @@ opal.logout(erasmus_opal)
 2 |  Fairly good
 3 |  Very good  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Quality of sleep  
@@ -3205,11 +3229,11 @@ opal.logout(erasmus_opal)
 2 |  Fairly good
 3 |  Very good  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Quality of sleep  
@@ -3226,11 +3250,11 @@ opal.logout(erasmus_opal)
 2 |  Fairly good
 3 |  Very good  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
