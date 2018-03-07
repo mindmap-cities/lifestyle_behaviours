@@ -49,7 +49,7 @@ opal.logout(erasmus_opal)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+#test
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
