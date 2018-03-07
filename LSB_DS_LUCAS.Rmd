@@ -3055,8 +3055,8 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Never has difficulty falling a sleep
-1 |  Sometimes has difficulty falling a sleep
+0 |  Never has difficulty falling asleep
+1 |  Sometimes has difficulty falling asleep
 
 **Harmonization status**:  impossible
 **Harmonization comment**:   
@@ -3074,8 +3074,8 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Never has difficulty falling a sleep
-1 |  Sometimes has difficulty falling a sleep
+0 |  Never has difficulty falling asleep
+1 |  Sometimes has difficulty falling asleep
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -3093,8 +3093,8 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Never has difficulty falling a sleep
-1 |  Sometimes has difficulty falling a sleep
+0 |  Never has difficulty falling asleep
+1 |  Sometimes has difficulty falling asleep
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -3112,8 +3112,8 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Never has difficulty falling a sleep
-1 |  Sometimes has difficulty falling a sleep
+0 |  Never has difficulty falling asleep
+1 |  Sometimes has difficulty falling asleep
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -3131,8 +3131,8 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Never has difficulty falling a sleep
-1 |  Sometimes has difficulty falling a sleep
+0 |  Never has difficulty falling asleep
+1 |  Sometimes has difficulty falling asleep
 
 **Harmonization status**:  
 **Harmonization comment**:   
