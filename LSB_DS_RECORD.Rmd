@@ -208,8 +208,12 @@ lsb_RECORD_0$lsb_alc_ever_0<- recode(RECORD_w1_2$neverdrinker, '0'=1, '1'=0)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10b == 1 & RECORD_w2$Qm10 == 'N', 0, ifelse(RECORD_w2$Qm10b == 2 | RECORD_w2$Qm10 == 'O', 1, NA))
+#lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10b == 1 & RECORD_w2$Qm10 == 'N', 0, #ifelse(RECORD_w2$Qm10b == 2 | RECORD_w2$Qm10 == 'O', 1, NA))
 
+lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1,0,
+                                  ifelse(RECORD_w2$Qm10 == 'N' & RECORD_w2$Qm10b == 2 |
+                                 RECORD_w2$Qm10 == 'O' & is.na(RECORD_w2$Qm10b),1,NA))
+                                    
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -1595,18 +1599,18 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more  
 
-**Harmonization status**:  complete
-**Harmonization comment**:   
+**Harmonization status**:  impossible
+**Harmonization comment**:   NA's are coded to 0
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_pa_walk_time_0<-  ifelse( ((as.numeric(RECORD_w1_2$q27_glob_tot)/7))<30,0,
-                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>29 &
-                                             (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<60,1,
-                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>59&
-                                                  (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<120,2,
-                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>119 &
-                                                     (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<240,3,
-                                    ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>239,4,NA)))))
+#lsb_RECORD_0$lsb_pa_walk_time_0<-  ifelse( ((as.numeric(RECORD_w1_2$q27_glob_tot)/7))<30,0,
+#                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>29 &
+#                                             (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<60,1,
+#                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>59&
+#                                                  (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<120,2,
+#                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>119 &
+#                                                    (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<240,3,
+#                                    ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>239,4,NA)))))
 ```  
 ### **Variable label**:  Average walking time   
 **Variable name**:   lsb_pa_walk_time_1  
@@ -1623,25 +1627,25 @@ lsb_RECORD_0$lsb_pa_walk_time_0<-  ifelse( ((as.numeric(RECORD_w1_2$q27_glob_tot
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more   
 
-**Harmonization status**:  complete
-**Harmonization comment**:   
+**Harmonization status**:  impossible
+**Harmonization comment**:  NA's are coded to 0 
 **R script**:  
 ```{r, echo=TRUE}
 #converting P22_Q1_373 to proper foramt
-RECORD_w2$P_22_Q1_373_inter<- as.POSIXlt(RECORD_w2$P22_Q1_373, format="%H:%M")
-RECORD_w2$P_22_Q1_373_inter<- substring(RECORD_w2$P_22_Q1_373_inter,11,16)
-RECORD_w2$P_22_Q1_373_inter<-as.difftime(RECORD_w2$P_22_Q1_373_inter, format="%H:%M", units="mins")
+#RECORD_w2$P_22_Q1_373_inter<- as.POSIXlt(RECORD_w2$P22_Q1_373, format="%H:%M")
+#RECORD_w2$P_22_Q1_373_inter<- substring(RECORD_w2$P_22_Q1_373_inter,11,16)
+#RECORD_w2$P_22_Q1_373_inter<-as.difftime(RECORD_w2$P_22_Q1_373_inter, format="%H:%M", units="mins")
 #converting P22_Q2_374 to proper foramt
-RECORD_w2$P_22_Q2_374_inter<- as.POSIXlt(RECORD_w2$P22_Q2_374, format="%H:%M")
-RECORD_w2$P_22_Q2_374_inter<- substring(RECORD_w2$P_22_Q2_374_inter,11,16)
-RECORD_w2$P_22_Q2_374_inter<-as.difftime(RECORD_w2$P_22_Q2_374_inter, format="%H:%M", units="mins")
+#RECORD_w2$P_22_Q2_374_inter<- as.POSIXlt(RECORD_w2$P22_Q2_374, format="%H:%M")
+#RECORD_w2$P_22_Q2_374_inter<- substring(RECORD_w2$P_22_Q2_374_inter,11,16)
+#RECORD_w2$P_22_Q2_374_inter<-as.difftime(RECORD_w2$P_22_Q2_374_inter, format="%H:%M", units="mins")
 #average total walk time per day
-RECORD_w2$total_walk_time_pastweek_day<- round(((as.numeric(RECORD_w2$P_22_Q2_374_inter))+ (as.numeric(RECORD_w2$P_22_Q1_373_inter)))/7, digits=0)
+#RECORD_w2$total_walk_time_pastweek_day<- round(((as.numeric(RECORD_w2$P_22_Q2_374_inter))+ (as.numeric(RECORD_w2$P_22_Q1_373_inter)))/7, digits=0)
 #Harmonized variable
-lsb_RECORD_1$lsb_pa_walk_time_1<- ifelse(RECORD_w2$total_walk_time_pastweek_day<30,0,
-ifelse(29<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pastweek_day<60,1,
-ifelse(59<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pastweek_day<120,2,
-ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pastweek_day<240,3,NA))))
+#lsb_RECORD_1$lsb_pa_walk_time_1<- ifelse(RECORD_w2$total_walk_time_pastweek_day<30,0,
+#ifelse(29<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pastweek_day<60,1,
+#ifelse(59<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pastweek_day<120,2,
+#ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pastweek_day<240,3,NA))))
 
 ```  
 ### **Variable label**:  Average walking time    
@@ -1762,11 +1766,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  complete
-**Harmonization comment**:   
+**Harmonization status**:  impossible
+**Harmonization comment**:   NA's are coded to 0. Also, do we include Transportation for work and other transportation with total utilitarian transportation?
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average walking time for transportation    
@@ -1776,11 +1780,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
-**Harmonization comment**:   
+**Harmonization status**:  impossible
+**Harmonization comment**:   NA's are coded to 0. Also, do we include Transportation for work and other transportation with total utilitarian transportation?   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average walking time for transportation    
@@ -1790,11 +1794,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average walking for transportation    
@@ -1804,11 +1808,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -1819,11 +1823,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
-**Harmonization comment**:   
+**Harmonization status**:  impossible
+**Harmonization comment**:   NA's are coded to 0
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average walking time for leisure  
@@ -1833,11 +1837,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
-**Harmonization comment**:   
+**Harmonization status**:  impossible
+**Harmonization comment**:   NA's are coded to 0
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average walking time for leisure  
@@ -1847,11 +1851,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average walking for leisure  
@@ -1861,11 +1865,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -1877,10 +1881,10 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Category coding**:  N/A  
 
 **Harmonization status**:  
-**Harmonization comment**:   
+**Harmonization comment**:  
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average cycling time    
@@ -1894,7 +1898,7 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average cycling time    
@@ -1904,11 +1908,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average cycling time    
@@ -1918,11 +1922,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average cycling time    
@@ -1932,11 +1936,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average cycling time    
@@ -1946,11 +1950,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average cycling time    
@@ -1960,11 +1964,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -1980,11 +1984,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Gardening    
@@ -1999,11 +2003,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Gardening    
@@ -2018,11 +2022,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Gardening    
@@ -2037,11 +2041,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Gardening    
@@ -2056,11 +2060,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Gardening    
@@ -2075,11 +2079,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Gardening    
@@ -2094,11 +2098,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average gardening time    
@@ -2108,11 +2112,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
-**Harmonization comment**:   
+**Harmonization status**:  impossible
+**Harmonization comment**:   Na's coded as 0
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average gardening time    
@@ -2122,11 +2126,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average gardening time    
@@ -2136,11 +2140,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average gardening time    
@@ -2150,11 +2154,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average gardening time    
@@ -2164,11 +2168,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average gardening time    
@@ -2178,11 +2182,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average gardening time    
@@ -2192,11 +2196,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -2216,7 +2220,7 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Household activities  
@@ -2235,7 +2239,7 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Household activities  
@@ -2254,7 +2258,7 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Household activities  
@@ -2273,7 +2277,7 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Household activities  
@@ -2292,7 +2296,7 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Household activities  
@@ -2311,7 +2315,7 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Household activities  
@@ -2330,7 +2334,7 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -2345,7 +2349,7 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average household activities time      
@@ -2359,7 +2363,7 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average household activities time      
@@ -2369,11 +2373,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average household activities time      
@@ -2383,11 +2387,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average household activities time      
@@ -2397,11 +2401,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average household activities time      
@@ -2411,11 +2415,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average household activities time      
@@ -2425,11 +2429,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**: Sprots or exercise      
@@ -2444,11 +2448,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```   
 ### **Variable label**: Sprots or exercise      
@@ -2463,11 +2467,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```   
 ### **Variable label**: Sprots or exercise      
@@ -2482,11 +2486,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```   
 ### **Variable label**: Sprots or exercise      
@@ -2501,11 +2505,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```   
 ### **Variable label**: Sprots or exercise      
@@ -2520,11 +2524,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```   
 ### **Variable label**: Sprots or exercise      
@@ -2539,11 +2543,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```   
 ### **Variable label**: Sprots or exercise      
@@ -2558,11 +2562,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```   
 
@@ -2580,11 +2584,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -2601,11 +2605,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week   
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -2622,11 +2626,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -2643,11 +2647,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -2664,11 +2668,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -2685,11 +2689,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -2706,11 +2710,11 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+
 
 ```  
 
@@ -2732,7 +2736,7 @@ ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pa
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_veg_0<- ifelse(RECORD_w1_1$Q30 < 1, 0,
+lsb_RECORD_0$lsb_veg_0<- ifelse(RECORD_w1_1$Q30 ==0, 0,
                                 ifelse(RECORD_w1_1$Q30 > 0,1,NA))
 
 ```  
@@ -2792,7 +2796,7 @@ lsb_RECORD_1$lsb_veg_1<- ifelse(RECORD_w2$P26_Q2_647==1,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_fruit_0<- ifelse(RECORD_w1_1$Q29 < 1, 0,
+lsb_RECORD_0$lsb_fruit_0<- ifelse(RECORD_w1_1$Q29 ==0, 0,
                                 ifelse(RECORD_w1_1$Q29 > 0,1,NA))
 
 ```  
@@ -2851,7 +2855,7 @@ lsb_RECORD_1$lsb_fruit_1<- ifelse(RECORD_w2$P26_Q4_653==1,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_water_0<- ifelse(RECORD_w1_2$consommation_eau<1,0,
+lsb_RECORD_0$lsb_water_0<- ifelse(RECORD_w1_2$consommation_eau==0,0,
                                   ifelse(RECORD_w1_2$consommation_eau>0,1,NA))
 
 ```  
@@ -2871,7 +2875,7 @@ lsb_RECORD_0$lsb_water_0<- ifelse(RECORD_w1_2$consommation_eau<1,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 < 1, 0,
+lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 == 0, 0,
                                   ifelse(RECORD_w2$Qm12 > 0, 1,NA))
 
 ```  
@@ -3081,8 +3085,8 @@ lsb_RECORD_1$lsb_sleep_hours_1 <- as.numeric(RECORD_w2$Qm76)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Never has difficulty falling a sleep
-1 |  Sometimes has difficulty falling a sleep
+0 |  Never has difficulty falling asleep
+1 |  Sometimes has difficulty falling asleep
 
 **Harmonization status**:  complete
 **Harmonization comment**:   
@@ -3100,8 +3104,8 @@ lsb_RECORD_0$lsb_sleep_diff_0<- recode(RECORD_w1_1$Qm77, 'O'=1, 'N'=0)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Never has difficulty falling a sleep
-1 |  Sometimes has difficulty falling a sleep
+0 |  Never has difficulty falling asleep
+1 |  Sometimes has difficulty falling asleep
 
 **Harmonization status**:  complete
 **Harmonization comment**:   
@@ -3124,8 +3128,8 @@ lsb_RECORD_1$lsb_sleep_diff_1 <- recode(RECORD_w2$Qm75, 'O'=1, 'N'=0)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Never has difficulty falling a sleep
-1 |  Sometimes has difficulty falling a sleep
+0 |  Never has difficulty falling asleep
+1 |  Sometimes has difficulty falling asleep
 
 **Harmonization status**:  impossible
 **Harmonization comment**:   
@@ -3143,8 +3147,8 @@ lsb_RECORD_1$lsb_sleep_diff_1 <- recode(RECORD_w2$Qm75, 'O'=1, 'N'=0)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Never has difficulty falling a sleep
-1 |  Sometimes has difficulty falling a sleep
+0 |  Never has difficulty falling asleep
+1 |  Sometimes has difficulty falling asleep
 
 **Harmonization status**:  impossible
 **Harmonization comment**:   
@@ -3162,8 +3166,8 @@ lsb_RECORD_1$lsb_sleep_diff_1 <- recode(RECORD_w2$Qm75, 'O'=1, 'N'=0)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Never has difficulty falling a sleep
-1 |  Sometimes has difficulty falling a sleep
+0 |  Never has difficulty falling asleep
+1 |  Sometimes has difficulty falling asleep
 
 **Harmonization status**:  impossible
 **Harmonization comment**:   
