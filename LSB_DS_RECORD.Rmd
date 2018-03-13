@@ -11,13 +11,13 @@ library(opal)
 erasmus_opal <- opal.login()
 #Login to Opal server and assign the content of the RECORD table(s) to your RStudio environment
 # RECORD wave 1, part 1
-opal.assign.table.tibble(erasmus_opal, 'RECORD_w1_1', 'RECORD.RECORD_w1_1', variables= list('Q27_d_1','Q27_d_2','Q28_1_2','Q28_1_1','Q28_1_4','Q28_1_5','Q28_1_3','Q30','Q29','Qm13','Qm14','Qm77','Qm16','Qm17a')) 
+opal.assign.table.tibble(erasmus_opal, 'RECORD_w1_1', 'RECORD.RECORD_w1_1', variables= list('code_barre','Q27_d_1','Q27_d_2','Q28_1_2','Q28_1_1','Q28_1_4','Q28_1_5','Q28_1_3','Q30','Q29','Qm13','Qm14','Qm77','Qm16','Qm17a','Q28_31_2','Q28_31_1','Q28_31_3','Q28_31_4','Q28_31_5')) 
 RECORD_w1_1 <- opal.execute(erasmus_opal,'RECORD_w1_1')
 # RECORD wave 1, part 2
 opal.assign.table.tibble(erasmus_opal, 'RECORD_w1_2', 'RECORD.RECORD_w1_2',variables=list('neverdrinker','nbglass_alcohol','drinker_cgi','quitdrinker','packyear_current','packyear_former','fume_pipe','smoker','nonsmoker','formsmoker','q27_glob_tot','q27_autre_qu2','q27_trav_nqu2','q27_autre_nqu2','q27_trav_qu2','q27_course_nqu2','q27_course_qu2','q27_course_tot','q27_autre_nqu2','q27_glob_nqu','q27_util_nqu','q27_util_tot','q27_util_qu','q27_promen_qu2','q27_promen_nqu2','q27_promen_tot','q28_81_2','q28_autre_8_1','q28_autre_4_1','q28_autre_8_2','q28_autre_4_2','q28_autre_7_1','q28_autre_7_2','q28_49_1','q28_49_2','fruitleg','fruits_inf1','fruits_1j2','fruits_sup3','fruits_2j3','consommation_eau','smoker','nonsmoker')) 
 RECORD_w1_2 <- opal.execute(erasmus_opal,'RECORD_w1_2')
 # RECORD wave 2
-opal.assign.table.tibble(erasmus_opal, 'RECORD_w2', 'RECORD.RECORD_W2', variables =list('P22_Q1_1443','P22_Q1_373','P22_Q2_1444','P22_Q2_374','P23_Q1_405','P23_Q1_404','P23_Q1_401','P26_Q2_647','P26_Q2_645','P26_Q2_646','Qm12','Qm13','Qm76','Qm75','P20_Q1_327','Qm10','Qm10b','Qm10a','Qm18','Qm19A','Qm19a','P26_Q4_655','P26_Q4_653','P26_Q4_654','P20_Q1_328','P20_Q1_329','P20_Q1_330')) 
+opal.assign.table.tibble(erasmus_opal, 'RECORD_w2', 'RECORD.RECORD_W2', variables =list('P22_Q1_1443','P22_Q1_373','P22_Q2_1444','P22_Q2_374','P23_Q1_405','P23_Q1_404','P23_Q1_401','P26_Q2_647','P26_Q2_645','P26_Q2_646','Qm12','Qm13','Qm76','Qm75','P20_Q1_327','Qm10','Qm10b','Qm10a','Qm18','Qm19A','Qm19a','P26_Q4_655','P26_Q4_653','P26_Q4_654','P20_Q1_328','P20_Q1_329','P20_Q1_330','P23_Q31_585','P23_Q31_584','P23_Q31_583','P23_Q31_582')) 
 RECORD_w2 <- opal.execute(erasmus_opal,'RECORD_w2')
 ```
 ## Assign participant id as first column of your harmonized dataframes
@@ -52,11 +52,11 @@ opal.logout(erasmus_opal)
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_alc_cur_0<- as.numeric(recode(RECORD_w1_2$drinker_cgi, drinker='1',neverdrinker='0',quitdrinker='0',softdrinker='1',.default = NA_character_))
+lsb_RECORD_0$lsb_alc_cur_0<- as.numeric(recode(as.character(RECORD_w1_2$drinker_cgi), drinker='1',neverdrinker='0',quitdrinker='0',softdrinker='1',.default = NA_character_))
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -71,11 +71,11 @@ lsb_RECORD_0$lsb_alc_cur_0<- as.numeric(recode(RECORD_w1_2$drinker_cgi, drinker=
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol   
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_alc_cur_1<- recode(RECORD_w2$Qm10, O=1, N=0)
+lsb_RECORD_1$lsb_alc_cur_1<- recode(as.character(RECORD_w2$Qm10), O=1, N=0)
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -90,7 +90,7 @@ lsb_RECORD_1$lsb_alc_cur_1<- recode(RECORD_w2$Qm10, O=1, N=0)
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -109,7 +109,7 @@ lsb_RECORD_1$lsb_alc_cur_1<- recode(RECORD_w2$Qm10, O=1, N=0)
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -128,7 +128,7 @@ lsb_RECORD_1$lsb_alc_cur_1<- recode(RECORD_w2$Qm10, O=1, N=0)
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -147,7 +147,7 @@ lsb_RECORD_1$lsb_alc_cur_1<- recode(RECORD_w2$Qm10, O=1, N=0)
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -165,7 +165,7 @@ lsb_RECORD_1$lsb_alc_cur_1<- recode(RECORD_w2$Qm10, O=1, N=0)
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -185,11 +185,11 @@ lsb_RECORD_1$lsb_alc_cur_1<- recode(RECORD_w2$Qm10, O=1, N=0)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_alc_ever_0<- recode(RECORD_w1_2$neverdrinker, '0'=1, '1'=0)
+lsb_RECORD_0$lsb_alc_ever_0<- recode(as.character(RECORD_w1_2$neverdrinker), '0' = 1 , '1' = 0)
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -204,12 +204,10 @@ lsb_RECORD_0$lsb_alc_ever_0<- recode(RECORD_w1_2$neverdrinker, '0'=1, '1'=0)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**: complete  
+**Harmonization status**: complete    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10b == 1 & RECORD_w2$Qm10 == 'N', 0, #ifelse(RECORD_w2$Qm10b == 2 | RECORD_w2$Qm10 == 'O', 1, NA))
-
 lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1,0,
                                   ifelse(RECORD_w2$Qm10 == 'N' & RECORD_w2$Qm10b == 2 |
                                  RECORD_w2$Qm10 == 'O' & is.na(RECORD_w2$Qm10b),1,NA))
@@ -228,7 +226,7 @@ lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -246,7 +244,7 @@ lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -264,7 +262,7 @@ lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -283,7 +281,7 @@ lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -302,7 +300,7 @@ lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -323,7 +321,7 @@ lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -343,7 +341,7 @@ lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -363,7 +361,7 @@ lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -383,7 +381,7 @@ lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -403,7 +401,7 @@ lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -423,7 +421,7 @@ lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -443,7 +441,7 @@ lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -458,7 +456,7 @@ lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -472,7 +470,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -486,7 +484,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -499,7 +497,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -514,7 +512,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -528,7 +526,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -542,7 +540,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -555,7 +553,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -570,7 +568,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -585,8 +583,8 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  impossible
-**Harmonization comment**:   
+**Harmonization status**:  impossible  
+**Harmonization comment**:    
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -600,7 +598,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -615,7 +613,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -631,7 +629,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible   
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -646,7 +644,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -661,7 +659,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -676,7 +674,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -698,11 +696,11 @@ lsb_RECORD_0$lsb_alc_total_0<- as.numeric(RECORD_w1_2$nbglass_alcohol)*7
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_smk_cur_0<- recode(RECORD_w1_1$Qm16, '1'=0,'3'=0,'2'=1,'4'=1)
+lsb_RECORD_0$lsb_smk_cur_0<- recode(as.numeric(RECORD_w1_1$Qm16), '1'=0,'3'=0,'2'=1,'4'=1)
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -717,11 +715,12 @@ lsb_RECORD_0$lsb_smk_cur_0<- recode(RECORD_w1_1$Qm16, '1'=0,'3'=0,'2'=1,'4'=1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_smk_cur_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=0,'4'=1)
+lsb_RECORD_1$lsb_smk_cur_1<- ifelse(RECORD_w2$Qm18=='1'|RECORD_w2$Qm18=='3',0,
+                                    ifelse(RECORD_w2$Qm18=='2'|RECORD_w2$Qm18=='4',1,NA))
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -736,7 +735,7 @@ lsb_RECORD_1$lsb_smk_cur_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=0,'4'=1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -755,7 +754,7 @@ lsb_RECORD_1$lsb_smk_cur_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=0,'4'=1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -774,7 +773,7 @@ lsb_RECORD_1$lsb_smk_cur_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=0,'4'=1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -793,7 +792,7 @@ lsb_RECORD_1$lsb_smk_cur_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=0,'4'=1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -812,7 +811,7 @@ lsb_RECORD_1$lsb_smk_cur_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=0,'4'=1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -833,11 +832,11 @@ lsb_RECORD_1$lsb_smk_cur_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=0,'4'=1)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_smk_status_0<- recode(RECORD_w1_1$Qm16, '1'=0,'2'=2,'4'=2,'3'=1)
+lsb_RECORD_0$lsb_smk_status_0<- recode(as.numeric(RECORD_w1_1$Qm16), '1'=0,'2'=2,'4'=2,'3'=1)
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -853,11 +852,11 @@ lsb_RECORD_0$lsb_smk_status_0<- recode(RECORD_w1_1$Qm16, '1'=0,'2'=2,'4'=2,'3'=1
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_smk_status_1<- recode(RECORD_w2$Qm18,'1'=0,'2'=2,'4'=2,'3'=1)
+lsb_RECORD_1$lsb_smk_status_1<- recode(as.numeric(RECORD_w2$Qm18),'1'=0,'2'=2,'4'=2,'3'=1)
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -873,7 +872,7 @@ lsb_RECORD_1$lsb_smk_status_1<- recode(RECORD_w2$Qm18,'1'=0,'2'=2,'4'=2,'3'=1)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -893,7 +892,7 @@ lsb_RECORD_1$lsb_smk_status_1<- recode(RECORD_w2$Qm18,'1'=0,'2'=2,'4'=2,'3'=1)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -913,7 +912,7 @@ lsb_RECORD_1$lsb_smk_status_1<- recode(RECORD_w2$Qm18,'1'=0,'2'=2,'4'=2,'3'=1)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -933,7 +932,7 @@ lsb_RECORD_1$lsb_smk_status_1<- recode(RECORD_w2$Qm18,'1'=0,'2'=2,'4'=2,'3'=1)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -953,7 +952,7 @@ lsb_RECORD_1$lsb_smk_status_1<- recode(RECORD_w2$Qm18,'1'=0,'2'=2,'4'=2,'3'=1)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -973,11 +972,11 @@ lsb_RECORD_1$lsb_smk_status_1<- recode(RECORD_w2$Qm18,'1'=0,'2'=2,'4'=2,'3'=1)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_smk_ever_0<- recode(RECORD_w1_1$Qm16, '1'=0,'2'=1,'3'=1,'4'=1)
+lsb_RECORD_0$lsb_smk_ever_0<- recode(as.numeric(RECORD_w1_1$Qm16), '1'=0,'2'=1,'3'=1,'4'=1)
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -992,11 +991,12 @@ lsb_RECORD_0$lsb_smk_ever_0<- recode(RECORD_w1_1$Qm16, '1'=0,'2'=1,'3'=1,'4'=1)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_smk_ever_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=1,'4'=1)
+lsb_RECORD_1$lsb_smk_ever_1<- recode(as.numeric(RECORD_w2$Qm18), '1'=0,'2'=1,'3'=1,'4'=1)
+
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_2    
@@ -1010,7 +1010,7 @@ lsb_RECORD_1$lsb_smk_ever_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=1,'4'=1)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1029,7 +1029,7 @@ lsb_RECORD_1$lsb_smk_ever_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=1,'4'=1)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1048,7 +1048,7 @@ lsb_RECORD_1$lsb_smk_ever_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=1,'4'=1)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1067,8 +1067,8 @@ lsb_RECORD_1$lsb_smk_ever_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=1,'4'=1)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  impossible
-**Harmonization comment**:   
+**Harmonization status**:  impossible  
+**Harmonization comment**:    
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1086,7 +1086,7 @@ lsb_RECORD_1$lsb_smk_ever_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=1,'4'=1)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1101,7 +1101,7 @@ lsb_RECORD_1$lsb_smk_ever_1<- recode(RECORD_w2$Qm18, '1'=0,'2'=1,'3'=1,'4'=1)
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1115,7 +1115,7 @@ lsb_RECORD_0$lsb_cig_qty_0<-RECORD_w1_1$Qm17a
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1129,7 +1129,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1143,7 +1143,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1157,7 +1157,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1171,7 +1171,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1185,7 +1185,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1200,7 +1200,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1214,7 +1214,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1228,7 +1228,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1242,7 +1242,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1256,7 +1256,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1270,7 +1270,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1284,7 +1284,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1299,7 +1299,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1313,7 +1313,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1327,8 +1327,8 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible
-**Harmonization comment**:   
+**Harmonization status**:  impossible  
+**Harmonization comment**:    
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1341,7 +1341,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1355,7 +1355,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1369,7 +1369,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible   
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1383,7 +1383,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1398,7 +1398,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- RECORD_w2$Qm19a
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1412,7 +1412,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1426,7 +1426,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1450,7 +1450,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible   
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1471,7 +1471,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1492,7 +1492,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1513,7 +1513,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible   
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1534,7 +1534,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1555,7 +1555,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1576,7 +1576,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1600,7 +1600,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 4 |  4 hours or more  
 
 **Harmonization status**:  impossible
-**Harmonization comment**:   NA's are coded to 0
+**Harmonization comment**:   NA's are coded to 0  
 **R script**:  
 ```{r, echo=TRUE}
 #lsb_RECORD_0$lsb_pa_walk_time_0<-  ifelse( ((as.numeric(RECORD_w1_2$q27_glob_tot)/7))<30,0,
@@ -1627,8 +1627,8 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more   
 
-**Harmonization status**:  impossible
-**Harmonization comment**:  NA's are coded to 0 
+**Harmonization status**:  impossible  
+**Harmonization comment**:  NA's are coded to 0  
 **R script**:  
 ```{r, echo=TRUE}
 #converting P22_Q1_373 to proper foramt
@@ -1663,7 +1663,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more   
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1685,7 +1685,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more   
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1707,7 +1707,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more     
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1729,7 +1729,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more     
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1751,7 +1751,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more    
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1766,8 +1766,8 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
-**Harmonization comment**:   NA's are coded to 0. Also, do we include Transportation for work and other transportation with total utilitarian transportation?
+**Harmonization status**:  impossible   
+**Harmonization comment**:   NA's are coded to 0  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1780,8 +1780,8 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
-**Harmonization comment**:   NA's are coded to 0. Also, do we include Transportation for work and other transportation with total utilitarian transportation?   
+**Harmonization status**:  impossible  
+**Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1794,7 +1794,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1808,7 +1808,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1823,8 +1823,8 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
-**Harmonization comment**:   NA's are coded to 0
+**Harmonization status**:  impossible   
+**Harmonization comment**:   NA's are coded to 0  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1837,8 +1837,8 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
-**Harmonization comment**:   NA's are coded to 0
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1851,7 +1851,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1865,7 +1865,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1880,11 +1880,11 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
-**Harmonization comment**:  
+**Harmonization status**:  complete  
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_RECORD_0$lsb_pa_cycle_0<-as.difftime(RECORD_w1_1$Q28_31_2,format="%H:%M",units="mins")
 
 ```  
 ### **Variable label**:  Average cycling time    
@@ -1894,8 +1894,8 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
-**Harmonization comment**:   
+**Harmonization status**:  impossible  
+**Harmonization comment**:   NA's are coded to 0  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1908,7 +1908,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1922,7 +1922,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1936,7 +1936,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1950,7 +1950,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1964,7 +1964,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1984,8 +1984,8 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  impossible
-**Harmonization comment**:   
+**Harmonization status**:  impossible  
+**Harmonization comment**:   Yes only response. No filter question to derive the 'no'
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -2003,11 +2003,11 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  complete    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_RECORD_1$lsb_pa_garden_1<- as.numeric(RECORD_w2$P23_Q1_405)  
 
 ```  
 ### **Variable label**:  Gardening    
@@ -2022,8 +2022,8 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  impossible
-**Harmonization comment**:   
+**Harmonization status**:  impossible  
+**Harmonization comment**:    
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -2041,7 +2041,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2060,7 +2060,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2079,7 +2079,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2098,7 +2098,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2112,11 +2112,11 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
-**Harmonization comment**:   Na's coded as 0
+**Harmonization status**:  complete    
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_RECORD_0$lsb_pa_garden_time_0<-as.difftime(RECORD_w1_1$Q28_1_2,format="%H:%M",units="mins")
 
 ```  
 ### **Variable label**:  Average gardening time    
@@ -2126,8 +2126,8 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
-**Harmonization comment**:   
+**Harmonization status**:  impossible  
+**Harmonization comment**:   NA's coded to 0  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -2140,7 +2140,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2154,7 +2154,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2168,7 +2168,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2182,7 +2182,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2196,7 +2196,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2216,8 +2216,8 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:  
-**Harmonization comment**:   
+**Harmonization status**:  impossible   
+**Harmonization comment**:   Yes only response. No filter question to derive the 'no'  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -2235,7 +2235,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2254,7 +2254,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2273,7 +2273,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2292,7 +2292,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible   
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2311,7 +2311,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2330,7 +2330,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2359,7 +2359,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2373,7 +2373,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2387,7 +2387,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2401,7 +2401,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2415,7 +2415,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2429,7 +2429,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2448,7 +2448,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2467,7 +2467,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2486,7 +2486,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2505,7 +2505,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2524,7 +2524,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2543,7 +2543,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2562,7 +2562,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2584,7 +2584,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2605,7 +2605,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week   
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2626,7 +2626,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2647,7 +2647,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2668,7 +2668,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2689,7 +2689,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2710,7 +2710,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2732,7 +2732,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2752,7 +2752,7 @@ lsb_RECORD_0$lsb_veg_0<- ifelse(RECORD_w1_1$Q30 ==0, 0,
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
-**Harmonization status**: complete 
+**Harmonization status**: complete   
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2772,7 +2772,7 @@ lsb_RECORD_1$lsb_veg_1<- ifelse(RECORD_w2$P26_Q2_647==1,0,
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2792,7 +2792,7 @@ lsb_RECORD_1$lsb_veg_1<- ifelse(RECORD_w2$P26_Q2_647==1,0,
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2812,7 +2812,7 @@ lsb_RECORD_0$lsb_fruit_0<- ifelse(RECORD_w1_1$Q29 ==0, 0,
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2832,8 +2832,8 @@ lsb_RECORD_1$lsb_fruit_1<- ifelse(RECORD_w2$P26_Q4_653==1,0,
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
-**Harmonization status**:  impossible
-**Harmonization comment**:   
+**Harmonization status**:  impossible  
+**Harmonization comment**:    
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -2851,7 +2851,7 @@ lsb_RECORD_1$lsb_fruit_1<- ifelse(RECORD_w2$P26_Q4_653==1,0,
 0 |   Does not drinks water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2871,7 +2871,7 @@ lsb_RECORD_0$lsb_water_0<- ifelse(RECORD_w1_2$consommation_eau==0,0,
 0 |   Does not drinks water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2891,7 +2891,7 @@ lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 == 0, 0,
 0 |   Does not drinks water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2910,7 +2910,7 @@ lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 == 0, 0,
 0 |   Does not drinks water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2925,7 +2925,7 @@ lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 == 0, 0,
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2939,7 +2939,7 @@ lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 == 0, 0,
 **Variable unit**:  cups/day 
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2953,7 +2953,7 @@ lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 == 0, 0,
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2967,7 +2967,7 @@ lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 == 0, 0,
 **Variable unit**:  cups/day 
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2981,7 +2981,7 @@ lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 == 0, 0,
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2998,7 +2998,7 @@ lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 == 0, 0,
 **Variable unit**:  hours/night  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3012,11 +3012,11 @@ lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 == 0, 0,
 **Variable unit**:  hours/night   
 **Category coding**:  N/A  
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_sleep_hours_1 <- as.numeric(RECORD_w2$Qm76)
+lsb_RECORD_1$lsb_sleep_hours_1 <- as.numeric(RECORD_w2$Qm76)  
 
 ```  
 ### **Variable label**:  Average sleep hours  
@@ -3026,7 +3026,7 @@ lsb_RECORD_1$lsb_sleep_hours_1 <- as.numeric(RECORD_w2$Qm76)
 **Variable unit**:  hours/night 
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3040,7 +3040,7 @@ lsb_RECORD_1$lsb_sleep_hours_1 <- as.numeric(RECORD_w2$Qm76)
 **Variable unit**:  hours/night
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3054,7 +3054,7 @@ lsb_RECORD_1$lsb_sleep_hours_1 <- as.numeric(RECORD_w2$Qm76)
 **Variable unit**:  hours/night   
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3068,7 +3068,7 @@ lsb_RECORD_1$lsb_sleep_hours_1 <- as.numeric(RECORD_w2$Qm76)
 **Variable unit**:  hours/night    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3088,11 +3088,10 @@ lsb_RECORD_1$lsb_sleep_hours_1 <- as.numeric(RECORD_w2$Qm76)
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**:  complete
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_sleep_diff_0<- recode(RECORD_w1_1$Qm77, 'O'=1, 'N'=0)
    
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
@@ -3107,17 +3106,12 @@ lsb_RECORD_0$lsb_sleep_diff_0<- recode(RECORD_w1_1$Qm77, 'O'=1, 'N'=0)
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**:  complete
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#lsb_RECORD_1$lsb_sleep_diff_1<- ifelse(RECORD_w2$P20_Q1_327 == 1, 0,
-#       ifelse(RECORD_w2$P20_Q1_328 == 1 | RECORD_w2$P20_Q1_329==1 | RECORD_w2$P20_Q1_330==1,1,NA))
-#   0    1 <NA> 
-#2322 4136    0
-lsb_RECORD_1$lsb_sleep_diff_1 <- recode(RECORD_w2$Qm75, 'O'=1, 'N'=0)  
-# 0    1 <NA> 
-#4201 2116  141
+lsb_RECORD_1$lsb_sleep_diff_1<- recode(as.character(RECORD_w2$P20_Q1_327), '1'=0,'0'=1)
+ 
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
 **Variable name**:  lsb_sleep_diff_3  
@@ -3131,7 +3125,7 @@ lsb_RECORD_1$lsb_sleep_diff_1 <- recode(RECORD_w2$Qm75, 'O'=1, 'N'=0)
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3150,7 +3144,7 @@ lsb_RECORD_1$lsb_sleep_diff_1 <- recode(RECORD_w2$Qm75, 'O'=1, 'N'=0)
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3169,7 +3163,7 @@ lsb_RECORD_1$lsb_sleep_diff_1 <- recode(RECORD_w2$Qm75, 'O'=1, 'N'=0)
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3191,7 +3185,7 @@ lsb_RECORD_1$lsb_sleep_diff_1 <- recode(RECORD_w2$Qm75, 'O'=1, 'N'=0)
 2 |  Fairly good
 3 |  Very good  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3212,7 +3206,7 @@ lsb_RECORD_1$lsb_sleep_diff_1 <- recode(RECORD_w2$Qm75, 'O'=1, 'N'=0)
 2 |  Fairly good
 3 |  Very good  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3233,7 +3227,7 @@ lsb_RECORD_1$lsb_sleep_diff_1 <- recode(RECORD_w2$Qm75, 'O'=1, 'N'=0)
 2 |  Fairly good
 3 |  Very good  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3254,7 +3248,7 @@ lsb_RECORD_1$lsb_sleep_diff_1 <- recode(RECORD_w2$Qm75, 'O'=1, 'N'=0)
 2 |  Fairly good
 3 |  Very good  
 
-**Harmonization status**:  impossible
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
