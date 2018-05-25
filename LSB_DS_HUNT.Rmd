@@ -453,11 +453,11 @@ lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:  impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#lsb_HUNT_1$lsb_alc_total_1<- (sum(as.integer(HUNT2$AlcBeL2WN_NT2BLQ1),as.integer(HUNT2$AlcLiL2WN_NT2BLQ1),as.integer(HUNT2$AlcWiL2WN_NT2BLQ1),na.rm=FALSE))/2
+
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
@@ -471,7 +471,7 @@ lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
+#lsb_HUNT_1$lsb_alc_total_1<- (sum(as.integer(HUNT2$AlcBeL2WN_NT2BLQ1),as.integer(HUNT2$AlcLiL2WN_NT2BLQ1),as.integer(HUNT2$AlcWiL2WN_NT2BLQ1),na.rm=FALSE))/2
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
