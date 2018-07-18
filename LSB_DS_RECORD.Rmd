@@ -14,7 +14,7 @@ erasmus_opal <- opal.login()
 opal.assign.table.tibble(erasmus_opal, 'RECORD_w1_1', 'RECORD.RECORD_w1_1', variables= list('code_barre','Q27_d_1','Q27_d_2','Q28_1_2','Q28_1_1','Q28_1_4','Q28_1_5','Q28_1_3','Q30','Q29','Qm13','Qm14','Qm77','Qm16','Qm17a','Q28_31_2','Q28_31_1','Q28_31_3','Q28_31_4','Q28_31_5')) 
 RECORD_w1_1 <- opal.execute(erasmus_opal,'RECORD_w1_1')
 # RECORD wave 1, part 2
-opal.assign.table.tibble(erasmus_opal, 'RECORD_w1_2', 'RECORD.RECORD_w1_2',variables=list('neverdrinker','nbglass_alcohol','drinker_cgi','quitdrinker','packyear_current','packyear_former','fume_pipe','smoker','nonsmoker','formsmoker','q27_glob_tot','q27_autre_qu2','q27_trav_nqu2','q27_autre_nqu2','q27_trav_qu2','q27_course_nqu2','q27_course_qu2','q27_course_tot','q27_autre_nqu2','q27_glob_nqu','q27_util_nqu','q27_util_tot','q27_util_qu','q27_promen_qu2','q27_promen_nqu2','q27_promen_tot','q28_81_2','q28_autre_8_1','q28_autre_4_1','q28_autre_8_2','q28_autre_4_2','q28_autre_7_1','q28_autre_7_2','q28_49_1','q28_49_2','fruitleg','fruits_inf1','fruits_1j2','fruits_sup3','fruits_2j3','consommation_eau','smoker','nonsmoker')) 
+opal.assign.table.tibble(erasmus_opal, 'RECORD_w1_2', 'RECORD.RECORD_w1_2',variables=list('neverdrinker','nbglass_alcohol','drinker_cgi','quitdrinker','packyear_current','packyear_former','fume_pipe','smoker','nonsmoker','formsmoker','q27_glob_tot','q27_autre_qu2','q27_trav_nqu2','q27_autre_nqu2','q27_trav_qu2','q27_course_nqu2','q27_course_qu2','q27_course_tot','q27_autre_nqu2','q27_glob_nqu','q27_util_nqu','q27_util_tot','q27_util_qu','q27_promen_qu2','q27_promen_nqu2','q27_promen_tot','q28_81_2','q28_autre_8_1','q28_autre_4_1','q28_autre_8_2','q28_autre_4_2','q28_autre_7_1','q28_autre_7_2','q28_49_1','q28_49_2','fruitleg','fruits_inf1','fruits_1j2','fruits_sup3','fruits_2j3','consommation_eau','smoker','nonsmoker','marche_utilitaire')) 
 RECORD_w1_2 <- opal.execute(erasmus_opal,'RECORD_w1_2')
 # RECORD wave 2
 opal.assign.table.tibble(erasmus_opal, 'RECORD_w2', 'RECORD.RECORD_W2', variables =list('P22_Q1_1443','P22_Q1_373','P22_Q2_1444','P22_Q2_374','P23_Q1_405','P23_Q1_404','P23_Q1_401','P26_Q2_647','P26_Q2_645','P26_Q2_646','Qm12','Qm13','Qm76','Qm75','P20_Q1_327','Qm10','Qm10b','Qm10a','Qm18','Qm19A','Qm19a','P26_Q4_655','P26_Q4_653','P26_Q4_654','P20_Q1_328','P20_Q1_329','P20_Q1_330','P23_Q31_585','P23_Q31_584','P23_Q31_583','P23_Q31_582')) 
@@ -75,7 +75,7 @@ lsb_RECORD_0$lsb_alc_cur_0<- recode(as.character(RECORD_w1_2$drinker_cgi), drink
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_alc_cur_1<- recode(as.character(RECORD_w2$Qm10), O=1L, N=0L)
+lsb_RECORD_1$lsb_alc_cur_1<- recode(as.character(RECORD_w2$Qm10), O=1L, N=0L,.default = NA_integer_)
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -189,7 +189,7 @@ lsb_RECORD_1$lsb_alc_cur_1<- recode(as.character(RECORD_w2$Qm10), O=1L, N=0L)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_alc_ever_0<- recode(as.character(RECORD_w1_2$neverdrinker), '0' = 1L , '1' = 0L)
+lsb_RECORD_0$lsb_alc_ever_0<- recode(as.character(RECORD_w1_2$neverdrinker), '0' = 1L , '1' = 0L,.default= NA_integer_)
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -205,14 +205,18 @@ lsb_RECORD_0$lsb_alc_ever_0<- recode(as.character(RECORD_w1_2$neverdrinker), '0'
 1 |   Ever consumed alcohol  
 
 **Harmonization status**: complete    
-**Harmonization comment**:   
+**Harmonization comment**:   to review, email data manager
 **R script**:  
 ```{r, echo=TRUE}
 lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1,0L,
                                   ifelse(RECORD_w2$Qm10 == 'N' & RECORD_w2$Qm10b == 2 |
-                                 RECORD_w2$Qm10 == 'O' & is.na(RECORD_w2$Qm10b),1L,NA))
+                                 RECORD_w2$Qm10 == 'O' & is.na(RECORD_w2$Qm10b) | 
+                                   RECORD_w2$Qm10 == 'O' & RECORD_w2$Qm10b == 2 |
+                                   is.na(RECORD_w2$Qm10) & RECORD_w2$Qm10b == 2,1L,NA))
                                     
-
+#a<-ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1 ,0L,
+ #                                 ifelse((RECORD_w2$Qm10 == 'N' & RECORD_w2$Qm10b == 2) |
+  #                               (RECORD_w2$Qm10 == 'O' & is.na(RECORD_w2$Qm10b)) | (RECORD_w2$Qm10 == 'O' & RECORD_w2$Qm10b=='.' ),1L,NA))
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_2    
@@ -457,7 +461,7 @@ lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   study-specific variable is number of glasses of alcohol per day.  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_RECORD_0$lsb_alc_total_0<- as.integer(RECORD_w1_2$nbglass_alcohol)*7L
@@ -700,7 +704,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.integer(RECORD_w1_2$nbglass_alcohol)*7L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_smk_cur_0<- recode(as.numeric(RECORD_w1_1$Qm16), '1'=0L,'3'=0L,'2'=1L,'4'=1L)
+lsb_RECORD_0$lsb_smk_cur_0<- recode(as.numeric(RECORD_w1_1$Qm16), '1'=0L,'3'=0L,'2'=1L,'4'=1L, .default=NA_integer_)
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -836,7 +840,7 @@ lsb_RECORD_1$lsb_smk_cur_1<- ifelse(RECORD_w2$Qm18=='1'|RECORD_w2$Qm18=='3',0L,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_smk_status_0<- recode(as.numeric(RECORD_w1_1$Qm16), '1'=0L,'2'=2L,'4'=2L,'3'=1L)
+lsb_RECORD_0$lsb_smk_status_0<- recode(as.numeric(RECORD_w1_1$Qm16), '1'=0L,'2'=2L,'4'=2L,'3'=1L,.default=NA_integer_)
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -856,7 +860,7 @@ lsb_RECORD_0$lsb_smk_status_0<- recode(as.numeric(RECORD_w1_1$Qm16), '1'=0L,'2'=
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_smk_status_1<- recode(as.numeric(RECORD_w2$Qm18),'1'=0L,'2'=2L,'4'=2L,'3'=1L)
+lsb_RECORD_1$lsb_smk_status_1<- recode(as.numeric(RECORD_w2$Qm18),'1'=0L,'2'=2L,'4'=2L,'3'=1L, .default=NA_integer_)
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -976,7 +980,7 @@ lsb_RECORD_1$lsb_smk_status_1<- recode(as.numeric(RECORD_w2$Qm18),'1'=0L,'2'=2L,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_smk_ever_0<- recode(as.numeric(RECORD_w1_1$Qm16), '1'=0L,'2'=1L,'3'=1L,'4'=1L)
+lsb_RECORD_0$lsb_smk_ever_0<- recode(as.numeric(RECORD_w1_1$Qm16), '1'=0L,'2'=1L,'3'=1L,'4'=1L, .default=NA_integer_)
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -995,7 +999,7 @@ lsb_RECORD_0$lsb_smk_ever_0<- recode(as.numeric(RECORD_w1_1$Qm16), '1'=0L,'2'=1L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_smk_ever_1<- recode(as.numeric(RECORD_w2$Qm18), '1'=0L,'2'=1L,'3'=1L,'4'=1L)
+lsb_RECORD_1$lsb_smk_ever_1<- recode(as.numeric(RECORD_w2$Qm18), '1'=0L,'2'=1L,'3'=1L,'4'=1L, .default=NA_integer_)
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1402,7 +1406,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- as.integer(RECORD_w2$Qm19a)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_smk_py_0<- as.integer(ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_w1_2$packyear_current, RECORD_w1_2$packyear_former))
+lsb_RECORD_0$lsb_smk_py_0<- as.integer(ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_w1_2$packyear_former, RECORD_w1_2$packyear_current))
 
 ```  
 ### **Variable label**:  Pack years  
@@ -1599,19 +1603,19 @@ lsb_RECORD_0$lsb_smk_py_0<- as.integer(ifelse(!is.na(RECORD_w1_2$packyear_curren
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more  
 
-**Harmonization status**:  impossible  
-**Harmonization comment**:   NA's are coded to 0   
+**Harmonization status**:  complete    
+**Harmonization comment**:   NA's are coded to 0 as it was found reasonable to make the assumption that all missing values corresponded to non-reported "0mn" of walking time.  "The environmental correlates of overall and neighborhood based recreational walking (a cross-sectional analysis of the RECORD study)".    
 **R script**:  
 ```{r, echo=TRUE}
-#lsb_RECORD_0$lsb_pa_walk_time_0 <-  as.integer(
-#                                          ifelse( ((as.numeric(RECORD_w1_2$q27_glob_tot)/7))<30,0,
-#                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>29 &
-#                                             (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<60,1,
-#                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>59&
-#                                                  (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<120,2,
-#                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>119 &
-#                                                    (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<240,3,
-#                                    ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>239,4,NA))))))
+lsb_RECORD_0$lsb_pa_walk_time_0 <-  as.integer(
+                                          ifelse( ((as.numeric(RECORD_w1_2$q27_glob_tot)/7))<30,0,
+                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>29 &
+                                             (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<60,1,
+                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>59&
+                                                  (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<120,2,
+                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>119 &
+                                                    (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<240,3,
+                                    ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>239,4,NA))))))
 ```  
 ### **Variable label**:  Average walking time   
 **Variable name**:   lsb_pa_walk_time_1  
@@ -1628,25 +1632,25 @@ lsb_RECORD_0$lsb_smk_py_0<- as.integer(ifelse(!is.na(RECORD_w1_2$packyear_curren
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more   
 
-**Harmonization status**:  impossible  
-**Harmonization comment**:  NA's are coded to 0  
+**Harmonization status**:  complete    
+**Harmonization comment**:  NA's are coded to 0 as it was found reasonable to make the assumption that all missing values corresponded to non-reported "0mn" of walking time.  "The environmental correlates of overall and neighborhood based recreational walking (a cross-sectional analysis of the RECORD study)".  
 **R script**:  
 ```{r, echo=TRUE}
 #converting P22_Q1_373 to proper foramt
-#RECORD_w2$P_22_Q1_373_inter<- as.POSIXlt(RECORD_w2$P22_Q1_373, format="%H:%M")
-#RECORD_w2$P_22_Q1_373_inter<- substring(RECORD_w2$P_22_Q1_373_inter,11,16)
-#RECORD_w2$P_22_Q1_373_inter<-as.difftime(RECORD_w2$P_22_Q1_373_inter, format="%H:%M", units="mins")
-#converting P22_Q2_374 to proper foramt
-#RECORD_w2$P_22_Q2_374_inter<- as.POSIXlt(RECORD_w2$P22_Q2_374, format="%H:%M")
-#RECORD_w2$P_22_Q2_374_inter<- substring(RECORD_w2$P_22_Q2_374_inter,11,16)
-#RECORD_w2$P_22_Q2_374_inter<-as.difftime(RECORD_w2$P_22_Q2_374_inter, format="%H:%M", units="mins")
+RECORD_w2$P_22_Q1_373_inter<- as.POSIXlt(RECORD_w2$P22_Q1_373, format="%H:%M")
+RECORD_w2$P_22_Q1_373_inter<- substring(RECORD_w2$P_22_Q1_373_inter,11,16)
+RECORD_w2$P_22_Q1_373_inter<-as.difftime(RECORD_w2$P_22_Q1_373_inter, format="%H:%M", units="mins")
+#converting P22_Q2_374 to proper format
+RECORD_w2$P_22_Q2_374_inter<- as.POSIXlt(RECORD_w2$P22_Q2_374, format="%H:%M")
+RECORD_w2$P_22_Q2_374_inter<- substring(RECORD_w2$P_22_Q2_374_inter,11,16)
+RECORD_w2$P_22_Q2_374_inter<-as.difftime(RECORD_w2$P_22_Q2_374_inter, format="%H:%M", units="mins")
 #average total walk time per day
-#RECORD_w2$total_walk_time_pastweek_day<- round(((as.numeric(RECORD_w2$P_22_Q2_374_inter))+ (as.numeric(RECORD_w2$P_22_Q1_373_inter)))/7, digits=0)
+RECORD_w2$total_walk_time_pastweek_day<- round(((as.numeric(RECORD_w2$P_22_Q2_374_inter))+ (as.numeric(RECORD_w2$P_22_Q1_373_inter)))/7, digits=0)
 #Harmonized variable
-#lsb_RECORD_1$lsb_pa_walk_time_1 <- as.integer(ifelse(RECORD_w2$total_walk_time_pastweek_day<30,0,
-#ifelse(29<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pastweek_day<60,1,
-#ifelse(59<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pastweek_day<120,2,
-#ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pastweek_day<240,3,NA)))))
+lsb_RECORD_1$lsb_pa_walk_time_1 <- as.integer(ifelse(RECORD_w2$total_walk_time_pastweek_day<30,0,
+ifelse(29<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pastweek_day<60,1,
+ifelse(59<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pastweek_day<120,2,
+ifelse(119<RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_pastweek_day<240,3,NA)))))
 
 ```  
 ### **Variable label**:  Average walking time    
@@ -1767,11 +1771,11 @@ lsb_RECORD_0$lsb_smk_py_0<- as.integer(ifelse(!is.na(RECORD_w1_2$packyear_curren
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible   
-**Harmonization comment**:   NA's are coded to 0  
+**Harmonization status**:  complete   
+**Harmonization comment**:  NA's are coded to 0 as it was found reasonable to make the assumption that all missing values corresponded to non-reported "0mn" of walking time.  "The environmental correlates of overall and neighborhood based recreational walking (a cross-sectional analysis of the RECORD study)".   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_RECORD_0$lsb_pa_walk_trans_0 <- as.integer(RECORD_w1_2$q27_util_tot)
 
 ```  
 ### **Variable label**:  Average walking time for transportation    
@@ -1824,11 +1828,11 @@ lsb_RECORD_0$lsb_smk_py_0<- as.integer(ifelse(!is.na(RECORD_w1_2$packyear_curren
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible   
-**Harmonization comment**:   NA's are coded to 0  
+**Harmonization status**:  complete   
+**Harmonization comment**:   NA's are coded to 0 as it was found reasonable to make the assumption that all missing values corresponded to non-reported "0mn" of walking time.  "The environmental correlates of overall and neighborhood based recreational walking (a cross-sectional analysis of the RECORD study)".   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_RECORD_0$lsb_pa_walk_leis_0 <- as.integer(RECORD_w1_2$q27_promen_tot)
 
 ```  
 ### **Variable label**:  Average walking time for leisure  
@@ -1895,11 +1899,11 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.integer(as.difftime(RECORD_w1_1$Q28_31_2,format
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
-**Harmonization comment**:   NA's are coded to 0  
+**Harmonization status**:  complete    
+**Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_RECORD_1$lsb_pa_cycle_1<- as.integer(as.difftime(RECORD_w2$P23_Q31_585,format="%H:%M",units="mins"))
 
 ```  
 ### **Variable label**:  Average cycling time    
@@ -1986,10 +1990,10 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.integer(as.difftime(RECORD_w1_1$Q28_31_2,format
 1 |   Does any gardeing activities  
 
 **Harmonization status**:  impossible  
-**Harmonization comment**:   Yes only response. No filter question to derive the 'no'
+**Harmonization comment**:   Yes-only response. i.e. NAs were coded to 0.
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_RECORD_0$lsb_pa_garden_0 <- ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,1L)
 
 ```  
 ### **Variable label**:  Gardening    
@@ -2005,9 +2009,10 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.integer(as.difftime(RECORD_w1_1$Q28_31_2,format
 1 |   Does any gardeing activities  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:  No participant does any gardening activities. 
+**Harmonization comment**:  No participant does any gardening activities. However, 531 participants have a total gardening time in the past 7 days greater than 0mins (P23_Q1_401).  
 **R script**:  
 ```{r, echo=TRUE}
+#gartime<-as.integer(as.difftime(RECORD_w2$P23_Q1_401,format="%H:%M",units="mins")
 lsb_RECORD_1$lsb_pa_garden_1<- as.integer(RECORD_w2$P23_Q1_405)  
 
 ```  
@@ -2127,11 +2132,11 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(RECORD_w1_1$Q28_1_1==1,as.integer(as.d
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
-**Harmonization comment**:   NA's coded to 0  
+**Harmonization status**:  complete  
+**Harmonization comment**:   NA's are coded to 0 as it was found reasonable to make the assumption that all missing values corresponded to non-reported "0mn" of walking time.  "The environmental correlates of overall and neighborhood based recreational walking (a cross-sectional analysis of the RECORD study)".   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_RECORD_1$lsb_pa_garden_time_1 <- as.integer(as.difftime(RECORD_w2$P23_Q1_401,format="%H:%M",units="mins"))
 
 ```  
 ### **Variable label**:  Average gardening time    
@@ -2217,11 +2222,11 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(RECORD_w1_1$Q28_1_1==1,as.integer(as.d
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:  impossible   
-**Harmonization comment**:   Yes only response. No filter question to derive the 'no'  
+**Harmonization status**:  complete   
+**Harmonization comment**:   Yes only response. NAs were coded as 0. 
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_RECORD_0$lsb_pa_house_0 <- ifelse(is.na(RECORD_w1_2$q28_autre_4_1),0L,1L)
 
 ```  
 ### **Variable label**:  Household activities  
@@ -2347,10 +2352,10 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(RECORD_w1_1$Q28_1_1==1,as.integer(as.d
 **Category coding**:  N/A  
 
 **Harmonization status**:  
-**Harmonization comment**:   
+**Harmonization comment**:   q28_autre_4_2
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_RECORD_0$lsb_pa_house_time_0 <- as.numeric(RECORD_w1_2$q28_autre_4_2)*60
 
 ```  
 ### **Variable label**:  Average household activities time      
@@ -2437,7 +2442,7 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(RECORD_w1_1$Q28_1_1==1,as.integer(as.d
 
 
 ```  
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_0  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2456,7 +2461,7 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(RECORD_w1_1$Q28_1_1==1,as.integer(as.d
 
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_1  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2475,7 +2480,7 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(RECORD_w1_1$Q28_1_1==1,as.integer(as.d
 
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_2  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2494,7 +2499,7 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(RECORD_w1_1$Q28_1_1==1,as.integer(as.d
 
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_3  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2513,7 +2518,7 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(RECORD_w1_1$Q28_1_1==1,as.integer(as.d
 
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_4  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2532,7 +2537,7 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(RECORD_w1_1$Q28_1_1==1,as.integer(as.d
 
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_5  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2551,7 +2556,7 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(RECORD_w1_1$Q28_1_1==1,as.integer(as.d
 
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_6  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -3115,6 +3120,24 @@ lsb_RECORD_1$lsb_sleep_diff_1<- recode(as.character(RECORD_w2$P20_Q1_327), '1'=0
  
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
+**Variable name**:  lsb_sleep_diff_2    
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Never has difficulty falling asleep
+1 |  Sometimes has difficulty falling asleep
+
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
+```  
+### **Variable label**:  Difficulty falling a sleep  
 **Variable name**:  lsb_sleep_diff_3  
 **Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
 **Value type**:  integer  
@@ -3191,8 +3214,49 @@ lsb_RECORD_1$lsb_sleep_diff_1<- recode(as.character(RECORD_w2$P20_Q1_327), '1'=0
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
+
+### **Variable label**:  Quality of sleep  
+**Variable name**:  lsb_sleep_qlty_1  
+**Variable description**:  Indicator of the quality of sleep of the participant.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Very bad 
+1 |  Fairly bad
+2 |  Fairly good
+3 |  Very good  
+
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
+``` 
+
+### **Variable label**:  Quality of sleep  
+**Variable name**:  lsb_sleep_qlty_2  
+**Variable description**:  Indicator of the quality of sleep of the participant.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Very bad 
+1 |  Fairly bad
+2 |  Fairly good
+3 |  Very good  
+
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
+``` 
 ### **Variable label**:  Quality of sleep  
 **Variable name**:  lsb_sleep_qlty_3  
 **Variable description**:  Indicator of the quality of sleep of the participant.    
