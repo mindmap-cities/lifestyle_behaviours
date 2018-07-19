@@ -423,7 +423,7 @@ output: html_document
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)      
 **Variable name**: lsb_alc_total_0  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -437,7 +437,7 @@ output: html_document
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: lsb_alc_total_1  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -451,7 +451,7 @@ output: html_document
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: lsb_alc_total_2  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -465,7 +465,7 @@ output: html_document
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: lsb_alc_total_3  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -480,7 +480,7 @@ output: html_document
 ### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: lsb_alc_wine_0  
 **Variable description**:  Current quantity of wine consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -494,7 +494,7 @@ output: html_document
 ### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: lsb_alc_wine_1  
 **Variable description**:  Current quantity of wine consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -508,7 +508,7 @@ output: html_document
 ### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: lsb_alc_wine_2  
 **Variable description**:  Current quantity of wine consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -522,7 +522,7 @@ output: html_document
 ### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: lsb_alc_wine_3  
 **Variable description**:  Current quantity of wine consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -537,7 +537,7 @@ output: html_document
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_0  
 **Variable description**:  Current quantity of beer consumed per week.   
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -552,7 +552,7 @@ output: html_document
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_1  
 **Variable description**:  Current quantity of beer consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -567,7 +567,7 @@ output: html_document
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_2  
 **Variable description**:  Current quantity of beer consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -582,7 +582,7 @@ output: html_document
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_3  
 **Variable description**:  Current quantity of beer consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -598,7 +598,7 @@ output: html_document
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_0  
 **Variable description**:  Current quantity of liquor consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -613,7 +613,7 @@ output: html_document
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_1  
 **Variable description**:  Current quantity of liquor consumed per week.   
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -628,7 +628,7 @@ output: html_document
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_2  
 **Variable description**:  Current quantity of liquor consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -643,7 +643,7 @@ output: html_document
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_3  
 **Variable description**:  Current quantity of liquor consumed per week.   
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -2389,7 +2389,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_0  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2408,7 +2408,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_1  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2427,7 +2427,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_2  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2446,7 +2446,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_3  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2465,7 +2465,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_4  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2484,7 +2484,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_5  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2503,7 +2503,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_6  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -3063,6 +3063,24 @@ output: html_document
    
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
+**Variable name**:  lsb_sleep_diff_2    
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Never has difficulty falling asleep
+1 |  Sometimes has difficulty falling asleep
+
+**Harmonization status**:     
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
+```  
+### **Variable label**:  Difficulty falling a sleep  
 **Variable name**:  lsb_sleep_diff_3  
 **Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
 **Value type**:  integer  
@@ -3141,6 +3159,50 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
+
+### **Variable label**:  Quality of sleep  
+**Variable name**:  lsb_sleep_qlty_1  
+**Variable description**:  Indicator of the quality of sleep of the participant.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Very bad 
+1 |  Fairly bad
+2 |  Fairly good
+3 |  Very good  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+``` 
+
+### **Variable label**:  Quality of sleep  
+**Variable name**:  lsb_sleep_qlty_2  
+**Variable description**:  Indicator of the quality of sleep of the participant.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Very bad 
+1 |  Fairly bad
+2 |  Fairly good
+3 |  Very good  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+``` 
 ### **Variable label**:  Quality of sleep  
 **Variable name**:  lsb_sleep_qlty_3  
 **Variable description**:  Indicator of the quality of sleep of the participant.    
