@@ -2409,7 +2409,7 @@ lsb_LUCAS_0$lsb_pa_house_0<- ifelse(lucas_w2$Lucas21a_07 == 0 & lucas_w2$Lucas21
 #This is where the R-script will be written
 
 ```  
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_0  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2427,7 +2427,7 @@ lsb_LUCAS_0$lsb_pa_house_0<- ifelse(lucas_w2$Lucas21a_07 == 0 & lucas_w2$Lucas21
 ```{r, echo=TRUE}
 lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31a_07 ==0, 0, ifelse(lucas_w2$Lucas30a_07==1 | lucas_w2$Lucas31a_07 ==1,1,NA))
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_1  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2446,7 +2446,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_2  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2465,7 +2465,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_3  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2484,7 +2484,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_4  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2503,7 +2503,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_5  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -2522,7 +2522,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 #This is where the R-script will be written
 
 ```   
-### **Variable label**: Sprots or exercise      
+### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_6  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
@@ -3082,6 +3082,24 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
    
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
+**Variable name**:  lsb_sleep_diff_2  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Never has difficulty falling asleep
+1 |  Sometimes has difficulty falling asleep
+
+**Harmonization status**:     
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
+```  
+### **Variable label**:  Difficulty falling a sleep  
 **Variable name**:  lsb_sleep_diff_3  
 **Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
 **Value type**:  integer  
@@ -3160,6 +3178,50 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 
 
 ```  
+
+### **Variable label**:  Quality of sleep  
+**Variable name**:  lsb_sleep_qlty_1  
+**Variable description**:  Indicator of the quality of sleep of the participant.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Very bad 
+1 |  Fairly bad
+2 |  Fairly good
+3 |  Very good  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+``` 
+
+### **Variable label**:  Quality of sleep  
+**Variable name**:  lsb_sleep_qlty_2  
+**Variable description**:  Indicator of the quality of sleep of the participant.    
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:    
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |  Very bad 
+1 |  Fairly bad
+2 |  Fairly good
+3 |  Very good  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+``` 
 ### **Variable label**:  Quality of sleep  
 **Variable name**:  lsb_sleep_qlty_3  
 **Variable description**:  Indicator of the quality of sleep of the participant.    
