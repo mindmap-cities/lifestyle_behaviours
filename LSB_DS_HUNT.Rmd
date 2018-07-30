@@ -1357,7 +1357,7 @@ lsb_HUNT_0$lsb_smk_py_0<- as.integer(HUNT1$SmoDyDuEd_NT1BLQ2)
 **Harmonization comment**:   How many years in total have you smoked daily? {If currently or previously daily smoker}  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_smk_py_1<- as.numeric(HUNT2$SmoDyDuEd_NT2BLQ1)
+lsb_HUNT_1$lsb_smk_py_1<- as.integer(HUNT2$SmoDyDuEd_NT2BLQ1)
 ```  
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_2    
@@ -1370,7 +1370,7 @@ lsb_HUNT_1$lsb_smk_py_1<- as.numeric(HUNT2$SmoDyDuEd_NT2BLQ1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_smk_py_2<- as.numeric(HUNT3$SmoDyDuEd_NT3BLQ1)
+lsb_HUNT_2$lsb_smk_py_2<- as.integer(HUNT3$SmoDyDuEd_NT3BLQ1)
 ```  
 
 # Physical activity subdomain
