@@ -1389,7 +1389,7 @@ opal.logout(erasmus_opal)
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_0    
 **Variable description**:  Number of estimated pack years of the participant.   
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  pack-years    
 **Category coding**:  
 
@@ -1403,7 +1403,7 @@ opal.logout(erasmus_opal)
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_1    
 **Variable description**:  Number of estimated pack years of the participant.     
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  pack-years    
 **Category coding**:  
 
@@ -1417,7 +1417,7 @@ opal.logout(erasmus_opal)
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_2    
 **Variable description**:  Number of estimated pack years of the participant.     
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  pack-years    
 **Category coding**:  
 
