@@ -1336,7 +1336,7 @@ lsb_HUNT_2$lsb_smk_stop_2<- as.integer((HUNT3$PartAg_NT3BLQ1-HUNT3$SmoDyCesDu_NT
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_0    
 **Variable description**:  Number of estimated pack years of the participant.   
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  pack-years    
 **Category coding**:  
 
@@ -1344,12 +1344,12 @@ lsb_HUNT_2$lsb_smk_stop_2<- as.integer((HUNT3$PartAg_NT3BLQ1-HUNT3$SmoDyCesDu_NT
 **Harmonization comment**:  Study-specific variable: How many years in total have you smoked daily? Number of years was rounded down to make it integer.   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_0$lsb_smk_py_0<- as.integer(HUNT1$SmoDyDuEd_NT1BLQ2)
+lsb_HUNT_0$lsb_smk_py_0<- HUNT1$SmoDyDuEd_NT1BLQ2
 ```  
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_1    
 **Variable description**:  Number of estimated pack years of the participant.     
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  pack-years    
 **Category coding**:  
 
@@ -1357,12 +1357,12 @@ lsb_HUNT_0$lsb_smk_py_0<- as.integer(HUNT1$SmoDyDuEd_NT1BLQ2)
 **Harmonization comment**:   How many years in total have you smoked daily? {If currently or previously daily smoker}  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_smk_py_1<- as.integer(HUNT2$SmoDyDuEd_NT2BLQ1)
+lsb_HUNT_1$lsb_smk_py_1<- HUNT2$SmoDyDuEd_NT2BLQ1
 ```  
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_2    
 **Variable description**:  Number of estimated pack years of the participant.     
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  pack-years    
 **Category coding**:  
 
@@ -1370,7 +1370,7 @@ lsb_HUNT_1$lsb_smk_py_1<- as.integer(HUNT2$SmoDyDuEd_NT2BLQ1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_smk_py_2<- as.integer(HUNT3$SmoDyDuEd_NT3BLQ1)
+lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoDyDuEd_NT3BLQ1
 ```  
 
 # Physical activity subdomain
