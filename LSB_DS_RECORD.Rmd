@@ -205,18 +205,15 @@ lsb_RECORD_0$lsb_alc_ever_0<- recode(as.character(RECORD_w1_2$neverdrinker), '0'
 1 |   Ever consumed alcohol  
 
 **Harmonization status**: complete    
-**Harmonization comment**:   to review, email data manager
+**Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1,0L,
-                                  ifelse(RECORD_w2$Qm10 == 'N' & RECORD_w2$Qm10b == 2 |
-                                 RECORD_w2$Qm10 == 'O' & is.na(RECORD_w2$Qm10b) | 
-                                   RECORD_w2$Qm10 == 'O' & RECORD_w2$Qm10b == 2 |
-                                   is.na(RECORD_w2$Qm10) & RECORD_w2$Qm10b == 2,1L,NA))
-                                    
-#a<-ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1 ,0L,
- #                                 ifelse((RECORD_w2$Qm10 == 'N' & RECORD_w2$Qm10b == 2) |
-  #                               (RECORD_w2$Qm10 == 'O' & is.na(RECORD_w2$Qm10b)) | (RECORD_w2$Qm10 == 'O' & RECORD_w2$Qm10b=='.' ),1L,NA))
+lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1 | 
+                                        is.na(RECORD_w2$Qm10) & RECORD_w2$Qm10b == 1,0L,
+                                ifelse(RECORD_w2$Qm10 == 'N' & RECORD_w2$Qm10b == 2 |
+                                        RECORD_w2$Qm10 == 'O' & is.na(RECORD_w2$Qm10b) | 
+                                        RECORD_w2$Qm10 == 'O' & RECORD_w2$Qm10b == 2 |
+                                        is.na(RECORD_w2$Qm10) & RECORD_w2$Qm10b == 2,1L,NA))
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_2    
@@ -1899,11 +1896,11 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.integer(as.difftime(RECORD_w1_1$Q28_31_2,format
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  complete    
-**Harmonization comment**:     
+**Harmonization status**:  impossible      
+**Harmonization comment**:    Unable to distinguish between true missing or unreported 0mn as no participants were coded as NA.   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_pa_cycle_1<- as.integer(as.difftime(RECORD_w2$P23_Q31_585,format="%H:%M",units="mins"))
+#lsb_RECORD_1$lsb_pa_cycle_1<- as.integer(as.difftime(RECORD_w2$P23_Q31_585,format="%H:%M",units="mins"))
 
 ```  
 ### **Variable label**:  Average cycling time    
@@ -2008,12 +2005,11 @@ lsb_RECORD_0$lsb_pa_garden_0 <- ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,1L)
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  complete    
-**Harmonization comment**:  No participant does any gardening activities. However, 531 participants have a total gardening time in the past 7 days greater than 0mins (P23_Q1_401).  
+**Harmonization status**:  impossible      
+**Harmonization comment**: Unable to distinguish between true missing or unreported 0mn as no participants were coded as NA. 
+#Total gardening time in the past 7 days (P23_Q1_401) was coded as 1 if value greater than 0mins. This variable was used instead of #Gardening in the past 7 days (P23_Q1_405) because all values were 'no'.  
 **R script**:  
 ```{r, echo=TRUE}
-#gartime<-as.integer(as.difftime(RECORD_w2$P23_Q1_401,format="%H:%M",units="mins")
-lsb_RECORD_1$lsb_pa_garden_1<- as.integer(RECORD_w2$P23_Q1_405)  
 
 ```  
 ### **Variable label**:  Gardening    
@@ -2119,10 +2115,11 @@ lsb_RECORD_1$lsb_pa_garden_1<- as.integer(RECORD_w2$P23_Q1_405)
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:   
+**Harmonization comment**:   Value of NA in Physical activities performed during the last 7 days: Gardening (Q28_1_1) indicates that the participant did not garden in the past 7 days so these participants were given a value of 0mn for minutes spent gardening.  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(RECORD_w1_1$Q28_1_1==1,as.integer(as.difftime(RECORD_w1_1$Q28_1_2,format="%H:%M",units="mins")),NA)
+lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,
+                                 ifelse(RECORD_w1_1$Q28_1_1==1,as.integer(as.difftime(RECORD_w1_1$Q28_1_2,format="%H:%M",units="mins")),NA))
 
 ```  
 ### **Variable label**:  Average gardening time    
@@ -2132,11 +2129,10 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(RECORD_w1_1$Q28_1_1==1,as.integer(as.d
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   NA's are coded to 0 as it was found reasonable to make the assumption that all missing values corresponded to non-reported "0mn" of walking time.  "The environmental correlates of overall and neighborhood based recreational walking (a cross-sectional analysis of the RECORD study)".   
+**Harmonization status**:  impossible    
+**Harmonization comment**:   Unable to distinguish between true missing or unreported 0mn as no participants were coded as NA.     
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_pa_garden_time_1 <- as.integer(as.difftime(RECORD_w2$P23_Q1_401,format="%H:%M",units="mins"))
 
 ```  
 ### **Variable label**:  Average gardening time    
