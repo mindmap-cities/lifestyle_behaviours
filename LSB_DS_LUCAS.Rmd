@@ -692,11 +692,11 @@ opal.logout(erasmus_opal)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_LUCAS_0$lsb_smk_cur_0 <-lucas_w2$Lucas38_07
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
