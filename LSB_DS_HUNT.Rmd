@@ -978,7 +978,7 @@ lsb_HUNT_1$lsb_smk_ever_1<- recode(as.integer(HUNT2$SmoStat_NT2BLQ1),'0'=0L,'1'=
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_smk_ever_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1), '0'=0L, '1'=1L,'2'=1L,'1'=1L)
+lsb_HUNT_2$lsb_smk_ever_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1), '0'=0L, '1'=1L,'2'=1L,'3'=1L)
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_3    
