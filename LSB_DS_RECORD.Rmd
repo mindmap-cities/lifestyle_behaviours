@@ -1403,7 +1403,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- as.integer(RECORD_w2$Qm19a)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_smk_py_0<- ifelse(!is.na(RECORD_w1_2$packyear_current), RECORD_w1_2$packyear_former, RECORD_w1_2$packyear_current)
+lsb_RECORD_0$lsb_smk_py_0<- ifelse(is.na(RECORD_w1_2$packyear_current), RECORD_w1_2$packyear_former, RECORD_w1_2$packyear_current)
 
 ```  
 ### **Variable label**:  Pack years  
