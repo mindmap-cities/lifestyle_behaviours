@@ -2006,8 +2006,7 @@ lsb_RECORD_0$lsb_pa_garden_0 <- ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,1L)
 1 |   Does any gardeing activities  
 
 **Harmonization status**:  impossible      
-**Harmonization comment**: Unable to distinguish between true missing or unreported 0mn as no participants were coded as NA. 
-#Total gardening time in the past 7 days (P23_Q1_401) was coded as 1 if value greater than 0mins. This variable was used instead of #Gardening in the past 7 days (P23_Q1_405) because all values were 'no'.  
+**Harmonization comment**: Unable to distinguish between true missing or unreported 0mn as no participants were coded as NA. Total gardening time in the past 7 days (P23_Q1_401) was coded as 1 if value greater than 0mins. This variable was used instead of #Gardening in the past 7 days (P23_Q1_405) because all values were 'no'.  
 **R script**:  
 ```{r, echo=TRUE}
 
