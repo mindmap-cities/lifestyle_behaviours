@@ -12,13 +12,13 @@ library(epiDisplay)
 # Create an opal object with the login information
 erasmus_opal <- opal.login()
 #Login to Opal server and assign the content of the LUCAS table(s) to your RStudio environment
-opal.assign.table.tibble(erasmus_opal, 'HUNT1_data', 'HUNT.HUNT1',variables = list('AlcFL2W_NT1BLQ2','SmoCigDy_NT1BLQ2','SmoDyCu_NT1BLQ2','SmoCigDyN_NT1BLQ2','SmoDyAg_NT1BLQ2','SmoCigDyCesTm_NT1BLQ2','SmoDyDuEd_NT1BLQ2','ExeF_NT1BLQ2','SmoStat_NT1BLQ2','SmoCigarDy_NT1BLQ2','SmoPipeDy_NT1BLQ2','SmoCigDyPre_NT1BLQ2','SmoCigDy_NT1BLQ2'))
+opal.assign.table.tibble(erasmus_opal, 'HUNT1_data', 'HUNT.HUNT1',variables = list('AlcFL2W_NT1BLQ2','SmoCigDy_NT1BLQ2','SmoDyCu_NT1BLQ2','SmoCigDyN_NT1BLQ2','SmoDyAg_NT1BLQ2','SmoCigDyCesTm_NT1BLQ2','SmoDyDuEd_NT1BLQ2','ExeF_NT1BLQ2','SmoStat_NT1BLQ2','SmoCigarDy_NT1BLQ2','SmoPipeDy_NT1BLQ2','SmoCigDyPre_NT1BLQ2','SmoCigDy_NT1BLQ2','SmoPackYrs_NT1BLQ2'))
 HUNT1 <- opal.execute(erasmus_opal,'HUNT1_data')
 
-opal.assign.table.tibble(erasmus_opal, 'HUNT2_data', 'HUNT.HUNT2', variables = list('AlcNev_NT2BLQ1','AlcLiL2WN_NT2BLQ1','AlcWiL2WN_NT2BLQ1','AlcBeL2WN_NT2BLQ1','SmoDyAg_NT2BLQ1','SmoCigDyNEd_NT2BLQ1','SmoCigDyN_NT2BLQ1','SmoDyNev_NT2BLQ1','DriTeaNDy_NT2BLQ1','DriCofBoilNDy_NT2BLQ1','DriCofOtNDy_NT2BLQ1','SmoStat_NT2BLQ1','SmoDyDuEd_NT2BLQ1','InvAg_NT2BLQ1','SmoDyCesDu_NT2BLQ1'))
+opal.assign.table.tibble(erasmus_opal, 'HUNT2_data', 'HUNT.HUNT2', variables = list('AlcNev_NT2BLQ1','AlcLiL2WN_NT2BLQ1','AlcWiL2WN_NT2BLQ1','AlcBeL2WN_NT2BLQ1','SmoDyAg_NT2BLQ1','SmoCigDyNEd_NT2BLQ1','SmoCigDyN_NT2BLQ1','SmoDyNev_NT2BLQ1','DriTeaNDy_NT2BLQ1','DriCofBoilNDy_NT2BLQ1','DriCofOtNDy_NT2BLQ1','SmoStat_NT2BLQ1','SmoDyDuEd_NT2BLQ1','InvAg_NT2BLQ1','SmoDyCesDu_NT2BLQ1','SmoPackYrs_NT2BLQ1'))
 HUNT2 <- opal.execute(erasmus_opal,'HUNT2_data')
 
-opal.assign.table.tibble(erasmus_opal, 'HUNT3_data', 'HUNT.HUNT3',variables=list('AlcBeL2WN_NT3BLQ1','AlcFLY_NT3BLQ1','AlcL4W_NT3BLQ1','AlcWiL2WN_NT3BLQ1','AlcLiL2WN_NT3BLQ1','AlcMor5GlF_NT3BLQ1','SmoNev_NT3BLQ1','SmoCigMyN_NT3BLQ1','SmoCigDyN_NT3BLQ1','SmoCigDyNEd_NT3BLQ1','SmoCigOc_NT3BLQ1','SmoCigarPipeDy_NT3BLQ1','SmoPre_NT3BLQ1','SmoCigarPipeOc_NT3BLQ1','SmoCigDy_NT3BLQ1','SmoNev_NT3BLQ1','ActSporL6M_NT3BLQ2','ExeF_NT3BLQ1','ExeInt_NT3BLQ1','FoVegF_NT3BLQ1','FoFruF_NT3BLQ1','DriWatGl_NT3BLQ1','DriCofEvnN_NT3BLQ1','DriCofOtNDy_NT3BLQ1','DriCofBoilNDy_NT3BLQ1','AlcLiL2WN_NT3BLQ1','SmoStat_NT3BLQ1','SmoDyAg_NT3BLQ1','SmoOcAg_NT3BLQ1','SmoDyDuEd_NT2BLQ1','SmoDyDuEd_NT3BLQ1','PartAg_NT3BLQ1','SmoDyCesDu_NT3BLQ1'))
+opal.assign.table.tibble(erasmus_opal, 'HUNT3_data', 'HUNT.HUNT3',variables=list('AlcBeL2WN_NT3BLQ1','AlcFLY_NT3BLQ1','AlcL4W_NT3BLQ1','AlcWiL2WN_NT3BLQ1','AlcLiL2WN_NT3BLQ1','AlcMor5GlF_NT3BLQ1','SmoNev_NT3BLQ1','SmoCigMyN_NT3BLQ1','SmoCigDyN_NT3BLQ1','SmoCigDyNEd_NT3BLQ1','SmoCigOc_NT3BLQ1','SmoCigarPipeDy_NT3BLQ1','SmoPre_NT3BLQ1','SmoCigarPipeOc_NT3BLQ1','SmoCigDy_NT3BLQ1','SmoNev_NT3BLQ1','ActSporL6M_NT3BLQ2','ExeF_NT3BLQ1','ExeInt_NT3BLQ1','FoVegF_NT3BLQ1','FoFruF_NT3BLQ1','DriWatGl_NT3BLQ1','DriCofEvnN_NT3BLQ1','DriCofOtNDy_NT3BLQ1','DriCofBoilNDy_NT3BLQ1','AlcLiL2WN_NT3BLQ1','SmoStat_NT3BLQ1','SmoDyAg_NT3BLQ1','SmoOcAg_NT3BLQ1','SmoDyDuEd_NT2BLQ1','SmoDyDuEd_NT3BLQ1','PartAg_NT3BLQ1','SmoDyCesDu_NT3BLQ1','SmoPackYrs_NT3BLQ1'))
 HUNT3 <- opal.execute(erasmus_opal,'HUNT3_data')
 
 ```
@@ -92,10 +92,10 @@ lsb_HUNT_1$lsb_alc_cur_1<- recode(as.integer(HUNT2$AlcNev_NT2BLQ1), '0'=1L,'1'=0
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   Did you drink alcohol during the last 4 weeks? Missing or No (value 0) was set as Yes (value 1) IF the participant had reported beeing drunk the last 4 weeks. Missing was set as No (value 0) if the participant had reported never drunk alcohol.  
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_alc_cur_2<- as.integer(HUNT3$AlcL4W_NT3BLQ1)
+lsb_HUNT_2$lsb_alc_cur_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1L,'3'=1L,'4'=1L,'5'=1L,'6'=1L,'7'=0L,'8'=0L)
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -221,7 +221,7 @@ lsb_HUNT_0$lsb_alc_ever_0<- recode(as.integer(HUNT1$AlcFL2W_NT1BLQ2),'1'=1L,'2'=
 1 |   Ever consumed alcohol  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   Study-specific variable:"About how often in the last 12 months did you drink alcohol? (Do not include low-alcohol beer)".    
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1L,'3'=1L,'4'=1L,'5'=1L,'6'=1L,'7'=1L,'8'=0L)
@@ -1341,10 +1341,10 @@ lsb_HUNT_2$lsb_smk_stop_2<- as.integer((HUNT3$PartAg_NT3BLQ1-HUNT3$SmoDyCesDu_NT
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:  Study-specific variable: How many years in total have you smoked daily? Number of years was rounded down to make it integer.   
+**Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_0$lsb_smk_py_0<- HUNT1$SmoDyDuEd_NT1BLQ2
+lsb_HUNT_0$lsb_smk_py_0<- HUNT1$SmoPackYrs_NT1BLQ2
 ```  
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_1    
@@ -1354,10 +1354,10 @@ lsb_HUNT_0$lsb_smk_py_0<- HUNT1$SmoDyDuEd_NT1BLQ2
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   How many years in total have you smoked daily? {If currently or previously daily smoker}  
+**Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_smk_py_1<- HUNT2$SmoDyDuEd_NT2BLQ1
+lsb_HUNT_1$lsb_smk_py_1<- HUNT2$SmoPackYrs_NT2BLQ1
 ```  
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_2    
@@ -1370,7 +1370,7 @@ lsb_HUNT_1$lsb_smk_py_1<- HUNT2$SmoDyDuEd_NT2BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoDyDuEd_NT3BLQ1
+lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ```  
 
 # Physical activity subdomain
@@ -2776,7 +2776,7 @@ lsb_HUNT_2$lsb_water_2<- recode(as.integer(HUNT3$DriWatGl_NT3BLQ1),'1'=0L,'2'=0L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_coffee_qty_1<- rowSums(HUNT2[,c("DriTeaNDy_NT2BLQ1","DriCofBoilNDy_NT2BLQ1","DriCofOtNDy_NT2BLQ1")],na.rm = FALSE)
+lsb_HUNT_1$lsb_coffee_qty_1<- rowSums(HUNT2[,c("DriCofBoilNDy_NT2BLQ1","DriCofOtNDy_NT2BLQ1")],na.rm = FALSE)
 ```  
 ### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_2  
