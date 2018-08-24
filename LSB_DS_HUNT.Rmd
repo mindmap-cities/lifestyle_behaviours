@@ -15,10 +15,10 @@ erasmus_opal <- opal.login()
 opal.assign.table.tibble(erasmus_opal, 'HUNT1_data', 'HUNT.HUNT1',variables = list('AlcFL2W_NT1BLQ2','SmoCigDy_NT1BLQ2','SmoDyCu_NT1BLQ2','SmoCigDyN_NT1BLQ2','SmoDyAg_NT1BLQ2','SmoCigDyCesTm_NT1BLQ2','SmoDyDuEd_NT1BLQ2','ExeF_NT1BLQ2','SmoStat_NT1BLQ2','SmoCigarDy_NT1BLQ2','SmoPipeDy_NT1BLQ2','SmoCigDyPre_NT1BLQ2','SmoCigDy_NT1BLQ2','SmoPackYrs_NT1BLQ2'))
 HUNT1 <- opal.execute(erasmus_opal,'HUNT1_data')
 
-opal.assign.table.tibble(erasmus_opal, 'HUNT2_data', 'HUNT.HUNT2', variables = list('AlcNev_NT2BLQ1','AlcLiL2WN_NT2BLQ1','AlcWiL2WN_NT2BLQ1','AlcBeL2WN_NT2BLQ1','SmoDyAg_NT2BLQ1','SmoCigDyNEd_NT2BLQ1','SmoCigDyN_NT2BLQ1','SmoDyNev_NT2BLQ1','DriTeaNDy_NT2BLQ1','DriCofBoilNDy_NT2BLQ1','DriCofOtNDy_NT2BLQ1','SmoStat_NT2BLQ1','SmoDyDuEd_NT2BLQ1','InvAg_NT2BLQ1','SmoDyCesDu_NT2BLQ1','SmoPackYrs_NT2BLQ1'))
+opal.assign.table.tibble(erasmus_opal, 'HUNT2_data', 'HUNT.HUNT2', variables = list('AlcNev_NT2BLQ1','AlcLiL2WN_NT2BLQ1','AlcWiL2WN_NT2BLQ1','AlcBeL2WN_NT2BLQ1','SmoDyAg_NT2BLQ1','SmoCigDyNEd_NT2BLQ1','SmoCigDyN_NT2BLQ1','SmoDyNev_NT2BLQ1','DriTeaNDy_NT2BLQ1','DriCofBoilNDy_NT2BLQ1','DriCofOtNDy_NT2BLQ1','SmoStat_NT2BLQ1','SmoDyDuEd_NT2BLQ1','InvAg_NT2BLQ1','SmoDyCesDu_NT2BLQ1','SmoPackYrs_NT2BLQ1','SmoPackYrs_NT2BLQ1'))
 HUNT2 <- opal.execute(erasmus_opal,'HUNT2_data')
 
-opal.assign.table.tibble(erasmus_opal, 'HUNT3_data', 'HUNT.HUNT3',variables=list('AlcBeL2WN_NT3BLQ1','AlcFLY_NT3BLQ1','AlcL4W_NT3BLQ1','AlcWiL2WN_NT3BLQ1','AlcLiL2WN_NT3BLQ1','AlcMor5GlF_NT3BLQ1','SmoNev_NT3BLQ1','SmoCigMyN_NT3BLQ1','SmoCigDyN_NT3BLQ1','SmoCigDyNEd_NT3BLQ1','SmoCigOc_NT3BLQ1','SmoCigarPipeDy_NT3BLQ1','SmoPre_NT3BLQ1','SmoCigarPipeOc_NT3BLQ1','SmoCigDy_NT3BLQ1','SmoNev_NT3BLQ1','ActSporL6M_NT3BLQ2','ExeF_NT3BLQ1','ExeInt_NT3BLQ1','FoVegF_NT3BLQ1','FoFruF_NT3BLQ1','DriWatGl_NT3BLQ1','DriCofEvnN_NT3BLQ1','DriCofOtNDy_NT3BLQ1','DriCofBoilNDy_NT3BLQ1','AlcLiL2WN_NT3BLQ1','SmoStat_NT3BLQ1','SmoDyAg_NT3BLQ1','SmoOcAg_NT3BLQ1','SmoDyDuEd_NT2BLQ1','SmoDyDuEd_NT3BLQ1','PartAg_NT3BLQ1','SmoDyCesDu_NT3BLQ1','SmoPackYrs_NT3BLQ1'))
+opal.assign.table.tibble(erasmus_opal, 'HUNT3_data', 'HUNT.HUNT3',variables=list('AlcBeL2WN_NT3BLQ1','AlcFLY_NT3BLQ1','AlcL4W_NT3BLQ1','AlcWiL2WN_NT3BLQ1','AlcLiL2WN_NT3BLQ1','AlcMor5GlF_NT3BLQ1','SmoNev_NT3BLQ1','SmoCigMyN_NT3BLQ1','SmoCigDyN_NT3BLQ1','SmoCigDyNEd_NT3BLQ1','SmoCigOc_NT3BLQ1','SmoCigarPipeDy_NT3BLQ1','SmoPre_NT3BLQ1','SmoCigarPipeOc_NT3BLQ1','SmoCigDy_NT3BLQ1','SmoNev_NT3BLQ1','ActSporL6M_NT3BLQ2','ExeF_NT3BLQ1','ExeInt_NT3BLQ1','FoVegF_NT3BLQ1','FoFruF_NT3BLQ1','DriWatGl_NT3BLQ1','DriCofEvnN_NT3BLQ1','DriCofOtNDy_NT3BLQ1','DriCofBoilNDy_NT3BLQ1','AlcLiL2WN_NT3BLQ1','SmoStat_NT3BLQ1','SmoDyAg_NT3BLQ1','SmoOcAg_NT3BLQ1','SmoDyDuEd_NT2BLQ1','SmoDyDuEd_NT3BLQ1','PartAg_NT3BLQ1','SmoDyCesDu_NT3BLQ1','SmoPackYrs_NT3BLQ1','SmoPackYrs_NT3BLQ1'))
 HUNT3 <- opal.execute(erasmus_opal,'HUNT3_data')
 
 ```
@@ -1667,7 +1667,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average walking time for transportation  
 **Variable name**:  lsb_pa_walk_trans_0    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1680,7 +1680,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_1    
 **Variable description**: Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1693,7 +1693,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_2    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1706,7 +1706,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average walking for transportation    
 **Variable name**:  lsb_pa_walk_trans_4    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1720,7 +1720,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_0    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1733,7 +1733,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_2    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1746,7 +1746,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_3    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1759,7 +1759,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average walking for leisure  
 **Variable name**:  lsb_pa_walk_leis_4    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1773,7 +1773,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_0  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1786,7 +1786,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_1  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1799,7 +1799,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_2  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1812,7 +1812,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_3  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1825,7 +1825,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_4  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1838,7 +1838,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_5  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1851,7 +1851,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_6  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1991,7 +1991,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_0    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -2004,7 +2004,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_1    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2017,7 +2017,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_2    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2030,7 +2030,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_3    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2043,7 +2043,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_4    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2056,7 +2056,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_5    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2069,7 +2069,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_6    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2210,7 +2210,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_0  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2223,7 +2223,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_1  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2236,7 +2236,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_2  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2249,7 +2249,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_3  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2262,7 +2262,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_4  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2275,7 +2275,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_5  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2288,7 +2288,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_6  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
