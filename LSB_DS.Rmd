@@ -1715,7 +1715,7 @@ output: html_document
 ### **Variable label**:  Average walking time for transportation  
 **Variable name**:  lsb_pa_walk_trans_0    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1729,7 +1729,7 @@ output: html_document
 ### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_1    
 **Variable description**: Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1743,7 +1743,7 @@ output: html_document
 ### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_2    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1757,7 +1757,7 @@ output: html_document
 ### **Variable label**:  Average walking for transportation    
 **Variable name**:  lsb_pa_walk_trans_4    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1772,7 +1772,7 @@ output: html_document
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_0    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1786,7 +1786,7 @@ output: html_document
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_2    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1800,7 +1800,7 @@ output: html_document
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_3    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1814,7 +1814,7 @@ output: html_document
 ### **Variable label**:  Average walking for leisure  
 **Variable name**:  lsb_pa_walk_leis_4    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1829,7 +1829,7 @@ output: html_document
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_0  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1843,7 +1843,7 @@ output: html_document
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_1  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1857,7 +1857,7 @@ output: html_document
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_2  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1871,7 +1871,7 @@ output: html_document
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_3  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1885,7 +1885,7 @@ output: html_document
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_4  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1899,7 +1899,7 @@ output: html_document
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_5  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1913,7 +1913,7 @@ output: html_document
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_6  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2061,7 +2061,7 @@ output: html_document
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_0    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -2075,7 +2075,7 @@ output: html_document
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_1    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2089,7 +2089,7 @@ output: html_document
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_2    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2103,7 +2103,7 @@ output: html_document
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_3    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2117,7 +2117,7 @@ output: html_document
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_4    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2131,7 +2131,7 @@ output: html_document
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_5    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2145,7 +2145,7 @@ output: html_document
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_6    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2294,7 +2294,7 @@ output: html_document
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_0  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2308,7 +2308,7 @@ output: html_document
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_1  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2322,7 +2322,7 @@ output: html_document
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_2  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2336,7 +2336,7 @@ output: html_document
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_3  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2350,7 +2350,7 @@ output: html_document
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_4  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2364,7 +2364,7 @@ output: html_document
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_5  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2378,7 +2378,7 @@ output: html_document
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_6  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
