@@ -1604,15 +1604,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(is.na(RECORD_w1_2$packyear_current), RECORD_w
 **Harmonization comment**:   NA's are coded to 0 as it was found reasonable to make the assumption that all missing values corresponded to non-reported "0mn" of walking time.  "The environmental correlates of overall and neighborhood based recreational walking (a cross-sectional analysis of the RECORD study)".    
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_pa_walk_time_0 <-  as.integer(
-                                          ifelse( ((as.numeric(RECORD_w1_2$q27_glob_tot)/7))<30,0,
-                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>=30 &
-                                             (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<60,1,
-                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>=60&
-                                                  (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<120,2,
-                                           ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>=120 &
-                                                    (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<240,3,
-                                    ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>=240,4,NA))))))
+lsb_RECORD_0$lsb_pa_walk_time_0 <-  as.integer(ifelse(((as.numeric(RECORD_w1_2$q27_glob_tot)/7))<30,0, ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>= 30 & (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<60,1, ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>= 60 & (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<120,2, ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>= 120 & (as.numeric(RECORD_w1_2$q27_glob_tot)/7)<240,3, ifelse( (as.numeric(RECORD_w1_2$q27_glob_tot)/7)>= 240, 4, NA))))))
 ```  
 ### **Variable label**:  Average walking time   
 **Variable name**:   lsb_pa_walk_time_1  
@@ -1764,7 +1756,7 @@ ifelse(120<=RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_p
 ### **Variable label**:  Average walking time for transportation  
 **Variable name**:  lsb_pa_walk_trans_0    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1772,13 +1764,13 @@ ifelse(120<=RECORD_w2$total_walk_time_pastweek_day & RECORD_w2$total_walk_time_p
 **Harmonization comment**:  NA's are coded to 0 as it was found reasonable to make the assumption that all missing values corresponded to non-reported "0mn" of walking time.  "The environmental correlates of overall and neighborhood based recreational walking (a cross-sectional analysis of the RECORD study)".   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_pa_walk_trans_0 <- as.integer(RECORD_w1_2$q27_util_tot)
+lsb_RECORD_0$lsb_pa_walk_trans_0 <- as.numeric(RECORD_w1_2$q27_util_tot)
 
 ```  
 ### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_1    
 **Variable description**: Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1792,7 +1784,7 @@ lsb_RECORD_0$lsb_pa_walk_trans_0 <- as.integer(RECORD_w1_2$q27_util_tot)
 ### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_2    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1806,7 +1798,7 @@ lsb_RECORD_0$lsb_pa_walk_trans_0 <- as.integer(RECORD_w1_2$q27_util_tot)
 ### **Variable label**:  Average walking for transportation    
 **Variable name**:  lsb_pa_walk_trans_4    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1821,7 +1813,7 @@ lsb_RECORD_0$lsb_pa_walk_trans_0 <- as.integer(RECORD_w1_2$q27_util_tot)
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_0    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1829,13 +1821,13 @@ lsb_RECORD_0$lsb_pa_walk_trans_0 <- as.integer(RECORD_w1_2$q27_util_tot)
 **Harmonization comment**:   NA's are coded to 0 as it was found reasonable to make the assumption that all missing values corresponded to non-reported "0mn" of walking time.  "The environmental correlates of overall and neighborhood based recreational walking (a cross-sectional analysis of the RECORD study)".   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_pa_walk_leis_0 <- as.integer(RECORD_w1_2$q27_promen_tot)
+lsb_RECORD_0$lsb_pa_walk_leis_0 <- as.numeric(RECORD_w1_2$q27_promen_tot)
 
 ```  
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_2    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1849,7 +1841,7 @@ lsb_RECORD_0$lsb_pa_walk_leis_0 <- as.integer(RECORD_w1_2$q27_promen_tot)
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_3    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1863,7 +1855,7 @@ lsb_RECORD_0$lsb_pa_walk_leis_0 <- as.integer(RECORD_w1_2$q27_promen_tot)
 ### **Variable label**:  Average walking for leisure  
 **Variable name**:  lsb_pa_walk_leis_4    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1878,7 +1870,7 @@ lsb_RECORD_0$lsb_pa_walk_leis_0 <- as.integer(RECORD_w1_2$q27_promen_tot)
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_0  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1886,13 +1878,13 @@ lsb_RECORD_0$lsb_pa_walk_leis_0 <- as.integer(RECORD_w1_2$q27_promen_tot)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_pa_cycle_0<- as.integer(as.difftime(RECORD_w1_1$Q28_31_2,format="%H:%M",units="mins"))
+lsb_RECORD_0$lsb_pa_cycle_0<- as.numeric(as.difftime(RECORD_w1_1$Q28_31_2,format="%H:%M",units="mins"))
 
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_1  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal     
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1906,7 +1898,7 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.integer(as.difftime(RECORD_w1_1$Q28_31_2,format
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_2  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal     
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1920,7 +1912,7 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.integer(as.difftime(RECORD_w1_1$Q28_31_2,format
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_3  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal     
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1934,7 +1926,7 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.integer(as.difftime(RECORD_w1_1$Q28_31_2,format
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_4  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal     
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1948,7 +1940,7 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.integer(as.difftime(RECORD_w1_1$Q28_31_2,format
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_5  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal     
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1962,7 +1954,7 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.integer(as.difftime(RECORD_w1_1$Q28_31_2,format
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_6  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal     
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2109,7 +2101,7 @@ lsb_RECORD_0$lsb_pa_garden_0 <- ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,1L)
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_0    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal     
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -2117,14 +2109,13 @@ lsb_RECORD_0$lsb_pa_garden_0 <- ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,1L)
 **Harmonization comment**:   Value of NA in Physical activities performed during the last 7 days: Gardening (Q28_1_1) indicates that the participant did not garden in the past 7 days so these participants were given a value of 0mn for minutes spent gardening.  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,
-                                 ifelse(RECORD_w1_1$Q28_1_1==1,as.integer(as.difftime(RECORD_w1_1$Q28_1_2,format="%H:%M",units="mins")),NA))
+lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(is.na(RECORD_w1_1$Q28_1_1),0, ifelse(RECORD_w1_1$Q28_1_1==1,as.numeric(as.difftime(RECORD_w1_1$Q28_1_2,format="%H:%M",units="mins")),NA))
 
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_1    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal     
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2137,7 +2128,7 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_2    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal     
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2151,7 +2142,7 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_3    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal     
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2165,7 +2156,7 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_4    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal     
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2179,7 +2170,7 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_5    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal     
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2193,7 +2184,7 @@ lsb_RECORD_0$lsb_pa_garden_time_0<-ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_6    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal     
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2342,7 +2333,7 @@ lsb_RECORD_0$lsb_pa_house_0 <- ifelse(is.na(RECORD_w1_2$q28_autre_4_1),0L,1L)
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_0  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal    
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2356,7 +2347,7 @@ lsb_RECORD_0$lsb_pa_house_time_0 <- as.numeric(RECORD_w1_2$q28_autre_4_2)*60
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_1  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2370,7 +2361,7 @@ lsb_RECORD_0$lsb_pa_house_time_0 <- as.numeric(RECORD_w1_2$q28_autre_4_2)*60
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_2  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2384,7 +2375,7 @@ lsb_RECORD_0$lsb_pa_house_time_0 <- as.numeric(RECORD_w1_2$q28_autre_4_2)*60
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_3  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2398,7 +2389,7 @@ lsb_RECORD_0$lsb_pa_house_time_0 <- as.numeric(RECORD_w1_2$q28_autre_4_2)*60
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_4  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2412,7 +2403,7 @@ lsb_RECORD_0$lsb_pa_house_time_0 <- as.numeric(RECORD_w1_2$q28_autre_4_2)*60
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_5  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2426,7 +2417,7 @@ lsb_RECORD_0$lsb_pa_house_time_0 <- as.numeric(RECORD_w1_2$q28_autre_4_2)*60
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_6  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal      
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
