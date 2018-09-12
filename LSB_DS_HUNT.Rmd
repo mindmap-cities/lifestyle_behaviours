@@ -1064,7 +1064,8 @@ lsb_HUNT_2$lsb_smk_ever_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1), '0'=0L, '1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_0$lsb_cig_qty_0<- as.integer(HUNT1$SmoCigDyN_NT1BLQ2)
+lsb_HUNT_0$lsb_cig_qty_0<- ifelse(lsb_HUNT_0$lsb_smk_cur_0==1,as.integer(HUNT1$SmoCigDyN_NT1BLQ2),
+                                  ifelse(lsb_HUNT_0$lsb_smk_cur_0==0,0,NA))
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_1   
@@ -1077,7 +1078,8 @@ lsb_HUNT_0$lsb_cig_qty_0<- as.integer(HUNT1$SmoCigDyN_NT1BLQ2)
 **Harmonization comment**:   A corrected variable from the original variable SmoCigDyN from HUNT2. IF SmoStat@NT1BLQ2 =1 (exsmoker) AND SmoStat@NT2BLQ1 =1 (exsmoker) AND (Diff: SmoCigDyN@NT2BLQ1 - SmoCigDyN@NT1BLQ2 < 0). Then SmoCigDyNEd@NT2BLQ1 = SmoCigDyN@NT1BLQ2.  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_cig_qty_1<- as.integer(HUNT2$SmoCigDyNEd_NT2BLQ1)
+lsb_HUNT_1$lsb_cig_qty_1<- ifelse(lsb_HUNT_1$lsb_smk_cur_1==1,as.integer(HUNT2$SmoCigDyNEd_NT2BLQ1),
+                                  ifelse(lsb_HUNT_1$lsb_smk_cur_1==0,0,NA))
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_2   
@@ -1090,7 +1092,8 @@ lsb_HUNT_1$lsb_cig_qty_1<- as.integer(HUNT2$SmoCigDyNEd_NT2BLQ1)
 **Harmonization comment**:   A corrected variable from the original variable SmoCigDyN from HUNT3. IF SmoStat@NT2BLQ1 =1 (exsmoker) AND SmoStat@NT3BLQ1 =1 (exsmoker) AND (Diff: SmoCigDyN@NT3BLQ1 - SmoCigDyNEd@NT2BLQ1 < 0).  Then SmoCigDyNEd@NT3BLQ1 = SmoCigDyNEd@NT2BLQ1, Missing=SmoCigMyN/30 IF SmoCigMyN>15 AND Smostat=3 (daily smoker) OR SmoStat=1 (Exsmoker) AND answered on the variablesSmoDyAg ang SmoDyCesAg.  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_cig_qty_2<- as.integer(HUNT3$SmoCigDyNEd_NT3BLQ1)
+lsb_HUNT_2$lsb_cig_qty_2<- ifelse(lsb_HUNT_2$lsb_smk_cur_2==1,as.integer(HUNT3$SmoCigDyNEd_NT3BLQ1),
+                                  ifelse(lsb_HUNT_2$lsb_smk_cur_2==0,0,NA))
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_3   
