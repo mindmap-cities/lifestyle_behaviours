@@ -12,25 +12,25 @@ library(epiDisplay)
 # Create an opal object with the login information
 erasmus_opal <- opal.login()
 #Login to Opal server and assign the content of the LUCAS table(s) to your RStudio environment
-opal.assign.table.tibble(erasmus_opal, 'LASA1B', 'LASA.LASA1B',variables = list('bmvar24','bmvar27','bmvar26','bmvar29','bmvar31','bmvar35','bmvar34','bmvar33','blphya06','blphya09','blphya13','blphya11','blphya17','blphya15','blphya19','blphya21','blphya25','blphya24','blphya28','bcesd11','bqsleep2','bmvar44','bmvar41','bmvar38','bmvar32','blphya08','blphya14','blphya31','blphya35','blphya17','blphya15','blphya32','blphya36','blphya10','bmvar37','bage','blphya12','bqsleep1'))
+opal.assign.table.tibble(erasmus_opal, 'LASA1B', 'LASA.LASA1B',variables = list('bmvar24','bmvar27','bmvar26','bmvar29','bmvar31','bmvar35','bmvar34','bmvar33','blphya06','blphya09','blphya13','blphya11','blphya17','blphya15','blphya19','blphya21','blphya25','blphya24','blphya28','bcesd11','bqsleep2','bmvar44','bmvar41','bmvar38','bmvar32','blphya08','blphya14','blphya31','blphya35','blphya17','blphya15','blphya32','blphya36','blphya10','bmvar37','bage','blphya12','bqsleep1','bmvar37p'))
 LASA1B <- opal.execute(erasmus_opal,'LASA1B')
 
 opal.assign.table.tibble(erasmus_opal, 'LASA1C', 'LASA.LASA1C',variables = list('cmvar24','cmvar25a','cmvar351','cmvar353','cmvar352','cmvar34','cmvar33','cmvar32','cmvar351','cmvar31','clphya07','clphya09','clphya11','clphya10','clphya13','clphya12','clphya22','clphya24','clphya26','clphya21','clphya25','clphya28','ccesd11','cqsleep2','clphya08','clphya14','clphya32','clphya36','clphya17','clphya15','clphya14','cmvar24','cmvar28','cmvar29','cmvar36','cmvar351','clphya19','cqsleep1'))
 LASA1C <- opal.execute(erasmus_opal,'LASA1C')
 
-opal.assign.table.tibble(erasmus_opal, 'LASA1D', 'LASA.LASA1D',variables = list('dmalcohu','dmalcoh6','dmvar31','dmvar35','dmvar32','dmvar33','dmvar34','dmvar40','dmvar37','dlphya08','dlphya09','dlphya07','dlphya06','dlphya10','dlphya13','dlphya11','dlphya12','dlphya15','dlphya18','dlphya19','dlphya17','dlphya35','dlphya38','dlphya31','dmvar30','dlphya32','dlphya34','dlphya33','dlphya36','dlphya37','dcesd11','dqsleep2','dlphya14','dlphya32','dlphya36','dlphya17','dlphya15','dlphya14','dmalcohu','dqsleep1'))
+opal.assign.table.tibble(erasmus_opal, 'LASA1D', 'LASA.LASA1D',variables = list('dmalcohu','dmalcoh6','dmvar31','dmvar35','dmvar32','dmvar33','dmvar34','dmvar40','dmvar37','dlphya08','dlphya09','dlphya07','dlphya06','dlphya10','dlphya13','dlphya11','dlphya12','dlphya15','dlphya18','dlphya19','dlphya17','dlphya35','dlphya38','dlphya31','dmvar30','dlphya32','dlphya34','dlphya33','dlphya36','dlphya37','dcesd11','dqsleep2','dlphya14','dlphya32','dlphya36','dlphya17','dlphya15','dlphya14','dmalcohu','dqsleep1','dmvar38'))
 LASA1D <- opal.execute(erasmus_opal,'LASA1D')
 
-opal.assign.table.tibble(erasmus_opal, 'LASA1E', 'LASA.LASA1E',variables = list('emalcohu','emalcoh6','emvar32','emvar31','emvar33','emvar35','emvar34','elphya08','elphya07','elphya09','elphya06','elphya10','elphya13','elphya11','elphya12','elphya15','elphya18','elphya17','elphya19','elphya37','elphya36','elphya35','elphya34','elphya38','elphya32','elphya33','elphya31','ecesd11','eqsleep2','elphya14','elphya32','elphya36','elphya17','elphya15','elphya14','emalcohu','eqsleep1'))
+opal.assign.table.tibble(erasmus_opal, 'LASA1E', 'LASA.LASA1E',variables = list('emalcohu','emalcoh6','emvar32','emvar31','emvar33','emvar35','emvar34','elphya08','elphya07','elphya09','elphya06','elphya10','elphya13','elphya11','elphya12','elphya15','elphya18','elphya17','elphya19','elphya37','elphya36','elphya35','elphya34','elphya38','elphya32','elphya33','elphya31','ecesd11','eqsleep2','elphya14','elphya32','elphya36','elphya17','elphya15','elphya14','emalcohu','eqsleep1','emvar37'))
 LASA1E <- opal.execute(erasmus_opal,'LASA1E')
 
-opal.assign.table.tibble(erasmus_opal, 'LASA1F', 'LASA.LASA1F',variables = list('fmalcoh6','fmalcohd','fmalcohu','fmvar34','fmvar33','fmvar32','fmvar31','flphya08','flphya07','flphya09','flphya06','flphya10','flphya11','flphya13','flphya12','flphya18','flphya15','flphya17','flphya19','flphya37','flphya32','flphya33','flphya36','flphya34','flphya38','flphya31','flphya35','fcesd11','fqsleep2','flphya14','flphya32','flphya36','flphya17','flphya15','flphya14','fmalcohu','fqsleep1'))
+opal.assign.table.tibble(erasmus_opal, 'LASA1F', 'LASA.LASA1F',variables = list('fmalcoh6','fmalcohd','fmalcohu','fmvar34','fmvar33','fmvar32','fmvar31','flphya08','flphya07','flphya09','flphya06','flphya10','flphya11','flphya13','flphya12','flphya18','flphya15','flphya17','flphya19','flphya37','flphya32','flphya33','flphya36','flphya34','flphya38','flphya31','flphya35','fcesd11','fqsleep2','flphya14','flphya32','flphya36','flphya17','flphya15','flphya14','fmalcohu','fqsleep1','fmvar35','fmvar37'))
 LASA1F <- opal.execute(erasmus_opal,'LASA1F')
 
-opal.assign.table.tibble(erasmus_opal, 'LASA1G', 'LASA.LASA1G',variables = list('gmalcoh6','gmalcohn','gmalcohu','gmvar34','gmvar33','gmvar31','gmvar32','glphya08','glphya07','glphya09','glphya06','glphya10','glphya13','glphya11','glphya12','glphya14','glphya17','glphya15','glphya18','glphya19','glphya36','glphya37','glphya34','glphya32','glphya33','glphya38','glphya31','glphya35','gcesd11','gqsleep2','gqsleep5','glphya14','glphya32','glphya36','glphya17','glphya15','glphya14','gmalcohu','gqsleep1'))
+opal.assign.table.tibble(erasmus_opal, 'LASA1G', 'LASA.LASA1G',variables = list('gmalcoh6','gmalcohn','gmalcohu','gmvar34','gmvar33','gmvar31','gmvar32','glphya08','glphya07','glphya09','glphya06','glphya10','glphya13','glphya11','glphya12','glphya14','glphya17','glphya15','glphya18','glphya19','glphya36','glphya37','glphya34','glphya32','glphya33','glphya38','glphya31','glphya35','gcesd11','gqsleep2','gqsleep5','glphya14','glphya32','glphya36','glphya17','glphya15','glphya14','gmalcohu','gqsleep1','gmvar35','gmvar37'))
 LASA1G <- opal.execute(erasmus_opal,'LASA1G')
 
-opal.assign.table.tibble(erasmus_opal, 'LASA1H', 'LASA.LASA1H',variables = list('HMALCOHN','HMALCOH6','HMALCOHU','HMVAR34','HMVAR33','HMVAR31','HMVAR32','HLPHYA08','HLPHYA09','HLPHYA07','HLPHYA06','HLPHYA10','HLPHYA13','HLPHYA11','HLPHYA12','HLPHYA15','HLPHYA17','HLPHYA14','HLPHYA18','HLPHYA19','HLPHYA32','HLPHYA36','HLPHYA33','HLPHYA37','HLPHYA34','HLPHYA38','HLPHYA35','HLPHYA31','hcesd11','hqsleepm','hqsleep2','hqsleep5','hqsleeph','HLPHYA14','HLPHYA32','HLPHYA36','HLPHYA17','HLPHYA15','HLPHYA14','HMALCOHU','hqsleep1'))
+opal.assign.table.tibble(erasmus_opal, 'LASA1H', 'LASA.LASA1H',variables = list('HMALCOHN','HMALCOH6','HMALCOHU','HMVAR34','HMVAR33','HMVAR31','HMVAR32','HLPHYA08','HLPHYA09','HLPHYA07','HLPHYA06','HLPHYA10','HLPHYA13','HLPHYA11','HLPHYA12','HLPHYA15','HLPHYA17','HLPHYA14','HLPHYA18','HLPHYA19','HLPHYA32','HLPHYA36','HLPHYA33','HLPHYA37','HLPHYA34','HLPHYA38','HLPHYA35','HLPHYA31','hcesd11','hqsleepm','hqsleep2','hqsleep5','hqsleeph','HLPHYA14','HLPHYA32','HLPHYA36','HLPHYA17','HLPHYA15','HLPHYA14','HMALCOHU','hqsleep1','HMVAR31','HMVAR37','HMVAR35'))
 LASA1H <- opal.execute(erasmus_opal,'LASA1H')
 ```
 ## Assign participant id as first column of your harmonized dataframes
@@ -1067,7 +1067,7 @@ lsb_LASA1_6$lsb_smk_ever_6 <- ifelse(as.integer(LASA1H$HMVAR32)== 1, 0L, ifelse(
 **Category coding**:  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:   Study-specific variables is quantity a week of cigarettes and self-rolled cigarettes combined. question  
+**Harmonization comment**:   This wave collects number of cigarettes a week compared to other waves in LASA which collect number of cigarettes and self-rolled cigarettes.     
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_0$lsb_cig_qty_0 <- ifelse(as.integer(LASA1B$bmvar37)==-2 | as.integer(LASA1B$bmvar37)==-3,0L, ifelse(as.integer(LASA1B$bmvar37)<0,NA,as.integer(LASA1B$bmvar37)/7))
@@ -1080,10 +1080,10 @@ lsb_LASA1_0$lsb_cig_qty_0 <- ifelse(as.integer(LASA1B$bmvar37)==-2 | as.integer(
 **Category coding**:  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:   Study-specific variables is quantity a week of cigarettes and self-rolled cigarettes combined. question  
+**Harmonization comment**:   Study-specific variables is quantity a week of cigarettes and self-rolled cigarettes combined.    
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_1$lsb_cig_qty_1 <- ifelse(as.integer(LASA1C$cmvar36)==-2 & as.integer(LASA1C$cmvar351==-3),NA, ifelse(as.integer(LASA1C$cmvar36)==-2 & (as.integer(LASA1C$cmvar31)==-1 | as.integer(LASA1C$cmvar31)==-5),NA, ifelse(as.integer(LASA1C$cmvar36)==-2,0L, ifelse(as.integer(LASA1C$cmvar36)<0,NA,as.integer(LASA1C$cmvar36)/7))))
+lsb_LASA1_1$lsb_cig_qty_1 <- ifelse(as.integer(LASA1C$cmvar31)==1 | as.integer(LASA1C$cmvar351)==0,0L, ifelse(as.integer(LASA1C$cmvar351)==1 & as.integer(LASA1C$cmvar36)>0, as.integer(as.integer(LASA1C$cmvar36)/7),NA))
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_2   
@@ -1093,10 +1093,10 @@ lsb_LASA1_1$lsb_cig_qty_1 <- ifelse(as.integer(LASA1C$cmvar36)==-2 & as.integer(
 **Category coding**:  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:   question  
+**Harmonization comment**:   Study-specific variables self-rolled cigarettes a week (dmvar40) and cigarette a week (dmvar37) were combined to be consistent with the other waves.  If participant smokes both cigarettes and self-rolled cigarettes but value of quantity smoked a week for one is missing, coded to NA.  
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_LASA1_2$lsb_cig_qty_2 <- ifelse(as.integer(LASA1D$dmvar31)==1 | (as.integer(LASA1D$dmvar35)==2 & as.integer(LASA1D$dmvar38)==2),0L, ifelse(as.integer(LASA1D$dmvar35)==1 & as.integer(LASA1D$dmvar38)==1, as.integer(sum(as.integer(LASA1D$dmvar37),as.integer(LASA1D$dmvar40),na.rm=F)/7), ifelse(as.integer(LASA1D$dmvar35)==1 & as.integer(LASA1D$dmvar38)==2,as.integer(as.integer(LASA1D$dmvar37)/7), ifelse(as.integer(LASA1D$dmvar38)==1 & as.integer(LASA1D$dmvar35)==2,as.integer(as.integer(LASA1D$dmvar40)/7),NA))))
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_3   
@@ -1106,10 +1106,10 @@ lsb_LASA1_1$lsb_cig_qty_1 <- ifelse(as.integer(LASA1C$cmvar36)==-2 & as.integer(
 **Category coding**:  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:   cigarettes and self-rolled combined BUT category 1= 1 or less a week. question  
+**Harmonization comment**:   Study-specific variables is quantity a week of cigarettes and self-rolled cigarettes combined.    
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_LASA1_3$lsb_cig_qty_3 <- ifelse(as.integer(LASA1E$emvar31)==1 | as.integer(LASA1E$emvar35)==2,0L, ifelse(as.integer(LASA1E$emvar35)==1 & as.integer(LASA1E$emvar37)>0, as.integer(as.integer(LASA1E$emvar37)/7),NA))
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_4   
@@ -1119,10 +1119,10 @@ lsb_LASA1_1$lsb_cig_qty_1 <- ifelse(as.integer(LASA1C$cmvar36)==-2 & as.integer(
 **Category coding**:  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:   cigarettes and self-rolled combined.  
+**Harmonization comment**:  Study-specific variables is quantity a week of cigarettes and self-rolled cigarettes combined.    
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_LASA1_4$lsb_cig_qty_4 <- ifelse(as.integer(LASA1F$fmvar31)==1 | as.integer(LASA1F$fmvar35)==2,0L, ifelse(as.integer(LASA1F$fmvar35)==1 & as.integer(LASA1F$fmvar37)>0, as.integer(as.integer(LASA1F$fmvar37)/7),NA))
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_5   
@@ -1132,10 +1132,10 @@ lsb_LASA1_1$lsb_cig_qty_1 <- ifelse(as.integer(LASA1C$cmvar36)==-2 & as.integer(
 **Category coding**:  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:   cigarettes and self-rolled combined.  
+**Harmonization comment**:  Study-specific variables is quantity a week of cigarettes and self-rolled cigarettes combined.    
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_LASA1_5$lsb_cig_qty_5 <- ifelse(as.integer(LASA1G$gmvar31)==1 | as.integer(LASA1G$gmvar35)==2,0L, ifelse(as.integer(LASA1G$gmvar35)==1 & as.integer(LASA1G$gmvar37)>0, as.integer(as.integer(LASA1G$gmvar37)/7),NA))
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_6   
@@ -1145,10 +1145,10 @@ lsb_LASA1_1$lsb_cig_qty_1 <- ifelse(as.integer(LASA1C$cmvar36)==-2 & as.integer(
 **Category coding**:  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:   cigarettes and self-rolled combined BUT category 1= 1 or less a week. question  
+**Harmonization comment**:  Study-specific variables is quantity a week of cigarettes and self-rolled cigarettes combined.    
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_LASA1_6$lsb_cig_qty_6 <- ifelse(as.integer(LASA1H$HMVAR31)==1 | as.integer(LASA1H$HMVAR35)==2,0L, ifelse(as.integer(LASA1H$HMVAR35)==1 & as.integer(LASA1H$HMVAR37)>0, as.integer(as.integer(LASA1H$HMVAR37)/7),NA))
 ```  
 
 ### **Variable label**:  Smoking initiation age    
@@ -1342,11 +1342,11 @@ lsb_LASA1_6$lsb_smk_start_6 <- ifelse(as.integer(LASA1H$HMVAR34)< 0, NA, as.inte
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  complete    
-**Harmonization comment**:   question  
+**Harmonization status**:  impossible      
+**Harmonization comment**:    
 **R script**:  
 ```{r, echo=TRUE}
-#lsb_LASA1_0$lsb_smk_py_0 <- ifelse(as.numeric(LASA1B$bage) < lsb_LASA1_0$lsb_smk_start_0,NA,((lsb_LASA1_0$lsb_cig_qty_0)/20)*(LASA1B$bage - lsb_LASA1_0$lsb_smk_start_0))
+
 ```  
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_1    
@@ -1355,8 +1355,8 @@ lsb_LASA1_6$lsb_smk_start_6 <- ifelse(as.integer(LASA1H$HMVAR34)< 0, NA, as.inte
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  complete    
-**Harmonization comment**:   question    
+**Harmonization status**:  impossible      
+**Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1368,8 +1368,8 @@ lsb_LASA1_6$lsb_smk_start_6 <- ifelse(as.integer(LASA1H$HMVAR34)< 0, NA, as.inte
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  complete    
-**Harmonization comment**:   question    
+**Harmonization status**:  impossible      
+**Harmonization comment**:    
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1392,13 +1392,10 @@ lsb_LASA1_6$lsb_smk_start_6 <- ifelse(as.integer(LASA1H$HMVAR34)< 0, NA, as.inte
 3 |  Often (5-7 days)  
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific asks for number of times walked outside.   redo
+**Harmonization comment**:   study-specific asks for number of times walked outside in the past two weeks, not number of days the partcicipant went for a walk.     
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_0$lsb_pa_walk_freq_0 <- ifelse((as.integer(LASA1B$blphya08)/2)< 1, 0L, 
-                                  ifelse((as.integer(LASA1B$blphya08)/2) & (as.integer(LASA1B$blphya08)/2)<3, 1L,
-                                  ifelse((as.integer(LASA1B$blphya08)/2)>2 & (as.integer(LASA1B$blphya08)/2)<5,2L,
-                                  ifelse((as.integer(LASA1B$blphya08)/2)>4 & (as.integer(LASA1B$blphya08)/2)<8,3L,NA))))
+
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_1    
@@ -1414,14 +1411,11 @@ lsb_LASA1_0$lsb_pa_walk_freq_0 <- ifelse((as.integer(LASA1B$blphya08)/2)< 1, 0L,
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization status**:  impossible    
+**Harmonization comment**:   study-specific asks for number of times walked outside in the past two weeks, not number of days the partcicipant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_1$lsb_pa_walk_freq_1 <- ifelse((as.integer(LASA1C$clphya08)/2)< 1, 0L,
-                                  ifelse((as.integer(LASA1C$clphya08)/2) & (as.integer(LASA1C$clphya08)/2)<3, 1L,
-                                  ifelse((as.integer(LASA1C$clphya08)/2)>2 & (as.integer(LASA1C$clphya08)/2)<5,2L,
-                                  ifelse((as.integer(LASA1C$clphya08)/2)>4 & (as.integer(LASA1C$clphya08)/2)<8,3L,NA))))
+
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_2    
@@ -1437,14 +1431,11 @@ lsb_LASA1_1$lsb_pa_walk_freq_1 <- ifelse((as.integer(LASA1C$clphya08)/2)< 1, 0L,
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization status**:  impossible    
+**Harmonization comment**:   study-specific asks for number of times walked outside in the past two weeks, not number of days the partcicipant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_2$lsb_pa_walk_freq_2 <- ifelse((as.integer(LASA1D$dlphya08)/2)< 1, 0L,
-                                  ifelse((as.integer(LASA1D$dlphya08)/2) & (as.integer(LASA1D$dlphya08)/2)<3, 1L,
-                                  ifelse((as.integer(LASA1D$dlphya08)/2)>2 & (as.integer(LASA1D$dlphya08)/2)<5,2L,
-                                  ifelse((as.integer(LASA1D$dlphya08)/2)>4 & (as.integer(LASA1D$dlphya08)/2)<8,3L,NA))))
+
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_3    
@@ -1460,14 +1451,11 @@ lsb_LASA1_2$lsb_pa_walk_freq_2 <- ifelse((as.integer(LASA1D$dlphya08)/2)< 1, 0L,
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization status**:  impossible    
+**Harmonization comment**:   study-specific asks for number of times walked outside in the past two weeks, not number of days the partcicipant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_3$lsb_pa_walk_freq_3 <- ifelse((as.integer(LASA1E$elphya08)/2)< 1, 0L,
-                                  ifelse((as.integer(LASA1E$elphya08)/2) & (as.integer(LASA1E$elphya08)/2)<3, 1L,
-                                  ifelse((as.integer(LASA1E$elphya08)/2)>2 & (as.integer(LASA1E$elphya08)/2)<5,2L,
-                                  ifelse((as.integer(LASA1E$elphya08)/2)>4 & (as.integer(LASA1E$elphya08)/2)<8,3L,NA))))
+
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_4    
@@ -1483,14 +1471,11 @@ lsb_LASA1_3$lsb_pa_walk_freq_3 <- ifelse((as.integer(LASA1E$elphya08)/2)< 1, 0L,
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization status**:  impossible    
+**Harmonization comment**:   study-specific asks for number of times walked outside in the past two weeks, not number of days the partcicipant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_4$lsb_pa_walk_freq_4 <- ifelse((as.integer(LASA1F$flphya08)/2)< 1, 0L,
-                                  ifelse((as.integer(LASA1F$flphya08)/2) & (as.integer(LASA1F$flphya08)/2)<3, 1L,
-                                  ifelse((as.integer(LASA1F$flphya08)/2)>2 & (as.integer(LASA1F$flphya08)/2)<5,2L,
-                                  ifelse((as.integer(LASA1F$flphya08)/2)>4 & (as.integer(LASA1F$flphya08)/2)<8,3L,NA))))
+
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_5    
@@ -1506,14 +1491,11 @@ lsb_LASA1_4$lsb_pa_walk_freq_4 <- ifelse((as.integer(LASA1F$flphya08)/2)< 1, 0L,
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization status**:  impossible    
+**Harmonization comment**:   study-specific asks for number of times walked outside in the past two weeks, not number of days the partcicipant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_5$lsb_pa_walk_freq_5 <- ifelse((as.integer(LASA1G$glphya08)/2)< 1, 0L,
-                                  ifelse((as.integer(LASA1G$glphya08)/2) & (as.integer(LASA1G$glphya08)/2)<3, 1L,
-                                  ifelse((as.integer(LASA1G$glphya08)/2)>2 & (as.integer(LASA1G$glphya08)/2)<5,2L,
-                                  ifelse((as.integer(LASA1G$glphya08)/2)>4 & (as.integer(LASA1G$glphya08)/2)<8,3L,NA))))
+
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_6    
@@ -1529,14 +1511,11 @@ lsb_LASA1_5$lsb_pa_walk_freq_5 <- ifelse((as.integer(LASA1G$glphya08)/2)< 1, 0L,
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization status**:  impossible    
+**Harmonization comment**:   study-specific asks for number of times walked outside in the past two weeks, not number of days the partcicipant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_6$lsb_pa_walk_freq_6 <- ifelse((as.integer(LASA1H$HLPHYA08)/2)< 1, 0L,
-                                  ifelse((as.integer(LASA1H$HLPHYA08)/2) & (as.integer(LASA1H$HLPHYA08)/2)<3, 1L,
-                                  ifelse((as.integer(LASA1H$HLPHYA08)/2)>2 & (as.integer(LASA1H$HLPHYA08)/2)<5,2L,
-                                  ifelse((as.integer(LASA1H$HLPHYA08)/2)>4 & (as.integer(LASA1H$HLPHYA08)/2)<8,3L,NA))))
+
 ```  
 
 ### **Variable label**:  Average walking time     
@@ -1558,11 +1537,7 @@ lsb_LASA1_6$lsb_pa_walk_freq_6 <- ifelse((as.integer(LASA1H$HLPHYA08)/2)< 1, 0L,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_0$lsb_pa_walk_time_0 <- ifelse((as.integer(LASA1B$blphya09)/2) < 30,0L,
-                                  ifelse((as.integer(LASA1B$blphya09)/2) > 29 & (as.integer(LASA1B$blphya09)/2) < 60,1L,
-                                  ifelse((as.integer(LASA1B$blphya09)/2) & (as.integer(LASA1B$blphya09)/2) < 120,2L,
-                                  ifelse((as.integer(LASA1B$blphya09)/2) > 119 & (as.integer(LASA1B$blphya09)/2) < 240,3L,
-                                  ifelse((as.integer(LASA1B$blphya09)/2) > 239,4L,NA)))))
+
 ```  
 ### **Variable label**:  Average walking time   
 **Variable name**:   lsb_pa_walk_time_1  
@@ -1583,11 +1558,7 @@ lsb_LASA1_0$lsb_pa_walk_time_0 <- ifelse((as.integer(LASA1B$blphya09)/2) < 30,0L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_1$lsb_pa_walk_time_1 <- ifelse((as.integer(LASA1C$clphya09)/2) < 30,0L,
-                                  ifelse((as.integer(LASA1C$clphya09)/2) > 29 & (as.integer(LASA1C$clphya09)/2) < 60,1L,
-                                  ifelse((as.integer(LASA1C$clphya09)/2) > 59 & (as.integer(LASA1C$clphya09)/2) < 120,2L,
-                                  ifelse((as.integer(LASA1C$clphya09)/2) > 119 & (as.integer(LASA1C$clphya09)/2) < 240,3L,
-                                  ifelse((as.integer(LASA1C$clphya09)/2) > 239,4L,NA)))))
+
 ```  
 ### **Variable label**:  Average walking time    
 **Variable name**:   lsb_pa_walk_time_2  
@@ -1608,11 +1579,7 @@ lsb_LASA1_1$lsb_pa_walk_time_1 <- ifelse((as.integer(LASA1C$clphya09)/2) < 30,0L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_2$lsb_pa_walk_time_2 <- ifelse((as.integer(LASA1D$dlphya09)/2) < 30,0L,
-                                  ifelse((as.integer(LASA1D$dlphya09)/2) > 29 & (as.integer(LASA1D$dlphya09)/2) < 60,1L,
-                                  ifelse((as.integer(LASA1D$dlphya09)/2) > 59 & (as.integer(LASA1D$dlphya09)/2) < 120,2L,
-                                  ifelse((as.integer(LASA1D$dlphya09)/2) > 119 & (as.integer(LASA1D$dlphya09)/2) < 240,3L,
-                                  ifelse((as.integer(LASA1D$dlphya09)/2) > 239,4L,NA)))))
+
 ```  
 ### **Variable label**:  Average walking time     
 **Variable name**:   lsb_pa_walk_time_3  
@@ -1633,11 +1600,7 @@ lsb_LASA1_2$lsb_pa_walk_time_2 <- ifelse((as.integer(LASA1D$dlphya09)/2) < 30,0L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_3$lsb_pa_walk_time_3 <- ifelse((as.integer(LASA1E$elphya09)/2) < 30,0L,
-                                  ifelse((as.integer(LASA1E$elphya09)/2) > 29 & (as.integer(LASA1E$elphya09)/2) < 60,1L,
-                                  ifelse((as.integer(LASA1E$elphya09)/2) > 59 & (as.integer(LASA1E$elphya09)/2) < 120,2L,
-                                  ifelse((as.integer(LASA1E$elphya09)/2) > 119 & (as.integer(LASA1E$elphya09)/2) < 240,3L,
-                                  ifelse((as.integer(LASA1E$elphya09)/2) > 239,4L,NA)))))
+
 ```  
 ### **Variable label**:  Average walking time    
 **Variable name**:   lsb_pa_walk_time_4  
@@ -1658,11 +1621,7 @@ lsb_LASA1_3$lsb_pa_walk_time_3 <- ifelse((as.integer(LASA1E$elphya09)/2) < 30,0L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_4$lsb_pa_walk_time_4 <- ifelse((as.integer(LASA1F$flphya09)/2) < 30,0L,
-                                  ifelse((as.integer(LASA1F$flphya09)/2) > 29 & (as.integer(LASA1F$flphya09)/2) < 60,1L,
-                                  ifelse((as.integer(LASA1F$flphya09)/2) > 59 & (as.integer(LASA1F$flphya09)/2) < 120,2L,
-                                  ifelse((as.integer(LASA1F$flphya09)/2) > 119 & (as.integer(LASA1F$flphya09)/2) < 240,3L,
-                                  ifelse((as.integer(LASA1F$flphya09)/2) > 239,4L,NA)))))
+
 ```  
 ### **Variable label**:  Average walking time     
 **Variable name**:   lsb_pa_walk_time_5  
@@ -1683,11 +1642,7 @@ lsb_LASA1_4$lsb_pa_walk_time_4 <- ifelse((as.integer(LASA1F$flphya09)/2) < 30,0L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_5$lsb_pa_walk_time_5 <- ifelse((as.integer(LASA1G$glphya09)/2) < 30,0L,
-                                  ifelse((as.integer(LASA1G$glphya09)/2) > 29 & (as.integer(LASA1G$glphya09)/2) < 60,1L,
-                                  ifelse((as.integer(LASA1G$glphya09)/2) > 59 & (as.integer(LASA1G$glphya09)/2) < 120,2L,
-                                  ifelse((as.integer(LASA1G$glphya09)/2) > 119 & (as.integer(LASA1G$glphya09)/2) < 240,3L,
-                                  ifelse((as.integer(LASA1G$glphya09)/2) > 239,4L,NA)))))
+
 ```  
 ### **Variable label**:  Average walking time     
 **Variable name**:   lsb_pa_walk_time_6  
@@ -1708,11 +1663,7 @@ lsb_LASA1_5$lsb_pa_walk_time_5 <- ifelse((as.integer(LASA1G$glphya09)/2) < 30,0L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_6$lsb_pa_walk_time_6 <- ifelse((as.integer(LASA1H$HLPHYA09)/2) < 30,0L,
-                                  ifelse((as.integer(LASA1H$HLPHYA09)/2) > 29 & (as.integer(LASA1H$HLPHYA09)/2) < 60,1L,
-                                  ifelse((as.integer(LASA1H$HLPHYA09)/2) > 59 & (as.integer(LASA1H$HLPHYA09)/2) < 120,2L,
-                                  ifelse((as.integer(LASA1H$HLPHYA09)/2) > 119 & (as.integer(LASA1H$HLPHYA09)/2) < 240,3L,
-                                  ifelse((as.integer(LASA1H$HLPHYA09)/2) > 239,4L,NA)))))
+
 ```  
 
 ### **Variable label**:  Average walking time for transportation  
@@ -1834,7 +1785,9 @@ lsb_LASA1_6$lsb_pa_walk_time_6 <- ifelse((as.integer(LASA1H$HLPHYA09)/2) < 30,0L
 ```{r, echo=TRUE}
 #lsb_LASA1_0$lsb_pa_cycle_0 <- ifelse(as.integer(LASA1B$blphya13)==-1 | as.integer(LASA1B$blphya13)==-3 | as.integer(LASA1B$blphya11)==-1 | as.integer(LASA1B$blphya10)==-1,NA_integer_, ifelse(as.integer(LASA1B$blphya13)==-2 & as.integer(LASA1B$blphya11)==1, 0L, ifelse(as.integer(LASA1B$blphya13)==-2 & as.integer(LASA1B$blphya11)==-2 & as.integer(LASA1B$blphya10)==1,0L, (as.numeric(LASA1B$blphya13)/2))))
 
-lsb_LASA1_0$lsb_pa_cycle_0 <- ifelse(as.integer(LASA1B$blphya13)==-2 & as.integer(LASA1B$blphya11)==1, 0L, ifelse(as.integer(LASA1B$blphya13)==-2 & as.integer(LASA1B$blphya11)==-2 & as.integer(LASA1B$blphya10)==1,0L, ifelse(as.integer(LASA1B$blphya13) <0 | as.integer(LASA1B$blphya11) <0 | as.integer(LASA1B$blphya10)<0 ,NA_integer_, (as.numeric(LASA1B$blphya13))/2)))
+#lsb_LASA1_0$lsb_pa_cycle_0 <- ifelse(as.integer(LASA1B$blphya13)==-2 & as.integer(LASA1B$blphya11)==1, 0L, ifelse(as.integer(LASA1B$blphya13)==-2 & as.integer(LASA1B$blphya11)==-2 & as.integer(LASA1B$blphya10)==1,0L, ifelse(as.integer(LASA1B$blphya13) <0 | as.integer(LASA1B$blphya11) <0 | as.integer(LASA1B$blphya10)<0 ,NA_integer_, ((as.numeric(LASA1B$blphya12)*as.numeric(LASA1B$blphya13))/2))))
+
+lsb_LASA1_0$lsb_pa_cycle_0 <- ifelse(as.integer(LASA1B$blphya10)==1 | as.integer(LASA1B$blphya11)==1,0L, ifelse(as.integer(LASA1B$blphya11)==2 & as.integer(LASA1B$blphya12)>0 & as.integer(LASA1B$blphya13)>0,((as.numeric(LASA1B$blphya12)*as.numeric(LASA1B$blphya13))/2),NA))
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_1  
