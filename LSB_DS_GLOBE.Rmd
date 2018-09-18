@@ -1,37 +1,46 @@
 ---
-title: "Lifestyle and behaviours DataSchema"
+title: "LSB_DS_GLOBE"
 output: html_document
 ---
+
 # Connecting with Opal data server
 ## Login to server and assign study data
 ```{r, echo=FALSE}
-#Load R libraries
+#Load Opal R library
 library(opal)
-library(tidyverse)
-library(epiDisplay)
 # Create an opal object with the login information
 erasmus_opal <- opal.login()
-#Login to Opal server and assign the content of the LUCAS table(s) to your RStudio environment
-opal.assign.table.tibble(erasmus_opal, 'HUNT1_data', 'HUNT.HUNT1',variables = list('AlcFL2W_NT1BLQ2','SmoCigDy_NT1BLQ2','SmoDyCu_NT1BLQ2','SmoCigDyN_NT1BLQ2','SmoDyAg_NT1BLQ2','SmoCigDyCesTm_NT1BLQ2','SmoDyDuEd_NT1BLQ2','ExeF_NT1BLQ2','SmoStat_NT1BLQ2','SmoCigarDy_NT1BLQ2','SmoPipeDy_NT1BLQ2','SmoCigDyPre_NT1BLQ2','SmoCigDy_NT1BLQ2','SmoPackYrs_NT1BLQ2'))
-HUNT1 <- opal.execute(erasmus_opal,'HUNT1_data')
-
-opal.assign.table.tibble(erasmus_opal, 'HUNT2_data', 'HUNT.HUNT2', variables = list('AlcNev_NT2BLQ1','AlcLiL2WN_NT2BLQ1','AlcWiL2WN_NT2BLQ1','AlcBeL2WN_NT2BLQ1','SmoDyAg_NT2BLQ1','SmoCigDyNEd_NT2BLQ1','SmoCigDyN_NT2BLQ1','SmoDyNev_NT2BLQ1','DriTeaNDy_NT2BLQ1','DriCofBoilNDy_NT2BLQ1','DriCofOtNDy_NT2BLQ1','SmoStat_NT2BLQ1','SmoDyDuEd_NT2BLQ1','InvAg_NT2BLQ1','SmoDyCesDu_NT2BLQ1','SmoPackYrs_NT2BLQ1','SmoPackYrs_NT2BLQ1'))
-HUNT2 <- opal.execute(erasmus_opal,'HUNT2_data')
-
-opal.assign.table.tibble(erasmus_opal, 'HUNT3_data', 'HUNT.HUNT3',variables=list('AlcBeL2WN_NT3BLQ1','AlcFLY_NT3BLQ1','AlcL4W_NT3BLQ1','AlcWiL2WN_NT3BLQ1','AlcLiL2WN_NT3BLQ1','AlcMor5GlF_NT3BLQ1','SmoNev_NT3BLQ1','SmoCigMyN_NT3BLQ1','SmoCigDyN_NT3BLQ1','SmoCigDyNEd_NT3BLQ1','SmoCigOc_NT3BLQ1','SmoCigarPipeDy_NT3BLQ1','SmoPre_NT3BLQ1','SmoCigarPipeOc_NT3BLQ1','SmoCigDy_NT3BLQ1','SmoNev_NT3BLQ1','ActSporL6M_NT3BLQ2','ExeF_NT3BLQ1','ExeInt_NT3BLQ1','FoVegF_NT3BLQ1','FoFruF_NT3BLQ1','DriWatGl_NT3BLQ1','DriCofEvnN_NT3BLQ1','DriCofOtNDy_NT3BLQ1','DriCofBoilNDy_NT3BLQ1','AlcLiL2WN_NT3BLQ1','SmoStat_NT3BLQ1','SmoDyAg_NT3BLQ1','SmoOcAg_NT3BLQ1','SmoDyDuEd_NT2BLQ1','SmoDyDuEd_NT3BLQ1','PartAg_NT3BLQ1','SmoDyCesDu_NT3BLQ1','SmoPackYrs_NT3BLQ1','SmoPackYrs_NT3BLQ1'))
-HUNT3 <- opal.execute(erasmus_opal,'HUNT3_data')
-
+#Login to Opal server and assign the content of the GLOBE table(s) to your RStudio environment
+# GLOBE1991
+opal.assign.table.tibble(erasmus_opal, 'GLOBE1991', 'GLOBE.GLOBE1991', variables= list("v137","v135","v139","v138","v136","v150","v145","SEGVv429","v147","v151","v153","SEVMv168","v140","v141","v240","v131")) 
+GLOBE1991 <- opal.execute(erasmus_opal,'GLOBE1991')
+# GLOBE1997
+opal.assign.table.tibble(erasmus_opal, 'GLOBE1997', 'GLOBE.GLOBE1997',variables=list("v8d","v8b","v7","v8c","v8a","v9b","v9a","v9c","g13","v10e","v10b4","v10a","v10b3","v10b1","v10c","v10b2","v5")) 
+GLOBE1997 <- opal.execute(erasmus_opal,'GLOBE1997')
+# GLOBE2004
+opal.assign.table.tibble(erasmus_opal, 'GLOBE2004', 'GLOBE.GLOBE2004', variables=list("w075","w074","w253","w078","w076","w077","w073","w099","w089","w090","w091","w093","w094","w095","w097","w098","w099","w101","w102","w103","w105","w106","w107","w139","w140","w141","w142","w143","w144","w180","w183")) 
+GLOBE2004 <- opal.execute(erasmus_opal,'GLOBE2004')
+# GLOBE2011
+opal.assign.table.tibble(erasmus_opal, 'GLOBE2011', 'GLOBE.GLOBE2011', variables =list("v12_alc_freq","v13_alc_hv","v16_alcsoort_ra","v15_alcsoort","v16_alcsoort_r","v14_alc_binge","v17_rook_freq","v17_sig_pw","v17_sig_pd","v17_sigaar_pd","v18_rook_add","v19_a_wada","v19_a_waur","v19_a_wamin","v19_b_fida","v19_b_fiur","v19_b_fimin","v19_c_tuda","v19_c_tuur","v19_c_tumin","v21_a_hhda","v21_a_hhur","v21_a_hhmin","v21_b_zhda","v21_b_zhur","v21_b_zhmin","v32_a_ffq_groe","v32_b_ffq_rgro","v32_c_ffq_frui","v32_d_ffq_vifi","v23_b_wfda","v23_b_wfur","v23_b_wfmin")) 
+GLOBE2011 <- opal.execute(erasmus_opal,'GLOBE2011')
+# GLOBE2014
+opal.assign.table.tibble(erasmus_opal, 'GLOBE2014', 'GLOBE.GLOBE2014', variables =list("G14v26","G14v27","G14v25","G14v25freq2","G14v23_d","G14v23freqd","G14v28_a_dag","G14v28_a_uur","G14v28_a_min","G14v28_b_dag","G14v28_b_uur","G14v28_b_min","G14v29_a_dag","G14v29_a_uur","G14v29_a_min","G14v29_b_dag","G14v29_b_uur","G14v29_b_min","G14v29_c_dag","G14v29_c_uur","G14v29_c_min","G14v32_a_dag","G14v32_a_uur","G14v32_a_min","G14v32_b_dag","G14v32_b_uur","G14v32_b_min")) 
+GLOBE2014 <- opal.execute(erasmus_opal,'GLOBE2014')
 ```
 ## Assign participant id as first column of your harmonized dataframes
 ```{r, echo=FALSE}
-lsb_HUNT_0 <- data.frame(id = HUNT1$id)
-lsb_HUNT_1<- data.frame(id= HUNT2$id)
-lsb_HUNT_2<- data.frame(id= HUNT3$id)
+lsb_GLOBE_0 <- data.frame(id = GLOBE1991$id)
+lsb_GLOBE_1 <- data.frame(id = GLOBE1997$id)
+lsb_GLOBE_2 <- data.frame(id = GLOBE2004$id)
+lsb_GLOBE_3 <- data.frame(id = GLOBE2011$id)
+lsb_GLOBE_4 <- data.frame(id = GLOBE2014$id)
 ```
+
 ## When you are done with your work, logout of Opal server
 ```{r, echo=FALSE}
 opal.logout(erasmus_opal) 
 ```
+
 # Table of Contents
 1. [Alcohol consumption subdomain](#alcohol-consumption-subdomain)
 2. [Tobacco consumption subdomain](#tobacco-consumption-subdomain)
@@ -53,11 +62,12 @@ opal.logout(erasmus_opal)
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   How often did you drink alcohol (beer, wine or spirits) during the LAST 14 DAYS?  
+**Harmonization status**:  complete     
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_0$lsb_alc_cur_0<- recode(as.integer(HUNT1$AlcFL2W_NT1BLQ2),'1'=1L,'2'=1L,'3'=1L,'4'=1L,'5'=0L)
+lsb_GLOBE_0$lsb_alc_cur_0<-ifelse(GLOBE1991$v135<6,1,
+                                   ifelse(GLOBE1991$v135==6,0,NA))
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -76,7 +86,7 @@ lsb_HUNT_0$lsb_alc_cur_0<- recode(as.integer(HUNT1$AlcFL2W_NT1BLQ2),'1'=1L,'2'=1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_alc_cur_1<- recode(as.integer(HUNT2$AlcNev_NT2BLQ1), '0'=1L,'1'=0L)
+lsb_GLOBE_1$lsb_alc_cur_1<-recode(as.integer(GLOBE1997$v7),"1"=1,"2"=1,"3"=1,"4"=1,"5"=1,"6"=0)
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -91,11 +101,11 @@ lsb_HUNT_1$lsb_alc_cur_1<- recode(as.integer(HUNT2$AlcNev_NT2BLQ1), '0'=1L,'1'=0
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  complete  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_alc_cur_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1L,'3'=1L,'4'=1L,'5'=1L,'6'=1L,'7'=0L,'8'=0L)
+
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -110,11 +120,11 @@ lsb_HUNT_2$lsb_alc_cur_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1L
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_GLOBE_3$lsb_alc_cur_3<-recode(as.integer(GLOBE2011$v12_alc_freq),"1"=1,"2"=1,"3"=1,"4"=1,"5"=0)
 ```  
 ### **Variable label**:  Current consumption of alcohol  
 **Variable name**: lsb_alc_cur_4  
@@ -128,10 +138,11 @@ lsb_HUNT_2$lsb_alc_cur_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1L
 0 |  Does not currently consumes alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_4$lsb_alc_cur_4<-recode(as.integer(GLOBE2014$G14v26),"1"=0,"2"=1,"3"=1,"4"=1,"5"=1,"6"=1)
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -150,6 +161,7 @@ lsb_HUNT_2$lsb_alc_cur_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+#This is where the R-script will be written
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -169,6 +181,7 @@ lsb_HUNT_2$lsb_alc_cur_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1L
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 
 ### **Variable label**:   Ever consumption of alcohol  
@@ -183,11 +196,11 @@ lsb_HUNT_2$lsb_alc_cur_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1L
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  complete  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_0$lsb_alc_ever_0<- recode(as.integer(HUNT1$AlcFL2W_NT1BLQ2),'1'=1L,'2'=1L,'3'=1L,'4'=1L,'5'=0L)
+
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -202,10 +215,11 @@ lsb_HUNT_0$lsb_alc_ever_0<- recode(as.integer(HUNT1$AlcFL2W_NT1BLQ2),'1'=1L,'2'=
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_1$lsb_alc_ever_1<-recode(as.integer(GLOBE1997$v9b),"1"=1,"2"=0)
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -220,11 +234,12 @@ lsb_HUNT_0$lsb_alc_ever_0<- recode(as.integer(HUNT1$AlcFL2W_NT1BLQ2),'1'=1L,'2'=
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   Study-specific variable:"About how often in the last 12 months did you drink alcohol? (Do not include low-alcohol beer)".    
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1L,'3'=1L,'4'=1L,'5'=1L,'6'=1L,'7'=1L,'8'=0L)
+
+
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_3    
@@ -238,10 +253,11 @@ lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  impossible  
-**Harmonization comment**:   
+**Harmonization status**:  impossible   
+**Harmonization comment**:   Study specific variable doesn't permits to know whether the participant never consumed alcohol or not.  
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -256,10 +272,11 @@ lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  impossible  
-**Harmonization comment**:   
+**Harmonization status**:  impossible   
+**Harmonization comment**:   Study specific variable doesn't permits to know whether the participant never consumed alcohol or not .  
 **R script**:  
 ```{r, echo=TRUE}
+#This is where the R-script will be written
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -279,6 +296,7 @@ lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_6    
@@ -297,6 +315,7 @@ lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 
 ### **Variable label**:   Frequency of binge drinking  
@@ -312,10 +331,11 @@ lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_0$lsb_alc_binge_0<-recode(as.integer(GLOBE1991$v137),"1"=3,"2"=3,"3"=3,"4"=2,"5"=1,"6"=1,"7"=1)
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -331,10 +351,11 @@ lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_1$lsb_alc_binge_1<-recode(as.integer(GLOBE1997$v8b),"1"=3,"2"=3,"3"=3,"4"=2,"5"=1,"6"=1,"7"=1)
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -350,10 +371,11 @@ lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  impossible    
-**Harmonization comment**:   How often do you drink 5 glasses or more of beer, wine or spirits in one sitting? with categories: never, monthly, weekly, daily.  
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -369,10 +391,11 @@ lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1
 2 |  1 to 3 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  complete  
+**Harmonization comment**:   Category "2 to 4 times a momth" was recoded to "0 to 3 times a month".  
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_3$lsb_alc_binge_3<-recode(as.integer(GLOBE2011$v14_alc_binge),"1"=3,"2"=3,"3"=2,"4"=1,"5"=1,"6"=1,"7"=1)
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -393,6 +416,7 @@ lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:   Frequency of binge drinking  
 **Variable name**: lsb_alc_binge_5  
@@ -411,6 +435,7 @@ lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -431,12 +456,13 @@ lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)      
 **Variable name**: lsb_alc_total_0  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
-**Value type**: decimal     
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -445,94 +471,55 @@ lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: lsb_alc_total_1  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
-**Value type**: decimal     
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  complete
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_alc_total_1<- as.integer((rowSums(HUNT2[,c("AlcWiL2WN_NT2BLQ1","AlcLiL2WN_NT2BLQ1","AlcBeL2WN_NT2BLQ1")], na.rm=FALSE))/2L)
+
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: lsb_alc_total_2  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
-**Value type**: decimal     
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  complete  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_alc_total_2<- as.integer((rowSums(HUNT3[,c("AlcBeL2WN_NT3BLQ1","AlcWiL2WN_NT3BLQ1","AlcLiL2WN_NT3BLQ1")],na.rm = FALSE))/2L)
+
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: lsb_alc_total_3  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
-**Value type**: decimal     
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible   
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 
 ### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: lsb_alc_wine_0  
 **Variable description**:  Current quantity of wine consumed per week.    
-**Value type**: decimal     
-**Variable unit**: drinks/week  
-**Category coding**:  N/A  
-
-**Harmonization status**:  impossible    
-**Harmonization comment**:   
-**R script**:  
-```{r, echo=TRUE}
-
-```  
-### **Variable label**:   Current quantity of wine consumed per week  
-**Variable name**: lsb_alc_wine_1  
-**Variable description**:  Current quantity of wine consumed per week.    
-**Value type**: decimal     
-**Variable unit**: drinks/week  
-**Category coding**:  N/A  
-
-**Harmonization status**:  complete  
-**Harmonization comment**:   
-**R script**:  
-```{r, echo=TRUE}
-lsb_HUNT_1$lsb_alc_wine_1<- (HUNT2$AlcWiL2WN_NT2BLQ1)/2L
-
-```  
-### **Variable label**:   Current quantity of wine consumed per week  
-**Variable name**: lsb_alc_wine_2  
-**Variable description**:  Current quantity of wine consumed per week.    
-**Value type**: decimal     
-**Variable unit**: drinks/week  
-**Category coding**:  N/A  
-
-**Harmonization status**:  complete  
-**Harmonization comment**:   
-**R script**:  
-```{r, echo=TRUE}
-lsb_HUNT_2$lsb_alc_wine_2<- (as.integer(HUNT3$AlcWiL2WN_NT3BLQ1)/2L)
-
-```  
-### **Variable label**:   Current quantity of wine consumed per week  
-**Variable name**: lsb_alc_wine_3  
-**Variable description**:  Current quantity of wine consumed per week.    
-**Value type**: decimal     
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -540,13 +527,56 @@ lsb_HUNT_2$lsb_alc_wine_2<- (as.integer(HUNT3$AlcWiL2WN_NT3BLQ1)/2L)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
+
+```  
+### **Variable label**:   Current quantity of wine consumed per week  
+**Variable name**: lsb_alc_wine_1  
+**Variable description**:  Current quantity of wine consumed per week.    
+**Value type**: decimal    
+**Variable unit**: drinks/week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
+
+```  
+### **Variable label**:   Current quantity of wine consumed per week  
+**Variable name**: lsb_alc_wine_2  
+**Variable description**:  Current quantity of wine consumed per week.    
+**Value type**: decimal    
+**Variable unit**: drinks/week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
+
+```  
+### **Variable label**:   Current quantity of wine consumed per week  
+**Variable name**: lsb_alc_wine_3  
+**Variable description**:  Current quantity of wine consumed per week.    
+**Value type**: decimal    
+**Variable unit**: drinks/week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  impossible 
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
 
 ```  
 
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_0  
 **Variable description**:  Current quantity of beer consumed per week.   
-**Value type**: decimal     
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -555,42 +585,13 @@ lsb_HUNT_2$lsb_alc_wine_2<- (as.integer(HUNT3$AlcWiL2WN_NT3BLQ1)/2L)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_1  
 **Variable description**:  Current quantity of beer consumed per week.    
-**Value type**: decimal     
-**Variable unit**: drinks/week  
-**Category coding**:  N/A  
- 
-
-**Harmonization status**:  complete  
-**Harmonization comment**:   
-**R script**:  
-```{r, echo=TRUE}
-lsb_HUNT_1$lsb_alc_beer_1<- (as.integer(HUNT2$AlcBeL2WN_NT2BLQ1))/2
-
-```  
-### **Variable label**:   Current quantity of beer consumed per week  
-**Variable name**: lsb_alc_beer_2  
-**Variable description**:  Current quantity of beer consumed per week.    
-**Value type**: decimal     
-**Variable unit**: drinks/week  
-**Category coding**:  N/A  
- 
-
-**Harmonization status**:  complete  
-**Harmonization comment**:   
-**R script**:  
-```{r, echo=TRUE}
-lsb_HUNT_2$lsb_alc_beer_2<- (as.integer(HUNT3$AlcBeL2WN_NT3BLQ1))/2
-
-```  
-### **Variable label**:   Current quantity of beer consumed per week  
-**Variable name**: lsb_alc_beer_3  
-**Variable description**:  Current quantity of beer consumed per week.    
-**Value type**: decimal     
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -599,13 +600,44 @@ lsb_HUNT_2$lsb_alc_beer_2<- (as.integer(HUNT3$AlcBeL2WN_NT3BLQ1))/2
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
+
+```  
+### **Variable label**:   Current quantity of beer consumed per week  
+**Variable name**: lsb_alc_beer_2  
+**Variable description**:  Current quantity of beer consumed per week.    
+**Value type**: decimal    
+**Variable unit**: drinks/week  
+**Category coding**:  N/A  
+ 
+
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
+
+```  
+### **Variable label**:   Current quantity of beer consumed per week  
+**Variable name**: lsb_alc_beer_3  
+**Variable description**:  Current quantity of beer consumed per week.    
+**Value type**: decimal    
+**Variable unit**: drinks/week  
+**Category coding**:  N/A  
+ 
+
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
 
 ```  
 
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_0  
 **Variable description**:  Current quantity of liquor consumed per week.    
-**Value type**: decimal     
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -614,42 +646,13 @@ lsb_HUNT_2$lsb_alc_beer_2<- (as.integer(HUNT3$AlcBeL2WN_NT3BLQ1))/2
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_1  
 **Variable description**:  Current quantity of liquor consumed per week.   
-**Value type**: decimal     
-**Variable unit**: drinks/week  
-**Category coding**:  N/A  
- 
-
-**Harmonization status**:  complete  
-**Harmonization comment**:   
-**R script**:  
-```{r, echo=TRUE}
-lsb_HUNT_1$lsb_alc_liq_1<-(as.integer(HUNT2$AlcLiL2WN_NT2BLQ1))/2L
-
-```  
-### **Variable label**:   Current quantity of liquor consumed per week  
-**Variable name**: lsb_alc_liq_2  
-**Variable description**:  Current quantity of liquor consumed per week.    
-**Value type**: decimal     
-**Variable unit**: drinks/week  
-**Category coding**:  N/A  
- 
-
-**Harmonization status**:  complete  
-**Harmonization comment**:   
-**R script**:  
-```{r, echo=TRUE}
-lsb_HUNT_2$lsb_alc_liq_2<- (as.integer(HUNT3$AlcLiL2WN_NT3BLQ1))/2L
-
-```  
-### **Variable label**:   Current quantity of liquor consumed per week  
-**Variable name**: lsb_alc_liq_3  
-**Variable description**:  Current quantity of liquor consumed per week.   
-**Value type**: decimal     
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -658,6 +661,37 @@ lsb_HUNT_2$lsb_alc_liq_2<- (as.integer(HUNT3$AlcLiL2WN_NT3BLQ1))/2L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
+
+```  
+### **Variable label**:   Current quantity of liquor consumed per week  
+**Variable name**: lsb_alc_liq_2  
+**Variable description**:  Current quantity of liquor consumed per week.    
+**Value type**: decimal    
+**Variable unit**: drinks/week  
+**Category coding**:  N/A  
+ 
+
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
+
+```  
+### **Variable label**:   Current quantity of liquor consumed per week  
+**Variable name**: lsb_alc_liq_3  
+**Variable description**:  Current quantity of liquor consumed per week.   
+**Value type**: decimal    
+**Variable unit**: drinks/week  
+**Category coding**:  N/A  
+ 
+
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
 
 ```  
 
@@ -676,12 +710,11 @@ lsb_HUNT_2$lsb_alc_liq_2<- (as.integer(HUNT3$AlcLiL2WN_NT3BLQ1))/2L
 1 |   Currently smokes any tobacco product  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   Smoking status- asks about daily smoking status i.e. currently smokes daily, used to smoke daily, never smoked daily. Missing or NO (value 0) recoded to YES (value 1) if answered YES (value 1) to one of the follow-up questions. OR answered YES to smoking daily in HUNT2 and/or HUNT3 and age when started smoking was before participation age in HUNT1.
-
-Missing recoded to No if reported No to questions on cigarette/pipe and cigars.  
-**R script**:   
+**Harmonization comment**:   
+**R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_0$lsb_smk_cur_0<- recode(as.integer(HUNT1$SmoStat_NT1BLQ2),'0'=0L,'1'=0L,'2'=1L)
+lsb_GLOBE_0$lsb_smk_cur_0<-recode(as.integer(GLOBE1991$v140),"1"=1L,"2"=0L,"3"=0L)
+
 ```  
 ### **Variable label**:  Current tobacco smoking  
 **Variable name**:  lsb_smk_cur_1  
@@ -699,7 +732,8 @@ lsb_HUNT_0$lsb_smk_cur_0<- recode(as.integer(HUNT1$SmoStat_NT1BLQ2),'0'=0L,'1'=0
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_smk_cur_1<- recode(as.integer(HUNT2$SmoStat_NT2BLQ1),'0'=0L,'1'=0L,'2'=1L)
+lsb_GLOBE_1$lsb_smk_cur_1<-recode(as.integer(GLOBE1997$v10a),"1"=1L,"2"=0L,"3"=0L)
+
 ```  
 ### **Variable label**:  Current tobacco smoking  
 **Variable name**:  lsb_smk_cur_2  
@@ -714,10 +748,11 @@ lsb_HUNT_1$lsb_smk_cur_1<- recode(as.integer(HUNT2$SmoStat_NT2BLQ1),'0'=0L,'1'=0
 1 |   Currently smokes any tobacco product  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   This variable is constructed from reported answers about current smoking status (SmoStat1-5) in HUNT3 and corrected regarding answers reported in HUNT1 and HUNT2.
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_smk_cur_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1),'0'=0L,'1'=0L,'2'=1L,'3'=1L)
+lsb_GLOBE_2$lsb_smk_cur_2<-recode(as.integer(GLOBE2004$w073),"1"=1L,"2"=1L,"3"=1L,"4"=0L,"5"=0L)
+
 ```  
 ### **Variable label**:  Current tobacco smoking  
 **Variable name**:  lsb_smk_cur_3  
@@ -731,10 +766,11 @@ lsb_HUNT_2$lsb_smk_cur_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1),'0'=0L,'1'=0
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_3$lsb_smk_cur_3<-recode(as.integer(GLOBE2011$v17_rook_freq),"1"=1L,"2"=1L,"3"=1L,"4"=0L,"5"=0L)
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -749,10 +785,11 @@ lsb_HUNT_2$lsb_smk_cur_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1),'0'=0L,'1'=0
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  impossible  
-**Harmonization comment**:   
+**Harmonization status**:  complete  
+**Harmonization comment**:   Participants that reported smoking e-cigarettes were recoded to NA.
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_4$lsb_smk_cur_4<-recode(as.integer(GLOBE2014$G14v25),"1"=1L,"2"=1L,"4"=1L,"5"=0L,"6"=0L,"7"=0L,.default=NA_integer_)
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -772,6 +809,7 @@ lsb_HUNT_2$lsb_smk_cur_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1),'0'=0L,'1'=0
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Current tobacco smoking  
 **Variable name**:  lsb_smk_cur_6  
@@ -789,6 +827,7 @@ lsb_HUNT_2$lsb_smk_cur_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1),'0'=0L,'1'=0
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+#This is where the R-script will be written
 
 ```  
 
@@ -809,7 +848,8 @@ lsb_HUNT_2$lsb_smk_cur_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1),'0'=0L,'1'=0
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_0$lsb_smk_status_0 <- as.integer(HUNT1$SmoStat_NT1BLQ2)
+lsb_GLOBE_0$lsb_smk_status_0<-recode(as.integer(GLOBE1991$v140),"1"=2L,"2"=1L,"3"=0L)
+
 ```  
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_1  
@@ -828,7 +868,8 @@ lsb_HUNT_0$lsb_smk_status_0 <- as.integer(HUNT1$SmoStat_NT1BLQ2)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_smk_status_1<- as.integer(HUNT2$SmoStat_NT2BLQ1)
+lsb_GLOBE_1$lsb_smk_status_1<-recode(as.integer(GLOBE1997$v10a),"1"=2L,"2"=1L,"3"=0L)
+
 ```  
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_2  
@@ -847,7 +888,8 @@ lsb_HUNT_1$lsb_smk_status_1<- as.integer(HUNT2$SmoStat_NT2BLQ1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_smk_status_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1),'0'=0L,'1'=1L,'2'=2L,'3'=2L)
+lsb_GLOBE_2$lsb_smk_status_2<-recode(as.integer(GLOBE2004$w073),"1"=2L,"2"=2L,"3"=2L,"4"=1L,"5"=0L)
+
 ```  
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_3  
@@ -862,10 +904,11 @@ lsb_HUNT_2$lsb_smk_status_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1),'0'=0L,'1
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_3$lsb_smk_status_3<-recode(as.integer(GLOBE2011$v17_rook_freq),"1"=2L,"2"=2L,"3"=2L,"4"=1L,"5"=0L)
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -881,10 +924,11 @@ lsb_HUNT_2$lsb_smk_status_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1),'0'=0L,'1
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  impossible  
-**Harmonization comment**:   
+**Harmonization status**:  complete  
+**Harmonization comment**:   Participants that reported smoking e-cigarettes were recoded to NA.
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_4$lsb_smk_status_4<-recode(as.integer(GLOBE2014$G14v25),"1"=2L,"2"=2L,"4"=2L,"5"=1L,"6"=1L,"7"=0L,.default=NA_integer_)
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -905,6 +949,7 @@ lsb_HUNT_2$lsb_smk_status_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1),'0'=0L,'1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_6  
@@ -924,6 +969,7 @@ lsb_HUNT_2$lsb_smk_status_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1),'0'=0L,'1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 
 ### **Variable label**:  Ever tobacco smoking  
@@ -939,10 +985,11 @@ lsb_HUNT_2$lsb_smk_status_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1),'0'=0L,'1
 1 |   Ever smoked tobacco  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   Missing or NO (value 0) recoded to YES if reported time since smoking cessation AND/OR answered questions about smoking status in HUNT2 and/or HUNT3 which correspondes to smoking cessation before HUNT1. NO or YES were recoded to MISSING if answered YES to smoking cigarettes daily AND without time since smoking cessatio AND answered questions about smoking status in HUNT2 and/or HUNT3 which correspondes to still smoking daily or smoking cessation after participating in HUNT1.  
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_0$lsb_smk_ever_0<- recode(as.integer(HUNT1$SmoStat_NT1BLQ2),'0'=0L,'1'=1L,'2'=1L)
+lsb_GLOBE_0$lsb_smk_ever_0<-recode(as.integer(GLOBE1991$v140),"1"=1L,"2"=1L,"3"=0L)
+
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_1    
@@ -960,7 +1007,8 @@ lsb_HUNT_0$lsb_smk_ever_0<- recode(as.integer(HUNT1$SmoStat_NT1BLQ2),'0'=0L,'1'=
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_smk_ever_1<- recode(as.integer(HUNT2$SmoStat_NT2BLQ1),'0'=0L,'1'=1L,'2'=1L)
+lsb_GLOBE_1$lsb_smk_ever_1<-recode(as.integer(GLOBE1997$v10a),"1"=1L,"2"=1L,"3"=0L)
+
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_2    
@@ -978,7 +1026,8 @@ lsb_HUNT_1$lsb_smk_ever_1<- recode(as.integer(HUNT2$SmoStat_NT2BLQ1),'0'=0L,'1'=
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_smk_ever_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1), '0'=0L, '1'=1L,'2'=1L,'3'=1L)
+lsb_GLOBE_2$lsb_smk_ever_2<-recode(as.integer(GLOBE2004$w073),"1"=1L,"2"=1L,"3"=1L,"4"=1L,"5"=0L)
+
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_3    
@@ -992,10 +1041,11 @@ lsb_HUNT_2$lsb_smk_ever_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1), '0'=0L, '1
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_3$lsb_smk_ever_3<-recode(as.integer(GLOBE2011$v17_rook_freq),"1"=1L,"2"=1L,"3"=1L,"4"=1L,"5"=0L)
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1010,10 +1060,11 @@ lsb_HUNT_2$lsb_smk_ever_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1), '0'=0L, '1
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  impossible  
-**Harmonization comment**:   
+**Harmonization status**:  complete  
+**Harmonization comment**:   Participants that reported smoking e-cigarettes are recoded to NA.
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_4$lsb_smk_ever_4<-recode(as.integer(GLOBE2014$G14v25),"1"=1L,"2"=1L,"4"=1L,"5"=1L,"6"=1L,"7"=0L,.default=NA_integer_)
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1032,6 +1083,7 @@ lsb_HUNT_2$lsb_smk_ever_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1), '0'=0L, '1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+#This is where the R-script will be written
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1051,6 +1103,7 @@ lsb_HUNT_2$lsb_smk_ever_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1), '0'=0L, '1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 
 ### **Variable label**:  Quantity cigarettes smoked    
@@ -1064,8 +1117,9 @@ lsb_HUNT_2$lsb_smk_ever_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1), '0'=0L, '1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_0$lsb_cig_qty_0<- ifelse(lsb_HUNT_0$lsb_smk_cur_0==1,as.integer(HUNT1$SmoCigDyN_NT1BLQ2),
-                                  ifelse(lsb_HUNT_0$lsb_smk_cur_0==0,0,NA))
+lsb_GLOBE_0$lsb_cig_qty_0<-ifelse(lsb_GLOBE_0$lsb_smk_cur_0==0,0,
+                                  ifelse(lsb_GLOBE_0$lsb_smk_cur_0==1,GLOBE1991$v141,NA))
+
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_1   
@@ -1075,11 +1129,12 @@ lsb_HUNT_0$lsb_cig_qty_0<- ifelse(lsb_HUNT_0$lsb_smk_cur_0==1,as.integer(HUNT1$S
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   A corrected variable from the original variable SmoCigDyN from HUNT2. IF SmoStat@NT1BLQ2 =1 (exsmoker) AND SmoStat@NT2BLQ1 =1 (exsmoker) AND (Diff: SmoCigDyN@NT2BLQ1 - SmoCigDyN@NT1BLQ2 < 0). Then SmoCigDyNEd@NT2BLQ1 = SmoCigDyN@NT1BLQ2.  
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_cig_qty_1<- ifelse(lsb_HUNT_1$lsb_smk_cur_1==1,as.integer(HUNT2$SmoCigDyNEd_NT2BLQ1),
-                                  ifelse(lsb_HUNT_1$lsb_smk_cur_1==0,0,NA))
+lsb_GLOBE_1$lsb_cig_qty_1<-ifelse(lsb_GLOBE_1$lsb_smk_cur_1==0,0,
+                                  ifelse(lsb_GLOBE_1$lsb_smk_cur_1==1,GLOBE1997$v10b1,NA))
+
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_2   
@@ -1089,11 +1144,12 @@ lsb_HUNT_1$lsb_cig_qty_1<- ifelse(lsb_HUNT_1$lsb_smk_cur_1==1,as.integer(HUNT2$S
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   A corrected variable from the original variable SmoCigDyN from HUNT3. IF SmoStat@NT2BLQ1 =1 (exsmoker) AND SmoStat@NT3BLQ1 =1 (exsmoker) AND (Diff: SmoCigDyN@NT3BLQ1 - SmoCigDyNEd@NT2BLQ1 < 0).  Then SmoCigDyNEd@NT3BLQ1 = SmoCigDyNEd@NT2BLQ1, Missing=SmoCigMyN/30 IF SmoCigMyN>15 AND Smostat=3 (daily smoker) OR SmoStat=1 (Exsmoker) AND answered on the variablesSmoDyAg ang SmoDyCesAg.  
+**Harmonization comment**:   How many cigarettes/shags do you approximately smoke a day?
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_cig_qty_2<- ifelse(lsb_HUNT_2$lsb_smk_cur_2==1,as.integer(HUNT3$SmoCigDyNEd_NT3BLQ1),
-                                  ifelse(lsb_HUNT_2$lsb_smk_cur_2==0,0,NA))
+lsb_GLOBE_2$lsb_cig_qty_2<-ifelse(lsb_GLOBE_2$lsb_smk_cur_2==0,0,
+                                  ifelse(lsb_GLOBE_2$lsb_smk_cur_2==1,GLOBE2004$w074,NA))
+
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_3   
@@ -1102,10 +1158,12 @@ lsb_HUNT_2$lsb_cig_qty_2<- ifelse(lsb_HUNT_2$lsb_smk_cur_2==1,as.integer(HUNT3$S
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_3$lsb_cig_qty_3<-ifelse(lsb_GLOBE_3$lsb_smk_cur_3==0,0,
+                                  ifelse(lsb_GLOBE_3$lsb_smk_cur_3==1,GLOBE2011$v17_sig_pd,NA))
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
@@ -1115,10 +1173,12 @@ lsb_HUNT_2$lsb_cig_qty_2<- ifelse(lsb_HUNT_2$lsb_smk_cur_2==1,as.integer(HUNT3$S
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_4$lsb_cig_qty_4<-ifelse(lsb_GLOBE_4$lsb_smk_cur_4==0,0,
+                                  ifelse(lsb_GLOBE_4$lsb_smk_cur_4==1,GLOBE2011$v17_sig_pd,NA))
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
@@ -1133,6 +1193,7 @@ lsb_HUNT_2$lsb_cig_qty_2<- ifelse(lsb_HUNT_2$lsb_smk_cur_2==1,as.integer(HUNT3$S
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_6   
@@ -1146,6 +1207,7 @@ lsb_HUNT_2$lsb_cig_qty_2<- ifelse(lsb_HUNT_2$lsb_smk_cur_2==1,as.integer(HUNT3$S
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 
 ### **Variable label**:  Smoking initiation age    
@@ -1156,13 +1218,11 @@ lsb_HUNT_2$lsb_cig_qty_2<- ifelse(lsb_HUNT_2$lsb_smk_cur_2==1,as.integer(HUNT3$S
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:  How old were you when you started smoking daily? {If ever smoked daily:}
-Some misunderstandings, instead of age some have reported Year or number of years since event. 
-Inconsistencies are checked, and if possible corrected based on probability and reported age in HUNT2 and HUNT3. Recoded to missing if age of starting smoking > current age or age < 7 yrs.
-MISSING was set equal to age of starting smoking from HUNT2 IF age of starting smoking from HUNT2 was approximatly equal to age of starting smoking from HUNT3 and befor participation age in HUNT1.  
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_0$lsb_smk_start_0<- as.numeric(HUNT1$SmoDyAg_NT1BLQ2)
+lsb_GLOBE_0$lsb_smk_start_0<-GLOBE1991$v151
+
 ```  
 ### **Variable label**:  Smoking initiation age    
 **Variable name**:  lsb_smk_start_1    
@@ -1171,11 +1231,12 @@ lsb_HUNT_0$lsb_smk_start_0<- as.numeric(HUNT1$SmoDyAg_NT1BLQ2)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  complete  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_smk_start_1<- as.numeric(HUNT2$SmoDyAg_NT2BLQ1)
+
+
 ```  
 ### **Variable label**:  Smoking initiation age    
 **Variable name**:  lsb_smk_start_2    
@@ -1188,7 +1249,8 @@ lsb_HUNT_1$lsb_smk_start_1<- as.numeric(HUNT2$SmoDyAg_NT2BLQ1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_smk_start_2<- ifelse(!is.na(HUNT3$SmoDyAg_NT3BLQ1), HUNT3$SmoDyAg_NT3BLQ1,HUNT3$SmoOcAg_NT3BLQ1)
+lsb_GLOBE_2$lsb_smk_start_2<-GLOBE2004$w077
+
 ```  
 ### **Variable label**:  Smoking initiation age    
 **Variable name**:  lsb_smk_start_3    
@@ -1201,6 +1263,7 @@ lsb_HUNT_2$lsb_smk_start_2<- ifelse(!is.na(HUNT3$SmoDyAg_NT3BLQ1), HUNT3$SmoDyAg
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Smoking initiation age    
@@ -1215,6 +1278,7 @@ lsb_HUNT_2$lsb_smk_start_2<- ifelse(!is.na(HUNT3$SmoDyAg_NT3BLQ1), HUNT3$SmoDyAg
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Smoking initiation age    
 **Variable name**:  lsb_smk_start_5    
@@ -1227,6 +1291,7 @@ lsb_HUNT_2$lsb_smk_start_2<- ifelse(!is.na(HUNT3$SmoDyAg_NT3BLQ1), HUNT3$SmoDyAg
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+#This is where the R-script will be written
 
 ```  
 ### **Variable label**:  Smoking initiation age    
@@ -1241,6 +1306,7 @@ lsb_HUNT_2$lsb_smk_start_2<- ifelse(!is.na(HUNT3$SmoDyAg_NT3BLQ1), HUNT3$SmoDyAg
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 
 ### **Variable label**:  Smoking cessation age  
@@ -1251,9 +1317,10 @@ lsb_HUNT_2$lsb_smk_start_2<- ifelse(!is.na(HUNT3$SmoDyAg_NT3BLQ1), HUNT3$SmoDyAg
 **Category coding**:  
 
 **Harmonization status**:  impossible  
-**Harmonization comment**:  incompatible: SmoCigDyCesTm_NT1BLQ2, categorized as: Less than 3 months, 3 months- 1 year, 1- 5 years, More than 5 years.
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -1264,10 +1331,11 @@ lsb_HUNT_2$lsb_smk_start_2<- ifelse(!is.na(HUNT3$SmoDyAg_NT3BLQ1), HUNT3$SmoDyAg
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   subtracted number of years since quit smoking from age at invitation and rounded the age down to make it integer.  
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_smk_stop_1<- as.integer((HUNT2$InvAg_NT2BLQ1-HUNT2$SmoDyCesDu_NT2BLQ1))
+lsb_GLOBE_1$lsb_smk_stop_1<-GLOBE1997$v10e
+
 ```  
 ### **Variable label**:  Smoking cessation age  
 **Variable name**:  lsb_smk_stop_2   
@@ -1276,11 +1344,11 @@ lsb_HUNT_1$lsb_smk_stop_1<- as.integer((HUNT2$InvAg_NT2BLQ1-HUNT2$SmoDyCesDu_NT2
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  complete  
-**Harmonization comment**:  subtracted number of years since quit smoking from age at invitation and rounded the age down to make it integer.  
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_smk_stop_2<- as.integer((HUNT3$PartAg_NT3BLQ1-HUNT3$SmoDyCesDu_NT3BLQ1))
+
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -1295,6 +1363,7 @@ lsb_HUNT_2$lsb_smk_stop_2<- as.integer((HUNT3$PartAg_NT3BLQ1-HUNT3$SmoDyCesDu_NT
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Smoking cessation age  
 **Variable name**:  lsb_smk_stop_4   
@@ -1307,6 +1376,7 @@ lsb_HUNT_2$lsb_smk_stop_2<- as.integer((HUNT3$PartAg_NT3BLQ1-HUNT3$SmoDyCesDu_NT
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -1321,6 +1391,7 @@ lsb_HUNT_2$lsb_smk_stop_2<- as.integer((HUNT3$PartAg_NT3BLQ1-HUNT3$SmoDyCesDu_NT
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Smoking cessation age  
 **Variable name**:  lsb_smk_stop_6   
@@ -1334,6 +1405,7 @@ lsb_HUNT_2$lsb_smk_stop_2<- as.integer((HUNT3$PartAg_NT3BLQ1-HUNT3$SmoDyCesDu_NT
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 
 ### **Variable label**:  Pack years  
@@ -1343,11 +1415,12 @@ lsb_HUNT_2$lsb_smk_stop_2<- as.integer((HUNT3$PartAg_NT3BLQ1-HUNT3$SmoDyCesDu_NT
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  complete  
-**Harmonization comment**:     
+**Harmonization status**:  complete    
+**Harmonization comment**:   20 cigarettes per pack
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_0$lsb_smk_py_0<- HUNT1$SmoPackYrs_NT1BLQ2
+lsb_GLOBE_0$lsb_smk_py_0<-(lsb_GLOBE_0$lsb_cig_qty_0/20)*GLOBE1991$v153
+
 ```  
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_1    
@@ -1356,11 +1429,12 @@ lsb_HUNT_0$lsb_smk_py_0<- HUNT1$SmoPackYrs_NT1BLQ2
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  complete  
-**Harmonization comment**:     
+**Harmonization status**:  complete    
+**Harmonization comment**:   20 cigarettes per pack
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_smk_py_1<- HUNT2$SmoPackYrs_NT2BLQ1
+lsb_GLOBE_1$lsb_smk_py_1<-(lsb_GLOBE_1$lsb_cig_qty_1/20)*GLOBE1997$v10c
+
 ```  
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_2    
@@ -1369,11 +1443,12 @@ lsb_HUNT_1$lsb_smk_py_1<- HUNT2$SmoPackYrs_NT2BLQ1
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization status**:  complete    
+**Harmonization comment**:   20 cigarettes per pack
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
+lsb_GLOBE_2$lsb_smk_py_2<-(lsb_GLOBE_2$lsb_cig_qty_2/20)*GLOBE2004$w078
+
 ```  
 
 # Physical activity subdomain
@@ -1397,6 +1472,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_1    
@@ -1417,6 +1493,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_2    
@@ -1432,10 +1509,11 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  impossible  
-**Harmonization comment**:   
+**Harmonization status**:  impossible    
+**Harmonization comment**:   There are 2 study-specific variables that can be used ("How many days in an average week in the past months did you walk to and from work or school?" and "How many days in an average week in the past months did you walk (in leisure time)?), but it's impossible to determine whether the participant walked the same days or not for leisure or transportation.  
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**: Frequency of walking    
@@ -1453,9 +1531,10 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 3 |  Often (5-7 days)    
 
 **Harmonization status**:  impossible  
-**Harmonization comment**:   
+**Harmonization comment**:   There are 2 study-specific variables that can be used ("How many days in an average week in the past months did you walk to and from work or school?" and "How many days in an average week in the past months did you walk (in leisure time)?), but it's impossible to determine whether the participant walked the same days or not for leisure or transportation.  
 **R script**:  
 ```{r, echo=TRUE}
+#This is where the R-script will be written
 
 ```  
 ### **Variable label**: Frequency of walking    
@@ -1473,9 +1552,10 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 3 |  Often (5-7 days)    
 
 **Harmonization status**:  impossible  
-**Harmonization comment**:   
+**Harmonization comment**:   There are 2 study-specific variables that can be used ("How many days in an average week in the past months did you walk to and from work or school?" and "How many days in an average week in the past months did you walk (in leisure time)?), but it's impossible to determine whether the participant walked the same days or not for leisure or transportation.  
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**: Frequency of walking    
@@ -1497,6 +1577,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_6    
@@ -1516,6 +1597,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 
@@ -1539,6 +1621,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Average walking time   
 **Variable name**:   lsb_pa_walk_time_1  
@@ -1559,6 +1642,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Average walking time    
@@ -1581,6 +1665,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Average walking time     
 **Variable name**:   lsb_pa_walk_time_3  
@@ -1598,9 +1683,10 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 4 |  4 hours or more   
 
 **Harmonization status**:  impossible  
-**Harmonization comment**:   
+**Harmonization comment**:      
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Average walking time    
@@ -1619,9 +1705,10 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 4 |  4 hours or more     
 
 **Harmonization status**:  impossible  
-**Harmonization comment**:   
+**Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Average walking time     
@@ -1644,6 +1731,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Average walking time     
 **Variable name**:   lsb_pa_walk_time_6  
@@ -1665,12 +1753,13 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 
 ### **Variable label**:  Average walking time for transportation  
 **Variable name**:  lsb_pa_walk_trans_0    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1678,12 +1767,13 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_1    
 **Variable description**: Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1691,39 +1781,42 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_2    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_2$lsb_pa_walk_trans_2<-GLOBE2004$w089*(GLOBE2004$w090*60+GLOBE2004$w091)
 
 ```  
 ### **Variable label**:  Average walking for transportation    
 **Variable name**:  lsb_pa_walk_trans_4    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_4$lsb_pa_walk_trans_4<-GLOBE2014$G14v28_a_dag*(GLOBE2014$G14v28_a_uur*60+GLOBE2014$G14v28_a_min)
 
 ```  
 
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_0    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1731,52 +1824,57 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_2    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_2$lsb_pa_walk_leis_2<-GLOBE2004$w097*(GLOBE2004$w098*60+GLOBE2004$w099)
 
 ```  
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_3    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_3$lsb_pa_walk_leis_3<-GLOBE2011$v19_a_wada*(GLOBE2011$v19_a_waur*60+GLOBE2011$v19_a_wamin)
 
 ```  
 ### **Variable label**:  Average walking for leisure  
 **Variable name**:  lsb_pa_walk_leis_4    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_4$lsb_pa_walk_leis_4<-GLOBE2014$G14v29_a_dag*(GLOBE2014$G14v29_a_uur*60+GLOBE2014$G14v29_a_min)
+
 
 ```  
 
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_0  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.  
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1785,63 +1883,67 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_1  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:    impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_2  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete   
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+GLOBE2004$lsb_pa_cycle_2<-GLOBE2004$w093*(GLOBE2004$w094*60+GLOBE2004$w095)+GLOBE2004$w101*(GLOBE2004$w102*60+GLOBE2004$w103)
 
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_3  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_GLOBE_3$lsb_pa_cycle_3<-GLOBE2011$v19_b_fida*(GLOBE2011$v19_b_fiur*60+GLOBE2011$v19_b_fimin)+GLOBE2011$v23_b_wfda*(GLOBE2011$v23_b_wfur*60+GLOBE2011$v23_b_wfmin)
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_4  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_4$lsb_pa_cycle_4<-GLOBE2014$G14v28_b_dag*(GLOBE2014$G14v28_b_uur*60+GLOBE2014$G14v28_b_min)+GLOBE2014$G14v29_b_dag*(GLOBE2014$G14v29_b_uur*60+GLOBE2014$G14v29_b_min)
 
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_5  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1849,12 +1951,13 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_6  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -1862,6 +1965,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 
@@ -1882,6 +1986,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_1  
@@ -1900,6 +2005,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_2  
@@ -1913,10 +2019,12 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_2$lsb_pa_garden_2<-ifelse(GLOBE2004$w105==0,0,
+                                    ifelse(GLOBE2004$w105>0,1,NA))
 
 ```  
 ### **Variable label**:  Gardening    
@@ -1931,10 +2039,12 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_3$lsb_pa_garden_3<-ifelse(GLOBE2011$v19_c_tuda==0,0,
+                                    ifelse(GLOBE2011$v19_c_tuda>0,1,NA))
 
 ```  
 ### **Variable label**:  Gardening    
@@ -1949,10 +2059,12 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 0 |   Does not do any gardening activities  
 1 |   Does any gardeing activities  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_4$lsb_pa_garden_4<-ifelse(GLOBE2014$G14v29_c_dag==0,0,
+                                    ifelse(GLOBE2014$G14v29_c_dag>0,1,NA))
 
 ```  
 ### **Variable label**:  Gardening    
@@ -1972,6 +2084,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_6  
@@ -1990,11 +2103,12 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_0    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.    
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -2003,11 +2117,12 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_1    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2015,51 +2130,54 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_2    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_2$lsb_pa_garden_time_2<-GLOBE2004$w105*(GLOBE2004$w106*60+GLOBE2004$w107)
 
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_3    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_GLOBE_3$lsb_pa_garden_time_3<-GLOBE2011$v19_c_tuda*(GLOBE2011$v19_c_tuur*60+GLOBE2011$v19_c_tumin)
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_4    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_4$lsb_pa_garden_time_4<-GLOBE2014$G14v29_c_dag*(GLOBE2014$G14v29_c_uur*60+GLOBE2014$G14v29_c_min)
 
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_5    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2067,12 +2185,13 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_6    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2080,6 +2199,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 
@@ -2100,6 +2220,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_1  
@@ -2117,6 +2238,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+#This is where the R-script will be written
 
 ```  
 ### **Variable label**:  Household activities  
@@ -2131,10 +2253,12 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_2$lsb_pa_house_2<-ifelse(GLOBE2004$w139>0 | GLOBE2004$w139>0, 1,
+                                   ifelse(GLOBE2004$w139==0 & GLOBE2004$w139==0,0,NA)) 
 
 ```  
 ### **Variable label**:  Household activities  
@@ -2149,10 +2273,12 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_3$lsb_pa_house_3<-ifelse(GLOBE2011$v21_a_hhda>0 | GLOBE2011$v21_b_zhda>0, 1,
+                                   ifelse(GLOBE2011$v21_a_hhda==0 & GLOBE2011$v21_b_zhda==0,0,NA))
 
 ```  
 ### **Variable label**:  Household activities  
@@ -2167,10 +2293,12 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_4$lsb_pa_house_4<-ifelse(GLOBE2014$G14v32_a_dag >0 | GLOBE2014$G14v32_b_dag>0, 1,
+                                   ifelse(GLOBE2014$G14v32_a_dag==0 & GLOBE2014$G14v32_b_dag ==0,0,NA))
 
 ```  
 ### **Variable label**:  Household activities  
@@ -2190,6 +2318,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_6  
@@ -2208,12 +2337,13 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_0  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2221,12 +2351,13 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_1  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2234,51 +2365,55 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_2  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_2$lsb_pa_garden_time_2<-GLOBE2004$w139*(GLOBE2004$w140*60+GLOBE2004$w141)+GLOBE2004$w142*(GLOBE2004$w143*60+GLOBE2004$w144)
 
 ```  
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_3  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_3$lsb_pa_garden_time_3<-GLOBE2011$v21_a_hhda*(GLOBE2011$v21_a_hhur*60+GLOBE2011$v21_a_hhmin)+GLOBE2011$v21_b_zhda*(GLOBE2011$v21_b_zhur*60+GLOBE2011$v21_b_zhmin)
 
 ```  
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_4  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_4$lsb_pa_garden_time_4<-GLOBE2014$G14v32_a_dag*(GLOBE2014$G14v32_a_uur*60+GLOBE2014$G14v32_a_min)+GLOBE2014$G14v32_b_dag*(GLOBE2014$G14v32_b_uur*60+GLOBE2014$G14v32_b_min)
 
 ```  
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_5  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2286,12 +2421,13 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_6  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  decimal    
+**Value type**:  integer  
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
@@ -2299,6 +2435,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**: Sports or exercise      
@@ -2317,7 +2454,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_0$lsb_pa_sport_0<- recode(as.integer(HUNT1$ExeF_NT1BLQ2), '0'=0L,'1'=1L,'2'=1L,'3'=1L,'4'=1L, .default=NA_integer_)
+lsb_GLOBE_0$lsb_pa_sport_0<-recode(as.integer(GLOBE1991$v240),"1"=0L,"2"=1L,"3"=1L,"4"=1L)
 
 ```   
 ### **Variable label**: Sports or exercise      
@@ -2332,10 +2469,11 @@ lsb_HUNT_0$lsb_pa_sport_0<- recode(as.integer(HUNT1$ExeF_NT1BLQ2), '0'=0L,'1'=1L
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible    
-**Harmonization comment**:    
+**Harmonization status**:  complete  
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_1$lsb_pa_sport_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"3"=1L,"4"=1L)
 
 ```   
 ### **Variable label**: Sports or exercise      
@@ -2350,11 +2488,12 @@ lsb_HUNT_0$lsb_pa_sport_0<- recode(as.integer(HUNT1$ExeF_NT1BLQ2), '0'=0L,'1'=1L
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   Sports or exercise {How many times in the last 6 months have you participated in} 
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_pa_sport_2<- recode(as.integer(HUNT3$ActSporL6M_NT3BLQ2), '5'=0L,'4'=1L,'3'=1L,'2'=1L,'1'=1L, .default= NA_integer_)
+
+
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_3  
@@ -2372,6 +2511,7 @@ lsb_HUNT_2$lsb_pa_sport_2<- recode(as.integer(HUNT3$ActSporL6M_NT3BLQ2), '5'=0L,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```   
 ### **Variable label**: Sports or exercise      
@@ -2391,6 +2531,7 @@ lsb_HUNT_2$lsb_pa_sport_2<- recode(as.integer(HUNT3$ActSporL6M_NT3BLQ2), '5'=0L,
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_5  
@@ -2408,6 +2549,7 @@ lsb_HUNT_2$lsb_pa_sport_2<- recode(as.integer(HUNT3$ActSporL6M_NT3BLQ2), '5'=0L,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```   
 ### **Variable label**: Sports or exercise      
@@ -2427,6 +2569,7 @@ lsb_HUNT_2$lsb_pa_sport_2<- recode(as.integer(HUNT3$ActSporL6M_NT3BLQ2), '5'=0L,
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```   
 
 ### **Variable label**:  Average sports or exercise time       
@@ -2443,10 +2586,11 @@ lsb_HUNT_2$lsb_pa_sport_2<- recode(as.integer(HUNT3$ActSporL6M_NT3BLQ2), '5'=0L,
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_0$lsb_pa_sport_time_0<-recode(as.integer(GLOBE1991$v240),"1"=0L,"2"=1L,"3"=2L,"4"=3L)
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -2463,10 +2607,11 @@ lsb_HUNT_2$lsb_pa_sport_2<- recode(as.integer(HUNT3$ActSporL6M_NT3BLQ2), '5'=0L,
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week   
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"3"=2L,"4"=3L)
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -2488,6 +2633,7 @@ lsb_HUNT_2$lsb_pa_sport_2<- recode(as.integer(HUNT3$ActSporL6M_NT3BLQ2), '5'=0L,
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_3  
@@ -2507,6 +2653,7 @@ lsb_HUNT_2$lsb_pa_sport_2<- recode(as.integer(HUNT3$ActSporL6M_NT3BLQ2), '5'=0L,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -2528,6 +2675,7 @@ lsb_HUNT_2$lsb_pa_sport_2<- recode(as.integer(HUNT3$ActSporL6M_NT3BLQ2), '5'=0L,
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_5  
@@ -2548,6 +2696,7 @@ lsb_HUNT_2$lsb_pa_sport_2<- recode(as.integer(HUNT3$ActSporL6M_NT3BLQ2), '5'=0L,
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_6  
@@ -2567,6 +2716,7 @@ lsb_HUNT_2$lsb_pa_sport_2<- recode(as.integer(HUNT3$ActSporL6M_NT3BLQ2), '5'=0L,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 
@@ -2589,6 +2739,7 @@ lsb_HUNT_2$lsb_pa_sport_2<- recode(as.integer(HUNT3$ActSporL6M_NT3BLQ2), '5'=0L,
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Daily vegetable consumption  
 **Variable name**:  lsb_veg_1    
@@ -2607,6 +2758,7 @@ lsb_HUNT_2$lsb_pa_sport_2<- recode(as.integer(HUNT3$ActSporL6M_NT3BLQ2), '5'=0L,
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Daily vegetable consumption  
 **Variable name**:  lsb_veg_2    
@@ -2620,11 +2772,12 @@ lsb_HUNT_2$lsb_pa_sport_2<- recode(as.integer(HUNT3$ActSporL6M_NT3BLQ2), '5'=0L,
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization status**:  impossible  
+**Harmonization comment**:   2 variables for study specific don't permit us to determine whether the participants consumes vegetables in a daily basis.
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_veg_2<- recode(as.integer(HUNT3$FoVegF_NT3BLQ1),'1'=0L,'2'=0L,'3'=0L,'4'=1L,'5'=1L, .default=NA_integer_)
+
+
 ```  
 
 ### **Variable label**:  Daily fruit consumption  
@@ -2639,10 +2792,11 @@ lsb_HUNT_2$lsb_veg_2<- recode(as.integer(HUNT3$FoVegF_NT3BLQ1),'1'=0L,'2'=0L,'3'
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
-**Harmonization status**:  impossible    
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Daily fruit consumption  
@@ -2662,6 +2816,7 @@ lsb_HUNT_2$lsb_veg_2<- recode(as.integer(HUNT3$FoVegF_NT3BLQ1),'1'=0L,'2'=0L,'3'
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Daily fruit consumption  
 **Variable name**:  lsb_fruit_2  
@@ -2675,11 +2830,12 @@ lsb_HUNT_2$lsb_veg_2<- recode(as.integer(HUNT3$FoVegF_NT3BLQ1),'1'=0L,'2'=0L,'3'
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
-**Harmonization status**:  complete  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_fruit_2<- recode(as.integer(HUNT3$FoFruF_NT3BLQ1),'1'=0L,'2'=0L,'3'=0L,'4'=1L,'5'=1L, .default=NA_integer_)
+
+
 ```  
 
 ### **Variable label**:  Daily water consumption  
@@ -2699,6 +2855,7 @@ lsb_HUNT_2$lsb_fruit_2<- recode(as.integer(HUNT3$FoFruF_NT3BLQ1),'1'=0L,'2'=0L,'
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Daily water consumption  
 **Variable name**:  lsb_water_1    
@@ -2717,6 +2874,7 @@ lsb_HUNT_2$lsb_fruit_2<- recode(as.integer(HUNT3$FoFruF_NT3BLQ1),'1'=0L,'2'=0L,'
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Daily water consumption  
 **Variable name**:  lsb_water_2    
@@ -2730,11 +2888,12 @@ lsb_HUNT_2$lsb_fruit_2<- recode(as.integer(HUNT3$FoFruF_NT3BLQ1),'1'=0L,'2'=0L,'
 0 |   Does not drinks water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  complete  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_water_2<- recode(as.integer(HUNT3$DriWatGl_NT3BLQ1),'1'=0L,'2'=0L,'3'=1L,'4'=1L,'5'=1L, .default=NA_integer_)
+
+
 ```  
 ### **Variable label**:  Daily water consumption  
 **Variable name**:  lsb_water_4    
@@ -2748,10 +2907,11 @@ lsb_HUNT_2$lsb_water_2<- recode(as.integer(HUNT3$DriWatGl_NT3BLQ1),'1'=0L,'2'=0L
 0 |   Does not drinks water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_4$lsb_water_4<-recode(as.integer(GLOBE2014$G14v23_d),"1"=0,"2"=0,"3"=0,"4"=0,"5"=0,"6"=1)
 
 ```  
 
@@ -2762,10 +2922,11 @@ lsb_HUNT_2$lsb_water_2<- recode(as.integer(HUNT3$DriWatGl_NT3BLQ1),'1'=0L,'2'=0L
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
-**Harmonization status**:    impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 
 ```  
 ### **Variable label**:  Quantity daily coffee  
@@ -2775,11 +2936,12 @@ lsb_HUNT_2$lsb_water_2<- recode(as.integer(HUNT3$DriWatGl_NT3BLQ1),'1'=0L,'2'=0L
 **Variable unit**:  cups/day 
 **Category coding**:  N/A  
 
-**Harmonization status**:    complete  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_coffee_qty_1<- rowSums(HUNT2[,c("DriCofBoilNDy_NT2BLQ1","DriCofOtNDy_NT2BLQ1")],na.rm = FALSE)
+
+
 ```  
 ### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_2  
@@ -2788,11 +2950,12 @@ lsb_HUNT_1$lsb_coffee_qty_1<- rowSums(HUNT2[,c("DriCofBoilNDy_NT2BLQ1","DriCofOt
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
-**Harmonization status**:  complete  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOtNDy_NT3BLQ1")],na.rm = FALSE)
+
+
 ```  
 ### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_3  
@@ -2806,6 +2969,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_4  
@@ -2818,6 +2982,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 
@@ -2835,6 +3000,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Average sleep hours  
 **Variable name**:  lsb_sleep_hours_1  
@@ -2848,6 +3014,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Average sleep hours  
 **Variable name**:  lsb_sleep_hours_2  
@@ -2860,6 +3027,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+#This is where the R-script will be written
 
 ```  
 ### **Variable label**:  Average sleep hours  
@@ -2874,6 +3042,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Average sleep hours  
 **Variable name**:  lsb_sleep_hours_4    
@@ -2887,6 +3056,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Average sleep hours  
 **Variable name**:  lsb_sleep_hours_5  
@@ -2895,10 +3065,11 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **Variable unit**:  hours/night    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+#This is where the R-script will be written
 
 ```  
 
@@ -2919,6 +3090,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **R script**:  
 ```{r, echo=TRUE}
 
+   
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
 **Variable name**:  lsb_sleep_diff_1  
@@ -2937,9 +3109,10 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **R script**:  
 ```{r, echo=TRUE}
 
+   
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
-**Variable name**:  lsb_sleep_diff_2  
+**Variable name**:  lsb_sleep_diff_2    
 **Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2950,7 +3123,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**:  impossible  
+**Harmonization status**:     impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2968,11 +3141,12 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**:    impossible  
-**Harmonization comment**:  
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
+   
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
 **Variable name**:  lsb_sleep_diff_4  
@@ -2991,6 +3165,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **R script**:  
 ```{r, echo=TRUE}
 
+   
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
 **Variable name**:  lsb_sleep_diff_5  
@@ -3004,11 +3179,12 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
+#This is where the R-script will be written
+   
 ```  
 
 ### **Variable label**:  Quality of sleep  
@@ -3029,6 +3205,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 
@@ -3051,6 +3228,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ``` 
 
 ### **Variable label**:  Quality of sleep  
@@ -3072,6 +3250,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ``` 
 ### **Variable label**:  Quality of sleep  
 **Variable name**:  lsb_sleep_qlty_3  
@@ -3091,6 +3270,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Quality of sleep  
@@ -3112,6 +3292,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **R script**:  
 ```{r, echo=TRUE}
 
+
 ```  
 ### **Variable label**:  Quality of sleep  
 **Variable name**:  lsb_sleep_qlty_5  
@@ -3131,6 +3312,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 
