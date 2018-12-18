@@ -453,7 +453,7 @@ lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)      
 **Variable name**: lsb_alc_total_0  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -467,7 +467,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.integer(RECORD_w1_2$nbglass_alcohol)*7L
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: lsb_alc_total_1  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -481,7 +481,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.integer(RECORD_w1_2$nbglass_alcohol)*7L
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: lsb_alc_total_2  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -494,7 +494,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.integer(RECORD_w1_2$nbglass_alcohol)*7L
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: lsb_alc_total_3  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -509,7 +509,7 @@ lsb_RECORD_0$lsb_alc_total_0<- as.integer(RECORD_w1_2$nbglass_alcohol)*7L
 ### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: lsb_alc_wine_0  
 **Variable description**:  Current quantity of wine consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -523,7 +523,7 @@ lsb_RECORD_0$lsb_alc_wine_0<- as.integer(RECORD_w1_1$Qm12b)*7L
 ### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: lsb_alc_wine_1  
 **Variable description**:  Current quantity of wine consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -537,7 +537,7 @@ lsb_RECORD_1$lsb_alc_wine_1<- as.integer(RECORD_w2$Qm11b)*7L
 ### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: lsb_alc_wine_2  
 **Variable description**:  Current quantity of wine consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -550,7 +550,7 @@ lsb_RECORD_1$lsb_alc_wine_1<- as.integer(RECORD_w2$Qm11b)*7L
 ### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: lsb_alc_wine_3  
 **Variable description**:  Current quantity of wine consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
@@ -564,7 +564,7 @@ lsb_RECORD_1$lsb_alc_wine_1<- as.integer(RECORD_w2$Qm11b)*7L
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_0  
 **Variable description**:  Current quantity of beer consumed per week.   
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -579,7 +579,7 @@ lsb_RECORD_0$lsb_alc_beer_0 <- as.integer(RECORD_w1_1$Qm12c)*7L
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_1  
 **Variable description**:  Current quantity of beer consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -594,7 +594,7 @@ lsb_RECORD_1$lsb_alc_beer_1<- as.integer(RECORD_w2$Qm11c)*7L
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_2  
 **Variable description**:  Current quantity of beer consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -609,7 +609,7 @@ lsb_RECORD_1$lsb_alc_beer_1<- as.integer(RECORD_w2$Qm11c)*7L
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_3  
 **Variable description**:  Current quantity of beer consumed per week.    
-**Value type**: integer  
+**Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -625,7 +625,7 @@ lsb_RECORD_1$lsb_alc_beer_1<- as.integer(RECORD_w2$Qm11c)*7L
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_0  
 **Variable description**:  Current quantity of liquor consumed per week.    
-**Value type**: integer  
+**Value type**: decimal      
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -640,7 +640,7 @@ lsb_RECORD_1$lsb_alc_beer_1<- as.integer(RECORD_w2$Qm11c)*7L
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_1  
 **Variable description**:  Current quantity of liquor consumed per week.   
-**Value type**: integer  
+**Value type**: decimal      
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -655,7 +655,7 @@ lsb_RECORD_1$lsb_alc_beer_1<- as.integer(RECORD_w2$Qm11c)*7L
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_2  
 **Variable description**:  Current quantity of liquor consumed per week.    
-**Value type**: integer  
+**Value type**: decimal      
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
@@ -670,7 +670,7 @@ lsb_RECORD_1$lsb_alc_beer_1<- as.integer(RECORD_w2$Qm11c)*7L
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_3  
 **Variable description**:  Current quantity of liquor consumed per week.   
-**Value type**: integer  
+**Value type**: decimal      
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
