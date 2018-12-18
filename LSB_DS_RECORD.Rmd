@@ -1400,10 +1400,10 @@ lsb_RECORD_1$lsb_cig_qty_1<- as.integer(RECORD_w2$Qm19a)
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   divided by (20*365) to change from cigaretteyears to packyears
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_smk_py_0<- ifelse(as.numeric(is.na(RECORD_w1_2$packyear_current)), as.numeric(RECORD_w1_2$packyear_former), as.numeric(RECORD_w1_2$packyear_current))
+lsb_RECORD_0$lsb_smk_py_0<- ifelse(as.numeric(is.na(RECORD_w1_2$packyear_current)), (as.numeric(RECORD_w1_2$packyear_former)/7300), (as.numeric(RECORD_w1_2$packyear_current))/7300)
 
 ```  
 ### **Variable label**:  Pack years  
