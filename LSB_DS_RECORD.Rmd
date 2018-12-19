@@ -189,8 +189,16 @@ lsb_RECORD_1$lsb_alc_cur_1<- recode(as.character(RECORD_w2$Qm10), O=1L, N=0L,.de
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_alc_ever_0<- recode(as.character(RECORD_w1_2$neverdrinker), '0' = 1L , '1' = 0L,.default= NA_integer_)
-
+MyMerge <- function(x,y){
+  df <- merge(x,y, by="id",all=TRUE)
+  return(df)
+}
+#Reducing the table to the variables needed
+alc_table_record <- Reduce(MyMerge, list(RECORD_w1_1[,c("id","Qm16")],RECORD_w1_2[,c("id","neverdrinker")],RECORD_w2[,c("id","Qm18","Qm10","Qm10b")]))
+#hrmonization scripts
+alc_table_record$lsb_alc_ever_0<- recode(as.character(alc_table_record$neverdrinker), '0' = 1L , '1' = 0L,.default= NA_integer_)
+#merging to harmonized table
+lsb_RECORD_0<- merge(lsb_RECORD_0,alc_table_record[,c("id","lsb_alc_ever_0")],by = "id", all.x = TRUE)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_1    
@@ -208,12 +216,17 @@ lsb_RECORD_0$lsb_alc_ever_0<- recode(as.character(RECORD_w1_2$neverdrinker), '0'
 **Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_alc_ever_1<- ifelse(RECORD_w2$Qm10 =='N' & RECORD_w2$Qm10b == 1 | 
-                                        is.na(RECORD_w2$Qm10) & RECORD_w2$Qm10b == 1,0L,
-                                ifelse(RECORD_w2$Qm10 == 'N' & RECORD_w2$Qm10b == 2 |
-                                        RECORD_w2$Qm10 == 'O' & is.na(RECORD_w2$Qm10b) | 
-                                        RECORD_w2$Qm10 == 'O' & RECORD_w2$Qm10b == 2 |
-                                        is.na(RECORD_w2$Qm10) & RECORD_w2$Qm10b == 2,1L,NA))
+#hrmonization scripts
+alc_table_record$lsb_alc_ever_1_inter<- ifelse(alc_table_record$Qm10 =='N'  & alc_table_record$Qm10b == 1 | 
+                                               is.na(alc_table_record$Qm10) & alc_table_record$Qm10b == 1,0L,
+                                        ifelse(alc_table_record$Qm10 == 'N' & alc_table_record$Qm10b == 2 |
+                                               alc_table_record$Qm10 == 'O' & is.na(alc_table_record$Qm10b) | 
+                                               alc_table_record$Qm10 == 'O' & alc_table_record$Qm10b == 2 |
+                                               is.na(alc_table_record$Qm10) & alc_table_record$Qm10b == 2,1L,NA))
+alc_table_record$lsb_alc_ever_1<- ifelse(alc_table_record$lsb_alc_ever_0==0 & alc_table_record$lsb_alc_ever_1_inter==0,0L,
+                                  ifelse(alc_table_record$lsb_alc_ever_0==1 | alc_table_record$lsb_alc_ever_1_inter==1,1L,NA))
+#merging to harmonized table
+lsb_RECORD_1<- merge(lsb_RECORD_1,alc_table_record[,c("id","lsb_alc_ever_1")],by = "id", all.x = TRUE)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_2    
@@ -977,8 +990,10 @@ lsb_RECORD_1$lsb_smk_status_1<- recode(as.numeric(RECORD_w2$Qm18),'1'=0L,'2'=2L,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_smk_ever_0<- recode(as.numeric(RECORD_w1_1$Qm16), '1'=0L,'2'=1L,'3'=1L,'4'=1L, .default=NA_integer_)
-
+#hrmonization scripts
+alc_table_record$lsb_smk_ever_0<- recode(as.numeric(alc_table_record$Qm16), '1'=0L,'2'=1L,'3'=1L,'4'=1L, .default=NA_integer_)
+#merging to harmonized table
+lsb_RECORD_0<- merge(lsb_RECORD_0,alc_table_record[,c("id","lsb_smk_ever_0")],by = "id", all.x = TRUE)
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_1    
@@ -996,8 +1011,12 @@ lsb_RECORD_0$lsb_smk_ever_0<- recode(as.numeric(RECORD_w1_1$Qm16), '1'=0L,'2'=1L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_smk_ever_1<- recode(as.numeric(RECORD_w2$Qm18), '1'=0L,'2'=1L,'3'=1L,'4'=1L, .default=NA_integer_)
-
+#hrmonization scripts
+alc_table_record$lsb_smk_ever_1<- ifelse(alc_table_record$lsb_smk_ever_0==0 & as.numeric(alc_table_record$Qm18)==1,0L,
+                                  ifelse(alc_table_record$lsb_smk_ever_0==1 | as.numeric(alc_table_record$Qm18)==2 |
+                                         as.numeric(alc_table_record$Qm18)==3 | as.numeric(alc_table_record$Qm18)==4,1L,NA))
+#merging to harmonized table
+lsb_RECORD_1<- merge(lsb_RECORD_1,alc_table_record[,c("id","lsb_smk_ever_1")],by = "id", all.x = TRUE)
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_2    
