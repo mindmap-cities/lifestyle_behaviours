@@ -7,6 +7,7 @@ output: html_document
 ```{r, echo=FALSE}
 #Load R libraries
 library(opal)
+library(data.table)
 library(tidyverse)
 library(epiDisplay)
 # Create an opal object with the login information
@@ -187,8 +188,18 @@ lsb_HUNT_2$lsb_alc_cur_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_0$lsb_alc_ever_0<- recode(as.integer(HUNT1$AlcFL2W_NT1BLQ2),'1'=1L,'2'=1L,'3'=1L,'4'=1L,'5'=0L)
+#Merging the raw tables LASA1B-LASA1H
+MyMerge <- function(x,y){
+  df <- merge(x,y, by="id",all=TRUE)
+  return(df)
+}
+#Reducing the table to the variables needed
+lsb_table_hunt <- Reduce(MyMerge, list(HUNT1,HUNT2,HUNT3))
 
+#hrmonization scripts
+lsb_table_hunt$lsb_alc_ever_0<- recode(as.integer(lsb_table_hunt$AlcFL2W_NT1BLQ2),'1'=1L,'2'=1L,'3'=1L,'4'=1L,'5'=0L)
+#merging to harmonized table
+lsb_HUNT_0<- merge(lsb_HUNT_0,lsb_table_hunt[,c("id","lsb_alc_ever_0")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_1    
@@ -224,7 +235,12 @@ lsb_HUNT_0$lsb_alc_ever_0<- recode(as.integer(HUNT1$AlcFL2W_NT1BLQ2),'1'=1L,'2'=
 **Harmonization comment**:   Study-specific variable:"About how often in the last 12 months did you drink alcohol? (Do not include low-alcohol beer)".    
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_alc_ever_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1L,'3'=1L,'4'=1L,'5'=1L,'6'=1L,'7'=1L,'8'=0L)
+#hrmonization scripts
+lsb_table_hunt$lsb_alc_ever_2<- ifelse(lsb_table_hunt$lsb_alc_ever_0==0 & as.integer(lsb_table_hunt$AlcFLY_NT3BLQ1)=='8',0L,
+                                ifelse(lsb_table_hunt$lsb_alc_ever_0==1 | 
+                                (as.integer(lsb_table_hunt$AlcFLY_NT3BLQ1)>='1' & as.integer(lsb_table_hunt$AlcFLY_NT3BLQ1)<=7),1L,NA))
+#merging to harmonized table
+lsb_HUNT_2<- merge(lsb_HUNT_1,lsb_table_hunt[,c("id","lsb_alc_ever_2")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_3    
@@ -942,7 +958,10 @@ lsb_HUNT_2$lsb_smk_status_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1),'0'=0L,'1
 **Harmonization comment**:   Missing or NO (value 0) recoded to YES if reported time since smoking cessation AND/OR answered questions about smoking status in HUNT2 and/or HUNT3 which correspondes to smoking cessation before HUNT1. NO or YES were recoded to MISSING if answered YES to smoking cigarettes daily AND without time since smoking cessatio AND answered questions about smoking status in HUNT2 and/or HUNT3 which correspondes to still smoking daily or smoking cessation after participating in HUNT1.  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_0$lsb_smk_ever_0<- recode(as.integer(HUNT1$SmoStat_NT1BLQ2),'0'=0L,'1'=1L,'2'=1L)
+#hrmonization scripts
+lsb_table_hunt$lsb_smk_ever_0<- recode(as.integer(lsb_table_hunt$SmoStat_NT1BLQ2),'0'=0L,'1'=1L,'2'=1L)
+#merging to harmonized table
+lsb_HUNT_0<- merge(lsb_HUNT_0,lsb_table_hunt[,c("id","lsb_smk_ever_0")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_1    
@@ -960,7 +979,13 @@ lsb_HUNT_0$lsb_smk_ever_0<- recode(as.integer(HUNT1$SmoStat_NT1BLQ2),'0'=0L,'1'=
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_1$lsb_smk_ever_1<- recode(as.integer(HUNT2$SmoStat_NT2BLQ1),'0'=0L,'1'=1L,'2'=1L)
+#hrmonization scripts
+lsb_table_hunt$lsb_smk_ever_1<- ifelse(lsb_table_hunt$lsb_smk_ever_0==0 & as.integer(lsb_table_hunt$SmoStat_NT2BLQ1)==0,0L,
+                                  ifelse(lsb_table_hunt$lsb_smk_ever_0==1 | 
+                                  (as.integer(lsb_table_hunt$SmoStat_NT2BLQ1)>=1 &   
+                                  as.integer(lsb_table_hunt$SmoStat_NT2BLQ1)<=2),1L,NA))
+#merging to harmonized table
+lsb_HUNT_1<- merge(lsb_HUNT_1,lsb_table_hunt[,c("id","lsb_smk_ever_1")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_2    
@@ -978,7 +1003,12 @@ lsb_HUNT_1$lsb_smk_ever_1<- recode(as.integer(HUNT2$SmoStat_NT2BLQ1),'0'=0L,'1'=
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HUNT_2$lsb_smk_ever_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1), '0'=0L, '1'=1L,'2'=1L,'3'=1L)
+#hrmonization scripts
+lsb_table_hunt$lsb_smk_ever_2<- ifelse(lsb_table_hunt$lsb_smk_ever_1==0 & as.integer(lsb_table_hunt$SmoStat_NT3BLQ1)==0,0L,
+                                ifelse(lsb_table_hunt$lsb_smk_ever_1==1 |
+                                (as.integer(lsb_table_hunt$SmoStat_NT3BLQ1)>=1 & as.integer(lsb_table_hunt$SmoStat_NT3BLQ1)<=3),1L,NA))
+#merging to harmonized table
+lsb_HUNT_2<- merge(lsb_HUNT_1,lsb_table_hunt[,c("id","lsb_smk_ever_2")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_3    
