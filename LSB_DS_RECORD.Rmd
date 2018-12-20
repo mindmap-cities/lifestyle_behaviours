@@ -49,7 +49,7 @@ opal.logout(erasmus_opal)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete  
@@ -68,7 +68,7 @@ lsb_RECORD_0$lsb_alc_cur_0<- recode(as.character(RECORD_w1_2$drinker_cgi), drink
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol   
 
 **Harmonization status**:  complete  
@@ -87,7 +87,7 @@ lsb_RECORD_1$lsb_alc_cur_1<- recode(as.character(RECORD_w2$Qm10), O=1L, N=0L,.de
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  impossible  
@@ -106,7 +106,7 @@ lsb_RECORD_1$lsb_alc_cur_1<- recode(as.character(RECORD_w2$Qm10), O=1L, N=0L,.de
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  impossible  
@@ -125,7 +125,7 @@ lsb_RECORD_1$lsb_alc_cur_1<- recode(as.character(RECORD_w2$Qm10), O=1L, N=0L,.de
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  impossible  
@@ -144,7 +144,7 @@ lsb_RECORD_1$lsb_alc_cur_1<- recode(as.character(RECORD_w2$Qm10), O=1L, N=0L,.de
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  impossible  
@@ -162,7 +162,7 @@ lsb_RECORD_1$lsb_alc_cur_1<- recode(as.character(RECORD_w2$Qm10), O=1L, N=0L,.de
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  impossible  
@@ -1466,7 +1466,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(as.numeric(is.na(RECORD_w1_2$packyear_current
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
@@ -1487,7 +1487,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(as.numeric(is.na(RECORD_w1_2$packyear_current
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
@@ -1508,7 +1508,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(as.numeric(is.na(RECORD_w1_2$packyear_current
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1529,7 +1529,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(as.numeric(is.na(RECORD_w1_2$packyear_current
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1550,7 +1550,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(as.numeric(is.na(RECORD_w1_2$packyear_current
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1571,7 +1571,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(as.numeric(is.na(RECORD_w1_2$packyear_current
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1592,7 +1592,7 @@ lsb_RECORD_0$lsb_smk_py_0<- ifelse(as.numeric(is.na(RECORD_w1_2$packyear_current
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 

@@ -51,7 +51,7 @@ opal.logout(erasmus_opal)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete  
@@ -70,7 +70,7 @@ lsb_HUNT_0$lsb_alc_cur_0<- recode(as.integer(HUNT1$AlcFL2W_NT1BLQ2),'1'=1L,'2'=1
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol   
 
 **Harmonization status**:  complete  
@@ -89,7 +89,7 @@ lsb_HUNT_1$lsb_alc_cur_1<- recode(as.integer(HUNT2$AlcNev_NT2BLQ1), '0'=1L,'1'=0
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete  
@@ -108,7 +108,7 @@ lsb_HUNT_2$lsb_alc_cur_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1L
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  impossible  
@@ -126,7 +126,7 @@ lsb_HUNT_2$lsb_alc_cur_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1L
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  impossible  
@@ -144,7 +144,7 @@ lsb_HUNT_2$lsb_alc_cur_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1L
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  impossible  
@@ -162,7 +162,7 @@ lsb_HUNT_2$lsb_alc_cur_2<- recode(as.integer(HUNT3$AlcFLY_NT3BLQ1),'1'=1L,'2'=1L
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  impossible  
@@ -1418,7 +1418,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
@@ -1438,7 +1438,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
@@ -1458,7 +1458,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1478,7 +1478,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1498,7 +1498,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1518,7 +1518,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1538,7 +1538,7 @@ lsb_HUNT_2$lsb_smk_py_2<- HUNT3$SmoPackYrs_NT3BLQ1
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 

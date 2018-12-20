@@ -42,7 +42,7 @@ opal.logout(erasmus_opal)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  impossible  
@@ -61,7 +61,7 @@ opal.logout(erasmus_opal)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol   
 
 **Harmonization status**:  
@@ -80,7 +80,7 @@ opal.logout(erasmus_opal)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  
@@ -99,7 +99,7 @@ opal.logout(erasmus_opal)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  
@@ -118,7 +118,7 @@ opal.logout(erasmus_opal)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  
@@ -137,7 +137,7 @@ opal.logout(erasmus_opal)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  
@@ -156,7 +156,7 @@ opal.logout(erasmus_opal)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  
