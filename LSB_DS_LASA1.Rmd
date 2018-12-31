@@ -65,7 +65,7 @@ opal.logout(erasmus_opal)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete  
@@ -84,7 +84,7 @@ lsb_LASA1_0$lsb_alc_cur_0 <- recode(as.integer(LASA1B$bmvar24), '1'=0L, '2'=1L, 
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol   
 
 **Harmonization status**:  complete  
@@ -102,7 +102,7 @@ lsb_LASA1_1$lsb_alc_cur_1 <- recode(as.integer(LASA1C$cmvar24),'1'=0L,'2'=1L, .d
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete  
@@ -120,7 +120,7 @@ lsb_LASA1_2$lsb_alc_cur_2 <- recode(as.integer(LASA1D$dmalcohu),'1'=0L, '2'=1L, 
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete  
@@ -138,7 +138,7 @@ lsb_LASA1_3$lsb_alc_cur_3 <- recode(as.integer(LASA1E$emalcohu), '1'=0L, '2'=1L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete  
@@ -156,7 +156,7 @@ lsb_LASA1_4$lsb_alc_cur_4 <- recode(as.integer(LASA1F$fmalcohu),'1'=0L, '2'=1L, 
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete    
@@ -174,7 +174,7 @@ lsb_LASA1_5$lsb_alc_cur_5 <- recode(as.integer(LASA1G$gmalcohu), '1'=0L, '2'=1L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete    
