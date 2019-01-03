@@ -9,6 +9,7 @@ output: html_document
 library(opal)
 library(tidyverse)
 library(epiDisplay)
+library(data.table)
 # Create an opal object with the login information
 erasmus_opal <- opal.login()
 #Login to Opal server and assign the content of the LUCAS table(s) to your RStudio environment
@@ -35,7 +36,7 @@ LASA1H <- opal.execute(erasmus_opal,'LASA1H')
 ```
 ## Assign participant id as first column of your harmonized dataframes
 ```{r, echo=FALSE}
-lsb_LASA1_0<- data.frame(id = LASA1B$id)
+lsb_LASA1_0<- data.frame(id= LASA1B$id)
 lsb_LASA1_1<- data.frame(id= LASA1C$id)
 lsb_LASA1_2<- data.frame(id= LASA1D$id)
 lsb_LASA1_3<- data.frame(id= LASA1E$id)
@@ -65,7 +66,7 @@ opal.logout(erasmus_opal)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete  
@@ -73,7 +74,6 @@ opal.logout(erasmus_opal)
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_0$lsb_alc_cur_0 <- recode(as.integer(LASA1B$bmvar24), '1'=0L, '2'=1L, .default=NA_integer_)
-#LASA1B$lsb_alc_cur_0 <- recode(as.integer(LASA1B$bmvar24), '1'=0L, '2'=1L, .default=NA_integer_)
 ```  
 ### **Variable label**:  Current consumption of alcohol  
 **Variable name**: lsb_alc_cur_1  
@@ -84,7 +84,7 @@ lsb_LASA1_0$lsb_alc_cur_0 <- recode(as.integer(LASA1B$bmvar24), '1'=0L, '2'=1L, 
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol   
 
 **Harmonization status**:  complete  
@@ -102,7 +102,7 @@ lsb_LASA1_1$lsb_alc_cur_1 <- recode(as.integer(LASA1C$cmvar24),'1'=0L,'2'=1L, .d
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete  
@@ -120,7 +120,7 @@ lsb_LASA1_2$lsb_alc_cur_2 <- recode(as.integer(LASA1D$dmalcohu),'1'=0L, '2'=1L, 
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete  
@@ -138,7 +138,7 @@ lsb_LASA1_3$lsb_alc_cur_3 <- recode(as.integer(LASA1E$emalcohu), '1'=0L, '2'=1L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete  
@@ -156,7 +156,7 @@ lsb_LASA1_4$lsb_alc_cur_4 <- recode(as.integer(LASA1F$fmalcohu),'1'=0L, '2'=1L, 
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete    
@@ -174,7 +174,7 @@ lsb_LASA1_5$lsb_alc_cur_5 <- recode(as.integer(LASA1G$gmalcohu), '1'=0L, '2'=1L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete    
@@ -206,14 +206,14 @@ MyMerge <- function(x,y){
   return(df)
 }
 #Reducing the table to the variables needed
-alc_table <- Reduce(MyMerge, list(LASA1B,LASA1C,LASA1D,LASA1E,LASA1F,LASA1G,LASA1H))
-alc_table<- alc_table[,c("id","bmvar26","cmvar24","dmalcohu","emalcohu","fmalcohu","gmalcohu","HMALCOHU")]
+lasa1_alc_table <- Reduce(MyMerge, list(LASA1B,LASA1C,LASA1D,LASA1E,LASA1F,LASA1G,LASA1H))
+lasa1_alc_table<- lasa1_alc_table[,c("id","bmvar26","bmvar24","cmvar24","dmalcohu","emalcohu","fmalcohu","gmalcohu","HMALCOHU")]
 
 
 #Harmonization scripts to create "ever drank alcohol" for all participants in all waves
-alc_table$lsb_alc_ever_0 <- ifelse(as.integer(alc_table$bmvar26)==2 | as.integer(alc_table$bmvar26)==-2,1L, ifelse(as.integer(alc_table$bmvar26)==1,0L,NA))
+lasa1_alc_table$lsb_alc_ever_0 <- ifelse(as.integer(lasa1_alc_table$bmvar26)==2 | (as.integer(lasa1_alc_table$bmvar26)==-2 & as.integer(lasa1_alc_table$bmvar24)==2),1L, ifelse(as.integer(lasa1_alc_table$bmvar26)==1,0L,NA))
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_LASA1_0 <- merge(lsb_LASA1_0, alc_table[,c("id","lsb_alc_ever_0")],by="id",all.x=TRUE)
+lsb_LASA1_0 <- merge(lsb_LASA1_0, lasa1_alc_table[,c("id","lsb_alc_ever_0")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_1    
@@ -356,7 +356,7 @@ lsb_LASA1_6 <- merge(lsb_LASA1_6, alc_table[,c("id","lsb_alc_ever_6")],by="id",a
 3 |  3 times a week or more  
 
 **Harmonization status**:    
-**Harmonization comment**:   bmvar28 ('Alcohol: Number of glasses at one time') seems to also be answered by participants who said that they don't drink in bmvar24 ('Alcohol: Do you drink alcohol'). These participants are coded to '0-3 times a month' in the DataSchema variable.
+**Harmonization comment**:   bmvar28 ('Alcohol: Number of glasses at one time') is also answered by participants who said that they don't drink in bmvar24 ('Alcohol: Do you drink alcohol'). These participants are coded to '0-3 times a month' in the DataSchema variable.
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_0$lsb_alc_binge_0 <- ifelse(as.integer(LASA1B$bmvar24)==1,1L, 
