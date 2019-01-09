@@ -25,7 +25,7 @@ LASA1D <- opal.execute(erasmus_opal,'LASA1D')
 opal.assign.table.tibble(erasmus_opal, 'LASA1E', 'LASA.LASA1E',variables = list('emalcohu','emalcoh6','emvar32','emvar31','emvar33','emvar35','emvar34','elphya08','elphya07','elphya09','elphya06','elphya10','elphya13','elphya11','elphya12','elphya15','elphya18','elphya17','elphya19','elphya37','elphya36','elphya35','elphya34','elphya38','elphya32','elphya33','elphya31','ecesd11','eqsleep2','elphya14','elphya32','elphya36','elphya17','elphya15','elphya14','emalcohu','eqsleep1','emvar37','emalcohd','emalcohn'))
 LASA1E <- opal.execute(erasmus_opal,'LASA1E')
 
-opal.assign.table.tibble(erasmus_opal, 'LASA1F', 'LASA.LASA1F',variables = list('fmalcoh6','fmalcohd','fmalcohu','fmvar34','fmvar33','fmvar32','fmvar31','flphya08','flphya07','flphya09','flphya06','flphya10','flphya11','flphya13','flphya12','flphya18','flphya15','flphya17','flphya19','flphya37','flphya32','flphya33','flphya36','flphya34','flphya38','flphya31','flphya35','fcesd11','fqsleep2','flphya14','flphya32','flphya36','flphya17','flphya15','flphya14','fmalcohu','fqsleep1','fmvar35','fmvar37','fmalcohd','fmalcohn'))
+opal.assign.table.tibble(erasmus_opal, 'LASA1F', 'LASA.LASA1F',variables = list('fmalcoh6','fmalcohd','fmalcohu','fmvar34','fmvar33','fmvar32','fmvar31','flphya08','flphya07','flphya09','flphya06','flphya10','flphya11','flphya13','flphya12','flphya18','flphya15','flphya17','flphya19','flphya37','flphya32','flphya33','flphya36','flphya34','flphya38','flphya31','flphya35','fcesd11','fqsleep2','flphya14','flphya32','flphya36','flphya17','flphya15','flphya14','fmalcohu','fqsleep1','fmvar35','fmvar37','fmalcohd','fmalcohn','flphya13','flphya12'))
 LASA1F <- opal.execute(erasmus_opal,'LASA1F')
 
 opal.assign.table.tibble(erasmus_opal, 'LASA1G', 'LASA.LASA1G',variables = list('gmalcoh6','gmalcohn','gmalcohu','gmvar34','gmvar33','gmvar31','gmvar32','glphya08','glphya07','glphya09','glphya06','glphya10','glphya13','glphya11','glphya12','glphya14','glphya17','glphya15','glphya18','glphya19','glphya36','glphya37','glphya34','glphya32','glphya33','glphya38','glphya31','glphya35','gcesd11','gqsleep2','gqsleep5','glphya14','glphya32','glphya36','glphya17','glphya15','glphya14','gmalcohu','gqsleep1','gmvar35','gmvar37','gmalcohd','gmalcohn'))
@@ -1721,7 +1721,13 @@ lsb_LASA1_3$lsb_pa_walk_time_3 <- ifelse(LASA1E$lsb_pa_walk_time_3_inter<30,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+LASA1F$lsb_pa_walk_time_4_inter<- ifelse(as.integer(LASA1F$flphya06)==1 | as.integer(LASA1F$flphya07)==1,0L, ifelse(as.integer(LASA1F$flphya07)==2&as.integer(LASA1F$flphya08)>0 & as.integer(LASA1F$flphya09)>0, (as.numeric(LASA1F$flphya08)*as.numeric(LASA1F$flphya09))/14,NA))
 
+lsb_LASA1_4$lsb_pa_walk_time_4 <- ifelse(LASA1F$lsb_pa_walk_time_4_inter<30,0,
+                                  ifelse(LASA1F$lsb_pa_walk_time_4_inter>=30 & LASA1F$lsb_pa_walk_time_4_inter<60,1,
+                                  ifelse(LASA1F$lsb_pa_walk_time_4_inter>=60 & LASA1F$lsb_pa_walk_time_4_inter<120,2,
+                                  ifelse(LASA1F$lsb_pa_walk_time_4_inter>=120& LASA1F$lsb_pa_walk_time_4_inter<240,3,
+                                  ifelse(LASA1F$lsb_pa_walk_time_4_inter>=240,4,NA)))))
 ```  
 ### **Variable label**:  Average walking time     
 **Variable name**:   lsb_pa_walk_time_5  
@@ -1742,7 +1748,13 @@ lsb_LASA1_3$lsb_pa_walk_time_3 <- ifelse(LASA1E$lsb_pa_walk_time_3_inter<30,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+LASA1G$lsb_pa_walk_time_5_inter<- ifelse(as.integer(LASA1G$glphya06)==1 | as.integer(LASA1G$glphya07)==1,0L, ifelse(as.integer(LASA1G$glphya07)==2&as.integer(LASA1G$glphya08)>0 & as.integer(LASA1G$glphya09)>0, (as.numeric(LASA1G$glphya08)*as.numeric(LASA1G$glphya09))/14,NA))
 
+lsb_LASA1_5$lsb_pa_walk_time_5 <- ifelse(LASA1G$lsb_pa_walk_time_5_inter<30,0,
+                                  ifelse(LASA1G$lsb_pa_walk_time_5_inter>=30 & LASA1G$lsb_pa_walk_time_5_inter<60,1,
+                                  ifelse(LASA1G$lsb_pa_walk_time_5_inter>=60 & LASA1G$lsb_pa_walk_time_5_inter<120,2,
+                                  ifelse(LASA1G$lsb_pa_walk_time_5_inter>=120& LASA1G$lsb_pa_walk_time_5_inter<240,3,
+                                  ifelse(LASA1G$lsb_pa_walk_time_5_inter>=240,4,NA)))))
 ```  
 ### **Variable label**:  Average walking time     
 **Variable name**:   lsb_pa_walk_time_6  
@@ -1763,7 +1775,13 @@ lsb_LASA1_3$lsb_pa_walk_time_3 <- ifelse(LASA1E$lsb_pa_walk_time_3_inter<30,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+LASA1H$lsb_pa_walk_time_6_inter<- ifelse(as.integer(LASA1H$HLPHYA06)==1 | as.integer(LASA1H$HLPHYA07)==1,0L, ifelse(as.integer(LASA1H$HLPHYA07)==2&as.integer(LASA1H$HLPHYA08)>0 & as.integer(LASA1H$HLPHYA09)>0, (as.numeric(LASA1H$HLPHYA08)*as.numeric(LASA1H$HLPHYA09))/14,NA))
 
+lsb_LASA1_6$lsb_pa_walk_time_6 <- ifelse(LASA1H$lsb_pa_walk_time_6_inter<30,0,
+                                  ifelse(LASA1H$lsb_pa_walk_time_6_inter>=30 & LASA1H$lsb_pa_walk_time_6_inter<60,1,
+                                  ifelse(LASA1H$lsb_pa_walk_time_6_inter>=60 & LASA1H$lsb_pa_walk_time_6_inter<120,2,
+                                  ifelse(LASA1H$lsb_pa_walk_time_6_inter>=120& LASA1H$lsb_pa_walk_time_6_inter<240,3,
+                                  ifelse(LASA1H$lsb_pa_walk_time_6_inter>=240,4,NA)))))
 ```  
 
 ### **Variable label**:  Average walking time for transportation  
@@ -1932,10 +1950,10 @@ lsb_LASA1_3$lsb_pa_cycle_3 <- ifelse(as.integer(LASA1E$elphya10)==1 | as.integer
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   (redo)  
+**Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
-#lsb_LASA1_4$lsb_pa_cycle_4 <- (as.integer(LASA1F$flphya13)/2)
+lsb_LASA1_4$lsb_pa_cycle_4 <- ifelse(as.integer(LASA1F$flphya10)==1 | as.integer(LASA1F$flphya11)==1,0L, ifelse(as.integer(LASA1F$flphya11)==2 & as.integer(LASA1F$flphya12)>0 & as.integer(LASA1F$flphya13)>0, ((as.numeric(LASA1F$flphya12)*as.numeric(LASA1F$flphya13))/2),NA))
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_5  
@@ -1945,10 +1963,10 @@ lsb_LASA1_3$lsb_pa_cycle_3 <- ifelse(as.integer(LASA1E$elphya10)==1 | as.integer
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   (redo)  
+**Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
-#lsb_LASA1_5$lsb_pa_cycle_5 <- (as.integer(LASA1G$glphya13)/2)
+lsb_LASA1_5$lsb_pa_cycle_5 <- ifelse(as.integer(LASA1G$glphya10)==1 | as.integer(LASA1G$glphya11)==1,0L, ifelse(as.integer(LASA1G$glphya11)==2 & as.integer(LASA1G$glphya12)>0 & as.integer(LASA1G$glphya13)>0, ((as.numeric(LASA1G$glphya12)*as.numeric(LASA1G$glphya13))/2),NA))
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_6  
@@ -1961,7 +1979,7 @@ lsb_LASA1_3$lsb_pa_cycle_3 <- ifelse(as.integer(LASA1E$elphya10)==1 | as.integer
 **Harmonization comment**:   (redo)  
 **R script**:  
 ```{r, echo=TRUE}
-#lsb_LASA1_6$lsb_pa_cycle_6 <- (as.integer(LASA1H$HLPHYA13)/2)
+lsb_LASA1_6$lsb_pa_cycle_6 <- ifelse(as.integer(LASA1H$HLPHYA10)==1 | as.integer(LASA1H$HLPHYA11)==1,0L, ifelse(as.integer(LASA1H$HLPHYA11)==2 & as.integer(LASA1H$HLPHYA12)>0 & as.integer(LASA1H$HLPHYA13)>0, ((as.numeric(LASA1H$HLPHYA12)*as.numeric(LASA1H$HLPHYA13))/2),NA))
 ```  
 
 ### **Variable label**:  Gardening   
@@ -2153,7 +2171,7 @@ lsb_LASA1_3$lsb_pa_garden_time_3 <- ifelse(as.integer(LASA1E$elphya14)==1 | as.i
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_4$lsb_pa_garden_time_4 <- ifelse(as.integer(LASA1F$flphya19)==-2 & as.integer(LASA1F$flphya17)==-2 & as.integer(LASA1F$flphya14)==1,0L, ifelse(as.integer(LASA1F$flphya19)<0, NA,as.integer(LASA1F$flphya19)/2))
+lsb_LASA1_4$lsb_pa_garden_time_4 <- ifelse(as.integer(LASA1F$flphya14)==1 | as.integer(LASA1F$flphya15)==1 | as.integer(LASA1F$flphya17)==1, 0L, ifelse(as.integer(LASA1F$flphya17)==2 & as.integer(LASA1F$flphya18)>0 & as.integer(LASA1F$flphya19)>0, (as.numeric(LASA1F$flphya18)*as.numeric(LASA1F$flphya19))/2,NA))
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_5    
@@ -2166,7 +2184,7 @@ lsb_LASA1_4$lsb_pa_garden_time_4 <- ifelse(as.integer(LASA1F$flphya19)==-2 & as.
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_5$lsb_pa_garden_time_5 <- ifelse(as.integer(LASA1G$glphya19)==-2 & as.integer(LASA1G$glphya17)==-2 & as.integer(LASA1G$glphya14)==1,0L, ifelse(as.integer(LASA1G$glphya19)<0, NA,as.integer(LASA1G$glphya19)/2))
+lsb_LASA1_5$lsb_pa_garden_time_5 <- ifelse(as.integer(LASA1G$glphya14)==1 | as.integer(LASA1G$glphya15)==1 | as.integer(LASA1G$glphya17)==1, 0L, ifelse(as.integer(LASA1G$glphya17)==2 & as.integer(LASA1G$glphya18)>0 & as.integer(LASA1G$glphya19)>0, (as.numeric(LASA1G$glphya18)*as.numeric(LASA1G$glphya19))/2,NA))
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_6    
@@ -2179,7 +2197,7 @@ lsb_LASA1_5$lsb_pa_garden_time_5 <- ifelse(as.integer(LASA1G$glphya19)==-2 & as.
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_6$lsb_pa_garden_time_6 <- ifelse(as.integer(LASA1H$HLPHYA19)==-2 & as.integer(LASA1H$HLPHYA17)==-2 & as.integer(LASA1H$HLPHYA14)==1,0L, ifelse(as.integer(LASA1H$HLPHYA19)<0, NA,as.integer(LASA1H$HLPHYA19)/2))
+lsb_LASA1_6$lsb_pa_garden_time_6 <- ifelse(as.integer(LASA1H$HLPHYA14)==1 | as.integer(LASA1H$HLPHYA15)==1 | as.integer(LASA1H$HLPHYA17)==1, 0L, ifelse(as.integer(LASA1H$HLPHYA17)==2 & as.integer(LASA1H$HLPHYA18)>0 & as.integer(LASA1H$HLPHYA19)>0, (as.numeric(LASA1H$HLPHYA18)*as.numeric(LASA1H$HLPHYA19))/2,NA))
 ```  
 
 ### **Variable label**:  Household activities  
@@ -2270,19 +2288,7 @@ lsb_LASA1_3$lsb_pa_house_3<- ifelse(as.integer(LASA1E$elphya32)==1 & as.integer(
 **Harmonization comment**:   (redo)
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_4$lsb_pa_house_4<- ifelse((as.integer(LASA1F$flphya32)== 1 & as.integer(LASA1F$flphya36)== 1) | 
-                                      (as.integer(LASA1F$flphya32)== -2 & as.integer(LASA1F$flphya36)== -2) |
-                                      (as.integer(LASA1F$flphya32)== -2 & as.integer(LASA1F$flphya36)== 1) |
-                                      (as.integer(LASA1F$flphya32)== 1 & as.integer(LASA1F$flphya36)== -2), 0L,
-                              ifelse((as.integer(LASA1F$flphya32)== 2 & as.integer(LASA1F$flphya36)== 1) |
-                                        (as.integer(LASA1F$flphya32)== 1 & as.integer(LASA1F$flphya36)== 2) |
-                                        (as.integer(LASA1F$flphya32)== 2 & as.integer(LASA1F$flphya36)== 1) |
-                                        (as.integer(LASA1F$flphya32)== 2 & as.integer(LASA1F$flphya36)== 2) |
-                                        (as.integer(LASA1F$flphya32)== 2 & as.integer(LASA1F$flphya36)== 3) |
-                                        (as.integer(LASA1F$flphya32)== 2 & as.integer(LASA1F$flphya36)== 4) |
-                                        (as.integer(LASA1F$flphya32)== 3 & as.integer(LASA1F$flphya36)== 2) |
-                                        (as.integer(LASA1F$flphya32)== 2 & as.integer(LASA1F$flphya36)== -2) |
-                                        (as.integer(LASA1F$flphya32)== -2 & as.integer(LASA1F$flphya36)== 2), 1L, NA))
+lsb_LASA1_4$lsb_pa_house_4<- ifelse(as.integer(LASA1F$flphya32)==1 & as.integer(LASA1F$flphya36)==1,0L, ifelse(as.integer(LASA1F$flphya32)==2 | as.integer(LASA1F$flphya36)==2,1L,NA))
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_5  
@@ -2300,19 +2306,7 @@ lsb_LASA1_4$lsb_pa_house_4<- ifelse((as.integer(LASA1F$flphya32)== 1 & as.intege
 **Harmonization comment**:   (redo)
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_5$lsb_pa_house_5<- ifelse((as.integer(LASA1G$glphya32)== 1 & as.integer(LASA1G$glphya36)== 1) | 
-                                      (as.integer(LASA1G$glphya32)== -2 & as.integer(LASA1G$glphya36)== -2) |
-                                      (as.integer(LASA1G$glphya32)== -2 & as.integer(LASA1G$glphya36)== 1) |
-                                      (as.integer(LASA1G$glphya32)== 1 & as.integer(LASA1G$glphya36)== -2), 0L,
-                              ifelse((as.integer(LASA1G$glphya32)== 2 & as.integer(LASA1G$glphya36)== 1) |
-                                        (as.integer(LASA1G$glphya32)== 1 & as.integer(LASA1G$glphya36)== 2) |
-                                        (as.integer(LASA1G$glphya32)== 2 & as.integer(LASA1G$glphya36)== 1) |
-                                        (as.integer(LASA1G$glphya32)== 2 & as.integer(LASA1G$glphya36)== 2) |
-                                        (as.integer(LASA1G$glphya32)== 2 & as.integer(LASA1G$glphya36)== 3) |
-                                        (as.integer(LASA1G$glphya32)== 2 & as.integer(LASA1G$glphya36)== 4) |
-                                        (as.integer(LASA1G$glphya32)== 3 & as.integer(LASA1G$glphya36)== 2) |
-                                        (as.integer(LASA1G$glphya32)== 2 & as.integer(LASA1G$glphya36)== -2) |
-                                        (as.integer(LASA1G$glphya32)== -2 & as.integer(LASA1G$glphya36)== 2), 1L, NA))
+lsb_LASA1_5$lsb_pa_house_5<- ifelse(as.integer(LASA1G$glphya32)==1 & as.integer(LASA1G$glphya36)==1,0L, ifelse(as.integer(LASA1G$glphya32)==2 | as.integer(LASA1G$glphya36)==2,1L,NA))
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_6  
@@ -2330,19 +2324,7 @@ lsb_LASA1_5$lsb_pa_house_5<- ifelse((as.integer(LASA1G$glphya32)== 1 & as.intege
 **Harmonization comment**:   (redo)
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_6$lsb_pa_house_6<- ifelse((as.integer(LASA1H$HLPHYA32)== 1 & as.integer(LASA1H$HLPHYA36)== 1) | 
-                                      (as.integer(LASA1H$HLPHYA32)== -2 & as.integer(LASA1H$HLPHYA36)== -2) |
-                                      (as.integer(LASA1H$HLPHYA32)== -2 & as.integer(LASA1H$HLPHYA36)== 1) |
-                                      (as.integer(LASA1H$HLPHYA32)== 1 & as.integer(LASA1H$HLPHYA36)== -2), 0L,
-                              ifelse((as.integer(LASA1H$HLPHYA32)== 2 & as.integer(LASA1H$HLPHYA36)== 1) |
-                                        (as.integer(LASA1H$HLPHYA32)== 1 & as.integer(LASA1H$HLPHYA36)== 2) |
-                                        (as.integer(LASA1H$HLPHYA32)== 2 & as.integer(LASA1H$HLPHYA36)== 1) |
-                                        (as.integer(LASA1H$HLPHYA32)== 2 & as.integer(LASA1H$HLPHYA36)== 2) |
-                                        (as.integer(LASA1H$HLPHYA32)== 2 & as.integer(LASA1H$HLPHYA36)== 3) |
-                                        (as.integer(LASA1H$HLPHYA32)== 2 & as.integer(LASA1H$HLPHYA36)== 4) |
-                                        (as.integer(LASA1H$HLPHYA32)== 3 & as.integer(LASA1H$HLPHYA36)== 2) |
-                                        (as.integer(LASA1H$HLPHYA32)== 2 & as.integer(LASA1H$HLPHYA36)== -2) |
-                                        (as.integer(LASA1H$HLPHYA32)== -2 & as.integer(LASA1H$HLPHYA36)== 2), 1L, NA))
+lsb_LASA1_6$lsb_pa_house_6<- ifelse(as.integer(LASA1H$HLPHYA32)==1 & as.integer(LASA1H$HLPHYA36)==1,0L, ifelse(as.integer(LASA1H$HLPHYA32)==2 | as.integer(LASA1H$HLPHYA36)==2,1L,NA))
 ```  
 
 ### **Variable label**:  Average household activities time      
@@ -2424,12 +2406,16 @@ lsb_LASA1_3$lsb_pa_house_time_3<- rowSums(cbind(LASA1E$lsb_pa_house_time_3_inter
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
-**Harmonization comment**:   question  
+**Harmonization status**:  complete  
+**Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
-
+#light household acitivites
+LASA1F$lsb_pa_house_time_4_interlight <- ifelse(as.integer(LASA1F$flphya31)==1 | as.integer(LASA1F$flphya32)==1,0L, ifelse(as.integer(LASA1F$flphya32)==2 & as.integer(LASA1F$flphya33)>0 & as.integer(LASA1F$flphya34)>0, (as.numeric(LASA1F$flphya33) * as.numeric(LASA1F$flphya34))/2,NA))
+#heavy household acitivites
+LASA1F$lsb_pa_house_time_4_interheavy <- ifelse(as.integer(LASA1F$flphya35)==1 | as.integer(LASA1F$flphya36)==1,0L, ifelse(as.integer(LASA1F$flphya36)==2 & as.integer(LASA1F$flphya37)>0 & as.integer(LASA1F$flphya38)>0, (as.numeric(LASA1F$flphya37) * as.numeric(LASA1F$flphya38))/2,NA))
+#avg total min/week any household activities
+lsb_LASA1_4$lsb_pa_house_time_4<- rowSums(cbind(LASA1F$lsb_pa_house_time_4_interlight,LASA1F$lsb_pa_house_time_4_interheavy), na.rm = FALSE)
 ```  
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_5  
@@ -2438,12 +2424,16 @@ lsb_LASA1_3$lsb_pa_house_time_3<- rowSums(cbind(LASA1E$lsb_pa_house_time_3_inter
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
-**Harmonization comment**:   question  
+**Harmonization status**:  complete  
+**Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
-
+#light household acitivites
+LASA1G$lsb_pa_house_time_5_interlight <- ifelse(as.integer(LASA1G$glphya31)==1 | as.integer(LASA1G$glphya32)==1,0L, ifelse(as.integer(LASA1G$glphya32)==2 & as.integer(LASA1G$glphya33)>0 & as.integer(LASA1G$glphya34)>0, (as.numeric(LASA1G$glphya33) * as.numeric(LASA1G$glphya34))/2,NA))
+#heavy household acitivites
+LASA1G$lsb_pa_house_time_5_interheavy <- ifelse(as.integer(LASA1G$glphya35)==1 | as.integer(LASA1G$glphya36)==1,0L, ifelse(as.integer(LASA1G$glphya36)==2 & as.integer(LASA1G$glphya37)>0 & as.integer(LASA1G$glphya38)>0, (as.numeric(LASA1G$glphya37) * as.numeric(LASA1G$glphya38))/2,NA))
+#avg total min/week any household activities
+lsb_LASA1_5$lsb_pa_house_time_5<- rowSums(cbind(LASA1G$lsb_pa_house_time_5_interlight,LASA1G$lsb_pa_house_time_5_interheavy), na.rm = FALSE)
 ```  
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_6  
@@ -2456,8 +2446,12 @@ lsb_LASA1_3$lsb_pa_house_time_3<- rowSums(cbind(LASA1E$lsb_pa_house_time_3_inter
 **Harmonization comment**:   question  
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
-
+#light household acitivites
+LASA1H$lsb_pa_house_time_6_interlight <- ifelse(as.integer(LASA1H$HLPHYA31)==1 | as.integer(LASA1H$HLPHYA32)==1,0L, ifelse(as.integer(LASA1H$HLPHYA32)==2 & as.integer(LASA1H$HLPHYA33)>0 & as.integer(LASA1H$HLPHYA34)>0, (as.numeric(LASA1H$HLPHYA33) * as.numeric(LASA1H$HLPHYA34))/2,NA))
+#heavy household acitivites
+LASA1H$lsb_pa_house_time_6_interheavy <- ifelse(as.integer(LASA1H$HLPHYA35)==1 | as.integer(LASA1H$HLPHYA36)==1,0L, ifelse(as.integer(LASA1H$HLPHYA36)==2 & as.integer(LASA1H$HLPHYA37)>0 & as.integer(LASA1H$HLPHYA38)>0, (as.numeric(LASA1H$HLPHYA37) * as.numeric(LASA1H$HLPHYA38))/2,NA))
+#avg total min/week any household activities
+lsb_LASA1_6$lsb_pa_house_time_6<- rowSums(cbind(LASA1H$lsb_pa_house_time_6_interlight,LASA1H$lsb_pa_house_time_6_interheavy), na.rm = FALSE)
 ```  
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_0  
