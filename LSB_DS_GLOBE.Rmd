@@ -59,7 +59,7 @@ opal.logout(erasmus_opal)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete     
@@ -79,7 +79,7 @@ lsb_GLOBE_0$lsb_alc_cur_0<-ifelse(GLOBE1991$v135<6,1L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol   
 
 **Harmonization status**:  complete  
@@ -98,7 +98,7 @@ lsb_GLOBE_1$lsb_alc_cur_1<-recode(as.integer(GLOBE1997$v7),"1"=1L,"2"=1L,"3"=1L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  impossible  
@@ -117,7 +117,7 @@ lsb_GLOBE_1$lsb_alc_cur_1<-recode(as.integer(GLOBE1997$v7),"1"=1L,"2"=1L,"3"=1L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete  
@@ -135,7 +135,7 @@ lsb_GLOBE_3$lsb_alc_cur_3<-recode(as.integer(GLOBE2011$v12_alc_freq),"1"=1L,"2"=
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  complete  
@@ -154,7 +154,7 @@ lsb_GLOBE_4$lsb_alc_cur_4<-recode(as.integer(GLOBE2014$G14v26),"1"=0L,"2"=1L,"3"
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  impossible  
@@ -173,7 +173,7 @@ lsb_GLOBE_4$lsb_alc_cur_4<-recode(as.integer(GLOBE2014$G14v26),"1"=0L,"2"=1L,"3"
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |  Does not currently consumes alcohol   
+0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
 **Harmonization status**:  impossible  
