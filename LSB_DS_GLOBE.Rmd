@@ -1486,7 +1486,7 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
@@ -1507,7 +1507,7 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
@@ -1528,7 +1528,7 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1549,7 +1549,7 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1570,7 +1570,7 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1591,7 +1591,7 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1612,7 +1612,7 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
