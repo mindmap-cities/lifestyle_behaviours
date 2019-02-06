@@ -1419,7 +1419,7 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
@@ -1440,7 +1440,7 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
@@ -1461,7 +1461,7 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1482,7 +1482,7 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1503,7 +1503,7 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1524,7 +1524,7 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1545,7 +1545,7 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1754,7 +1754,21 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average walking for transportation    
+### **Variable label**:  Average walking time for transportation    
+**Variable name**:  lsb_pa_walk_trans_3    
+**Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
+**Value type**:  decimal      
+**Variable unit**:  minutes/week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_4    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
 **Value type**:  decimal      
@@ -1771,6 +1785,20 @@ output: html_document
 
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_0    
+**Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
+**Value type**:  decimal      
+**Variable unit**:  minutes/week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Average walking time for leisure  
+**Variable name**:  lsb_pa_walk_leis_1    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -1811,7 +1839,7 @@ output: html_document
 #This is where the R-script will be written
 
 ```  
-### **Variable label**:  Average walking for leisure  
+### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_4    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
 **Value type**:  decimal      
@@ -1830,7 +1858,7 @@ output: html_document
 **Variable name**:  lsb_pa_cycle_0  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.  
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -1844,7 +1872,7 @@ output: html_document
 **Variable name**:  lsb_pa_cycle_1  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -1858,7 +1886,7 @@ output: html_document
 **Variable name**:  lsb_pa_cycle_2  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -1872,7 +1900,7 @@ output: html_document
 **Variable name**:  lsb_pa_cycle_3  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -1886,7 +1914,7 @@ output: html_document
 **Variable name**:  lsb_pa_cycle_4  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -1900,7 +1928,7 @@ output: html_document
 **Variable name**:  lsb_pa_cycle_5  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -1914,7 +1942,7 @@ output: html_document
 **Variable name**:  lsb_pa_cycle_6  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2295,7 +2323,7 @@ output: html_document
 **Variable name**:  lsb_pa_house_time_0  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2309,7 +2337,7 @@ output: html_document
 **Variable name**:  lsb_pa_house_time_1  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2323,7 +2351,7 @@ output: html_document
 **Variable name**:  lsb_pa_house_time_2  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2337,7 +2365,7 @@ output: html_document
 **Variable name**:  lsb_pa_house_time_3  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2351,7 +2379,7 @@ output: html_document
 **Variable name**:  lsb_pa_house_time_4  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2365,7 +2393,7 @@ output: html_document
 **Variable name**:  lsb_pa_house_time_5  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2379,7 +2407,7 @@ output: html_document
 **Variable name**:  lsb_pa_house_time_6  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  
@@ -2847,6 +2875,25 @@ output: html_document
 
 ```  
 ### **Variable label**:  Daily water consumption  
+**Variable name**:  lsb_water_3    
+**Variable description**:  Indicator of whether the participant drinks water on a daily basis.   
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not drinks water on a daily basis
+1 |   Drinks water on a daily basis
+
+**Harmonization status**:  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+#This is where the R-script will be written
+
+```  
+### **Variable label**:  Daily water consumption  
 **Variable name**:  lsb_water_4    
 **Variable description**:  Indicator of whether the participant drinks water on a daily basis.   
 **Value type**:  integer  
@@ -3024,9 +3071,9 @@ output: html_document
 
 ```  
 
-### **Variable label**:  Difficulty falling a sleep  
+### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_0  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3043,9 +3090,9 @@ output: html_document
 #This is where the R-script will be written
    
 ```  
-### **Variable label**:  Difficulty falling a sleep  
+### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_1  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3062,9 +3109,9 @@ output: html_document
 #This is where the R-script will be written
    
 ```  
-### **Variable label**:  Difficulty falling a sleep  
+### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_2    
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3080,9 +3127,9 @@ output: html_document
 ```{r, echo=TRUE}
 
 ```  
-### **Variable label**:  Difficulty falling a sleep  
+### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_3  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3099,9 +3146,9 @@ output: html_document
 #This is where the R-script will be written
    
 ```  
-### **Variable label**:  Difficulty falling a sleep  
+### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_4  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3118,9 +3165,9 @@ output: html_document
 #This is where the R-script will be written
    
 ```  
-### **Variable label**:  Difficulty falling a sleep  
+### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_5  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    

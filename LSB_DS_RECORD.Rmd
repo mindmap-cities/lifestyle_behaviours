@@ -1814,7 +1814,21 @@ lsb_RECORD_0$lsb_pa_walk_trans_0 <- as.numeric(RECORD_w1_2$q27_util_tot)
 
 
 ```  
-### **Variable label**:  Average walking for transportation    
+### **Variable label**:  Average walking time for transportation    
+**Variable name**:  lsb_pa_walk_trans_3    
+**Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
+**Value type**:  decimal      
+**Variable unit**:  minutes/week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
+
+```  
+### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_4    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
 **Value type**:  decimal      
@@ -1841,6 +1855,20 @@ lsb_RECORD_0$lsb_pa_walk_trans_0 <- as.numeric(RECORD_w1_2$q27_util_tot)
 **R script**:  
 ```{r, echo=TRUE}
 lsb_RECORD_0$lsb_pa_walk_leis_0 <- as.numeric(RECORD_w1_2$q27_promen_tot)
+
+```  
+### **Variable label**:  Average walking time for leisure  
+**Variable name**:  lsb_pa_walk_leis_1    
+**Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
+**Value type**:  decimal      
+**Variable unit**:  minutes/week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Average walking time for leisure  
@@ -1871,7 +1899,7 @@ lsb_RECORD_0$lsb_pa_walk_leis_0 <- as.numeric(RECORD_w1_2$q27_promen_tot)
 
 
 ```  
-### **Variable label**:  Average walking for leisure  
+### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_4    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
 **Value type**:  decimal      
@@ -1890,7 +1918,7 @@ lsb_RECORD_0$lsb_pa_walk_leis_0 <- as.numeric(RECORD_w1_2$q27_promen_tot)
 **Variable name**:  lsb_pa_cycle_0  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.  
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
@@ -1904,7 +1932,7 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.numeric(as.difftime(RECORD_w1_1$Q28_31_2,format
 **Variable name**:  lsb_pa_cycle_1  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal     
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  impossible      
@@ -1918,7 +1946,7 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.numeric(as.difftime(RECORD_w1_1$Q28_31_2,format
 **Variable name**:  lsb_pa_cycle_2  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal     
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  impossible  
@@ -1932,7 +1960,7 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.numeric(as.difftime(RECORD_w1_1$Q28_31_2,format
 **Variable name**:  lsb_pa_cycle_3  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal     
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  impossible  
@@ -1946,7 +1974,7 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.numeric(as.difftime(RECORD_w1_1$Q28_31_2,format
 **Variable name**:  lsb_pa_cycle_4  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal     
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  impossible  
@@ -1960,7 +1988,7 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.numeric(as.difftime(RECORD_w1_1$Q28_31_2,format
 **Variable name**:  lsb_pa_cycle_5  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal     
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  impossible  
@@ -1974,7 +2002,7 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.numeric(as.difftime(RECORD_w1_1$Q28_31_2,format
 **Variable name**:  lsb_pa_cycle_6  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal     
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  impossible  
@@ -2353,7 +2381,7 @@ lsb_RECORD_0$lsb_pa_house_0 <- ifelse(is.na(RECORD_w1_2$q28_autre_4_1),0L,1L)
 **Variable name**:  lsb_pa_house_time_0  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal    
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
@@ -2367,7 +2395,7 @@ lsb_RECORD_0$lsb_pa_house_time_0 <- as.numeric(RECORD_w1_2$q28_autre_4_2)*60
 **Variable name**:  lsb_pa_house_time_1  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  impossible  
@@ -2381,7 +2409,7 @@ lsb_RECORD_0$lsb_pa_house_time_0 <- as.numeric(RECORD_w1_2$q28_autre_4_2)*60
 **Variable name**:  lsb_pa_house_time_2  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  impossible  
@@ -2395,7 +2423,7 @@ lsb_RECORD_0$lsb_pa_house_time_0 <- as.numeric(RECORD_w1_2$q28_autre_4_2)*60
 **Variable name**:  lsb_pa_house_time_3  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  impossible  
@@ -2409,7 +2437,7 @@ lsb_RECORD_0$lsb_pa_house_time_0 <- as.numeric(RECORD_w1_2$q28_autre_4_2)*60
 **Variable name**:  lsb_pa_house_time_4  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  impossible  
@@ -2423,7 +2451,7 @@ lsb_RECORD_0$lsb_pa_house_time_0 <- as.numeric(RECORD_w1_2$q28_autre_4_2)*60
 **Variable name**:  lsb_pa_house_time_5  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  impossible  
@@ -2437,7 +2465,7 @@ lsb_RECORD_0$lsb_pa_house_time_0 <- as.numeric(RECORD_w1_2$q28_autre_4_2)*60
 **Variable name**:  lsb_pa_house_time_6  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  impossible  
@@ -2910,6 +2938,25 @@ lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 == 0, 0L,
 
 ```  
 ### **Variable label**:  Daily water consumption  
+**Variable name**:  lsb_water_3    
+**Variable description**:  Indicator of whether the participant drinks water on a daily basis.   
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not drinks water on a daily basis
+1 |   Drinks water on a daily basis
+
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
+
+```  
+### **Variable label**:  Daily water consumption  
 **Variable name**:  lsb_water_4    
 **Variable description**:  Indicator of whether the participant drinks water on a daily basis.   
 **Value type**:  integer  
@@ -3087,9 +3134,9 @@ lsb_RECORD_1$lsb_sleep_hours_1 <- ifelse(as.integer(RECORD_w2$Qm76)<25, as.integ
 
 ```  
 
-### **Variable label**:  Difficulty falling a sleep  
+### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_0  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3105,9 +3152,9 @@ lsb_RECORD_1$lsb_sleep_hours_1 <- ifelse(as.integer(RECORD_w2$Qm76)<25, as.integ
 ```{r, echo=TRUE}
    
 ```  
-### **Variable label**:  Difficulty falling a sleep  
+### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_1  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3124,9 +3171,9 @@ lsb_RECORD_1$lsb_sleep_hours_1 <- ifelse(as.integer(RECORD_w2$Qm76)<25, as.integ
 lsb_RECORD_1$lsb_sleep_diff_1<- recode(as.character(RECORD_w2$P20_Q1_327), '1'=0L,'0'=1L)
  
 ```  
-### **Variable label**:  Difficulty falling a sleep  
+### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_2    
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3142,9 +3189,9 @@ lsb_RECORD_1$lsb_sleep_diff_1<- recode(as.character(RECORD_w2$P20_Q1_327), '1'=0
 ```{r, echo=TRUE}
 
 ```  
-### **Variable label**:  Difficulty falling a sleep  
+### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_3  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3161,9 +3208,9 @@ lsb_RECORD_1$lsb_sleep_diff_1<- recode(as.character(RECORD_w2$P20_Q1_327), '1'=0
 
    
 ```  
-### **Variable label**:  Difficulty falling a sleep  
+### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_4  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3180,9 +3227,9 @@ lsb_RECORD_1$lsb_sleep_diff_1<- recode(as.character(RECORD_w2$P20_Q1_327), '1'=0
 
    
 ```  
-### **Variable label**:  Difficulty falling a sleep  
+### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_5  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
