@@ -200,7 +200,8 @@ lsb_LASA1_6$lsb_alc_cur_6 <- recode(as.integer(LASA1H$HMALCOHU), '1'=0L,'2'=1L, 
 1 |   Ever consumed alcohol  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:  The harmonized variable "Ever consumption of alcohol" was created using bmvar24: "Alcohol: Do you drink alcohol" and bmvar26 "Alcohol: drank before". For followup waves, the harmonized variable was created using "Ever consumption of alcohol" from baseline and previous waves and current consumption of alcohol at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
+
 **R script**:  
 ```{r, echo=TRUE}
 #Merging the raw tables LASA1B-LASA1H
@@ -208,15 +209,11 @@ MyMerge <- function(x,y){
   df <- merge(x,y, by="id",all=TRUE)
   return(df)
 }
-#Reducing the table to the variables needed
-lasa1_alc_table <- Reduce(MyMerge, list(LASA1B,LASA1C,LASA1D,LASA1E,LASA1F,LASA1G,LASA1H))
-#lasa1_alc_table<- lasa1_alc_table[,c("id","bmvar26","bmvar24","cmvar24","dmalcohu","emalcohu","fmalcohu","gmalcohu","HMALCOHU")]
-
-
+lasa1_lsb_table <- Reduce(MyMerge, list(LASA1B,LASA1C,LASA1D,LASA1E,LASA1F,LASA1G,LASA1H))
 #Harmonization scripts to create "ever drank alcohol" for all participants in all waves
-lasa1_alc_table$lsb_alc_ever_0 <- ifelse(as.integer(lasa1_alc_table$bmvar26)==2 | (as.integer(lasa1_alc_table$bmvar26)==-2 & as.integer(lasa1_alc_table$bmvar24)==2),1L, ifelse(as.integer(lasa1_alc_table$bmvar26)==1,0L,NA))
+lasa1_lsb_table$lsb_alc_ever_0 <- ifelse(as.integer(lasa1_lsb_table$bmvar26)==2 | (as.integer(lasa1_lsb_table$bmvar26)==-2 & as.integer(lasa1_lsb_table$bmvar24)==2),1L, ifelse(as.integer(lasa1_lsb_table$bmvar26)==1,0L,NA))
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_LASA1_0 <- merge(lsb_LASA1_0, lasa1_alc_table[,c("id","lsb_alc_ever_0")],by="id",all.x=TRUE)
+lsb_LASA1_0 <- merge(lsb_LASA1_0, lasa1_lsb_table[,c("id","lsb_alc_ever_0")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_1    
@@ -231,13 +228,13 @@ lsb_LASA1_0 <- merge(lsb_LASA1_0, lasa1_alc_table[,c("id","lsb_alc_ever_0")],by=
 1 |   Ever consumed alcohol  
 
 **Harmonization status**:  complete      
-**Harmonization comment**:  Drank before was only asked at baseline (bmvar26). Ever drank alcohol is created using "currently drinks" and previous followups.    
+**Harmonization comment**:  The harmonized variable "Ever consumption of alcohol" was created using "Ever consumption of alcohol" from baseline and previous waves and current consumption of alcohol at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.   
 **R script**:  
 ```{r, echo=TRUE}
 #Harmonization scripts to create "ever drank alcohol" for all participants in all waves
-lasa1_alc_table$lsb_alc_ever_1 <- ifelse(lasa1_alc_table$lsb_alc_ever_0 ==0 & as.integer(lasa1_alc_table$cmvar24)==1,0L, ifelse(lasa1_alc_table$lsb_alc_ever_0==1 | as.integer(lasa1_alc_table$cmvar24)==2,1L,NA))
+lasa1_lsb_table$lsb_alc_ever_1 <- ifelse(lasa1_lsb_table$lsb_alc_ever_0 ==0 & as.integer(lasa1_lsb_table$cmvar24)==1,0L, ifelse(lasa1_lsb_table$lsb_alc_ever_0==1 | as.integer(lasa1_lsb_table$cmvar24)==2,1L,NA))
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_LASA1_1 <- merge(lsb_LASA1_1, lasa1_alc_table[,c("id","lsb_alc_ever_1")],by="id",all.x=TRUE)
+lsb_LASA1_1 <- merge(lsb_LASA1_1, lasa1_lsb_table[,c("id","lsb_alc_ever_1")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_2    
@@ -252,13 +249,13 @@ lsb_LASA1_1 <- merge(lsb_LASA1_1, lasa1_alc_table[,c("id","lsb_alc_ever_1")],by=
 1 |   Ever consumed alcohol  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   Drank before was only asked at baseline (bmvar26). Ever drank alcohol was created using "currently drinks alcohol" of previous and current waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.   
+**Harmonization comment**:  The harmonized variable "Ever consumption of alcohol" was created using "Ever consumption of alcohol" from baseline and previous waves and current consumption of alcohol at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.   
 **R script**:  
 ```{r, echo=TRUE}
 #Harmonization scripts to create "ever drank alcohol" for all participants in all waves
-lasa1_alc_table$lsb_alc_ever_2  <- ifelse(lasa1_alc_table$lsb_alc_ever_1 ==0 & as.integer(lasa1_alc_table$dmalcohu)==1,0L, ifelse(lasa1_alc_table$lsb_alc_ever_1==1 | as.integer(lasa1_alc_table$dmalcohu)==2,1L,NA))
+lasa1_lsb_table$lsb_alc_ever_2  <- ifelse(lasa1_lsb_table$lsb_alc_ever_1 ==0 & as.integer(lasa1_lsb_table$dmalcohu)==1,0L, ifelse(lasa1_lsb_table$lsb_alc_ever_1==1 | as.integer(lasa1_lsb_table$dmalcohu)==2,1L,NA))
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_LASA1_2 <- merge(lsb_LASA1_2, lasa1_alc_table[,c("id","lsb_alc_ever_2")],by="id",all.x=TRUE)
+lsb_LASA1_2 <- merge(lsb_LASA1_2, lasa1_lsb_table[,c("id","lsb_alc_ever_2")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_3    
@@ -273,13 +270,13 @@ lsb_LASA1_2 <- merge(lsb_LASA1_2, lasa1_alc_table[,c("id","lsb_alc_ever_2")],by=
 1 |   Ever consumed alcohol  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   **Harmonization comment**:  The harmonized variable "Ever consumption of alcohol" was created using "Ever consumption of alcohol" from baseline and previous waves and current consumption of alcohol at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.   
 **R script**:  
 ```{r, echo=TRUE}
 #Harmonization scripts to create "ever drank alcohol" for all participants in all waves
-lasa1_alc_table$lsb_alc_ever_3  <- ifelse(lasa1_alc_table$lsb_alc_ever_2 ==0 & as.integer(lasa1_alc_table$emalcohu)==1,0L, ifelse(lasa1_alc_table$lsb_alc_ever_2==1 | as.integer(lasa1_alc_table$emalcohu)==2,1L,NA))
+lasa1_lsb_table$lsb_alc_ever_3  <- ifelse(lasa1_lsb_table$lsb_alc_ever_2 ==0 & as.integer(lasa1_lsb_table$emalcohu)==1,0L, ifelse(lasa1_lsb_table$lsb_alc_ever_2==1 | as.integer(lasa1_lsb_table$emalcohu)==2,1L,NA))
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_LASA1_3 <- merge(lsb_LASA1_3, lasa1_alc_table[,c("id","lsb_alc_ever_3")],by="id",all.x=TRUE)
+lsb_LASA1_3 <- merge(lsb_LASA1_3, lasa1_lsb_table[,c("id","lsb_alc_ever_3")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_4    
@@ -294,13 +291,13 @@ lsb_LASA1_3 <- merge(lsb_LASA1_3, lasa1_alc_table[,c("id","lsb_alc_ever_3")],by=
 1 |   Ever consumed alcohol  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:  The harmonized variable "Ever consumption of alcohol" was created using "Ever consumption of alcohol" from baseline and previous waves and current consumption of alcohol at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.   
 **R script**:   
 ```{r, echo=TRUE}
 #Harmonization scripts to create "ever drank alcohol" for all participants in all waves
-lasa1_alc_table$lsb_alc_ever_4  <- ifelse(lasa1_alc_table$lsb_alc_ever_3 ==0 & as.integer(lasa1_alc_table$fmalcohu)==1,0L, ifelse(lasa1_alc_table$lsb_alc_ever_3==1 | as.integer(lasa1_alc_table$fmalcohu)==2,1L,NA))
+lasa1_lsb_table$lsb_alc_ever_4  <- ifelse(lasa1_lsb_table$lsb_alc_ever_3 ==0 & as.integer(lasa1_lsb_table$fmalcohu)==1,0L, ifelse(lasa1_lsb_table$lsb_alc_ever_3==1 | as.integer(lasa1_lsb_table$fmalcohu)==2,1L,NA))
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_LASA1_4 <- merge(lsb_LASA1_4, lasa1_alc_table[,c("id","lsb_alc_ever_4")],by="id",all.x=TRUE)
+lsb_LASA1_4 <- merge(lsb_LASA1_4, lasa1_lsb_table[,c("id","lsb_alc_ever_4")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_5    
@@ -314,14 +311,14 @@ lsb_LASA1_4 <- merge(lsb_LASA1_4, lasa1_alc_table[,c("id","lsb_alc_ever_4")],by=
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  
-**Harmonization comment**:   
+**Harmonization status**: complete   
+**Harmonization comment**:  The harmonized variable "Ever consumption of alcohol" was created using "Ever consumption of alcohol" from baseline and previous waves and current consumption of alcohol at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.   
 **R script**:  
 ```{r, echo=TRUE}
 #Harmonization scripts to create "ever drank alcohol" for all participants in all waves
-lasa1_alc_table$lsb_alc_ever_5  <- ifelse(lasa1_alc_table$lsb_alc_ever_4 ==0 & as.integer(lasa1_alc_table$gmalcohu)==1,0L, ifelse(lasa1_alc_table$lsb_alc_ever_4==1 | as.integer(lasa1_alc_table$gmalcohu)==2,1L,NA))
+lasa1_lsb_table$lsb_alc_ever_5  <- ifelse(lasa1_lsb_table$lsb_alc_ever_4 ==0 & as.integer(lasa1_lsb_table$gmalcohu)==1,0L, ifelse(lasa1_lsb_table$lsb_alc_ever_4==1 | as.integer(lasa1_lsb_table$gmalcohu)==2,1L,NA))
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_LASA1_5 <- merge(lsb_LASA1_5, lasa1_alc_table[,c("id","lsb_alc_ever_5")],by="id",all.x=TRUE)
+lsb_LASA1_5 <- merge(lsb_LASA1_5, lasa1_lsb_table[,c("id","lsb_alc_ever_5")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_6    
@@ -335,14 +332,14 @@ lsb_LASA1_5 <- merge(lsb_LASA1_5, lasa1_alc_table[,c("id","lsb_alc_ever_5")],by=
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  
-**Harmonization comment**:   
+**Harmonization status**:  complete  
+**Harmonization comment**:  The harmonized variable "Ever consumption of alcohol" was created using "Ever consumption of alcohol" from baseline and previous waves and current consumption of alcohol at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.   
 **R script**:  
 ```{r, echo=TRUE}
 #Harmonization scripts to create "ever drank alcohol" for all participants in all waves
-lasa1_alc_table$lsb_alc_ever_6  <- ifelse(lasa1_alc_table$lsb_alc_ever_5 ==0 & as.integer(lasa1_alc_table$HMALCOHU)==1,0L, ifelse(lasa1_alc_table$lsb_alc_ever_5==1 | as.integer(lasa1_alc_table$HMALCOHU)==2,1L,NA))
+lasa1_lsb_table$lsb_alc_ever_6  <- ifelse(lasa1_lsb_table$lsb_alc_ever_5 ==0 & as.integer(lasa1_lsb_table$HMALCOHU)==1,0L, ifelse(lasa1_lsb_table$lsb_alc_ever_5==1 | as.integer(lasa1_lsb_table$HMALCOHU)==2,1L,NA))
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_LASA1_6 <- merge(lsb_LASA1_6, lasa1_alc_table[,c("id","lsb_alc_ever_6")],by="id",all.x=TRUE)
+lsb_LASA1_6 <- merge(lsb_LASA1_6, lasa1_lsb_table[,c("id","lsb_alc_ever_6")],by="id",all.x=TRUE)
 ```  
 
 ### **Variable label**:   Frequency of binge drinking  
@@ -359,7 +356,7 @@ lsb_LASA1_6 <- merge(lsb_LASA1_6, lasa1_alc_table[,c("id","lsb_alc_ever_6")],by=
 3 |  3 times a week or more  
 
 **Harmonization status**:    complete  
-**Harmonization comment**:   bmvar28 ('Alcohol: Number of glasses at one time') is also answered by participants who said that they don't drink in bmvar24 ('Alcohol: Do you drink alcohol'). These participants are coded to '0-3 times a month' in the DataSchema variable.
+**Harmonization comment**:   bmvar28 ('Alcohol: Number of glasses at one time') is also answered by participants who said that they don't drink in bmvar24 ('Alcohol: Do you drink alcohol'). These participants are coded to '0-3 times a month' in the harmonized variable.
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_0$lsb_alc_binge_0 <- ifelse(as.integer(LASA1B$bmvar24)==1,1L, 
@@ -1024,13 +1021,14 @@ lsb_LASA1_6$lsb_smk_status_6 <- ifelse(as.integer(LASA1H$HMVAR32)== 1, 0L, ifels
 1 |   Ever smoked tobacco  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   The harmonized variable "Ever tobacco smoking" was created using bmvar31: "do you smoke" and bmvar32 "did you smoke before". For followup waves, the harmonized variable was created using "Ever tobacco smoking" from baseline and previous waves and current tobacco use at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
+
 **R script**:  
 ```{r, echo=TRUE}
 #harmonization script
-lasa1_alc_table$lsb_smk_ever_0 <- ifelse((as.integer(lasa1_alc_table$bmvar31)==2 | (as.integer(lasa1_alc_table$bmvar31)==1 & as.integer(lasa1_alc_table$bmvar32)==2)),1L, ifelse((as.integer(lasa1_alc_table$bmvar31)==1 & as.integer(lasa1_alc_table$bmvar32)== 1),0L,NA))
+lasa1_lsb_table$lsb_smk_ever_0 <- ifelse((as.integer(lasa1_lsb_table$bmvar31)==2 | (as.integer(lasa1_lsb_table$bmvar31)==1 & as.integer(lasa1_lsb_table$bmvar32)==2)),1L, ifelse((as.integer(lasa1_lsb_table$bmvar31)==1 & as.integer(lasa1_lsb_table$bmvar32)== 1),0L,NA))
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_LASA1_0 <- merge(lsb_LASA1_0, lasa1_alc_table[,c("id","lsb_smk_ever_0")],by="id",all.x=TRUE)
+lsb_LASA1_0 <- merge(lsb_LASA1_0, lasa1_lsb_table[,c("id","lsb_smk_ever_0")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_1    
@@ -1045,15 +1043,15 @@ lsb_LASA1_0 <- merge(lsb_LASA1_0, lasa1_alc_table[,c("id","lsb_smk_ever_0")],by=
 1 |   Ever smoked tobacco  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   The harmonized variable was created using "Ever tobacco smoking" from baseline and previous waves and "do you smoke" and "did yo smoke before" at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
 **R script**:  
 ```{r, echo=TRUE}
 #harmonization script
-lasa1_alc_table$lsb_smk_ever_1_inter <- ifelse(as.integer(lasa1_alc_table$cmvar31)== 1 & as.integer(lasa1_alc_table$cmvar32)==1, 0L, ifelse(as.integer(lasa1_alc_table$cmvar31)== 2 | (as.integer(lasa1_alc_table$cmvar31)== 1 & as.integer(lasa1_alc_table$cmvar32)== 2),1L,NA))
-lasa1_alc_table$lsb_smk_ever_1 <- ifelse(lasa1_alc_table$lsb_smk_ever_0==1 | lasa1_alc_table$lsb_smk_ever_1_inter==1,1L,
-ifelse(lasa1_alc_table$lsb_smk_ever_0==0 & lasa1_alc_table$lsb_smk_ever_1_inter==0,0L,NA))
+lasa1_lsb_table$lsb_smk_ever_1_inter <- ifelse(as.integer(lasa1_lsb_table$cmvar31)== 1 & as.integer(lasa1_lsb_table$cmvar32)==1, 0L, ifelse(as.integer(lasa1_lsb_table$cmvar31)== 2 | (as.integer(lasa1_lsb_table$cmvar31)== 1 & as.integer(lasa1_lsb_table$cmvar32)== 2),1L,NA))
+lasa1_lsb_table$lsb_smk_ever_1 <- ifelse(lasa1_lsb_table$lsb_smk_ever_0==1 | lasa1_lsb_table$lsb_smk_ever_1_inter==1,1L,
+ifelse(lasa1_lsb_table$lsb_smk_ever_0==0 & lasa1_lsb_table$lsb_smk_ever_1_inter==0,0L,NA))
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_LASA1_1 <- merge(lsb_LASA1_1, lasa1_alc_table[,c("id","lsb_smk_ever_1")],by="id",all.x=TRUE)
+lsb_LASA1_1 <- merge(lsb_LASA1_1, lasa1_lsb_table[,c("id","lsb_smk_ever_1")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_2    
@@ -1068,15 +1066,15 @@ lsb_LASA1_1 <- merge(lsb_LASA1_1, lasa1_alc_table[,c("id","lsb_smk_ever_1")],by=
 1 |   Ever smoked tobacco  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   The harmonized variable was created using "Ever tobacco smoking" from baseline and previous waves and "do you smoke" and "did yo smoke before" at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
 **R script**:  
 ```{r, echo=TRUE}
 #harmonization script
-lasa1_alc_table$lsb_smk_ever_2_inter <- ifelse(as.integer(lasa1_alc_table$dmvar31)== 1 & as.integer(lasa1_alc_table$dmvar32)==1, 0L, ifelse(as.integer(lasa1_alc_table$dmvar31)== 2 | (as.integer(lasa1_alc_table$dmvar31)== 1 & as.integer(lasa1_alc_table$dmvar32)== 2),1L,NA))
-lasa1_alc_table$lsb_smk_ever_2 <- ifelse(lasa1_alc_table$lsb_smk_ever_1==1 | lasa1_alc_table$lsb_smk_ever_2_inter==1,1L,
-ifelse(lasa1_alc_table$lsb_smk_ever_1==0 & lasa1_alc_table$lsb_smk_ever_2_inter==0,0L,NA))
+lasa1_lsb_table$lsb_smk_ever_2_inter <- ifelse(as.integer(lasa1_lsb_table$dmvar31)== 1 & as.integer(lasa1_lsb_table$dmvar32)==1, 0L, ifelse(as.integer(lasa1_lsb_table$dmvar31)== 2 | (as.integer(lasa1_lsb_table$dmvar31)== 1 & as.integer(lasa1_lsb_table$dmvar32)== 2),1L,NA))
+lasa1_lsb_table$lsb_smk_ever_2 <- ifelse(lasa1_lsb_table$lsb_smk_ever_1==1 | lasa1_lsb_table$lsb_smk_ever_2_inter==1,1L,
+ifelse(lasa1_lsb_table$lsb_smk_ever_1==0 & lasa1_lsb_table$lsb_smk_ever_2_inter==0,0L,NA))
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_LASA1_2 <- merge(lsb_LASA1_2, lasa1_alc_table[,c("id","lsb_smk_ever_2")],by="id",all.x=TRUE)
+lsb_LASA1_2 <- merge(lsb_LASA1_2, lasa1_lsb_table[,c("id","lsb_smk_ever_2")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_3    
@@ -1091,15 +1089,15 @@ lsb_LASA1_2 <- merge(lsb_LASA1_2, lasa1_alc_table[,c("id","lsb_smk_ever_2")],by=
 1 |   Ever smoked tobacco  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   The harmonized variable was created using "Ever tobacco smoking" from baseline and previous waves and "do you smoke" and "did yo smoke before" at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
 **R script**:  
 ```{r, echo=TRUE}
 #harmonization script
-lasa1_alc_table$lsb_smk_ever_3_inter <- ifelse(as.integer(lasa1_alc_table$emvar31)== 1 & as.integer(lasa1_alc_table$emvar32)==1, 0L, ifelse(as.integer(lasa1_alc_table$emvar31)== 2 | (as.integer(lasa1_alc_table$emvar31)== 1 & as.integer(lasa1_alc_table$emvar32)== 2),1L,NA))
-lasa1_alc_table$lsb_smk_ever_3 <- ifelse(lasa1_alc_table$lsb_smk_ever_2==1 | lasa1_alc_table$lsb_smk_ever_3_inter==1,1L,
-ifelse(lasa1_alc_table$lsb_smk_ever_2==0 & lasa1_alc_table$lsb_smk_ever_3_inter==0,0L,NA))
+lasa1_lsb_table$lsb_smk_ever_3_inter <- ifelse(as.integer(lasa1_lsb_table$emvar31)== 1 & as.integer(lasa1_lsb_table$emvar32)==1, 0L, ifelse(as.integer(lasa1_lsb_table$emvar31)== 2 | (as.integer(lasa1_lsb_table$emvar31)== 1 & as.integer(lasa1_lsb_table$emvar32)== 2),1L,NA))
+lasa1_lsb_table$lsb_smk_ever_3 <- ifelse(lasa1_lsb_table$lsb_smk_ever_2==1 | lasa1_lsb_table$lsb_smk_ever_3_inter==1,1L,
+ifelse(lasa1_lsb_table$lsb_smk_ever_2==0 & lasa1_lsb_table$lsb_smk_ever_3_inter==0,0L,NA))
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_LASA1_3 <- merge(lsb_LASA1_3, lasa1_alc_table[,c("id","lsb_smk_ever_3")],by="id",all.x=TRUE)
+lsb_LASA1_3 <- merge(lsb_LASA1_3, lasa1_lsb_table[,c("id","lsb_smk_ever_3")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_4    
@@ -1114,15 +1112,15 @@ lsb_LASA1_3 <- merge(lsb_LASA1_3, lasa1_alc_table[,c("id","lsb_smk_ever_3")],by=
 1 |   Ever smoked tobacco  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   The harmonized variable was created using "Ever tobacco smoking" from baseline and previous waves and "do you smoke" and "did yo smoke before" at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
 **R script**:  
 ```{r, echo=TRUE}
 #harmonization script
-lasa1_alc_table$lsb_smk_ever_4_inter <- ifelse(as.integer(lasa1_alc_table$fmvar31)== 1 & as.integer(lasa1_alc_table$fmvar32)==1, 0L, ifelse(as.integer(lasa1_alc_table$fmvar31)== 2 | (as.integer(lasa1_alc_table$fmvar31)== 1 & as.integer(lasa1_alc_table$fmvar32)== 2),1L,NA))
-lasa1_alc_table$lsb_smk_ever_4 <- ifelse(lasa1_alc_table$lsb_smk_ever_3==1 | lasa1_alc_table$lsb_smk_ever_4_inter==1,1L,
-ifelse(lasa1_alc_table$lsb_smk_ever_3==0 & lasa1_alc_table$lsb_smk_ever_4_inter==0,0L,NA))
+lasa1_lsb_table$lsb_smk_ever_4_inter <- ifelse(as.integer(lasa1_lsb_table$fmvar31)== 1 & as.integer(lasa1_lsb_table$fmvar32)==1, 0L, ifelse(as.integer(lasa1_lsb_table$fmvar31)== 2 | (as.integer(lasa1_lsb_table$fmvar31)== 1 & as.integer(lasa1_lsb_table$fmvar32)== 2),1L,NA))
+lasa1_lsb_table$lsb_smk_ever_4 <- ifelse(lasa1_lsb_table$lsb_smk_ever_3==1 | lasa1_lsb_table$lsb_smk_ever_4_inter==1,1L,
+ifelse(lasa1_lsb_table$lsb_smk_ever_3==0 & lasa1_lsb_table$lsb_smk_ever_4_inter==0,0L,NA))
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_LASA1_4 <- merge(lsb_LASA1_4, lasa1_alc_table[,c("id","lsb_smk_ever_4")],by="id",all.x=TRUE)
+lsb_LASA1_4 <- merge(lsb_LASA1_4, lasa1_lsb_table[,c("id","lsb_smk_ever_4")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_5    
@@ -1137,14 +1135,14 @@ lsb_LASA1_4 <- merge(lsb_LASA1_4, lasa1_alc_table[,c("id","lsb_smk_ever_4")],by=
 1 |   Ever smoked tobacco  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   The harmonized variable was created using "Ever tobacco smoking" from baseline and previous waves and "do you smoke" and "did yo smoke before" at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
 **R script**:  
 ```{r, echo=TRUE}
-lasa1_alc_table$lsb_smk_ever_5_inter <- ifelse(as.integer(lasa1_alc_table$gmvar31)== 1 & as.integer(lasa1_alc_table$gmvar32)==1, 0L, ifelse(as.integer(lasa1_alc_table$gmvar31)== 2 | (as.integer(lasa1_alc_table$gmvar31)== 1 & as.integer(lasa1_alc_table$gmvar32)== 2),1L,NA))
-lasa1_alc_table$lsb_smk_ever_5 <- ifelse(lasa1_alc_table$lsb_smk_ever_4==1 | lasa1_alc_table$lsb_smk_ever_5_inter==1,1L,
-ifelse(lasa1_alc_table$lsb_smk_ever_4==0 & lasa1_alc_table$lsb_smk_ever_5_inter==0,0L,NA))
+lasa1_lsb_table$lsb_smk_ever_5_inter <- ifelse(as.integer(lasa1_lsb_table$gmvar31)== 1 & as.integer(lasa1_lsb_table$gmvar32)==1, 0L, ifelse(as.integer(lasa1_lsb_table$gmvar31)== 2 | (as.integer(lasa1_lsb_table$gmvar31)== 1 & as.integer(lasa1_lsb_table$gmvar32)== 2),1L,NA))
+lasa1_lsb_table$lsb_smk_ever_5 <- ifelse(lasa1_lsb_table$lsb_smk_ever_4==1 | lasa1_lsb_table$lsb_smk_ever_5_inter==1,1L,
+ifelse(lasa1_lsb_table$lsb_smk_ever_4==0 & lasa1_lsb_table$lsb_smk_ever_5_inter==0,0L,NA))
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_LASA1_5 <- merge(lsb_LASA1_5, lasa1_alc_table[,c("id","lsb_smk_ever_5")],by="id",all.x=TRUE)
+lsb_LASA1_5 <- merge(lsb_LASA1_5, lasa1_lsb_table[,c("id","lsb_smk_ever_5")],by="id",all.x=TRUE)
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_6    
@@ -1159,16 +1157,16 @@ lsb_LASA1_5 <- merge(lsb_LASA1_5, lasa1_alc_table[,c("id","lsb_smk_ever_5")],by=
 1 |   Ever smoked tobacco  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   The harmonized variable was created using "Ever tobacco smoking" from baseline and previous waves and "do you smoke" and "did yo smoke before" at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_6$lsb_smk_ever_6 <- ifelse(as.integer(LASA1H$HMVAR32)== 1, 0L, ifelse(as.integer(LASA1H$HMVAR32)== 2,1L, ifelse((as.integer(LASA1H$HMVAR32)== '-2' & as.integer(LASA1H$HMVAR31)==2), 1L, NA)))
 
-lasa1_alc_table$lsb_smk_ever_6_inter <- ifelse(as.integer(lasa1_alc_table$HMVAR31)== 1 & as.integer(lasa1_alc_table$HMVAR32)==1, 0L, ifelse(as.integer(lasa1_alc_table$HMVAR31)== 2 | (as.integer(lasa1_alc_table$HMVAR31)== 1 & as.integer(lasa1_alc_table$HMVAR32)== 2),1L,NA))
-lasa1_alc_table$lsb_smk_ever_6 <- ifelse(lasa1_alc_table$lsb_smk_ever_5==1 | lasa1_alc_table$lsb_smk_ever_6_inter==1,1L,
-ifelse(lasa1_alc_table$lsb_smk_ever_5==0 & lasa1_alc_table$lsb_smk_ever_6_inter==0,0L,NA))
+lasa1_lsb_table$lsb_smk_ever_6_inter <- ifelse(as.integer(lasa1_lsb_table$HMVAR31)== 1 & as.integer(lasa1_lsb_table$HMVAR32)==1, 0L, ifelse(as.integer(lasa1_lsb_table$HMVAR31)== 2 | (as.integer(lasa1_lsb_table$HMVAR31)== 1 & as.integer(lasa1_lsb_table$HMVAR32)== 2),1L,NA))
+lasa1_lsb_table$lsb_smk_ever_6 <- ifelse(lasa1_lsb_table$lsb_smk_ever_5==1 | lasa1_lsb_table$lsb_smk_ever_6_inter==1,1L,
+ifelse(lasa1_lsb_table$lsb_smk_ever_5==0 & lasa1_lsb_table$lsb_smk_ever_6_inter==0,0L,NA))
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_LASA1_6 <- merge(lsb_LASA1_6, lasa1_alc_table[,c("id","lsb_smk_ever_6")],by="id",all.x=TRUE)
+lsb_LASA1_6 <- merge(lsb_LASA1_6, lasa1_lsb_table[,c("id","lsb_smk_ever_6")],by="id",all.x=TRUE)
 ```  
 
 ### **Variable label**:  Quantity cigarettes smoked    
@@ -1649,7 +1647,10 @@ lsb_LASA1_6$lsb_smk_start_6 <- ifelse(as.integer(LASA1H$HMVAR34)< 0, NA, as.inte
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-LASA1B$lsb_pa_walk_time_0_inter<- ifelse(LASA_extravar_PA$blphya01[LASA_extravar_PA$id %in% LASA1B$id]==4,ifelse(as.integer(LASA1B$blphya06)==1 | as.integer(LASA1B$blphya07)==1,0L, ifelse(as.integer(LASA1B$blphya07)==2&as.integer(LASA1B$blphya08)>0 & as.integer(LASA1B$blphya09)>0, (as.numeric(LASA1B$blphya08)*as.numeric(LASA1B$blphya09))/14,NA)),NA)
+LASA1B$lsb_pa_walk_time_0_inter<- ifelse(LASA_extravar_PA$blphya01[LASA_extravar_PA$id %in% LASA1B$id]==4,
+                                  ifelse(as.integer(LASA1B$blphya06)==1 | as.integer(LASA1B$blphya07)==1,0L,
+                                  ifelse(as.integer(LASA1B$blphya07)==2 & as.integer(LASA1B$blphya08)>0 & as.integer(LASA1B$blphya09)>0,
+                                  (as.numeric(LASA1B$blphya08)*as.numeric(LASA1B$blphya09))/14,NA)),NA)
 
 
 lsb_LASA1_0$lsb_pa_walk_time_0 <- ifelse(LASA1B$lsb_pa_walk_time_0_inter<30,0,
@@ -1677,7 +1678,10 @@ lsb_LASA1_0$lsb_pa_walk_time_0 <- ifelse(LASA1B$lsb_pa_walk_time_0_inter<30,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-LASA1C$lsb_pa_walk_time_1_inter<- ifelse(LASA_extravar_PA$clphya01[LASA_extravar_PA$id %in% LASA1C$id]==4, ifelse(as.integer(LASA1C$clphya06)==1 | as.integer(LASA1C$clphya06)==1,0L, ifelse(as.integer(LASA1C$clphya07)==2&as.integer(LASA1C$clphya08)>0 & as.integer(LASA1C$clphya09)>0, (as.numeric(LASA1C$clphya08)*as.numeric(LASA1C$clphya09))/14,NA)),NA)
+LASA1C$lsb_pa_walk_time_1_inter<- ifelse(LASA_extravar_PA$clphya01[LASA_extravar_PA$id %in% LASA1C$id]==4,
+                                  ifelse(as.integer(LASA1C$clphya06)==1 | as.integer(LASA1C$clphya06)==1,0L,
+                                  ifelse(as.integer(LASA1C$clphya07)==2&as.integer(LASA1C$clphya08)>0 & as.integer(LASA1C$clphya09)>0,
+                                  (as.numeric(LASA1C$clphya08)*as.numeric(LASA1C$clphya09))/14,NA)),NA)
 
 lsb_LASA1_1$lsb_pa_walk_time_1 <- ifelse(LASA1C$lsb_pa_walk_time_1_inter<30,0,
                                   ifelse(LASA1C$lsb_pa_walk_time_1_inter>=30 & LASA1C$lsb_pa_walk_time_1_inter<60,1,
@@ -1704,7 +1708,10 @@ lsb_LASA1_1$lsb_pa_walk_time_1 <- ifelse(LASA1C$lsb_pa_walk_time_1_inter<30,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-LASA1D$lsb_pa_walk_time_2<- ifelse(LASA_extravar_PA$dlphya01[LASA_extravar_PA$id %in% LASA1D$id]==4, ifelse(as.integer(LASA1D$dlphya06)==1 | as.integer(LASA1D$dlphya07)==1,0L, ifelse(as.integer(LASA1D$dlphya07)==2 & as.integer(LASA1D$dlphya08)>0 & as.integer(LASA1D$dlphya09)>0, (as.numeric(LASA1D$dlphya08)*as.numeric(LASA1D$dlphya09))/14,NA)),NA)
+LASA1D$lsb_pa_walk_time_2_inter<- ifelse(LASA_extravar_PA$dlphya01[LASA_extravar_PA$id %in% LASA1D$id]==4,
+                                  ifelse(as.integer(LASA1D$dlphya06)==1 | as.integer(LASA1D$dlphya07)==1,0L,
+                                  ifelse(as.integer(LASA1D$dlphya07)==2 & as.integer(LASA1D$dlphya08)>0 & as.integer(LASA1D$dlphya09)>0,
+                                  (as.numeric(LASA1D$dlphya08)*as.numeric(LASA1D$dlphya09))/14,NA)),NA)
 
 lsb_LASA1_2$lsb_pa_walk_time_2 <- ifelse(LASA1D$lsb_pa_walk_time_2_inter<30,0,
                                   ifelse(LASA1D$lsb_pa_walk_time_2_inter>=30 & LASA1D$lsb_pa_walk_time_2_inter<60,1,
@@ -1731,7 +1738,10 @@ lsb_LASA1_2$lsb_pa_walk_time_2 <- ifelse(LASA1D$lsb_pa_walk_time_2_inter<30,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-LASA1E$lsb_pa_walk_time_3_inter<- ifelse(LASA_extravar_PA$elphya01[LASA_extravar_PA$id %in% LASA1E$id]==4,ifelse(as.integer(LASA1E$elphya06)==1 | as.integer(LASA1E$elphya07)==1,0L, ifelse(as.integer(LASA1E$elphya07)==2 & as.integer(LASA1E$elphya08)>0 & as.integer(LASA1E$elphya09)>0, (as.numeric(LASA1E$elphya08)*as.numeric(LASA1E$elphya09))/14,NA)),NA)
+LASA1E$lsb_pa_walk_time_3_inter<- ifelse(LASA_extravar_PA$elphya01[LASA_extravar_PA$id %in% LASA1E$id]==4, 
+                                  ifelse(as.integer(LASA1E$elphya06)==1 | as.integer(LASA1E$elphya07)==1,0L,
+                                  ifelse(as.integer(LASA1E$elphya07)==2 & as.integer(LASA1E$elphya08)>0 & as.integer(LASA1E$elphya09)>0,
+                                  (as.numeric(LASA1E$elphya08)*as.numeric(LASA1E$elphya09))/14,NA)),NA)
 
 lsb_LASA1_3$lsb_pa_walk_time_3 <- ifelse(LASA1E$lsb_pa_walk_time_3_inter<30,0,
                                   ifelse(LASA1E$lsb_pa_walk_time_3_inter>=30 & LASA1E$lsb_pa_walk_time_3_inter<60,1,
@@ -1758,7 +1768,10 @@ lsb_LASA1_3$lsb_pa_walk_time_3 <- ifelse(LASA1E$lsb_pa_walk_time_3_inter<30,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-LASA1F$lsb_pa_walk_time_4_inter<- ifelse(LASA_extravar_PA$flphya01[LASA_extravar_PA$id %in% LASA1F$id]==4,ifelse(as.integer(LASA1F$flphya06)==1 | as.integer(LASA1F$flphya07)==1,0L, ifelse(as.integer(LASA1F$flphya07)==2 & as.integer(LASA1F$flphya08)>0 & as.integer(LASA1F$flphya09)>0, (as.numeric(LASA1F$flphya08)*as.numeric(LASA1F$flphya09))/14,NA)), NA)
+LASA1F$lsb_pa_walk_time_4_inter<- ifelse(LASA_extravar_PA$flphya01[LASA_extravar_PA$id %in% LASA1F$id]==4, 
+                                  ifelse(as.integer(LASA1F$flphya06)==1 | as.integer(LASA1F$flphya07)==1,0L,
+                                  ifelse(as.integer(LASA1F$flphya07)==2 & as.integer(LASA1F$flphya08)>0 & as.integer(LASA1F$flphya09)>0,
+                                  (as.numeric(LASA1F$flphya08)*as.numeric(LASA1F$flphya09))/14,NA)), NA)
 
 lsb_LASA1_4$lsb_pa_walk_time_4 <- ifelse(LASA1F$lsb_pa_walk_time_4_inter<30,0,
                                   ifelse(LASA1F$lsb_pa_walk_time_4_inter>=30 & LASA1F$lsb_pa_walk_time_4_inter<60,1,
@@ -1785,7 +1798,10 @@ lsb_LASA1_4$lsb_pa_walk_time_4 <- ifelse(LASA1F$lsb_pa_walk_time_4_inter<30,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-LASA1G$lsb_pa_walk_time_5_inter<- ifelse(LASA_extravar_PA$glphya01[LASA_extravar_PA$id %in% LASA1G$id]==4,ifelse(as.integer(LASA1G$glphya06)==1 | as.integer(LASA1G$glphya07)==1,0L, ifelse(as.integer(LASA1G$glphya07)==2 & as.integer(LASA1G$glphya08)>0 & as.integer(LASA1G$glphya09)>0, (as.numeric(LASA1G$glphya08)*as.numeric(LASA1G$glphya09))/14,NA)),NA)
+LASA1G$lsb_pa_walk_time_5_inter<- ifelse(LASA_extravar_PA$glphya01[LASA_extravar_PA$id %in% LASA1G$id]==4,
+                                  ifelse(as.integer(LASA1G$glphya06)==1 | as.integer(LASA1G$glphya07)==1,0L,
+                                  ifelse(as.integer(LASA1G$glphya07)==2 & as.integer(LASA1G$glphya08)>0 & as.integer(LASA1G$glphya09)>0,
+                                  (as.numeric(LASA1G$glphya08)*as.numeric(LASA1G$glphya09))/14,NA)),NA)
 
 lsb_LASA1_5$lsb_pa_walk_time_5 <- ifelse(LASA1G$lsb_pa_walk_time_5_inter<30,0,
                                   ifelse(LASA1G$lsb_pa_walk_time_5_inter>=30 & LASA1G$lsb_pa_walk_time_5_inter<60,1,
@@ -1812,7 +1828,10 @@ lsb_LASA1_5$lsb_pa_walk_time_5 <- ifelse(LASA1G$lsb_pa_walk_time_5_inter<30,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-LASA1H$lsb_pa_walk_time_6_inter<- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$id %in% LASA1H$id]==4,ifelse(as.integer(LASA1H$HLPHYA06)==1 | as.integer(LASA1H$HLPHYA07)==1,0L, ifelse(as.integer(LASA1H$HLPHYA07)==2 & as.integer(LASA1H$HLPHYA08)>0 & as.integer(LASA1H$HLPHYA09)>0, (as.numeric(LASA1H$HLPHYA08)*as.numeric(LASA1H$HLPHYA09))/14,NA)),NA)
+LASA1H$lsb_pa_walk_time_6_inter<- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$id %in% LASA1H$id]==4,
+                                  ifelse(as.integer(LASA1H$HLPHYA06)==1 | as.integer(LASA1H$HLPHYA07)==1,0L,
+                                  ifelse(as.integer(LASA1H$HLPHYA07)==2 & as.integer(LASA1H$HLPHYA08)>0 & as.integer(LASA1H$HLPHYA09)>0,
+                                  (as.numeric(LASA1H$HLPHYA08)*as.numeric(LASA1H$HLPHYA09))/14,NA)),NA)
 
 lsb_LASA1_6$lsb_pa_walk_time_6 <- ifelse(LASA1H$lsb_pa_walk_time_6_inter<30,0,
                                   ifelse(LASA1H$lsb_pa_walk_time_6_inter>=30 & LASA1H$lsb_pa_walk_time_6_inter<60,1,
@@ -1938,7 +1957,10 @@ lsb_LASA1_6$lsb_pa_walk_time_6 <- ifelse(LASA1H$lsb_pa_walk_time_6_inter<30,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_0$lsb_pa_cycle_0 <- ifelse(LASA_extravar_PA$blphya01[LASA_extravar_PA$id %in% LASA1B$id]==4,ifelse(as.integer(LASA1B$blphya10)==1 | as.integer(LASA1B$blphya11)==1,0L, ifelse(as.integer(LASA1B$blphya11)==2 & as.integer(LASA1B$blphya12)>0 & as.integer(LASA1B$blphya13)>0, ((as.numeric(LASA1B$blphya12)*as.numeric(LASA1B$blphya13))/2),NA)),NA)
+lsb_LASA1_0$lsb_pa_cycle_0 <- ifelse(LASA_extravar_PA$blphya01[LASA_extravar_PA$id %in% LASA1B$id]==4, 
+                              ifelse(as.integer(LASA1B$blphya10)==1 | as.integer(LASA1B$blphya11)==1,0L,
+                              ifelse(as.integer(LASA1B$blphya11)==2 & as.integer(LASA1B$blphya12)>0 & as.integer(LASA1B$blphya13)>0,
+                              ((as.numeric(LASA1B$blphya12)*as.numeric(LASA1B$blphya13))/2),NA)),NA)
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_1  
@@ -1951,7 +1973,10 @@ lsb_LASA1_0$lsb_pa_cycle_0 <- ifelse(LASA_extravar_PA$blphya01[LASA_extravar_PA$
 **Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_1$lsb_pa_cycle_1 <- ifelse(LASA_extravar_PA$clphya01[LASA_extravar_PA$id %in% LASA1C$id]==4,ifelse(as.integer(LASA1C$clphya10)==1 | as.integer(LASA1C$clphya11)==1,0L, ifelse(as.integer(LASA1C$clphya11)==2 & as.integer(LASA1C$clphya12)>0 & as.integer(LASA1C$clphya13)>0, ((as.numeric(LASA1C$clphya12)*as.numeric(LASA1C$clphya13))/2),NA)),NA)
+lsb_LASA1_1$lsb_pa_cycle_1 <- ifelse(LASA_extravar_PA$clphya01[LASA_extravar_PA$id %in% LASA1C$id]==4,
+                              ifelse(as.integer(LASA1C$clphya10)==1 | as.integer(LASA1C$clphya11)==1,0L,
+                              ifelse(as.integer(LASA1C$clphya11)==2 & as.integer(LASA1C$clphya12)>0 & as.integer(LASA1C$clphya13)>0,
+                              ((as.numeric(LASA1C$clphya12)*as.numeric(LASA1C$clphya13))/2),NA)),NA)
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_2  
@@ -1964,7 +1989,10 @@ lsb_LASA1_1$lsb_pa_cycle_1 <- ifelse(LASA_extravar_PA$clphya01[LASA_extravar_PA$
 **Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_2$lsb_pa_cycle_2 <- ifelse(LASA_extravar_PA$dlphya01[LASA_extravar_PA$id %in% LASA1D$id]==4,ifelse(as.integer(LASA1D$dlphya10)==1 | as.integer(LASA1D$dlphya11)==1,0L, ifelse(as.integer(LASA1D$dlphya11)==2 & as.integer(LASA1D$dlphya12)>0 & as.integer(LASA1D$dlphya13)>0, ((as.numeric(LASA1D$dlphya12)*as.numeric(LASA1D$dlphya13))/2),NA)),NA)
+lsb_LASA1_2$lsb_pa_cycle_2 <- ifelse(LASA_extravar_PA$dlphya01[LASA_extravar_PA$id %in% LASA1D$id]==4,
+                              ifelse(as.integer(LASA1D$dlphya10)==1 | as.integer(LASA1D$dlphya11)==1,0L,
+                              ifelse(as.integer(LASA1D$dlphya11)==2 & as.integer(LASA1D$dlphya12)>0 & as.integer(LASA1D$dlphya13)>0,
+                              ((as.numeric(LASA1D$dlphya12)*as.numeric(LASA1D$dlphya13))/2),NA)),NA)
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_3  
@@ -1977,7 +2005,10 @@ lsb_LASA1_2$lsb_pa_cycle_2 <- ifelse(LASA_extravar_PA$dlphya01[LASA_extravar_PA$
 **Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_3$lsb_pa_cycle_3 <- ifelse(LASA_extravar_PA$elphya01[LASA_extravar_PA$id %in% LASA1E$id]==4,ifelse(as.integer(LASA1E$elphya10)==1 | as.integer(LASA1E$elphya11)==1,0L, ifelse(as.integer(LASA1E$elphya11)==2 & as.integer(LASA1E$elphya12)>0 & as.integer(LASA1E$elphya13)>0, ((as.numeric(LASA1E$elphya12)*as.numeric(LASA1E$elphya13))/2),NA)),NA)
+lsb_LASA1_3$lsb_pa_cycle_3 <- ifelse(LASA_extravar_PA$elphya01[LASA_extravar_PA$id %in% LASA1E$id]==4,
+                              ifelse(as.integer(LASA1E$elphya10)==1 | as.integer(LASA1E$elphya11)==1,0L,
+                              ifelse(as.integer(LASA1E$elphya11)==2 & as.integer(LASA1E$elphya12)>0 & as.integer(LASA1E$elphya13)>0,
+                              ((as.numeric(LASA1E$elphya12)*as.numeric(LASA1E$elphya13))/2),NA)),NA)
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_4  
@@ -1990,7 +2021,10 @@ lsb_LASA1_3$lsb_pa_cycle_3 <- ifelse(LASA_extravar_PA$elphya01[LASA_extravar_PA$
 **Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_4$lsb_pa_cycle_4 <- ifelse(LASA_extravar_PA$flphya01[LASA_extravar_PA$id %in% LASA1F$id]==4,ifelse(as.integer(LASA1F$flphya10)==1 | as.integer(LASA1F$flphya11)==1,0L, ifelse(as.integer(LASA1F$flphya11)==2 & as.integer(LASA1F$flphya12)>0 & as.integer(LASA1F$flphya13)>0, ((as.numeric(LASA1F$flphya12)*as.numeric(LASA1F$flphya13))/2),NA)),NA)
+lsb_LASA1_4$lsb_pa_cycle_4 <- ifelse(LASA_extravar_PA$flphya01[LASA_extravar_PA$id %in% LASA1F$id]==4,
+                              ifelse(as.integer(LASA1F$flphya10)==1 | as.integer(LASA1F$flphya11)==1,0L,
+                              ifelse(as.integer(LASA1F$flphya11)==2 & as.integer(LASA1F$flphya12)>0 & as.integer(LASA1F$flphya13)>0,
+                              ((as.numeric(LASA1F$flphya12)*as.numeric(LASA1F$flphya13))/2),NA)),NA)
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_5  
@@ -2003,7 +2037,10 @@ lsb_LASA1_4$lsb_pa_cycle_4 <- ifelse(LASA_extravar_PA$flphya01[LASA_extravar_PA$
 **Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_5$lsb_pa_cycle_5 <- ifelse(LASA_extravar_PA$glphya01[LASA_extravar_PA$id %in% LASA1G$id]==4,ifelse(as.integer(LASA1G$glphya10)==1 | as.integer(LASA1G$glphya11)==1,0L, ifelse(as.integer(LASA1G$glphya11)==2 & as.integer(LASA1G$glphya12)>0 & as.integer(LASA1G$glphya13)>0, ((as.numeric(LASA1G$glphya12)*as.numeric(LASA1G$glphya13))/2),NA)),NA)
+lsb_LASA1_5$lsb_pa_cycle_5 <- ifelse(LASA_extravar_PA$glphya01[LASA_extravar_PA$id %in% LASA1G$id]==4,
+                              ifelse(as.integer(LASA1G$glphya10)==1 | as.integer(LASA1G$glphya11)==1,0L,
+                              ifelse(as.integer(LASA1G$glphya11)==2 & as.integer(LASA1G$glphya12)>0 & as.integer(LASA1G$glphya13)>0,
+                              ((as.numeric(LASA1G$glphya12)*as.numeric(LASA1G$glphya13))/2),NA)),NA)
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_6  
@@ -2013,10 +2050,13 @@ lsb_LASA1_5$lsb_pa_cycle_5 <- ifelse(LASA_extravar_PA$glphya01[LASA_extravar_PA$
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   (redo)  
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_6$lsb_pa_cycle_6 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$id %in% LASA1H$id]==4,ifelse(as.integer(LASA1H$HLPHYA10)==1 | as.integer(LASA1H$HLPHYA11)==1,0L, ifelse(as.integer(LASA1H$HLPHYA11)==2 & as.integer(LASA1H$HLPHYA12)>0 & as.integer(LASA1H$HLPHYA13)>0, ((as.numeric(LASA1H$HLPHYA12)*as.numeric(LASA1H$HLPHYA13))/2),NA)),NA)
+lsb_LASA1_6$lsb_pa_cycle_6 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$id %in% LASA1H$id]==4,
+                              ifelse(as.integer(LASA1H$HLPHYA10)==1 | as.integer(LASA1H$HLPHYA11)==1,0L,
+                              ifelse(as.integer(LASA1H$HLPHYA11)==2 & as.integer(LASA1H$HLPHYA12)>0 & as.integer(LASA1H$HLPHYA13)>0,
+                              ((as.numeric(LASA1H$HLPHYA12)*as.numeric(LASA1H$HLPHYA13))/2),NA)),NA)
 ```  
 
 ### **Variable label**:  Gardening   
@@ -2035,7 +2075,11 @@ lsb_LASA1_6$lsb_pa_cycle_6 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_0$lsb_pa_garden_0 <- ifelse(LASA_extravar_PA$blphya01[LASA_extravar_PA$id %in% LASA1B$id]==4,ifelse(as.integer(LASA1B$blphya17)==2,1L, ifelse(as.integer(LASA1B$blphya17)==1, 0L, ifelse(as.integer(LASA1B$blphya17)==-2 & as.integer(LASA1B$blphya15)==-2 & as.integer(LASA1B$blphya14)==1,0L,NA))),NA)
+lsb_LASA1_0$lsb_pa_garden_0 <- ifelse(LASA_extravar_PA$blphya01[LASA_extravar_PA$id %in% LASA1B$id]==4, 
+                               ifelse(as.integer(LASA1B$blphya17)==2,1L, 
+                               ifelse(as.integer(LASA1B$blphya17)==1, 0L,
+                               ifelse(as.integer(LASA1B$blphya17)==-2 & as.integer(LASA1B$blphya15)==-2 &
+                               as.integer(LASA1B$blphya14)==1,0L,NA))),NA)
 ```  
 ### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_1  
@@ -2053,7 +2097,11 @@ lsb_LASA1_0$lsb_pa_garden_0 <- ifelse(LASA_extravar_PA$blphya01[LASA_extravar_PA
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_1$lsb_pa_garden_1 <- ifelse(LASA_extravar_PA$clphya01[LASA_extravar_PA$id %in% LASA1C$id]==4,ifelse(as.integer(LASA1C$clphya17)==2, 1L, ifelse(as.integer(LASA1C$clphya17)==1, 0L, ifelse(as.integer(LASA1C$clphya17)==-2 & as.integer(LASA1C$clphya15)==-2 & as.integer(LASA1C$clphya14)==1,0L,NA))),NA)
+lsb_LASA1_1$lsb_pa_garden_1 <- ifelse(LASA_extravar_PA$clphya01[LASA_extravar_PA$id %in% LASA1C$id]==4, 
+                               ifelse(as.integer(LASA1C$clphya17)==2, 1L, 
+                               ifelse(as.integer(LASA1C$clphya17)==1, 0L,
+                               ifelse(as.integer(LASA1C$clphya17)==-2 & as.integer(LASA1C$clphya15)==-2 &
+                               as.integer(LASA1C$clphya14)==1,0L,NA))),NA)
 ```  
 ### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_2  
@@ -2071,7 +2119,11 @@ lsb_LASA1_1$lsb_pa_garden_1 <- ifelse(LASA_extravar_PA$clphya01[LASA_extravar_PA
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_2$lsb_pa_garden_2 <- ifelse(LASA_extravar_PA$dlphya01[LASA_extravar_PA$id %in% LASA1D$id]==4,ifelse(as.integer(LASA1D$dlphya17)==2, 1L, ifelse(as.integer(LASA1D$dlphya17)==1,0L, ifelse(as.integer(LASA1D$dlphya17)==-2 & as.integer(LASA1D$dlphya15)==-2 & as.integer(LASA1D$dlphya14)==1,0L,NA))),NA)
+lsb_LASA1_2$lsb_pa_garden_2 <- ifelse(LASA_extravar_PA$dlphya01[LASA_extravar_PA$id %in% LASA1D$id]==4,
+                               ifelse(as.integer(LASA1D$dlphya17)==2, 1L, 
+                               ifelse(as.integer(LASA1D$dlphya17)==1,0L, 
+                               ifelse(as.integer(LASA1D$dlphya17)==-2 &
+                               as.integer(LASA1D$dlphya15)==-2 & as.integer(LASA1D$dlphya14)==1,0L,NA))),NA)
 ```  
 ### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_3  
@@ -2089,7 +2141,11 @@ lsb_LASA1_2$lsb_pa_garden_2 <- ifelse(LASA_extravar_PA$dlphya01[LASA_extravar_PA
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_3$lsb_pa_garden_3 <- ifelse(LASA_extravar_PA$elphya01[LASA_extravar_PA$id %in% LASA1E$id]==4,ifelse(as.integer(LASA1E$elphya17)==2, 1L, ifelse(as.integer(LASA1E$elphya17)==1, 0L, ifelse(as.integer(LASA1E$elphya17)==-2 & as.integer(LASA1E$elphya15)==-2 & as.integer(LASA1E$elphya14)==1,0L,NA))),NA)
+lsb_LASA1_3$lsb_pa_garden_3 <- ifelse(LASA_extravar_PA$elphya01[LASA_extravar_PA$id %in% LASA1E$id]==4,
+                               ifelse(as.integer(LASA1E$elphya17)==2, 1L,
+                               ifelse(as.integer(LASA1E$elphya17)==1, 0L, 
+                               ifelse(as.integer(LASA1E$elphya17)==-2 & as.integer(LASA1E$elphya15)==-2 &
+                               as.integer(LASA1E$elphya14)==1,0L,NA))),NA)
 ```  
 ### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_4  
@@ -2107,7 +2163,11 @@ lsb_LASA1_3$lsb_pa_garden_3 <- ifelse(LASA_extravar_PA$elphya01[LASA_extravar_PA
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_4$lsb_pa_garden_4 <- ifelse(LASA_extravar_PA$flphya01[LASA_extravar_PA$id %in% LASA1F$id]==4,ifelse(as.integer(LASA1F$flphya17)==2,1L, ifelse(as.integer(LASA1F$flphya17)==1,0L, ifelse(as.integer(LASA1F$flphya17)==-2 & as.integer(LASA1F$flphya15)==-2 & as.integer(LASA1F$flphya14)==1,0L,NA))),NA)
+lsb_LASA1_4$lsb_pa_garden_4 <- ifelse(LASA_extravar_PA$flphya01[LASA_extravar_PA$id %in% LASA1F$id]==4,
+                               ifelse(as.integer(LASA1F$flphya17)==2,1L, 
+                               ifelse(as.integer(LASA1F$flphya17)==1,0L, 
+                               ifelse(as.integer(LASA1F$flphya17)==-2 & as.integer(LASA1F$flphya15)==-2 &
+                               as.integer(LASA1F$flphya14)==1,0L,NA))),NA)
 ```  
 ### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_5  
@@ -2125,7 +2185,11 @@ lsb_LASA1_4$lsb_pa_garden_4 <- ifelse(LASA_extravar_PA$flphya01[LASA_extravar_PA
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_5$lsb_pa_garden_5 <- ifelse(LASA_extravar_PA$glphya01[LASA_extravar_PA$id %in% LASA1G$id]==4,ifelse(as.integer(LASA1G$glphya17)==2,1L, ifelse(as.integer(LASA1G$glphya17)==1,0L, ifelse(as.integer(LASA1G$glphya17)==-2 & as.integer(LASA1G$glphya15)==-2 & as.integer(LASA1G$glphya14)==1,0L,NA))),NA)
+lsb_LASA1_5$lsb_pa_garden_5 <- ifelse(LASA_extravar_PA$glphya01[LASA_extravar_PA$id %in% LASA1G$id]==4, 
+                               ifelse(as.integer(LASA1G$glphya17)==2,1L, 
+                               ifelse(as.integer(LASA1G$glphya17)==1,0L, 
+                               ifelse(as.integer(LASA1G$glphya17)==-2 & as.integer(LASA1G$glphya15)==-2 &
+                               as.integer(LASA1G$glphya14)==1,0L,NA))),NA)
 ```  
 ### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_6  
@@ -2143,7 +2207,11 @@ lsb_LASA1_5$lsb_pa_garden_5 <- ifelse(LASA_extravar_PA$glphya01[LASA_extravar_PA
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_6$lsb_pa_garden_6 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$id %in% LASA1H$id]==4,ifelse(as.integer(LASA1H$HLPHYA17)==2, 1L, ifelse(as.integer(LASA1H$HLPHYA17)==1,0L, ifelse(as.integer(LASA1H$HLPHYA17)==-2 & as.integer(LASA1H$HLPHYA15)==-2 & as.integer(LASA1H$HLPHYA14)==1,0L,NA))),NA)
+lsb_LASA1_6$lsb_pa_garden_6 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$id %in% LASA1H$id]==4,
+                               ifelse(as.integer(LASA1H$HLPHYA17)==2, 1L, 
+                               ifelse(as.integer(LASA1H$HLPHYA17)==1,0L, 
+                               ifelse(as.integer(LASA1H$HLPHYA17)==-2 & as.integer(LASA1H$HLPHYA15)==-2 &
+                               as.integer(LASA1H$HLPHYA14)==1,0L,NA))),NA)
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_0    
@@ -2250,7 +2318,7 @@ lsb_LASA1_6$lsb_pa_garden_time_6 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extrav
 1 |   Does any household activities  
 
 **Harmonization status**:  complete  
-**Harmonization comment**: Study-specific variables ask if participant did any light or heavy household activities in the past 2 weeks.  
+**Harmonization comment**: Study-specific variables ask if participant did any light or heavy household activities in the past 2 weeks. These two variables were combined to create the harmonized variable "Household activities".  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_0$lsb_pa_house_0<- ifelse(LASA_extravar_PA$blphya01[LASA_extravar_PA$id %in% LASA1B$id]==4,ifelse(as.integer(LASA1B$blphya32)==1 & as.integer(LASA1B$blphya36)==1,0L, ifelse(as.integer(LASA1B$blphya32)==2 | as.integer(LASA1B$blphya36)==2,1L,NA)),NA)
@@ -2268,7 +2336,7 @@ lsb_LASA1_0$lsb_pa_house_0<- ifelse(LASA_extravar_PA$blphya01[LASA_extravar_PA$i
 1 |   Does any household activities  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   (redo)
+**Harmonization comment**:  Study-specific variables ask if participant did any light or heavy household activities in the past 2 weeks. These two variables were combined to create the harmonized variable "Household activities".  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_1$lsb_pa_house_1<- ifelse(LASA_extravar_PA$clphya01[LASA_extravar_PA$id %in% LASA1C$id]==4,ifelse(as.integer(LASA1C$clphya32)==1 & as.integer(LASA1C$clphya36)==1,0L, ifelse(as.integer(LASA1C$clphya32)==2 | as.integer(LASA1C$clphya36)==2,1L,NA)),NA)
@@ -2286,7 +2354,7 @@ lsb_LASA1_1$lsb_pa_house_1<- ifelse(LASA_extravar_PA$clphya01[LASA_extravar_PA$i
 1 |   Does any household activities  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   (redo)
+**Harmonization comment**:  Study-specific variables ask if participant did any light or heavy household activities in the past 2 weeks. These two variables were combined to create the harmonized variable "Household activities".  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_2$lsb_pa_house_2<- ifelse(LASA_extravar_PA$dlphya01[LASA_extravar_PA$id %in% LASA1D$id]==4,ifelse(as.integer(LASA1D$dlphya32)==1 & as.integer(LASA1D$dlphya36)==1,0L, ifelse(as.integer(LASA1D$dlphya32)==2 | as.integer(LASA1D$dlphya36)==2,1L,NA)),NA)
@@ -2304,7 +2372,7 @@ lsb_LASA1_2$lsb_pa_house_2<- ifelse(LASA_extravar_PA$dlphya01[LASA_extravar_PA$i
 1 |   Does any household activities  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   (redo)
+**Harmonization comment**:  Study-specific variables ask if participant did any light or heavy household activities in the past 2 weeks. These two variables were combined to create the harmonized variable "Household activities".  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_3$lsb_pa_house_3<- ifelse(LASA_extravar_PA$elphya01[LASA_extravar_PA$id %in% LASA1E$id]==4,ifelse(as.integer(LASA1E$elphya32)==1 & as.integer(LASA1E$elphya36)==1,0L, ifelse(as.integer(LASA1E$elphya32)==2 | as.integer(LASA1E$elphya36)==2,1L,NA)),NA)
@@ -2322,7 +2390,7 @@ lsb_LASA1_3$lsb_pa_house_3<- ifelse(LASA_extravar_PA$elphya01[LASA_extravar_PA$i
 1 |   Does any household activities  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   (redo)
+**Harmonization comment**:   Study-specific variables ask if participant did any light or heavy household activities in the past 2 weeks. These two variables were combined to create the harmonized variable "Household activities".  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_4$lsb_pa_house_4<- ifelse(LASA_extravar_PA$flphya01[LASA_extravar_PA$id %in% LASA1F$id]==4,ifelse(as.integer(LASA1F$flphya32)==1 & as.integer(LASA1F$flphya36)==1,0L, ifelse(as.integer(LASA1F$flphya32)==2 | as.integer(LASA1F$flphya36)==2,1L,NA)),NA)
@@ -2340,7 +2408,7 @@ lsb_LASA1_4$lsb_pa_house_4<- ifelse(LASA_extravar_PA$flphya01[LASA_extravar_PA$i
 1 |   Does any household activities  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   (redo)
+**Harmonization comment**:  Study-specific variables ask if participant did any light or heavy household activities in the past 2 weeks. These two variables were combined to create the harmonized variable "Household activities".  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_5$lsb_pa_house_5<- ifelse(LASA_extravar_PA$glphya01[LASA_extravar_PA$id %in% LASA1G$id]==4,ifelse(as.integer(LASA1G$glphya32)==1 & as.integer(LASA1G$glphya36)==1,0L, ifelse(as.integer(LASA1G$glphya32)==2 | as.integer(LASA1G$glphya36)==2,1L,NA)),NA)
@@ -2358,7 +2426,7 @@ lsb_LASA1_5$lsb_pa_house_5<- ifelse(LASA_extravar_PA$glphya01[LASA_extravar_PA$i
 1 |   Does any household activities  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   (redo)
+**Harmonization comment**:   Study-specific variables ask if participant did any light or heavy household activities in the past 2 weeks. These two variables were combined to create the harmonized variable "Household activities".  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_6$lsb_pa_house_6<- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$id %in% LASA1H$id]==4,ifelse(as.integer(LASA1H$HLPHYA32)==1 & as.integer(LASA1H$HLPHYA36)==1,0L, ifelse(as.integer(LASA1H$HLPHYA32)==2 | as.integer(LASA1H$HLPHYA36)==2,1L,NA)),NA)
@@ -2372,7 +2440,7 @@ lsb_LASA1_6$lsb_pa_house_6<- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$i
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:     
+**Harmonization comment**:    To create the harmonized variable "Average household activities time", 8 study-specific variables were combined. "Light household: Yes/no", "Light household: past two weeks yes/no", "Light household: # days past two weeks", "Light household: time in minutes" and the same 4 variables for "Heavy household".  
 **R script**:  
 ```{r, echo=TRUE}
 #light household acitivites
@@ -2390,7 +2458,7 @@ lsb_LASA1_0$lsb_pa_house_time_0<- rowSums(cbind(LASA1B$lsb_pa_house_time_0_inter
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:     
+**Harmonization comment**:    To create the harmonized variable "Average household activities time", 8 study-specific variables were combined. "Light household: Yes/no", "Light household: past two weeks yes/no", "Light household: # days past two weeks", "Light household: time in minutes" and the same 4 variables for "Heavy household".   
 **R script**:  
 ```{r, echo=TRUE}
 #light household acitivites
@@ -2408,7 +2476,7 @@ lsb_LASA1_1$lsb_pa_house_time_1<- rowSums(cbind(LASA1C$lsb_pa_house_time_1_inter
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:     
+**Harmonization comment**:    To create the harmonized variable "Average household activities time", 8 study-specific variables were combined. "Light household: Yes/no", "Light household: past two weeks yes/no", "Light household: # days past two weeks", "Light household: time in minutes" and the same 4 variables for "Heavy household".   
 **R script**:  
 ```{r, echo=TRUE}
 #light household acitivites
@@ -2426,7 +2494,7 @@ lsb_LASA1_2$lsb_pa_house_time_2<- rowSums(cbind(LASA1D$lsb_pa_house_time_2_inter
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:    
+**Harmonization comment**:    To create the harmonized variable "Average household activities time", 8 study-specific variables were combined. "Light household: Yes/no", "Light household: past two weeks yes/no", "Light household: # days past two weeks", "Light household: time in minutes" and the same 4 variables for "Heavy household".  
 **R script**:  
 ```{r, echo=TRUE}
 #light household acitivites
@@ -2444,7 +2512,7 @@ lsb_LASA1_3$lsb_pa_house_time_3<- rowSums(cbind(LASA1E$lsb_pa_house_time_3_inter
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:     
+**Harmonization comment**:  To create the harmonized variable "Average household activities time", 8 study-specific variables were combined. "Light household: Yes/no", "Light household: past two weeks yes/no", "Light household: # days past two weeks", "Light household: time in minutes" and the same 4 variables for "Heavy household".     
 **R script**:  
 ```{r, echo=TRUE}
 #light household acitivites
@@ -2462,7 +2530,7 @@ lsb_LASA1_4$lsb_pa_house_time_4<- rowSums(cbind(LASA1F$lsb_pa_house_time_4_inter
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:     
+**Harmonization comment**:  To create the harmonized variable "Average household activities time", 8 study-specific variables were combined. "Light household: Yes/no", "Light household: past two weeks yes/no", "Light household: # days past two weeks", "Light household: time in minutes" and the same 4 variables for "Heavy household".     
 **R script**:  
 ```{r, echo=TRUE}
 #light household acitivites
@@ -2479,8 +2547,8 @@ lsb_LASA1_5$lsb_pa_house_time_5<- rowSums(cbind(LASA1G$lsb_pa_house_time_5_inter
 **Variable unit**:  minutes per week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
-**Harmonization comment**:   question  
+**Harmonization status**:  complete  
+**Harmonization comment**:   To create the harmonized variable "Average household activities time", 8 study-specific variables were combined. "Light household: Yes/no", "Light household: past two weeks yes/no", "Light household: # days past two weeks", "Light household: time in minutes" and the same 4 variables for "Heavy household".    
 **R script**:  
 ```{r, echo=TRUE}
 #light household acitivites
