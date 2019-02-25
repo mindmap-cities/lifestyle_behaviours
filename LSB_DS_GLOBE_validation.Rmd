@@ -849,7 +849,14 @@ lsb_GLOBE_4$lsb_smk_cur_4<-recode(as.integer(GLOBE2014$G14v25),"1"=1L,"2"=1L,"4"
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_0$lsb_smk_status_0<-recode(as.integer(GLOBE1991$v140),"1"=2L,"2"=1L,"3"=0L)
+```  
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE1991$v140)
 
+A<-addmargins(table(lsb_GLOBE_0$lsb_smk_status_0,GLOBE1991$v140,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE1991$v140)[[10]][1:3]),"NA","SUM")
+as.data.frame.array(A,row.names = c("Never smoker","Former smoker","Current smoker","NA","SUM"))
 ```  
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_1  
@@ -869,8 +876,15 @@ lsb_GLOBE_0$lsb_smk_status_0<-recode(as.integer(GLOBE1991$v140),"1"=2L,"2"=1L,"3
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_1$lsb_smk_status_1<-recode(as.integer(GLOBE1997$v10a),"1"=2L,"2"=1L,"3"=0L)
-
 ```  
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE1997$v10a)
+
+A<-addmargins(table(lsb_GLOBE_1$lsb_smk_status_1,GLOBE1997$v10a,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE1991$v140)[[10]][1:3]),"NA","SUM")
+as.data.frame.array(A,row.names = c("Never smoker","Former smoker","Current smoker","NA","SUM"))
+``` 
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_2  
 **Variable description**:  Smoking status of the participant.  
@@ -885,12 +899,20 @@ lsb_GLOBE_1$lsb_smk_status_1<-recode(as.integer(GLOBE1997$v10a),"1"=2L,"2"=1L,"3
 2 |   Current smoker  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:  
+**Validatioln comment**: Add Harmo comment "Study-specific variable considers daily smokers"
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_2$lsb_smk_status_2<-recode(as.integer(GLOBE2004$w073),"1"=2L,"2"=2L,"3"=2L,"4"=1L,"5"=0L)
+``` 
+**Validation script**: 
+```{r, echo=TRUE}
+attributes(GLOBE2004$w073)
 
-```  
+A<-addmargins(table(lsb_GLOBE_2$lsb_smk_status_2,GLOBE2004$w073,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE2004$w073)[[10]][1:5]),"NA","SUM")
+as.data.frame.array(A,row.names = c("Never smoker","Former smoker","Current smoker","NA","SUM"))
+``` 
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_3  
 **Variable description**:  Smoking status of the participant.  
@@ -909,8 +931,15 @@ lsb_GLOBE_2$lsb_smk_status_2<-recode(as.integer(GLOBE2004$w073),"1"=2L,"2"=2L,"3
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_3$lsb_smk_status_3<-recode(as.integer(GLOBE2011$v17_rook_freq),"1"=2L,"2"=2L,"3"=2L,"4"=1L,"5"=0L)
-
 ```  
+**Validation script**: 
+```{r, echo=TRUE}
+attributes(GLOBE2011$v17_rook_freq)
+
+A<-addmargins(table(lsb_GLOBE_3$lsb_smk_status_3,GLOBE2011$v17_rook_freq,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE2011$v17_rook_freq)[[10]][1:5]),"NA","SUM")
+as.data.frame.array(A,row.names = c("Never smoker","Former smoker","Current smoker","NA","SUM"))
+``` 
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_4  
 **Variable description**:  Smoking status of the participant.  
@@ -926,11 +955,20 @@ lsb_GLOBE_3$lsb_smk_status_3<-recode(as.integer(GLOBE2011$v17_rook_freq),"1"=2L,
 
 **Harmonization status**:  complete  
 **Harmonization comment**:   Participants that reported smoking e-cigarettes were recoded to NA.
+**Validation comment**: In harmo comment add "Never smokers are respondents who never smoked daily"
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_4$lsb_smk_status_4<-recode(as.integer(GLOBE2014$G14v25),"1"=2L,"2"=2L,"4"=2L,"5"=1L,"6"=1L,"7"=0L,.default=NA_integer_)
-
 ```  
+**Validation script**: 
+```{r, echo=TRUE}
+attributes(GLOBE2014$G14v25)
+
+A<-addmargins(table(lsb_GLOBE_4$lsb_smk_status_4,GLOBE2014$G14v25,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE2014$G14v25)[[10]][1:7]),"NA","SUM")
+as.data.frame.array(A,row.names = c("Never smoker","Former smoker","Current smoker","NA","SUM"))
+``` 
+ 
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_5  
 **Variable description**:  Smoking status of the participant.  
