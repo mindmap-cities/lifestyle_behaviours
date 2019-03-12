@@ -70,6 +70,14 @@ lsb_GLOBE_0$lsb_alc_cur_0<-ifelse(GLOBE1991$v135<6,1L,
                                    ifelse(GLOBE1991$v135==6,0L,NA))
 
 ```  
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE1991$v135)
+
+A<-addmargins(table(lsb_GLOBE_0$lsb_alc_cur_0,GLOBE1991$v135,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE1991$v135)[[10]][1:6]),'NA','SUM')
+as.data.frame.array(A,row.names = c('Does not currently consume alcohol','Currently consumes alcohol',"NA","SUM"))
+```  
 ### **Variable label**:  Current consumption of alcohol  
 **Variable name**: lsb_alc_cur_1  
 **Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
@@ -87,7 +95,14 @@ lsb_GLOBE_0$lsb_alc_cur_0<-ifelse(GLOBE1991$v135<6,1L,
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_1$lsb_alc_cur_1<-recode(as.integer(GLOBE1997$v7),"1"=1L,"2"=1L,"3"=1L,"4"=1L,"5"=1L,"6"=0L)
+```  
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE1997$v7)
 
+A<-addmargins(table(lsb_GLOBE_1$lsb_alc_cur_1,GLOBE1997$v7,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE1997$v7)[[10]][3:8]),'NA','SUM')
+as.data.frame.array(A,row.names = c('Does not currently consume alcohol','Currently consumes alcohol',"NA","SUM"))
 ```  
 ### **Variable label**:  Current consumption of alcohol  
 **Variable name**: lsb_alc_cur_2  
@@ -105,7 +120,6 @@ lsb_GLOBE_1$lsb_alc_cur_1<-recode(as.integer(GLOBE1997$v7),"1"=1L,"2"=1L,"3"=1L,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -126,6 +140,14 @@ lsb_GLOBE_1$lsb_alc_cur_1<-recode(as.integer(GLOBE1997$v7),"1"=1L,"2"=1L,"3"=1L,
 ```{r, echo=TRUE}
 lsb_GLOBE_3$lsb_alc_cur_3<-recode(as.integer(GLOBE2011$v12_alc_freq),"1"=1L,"2"=1L,"3"=1L,"4"=1L,"5"=0L)
 ```  
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE2011$v12_alc_freq)
+
+A<-addmargins(table(lsb_GLOBE_3$lsb_alc_cur_3,GLOBE2011$v12_alc_freq,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE2011$v12_alc_freq)[[10]][1:5]),'NA','SUM')
+as.data.frame.array(A,row.names = c('Does not currently consume alcohol','Currently consumes alcohol',"NA","SUM"))
+```  
 ### **Variable label**:  Current consumption of alcohol  
 **Variable name**: lsb_alc_cur_4  
 **Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
@@ -143,7 +165,14 @@ lsb_GLOBE_3$lsb_alc_cur_3<-recode(as.integer(GLOBE2011$v12_alc_freq),"1"=1L,"2"=
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_4$lsb_alc_cur_4<-recode(as.integer(GLOBE2014$G14v26),"1"=0L,"2"=1L,"3"=1L,"4"=1L,"5"=1L,"6"=1L)
+```  
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE2014$G14v26)
 
+A<-addmargins(table(lsb_GLOBE_4$lsb_alc_cur_4,GLOBE2014$G14v26,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE2014$G14v26)[[10]][1:6]),'NA','SUM')
+as.data.frame.array(A,row.names = c('Does not currently consume alcohol','Currently consumes alcohol',"NA","SUM"))
 ```  
 ### **Variable label**:  Current consumption of alcohol  
 **Variable name**: lsb_alc_cur_5  
@@ -164,6 +193,10 @@ lsb_GLOBE_4$lsb_alc_cur_4<-recode(as.integer(GLOBE2014$G14v26),"1"=0L,"2"=1L,"3"
 #This is where the R-script will be written
 
 ```  
+**Correction script**:  
+```{r, echo=TRUE}
+
+```
 ### **Variable label**:  Current consumption of alcohol  
 **Variable name**: lsb_alc_cur_6  
 **Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
@@ -180,7 +213,6 @@ lsb_GLOBE_4$lsb_alc_cur_4<-recode(as.integer(GLOBE2014$G14v26),"1"=0L,"2"=1L,"3"
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -201,7 +233,6 @@ lsb_GLOBE_4$lsb_alc_cur_4<-recode(as.integer(GLOBE2014$G14v26),"1"=0L,"2"=1L,"3"
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_1    
@@ -217,10 +248,18 @@ lsb_GLOBE_4$lsb_alc_cur_4<-recode(as.integer(GLOBE2014$G14v26),"1"=0L,"2"=1L,"3"
 
 **Harmonization status**:  complete  
 **Harmonization comment**:   
+**Validation comment**:   the harmonized variable "Current consumption of alcohol" was combined with the study-specific variable "Have you had drinks containing alcohol in the past?" to create "Ever consumption of alcohol".  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_1$lsb_alc_ever_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==1,1L,recode(as.integer(GLOBE1997$v9b),"1"=1L,"2"=0L))
+```  
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE1997$v9b)
 
+A<-addmargins(table(lsb_GLOBE_1$lsb_alc_ever_1,GLOBE1997$v9b,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE1997$v9b)[[10]][3:4]),'NA','SUM')
+as.data.frame.array(A,row.names = c('Does not currently consume alcohol','Currently consumes alcohol',"NA","SUM"))
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_2    
@@ -238,7 +277,6 @@ lsb_GLOBE_1$lsb_alc_ever_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==1,1L,recode(as.int
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -258,7 +296,6 @@ lsb_GLOBE_1$lsb_alc_ever_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==1,1L,recode(as.int
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_4    
@@ -276,7 +313,6 @@ lsb_GLOBE_1$lsb_alc_ever_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==1,1L,recode(as.int
 **Harmonization comment**:   Study specific variable doesn't permits to know whether the participant never consumed alcohol or not .  
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -296,7 +332,6 @@ lsb_GLOBE_1$lsb_alc_ever_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==1,1L,recode(as.int
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_6    
@@ -314,7 +349,6 @@ lsb_GLOBE_1$lsb_alc_ever_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==1,1L,recode(as.int
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -336,8 +370,15 @@ lsb_GLOBE_1$lsb_alc_ever_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==1,1L,recode(as.int
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_0$lsb_alc_binge_0<-ifelse(lsb_GLOBE_0$lsb_alc_cur_0==0,1L,recode(as.integer(GLOBE1991$v137),"1"=3L,"2"=3L,"3"=3L,"4"=2L,"5"=1L,"6"=1L,"7"=1L))
-
 ```  
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE1991$v137)
+
+A<-addmargins(table(lsb_GLOBE_0$lsb_alc_binge_0,GLOBE1991$v137,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE1991$v137)[[10]][2:8]),'NA','SUM')
+as.data.frame.array(A,row.names = c('Does not currently consume alcohol','Currently consumes alcohol',"NA","SUM"))
+``` 
 ### **Variable label**:   Frequency of binge drinking  
 **Variable name**: lsb_alc_binge_1  
 **Variable description**:  Frequency of drinking 4 or more drinks in one day.  
@@ -416,7 +457,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:   Frequency of binge drinking  
 **Variable name**: lsb_alc_binge_5  
@@ -435,7 +475,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -456,7 +495,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)      
@@ -471,7 +509,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: lsb_alc_total_1  
@@ -484,7 +521,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
@@ -499,7 +535,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: lsb_alc_total_3  
@@ -512,7 +547,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -528,7 +562,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: lsb_alc_wine_1  
@@ -541,7 +574,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:   Current quantity of wine consumed per week  
@@ -556,7 +588,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:   Current quantity of wine consumed per week  
 **Variable name**: lsb_alc_wine_3  
@@ -569,7 +600,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -586,7 +616,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_1  
@@ -600,7 +629,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
@@ -616,7 +644,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_3  
@@ -630,7 +657,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -647,7 +673,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_1  
@@ -661,7 +686,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
@@ -677,7 +701,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_3  
@@ -691,7 +714,6 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -714,8 +736,15 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_0$lsb_smk_cur_0<-recode(as.integer(GLOBE1991$v140),"1"=1L,"2"=0L,"3"=0L)
-
 ```  
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE1991$v140)
+
+A<-addmargins(table(lsb_GLOBE_0$lsb_smk_cur_0,GLOBE1991$v140,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE1991$v140)[[10]][1:3]),'NA','SUM')
+as.data.frame.array(A,row.names = c('Currently does not smoke any tobacco product','Currently smokes any tobacco product',"NA","SUM"))
+``` 
 ### **Variable label**:  Current tobacco smoking  
 **Variable name**:  lsb_smk_cur_1  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
@@ -733,8 +762,15 @@ lsb_GLOBE_0$lsb_smk_cur_0<-recode(as.integer(GLOBE1991$v140),"1"=1L,"2"=0L,"3"=0
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_1$lsb_smk_cur_1<-recode(as.integer(GLOBE1997$v10a),"1"=1L,"2"=0L,"3"=0L)
-
 ```  
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE1997$v10a)
+
+A<-addmargins(table(lsb_GLOBE_1$lsb_smk_cur_1,GLOBE1997$v10a,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE1997$v10a)[[10]][3:5]),'NA','SUM')
+as.data.frame.array(A,row.names = c('Currently does not smoke any tobacco product','Currently smokes any tobacco product',"NA","SUM"))
+```
 ### **Variable label**:  Current tobacco smoking  
 **Variable name**:  lsb_smk_cur_2  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
@@ -752,8 +788,15 @@ lsb_GLOBE_1$lsb_smk_cur_1<-recode(as.integer(GLOBE1997$v10a),"1"=1L,"2"=0L,"3"=0
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_2$lsb_smk_cur_2<-recode(as.integer(GLOBE2004$w073),"1"=1L,"2"=1L,"3"=1L,"4"=0L,"5"=0L)
-
 ```  
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE2004$w073)
+
+A<-addmargins(table(lsb_GLOBE_2$lsb_smk_cur_2,GLOBE2004$w073,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE2004$w073)[[10]][1:5]),'NA','SUM')
+as.data.frame.array(A,row.names = c('Currently does not smoke any tobacco product','Currently smokes any tobacco product',"NA","SUM"))
+```
 ### **Variable label**:  Current tobacco smoking  
 **Variable name**:  lsb_smk_cur_3  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
@@ -771,8 +814,15 @@ lsb_GLOBE_2$lsb_smk_cur_2<-recode(as.integer(GLOBE2004$w073),"1"=1L,"2"=1L,"3"=1
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_3$lsb_smk_cur_3<-recode(as.integer(GLOBE2011$v17_rook_freq),"1"=1L,"2"=1L,"3"=1L,"4"=0L,"5"=0L)
+```
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE2011$v17_rook_freq)
 
-```  
+A<-addmargins(table(lsb_GLOBE_3$lsb_smk_cur_3,GLOBE2011$v17_rook_freq,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE2011$v17_rook_freq)[[10]][1:5]),'NA','SUM')
+as.data.frame.array(A,row.names = c('Currently does not smoke any tobacco product','Currently smokes any tobacco product',"NA","SUM"))
+```
 ### **Variable label**:  Current tobacco smoking  
 **Variable name**:  lsb_smk_cur_4  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
@@ -790,8 +840,15 @@ lsb_GLOBE_3$lsb_smk_cur_3<-recode(as.integer(GLOBE2011$v17_rook_freq),"1"=1L,"2"
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_4$lsb_smk_cur_4<-recode(as.integer(GLOBE2014$G14v25),"1"=1L,"2"=1L,"4"=1L,"5"=0L,"6"=0L,"7"=0L,.default=NA_integer_)
-
-```  
+``` 
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE2014$G14v25)
+summ(as.factor(lsb_GLOBE_4$lsb_smk_cur_4))
+A<-addmargins(table(lsb_GLOBE_4$lsb_smk_cur_4,GLOBE2014$G14v25,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE2014$G14v25)[[10]][1:7]),'NA','SUM')
+as.data.frame.array(A,row.names = c('Currently does not smoke any tobacco product','Currently smokes any tobacco product',"NA","SUM"))
+```
 ### **Variable label**:  Current tobacco smoking  
 **Variable name**:  lsb_smk_cur_5  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
@@ -808,7 +865,6 @@ lsb_GLOBE_4$lsb_smk_cur_4<-recode(as.integer(GLOBE2014$G14v25),"1"=1L,"2"=1L,"4"
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -827,7 +883,6 @@ lsb_GLOBE_4$lsb_smk_cur_4<-recode(as.integer(GLOBE2014$G14v25),"1"=1L,"2"=1L,"4"
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -853,11 +908,11 @@ lsb_GLOBE_0$lsb_smk_status_0<-recode(as.integer(GLOBE1991$v140),"1"=2L,"2"=1L,"3
 **Validation script**:  
 ```{r, echo=TRUE}
 attributes(GLOBE1991$v140)
-
+summ(as.factor(lsb_GLOBE_0$lsb_smk_status_0))
 A<-addmargins(table(lsb_GLOBE_0$lsb_smk_status_0,GLOBE1991$v140,useNA = "always"))
-colnames(A)<-c(names(attributes(GLOBE1991$v140)[[10]][1:3]),"NA","SUM")
-as.data.frame.array(A,row.names = c("Never smoker","Former smoker","Current smoker","NA","SUM"))
-```  
+colnames(A)<-c(names(attributes(GLOBE1991$v140)[[10]][1:3]),'NA','SUM')
+as.data.frame.array(A,row.names = c('Never smoker','Former smoker','Current smoker',"NA","SUM"))
+```
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_1  
 **Variable description**:  Smoking status of the participant.  
@@ -882,7 +937,7 @@ lsb_GLOBE_1$lsb_smk_status_1<-recode(as.integer(GLOBE1997$v10a),"1"=2L,"2"=1L,"3
 attributes(GLOBE1997$v10a)
 
 A<-addmargins(table(lsb_GLOBE_1$lsb_smk_status_1,GLOBE1997$v10a,useNA = "always"))
-colnames(A)<-c(names(attributes(GLOBE1991$v140)[[10]][1:3]),"NA","SUM")
+colnames(A)<-c(names(attributes(GLOBE1997$v10a)[[10]][3:5]),"NA","SUM")
 as.data.frame.array(A,row.names = c("Never smoker","Former smoker","Current smoker","NA","SUM"))
 ``` 
 ### **Variable label**:  Smoking status  
@@ -987,7 +1042,6 @@ as.data.frame.array(A,row.names = c("Never smoker","Former smoker","Current smok
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_6  
@@ -1006,7 +1060,6 @@ as.data.frame.array(A,row.names = c("Never smoker","Former smoker","Current smok
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -1034,15 +1087,19 @@ MyMerge <- function(x,y){
 #Reducing the table to the variables needed
 smk_table <- Reduce(MyMerge, list(GLOBE1991,GLOBE1997,GLOBE2004,GLOBE2011,GLOBE2014))
 smk_table<- smk_table[,c("id","v140","v10a","w073","v17_rook_freq","G14v25")]
-
-
 #Harmonization scripts to create "ever smoke" for all participants in all waves
 smk_table$lsb_smk_ever_0 <- recode(as.integer(smk_table$v140),"1"=1L,"2"=0L,"3"=0L)
 #Direct mapping to harmonized tables keeping correct participants for each wave
 lsb_GLOBE_0 <- merge(lsb_GLOBE_0, smk_table[,c("id","lsb_smk_ever_0")],by="id",all.x=TRUE)
+``` 
+**Validation script**: 
+```{r, echo=TRUE}
+attributes(GLOBE1991$v140)
 
-
-```  
+A<-addmargins(table(lsb_GLOBE_0$lsb_smk_ever_0,GLOBE1991$v140,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE1991$v140)[[10]][1:3]),"NA","SUM")
+as.data.frame.array(A,row.names = c("Never smoked tobacco","Ever smoked tobacco","NA","SUM"))
+``` 
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_1    
 **Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
@@ -1063,8 +1120,15 @@ lsb_GLOBE_0 <- merge(lsb_GLOBE_0, smk_table[,c("id","lsb_smk_ever_0")],by="id",a
 smk_table$lsb_smk_ever_1 <- ifelse(smk_table$lsb_smk_ever_0 ==1,1L,recode(as.integer(smk_table$v10a),"1"=1L,"2"=1L,"3"=0L))
 #Direct mapping to harmonized tables keeping correct participants for each wave
 lsb_GLOBE_1 <- merge(lsb_GLOBE_1, smk_table[,c("id","lsb_smk_ever_1")],by="id",all.x=TRUE)
-
 ```  
+**Validation script**: 
+```{r, echo=TRUE}
+attributes(GLOBE1997$v10a)
+
+A<-addmargins(table(lsb_GLOBE_1$lsb_smk_ever_1,GLOBE1997$v10a,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE1997$v10a)[[10]][3:5]),"NA","SUM")
+as.data.frame.array(A,row.names = c("Never smoked tobacco","Ever smoked tobacco","NA","SUM"))
+``` 
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_2    
 **Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
@@ -1086,6 +1150,14 @@ smk_table$lsb_smk_ever_2 <- ifelse(smk_table$lsb_smk_ever_1 ==1 ,1L,recode(as.in
 #Direct mapping to harmonized tables keeping correct participants for each wave
 lsb_GLOBE_2 <- merge(lsb_GLOBE_2, smk_table[,c("id","lsb_smk_ever_2")],by="id",all.x=TRUE)
 ```  
+**Validation script**: 
+```{r, echo=TRUE}
+attributes(GLOBE2004$w073)
+
+A<-addmargins(table(lsb_GLOBE_2$lsb_smk_ever_2,GLOBE2004$w073,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE2004$w073)[[10]][1:5]),"NA","SUM")
+as.data.frame.array(A,row.names = c("Never smoked tobacco","Ever smoked tobacco","NA","SUM"))
+``` 
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_3    
 **Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
@@ -1107,6 +1179,14 @@ smk_table$lsb_smk_ever_3 <- ifelse(smk_table$lsb_smk_ever_2 ==1 ,1L,recode(as.in
 #Direct mapping to harmonized tables keeping correct participants for each wave
 lsb_GLOBE_3 <- merge(lsb_GLOBE_3, smk_table[,c("id","lsb_smk_ever_3")],by="id",all.x=TRUE)
 ```  
+**Validation script**: 
+```{r, echo=TRUE}
+attributes(GLOBE2011$v17_rook_freq)
+
+A<-addmargins(table(lsb_GLOBE_3$lsb_smk_ever_3,GLOBE2011$v17_rook_freq,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE2011$v17_rook_freq)[[10]][1:5]),"NA","SUM")
+as.data.frame.array(A,row.names = c("Never smoked tobacco","Ever smoked tobacco","NA","SUM"))
+``` 
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_4    
 **Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
@@ -1128,6 +1208,14 @@ smk_table$lsb_smk_ever_4 <- ifelse(smk_table$lsb_smk_ever_3 ==1 ,1L,recode(as.in
 #Direct mapping to harmonized tables keeping correct participants for each wave
 lsb_GLOBE_4 <- merge(lsb_GLOBE_4, smk_table[,c("id","lsb_smk_ever_4")],by="id",all.x=TRUE)
 ```  
+**Validation script**: 
+```{r, echo=TRUE}
+attributes(GLOBE2014$G14v25)
+
+A<-addmargins(table(lsb_GLOBE_4$lsb_smk_ever_4,GLOBE2014$G14v25,useNA = "always"))
+colnames(A)<-c(names(attributes(GLOBE2014$G14v25)[[10]][1:7]),"NA","SUM")
+as.data.frame.array(A,row.names = c("Never smoked tobacco","Ever smoked tobacco","NA","SUM"))
+``` 
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_5    
 **Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
@@ -1145,6 +1233,10 @@ lsb_GLOBE_4 <- merge(lsb_GLOBE_4, smk_table[,c("id","lsb_smk_ever_4")],by="id",a
 **R script**:  
 ```{r, echo=TRUE}
 #This is where the R-script will be written
+
+``` 
+**Validation script**:  
+```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1164,7 +1256,6 @@ lsb_GLOBE_4 <- merge(lsb_GLOBE_4, smk_table[,c("id","lsb_smk_ever_4")],by="id",a
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 
 ### **Variable label**:  Quantity cigarettes smoked    
@@ -1180,8 +1271,18 @@ lsb_GLOBE_4 <- merge(lsb_GLOBE_4, smk_table[,c("id","lsb_smk_ever_4")],by="id",a
 ```{r, echo=TRUE}
 lsb_GLOBE_0$lsb_cig_qty_0<-ifelse(lsb_GLOBE_0$lsb_smk_cur_0==0,0,
                                   ifelse(lsb_GLOBE_0$lsb_smk_cur_0==1,GLOBE1991$v141,NA))
-
 ```  
+**Validation script**: 
+```{r, echo=TRUE}
+summary(lsb_GLOBE_0$lsb_cig_qty_0)
+summary(GLOBE1991$v141)
+
+table(lsb_GLOBE_0$lsb_smk_cur_0,!is.na(GLOBE1991$v141),useNA='always')
+```
+**Correction script**: 
+```{r, echo=TRUE}
+lsb_GLOBE_0$lsb_cig_qty_0<-ifelse(lsb_GLOBE_0$lsb_smk_cur_0==0,0,GLOBE1991$v141)
+```
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_1   
 **Variable description**:  Current average number of cigarettes smoked per day.  
@@ -1195,7 +1296,13 @@ lsb_GLOBE_0$lsb_cig_qty_0<-ifelse(lsb_GLOBE_0$lsb_smk_cur_0==0,0,
 ```{r, echo=TRUE}
 lsb_GLOBE_1$lsb_cig_qty_1<-ifelse(lsb_GLOBE_1$lsb_smk_cur_1==0,0,
                                   ifelse(lsb_GLOBE_1$lsb_smk_cur_1==1,GLOBE1997$v10b1,NA))
+```  
+**Validation script**:  
+```{r, echo=TRUE}
+summary(lsb_GLOBE_1$lsb_cig_qty_1)
+summary(GLOBE1997$v10b1)
 
+table(lsb_GLOBE_1$lsb_smk_cur_1,!is.na(GLOBE1997$v10b1),useNA='always')
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_2   
@@ -1254,7 +1361,6 @@ lsb_GLOBE_4$lsb_cig_qty_4<-ifelse(lsb_GLOBE_4$lsb_smk_cur_4==0,0,
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_6   
@@ -1267,7 +1373,6 @@ lsb_GLOBE_4$lsb_cig_qty_4<-ifelse(lsb_GLOBE_4$lsb_smk_cur_4==0,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -1283,7 +1388,11 @@ lsb_GLOBE_4$lsb_cig_qty_4<-ifelse(lsb_GLOBE_4$lsb_smk_cur_4==0,0,
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_0$lsb_smk_start_0<-as.integer(GLOBE1991$v151)
-
+```  
+**Validation script**:  
+```{r, echo=TRUE}
+summary(lsb_GLOBE_0$lsb_smk_start_0)
+summary(GLOBE1991$v151)
 ```  
 ### **Variable label**:  Smoking initiation age    
 **Variable name**:  lsb_smk_start_1    
@@ -1296,7 +1405,6 @@ lsb_GLOBE_0$lsb_smk_start_0<-as.integer(GLOBE1991$v151)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Smoking initiation age    
@@ -1355,6 +1463,10 @@ lsb_GLOBE_2$lsb_smk_start_2<-as.integer(GLOBE2004$w077)
 #This is where the R-script will be written
 
 ```  
+**Correction script**:  
+```{r, echo=TRUE}
+
+```  
 ### **Variable label**:  Smoking initiation age    
 **Variable name**:  lsb_smk_start_6    
 **Variable description**:  Age at which the participant started smoking any tobacco product.  
@@ -1366,7 +1478,6 @@ lsb_GLOBE_2$lsb_smk_start_2<-as.integer(GLOBE2004$w077)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -1382,7 +1493,6 @@ lsb_GLOBE_2$lsb_smk_start_2<-as.integer(GLOBE2004$w077)
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Smoking cessation age  
 **Variable name**:  lsb_smk_stop_1   
@@ -1396,7 +1506,11 @@ lsb_GLOBE_2$lsb_smk_start_2<-as.integer(GLOBE2004$w077)
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_1$lsb_smk_stop_1<-as.integer(GLOBE1997$v10e)
-
+```  
+**Validation script**:  
+```{r, echo=TRUE}
+summary(lsb_GLOBE_1$lsb_smk_stop_1)
+summary(GLOBE1997$v10e)
 ```  
 ### **Variable label**:  Smoking cessation age  
 **Variable name**:  lsb_smk_stop_2   
@@ -1409,7 +1523,6 @@ lsb_GLOBE_1$lsb_smk_stop_1<-as.integer(GLOBE1997$v10e)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -1424,7 +1537,6 @@ lsb_GLOBE_1$lsb_smk_stop_1<-as.integer(GLOBE1997$v10e)
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Smoking cessation age  
 **Variable name**:  lsb_smk_stop_4   
@@ -1437,7 +1549,6 @@ lsb_GLOBE_1$lsb_smk_stop_1<-as.integer(GLOBE1997$v10e)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -1452,7 +1563,6 @@ lsb_GLOBE_1$lsb_smk_stop_1<-as.integer(GLOBE1997$v10e)
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Smoking cessation age  
 **Variable name**:  lsb_smk_stop_6   
@@ -1465,7 +1575,6 @@ lsb_GLOBE_1$lsb_smk_stop_1<-as.integer(GLOBE1997$v10e)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -1481,8 +1590,12 @@ lsb_GLOBE_1$lsb_smk_stop_1<-as.integer(GLOBE1997$v10e)
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_0$lsb_smk_py_0<-ifelse(lsb_GLOBE_0$lsb_smk_ever_0==0,0,(lsb_GLOBE_0$lsb_cig_qty_0/20)*GLOBE1991$v153)
-
 ```  
+**Validation script**:  
+```{r, echo=TRUE}
+summary(lsb_GLOBE_0$lsb_smk_py_0)
+class(lsb_GLOBE_0$lsb_smk_py_0)
+``` 
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_1    
 **Variable description**:  Number of estimated pack years of the participant.     
@@ -1495,8 +1608,12 @@ lsb_GLOBE_0$lsb_smk_py_0<-ifelse(lsb_GLOBE_0$lsb_smk_ever_0==0,0,(lsb_GLOBE_0$ls
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_1$lsb_smk_py_1<-ifelse(lsb_GLOBE_1$lsb_smk_ever_1==0,0,(lsb_GLOBE_1$lsb_cig_qty_1/20)*GLOBE1997$v10c)
-
 ```  
+**Validation script**:  
+```{r, echo=TRUE}
+summary(lsb_GLOBE_1$lsb_smk_py_1)
+summary(GLOBE1997$v10c)
+``` 
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_2    
 **Variable description**:  Number of estimated pack years of the participant.     
@@ -1509,7 +1626,6 @@ lsb_GLOBE_1$lsb_smk_py_1<-ifelse(lsb_GLOBE_1$lsb_smk_ever_1==0,0,(lsb_GLOBE_1$ls
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$lsb_cig_qty_2/20)*GLOBE2004$w078)
-
 ```  
 
 # Physical activity subdomain
@@ -1533,7 +1649,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_1    
@@ -1553,7 +1668,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**: Frequency of walking    
@@ -1575,7 +1689,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_3    
@@ -1595,7 +1708,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **Harmonization comment**:   There are 2 study-specific variables that can be used ("How many days in an average week in the past months did you walk to and from work or school?" and "How many days in an average week in the past months did you walk (in leisure time)?), but it's impossible to determine whether the participant walked the same days or not for leisure or transportation.  
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**: Frequency of walking    
@@ -1617,7 +1729,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_5    
@@ -1638,7 +1749,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_6    
@@ -1658,7 +1768,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -1682,7 +1791,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average walking time   
 **Variable name**:   lsb_pa_walk_time_1  
@@ -1703,7 +1811,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Average walking time    
@@ -1726,7 +1833,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average walking time     
 **Variable name**:   lsb_pa_walk_time_3  
@@ -1747,7 +1853,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **Harmonization comment**:      
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Average walking time    
@@ -1770,7 +1875,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average walking time     
 **Variable name**:   lsb_pa_walk_time_5  
@@ -1791,7 +1895,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Average walking time     
@@ -1814,7 +1917,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 
 ### **Variable label**:  Average walking time for transportation  
@@ -1829,7 +1931,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_1    
@@ -1842,7 +1943,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Average walking time for transportation    
@@ -1857,7 +1957,6 @@ lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$ls
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_2$lsb_pa_walk_trans_2<-GLOBE2004$w089*(GLOBE2004$w090*60+GLOBE2004$w091)
-
 ```  
 ### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_3    
@@ -1870,7 +1969,6 @@ lsb_GLOBE_2$lsb_pa_walk_trans_2<-GLOBE2004$w089*(GLOBE2004$w090*60+GLOBE2004$w09
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Average walking time for transportation    
@@ -1885,7 +1983,6 @@ lsb_GLOBE_2$lsb_pa_walk_trans_2<-GLOBE2004$w089*(GLOBE2004$w090*60+GLOBE2004$w09
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_4$lsb_pa_walk_trans_4<-GLOBE2014$G14v28_a_dag*(GLOBE2014$G14v28_a_uur*60+GLOBE2014$G14v28_a_min)
-
 ```  
 
 ### **Variable label**:  Average walking time for leisure  
@@ -1900,7 +1997,6 @@ lsb_GLOBE_4$lsb_pa_walk_trans_4<-GLOBE2014$G14v28_a_dag*(GLOBE2014$G14v28_a_uur*
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_1    
@@ -1913,7 +2009,6 @@ lsb_GLOBE_4$lsb_pa_walk_trans_4<-GLOBE2014$G14v28_a_dag*(GLOBE2014$G14v28_a_uur*
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Average walking time for leisure  
@@ -1928,7 +2023,6 @@ lsb_GLOBE_4$lsb_pa_walk_trans_4<-GLOBE2014$G14v28_a_dag*(GLOBE2014$G14v28_a_uur*
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_2$lsb_pa_walk_leis_2<-GLOBE2004$w097*(GLOBE2004$w098*60+GLOBE2004$w099)
-
 ```  
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_3    
@@ -1942,7 +2036,6 @@ lsb_GLOBE_2$lsb_pa_walk_leis_2<-GLOBE2004$w097*(GLOBE2004$w098*60+GLOBE2004$w099
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_3$lsb_pa_walk_leis_3<-GLOBE2011$v19_a_wada*(GLOBE2011$v19_a_waur*60+GLOBE2011$v19_a_wamin)
-
 ```  
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_4    
@@ -1956,8 +2049,6 @@ lsb_GLOBE_3$lsb_pa_walk_leis_3<-GLOBE2011$v19_a_wada*(GLOBE2011$v19_a_waur*60+GL
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_4$lsb_pa_walk_leis_4<-GLOBE2014$G14v29_a_dag*(GLOBE2014$G14v29_a_uur*60+GLOBE2014$G14v29_a_min)
-
-
 ```  
 
 ### **Variable label**:  Average cycling time    
@@ -1972,7 +2063,6 @@ lsb_GLOBE_4$lsb_pa_walk_leis_4<-GLOBE2014$G14v29_a_dag*(GLOBE2014$G14v29_a_uur*6
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_1  
@@ -1985,7 +2075,6 @@ lsb_GLOBE_4$lsb_pa_walk_leis_4<-GLOBE2014$G14v29_a_dag*(GLOBE2014$G14v29_a_uur*6
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Average cycling time    
@@ -2000,7 +2089,6 @@ lsb_GLOBE_4$lsb_pa_walk_leis_4<-GLOBE2014$G14v29_a_dag*(GLOBE2014$G14v29_a_uur*6
 **R script**:  
 ```{r, echo=TRUE}
 GLOBE2004$lsb_pa_cycle_2<-GLOBE2004$w093*(GLOBE2004$w094*60+GLOBE2004$w095)+GLOBE2004$w101*(GLOBE2004$w102*60+GLOBE2004$w103)
-
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_3  
@@ -2027,7 +2115,6 @@ lsb_GLOBE_3$lsb_pa_cycle_3<-GLOBE2011$v19_b_fida*(GLOBE2011$v19_b_fiur*60+GLOBE2
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_4$lsb_pa_cycle_4<-GLOBE2014$G14v28_b_dag*(GLOBE2014$G14v28_b_uur*60+GLOBE2014$G14v28_b_min)+GLOBE2014$G14v29_b_dag*(GLOBE2014$G14v29_b_uur*60+GLOBE2014$G14v29_b_min)
-
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_5  
@@ -2041,7 +2128,6 @@ lsb_GLOBE_4$lsb_pa_cycle_4<-GLOBE2014$G14v28_b_dag*(GLOBE2014$G14v28_b_uur*60+GL
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_6  
@@ -2054,7 +2140,6 @@ lsb_GLOBE_4$lsb_pa_cycle_4<-GLOBE2014$G14v28_b_dag*(GLOBE2014$G14v28_b_uur*60+GL
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -2075,7 +2160,6 @@ lsb_GLOBE_4$lsb_pa_cycle_4<-GLOBE2014$G14v28_b_dag*(GLOBE2014$G14v28_b_uur*60+GL
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_1  
@@ -2093,7 +2177,6 @@ lsb_GLOBE_4$lsb_pa_cycle_4<-GLOBE2014$G14v28_b_dag*(GLOBE2014$G14v28_b_uur*60+GL
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Gardening    
@@ -2114,7 +2197,6 @@ lsb_GLOBE_4$lsb_pa_cycle_4<-GLOBE2014$G14v28_b_dag*(GLOBE2014$G14v28_b_uur*60+GL
 ```{r, echo=TRUE}
 lsb_GLOBE_2$lsb_pa_garden_2<-ifelse(GLOBE2004$w105==0,0L,
                                     ifelse(GLOBE2004$w105>0L,1,NA))
-
 ```  
 ### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_3  
@@ -2134,7 +2216,6 @@ lsb_GLOBE_2$lsb_pa_garden_2<-ifelse(GLOBE2004$w105==0,0L,
 ```{r, echo=TRUE}
 lsb_GLOBE_3$lsb_pa_garden_3<-ifelse(GLOBE2011$v19_c_tuda==0,0L,
                                     ifelse(GLOBE2011$v19_c_tuda>0,1L,NA))
-
 ```  
 ### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_4  
@@ -2154,7 +2235,6 @@ lsb_GLOBE_3$lsb_pa_garden_3<-ifelse(GLOBE2011$v19_c_tuda==0,0L,
 ```{r, echo=TRUE}
 lsb_GLOBE_4$lsb_pa_garden_4<-ifelse(GLOBE2014$G14v29_c_dag==0,0L,
                                     ifelse(GLOBE2014$G14v29_c_dag>0,1L,NA))
-
 ```  
 ### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_5  
@@ -2172,7 +2252,6 @@ lsb_GLOBE_4$lsb_pa_garden_4<-ifelse(GLOBE2014$G14v29_c_dag==0,0L,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Gardening    
@@ -2192,7 +2271,6 @@ lsb_GLOBE_4$lsb_pa_garden_4<-ifelse(GLOBE2014$G14v29_c_dag==0,0L,
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_0    
@@ -2205,7 +2283,6 @@ lsb_GLOBE_4$lsb_pa_garden_4<-ifelse(GLOBE2014$G14v29_c_dag==0,0L,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Average gardening time    
@@ -2220,7 +2297,6 @@ lsb_GLOBE_4$lsb_pa_garden_4<-ifelse(GLOBE2014$G14v29_c_dag==0,0L,
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_2    
@@ -2234,7 +2310,6 @@ lsb_GLOBE_4$lsb_pa_garden_4<-ifelse(GLOBE2014$G14v29_c_dag==0,0L,
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_2$lsb_pa_garden_time_2<-GLOBE2004$w105*(GLOBE2004$w106*60+GLOBE2004$w107)
-
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_3    
@@ -2261,7 +2336,6 @@ lsb_GLOBE_3$lsb_pa_garden_time_3<-GLOBE2011$v19_c_tuda*(GLOBE2011$v19_c_tuur*60+
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_4$lsb_pa_garden_time_4<-GLOBE2014$G14v29_c_dag*(GLOBE2014$G14v29_c_uur*60+GLOBE2014$G14v29_c_min)
-
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_5    
@@ -2275,7 +2349,6 @@ lsb_GLOBE_4$lsb_pa_garden_time_4<-GLOBE2014$G14v29_c_dag*(GLOBE2014$G14v29_c_uur
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_6    
@@ -2288,7 +2361,6 @@ lsb_GLOBE_4$lsb_pa_garden_time_4<-GLOBE2014$G14v29_c_dag*(GLOBE2014$G14v29_c_uur
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -2309,7 +2381,6 @@ lsb_GLOBE_4$lsb_pa_garden_time_4<-GLOBE2014$G14v29_c_dag*(GLOBE2014$G14v29_c_uur
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_1  
@@ -2327,7 +2398,6 @@ lsb_GLOBE_4$lsb_pa_garden_time_4<-GLOBE2014$G14v29_c_dag*(GLOBE2014$G14v29_c_uur
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Household activities  
@@ -2348,7 +2418,6 @@ lsb_GLOBE_4$lsb_pa_garden_time_4<-GLOBE2014$G14v29_c_dag*(GLOBE2014$G14v29_c_uur
 ```{r, echo=TRUE}
 lsb_GLOBE_2$lsb_pa_house_2<-ifelse(GLOBE2004$w139>0 | GLOBE2004$w139>0, 1L,
                                    ifelse(GLOBE2004$w139==0 & GLOBE2004$w139==0,0L,NA)) 
-
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_3  
@@ -2368,7 +2437,6 @@ lsb_GLOBE_2$lsb_pa_house_2<-ifelse(GLOBE2004$w139>0 | GLOBE2004$w139>0, 1L,
 ```{r, echo=TRUE}
 lsb_GLOBE_3$lsb_pa_house_3<-ifelse(GLOBE2011$v21_a_hhda>0 | GLOBE2011$v21_b_zhda>0, 1L,
                                    ifelse(GLOBE2011$v21_a_hhda==0 & GLOBE2011$v21_b_zhda==0,0L,NA))
-
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_4  
@@ -2388,7 +2456,6 @@ lsb_GLOBE_3$lsb_pa_house_3<-ifelse(GLOBE2011$v21_a_hhda>0 | GLOBE2011$v21_b_zhda
 ```{r, echo=TRUE}
 lsb_GLOBE_4$lsb_pa_house_4<-ifelse(GLOBE2014$G14v32_a_dag >0 | GLOBE2014$G14v32_b_dag>0, 1L,
                                    ifelse(GLOBE2014$G14v32_a_dag==0 & GLOBE2014$G14v32_b_dag ==0,0L,NA))
-
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_5  
@@ -2406,7 +2473,6 @@ lsb_GLOBE_4$lsb_pa_house_4<-ifelse(GLOBE2014$G14v32_a_dag >0 | GLOBE2014$G14v32_
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Household activities  
@@ -2426,7 +2492,6 @@ lsb_GLOBE_4$lsb_pa_house_4<-ifelse(GLOBE2014$G14v32_a_dag >0 | GLOBE2014$G14v32_
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 
 ### **Variable label**:  Average household activities time      
@@ -2441,7 +2506,6 @@ lsb_GLOBE_4$lsb_pa_house_4<-ifelse(GLOBE2014$G14v32_a_dag >0 | GLOBE2014$G14v32_
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_1  
@@ -2454,7 +2518,6 @@ lsb_GLOBE_4$lsb_pa_house_4<-ifelse(GLOBE2014$G14v32_a_dag >0 | GLOBE2014$G14v32_
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Average household activities time      
@@ -2469,7 +2532,6 @@ lsb_GLOBE_4$lsb_pa_house_4<-ifelse(GLOBE2014$G14v32_a_dag >0 | GLOBE2014$G14v32_
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_2$lsb_pa_garden_time_2<-GLOBE2004$w139*(GLOBE2004$w140*60+GLOBE2004$w141)+GLOBE2004$w142*(GLOBE2004$w143*60+GLOBE2004$w144)
-
 ```  
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_3  
@@ -2483,7 +2545,6 @@ lsb_GLOBE_2$lsb_pa_garden_time_2<-GLOBE2004$w139*(GLOBE2004$w140*60+GLOBE2004$w1
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_3$lsb_pa_garden_time_3<-GLOBE2011$v21_a_hhda*(GLOBE2011$v21_a_hhur*60+GLOBE2011$v21_a_hhmin)+GLOBE2011$v21_b_zhda*(GLOBE2011$v21_b_zhur*60+GLOBE2011$v21_b_zhmin)
-
 ```  
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_4  
@@ -2497,7 +2558,6 @@ lsb_GLOBE_3$lsb_pa_garden_time_3<-GLOBE2011$v21_a_hhda*(GLOBE2011$v21_a_hhur*60+
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_4$lsb_pa_garden_time_4<-GLOBE2014$G14v32_a_dag*(GLOBE2014$G14v32_a_uur*60+GLOBE2014$G14v32_a_min)+GLOBE2014$G14v32_b_dag*(GLOBE2014$G14v32_b_uur*60+GLOBE2014$G14v32_b_min)
-
 ```  
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_5  
@@ -2511,7 +2571,6 @@ lsb_GLOBE_4$lsb_pa_garden_time_4<-GLOBE2014$G14v32_a_dag*(GLOBE2014$G14v32_a_uur
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_6  
@@ -2524,7 +2583,6 @@ lsb_GLOBE_4$lsb_pa_garden_time_4<-GLOBE2014$G14v32_a_dag*(GLOBE2014$G14v32_a_uur
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**: Sports or exercise      
@@ -2544,8 +2602,15 @@ lsb_GLOBE_4$lsb_pa_garden_time_4<-GLOBE2014$G14v32_a_dag*(GLOBE2014$G14v32_a_uur
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_0$lsb_pa_sport_0<-recode(as.integer(GLOBE1991$v240),"1"=0L,"2"=1L,"3"=1L,"4"=1L)
+```  
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE1991$v240)
 
-```   
+A<- addmargins(table(lsb_GLOBE_0$lsb_pa_sport_0,GLOBE1991$v240,useNA='always'))
+colnames(A)<- c(names(attributes(GLOBE1991$v240)[[10]][1:4]),'NA','SUM')
+as.data.frame.array(A,row.names = c('Does not do any sports or exercise','Does any sports or exercise','NA','SUM'))
+```  
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_1  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
@@ -2563,8 +2628,15 @@ lsb_GLOBE_0$lsb_pa_sport_0<-recode(as.integer(GLOBE1991$v240),"1"=0L,"2"=1L,"3"=
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_1$lsb_pa_sport_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"3"=1L,"4"=1L)
-
 ```   
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE1997$v5)
+
+A<- addmargins(table(lsb_GLOBE_1$lsb_pa_sport_1,GLOBE1997$v5,useNA='always'))
+colnames(A)<- c(names(attributes(GLOBE1991$v240)[[10]][1:4]),'NA','SUM')
+as.data.frame.array(A,row.names = c('Does not do any sports or exercise','Does any sports or exercise','NA','SUM'))
+``` 
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_2  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
@@ -2581,7 +2653,6 @@ lsb_GLOBE_1$lsb_pa_sport_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"3"=1L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```   
 ### **Variable label**: Sports or exercise      
@@ -2601,7 +2672,6 @@ lsb_GLOBE_1$lsb_pa_sport_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"3"=1L
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_4  
@@ -2619,7 +2689,6 @@ lsb_GLOBE_1$lsb_pa_sport_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"3"=1L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```   
 ### **Variable label**: Sports or exercise      
@@ -2639,7 +2708,6 @@ lsb_GLOBE_1$lsb_pa_sport_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"3"=1L
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_6  
@@ -2657,7 +2725,6 @@ lsb_GLOBE_1$lsb_pa_sport_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"3"=1L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```   
 
@@ -2680,8 +2747,15 @@ lsb_GLOBE_1$lsb_pa_sport_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"3"=1L
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_0$lsb_pa_sport_time_0<-recode(as.integer(GLOBE1991$v240),"1"=0L,"2"=1L,"3"=2L,"4"=3L)
-
 ```  
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE1991$v240)
+
+A<- addmargins(table(lsb_GLOBE_0$lsb_pa_sport_time_0,GLOBE1991$v240,useNA='always'))
+colnames(A)<- c(names(attributes(GLOBE1991$v240)[[10]][1:4]),'NA','SUM')
+as.data.frame.array(A,row.names = c('never','less than 1 hour a week','between 1 and 2 hours a week','more than 2 hours a week','NA','SUM'))
+```
 ### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_1  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
@@ -2701,8 +2775,15 @@ lsb_GLOBE_0$lsb_pa_sport_time_0<-recode(as.integer(GLOBE1991$v240),"1"=0L,"2"=1L
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"3"=2L,"4"=3L)
-
 ```  
+**Validation script**:  
+```{r, echo=TRUE}
+attributes(GLOBE1997$v5)
+
+A<- addmargins(table(lsb_GLOBE_1$lsb_pa_sport_time_1,GLOBE1997$v5,useNA='always'))
+colnames(A)<- c(names(attributes(GLOBE1997$v5)[[10]][3:6]),'NA','SUM')
+as.data.frame.array(A,row.names = c('never','less than 1 hour a week','between 1 and 2 hours a week','more than 2 hours a week','NA','SUM'))
+```
 ### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_2  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
@@ -2721,7 +2802,6 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -2743,7 +2823,6 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_4  
@@ -2763,7 +2842,6 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -2785,7 +2863,6 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_6  
@@ -2805,7 +2882,6 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -2828,7 +2904,6 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Daily vegetable consumption  
 **Variable name**:  lsb_veg_1    
@@ -2847,7 +2922,6 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Daily vegetable consumption  
 **Variable name**:  lsb_veg_2    
@@ -2865,7 +2939,6 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **Harmonization comment**:   The 2 variables for study specific don't permit us to determine whether the participant consumes vegetables in a daily basis.
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -2886,7 +2959,6 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Daily fruit consumption  
 **Variable name**:  lsb_fruit_1  
@@ -2905,7 +2977,6 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Daily fruit consumption  
 **Variable name**:  lsb_fruit_2  
@@ -2923,7 +2994,6 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -2944,7 +3014,6 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Daily water consumption  
 **Variable name**:  lsb_water_1    
@@ -2962,7 +3031,6 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Daily water consumption  
@@ -2982,7 +3050,6 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Daily water consumption  
 **Variable name**:  lsb_water_3    
@@ -3000,7 +3067,6 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Daily water consumption  
@@ -3020,8 +3086,11 @@ lsb_GLOBE_1$lsb_pa_sport_time_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_4$lsb_water_4<-recode(as.integer(GLOBE2014$G14v23_d),"1"=0L,"2"=0L,"3"=0L,"4"=0L,"5"=0L,"6"=1L)
-
 ```  
+**Validation script**:  
+```{r, echo=TRUE}
+lsb_GLOBE_4$lsb_water_4<-recode(as.integer(GLOBE2014$G14v23_d),"1"=0L,"2"=0L,"3"=0L,"4"=0L,"5"=0L,"6"=1L)
+```
 
 ### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_0  
@@ -3035,7 +3104,6 @@ lsb_GLOBE_4$lsb_water_4<-recode(as.integer(GLOBE2014$G14v23_d),"1"=0L,"2"=0L,"3"
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
-
 ```  
 ### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_1  
@@ -3048,7 +3116,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Quantity daily coffee  
@@ -3063,7 +3130,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_3  
@@ -3077,7 +3143,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_4  
@@ -3090,7 +3155,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -3107,7 +3171,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Average sleep hours  
@@ -3136,7 +3199,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average sleep hours  
 **Variable name**:  lsb_sleep_hours_3  
@@ -3149,7 +3211,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Average sleep hours  
@@ -3164,7 +3225,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Average sleep hours  
 **Variable name**:  lsb_sleep_hours_5  
@@ -3177,7 +3237,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
@@ -3198,7 +3257,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **R script**:  
 ```{r, echo=TRUE}
 
-   
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_1  
@@ -3216,7 +3274,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
    
 ```  
 ### **Variable label**:  Difficulty falling asleep  
@@ -3254,7 +3311,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **R script**:  
 ```{r, echo=TRUE}
 
-   
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_4  
@@ -3273,7 +3329,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **R script**:  
 ```{r, echo=TRUE}
 
-   
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_5  
@@ -3291,7 +3346,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
    
 ```  
 
@@ -3314,7 +3368,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 
 ### **Variable label**:  Quality of sleep  
@@ -3335,7 +3388,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ``` 
 
@@ -3358,7 +3410,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ``` 
 ### **Variable label**:  Quality of sleep  
 **Variable name**:  lsb_sleep_qlty_3  
@@ -3378,7 +3429,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 ### **Variable label**:  Quality of sleep  
@@ -3400,7 +3450,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **R script**:  
 ```{r, echo=TRUE}
 
-
 ```  
 ### **Variable label**:  Quality of sleep  
 **Variable name**:  lsb_sleep_qlty_5  
@@ -3420,7 +3469,6 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
 
 ```  
 
