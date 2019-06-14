@@ -7,11 +7,12 @@ output: html_document
 ```{r, echo=FALSE}
 #Load Opal R library
 library(opal)
+library(tidyverse)
 # Create an opal object with the login information
 erasmus_opal <- opal.login()
 #Login to Opal server and assign the content of the RECORD table(s) to your RStudio environment
 # RECORD wave 1, part 1
-opal.assign.table.tibble(erasmus_opal, 'RECORD_w1_1', 'RECORD.RECORD_w1_1', variables= list('code_barre','Q27_d_1','Q27_d_2','Q28_1_2','Q28_1_1','Q28_1_4','Q28_1_5','Q28_1_3','Q30','Q29','Qm13','Qm14','Qm77','Qm16','Qm17a','Q28_31_2','Q28_31_1','Q28_31_3','Q28_31_4','Q28_31_5','Qm12b','Qm12c','fitness')) 
+opal.assign.table.tibble(erasmus_opal, 'RECORD_w1_1', 'RECORD.RECORD_w1_1', variables= list('code_barre','Q27_d_1','Q27_d_2','Q28_1_2','Q28_1_1','Q28_1_4','Q28_1_5','Q28_1_3','Q30','Q29','Qm13','Qm14','Qm77','Qm16','Qm17a','Q28_31_2','Q28_31_1','Q28_31_3','Q28_31_4','Q28_31_5','Qm12b','Qm12c','fitness','Qm10')) 
 RECORD_w1_1 <- opal.execute(erasmus_opal,'RECORD_w1_1')
 # RECORD wave 1, part 2
 opal.assign.table.tibble(erasmus_opal, 'RECORD_w1_2', 'RECORD.RECORD_w1_2',variables=list('neverdrinker','nbglass_alcohol','drinker_cgi','quitdrinker','packyear_current','packyear_former','fume_pipe','smoker','nonsmoker','formsmoker','q27_glob_tot','q27_autre_qu2','q27_trav_nqu2','q27_autre_nqu2','q27_trav_qu2','q27_course_nqu2','q27_course_qu2','q27_course_tot','q27_autre_nqu2','q27_glob_nqu','q27_util_nqu','q27_util_tot','q27_util_qu','q27_promen_qu2','q27_promen_nqu2','q27_promen_tot','q28_81_2','q28_autre_8_1','q28_autre_4_1','q28_autre_8_2','q28_autre_4_2','q28_autre_7_1','q28_autre_7_2','q28_49_1','q28_49_2','fruitleg','fruits_inf1','fruits_1j2','fruits_sup3','fruits_2j3','consommation_eau','smoker','nonsmoker','marche_utilitaire','fitness')) 
@@ -186,7 +187,7 @@ lsb_RECORD_1$lsb_alc_cur_1<- recode(as.character(RECORD_w2$Qm10), O=1L, N=0L,.de
 1 |   Ever consumed alcohol  
 
 **Harmonization status**:  complete   
-**Harmonization comment**:   
+**Harmonization comment**:   The harmonized variable "Ever consumption of alcohol" was created using "Ever consumption of alcohol" from baseline and previous waves and current consumption of alcohol at followup waves. To create this variable, all RECORD data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.   
 **R script**:  
 ```{r, echo=TRUE}
 MyMerge <- function(x,y){
@@ -213,7 +214,7 @@ lsb_RECORD_0<- merge(lsb_RECORD_0,alc_table_record[,c("id","lsb_alc_ever_0")],by
 1 |   Ever consumed alcohol  
 
 **Harmonization status**: complete    
-**Harmonization comment**:     
+**Harmonization comment**:   The harmonized variable "Ever consumption of alcohol" was created using "Ever consumption of alcohol" from baseline and previous waves and current consumption of alcohol at followup waves. To create this variable, all RECORD data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.   
 **R script**:  
 ```{r, echo=TRUE}
 #hrmonization scripts
@@ -987,7 +988,7 @@ lsb_RECORD_1$lsb_smk_status_1<- recode(as.numeric(RECORD_w2$Qm18),'1'=0L,'2'=2L,
 1 |   Ever smoked tobacco  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   All  RECORD data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
 **R script**:  
 ```{r, echo=TRUE}
 #hrmonization scripts
@@ -1008,7 +1009,7 @@ lsb_RECORD_0<- merge(lsb_RECORD_0,alc_table_record[,c("id","lsb_smk_ever_0")],by
 1 |   Ever smoked tobacco  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   For followup waves, the harmonized variable was created using "Ever tobacco smoking" from baseline and previous waves and current tobacco use at followup waves. To create this variable, all RECORD data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
 **R script**:  
 ```{r, echo=TRUE}
 #hrmonization scripts
@@ -1122,10 +1123,10 @@ lsb_RECORD_1<- merge(lsb_RECORD_1,alc_table_record[,c("id","lsb_smk_ever_1")],by
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   Was recoded to 0 when the participant responded no to "current tobacco smoking".  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_cig_qty_0<- as.integer(RECORD_w1_1$Qm17a)
+lsb_RECORD_0$lsb_cig_qty_0<-ifelse(lsb_RECORD_0$lsb_smk_cur_0==0,0,as.integer(RECORD_w1_1$Qm17a))
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
@@ -1136,10 +1137,10 @@ lsb_RECORD_0$lsb_cig_qty_0<- as.integer(RECORD_w1_1$Qm17a)
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   Was recoded to 0 when the participant responded no to "current tobacco smoking".  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_1$lsb_cig_qty_1<- as.integer(RECORD_w2$Qm19a)
+lsb_RECORD_1$lsb_cig_qty_1<- ifelse(lsb_RECORD_1$lsb_smk_cur_1==0,0,as.integer(RECORD_w2$Qm19a))
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
@@ -1419,10 +1420,10 @@ lsb_RECORD_1$lsb_cig_qty_1<- as.integer(RECORD_w2$Qm19a)
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   divided by (20*365) to change from cigaretteyears to packyears
+**Harmonization comment**:   divided by (20*365) to change from cigaretteyears to packyears. Was recoded to 0 when the participant responded no to "ever tobacco smoking".  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_smk_py_0<- ifelse(as.numeric(is.na(RECORD_w1_2$packyear_current)), (as.numeric(RECORD_w1_2$packyear_former)/7300), (as.numeric(RECORD_w1_2$packyear_current))/7300)
+lsb_RECORD_0$lsb_smk_py_0<- ifelse(lsb_RECORD_0$lsb_smk_ever_0==0,0,ifelse(as.numeric(is.na(RECORD_w1_2$packyear_current)), (as.numeric(RECORD_w1_2$packyear_former)/7300), (as.numeric(RECORD_w1_2$packyear_current))/7300))
 
 ```  
 ### **Variable label**:  Pack years  
@@ -2488,10 +2489,10 @@ lsb_RECORD_0$lsb_pa_house_time_0 <- as.numeric(RECORD_w1_2$q28_autre_4_2)*60
 1 |  Does any sports or exercise
 
 **Harmonization status**:  complete    
-**Harmonization comment**:   study-specific variable "Done fitness sport previous 7 days".
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_pa_sport_0<- as.integer(RECORD_w1_2$fitness)
+lsb_RECORD_0$lsb_pa_sport_0<- recode(as.integer(RECORD_w1_1$Qm10),'1'=0L,'2'=1L,'3'=1L)
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_1  
