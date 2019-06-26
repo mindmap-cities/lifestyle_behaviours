@@ -29,7 +29,7 @@ lsb_RECORD_1 <- data.frame(id = RECORD_w2$id)
 
 ## When you are done with your work, logout of Opal server
 ```{r, echo=FALSE}
-opal.logout(erasmus_opal) 
+#opal.logout(erasmus_opal) 
 ```
 
 # Table of Contents
