@@ -13,25 +13,25 @@ library(data.table)
 # Create an opal object with the login information
 erasmus_opal <- opal.login()
 #Login to Opal server and assign the content of the LUCAS table(s) to your RStudio environment
-opal.assign.table.tibble(erasmus_opal, 'LASA1B', 'LASA.LASA1B',variables = list('bmvar24','bmvar27','bmvar26','bmvar28','bmvar29','bmvar31','bmvar35','bmvar34','bmvar33','blphya06','blphya07','blphya09','blphya13','blphya11','blphya17','blphya15','blphya19','blphya21','blphya25','blphya24','blphya28','bcesd11','bqsleep2','bmvar44','bmvar41','bmvar38','bmvar32','blphya08','blphya14','blphya31','blphya35','blphya17','blphya15','blphya32','blphya36','blphya10','bmvar37','bage','blphya12','bqsleep1','bmvar37p','bmvar25','blphya16','blphya14','blphya18','blphya37','blphya34','blphya34','blphya38','blphya33','bage'))
+opal.assign.table.tibble(erasmus_opal, 'LASA1B', 'LASA.LASA1B',variables = list('bmvar24','bmvar27','bmvar26','bmvar28','bmvar29','bmvar31','bmvar35','bmvar34','bmvar33','blphya06','blphya07','blphya09','blphya13','blphya11','blphya17','blphya15','blphya19','blphya21','blphya25','blphya24','blphya28','bcesd11','bqsleep2','bmvar44','bmvar41','bmvar38','bmvar32','blphya08','blphya14','blphya31','blphya35','blphya17','blphya15','blphya32','blphya36','blphya10','bmvar37','bage','blphya12','bqsleep1','bmvar37p','bmvar25','blphya16','blphya14','blphya18','blphya37','blphya34','blphya34','blphya38','blphya33','bage','blphya21','blphya25'))
 LASA1B <- opal.execute(erasmus_opal,'LASA1B')
 
-opal.assign.table.tibble(erasmus_opal, 'LASA1C', 'LASA.LASA1C',variables = list('cmvar24','cmvar25a','cmvar351','cmvar353','cmvar352','cmvar34','cmvar33','cmvar32','cmvar351','cmvar31','clphya07','clphya09','clphya11','clphya10','clphya13','clphya12','clphya22','clphya24','clphya26','clphya21','clphya25','clphya28','ccesd11','cqsleep2','clphya08','clphya14','clphya32','clphya36','clphya17','clphya18','clphya16','clphya32','clphya31','clphya38','clphya37','clphya15','clphya14','cmvar24','cmvar28','cmvar29','cmvar36','cmvar351','clphya19','cqsleep1','clphya06','clphya33','clphya34','clphya35','cage'))
+opal.assign.table.tibble(erasmus_opal, 'LASA1C', 'LASA.LASA1C',variables = list('cmvar24','cmvar25a','cmvar351','cmvar353','cmvar352','cmvar34','cmvar33','cmvar32','cmvar351','cmvar31','clphya07','clphya09','clphya11','clphya10','clphya13','clphya12','clphya22','clphya24','clphya26','clphya21','clphya25','clphya28','ccesd11','cqsleep2','clphya08','clphya14','clphya32','clphya36','clphya17','clphya18','clphya16','clphya32','clphya31','clphya38','clphya37','clphya15','clphya14','cmvar24','cmvar28','cmvar29','cmvar36','cmvar351','clphya19','cqsleep1','clphya06','clphya33','clphya34','clphya35','cage','clphya21','clphya25'))
 LASA1C <- opal.execute(erasmus_opal,'LASA1C')
 
-opal.assign.table.tibble(erasmus_opal, 'LASA1D', 'LASA.LASA1D',variables = list('dmalcohu','dmalcoh6','dmvar31','dmvar35','dmvar32','dmvar33','dmvar34','dmvar40','dmvar37','dlphya08','dlphya09','dlphya07','dlphya06','dlphya10','dlphya13','dlphya11','dlphya12','dlphya15','dlphya18','dlphya19','dlphya17','dlphya35','dlphya38','dlphya31','dmvar30','dlphya32','dlphya34','dlphya33','dlphya36','dlphya37','dcesd11','dqsleep2','dlphya14','dlphya32','dlphya36','dlphya17','dlphya15','dlphya14','dmalcohu','dqsleep1','dmvar38','dmalcohn','dmalcohd','dage'))
+opal.assign.table.tibble(erasmus_opal, 'LASA1D', 'LASA.LASA1D',variables = list('dmalcohu','dmalcoh6','dmvar31','dmvar35','dmvar32','dmvar33','dmvar34','dmvar40','dmvar37','dlphya08','dlphya09','dlphya07','dlphya06','dlphya10','dlphya13','dlphya11','dlphya12','dlphya15','dlphya18','dlphya19','dlphya17','dlphya35','dlphya38','dlphya31','dmvar30','dlphya32','dlphya34','dlphya33','dlphya36','dlphya37','dcesd11','dqsleep2','dlphya14','dlphya32','dlphya36','dlphya17','dlphya15','dlphya14','dmalcohu','dqsleep1','dmvar38','dmalcohn','dmalcohd','dage','dlphya21','dlphya25'))
 LASA1D <- opal.execute(erasmus_opal,'LASA1D')
 
-opal.assign.table.tibble(erasmus_opal, 'LASA1E', 'LASA.LASA1E',variables = list('emalcohu','emalcoh6','emvar32','emvar31','emvar33','emvar35','emvar34','elphya08','elphya07','elphya09','elphya06','elphya10','elphya13','elphya11','elphya12','elphya15','elphya18','elphya17','elphya19','elphya37','elphya36','elphya35','elphya34','elphya38','elphya32','elphya33','elphya31','ecesd11','eqsleep2','elphya14','elphya32','elphya36','elphya17','elphya15','elphya14','emalcohu','eqsleep1','emvar37','emalcohd','emalcohn','eage'))
+opal.assign.table.tibble(erasmus_opal, 'LASA1E', 'LASA.LASA1E',variables = list('emalcohu','emalcoh6','emvar32','emvar31','emvar33','emvar35','emvar34','elphya08','elphya07','elphya09','elphya06','elphya10','elphya13','elphya11','elphya12','elphya15','elphya18','elphya17','elphya19','elphya37','elphya36','elphya35','elphya34','elphya38','elphya32','elphya33','elphya31','ecesd11','eqsleep2','elphya14','elphya32','elphya36','elphya17','elphya15','elphya14','emalcohu','eqsleep1','emvar37','emalcohd','emalcohn','eage','elphya21','elphya25'))
 LASA1E <- opal.execute(erasmus_opal,'LASA1E')
 
-opal.assign.table.tibble(erasmus_opal, 'LASA1F', 'LASA.LASA1F',variables = list('fmalcoh6','fmalcohd','fmalcohu','fmvar34','fmvar33','fmvar32','fmvar31','flphya08','flphya07','flphya09','flphya06','flphya10','flphya11','flphya13','flphya12','flphya18','flphya15','flphya17','flphya19','flphya37','flphya32','flphya33','flphya36','flphya34','flphya38','flphya31','flphya35','fcesd11','fqsleep2','flphya14','flphya32','flphya36','flphya17','flphya15','flphya14','fmalcohu','fqsleep1','fmvar35','fmvar37','fmalcohd','fmalcohn','flphya13','flphya12','fage'))
+opal.assign.table.tibble(erasmus_opal, 'LASA1F', 'LASA.LASA1F',variables = list('fmalcoh6','fmalcohd','fmalcohu','fmvar34','fmvar33','fmvar32','fmvar31','flphya08','flphya07','flphya09','flphya06','flphya10','flphya11','flphya13','flphya12','flphya18','flphya15','flphya17','flphya19','flphya37','flphya32','flphya33','flphya36','flphya34','flphya38','flphya31','flphya35','fcesd11','fqsleep2','flphya14','flphya32','flphya36','flphya17','flphya15','flphya14','fmalcohu','fqsleep1','fmvar35','fmvar37','fmalcohd','fmalcohn','flphya13','flphya12','fage','flphya21','flphya25'))
 LASA1F <- opal.execute(erasmus_opal,'LASA1F')
 
-opal.assign.table.tibble(erasmus_opal, 'LASA1G', 'LASA.LASA1G',variables = list('gmalcoh6','gmalcohn','gmalcohu','gmvar34','gmvar33','gmvar31','gmvar32','glphya08','glphya07','glphya09','glphya06','glphya10','glphya13','glphya11','glphya12','glphya14','glphya17','glphya15','glphya18','glphya19','glphya36','glphya37','glphya34','glphya32','glphya33','glphya38','glphya31','glphya35','gcesd11','gqsleep2','gqsleep5','glphya14','glphya32','glphya36','glphya17','glphya15','glphya14','gmalcohu','gqsleep1','gmvar35','gmvar37','gmalcohd','gmalcohn','gage'))
+opal.assign.table.tibble(erasmus_opal, 'LASA1G', 'LASA.LASA1G',variables = list('gmalcoh6','gmalcohn','gmalcohu','gmvar34','gmvar33','gmvar31','gmvar32','glphya08','glphya07','glphya09','glphya06','glphya10','glphya13','glphya11','glphya12','glphya14','glphya17','glphya15','glphya18','glphya19','glphya36','glphya37','glphya34','glphya32','glphya33','glphya38','glphya31','glphya35','gcesd11','gqsleep2','gqsleep5','glphya14','glphya32','glphya36','glphya17','glphya15','glphya14','gmalcohu','gqsleep1','gmvar35','gmvar37','gmalcohd','gmalcohn','gage','glphya21','glphya25'))
 LASA1G <- opal.execute(erasmus_opal,'LASA1G')
 
-opal.assign.table.tibble(erasmus_opal, 'LASA1H', 'LASA.LASA1H',variables = list('HMALCOHN','HMALCOH6','HMALCOHU','HMVAR34','HMVAR33','HMVAR31','HMVAR32','HLPHYA08','HLPHYA09','HLPHYA07','HLPHYA06','HLPHYA10','HLPHYA13','HLPHYA11','HLPHYA12','HLPHYA15','HLPHYA17','HLPHYA14','HLPHYA18','HLPHYA19','HLPHYA32','HLPHYA36','HLPHYA33','HLPHYA37','HLPHYA34','HLPHYA38','HLPHYA35','HLPHYA31','hcesd11','hqsleepm','hqsleep2','hqsleep5','hqsleeph','HLPHYA14','HLPHYA32','HLPHYA36','HLPHYA17','HLPHYA15','HLPHYA14','HMALCOHU','hqsleep1','HMVAR31','HMVAR37','HMVAR35','HMALCOHD','HMALCOHN','hage'))
+opal.assign.table.tibble(erasmus_opal, 'LASA1H', 'LASA.LASA1H',variables = list('HMALCOHN','HMALCOH6','HMALCOHU','HMVAR34','HMVAR33','HMVAR31','HMVAR32','HLPHYA08','HLPHYA09','HLPHYA07','HLPHYA06','HLPHYA10','HLPHYA13','HLPHYA11','HLPHYA12','HLPHYA15','HLPHYA17','HLPHYA14','HLPHYA18','HLPHYA19','HLPHYA32','HLPHYA36','HLPHYA33','HLPHYA37','HLPHYA34','HLPHYA38','HLPHYA35','HLPHYA31','hcesd11','hqsleepm','hqsleep2','hqsleep5','hqsleeph','HLPHYA14','HLPHYA32','HLPHYA36','HLPHYA17','HLPHYA15','HLPHYA14','HMALCOHU','hqsleep1','HMVAR31','HMVAR37','HMVAR35','HMALCOHD','HMALCOHN','hage','HLPHYA21','HLPHYA25'))
 LASA1H <- opal.execute(erasmus_opal,'LASA1H')
 
 opal.assign.table.tibble(erasmus_opal,'LASA_extravar_PA','LASA.LASA_extravar_PA')
@@ -270,7 +270,7 @@ lsb_LASA1_2 <- merge(lsb_LASA1_2, lasa1_lsb_table[,c("id","lsb_alc_ever_2")],by=
 1 |   Ever consumed alcohol  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   **Harmonization comment**:  The harmonized variable "Ever consumption of alcohol" was created using "Ever consumption of alcohol" from baseline and previous waves and current consumption of alcohol at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.   
+**Harmonization comment**:   The harmonized variable "Ever consumption of alcohol" was created using "Ever consumption of alcohol" from baseline and previous waves and current consumption of alcohol at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.   
 **R script**:  
 ```{r, echo=TRUE}
 #Harmonization scripts to create "ever drank alcohol" for all participants in all waves
@@ -1364,7 +1364,7 @@ lsb_LASA1_6$lsb_smk_start_6 <- ifelse(as.integer(LASA1H$HMVAR33)< 0, NA, as.inte
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_0$lsb_smk_start_0 <- ifelse(as.integer(LASA1B$bmvar34)< 0, NA, as.integer(LASA1B$bmvar34))
+lsb_LASA1_0$lsb_smk_stop_0 <- ifelse(as.integer(LASA1B$bmvar34)< 0, NA, as.integer(LASA1B$bmvar34))
 ```  
 ### **Variable label**:  Smoking cessation age  
 **Variable name**:  lsb_smk_stop_1   
@@ -1377,7 +1377,7 @@ lsb_LASA1_0$lsb_smk_start_0 <- ifelse(as.integer(LASA1B$bmvar34)< 0, NA, as.inte
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_1$lsb_smk_start_1 <- ifelse(as.integer(LASA1C$cmvar34)< 0, NA, as.integer(LASA1C$cmvar34))
+lsb_LASA1_1$lsb_smk_stop_1 <- ifelse(as.integer(LASA1C$cmvar34)< 0, NA, as.integer(LASA1C$cmvar34))
 ```  
 ### **Variable label**:  Smoking cessation age  
 **Variable name**:  lsb_smk_stop_2   
@@ -1390,7 +1390,7 @@ lsb_LASA1_1$lsb_smk_start_1 <- ifelse(as.integer(LASA1C$cmvar34)< 0, NA, as.inte
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_2$lsb_smk_start_2 <- ifelse(as.integer(LASA1D$dmvar34)< 0, NA, as.integer(LASA1D$dmvar34))
+lsb_LASA1_2$lsb_smk_stop_2 <- ifelse(as.integer(LASA1D$dmvar34)< 0, NA, as.integer(LASA1D$dmvar34))
 ```  
 ### **Variable label**:  Smoking cessation age  
 **Variable name**:  lsb_smk_stop_3   
@@ -1403,7 +1403,7 @@ lsb_LASA1_2$lsb_smk_start_2 <- ifelse(as.integer(LASA1D$dmvar34)< 0, NA, as.inte
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_3$lsb_smk_start_3 <- ifelse(as.integer(LASA1E$emvar34)< 0, NA, as.integer(LASA1E$emvar34))
+lsb_LASA1_3$lsb_smk_stop_3 <- ifelse(as.integer(LASA1E$emvar34)< 0, NA, as.integer(LASA1E$emvar34))
 ```  
 ### **Variable label**:  Smoking cessation age  
 **Variable name**:  lsb_smk_stop_4   
@@ -1416,7 +1416,7 @@ lsb_LASA1_3$lsb_smk_start_3 <- ifelse(as.integer(LASA1E$emvar34)< 0, NA, as.inte
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_4$lsb_smk_start_4 <- ifelse(as.integer(LASA1F$fmvar34)< 0, NA, as.integer(LASA1F$fmvar34))
+lsb_LASA1_4$lsb_smk_stop_4 <- ifelse(as.integer(LASA1F$fmvar34)< 0, NA, as.integer(LASA1F$fmvar34))
 ```  
 ### **Variable label**:  Smoking cessation age  
 **Variable name**:  lsb_smk_stop_5   
@@ -1429,7 +1429,7 @@ lsb_LASA1_4$lsb_smk_start_4 <- ifelse(as.integer(LASA1F$fmvar34)< 0, NA, as.inte
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_5$lsb_smk_start_5 <- ifelse(as.integer(LASA1G$gmvar34)< 0, NA, as.integer(LASA1G$gmvar34))
+lsb_LASA1_5$lsb_smk_stop_5 <- ifelse(as.integer(LASA1G$gmvar34)< 0, NA, as.integer(LASA1G$gmvar34))
 ```  
 ### **Variable label**:  Smoking cessation age  
 **Variable name**:  lsb_smk_stop_6   
@@ -1442,7 +1442,7 @@ lsb_LASA1_5$lsb_smk_start_5 <- ifelse(as.integer(LASA1G$gmvar34)< 0, NA, as.inte
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_6$lsb_smk_start_6 <- ifelse(as.integer(LASA1H$HMVAR34)< 0, NA, as.integer(LASA1H$HMVAR34))
+lsb_LASA1_6$lsb_smk_stop_6 <- ifelse(as.integer(LASA1H$HMVAR34)< 0, NA, as.integer(LASA1H$HMVAR34))
 ```  
 
 ### **Variable label**:  Pack years  
@@ -2570,11 +2570,12 @@ lsb_LASA1_6$lsb_pa_house_time_6<- rowSums(cbind(LASA1H$lsb_pa_house_time_6_inter
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_LASA1_0$lsb_pa_sport_0<-ifelse(LASA1B$blphya21==1 | LASA1B$blphya25==1,0,
+                                   ifelse(LASA1B$blphya21==2 | LASA1B$blphya25==2,1,NA))
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_1  
@@ -2588,11 +2589,12 @@ lsb_LASA1_6$lsb_pa_house_time_6<- rowSums(cbind(LASA1H$lsb_pa_house_time_6_inter
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete   
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_LASA1_1$lsb_pa_sport_1<-ifelse(LASA1C$clphya21==1 | LASA1C$clphya25==1,0,
+                                   ifelse(LASA1C$clphya21==2 | LASA1C$clphya25==2,1,NA))
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_2  
@@ -2606,11 +2608,12 @@ lsb_LASA1_6$lsb_pa_house_time_6<- rowSums(cbind(LASA1H$lsb_pa_house_time_6_inter
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_LASA1_2$lsb_pa_sport_2<-ifelse(LASA1D$dlphya21==1 | LASA1D$dlphya25==1,0,
+                                   ifelse(LASA1D$dlphya21==2 | LASA1D$dlphya25==2,1,NA))
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_3  
@@ -2624,11 +2627,12 @@ lsb_LASA1_6$lsb_pa_house_time_6<- rowSums(cbind(LASA1H$lsb_pa_house_time_6_inter
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_LASA1_3$lsb_pa_sport_3<-ifelse(LASA1E$elphya21==1 | LASA1E$elphya25==1,0,
+                                   ifelse(LASA1E$elphya21==2 | LASA1E$elphya25==2,1,NA))
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_4  
@@ -2642,11 +2646,12 @@ lsb_LASA1_6$lsb_pa_house_time_6<- rowSums(cbind(LASA1H$lsb_pa_house_time_6_inter
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_LASA1_4$lsb_pa_sport_4<-ifelse(LASA1F$flphya21==1 | LASA1F$flphya25==1,0,
+                                   ifelse(LASA1F$flphya21==2 | LASA1F$flphya25==2,1,NA))
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_5  
@@ -2660,11 +2665,12 @@ lsb_LASA1_6$lsb_pa_house_time_6<- rowSums(cbind(LASA1H$lsb_pa_house_time_6_inter
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete     
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_LASA1_5$lsb_pa_sport_5<-ifelse(LASA1G$glphya21==1 | LASA1G$glphya25==1,0,
+                                   ifelse(LASA1G$glphya21==2 | LASA1G$glphya25==2,1,NA))
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_6  
@@ -2678,11 +2684,12 @@ lsb_LASA1_6$lsb_pa_house_time_6<- rowSums(cbind(LASA1H$lsb_pa_house_time_6_inter
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
+lsb_LASA1_6$lsb_pa_sport_6<-ifelse(LASA1H$HLPHYA21==1 | LASA1H$HLPHYA25==1,0,
+                                   ifelse(LASA1H$HLPHYA21==2 | LASA1H$HLPHYA25==2,1,NA))
 ```   
 
 ### **Variable label**:  Average sports or exercise time       
@@ -3087,7 +3094,7 @@ lsb_LASA1_6$lsb_pa_house_time_6<- rowSums(cbind(LASA1H$lsb_pa_house_time_6_inter
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:   
+**Harmonization comment**:   Study specific asks "hours sleep in 24 hours".  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_0$lsb_sleep_hours_0 <- ifelse(as.integer(LASA1B$bqsleep1)<0,NA, as.integer(LASA1B$bqsleep1))
@@ -3100,7 +3107,7 @@ lsb_LASA1_0$lsb_sleep_hours_0 <- ifelse(as.integer(LASA1B$bqsleep1)<0,NA, as.int
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:    
+**Harmonization comment**:    Study specific asks "hours sleep in 24 hours".  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_1$lsb_sleep_hours_1 <- ifelse(as.integer(LASA1C$cqsleep1)<0,NA, as.integer(LASA1C$cqsleep1))
@@ -3113,7 +3120,7 @@ lsb_LASA1_1$lsb_sleep_hours_1 <- ifelse(as.integer(LASA1C$cqsleep1)<0,NA, as.int
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:    
+**Harmonization comment**:    Study specific asks "hours sleep in 24 hours".  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_2$lsb_sleep_hours_2 <- ifelse(as.integer(LASA1D$dqsleep1)<0,NA, as.integer(LASA1D$dqsleep1))
@@ -3126,7 +3133,7 @@ lsb_LASA1_2$lsb_sleep_hours_2 <- ifelse(as.integer(LASA1D$dqsleep1)<0,NA, as.int
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:     
+**Harmonization comment**:     Study specific asks  "hours sleep in 24 hours".  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_3$lsb_sleep_hours_3 <- ifelse(as.integer(LASA1E$eqsleep1)<0,NA, as.integer(LASA1E$eqsleep1))
@@ -3139,7 +3146,7 @@ lsb_LASA1_3$lsb_sleep_hours_3 <- ifelse(as.integer(LASA1E$eqsleep1)<0,NA, as.int
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:     
+**Harmonization comment**:     Study specific asks  "hours sleep in 24 hours".  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_LASA1_4$lsb_sleep_hours_4 <- ifelse(as.integer(LASA1F$fqsleep1)<0,NA, as.integer(LASA1F$fqsleep1))
@@ -3152,10 +3159,10 @@ lsb_LASA1_4$lsb_sleep_hours_4 <- ifelse(as.integer(LASA1F$fqsleep1)<0,NA, as.int
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:     
+**Harmonization comment**:     Study specific asks  "minutes sleep in 24 hours".  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_5$lsb_sleep_hours_5 <- ifelse(as.integer(LASA1G$gqsleep1)<0,NA, as.integer(LASA1G$gqsleep1))
+lsb_LASA1_5$lsb_sleep_hours_5 <- ifelse(as.integer(LASA1G$gqsleep1)<0,NA, as.integer(LASA1G$gqsleep1)/60)
 ``` 
 
 ### **Variable label**:  Difficulty falling a sleep  
