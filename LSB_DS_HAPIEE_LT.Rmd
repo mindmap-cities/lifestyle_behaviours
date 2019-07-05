@@ -1305,7 +1305,7 @@ lsb_HAPIEE_LT_0$lsb_smk_start_0<-as.integer(HAPIEE_W2$l41_lt)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HAPIEE_LT_0$lsb_smk_stop_0<-as.integer(HAPIEE_W1$l42)
+lsb_HAPIEE_LT_0$lsb_smk_stop_0<-as.integer(HAPIEE_W2$w2l42)
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -2458,11 +2458,10 @@ lsb_HAPIEE_LT_0$lsb_smk_py_0<-as.integer(HAPIEE_W2$d_packyrs_lt)
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  complete  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HAPIEE_LT_0$lsb_pa_sport_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_W1$l38>0,1L,NA))
 
 
 ```   
@@ -2595,12 +2594,11 @@ lsb_HAPIEE_LT_0$lsb_pa_sport_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_W1$l3
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week  
 
-**Harmonization status**:   complete  
+**Harmonization status**:   impossible 
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
-lsb_HAPIEE_LT_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_W1$l38>0 & HAPIEE_W1$l38<1,1L, ifelse(HAPIEE_W1$l38>=1 & HAPIEE_W1$l38<=2,2L,ifelse(HAPIEE_W1$l38>2,3,NA))))
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
