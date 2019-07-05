@@ -327,7 +327,7 @@ lsb_HAPIEE_RU_1$lsb_alc_cur_1<-ifelse(HAPIEE_W2$d_w2alcfreq==1,0,
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:  The question asked was "How often in last year have 5+ drinks in 1 day?"
+**Harmonization comment**:  Study-specific variable "How often in last year have 5+ drinks in 1 day?" defines binge drinking as have five or more drinks.  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_RU_0$lsb_alc_binge_0<-recode(as.integer(HAPIEE_W1$d_al5day),"1"=3L,"2"=3L,"3"=2L,"4"=1L,"5"=1L,"6"=1L,"7"=1L,"8"=1L,"9"=1L)
@@ -347,7 +347,7 @@ lsb_HAPIEE_RU_0$lsb_alc_binge_0<-recode(as.integer(HAPIEE_W1$d_al5day),"1"=3L,"2
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:  The question asked was "How often in last year have 5+ drinks in 1 day?" 
+**Harmonization comment**:  Study-specific variable "How often in last year have 5+ drinks in 1 day?" defines binge drinking as have five or more drinks.  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_RU_1$lsb_alc_binge_1<-recode(as.integer(HAPIEE_W2$w2al1),"1"=3L,"2"=3L,"3"=2L,"4"=1L,"5"=1L,"6"=1L,"7"=1L,"8"=1L,"9"=1L)
@@ -705,7 +705,8 @@ lsb_HAPIEE_RU_1$lsb_alc_liq_1<-HAPIEE_W2$d_w2dest_wk/0.05
 1 |   Currently smokes any tobacco product  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**: The study-specific variable used to harmonize the DataSchema variable 
+"Indicator of whether the participant currently smokes any tobacco product" is "Do you smoke cigarettes?". The question was not asked for any other type of tobacco product.    
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_RU_0$lsb_smk_cur_0<-recode(as.integer(HAPIEE_W1$l39),"1"=1L,"2"=1L,"3"=0L,"4"=0L)
@@ -724,7 +725,8 @@ lsb_HAPIEE_RU_0$lsb_smk_cur_0<-recode(as.integer(HAPIEE_W1$l39),"1"=1L,"2"=1L,"3
 1 |   Currently smokes any tobacco product  
 
 **Harmonization status**:  complete      
-**Harmonization comment**:   
+**Harmonization comment**: The study-specific variable used to harmonize the DataSchema variable 
+"Indicator of whether the participant currently smokes any tobacco product" is "Do you smoke cigarettes?". The question was not asked for any other type of tobacco product.   
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_RU_1$lsb_smk_cur_1<-recode(as.integer(HAPIEE_W2$w2l39),"1"=1L,"2"=1L,"3"=0L,"4"=0L)
@@ -1109,7 +1111,7 @@ lsb_HAPIEE_RU_1$lsb_smk_ever_1<-recode(as.integer(HAPIEE_W2$w2l39),"1"=1L,"2"=1L
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:  Because the study-specific variable is "Current & past mokers: No. cigarettes per day you smoke/used to smoke if stopped", the DataSchema variable "Current average number of cigarettes smoked per day" was conditioned on "Do you smoke cigarettes?"   
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_RU_0$lsb_cig_qty_0<-ifelse(lsb_HAPIEE_RU_0$lsb_smk_cur_0==0,0,
@@ -1124,7 +1126,7 @@ lsb_HAPIEE_RU_0$lsb_cig_qty_0<-ifelse(lsb_HAPIEE_RU_0$lsb_smk_cur_0==0,0,
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   Because the study-specific variable is "Current & past mokers: No. cigarettes per day you smoke/used to smoke if stopped", the DataSchema variable "Current average number of cigarettes smoked per day" was conditioned on "Do you smoke cigarettes?"  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_RU_1$lsb_cig_qty_1<-ifelse(lsb_HAPIEE_RU_1$lsb_smk_cur_1==0,0,
@@ -1312,7 +1314,7 @@ lsb_HAPIEE_RU_0$lsb_smk_start_0<-as.integer(HAPIEE_W1$l41)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HAPIEE_RU_0$lsb_smk_stop_0<-ifelse(lsb_HAPIEE_RU_0$lsb_smk_ever_0==1,as.integer(HAPIEE_W1$l42),NA)
+lsb_HAPIEE_RU_0$lsb_smk_stop_0<-as.integer(HAPIEE_W1$l42)
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -1326,7 +1328,7 @@ lsb_HAPIEE_RU_0$lsb_smk_stop_0<-ifelse(lsb_HAPIEE_RU_0$lsb_smk_ever_0==1,as.inte
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_HAPIEE_RU_1$lsb_smk_stop_1<-ifelse(lsb_HAPIEE_RU_1$lsb_smk_ever_1==1,as.integer(HAPIEE_W2$w2l42),NA)
+lsb_HAPIEE_RU_1$lsb_smk_stop_1<-as.integer(HAPIEE_W2$w2l42)
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -2465,11 +2467,12 @@ lsb_HAPIEE_RU_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete   
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
+lsb_HAPIEE_RU_0$lsb_pa_sport_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_W1$l38>0,1L,NA))
 
 ```   
 ### **Variable label**: Sports or exercise      
@@ -2601,10 +2604,11 @@ lsb_HAPIEE_RU_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week  
 
-**Harmonization status**:   impossible   
+**Harmonization status**:   complete     
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_HAPIEE_RU_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_W1$l38>0 & HAPIEE_W1$l38<1,1L, ifelse(HAPIEE_W1$l38>=1 & HAPIEE_W1$l38<=2,2L,ifelse(HAPIEE_W1$l38>2,3,NA))))
 
 
 ```  
