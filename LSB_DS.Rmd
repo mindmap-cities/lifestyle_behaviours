@@ -1963,7 +1963,7 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -1982,7 +1982,7 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2001,7 +2001,7 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2020,7 +2020,7 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2039,7 +2039,7 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2058,7 +2058,7 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2077,7 +2077,7 @@ output: html_document
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -3073,7 +3073,7 @@ output: html_document
 
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_0  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3092,7 +3092,7 @@ output: html_document
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_1  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3111,7 +3111,7 @@ output: html_document
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_2    
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3129,7 +3129,7 @@ output: html_document
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_3  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3148,7 +3148,7 @@ output: html_document
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_4  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3167,7 +3167,7 @@ output: html_document
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_5  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    

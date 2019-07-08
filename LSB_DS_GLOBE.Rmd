@@ -393,7 +393,7 @@ lsb_GLOBE_1$lsb_alc_binge_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==0,1L,recode(as.in
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   Category "2 to 4 times a momth" was recoded to "0 to 3 times a month".  
+**Harmonization comment**:   Category "2 to 4 times a month" was recoded to "0 to 3 times a month".  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.integer(GLOBE2011$v14_alc_binge),"1"=3,"2"=3,"3"=2,"4"=1,"5"=1,"6"=1,"7"=1))
@@ -2026,7 +2026,7 @@ lsb_GLOBE_4$lsb_pa_cycle_4<-GLOBE2014$G14v28_b_dag*(GLOBE2014$G14v28_b_uur*60+GL
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2045,7 +2045,7 @@ lsb_GLOBE_4$lsb_pa_cycle_4<-GLOBE2014$G14v28_b_dag*(GLOBE2014$G14v28_b_uur*60+GL
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2064,7 +2064,7 @@ lsb_GLOBE_4$lsb_pa_cycle_4<-GLOBE2014$G14v28_b_dag*(GLOBE2014$G14v28_b_uur*60+GL
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  complete  
 **Harmonization comment**:   
@@ -2084,7 +2084,7 @@ lsb_GLOBE_2$lsb_pa_garden_2<-ifelse(GLOBE2004$w105==0,0L,
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  complete  
 **Harmonization comment**:   
@@ -2104,7 +2104,7 @@ lsb_GLOBE_3$lsb_pa_garden_3<-ifelse(GLOBE2011$v19_c_tuda==0,0L,
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  complete  
 **Harmonization comment**:   
@@ -2124,7 +2124,7 @@ lsb_GLOBE_4$lsb_pa_garden_4<-ifelse(GLOBE2014$G14v29_c_dag==0,0L,
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2143,7 +2143,7 @@ lsb_GLOBE_4$lsb_pa_garden_4<-ifelse(GLOBE2014$G14v29_c_dag==0,0L,
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -3175,7 +3175,7 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_0  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3194,7 +3194,7 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_1  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3213,7 +3213,7 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_2    
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3231,7 +3231,7 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_3  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3250,7 +3250,7 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_4  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3269,7 +3269,7 @@ lsb_GLOBE_0$lsb_coffee_qty_0<-GLOBE1991$v131
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_5  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
