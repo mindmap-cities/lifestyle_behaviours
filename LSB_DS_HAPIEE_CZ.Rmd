@@ -637,7 +637,7 @@ lsb_HAPIEE_CZ_1$lsb_alc_beer_1<-HAPIEE_W2$d_w2beer_wk/0.5
  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   One standard drink was defined as 0.5 l of beer, 2 dl of wine or 50 ml of spirits, which roughly equals 20 g ethanol.  Current quantity of spirits consumed eper week was taken.   
+**Harmonization comment**:   One standard drink was defined as 0.5 l of beer, 2 dl of wine or 50 ml of spirits, which roughly equals 20 g ethanol.  Current quantity of spirits consumed per week was taken.   
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_CZ_0$lsb_alc_liq_0<-HAPIEE_W1$d_dest_wk/0.05
@@ -652,7 +652,7 @@ lsb_HAPIEE_CZ_0$lsb_alc_liq_0<-HAPIEE_W1$d_dest_wk/0.05
  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:  One standard drink was defined as 0.5 l of beer, 2 dl of wine or 50 ml of spirits, which roughly equals 20 g ethanol. Current quantity of spirits consumed eper week was taken.   
+**Harmonization comment**:  One standard drink was defined as 0.5 l of beer, 2 dl of wine or 50 ml of spirits, which roughly equals 20 g ethanol. Current quantity of spirits consumed per week was taken.   
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_CZ_1$lsb_alc_liq_1<-HAPIEE_W2$d_w2dest_wk/0.05
@@ -2000,7 +2000,7 @@ lsb_HAPIEE_CZ_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2019,7 +2019,7 @@ lsb_HAPIEE_CZ_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2038,7 +2038,7 @@ lsb_HAPIEE_CZ_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2057,7 +2057,7 @@ lsb_HAPIEE_CZ_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2076,7 +2076,7 @@ lsb_HAPIEE_CZ_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2095,7 +2095,7 @@ lsb_HAPIEE_CZ_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2114,7 +2114,7 @@ lsb_HAPIEE_CZ_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -3112,7 +3112,7 @@ lsb_HAPIEE_CZ_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_0  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3131,7 +3131,7 @@ lsb_HAPIEE_CZ_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_1  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3150,7 +3150,7 @@ lsb_HAPIEE_CZ_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_2    
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3168,7 +3168,7 @@ lsb_HAPIEE_CZ_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_3  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3187,7 +3187,7 @@ lsb_HAPIEE_CZ_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_4  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3206,7 +3206,7 @@ lsb_HAPIEE_CZ_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_5  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    

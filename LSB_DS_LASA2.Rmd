@@ -1448,7 +1448,7 @@ lsb_LASA2_2$lsb_smk_py_2 <- ifelse(as.numeric(LASA2G$gage) < lsb_LASA2_2$lsb_smk
 3 |  Often (5-7 days)  
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific asks for number of times walked outside in the past two weeks, not number of days the partcicipant went for a walk.  
+**Harmonization comment**:   Study-specific asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1463,12 +1463,12 @@ lsb_LASA2_2$lsb_smk_py_2 <- ifelse(as.numeric(LASA2G$gage) < lsb_LASA2_2$lsb_smk
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific asks for number of times walked outside in the past two weeks, not number of days the partcicipant went for a walk.  
+**Harmonization comment**:   Study-specific asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1483,12 +1483,12 @@ lsb_LASA2_2$lsb_smk_py_2 <- ifelse(as.numeric(LASA2G$gage) < lsb_LASA2_2$lsb_smk
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific asks for number of times walked outside in the past two weeks, not number of days the partcicipant went for a walk.  
+**Harmonization comment**:   Study-specific asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1503,12 +1503,12 @@ lsb_LASA2_2$lsb_smk_py_2 <- ifelse(as.numeric(LASA2G$gage) < lsb_LASA2_2$lsb_smk
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific asks for number of times walked outside in the past two weeks, not number of days the partcicipant went for a walk.  
+**Harmonization comment**:   Study-specific asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1523,7 +1523,7 @@ lsb_LASA2_2$lsb_smk_py_2 <- ifelse(as.numeric(LASA2G$gage) < lsb_LASA2_2$lsb_smk
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1543,7 +1543,7 @@ lsb_LASA2_2$lsb_smk_py_2 <- ifelse(as.numeric(LASA2G$gage) < lsb_LASA2_2$lsb_smk
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1563,7 +1563,7 @@ lsb_LASA2_2$lsb_smk_py_2 <- ifelse(as.numeric(LASA2G$gage) < lsb_LASA2_2$lsb_smk
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |  Never  
-1 |  Seldom (1-2 dyas)  
+1 |  Seldom (1-2 days)  
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
@@ -1979,7 +1979,7 @@ lsb_LASA2_3$lsb_pa_cycle_3 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  complete   
 **Harmonization comment**:   
@@ -2002,7 +2002,7 @@ lsb_LASA2_0$lsb_pa_garden_0 <- ifelse(LASA_extravar_PA$blphya01[LASA_extravar_PA
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  complete  
 **Harmonization comment**:   
@@ -2024,7 +2024,7 @@ lsb_LASA2_1$lsb_pa_garden_1 <- ifelse(LASA_extravar_PA$flphya01[LASA_extravar_PA
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  complete  
 **Harmonization comment**:   
@@ -2046,7 +2046,7 @@ lsb_LASA2_2$lsb_pa_garden_2 <- ifelse(LASA_extravar_PA$glphya01[LASA_extravar_PA
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  complete  
 **Harmonization comment**:   
@@ -2068,7 +2068,7 @@ lsb_LASA2_3$lsb_pa_garden_3 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2086,7 +2086,7 @@ lsb_LASA2_3$lsb_pa_garden_3 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2104,7 +2104,7 @@ lsb_LASA2_3$lsb_pa_garden_3 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -3048,7 +3048,7 @@ lsb_LASA2_3$lsb_sleep_hours_3 <- ifelse(as.integer(LASA2H$hqsleep1)<0,NA, (as.in
 
 ### **Variable label**:  Difficulty falling a sleep  
 **Variable name**:  lsb_sleep_diff_0  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling a sleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3066,7 +3066,7 @@ lsb_LASA2_0$lsb_sleep_diff_0 <- recode(as.integer(LASA2B$bqsleep2),'1'=0L,'2'=1L
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
 **Variable name**:  lsb_sleep_diff_1  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling a sleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3084,7 +3084,7 @@ lsb_LASA2_1$lsb_sleep_diff_1 <- recode(as.integer(LASA2F$fqsleep2),'1'=0L,'2'=1L
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
 **Variable name**:  lsb_sleep_diff_2    
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling a sleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3102,7 +3102,7 @@ lsb_LASA2_2$lsb_sleep_diff_2 <- recode(as.integer(LASA2G$gqsleep2),'1'=0L,'2'=1L
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
 **Variable name**:  lsb_sleep_diff_3  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling a sleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3120,7 +3120,7 @@ lsb_LASA2_3$lsb_sleep_diff_3 <- recode(as.integer(LASA2H$hqsleep2),'1'=0L,'2'=1L
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
 **Variable name**:  lsb_sleep_diff_4  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling a sleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3138,7 +3138,7 @@ lsb_LASA2_3$lsb_sleep_diff_3 <- recode(as.integer(LASA2H$hqsleep2),'1'=0L,'2'=1L
 ```  
 ### **Variable label**:  Difficulty falling a sleep  
 **Variable name**:  lsb_sleep_diff_5  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling a sleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling a sleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    

@@ -955,7 +955,7 @@ lsb_HUNT_2$lsb_smk_status_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1),'0'=0L,'1
 1 |   Ever smoked tobacco  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   Missing or NO (value 0) recoded to YES if reported time since smoking cessation AND/OR answered questions about smoking status in HUNT2 and/or HUNT3 which correspondes to smoking cessation before HUNT1. NO or YES were recoded to MISSING if answered YES to smoking cigarettes daily AND without time since smoking cessation AND answered questions about smoking status in HUNT2 and/or HUNT3 which correspondes to still smoking daily or smoking cessation after participating in HUNT1.  
+**Harmonization comment**:   Missing or NO (value 0) recoded to YES if reported time since smoking cessation AND/OR answered questions about smoking status in HUNT2 and/or HUNT3 which corresponds to smoking cessation before HUNT1. NO or YES were recoded to MISSING if answered YES to smoking cigarettes daily AND without time since smoking cessation AND answered questions about smoking status in HUNT2 and/or HUNT3 which corresponds to still smoking daily or smoking cessation after participating in HUNT1.  
 All all HUNT data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
 **R script**:  
 ```{r, echo=TRUE}
@@ -1106,7 +1106,7 @@ lsb_HUNT_0$lsb_cig_qty_0<- ifelse(lsb_HUNT_0$lsb_smk_cur_0==0,0,as.integer(HUNT1
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   A corrected variable from the original variable SmoCigDyN from HUNT2. IF SmoStat_NT1BLQ2 =1 (exsmoker) AND SmoStat_NT2BLQ1 =1 (exsmoker) AND (Diff: SmoCigDyN_NT2BLQ1 - SmoCigDyN_NT1BLQ2 < 0). Then SmoCigDyNEd_NT2BLQ1 = SmoCigDyN_NT1BLQ2.  
+**Harmonization comment**:   A corrected variable from the original variable SmoCigDyN from HUNT2. IF SmoStat_NT1BLQ2 =1 (ex-smoker) AND SmoStat_NT2BLQ1 =1 (ex-smoker) AND (Diff: SmoCigDyN_NT2BLQ1 - SmoCigDyN_NT1BLQ2 < 0). Then SmoCigDyNEd_NT2BLQ1 = SmoCigDyN_NT1BLQ2.  
 Was recoded to 0 when the participant responded no to "current tobacco smoking".  
 **R script**:  
 ```{r, echo=TRUE}
@@ -1120,7 +1120,7 @@ lsb_HUNT_1$lsb_cig_qty_1<- ifelse(lsb_HUNT_1$lsb_smk_cur_1==0,0,as.integer(HUNT2
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   A corrected variable from the original variable SmoCigDyN from HUNT3. IF SmoStat_NT2BLQ1 =1 (exsmoker) AND SmoStat_NT3BLQ1 =1 (exsmoker) AND (Diff: SmoCigDyN_NT3BLQ1 - SmoCigDyNEd_NT2BLQ1 < 0).  Then SmoCigDyNEd_NT3BLQ1 = SmoCigDyNEd_NT2BLQ1, Missing=SmoCigMyN/30 IF SmoCigMyN>15 AND Smostat=3 (daily smoker) OR SmoStat=1 (Exsmoker) AND answered on the variablesSmoDyAg ang SmoDyCesAg.  
+**Harmonization comment**:   A corrected variable from the original variable SmoCigDyN from HUNT3. IF SmoStat_NT2BLQ1 =1 (ex-smoker) AND SmoStat_NT3BLQ1 =1 (ex-smoker) AND (Diff: SmoCigDyN_NT3BLQ1 - SmoCigDyNEd_NT2BLQ1 < 0).  Then SmoCigDyNEd_NT3BLQ1 = SmoCigDyNEd_NT2BLQ1, Missing=SmoCigMyN/30 IF SmoCigMyN>15 AND Smostat=3 (daily smoker) OR SmoStat=1 (Ex-smoker) AND answered on the variablesSmoDyAg and SmoDyCesAg.  
 Was recoded to 0 when the participant responded no to "current tobacco smoking".  
 **R script**:  
 ```{r, echo=TRUE}
@@ -1190,7 +1190,7 @@ lsb_HUNT_2$lsb_cig_qty_2<- ifelse(lsb_HUNT_2$lsb_smk_cur_2==0,0,as.integer(HUNT3
 **Harmonization comment**:  How old were you when you started smoking daily? {If ever smoked daily:}
 Some misunderstandings, instead of age some have reported Year or number of years since event. 
 Inconsistencies are checked, and if possible corrected based on probability and reported age in HUNT2 and HUNT3. Recoded to missing if age of starting smoking > current age or age < 7 yrs.
-MISSING was set equal to age of starting smoking from HUNT2 IF age of starting smoking from HUNT2 was approximatly equal to age of starting smoking from HUNT3 and befor participation age in HUNT1.  
+MISSING was set equal to age of starting smoking from HUNT2 IF age of starting smoking from HUNT2 was approximately equal to age of starting smoking from HUNT3 and before participation age in HUNT1.  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HUNT_0$lsb_smk_start_0<- as.numeric(HUNT1$SmoDyAg_NT1BLQ2)
@@ -1934,7 +1934,7 @@ lsb_HUNT_2$lsb_smk_py_2<- ifelse(lsb_HUNT_2$lsb_smk_ever_2==0,0,HUNT3$SmoPackYrs
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -1952,7 +1952,7 @@ lsb_HUNT_2$lsb_smk_py_2<- ifelse(lsb_HUNT_2$lsb_smk_ever_2==0,0,HUNT3$SmoPackYrs
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -1970,7 +1970,7 @@ lsb_HUNT_2$lsb_smk_py_2<- ifelse(lsb_HUNT_2$lsb_smk_ever_2==0,0,HUNT3$SmoPackYrs
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -1988,7 +1988,7 @@ lsb_HUNT_2$lsb_smk_py_2<- ifelse(lsb_HUNT_2$lsb_smk_ever_2==0,0,HUNT3$SmoPackYrs
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2006,7 +2006,7 @@ lsb_HUNT_2$lsb_smk_py_2<- ifelse(lsb_HUNT_2$lsb_smk_ever_2==0,0,HUNT3$SmoPackYrs
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2024,7 +2024,7 @@ lsb_HUNT_2$lsb_smk_py_2<- ifelse(lsb_HUNT_2$lsb_smk_ever_2==0,0,HUNT3$SmoPackYrs
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2042,7 +2042,7 @@ lsb_HUNT_2$lsb_smk_py_2<- ifelse(lsb_HUNT_2$lsb_smk_ever_2==0,0,HUNT3$SmoPackYrs
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2982,7 +2982,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_0  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3000,7 +3000,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_1  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3018,7 +3018,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_2  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3036,7 +3036,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_3  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3054,7 +3054,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_4  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3072,7 +3072,7 @@ lsb_HUNT_2$lsb_coffee_qty_2<- rowSums(HUNT3[,c("DriCofBoilNDy_NT3BLQ1","DriCofOt
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_5  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    

@@ -638,7 +638,7 @@ lsb_HAPIEE_RU_1$lsb_alc_beer_1<-HAPIEE_W2$d_w2beer_wk/0.5
  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   One standard drink was defined as 0.5 l of beer, 2 dl of wine or 50 ml of spirits, which roughly equals 20 g ethanol.  Current quantity of spirits consumed eper week was taken.   
+**Harmonization comment**:   One standard drink was defined as 0.5 l of beer, 2 dl of wine or 50 ml of spirits, which roughly equals 20 g ethanol.  Current quantity of spirits consumed per week was taken.   
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_RU_0$lsb_alc_liq_0<-HAPIEE_W1$d_dest_wk/0.05
@@ -653,7 +653,7 @@ lsb_HAPIEE_RU_0$lsb_alc_liq_0<-HAPIEE_W1$d_dest_wk/0.05
  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   One standard drink was defined as 0.5 l of beer, 2 dl of wine or 50 ml of spirits, which roughly equals 20 g ethanol. Current quantity of spirits consumed eper week was taken.   
+**Harmonization comment**:   One standard drink was defined as 0.5 l of beer, 2 dl of wine or 50 ml of spirits, which roughly equals 20 g ethanol. Current quantity of spirits consumed per week was taken.   
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_RU_1$lsb_alc_liq_1<-HAPIEE_W2$d_w2dest_wk/0.05
@@ -1111,7 +1111,7 @@ lsb_HAPIEE_RU_1$lsb_smk_ever_1<-recode(as.integer(HAPIEE_W2$w2l39),"1"=1L,"2"=1L
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:  Because the study-specific variable is "Current & past mokers: No. cigarettes per day you smoke/used to smoke if stopped", the DataSchema variable "Current average number of cigarettes smoked per day" was conditioned on "Do you smoke cigarettes?"   
+**Harmonization comment**:  Because the study-specific variable is "Current & past smokers: No. cigarettes per day you smoke/used to smoke if stopped", the DataSchema variable "Current average number of cigarettes smoked per day" was conditioned on "Do you smoke cigarettes?"   
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_RU_0$lsb_cig_qty_0<-ifelse(lsb_HAPIEE_RU_0$lsb_smk_cur_0==0,0,
@@ -1126,7 +1126,7 @@ lsb_HAPIEE_RU_0$lsb_cig_qty_0<-ifelse(lsb_HAPIEE_RU_0$lsb_smk_cur_0==0,0,
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   Because the study-specific variable is "Current & past mokers: No. cigarettes per day you smoke/used to smoke if stopped", the DataSchema variable "Current average number of cigarettes smoked per day" was conditioned on "Do you smoke cigarettes?"  
+**Harmonization comment**:   Because the study-specific variable is "Current & past smokers: No. cigarettes per day you smoke/used to smoke if stopped", the DataSchema variable "Current average number of cigarettes smoked per day" was conditioned on "Do you smoke cigarettes?"  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_RU_1$lsb_cig_qty_1<-ifelse(lsb_HAPIEE_RU_1$lsb_smk_cur_1==0,0,
@@ -2001,7 +2001,7 @@ lsb_HAPIEE_RU_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2020,7 +2020,7 @@ lsb_HAPIEE_RU_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2039,7 +2039,7 @@ lsb_HAPIEE_RU_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2058,7 +2058,7 @@ lsb_HAPIEE_RU_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2077,7 +2077,7 @@ lsb_HAPIEE_RU_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2096,7 +2096,7 @@ lsb_HAPIEE_RU_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2115,7 +2115,7 @@ lsb_HAPIEE_RU_0$lsb_smk_py_0<-as.integer(HAPIEE_W1$d_packyrs)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -3113,7 +3113,7 @@ lsb_HAPIEE_RU_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_0  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3132,7 +3132,7 @@ lsb_HAPIEE_RU_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_1  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3151,7 +3151,7 @@ lsb_HAPIEE_RU_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_2    
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3169,7 +3169,7 @@ lsb_HAPIEE_RU_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_3  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3188,7 +3188,7 @@ lsb_HAPIEE_RU_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_4  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3207,7 +3207,7 @@ lsb_HAPIEE_RU_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_5  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    

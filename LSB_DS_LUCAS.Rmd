@@ -1984,7 +1984,7 @@ lsb_LUCAS_0$lsb_pa_walk_freq_0<- as.integer(lucas_w2$Lucas29_07)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2003,7 +2003,7 @@ lsb_LUCAS_0$lsb_pa_walk_freq_0<- as.integer(lucas_w2$Lucas29_07)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2022,7 +2022,7 @@ lsb_LUCAS_0$lsb_pa_walk_freq_0<- as.integer(lucas_w2$Lucas29_07)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2041,7 +2041,7 @@ lsb_LUCAS_0$lsb_pa_walk_freq_0<- as.integer(lucas_w2$Lucas29_07)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2060,7 +2060,7 @@ lsb_LUCAS_0$lsb_pa_walk_freq_0<- as.integer(lucas_w2$Lucas29_07)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2079,7 +2079,7 @@ lsb_LUCAS_0$lsb_pa_walk_freq_0<- as.integer(lucas_w2$Lucas29_07)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -2098,7 +2098,7 @@ lsb_LUCAS_0$lsb_pa_walk_freq_0<- as.integer(lucas_w2$Lucas29_07)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  
 **Harmonization comment**:   
@@ -3092,7 +3092,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_0  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3111,7 +3111,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_1  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3130,7 +3130,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_2  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3148,7 +3148,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_3  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3167,7 +3167,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_4  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3186,7 +3186,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_5  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    

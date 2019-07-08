@@ -1420,7 +1420,7 @@ lsb_RECORD_1$lsb_cig_qty_1<- ifelse(lsb_RECORD_1$lsb_smk_cur_1==0,0,as.integer(R
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   divided by (20*365) to change from cigaretteyears to packyears. Was recoded to 0 when the participant responded no to "ever tobacco smoking".  
+**Harmonization comment**:   divided by (20*365) to change from cigarette-years to pack-years. Was recoded to 0 when the participant responded no to "ever tobacco smoking".  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_RECORD_0$lsb_smk_py_0<- ifelse(lsb_RECORD_0$lsb_smk_ever_0==0,0,ifelse(as.numeric(is.na(RECORD_w1_2$packyear_current)), (as.numeric(RECORD_w1_2$packyear_former)/7300), (as.numeric(RECORD_w1_2$packyear_current))/7300))
@@ -2024,7 +2024,7 @@ lsb_RECORD_0$lsb_pa_cycle_0<- as.numeric(as.difftime(RECORD_w1_1$Q28_31_2,format
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  complete    
 **Harmonization comment**:   Yes-only response. i.e. NAs were coded to 0.
@@ -2043,7 +2043,7 @@ lsb_RECORD_0$lsb_pa_garden_0 <- ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,1L)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible      
 **Harmonization comment**: Unable to distinguish between true missing or unreported 0mn as no participants were coded as NA. Total gardening time in the past 7 days (P23_Q1_401) was coded as 1 if value greater than 0mins. This variable was used instead of #Gardening in the past 7 days (P23_Q1_405) because all values were 'no'.  
@@ -2061,7 +2061,7 @@ lsb_RECORD_0$lsb_pa_garden_0 <- ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,1L)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:    
@@ -2080,7 +2080,7 @@ lsb_RECORD_0$lsb_pa_garden_0 <- ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,1L)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2099,7 +2099,7 @@ lsb_RECORD_0$lsb_pa_garden_0 <- ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,1L)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2118,7 +2118,7 @@ lsb_RECORD_0$lsb_pa_garden_0 <- ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,1L)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -2137,7 +2137,7 @@ lsb_RECORD_0$lsb_pa_garden_0 <- ifelse(is.na(RECORD_w1_1$Q28_1_1),0L,1L)
 **Code** | **Category Label**  
 ------------- | -------------  
 0 |   Does not do any gardening activities  
-1 |   Does any gardeing activities  
+1 |   Does any gardening activities  
 
 **Harmonization status**:  impossible  
 **Harmonization comment**:   
@@ -3135,7 +3135,7 @@ lsb_RECORD_1$lsb_sleep_hours_1 <- ifelse(as.integer(RECORD_w2$Qm76)<25, as.integ
 
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_0  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3153,7 +3153,7 @@ lsb_RECORD_1$lsb_sleep_hours_1 <- ifelse(as.integer(RECORD_w2$Qm76)<25, as.integ
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_1  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3172,7 +3172,7 @@ lsb_RECORD_1$lsb_sleep_diff_1<- recode(as.character(RECORD_w2$P20_Q1_327), '1'=0
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_2    
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3190,7 +3190,7 @@ lsb_RECORD_1$lsb_sleep_diff_1<- recode(as.character(RECORD_w2$P20_Q1_327), '1'=0
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_3  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3209,7 +3209,7 @@ lsb_RECORD_1$lsb_sleep_diff_1<- recode(as.character(RECORD_w2$P20_Q1_327), '1'=0
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_4  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
@@ -3228,7 +3228,7 @@ lsb_RECORD_1$lsb_sleep_diff_1<- recode(as.character(RECORD_w2$P20_Q1_327), '1'=0
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_5  
-**Variable description**:  Indicator of whether the participant ever has any diffulty falling asleep.  
+**Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
 **Category coding**:    
