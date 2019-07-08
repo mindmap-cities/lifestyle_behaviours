@@ -2604,7 +2604,7 @@ lsb_HAPIEE_LT_0$lsb_smk_py_0<-as.integer(HAPIEE_W2$d_packyrs_lt)
 ### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_1  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
-**Value type**: integer    
+**Value type**: integer     
 **Variable unit**:  
 **Category coding**:  
 
