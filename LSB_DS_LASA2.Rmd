@@ -1448,7 +1448,7 @@ lsb_LASA2_2$lsb_smk_py_2 <- ifelse(as.numeric(LASA2G$gage) < lsb_LASA2_2$lsb_smk
 3 |  Often (5-7 days)  
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
+**Harmonization comment**:   Study-specific asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1468,7 +1468,7 @@ lsb_LASA2_2$lsb_smk_py_2 <- ifelse(as.numeric(LASA2G$gage) < lsb_LASA2_2$lsb_smk
 3 |  Often (5-7 days)  
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
+**Harmonization comment**:   Study-specific asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1488,7 +1488,7 @@ lsb_LASA2_2$lsb_smk_py_2 <- ifelse(as.numeric(LASA2G$gage) < lsb_LASA2_2$lsb_smk
 3 |  Often (5-7 days)    
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
+**Harmonization comment**:   Study-specific asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1508,7 +1508,7 @@ lsb_LASA2_2$lsb_smk_py_2 <- ifelse(as.numeric(LASA2G$gage) < lsb_LASA2_2$lsb_smk
 3 |  Often (5-7 days)    
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
+**Harmonization comment**:   Study-specific asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
 

@@ -705,7 +705,7 @@ lsb_HAPIEE_RU_1$lsb_alc_liq_1<-HAPIEE_W2$d_w2dest_wk/0.05
 1 |   Currently smokes any tobacco product  
 
 **Harmonization status**:  complete  
-**Harmonization comment**: The study-specific variable used to harmonize the Data Schema variable 
+**Harmonization comment**: The study-specific variable used to harmonize the DataSchema variable 
 "Indicator of whether the participant currently smokes any tobacco product" is "Do you smoke cigarettes?". The question was not asked for any other type of tobacco product.    
 **R script**:  
 ```{r, echo=TRUE}
@@ -725,7 +725,7 @@ lsb_HAPIEE_RU_0$lsb_smk_cur_0<-recode(as.integer(HAPIEE_W1$l39),"1"=1L,"2"=1L,"3
 1 |   Currently smokes any tobacco product  
 
 **Harmonization status**:  complete      
-**Harmonization comment**: The study-specific variable used to harmonize the Data Schema variable 
+**Harmonization comment**: The study-specific variable used to harmonize the DataSchema variable 
 "Indicator of whether the participant currently smokes any tobacco product" is "Do you smoke cigarettes?". The question was not asked for any other type of tobacco product.   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1111,7 +1111,7 @@ lsb_HAPIEE_RU_1$lsb_smk_ever_1<-recode(as.integer(HAPIEE_W2$w2l39),"1"=1L,"2"=1L
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:  Because the study-specific variable is "Current & past smokers: No. cigarettes per day you smoke/used to smoke if stopped", the Data Schema variable "Current average number of cigarettes smoked per day" was conditioned on "Do you smoke cigarettes?"   
+**Harmonization comment**:  Because the study-specific variable is "Current & past smokers: No. cigarettes per day you smoke/used to smoke if stopped", the DataSchema variable "Current average number of cigarettes smoked per day" was conditioned on "Do you smoke cigarettes?"   
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_RU_0$lsb_cig_qty_0<-ifelse(lsb_HAPIEE_RU_0$lsb_smk_cur_0==0,0,
@@ -1126,7 +1126,7 @@ lsb_HAPIEE_RU_0$lsb_cig_qty_0<-ifelse(lsb_HAPIEE_RU_0$lsb_smk_cur_0==0,0,
 **Category coding**:  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   Because the study-specific variable is "Current & past smokers: No. cigarettes per day you smoke/used to smoke if stopped", the Data Schema variable "Current average number of cigarettes smoked per day" was conditioned on "Do you smoke cigarettes?"  
+**Harmonization comment**:   Because the study-specific variable is "Current & past smokers: No. cigarettes per day you smoke/used to smoke if stopped", the DataSchema variable "Current average number of cigarettes smoked per day" was conditioned on "Do you smoke cigarettes?"  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_RU_1$lsb_cig_qty_1<-ifelse(lsb_HAPIEE_RU_1$lsb_smk_cur_1==0,0,

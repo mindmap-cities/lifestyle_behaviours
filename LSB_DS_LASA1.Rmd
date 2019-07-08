@@ -1502,7 +1502,7 @@ lsb_LASA1_6$lsb_smk_stop_6 <- ifelse(as.integer(LASA1H$HMVAR34)< 0, NA, as.integ
 3 |  Often (5-7 days)  
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific variable asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.     
+**Harmonization comment**:   Study-specific variable asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.     
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1522,7 +1522,7 @@ lsb_LASA1_6$lsb_smk_stop_6 <- ifelse(as.integer(LASA1H$HMVAR34)< 0, NA, as.integ
 3 |  Often (5-7 days)  
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific variable asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
+**Harmonization comment**:   Study-specific variable asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1542,7 +1542,7 @@ lsb_LASA1_6$lsb_smk_stop_6 <- ifelse(as.integer(LASA1H$HMVAR34)< 0, NA, as.integ
 3 |  Often (5-7 days)    
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific variable asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
+**Harmonization comment**:   Study-specific variable asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1562,7 +1562,7 @@ lsb_LASA1_6$lsb_smk_stop_6 <- ifelse(as.integer(LASA1H$HMVAR34)< 0, NA, as.integ
 3 |  Often (5-7 days)    
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific variable asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
+**Harmonization comment**:   Study-specific variable asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1582,7 +1582,7 @@ lsb_LASA1_6$lsb_smk_stop_6 <- ifelse(as.integer(LASA1H$HMVAR34)< 0, NA, as.integ
 3 |  Often (5-7 days)    
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific variable asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
+**Harmonization comment**:   Study-specific variable asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1602,7 +1602,7 @@ lsb_LASA1_6$lsb_smk_stop_6 <- ifelse(as.integer(LASA1H$HMVAR34)< 0, NA, as.integ
 3 |  Often (5-7 days)    
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific variable asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
+**Harmonization comment**:   Study-specific variable asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -1622,7 +1622,7 @@ lsb_LASA1_6$lsb_smk_stop_6 <- ifelse(as.integer(LASA1H$HMVAR34)< 0, NA, as.integ
 3 |  Often (5-7 days)    
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   study-specific variable asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
+**Harmonization comment**:   Study-specific variable asks for number of times walked outside in the past two weeks, not number of days the participant went for a walk.  
 **R script**:  
 ```{r, echo=TRUE}
 
