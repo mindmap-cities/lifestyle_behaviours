@@ -1435,7 +1435,7 @@ lsb_GLOBE_1$lsb_smk_stop_1<-as.integer(GLOBE1997$v10e)
 **Category coding**:  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:   20 cigarettes per pack was considered.
+**Harmonization comment**:   One pack is considered to be consisted of 20 cigarettes.
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_0$lsb_smk_py_0<-ifelse(lsb_GLOBE_0$lsb_smk_ever_0==0,0,(lsb_GLOBE_0$lsb_cig_qty_0/20)*GLOBE1991$v153)
@@ -1449,7 +1449,7 @@ lsb_GLOBE_0$lsb_smk_py_0<-ifelse(lsb_GLOBE_0$lsb_smk_ever_0==0,0,(lsb_GLOBE_0$ls
 **Category coding**:  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:   20 cigarettes per pack was considered
+**Harmonization comment**:   One pack is considered to be consisted of 20 cigarettes.
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_1$lsb_smk_py_1<-ifelse(lsb_GLOBE_1$lsb_smk_ever_1==0,0,(lsb_GLOBE_1$lsb_cig_qty_1/20)*GLOBE1997$v10c)
@@ -1463,7 +1463,7 @@ lsb_GLOBE_1$lsb_smk_py_1<-ifelse(lsb_GLOBE_1$lsb_smk_ever_1==0,0,(lsb_GLOBE_1$ls
 **Category coding**:  
 
 **Harmonization status**:  complete    
-**Harmonization comment**:   20 cigarettes per pack was considered.
+**Harmonization comment**:   One pack is considered to be consisted of 20 cigarettes.
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_2$lsb_smk_py_2<-ifelse(lsb_GLOBE_2$lsb_smk_ever_2==0,0,(lsb_GLOBE_2$lsb_cig_qty_2/20)*GLOBE2004$w078)
