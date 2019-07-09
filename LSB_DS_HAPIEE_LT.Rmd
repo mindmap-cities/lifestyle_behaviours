@@ -317,7 +317,7 @@ lsb_HAPIEE_LT_0$lsb_alc_cur_0<-ifelse(HAPIEE_W2$d_w2alcfreq==1,0,
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
@@ -325,7 +325,7 @@ lsb_HAPIEE_LT_0$lsb_alc_cur_0<-ifelse(HAPIEE_W2$d_w2alcfreq==1,0,
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_LT_0$lsb_alc_binge_0<-recode(as.integer(HAPIEE_W2$w2al1),"1"=3L,"2"=3L,"3"=2L,"4"=1L,"5"=1L,"6"=1L,"7"=1L,"8"=1L,"9"=1L)
-
+lsb_HAPIEE_LT_0$lsb_alc_binge_0[lsb_HAPIEE_LT_0$lsb_alc_cur_0=="0"]<-1L
 ```  
 ### **Variable label**:   Frequency of binge drinking  
 **Variable name**: lsb_alc_binge_1  
@@ -337,7 +337,7 @@ lsb_HAPIEE_LT_0$lsb_alc_binge_0<-recode(as.integer(HAPIEE_W2$w2al1),"1"=3L,"2"=3
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible    
@@ -357,7 +357,7 @@ lsb_HAPIEE_LT_0$lsb_alc_binge_0<-recode(as.integer(HAPIEE_W2$w2al1),"1"=3L,"2"=3
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -377,7 +377,7 @@ lsb_HAPIEE_LT_0$lsb_alc_binge_0<-recode(as.integer(HAPIEE_W2$w2al1),"1"=3L,"2"=3
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -397,7 +397,7 @@ lsb_HAPIEE_LT_0$lsb_alc_binge_0<-recode(as.integer(HAPIEE_W2$w2al1),"1"=3L,"2"=3
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -417,7 +417,7 @@ lsb_HAPIEE_LT_0$lsb_alc_binge_0<-recode(as.integer(HAPIEE_W2$w2al1),"1"=3L,"2"=3
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -437,7 +437,7 @@ lsb_HAPIEE_LT_0$lsb_alc_binge_0<-recode(as.integer(HAPIEE_W2$w2al1),"1"=3L,"2"=3
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  

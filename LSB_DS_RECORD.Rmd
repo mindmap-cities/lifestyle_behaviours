@@ -333,7 +333,7 @@ lsb_RECORD_1<- merge(lsb_RECORD_1,alc_table_record[,c("id","lsb_alc_ever_1")],by
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -353,7 +353,7 @@ lsb_RECORD_1<- merge(lsb_RECORD_1,alc_table_record[,c("id","lsb_alc_ever_1")],by
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -373,7 +373,7 @@ lsb_RECORD_1<- merge(lsb_RECORD_1,alc_table_record[,c("id","lsb_alc_ever_1")],by
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -393,7 +393,7 @@ lsb_RECORD_1<- merge(lsb_RECORD_1,alc_table_record[,c("id","lsb_alc_ever_1")],by
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -413,7 +413,7 @@ lsb_RECORD_1<- merge(lsb_RECORD_1,alc_table_record[,c("id","lsb_alc_ever_1")],by
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -433,7 +433,7 @@ lsb_RECORD_1<- merge(lsb_RECORD_1,alc_table_record[,c("id","lsb_alc_ever_1")],by
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -453,7 +453,7 @@ lsb_RECORD_1<- merge(lsb_RECORD_1,alc_table_record[,c("id","lsb_alc_ever_1")],by
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  

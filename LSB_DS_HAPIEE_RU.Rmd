@@ -323,7 +323,7 @@ lsb_HAPIEE_RU_1$lsb_alc_cur_1<-ifelse(HAPIEE_W2$d_w2alcfreq==1,0,
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
@@ -343,7 +343,7 @@ lsb_HAPIEE_RU_0$lsb_alc_binge_0<-recode(as.integer(HAPIEE_W1$d_al5day),"1"=3L,"2
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
@@ -363,7 +363,7 @@ lsb_HAPIEE_RU_1$lsb_alc_binge_1<-recode(as.integer(HAPIEE_W2$w2al1),"1"=3L,"2"=3
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -383,7 +383,7 @@ lsb_HAPIEE_RU_1$lsb_alc_binge_1<-recode(as.integer(HAPIEE_W2$w2al1),"1"=3L,"2"=3
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -403,7 +403,7 @@ lsb_HAPIEE_RU_1$lsb_alc_binge_1<-recode(as.integer(HAPIEE_W2$w2al1),"1"=3L,"2"=3
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -423,7 +423,7 @@ lsb_HAPIEE_RU_1$lsb_alc_binge_1<-recode(as.integer(HAPIEE_W2$w2al1),"1"=3L,"2"=3
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -443,7 +443,7 @@ lsb_HAPIEE_RU_1$lsb_alc_binge_1<-recode(as.integer(HAPIEE_W2$w2al1),"1"=3L,"2"=3
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
