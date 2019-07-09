@@ -2660,7 +2660,6 @@ lsb_LASA1_4$lsb_pa_sport_4<-ifelse(LASA1F$flphya21==1 & LASA1F$flphya25!=2,0,
 #works exactly the same
 lsb_LASA1_4$lsb_pa_sport_4<-ifelse(LASA1F$flphya21==1 ,0,
                                    ifelse(LASA1F$flphya21==2 | LASA1F$flphya25==2,1,NA))
-
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_5  
