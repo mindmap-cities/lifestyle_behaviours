@@ -2458,8 +2458,12 @@ lsb_LASA2_3$lsb_pa_house_time_3<- rowSums(cbind(LASA2H$lsb_pa_house_time_3_inter
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA2_0$lsb_pa_sport_0<-ifelse(LASA2B$blphya21==1 | LASA2B$blphya25==1,0,
+lsb_LASA2_0$lsb_pa_sport_0<-ifelse(LASA2B$blphya21==1 & LASA2B$blphya25!=2,0,
                                    ifelse(LASA2B$blphya21==2 | LASA2B$blphya25==2,1,NA))
+
+table(lsb_LASA2_0$lsb_pa_sport_0,LASA2B$blphya21)
+table(lsb_LASA2_0$lsb_pa_sport_0,LASA2B$blphya25)
+
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_1  
@@ -2477,8 +2481,12 @@ lsb_LASA2_0$lsb_pa_sport_0<-ifelse(LASA2B$blphya21==1 | LASA2B$blphya25==1,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA2_1$lsb_pa_sport_1<-ifelse(LASA2F$flphya21==1 | LASA2F$flphya25==1,0,
+lsb_LASA2_1$lsb_pa_sport_1<-ifelse(LASA2F$flphya21==1& LASA2F$flphya25!=2,0,
                                    ifelse(LASA2F$flphya21==2 | LASA2F$flphya25==2,1,NA))
+
+table(lsb_LASA2_1$lsb_pa_sport_1,LASA2F$flphya21)
+table(lsb_LASA2_1$lsb_pa_sport_1,LASA2F$flphya25)
+
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_2  
@@ -2496,8 +2504,12 @@ lsb_LASA2_1$lsb_pa_sport_1<-ifelse(LASA2F$flphya21==1 | LASA2F$flphya25==1,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA2_2$lsb_pa_sport_2<-ifelse(LASA2G$glphya21==1 | LASA2G$glphya25==1,0,
+lsb_LASA2_2$lsb_pa_sport_2<-ifelse(LASA2G$glphya21==1& LASA2G$glphya25!=2,0,
                                    ifelse(LASA2G$glphya21==2 | LASA2G$glphya25==2,1,NA))
+
+table(lsb_LASA2_2$lsb_pa_sport_2, LASA2G$glphya21, useNA = "always")
+table(lsb_LASA2_2$lsb_pa_sport_2, LASA2G$glphya25, useNA = "always")
+
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_3  
@@ -2515,8 +2527,12 @@ lsb_LASA2_2$lsb_pa_sport_2<-ifelse(LASA2G$glphya21==1 | LASA2G$glphya25==1,0,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA2_3$lsb_pa_sport_3<-ifelse(LASA2H$HLPHYA21==1 | LASA2H$HLPHYA25==1,0,
+lsb_LASA2_3$lsb_pa_sport_3<-ifelse(LASA2H$HLPHYA21==1 & LASA2H$HLPHYA25!=2,0,
                                    ifelse(LASA2H$HLPHYA21==2 | LASA2H$HLPHYA25==2,1,NA))
+
+table(lsb_LASA2_3$lsb_pa_sport_3,LASA2H$HLPHYA21,useNA = "always")
+table(lsb_LASA2_3$lsb_pa_sport_3,LASA2H$HLPHYA25,useNA = "always")
+
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_4  
