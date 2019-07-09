@@ -352,7 +352,7 @@ lsb_LASA1_6 <- merge(lsb_LASA1_6, lasa1_lsb_table[,c("id","lsb_alc_ever_6")],by=
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:    complete  
@@ -378,7 +378,7 @@ lsb_LASA1_0$lsb_alc_binge_0 <- ifelse(as.integer(LASA1B$bmvar24)==1,1L,
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
@@ -404,7 +404,7 @@ lsb_LASA1_1$lsb_alc_binge_1 <- ifelse(as.integer(LASA1C$cmvar24)==1,1L,
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
@@ -430,7 +430,7 @@ lsb_LASA1_2$lsb_alc_binge_2 <- ifelse(as.integer(LASA1D$dmalcohu)==1,1L,
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
@@ -456,7 +456,7 @@ lsb_LASA1_3$lsb_alc_binge_3 <- ifelse(as.integer(LASA1E$emalcohu)==1,1L,
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
@@ -482,7 +482,7 @@ lsb_LASA1_4$lsb_alc_binge_4 <- ifelse(as.integer(LASA1F$fmalcohu)==1,1L,
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
@@ -508,7 +508,7 @@ lsb_LASA1_5$lsb_alc_binge_5 <- ifelse(as.integer(LASA1G$gmalcohu)==1,1L,
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  

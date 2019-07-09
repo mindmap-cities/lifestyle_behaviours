@@ -329,7 +329,7 @@ lsb_GLOBE_1$lsb_alc_ever_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==1,1L,recode(as.int
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
@@ -349,7 +349,7 @@ lsb_GLOBE_0$lsb_alc_binge_0<-ifelse(lsb_GLOBE_0$lsb_alc_cur_0==0,1L,recode(as.in
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
@@ -369,7 +369,7 @@ lsb_GLOBE_1$lsb_alc_binge_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==0,1L,recode(as.in
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -389,7 +389,7 @@ lsb_GLOBE_1$lsb_alc_binge_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==0,1L,recode(as.in
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
@@ -409,7 +409,7 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -429,7 +429,7 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -449,7 +449,7 @@ lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.in
 **Code** | **Category Label**  
 ------------- | -------------  
 1 |  0 to 3 times a month  
-2 |  1 to 3 times a week   
+2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
 **Harmonization status**:  impossible  
@@ -2502,7 +2502,6 @@ lsb_GLOBE_4$lsb_pa_garden_time_4<-GLOBE2014$G14v32_a_dag*(GLOBE2014$G14v32_a_uur
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_0$lsb_pa_sport_0<-recode(as.integer(GLOBE1991$v240),"1"=0L,"2"=1L,"3"=1L,"4"=1L)
-
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_1  
@@ -2521,7 +2520,7 @@ lsb_GLOBE_0$lsb_pa_sport_0<-recode(as.integer(GLOBE1991$v240),"1"=0L,"2"=1L,"3"=
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_1$lsb_pa_sport_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"3"=1L,"4"=1L)
-
+table(lsb_GLOBE_1$lsb_pa_sport_1, GLOBE1997$v5, useNA="always")
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_2  
@@ -2539,7 +2538,25 @@ lsb_GLOBE_1$lsb_pa_sport_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"3"=1L
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_GLOBE_2$lsb_pa_sport_2<-ifelse(!is.na(GLOBE2004$w113) | !is.na(GLOBE2004$w118) | !is.na(GLOBE2004$w123) | !is.na(GLOBE2004$w128),1,ifelse(GLOBE2004$w133==1,0,NA))
+lsb_GLOBE_2$lsb_pa_sport_2<-ifelse(!is.na(GLOBE2004$w113) | !is.na(GLOBE2004$w118) | !is.na(GLOBE2004$w123) | !is.na(GLOBE2004$w128)&GLOBE2004$w133!=1,1,ifelse(GLOBE2004$w133==1,0,NA))
+
+table(GLOBE2004$w113,useNA="always")
+lsb_GLOBE_2$lsb_pa_sport_2t[GLOBE2004$w113>=1 | GLOBE2004$w113<=96]<-1
+lsb_GLOBE_2$lsb_pa_sport_2t[is.na(GLOBE2004$w113)]<-0
+
+table(lsb_GLOBE_2$lsb_pa_sport_2,lsb_GLOBE_2$lsb_pa_sport_2t,useNA="always" )  
+table(lsb_GLOBE_2$lsb_pa_sport_2t,useNA="always" )  
+table(lsb_GLOBE_2$lsb_pa_sport_2,useNA="always" )  
+
+lsb_GLOBE_2$lsb_pa_sport_2<-NA
+lsb_GLOBE_2$lsb_pa_sport_2[!is.na(GLOBE2004$w113) | !is.na(GLOBE2004$w118) | !is.na(GLOBE2004$w123) | !is.na(GLOBE2004$w128)]<-1
+lsb_GLOBE_2$lsb_pa_sport_2[GLOBE2004$w133==1]<-0
+
+
+
+table(lsb_GLOBE_2$lsb_pa_sport_2,GLOBE2004$w133, useNA="always" )
+table(lsb_GLOBE_2$lsb_pa_sport_2, useNA="always" )
+table(GLOBE2004$w133, useNA="always" )
 
 ```   
 ### **Variable label**: Sports or exercise      
@@ -2579,6 +2596,8 @@ lsb_GLOBE_2$lsb_pa_sport_2<-ifelse(!is.na(GLOBE2004$w113) | !is.na(GLOBE2004$w11
 ```{r, echo=TRUE}
 lsb_GLOBE_4$lsb_pa_sport_4<-ifelse(!is.na(GLOBE2014$G14v30sport_a) | !is.na(GLOBE2014$G14v30sport_b) | !is.na(GLOBE2014$G14v30sport_c) | !is.na(GLOBE2014$G14v30sport_d),1,ifelse(GLOBE2014$G14v30sport_a==1,0,NA))
 
+table(lsb_GLOBE_4$lsb_pa_sport_4)
+table(GLOBE2014$G14v30sport_a)
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_5  
