@@ -2520,7 +2520,6 @@ lsb_GLOBE_0$lsb_pa_sport_0<-recode(as.integer(GLOBE1991$v240),"1"=0L,"2"=1L,"3"=
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_1$lsb_pa_sport_1<-recode(as.integer(GLOBE1997$v5),"1"=0L,"2"=1L,"3"=1L,"4"=1L)
-table(lsb_GLOBE_1$lsb_pa_sport_1, GLOBE1997$v5, useNA="always")
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_2  
@@ -2539,25 +2538,6 @@ table(lsb_GLOBE_1$lsb_pa_sport_1, GLOBE1997$v5, useNA="always")
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_2$lsb_pa_sport_2<-ifelse(!is.na(GLOBE2004$w113) | !is.na(GLOBE2004$w118) | !is.na(GLOBE2004$w123) | !is.na(GLOBE2004$w128)&GLOBE2004$w133!=1,1,ifelse(GLOBE2004$w133==1,0,NA))
-
-table(GLOBE2004$w113,useNA="always")
-lsb_GLOBE_2$lsb_pa_sport_2t[GLOBE2004$w113>=1 | GLOBE2004$w113<=96]<-1
-lsb_GLOBE_2$lsb_pa_sport_2t[is.na(GLOBE2004$w113)]<-0
-
-table(lsb_GLOBE_2$lsb_pa_sport_2,lsb_GLOBE_2$lsb_pa_sport_2t,useNA="always" )  
-table(lsb_GLOBE_2$lsb_pa_sport_2t,useNA="always" )  
-table(lsb_GLOBE_2$lsb_pa_sport_2,useNA="always" )  
-
-lsb_GLOBE_2$lsb_pa_sport_2<-NA
-lsb_GLOBE_2$lsb_pa_sport_2[!is.na(GLOBE2004$w113) | !is.na(GLOBE2004$w118) | !is.na(GLOBE2004$w123) | !is.na(GLOBE2004$w128)]<-1
-lsb_GLOBE_2$lsb_pa_sport_2[GLOBE2004$w133==1]<-0
-
-
-
-table(lsb_GLOBE_2$lsb_pa_sport_2,GLOBE2004$w133, useNA="always" )
-table(lsb_GLOBE_2$lsb_pa_sport_2, useNA="always" )
-table(GLOBE2004$w133, useNA="always" )
-
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_3  
@@ -2596,8 +2576,6 @@ table(GLOBE2004$w133, useNA="always" )
 ```{r, echo=TRUE}
 lsb_GLOBE_4$lsb_pa_sport_4<-ifelse(!is.na(GLOBE2014$G14v30sport_a) | !is.na(GLOBE2014$G14v30sport_b) | !is.na(GLOBE2014$G14v30sport_c) | !is.na(GLOBE2014$G14v30sport_d),1,ifelse(GLOBE2014$G14v30sport_a==1,0,NA))
 
-table(lsb_GLOBE_4$lsb_pa_sport_4)
-table(GLOBE2014$G14v30sport_a)
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_5  
