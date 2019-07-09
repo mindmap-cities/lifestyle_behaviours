@@ -2574,13 +2574,9 @@ lsb_LASA1_6$lsb_pa_house_time_6<- rowSums(cbind(LASA1H$lsb_pa_house_time_6_inter
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_0$lsb_pa_sport_0<- ifelse(LASA1B$blphya21==2 | LASA1B$blphya25==2,1,ifelse(LASA1B$blphya21==1, 0,
-                                  NA))
+lsb_LASA1_0$lsb_pa_sport_0<- ifelse(LASA1B$blphya21==1| LASA1B$blphya25!=2, 0,
+                                    ifelse(LASA1B$blphya21==2 | LASA1B$blphya25==2,1,NA))
     
-table(LASA1B$blphya25, lsb_LASA1_0$lsb_pa_sport_0,useNA = "always")
-table(LASA1B$blphya21, LASA1B$blphya25,useNA = "always")
-table(LASA1B$blphya21==1, LASA1B$blphya25==1,useNA = "always")
-table(LASA1B$blphya21)
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_1  
@@ -2598,12 +2594,8 @@ table(LASA1B$blphya21)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_1$lsb_pa_sport_1<-ifelse(LASA1C$clphya21==1, 0,
+lsb_LASA1_1$lsb_pa_sport_1<-ifelse(LASA1C$clphya21==1| LASA1C$clphya25!=2, 0,
                                    ifelse(LASA1C$clphya21==2 | LASA1C$clphya25==2,1,NA))
-
-table(lsb_LASA1_1$lsb_pa_sport_1,LASA1C$clphya21)
-table(lsb_LASA1_1$lsb_pa_sport_1,LASA1C$clphya25)
-
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_2  
@@ -2623,8 +2615,6 @@ table(lsb_LASA1_1$lsb_pa_sport_1,LASA1C$clphya25)
 ```{r, echo=TRUE}
 lsb_LASA1_2$lsb_pa_sport_2<-ifelse(LASA1D$dlphya21==1&LASA1D$dlphya25!=2,0,
                                    ifelse(LASA1D$dlphya21==2 | LASA1D$dlphya25==2,1,NA))
-table(lsb_LASA1_2$lsb_pa_sport_2,LASA1D$dlphya21, useNA="always")
-table(lsb_LASA1_2$lsb_pa_sport_2,LASA1D$dlphya25, useNA="always")
 
 ```   
 ### **Variable label**: Sports or exercise      
@@ -2645,8 +2635,6 @@ table(lsb_LASA1_2$lsb_pa_sport_2,LASA1D$dlphya25, useNA="always")
 ```{r, echo=TRUE}
 lsb_LASA1_3$lsb_pa_sport_3<-ifelse(LASA1E$elphya21==1 & LASA1E$elphya25!=2,0,
                                    ifelse(LASA1E$elphya21==2 | LASA1E$elphya25==2,1,NA))
-table(lsb_LASA1_3$lsb_pa_sport_3,LASA1E$elphya21, useNA="always")
-table(lsb_LASA1_3$lsb_pa_sport_3,LASA1E$elphya25, useNA="always")
 
 
 ```   
@@ -2668,15 +2656,10 @@ table(lsb_LASA1_3$lsb_pa_sport_3,LASA1E$elphya25, useNA="always")
 ```{r, echo=TRUE}
 lsb_LASA1_4$lsb_pa_sport_4<-ifelse(LASA1F$flphya21==1 & LASA1F$flphya25!=2,0,
                                    ifelse(LASA1F$flphya21==2 | LASA1F$flphya25==2,1,NA))
-table(lsb_LASA1_4$lsb_pa_sport_4,LASA1F$flphya21, useNA="always")
-table(lsb_LASA1_4$lsb_pa_sport_4,LASA1F$flphya25, useNA="always")
 
 #works exactly the same
 lsb_LASA1_4$lsb_pa_sport_4<-ifelse(LASA1F$flphya21==1 ,0,
                                    ifelse(LASA1F$flphya21==2 | LASA1F$flphya25==2,1,NA))
-table(lsb_LASA1_4$lsb_pa_sport_4,LASA1F$flphya21, useNA="always")
-table(lsb_LASA1_4$lsb_pa_sport_4,LASA1F$flphya25, useNA="always")
-
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_5  
@@ -2696,9 +2679,6 @@ table(lsb_LASA1_4$lsb_pa_sport_4,LASA1F$flphya25, useNA="always")
 ```{r, echo=TRUE}
 lsb_LASA1_5$lsb_pa_sport_5<-ifelse(LASA1G$glphya21==1 &LASA1G$glphya25!=2,0,
                                    ifelse(LASA1G$glphya21==2 | LASA1G$glphya25==2,1,NA))
-
-table(lsb_LASA1_5$lsb_pa_sport_5, LASA1G$glphya21, useNA = "always")
-table(lsb_LASA1_5$lsb_pa_sport_5, LASA1G$glphya25, useNA = "always")
 
 
 ```   
@@ -2720,8 +2700,6 @@ table(lsb_LASA1_5$lsb_pa_sport_5, LASA1G$glphya25, useNA = "always")
 ```{r, echo=TRUE}
 lsb_LASA1_6$lsb_pa_sport_6<-ifelse(LASA1H$HLPHYA21==1 & LASA1H$HLPHYA25!=2,0,
                                    ifelse(LASA1H$HLPHYA21==2 | LASA1H$HLPHYA25==2,1,NA))
-table(lsb_LASA1_6$lsb_pa_sport_6,LASA1H$HLPHYA21,useNA = "always")
-table(lsb_LASA1_6$lsb_pa_sport_6,LASA1H$HLPHYA25,useNA = "always" )   
 
 ```   
 
