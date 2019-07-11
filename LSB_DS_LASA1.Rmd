@@ -1950,7 +1950,7 @@ lsb_LASA1_6$lsb_pa_walk_time_6 <- ifelse(LASA1H$lsb_pa_walk_time_6_inter<30,0,
 **Variable name**:  lsb_pa_cycle_0  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.  
 **Value type**:  decimal    
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
@@ -1966,7 +1966,7 @@ lsb_LASA1_0$lsb_pa_cycle_0 <- ifelse(LASA_extravar_PA$blphya01[LASA_extravar_PA$
 **Variable name**:  lsb_pa_cycle_1  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal    
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
@@ -1982,7 +1982,7 @@ lsb_LASA1_1$lsb_pa_cycle_1 <- ifelse(LASA_extravar_PA$clphya01[LASA_extravar_PA$
 **Variable name**:  lsb_pa_cycle_2  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal    
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
@@ -1998,7 +1998,7 @@ lsb_LASA1_2$lsb_pa_cycle_2 <- ifelse(LASA_extravar_PA$dlphya01[LASA_extravar_PA$
 **Variable name**:  lsb_pa_cycle_3  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal    
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
@@ -2014,7 +2014,7 @@ lsb_LASA1_3$lsb_pa_cycle_3 <- ifelse(LASA_extravar_PA$elphya01[LASA_extravar_PA$
 **Variable name**:  lsb_pa_cycle_4  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal    
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
@@ -2030,7 +2030,7 @@ lsb_LASA1_4$lsb_pa_cycle_4 <- ifelse(LASA_extravar_PA$flphya01[LASA_extravar_PA$
 **Variable name**:  lsb_pa_cycle_5  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal    
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
@@ -2046,7 +2046,7 @@ lsb_LASA1_5$lsb_pa_cycle_5 <- ifelse(LASA_extravar_PA$glphya01[LASA_extravar_PA$
 **Variable name**:  lsb_pa_cycle_6  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal    
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
@@ -2436,7 +2436,7 @@ lsb_LASA1_6$lsb_pa_house_6<- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$i
 **Variable name**:  lsb_pa_house_time_0  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal    
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
@@ -2454,7 +2454,7 @@ lsb_LASA1_0$lsb_pa_house_time_0<- rowSums(cbind(LASA1B$lsb_pa_house_time_0_inter
 **Variable name**:  lsb_pa_house_time_1  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal    
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
@@ -2472,7 +2472,7 @@ lsb_LASA1_1$lsb_pa_house_time_1<- rowSums(cbind(LASA1C$lsb_pa_house_time_1_inter
 **Variable name**:  lsb_pa_house_time_2  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal    
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
@@ -2490,7 +2490,7 @@ lsb_LASA1_2$lsb_pa_house_time_2<- rowSums(cbind(LASA1D$lsb_pa_house_time_2_inter
 **Variable name**:  lsb_pa_house_time_3  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal    
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
@@ -2508,7 +2508,7 @@ lsb_LASA1_3$lsb_pa_house_time_3<- rowSums(cbind(LASA1E$lsb_pa_house_time_3_inter
 **Variable name**:  lsb_pa_house_time_4  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal    
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
@@ -2526,7 +2526,7 @@ lsb_LASA1_4$lsb_pa_house_time_4<- rowSums(cbind(LASA1F$lsb_pa_house_time_4_inter
 **Variable name**:  lsb_pa_house_time_5  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal    
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
@@ -2544,7 +2544,7 @@ lsb_LASA1_5$lsb_pa_house_time_5<- rowSums(cbind(LASA1G$lsb_pa_house_time_5_inter
 **Variable name**:  lsb_pa_house_time_6  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal    
-**Variable unit**:  minutes per week  
+**Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
 **Harmonization status**:  complete  
