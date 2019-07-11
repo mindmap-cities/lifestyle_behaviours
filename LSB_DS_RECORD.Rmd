@@ -2886,7 +2886,7 @@ lsb_RECORD_1$lsb_fruit_1<- ifelse(RECORD_w2$P26_Q4_653==1,0L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  complete  
@@ -2906,7 +2906,7 @@ lsb_RECORD_0$lsb_water_0<- ifelse(RECORD_w1_2$consommation_eau==0,0L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  complete  
@@ -2926,7 +2926,7 @@ lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 == 0, 0L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2945,7 +2945,7 @@ lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 == 0, 0L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2964,7 +2964,7 @@ lsb_RECORD_1$lsb_water_1<- ifelse(RECORD_w2$Qm12 == 0, 0L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  

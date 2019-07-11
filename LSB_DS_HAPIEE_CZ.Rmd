@@ -2865,7 +2865,7 @@ lsb_HAPIEE_CZ_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2884,7 +2884,7 @@ lsb_HAPIEE_CZ_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2903,7 +2903,7 @@ lsb_HAPIEE_CZ_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible 
@@ -2922,7 +2922,7 @@ lsb_HAPIEE_CZ_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2941,7 +2941,7 @@ lsb_HAPIEE_CZ_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible 

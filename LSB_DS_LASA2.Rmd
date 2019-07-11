@@ -2840,7 +2840,7 @@ lsb_LASA2_3$lsb_pa_sport_3<-ifelse(LASA2H$HLPHYA21==1 & LASA2H$HLPHYA25!=2,0,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2858,7 +2858,7 @@ lsb_LASA2_3$lsb_pa_sport_3<-ifelse(LASA2H$HLPHYA21==1 & LASA2H$HLPHYA25!=2,0,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2876,7 +2876,7 @@ lsb_LASA2_3$lsb_pa_sport_3<-ifelse(LASA2H$HLPHYA21==1 & LASA2H$HLPHYA25!=2,0,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2894,7 +2894,7 @@ lsb_LASA2_3$lsb_pa_sport_3<-ifelse(LASA2H$HLPHYA21==1 & LASA2H$HLPHYA25!=2,0,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  

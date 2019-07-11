@@ -2750,7 +2750,7 @@ lsb_HUNT_2$lsb_fruit_2<- recode(as.integer(HUNT3$FoFruF_NT3BLQ1),'1'=0L,'2'=0L,'
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2768,7 +2768,7 @@ lsb_HUNT_2$lsb_fruit_2<- recode(as.integer(HUNT3$FoFruF_NT3BLQ1),'1'=0L,'2'=0L,'
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2786,7 +2786,7 @@ lsb_HUNT_2$lsb_fruit_2<- recode(as.integer(HUNT3$FoFruF_NT3BLQ1),'1'=0L,'2'=0L,'
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  complete  
@@ -2804,7 +2804,7 @@ lsb_HUNT_2$lsb_water_2<- recode(as.integer(HUNT3$DriWatGl_NT3BLQ1),'1'=0L,'2'=0L
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2823,7 +2823,7 @@ lsb_HUNT_2$lsb_water_2<- recode(as.integer(HUNT3$DriWatGl_NT3BLQ1),'1'=0L,'2'=0L
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  

@@ -2925,7 +2925,7 @@ lsb_GLOBE_4$lsb_pa_sport_time_4<-ifelse(GLOBE2014$lsb_pa_garden_time_all==0, 0L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2944,7 +2944,7 @@ lsb_GLOBE_4$lsb_pa_sport_time_4<-ifelse(GLOBE2014$lsb_pa_garden_time_all==0, 0L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2963,7 +2963,7 @@ lsb_GLOBE_4$lsb_pa_sport_time_4<-ifelse(GLOBE2014$lsb_pa_garden_time_all==0, 0L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2982,7 +2982,7 @@ lsb_GLOBE_4$lsb_pa_sport_time_4<-ifelse(GLOBE2014$lsb_pa_garden_time_all==0, 0L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -3001,7 +3001,7 @@ lsb_GLOBE_4$lsb_pa_sport_time_4<-ifelse(GLOBE2014$lsb_pa_garden_time_all==0, 0L,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  complete  
