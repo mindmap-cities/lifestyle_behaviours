@@ -162,7 +162,6 @@ lsb_GLOBE_4$lsb_alc_cur_4<-recode(as.integer(GLOBE2014$G14v26),"1"=0L,"2"=1L,"3"
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -1310,7 +1309,6 @@ lsb_GLOBE_2$lsb_smk_start_2<-as.integer(GLOBE2004$w077)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
 
 ```  
 ### **Variable label**:  Smoking initiation age    
