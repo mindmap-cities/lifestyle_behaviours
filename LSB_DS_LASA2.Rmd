@@ -1390,7 +1390,8 @@ lsb_LASA2_3$lsb_smk_stop_3 <- ifelse(as.integer(LASA2H$HMVAR34)<0,NA,as.integer(
 **Category coding**:  
 
 **Harmonization status**:   complete   
-**Harmonization comment**:     
+**Harmonization comment**:   One pack is considered to be consisted of 20 cigarettes.
+    
 **R script**:  
 ```{r, echo=TRUE}
 # cig/week for former smokers
@@ -1406,7 +1407,7 @@ lsb_LASA2_0$lsb_smk_py_0 <- ifelse(as.numeric(LASA2B$bage) < lsb_LASA2_0$lsb_smk
 **Category coding**:  
 
 **Harmonization status**:   complete   
-**Harmonization comment**:      
+**Harmonization comment**:   One pack is considered to be consisted of 20 cigarettes.
 **R script**:  
 ```{r, echo=TRUE}
 # cig/week for former smokers
@@ -1422,7 +1423,7 @@ lsb_LASA2_1$lsb_smk_py_1 <- ifelse(as.numeric(LASA2F$fage) < lsb_LASA2_1$lsb_smk
 **Category coding**:  
 
 **Harmonization status**:   complete   
-**Harmonization comment**:     
+**Harmonization comment**:   One pack is considered to be consisted of 20 cigarettes.
 **R script**:  
 ```{r, echo=TRUE}
 # cig/week for former smokers
@@ -2839,7 +2840,7 @@ lsb_LASA2_3$lsb_pa_sport_3<-ifelse(LASA2H$HLPHYA21==1 & LASA2H$HLPHYA25!=2,0,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2857,7 +2858,7 @@ lsb_LASA2_3$lsb_pa_sport_3<-ifelse(LASA2H$HLPHYA21==1 & LASA2H$HLPHYA25!=2,0,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2875,7 +2876,7 @@ lsb_LASA2_3$lsb_pa_sport_3<-ifelse(LASA2H$HLPHYA21==1 & LASA2H$HLPHYA25!=2,0,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2893,7 +2894,7 @@ lsb_LASA2_3$lsb_pa_sport_3<-ifelse(LASA2H$HLPHYA21==1 & LASA2H$HLPHYA25!=2,0,
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  

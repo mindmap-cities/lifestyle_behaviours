@@ -2845,7 +2845,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2864,7 +2864,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  
@@ -2883,7 +2883,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  
@@ -2902,7 +2902,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  
@@ -2921,7 +2921,7 @@ lsb_LUCAS_0$lsb_pa_sport_0<- ifelse(lucas_w2$Lucas30a_07 == 0 & lucas_w2$Lucas31
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  

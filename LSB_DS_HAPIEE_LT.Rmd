@@ -2855,7 +2855,7 @@ lsb_HAPIEE_LT_0$lsb_smk_py_0<-as.integer(HAPIEE_W2$d_packyrs_lt)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2874,7 +2874,7 @@ lsb_HAPIEE_LT_0$lsb_smk_py_0<-as.integer(HAPIEE_W2$d_packyrs_lt)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2893,7 +2893,7 @@ lsb_HAPIEE_LT_0$lsb_smk_py_0<-as.integer(HAPIEE_W2$d_packyrs_lt)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible 
@@ -2912,7 +2912,7 @@ lsb_HAPIEE_LT_0$lsb_smk_py_0<-as.integer(HAPIEE_W2$d_packyrs_lt)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2931,7 +2931,7 @@ lsb_HAPIEE_LT_0$lsb_smk_py_0<-as.integer(HAPIEE_W2$d_packyrs_lt)
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible 

@@ -331,6 +331,7 @@ lsb_HAPIEE_RU_1$lsb_alc_cur_1<-ifelse(HAPIEE_W2$d_w2alcfreq==1,0,
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_RU_0$lsb_alc_binge_0<-recode(as.integer(HAPIEE_W1$d_al5day),"1"=3L,"2"=3L,"3"=2L,"4"=1L,"5"=1L,"6"=1L,"7"=1L,"8"=1L,"9"=1L)
+lsb_HAPIEE_RU_0$lsb_alc_binge_0[lsb_HAPIEE_RU_0$lsb_alc_cur_0=="0"]<-1L
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -351,7 +352,7 @@ lsb_HAPIEE_RU_0$lsb_alc_binge_0<-recode(as.integer(HAPIEE_W1$d_al5day),"1"=3L,"2
 **R script**:  
 ```{r, echo=TRUE}
 lsb_HAPIEE_RU_1$lsb_alc_binge_1<-recode(as.integer(HAPIEE_W2$w2al1),"1"=3L,"2"=3L,"3"=2L,"4"=1L,"5"=1L,"6"=1L,"7"=1L,"8"=1L,"9"=1L)
-
+lsb_HAPIEE_RU_1$lsb_alc_binge_1[lsb_HAPIEE_RU_1$lsb_alc_cur_1=="0"]<-1L
 ```  
 ### **Variable label**:   Frequency of binge drinking  
 **Variable name**: lsb_alc_binge_2  
@@ -2866,7 +2867,7 @@ lsb_HAPIEE_RU_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2885,7 +2886,7 @@ lsb_HAPIEE_RU_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2904,7 +2905,7 @@ lsb_HAPIEE_RU_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible 
@@ -2923,7 +2924,7 @@ lsb_HAPIEE_RU_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible  
@@ -2942,7 +2943,7 @@ lsb_HAPIEE_RU_0$lsb_pa_sport_time_0<- ifelse(HAPIEE_W1$l38==0,0L, ifelse(HAPIEE_
 
 **Code** | **Category Label**  
 ------------- | -------------  
-0 |   Does not drinks water on a daily basis
+0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
 **Harmonization status**:  impossible 
