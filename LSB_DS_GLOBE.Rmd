@@ -162,7 +162,6 @@ lsb_GLOBE_4$lsb_alc_cur_4<-recode(as.integer(GLOBE2014$G14v26),"1"=0L,"2"=1L,"3"
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -1310,7 +1309,6 @@ lsb_GLOBE_2$lsb_smk_start_2<-as.integer(GLOBE2004$w077)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#This is where the R-script will be written
 
 ```  
 ### **Variable label**:  Smoking initiation age    
@@ -1957,8 +1955,7 @@ lsb_GLOBE_4$lsb_pa_walk_leis_4<-GLOBE2014$G14v29_a_dag*(GLOBE2014$G14v29_a_uur*6
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-GLOBE2004$lsb_pa_cycle_2<-GLOBE2004$w093*(GLOBE2004$w094*60+GLOBE2004$w095)+GLOBE2004$w101*(GLOBE2004$w102*60+GLOBE2004$w103)
-
+GLOBE2004$lsb_pa_cycle_2<-as.numeric(GLOBE2004$w093*(GLOBE2004$w094*60+GLOBE2004$w095)+GLOBE2004$w101*(GLOBE2004$w102*60+GLOBE2004$w103))
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_3  
@@ -1971,7 +1968,7 @@ GLOBE2004$lsb_pa_cycle_2<-GLOBE2004$w093*(GLOBE2004$w094*60+GLOBE2004$w095)+GLOB
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_GLOBE_3$lsb_pa_cycle_3<-GLOBE2011$v19_b_fida*(GLOBE2011$v19_b_fiur*60+GLOBE2011$v19_b_fimin)+GLOBE2011$v23_b_wfda*(GLOBE2011$v23_b_wfur*60+GLOBE2011$v23_b_wfmin)
+lsb_GLOBE_3$lsb_pa_cycle_3<-as.numeric(GLOBE2011$v19_b_fida*(GLOBE2011$v19_b_fiur*60+GLOBE2011$v19_b_fimin)+GLOBE2011$v23_b_wfda*(GLOBE2011$v23_b_wfur*60+GLOBE2011$v23_b_wfmin))
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_4  
@@ -1984,7 +1981,7 @@ lsb_GLOBE_3$lsb_pa_cycle_3<-GLOBE2011$v19_b_fida*(GLOBE2011$v19_b_fiur*60+GLOBE2
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_GLOBE_4$lsb_pa_cycle_4<-GLOBE2014$G14v28_b_dag*(GLOBE2014$G14v28_b_uur*60+GLOBE2014$G14v28_b_min)+GLOBE2014$G14v29_b_dag*(GLOBE2014$G14v29_b_uur*60+GLOBE2014$G14v29_b_min)
+lsb_GLOBE_4$lsb_pa_cycle_4<-as.numeric(GLOBE2014$G14v28_b_dag*(GLOBE2014$G14v28_b_uur*60+GLOBE2014$G14v28_b_min)+GLOBE2014$G14v29_b_dag*(GLOBE2014$G14v29_b_uur*60+GLOBE2014$G14v29_b_min))
 
 ```  
 ### **Variable label**:  Average cycling time    
@@ -2304,9 +2301,8 @@ lsb_GLOBE_4$lsb_pa_garden_time_4<-GLOBE2014$G14v29_c_dag*(GLOBE2014$G14v29_c_uur
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_GLOBE_2$lsb_pa_house_2<-ifelse(GLOBE2004$w139>0 | GLOBE2004$w139>0, 1L,
-                                   ifelse(GLOBE2004$w139==0 & GLOBE2004$w139==0,0L,NA)) 
-
+lsb_GLOBE_2$lsb_pa_house_2<-ifelse(GLOBE2004$w139>0 | GLOBE2004$w142>0, 1L,
+                                   ifelse(GLOBE2004$w139==0 & GLOBE2004$w142==0,0L,NA)) 
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_3  
