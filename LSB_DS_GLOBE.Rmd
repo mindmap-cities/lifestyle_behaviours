@@ -346,8 +346,7 @@ lsb_GLOBE_0$lsb_alc_binge_0<-ifelse(lsb_GLOBE_0$lsb_alc_cur_0==0,1L,recode(as.in
                              # ifelse(as.integer(GLOBE1991$v137)%in% c(5:6), 1L,
                              # ifelse(as.integer(GLOBE1991$v139) %in% c(1:4) & as.integer(GLOBE1991$v138) %in% c(7), 1L, 
                              # ifelse(as.integer(GLOBE1991$v139) %in% c(1:4) & as.integer(GLOBE1991$v138) %in% c(6), 2L, 
-                             # ifelse(as.integer(GLOBE1991$v139) %in% c(1:4) & as.integer(GLOBE1991$v138) %in% c(1:5), 3L,
-                             # ifelse(as.integer(GLOBE1991$v139) %in% c(5:7) & as.integer(GLOBE1991$v136) %in% c(2), 1L,NA))))))))
+                             # ifelse(as.integer(GLOBE1991$v139) %in% c(1:4) & as.integer(GLOBE1991$v138) %in% c(1:5), 3L,NA)))))))
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -374,8 +373,7 @@ lsb_GLOBE_1$lsb_alc_binge_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==0,1L,recode(as.in
                              # ifelse(as.integer(GLOBE1991$v8b)%in% c(5:6), 1L,
                              # ifelse(as.integer(GLOBE1991$v8d) %in% c(1:4) & as.integer(GLOBE1991$v8c) %in% c(7), 1L, 
                              # ifelse(as.integer(GLOBE1991$v8d) %in% c(1:4) & as.integer(GLOBE1991$v8c) %in% c(6), 2L, 
-                             # ifelse(as.integer(GLOBE1991$v8d) %in% c(1:4) & as.integer(GLOBE1991$v8c) %in% c(1:5), 3L,
-                             # ifelse(as.integer(GLOBE1991$v8d) %in% c(5:7) & as.integer(GLOBE1991$v8a) %in% c(2), 1L, NA))))))))
+                             # ifelse(as.integer(GLOBE1991$v8d) %in% c(1:4) & as.integer(GLOBE1991$v8c) %in% c(1:5), 3L,NA)))))))
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
