@@ -216,11 +216,10 @@ lsb_GLOBE_4$lsb_alc_cur_4<-recode(as.integer(GLOBE2014$G14v26),"1"=0L,"2"=1L,"3"
 1 |   Ever consumed alcohol  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   The harmonized variable "Current consumption of alcohol" was combined with the study-specific variable "Have you had drinks containing alcohol in the past?" to create "Ever consumption of alcohol".  
+**Harmonization comment**:    
 **R script**:  
 ```{r, echo=TRUE}
-lsb_GLOBE_1$lsb_alc_ever_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==1,1L,recode(as.integer(GLOBE1997$v9b),"1"=1L,"2"=0L))
-
+lsb_GLOBE_1$lsb_alc_ever_1<-recode(as.integer(GLOBE1997$v9b),"1"=1L,"2"=0L)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_2    
@@ -332,10 +331,23 @@ lsb_GLOBE_1$lsb_alc_ever_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==1,1L,recode(as.int
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:  
 **R script**:  
 ```{r, echo=TRUE}
+#**Harmonization comment**: The study-specific variable is the frequency of drinking 6 or more drinks in one day
+
 lsb_GLOBE_0$lsb_alc_binge_0<-ifelse(lsb_GLOBE_0$lsb_alc_cur_0==0,1L,recode(as.integer(GLOBE1991$v137),"1"=3L,"2"=3L,"3"=3L,"4"=2L,"5"=1L,"6"=1L,"7"=1L))
+
+#**Harmonization comment**: The DataSchema variable The study-specific category "<=1 day a week" is coded under the DataSchema category "0 to 3 times a month"
+
+#lsb_GLOBE_0$lsb_alc_binge_0<-ifelse(lsb_GLOBE_0$lsb_alc_cur_0==0,1L,
+                             # ifelse(as.integer(GLOBE1991$v137)%in% c(1:3), 3L,
+                             # ifelse(as.integer(GLOBE1991$v137)%in% c(4), 2L,
+                             # ifelse(as.integer(GLOBE1991$v137)%in% c(5:6), 1L,
+                             # ifelse(as.integer(GLOBE1991$v139) %in% c(1:4) & as.integer(GLOBE1991$v138) %in% c(7), 1L, 
+                             # ifelse(as.integer(GLOBE1991$v139) %in% c(1:4) & as.integer(GLOBE1991$v138) %in% c(6), 2L, 
+                             # ifelse(as.integer(GLOBE1991$v139) %in% c(1:4) & as.integer(GLOBE1991$v138) %in% c(1:5), 3L,
+                             # ifelse(as.integer(GLOBE1991$v139) %in% c(5:7) & as.integer(GLOBE1991$v136) %in% c(2), 1L,NA))))))))
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -356,6 +368,14 @@ lsb_GLOBE_0$lsb_alc_binge_0<-ifelse(lsb_GLOBE_0$lsb_alc_cur_0==0,1L,recode(as.in
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_1$lsb_alc_binge_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==0,1L,recode(as.integer(GLOBE1997$v8b),"1"=3,"2"=3,"3"=3,"4"=2,"5"=1,"6"=1,"7"=1))
+#lsb_GLOBE_0$lsb_alc_binge_0<-ifelse(lsb_GLOBE_0$lsb_alc_cur_0==0,1L,
+                             # ifelse(as.integer(GLOBE1991$v8b)%in% c(1:3), 3L,
+                             # ifelse(as.integer(GLOBE1991$v8b)%in% c(4), 2L,
+                             # ifelse(as.integer(GLOBE1991$v8b)%in% c(5:6), 1L,
+                             # ifelse(as.integer(GLOBE1991$v8d) %in% c(1:4) & as.integer(GLOBE1991$v8c) %in% c(7), 1L, 
+                             # ifelse(as.integer(GLOBE1991$v8d) %in% c(1:4) & as.integer(GLOBE1991$v8c) %in% c(6), 2L, 
+                             # ifelse(as.integer(GLOBE1991$v8d) %in% c(1:4) & as.integer(GLOBE1991$v8c) %in% c(1:5), 3L,
+                             # ifelse(as.integer(GLOBE1991$v8d) %in% c(5:7) & as.integer(GLOBE1991$v8a) %in% c(2), 1L, NA))))))))
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -396,6 +416,14 @@ lsb_GLOBE_1$lsb_alc_binge_1<-ifelse(lsb_GLOBE_1$lsb_alc_cur_1==0,1L,recode(as.in
 **R script**:  
 ```{r, echo=TRUE}
 lsb_GLOBE_3$lsb_alc_binge_3<-ifelse(lsb_GLOBE_3$lsb_alc_cur_3==0,1L,recode(as.integer(GLOBE2011$v14_alc_binge),"1"=3,"2"=3,"3"=2,"4"=1,"5"=1,"6"=1,"7"=1))
+
+#the categories for frequency of drinking is very different than DS
+# 4 or more times a week
+# 2 to 3 times a week
+# 2 to 4 times a month
+# Monthly or less
+# Never
+#and the number of drink categories are also different than 4 or more: category 4: 3 or 4 glasses
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
