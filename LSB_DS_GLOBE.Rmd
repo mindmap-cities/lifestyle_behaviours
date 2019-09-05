@@ -7,7 +7,7 @@ output: html_document
 ## Login to server and assign study data
 ```{r, echo=FALSE}
 #Load Opal R library
-library(opal)
+library(opalr)
 library(tidyverse)
 # Create an opal object with the login information
 erasmus_opal <- opal.login()
@@ -2677,7 +2677,20 @@ GLOBE2004$lsb_pa_garden_time_2<-GLOBE2004$w119*(GLOBE2004$w120*60+GLOBE2004$w121
 GLOBE2004$lsb_pa_garden_time_3<-GLOBE2004$w124*(GLOBE2004$w125*60+GLOBE2004$w126)
 GLOBE2004$lsb_pa_garden_time_4<-GLOBE2004$w129*(GLOBE2004$w130*60+GLOBE2004$w131)
 
-GLOBE2004$lsb_pa_garden_time_all<-ifelse(is.na(GLOBE2004$lsb_pa_garden_time_1) & is.na(GLOBE2004$lsb_pa_garden_time_2) & is.na(GLOBE2004$lsb_pa_garden_time_3) & is.na(GLOBE2004$lsb_pa_garden_time_4),NA,rowSums(data.frame(GLOBE2004$lsb_pa_garden_time_1,GLOBE2004$lsb_pa_garden_time_2,GLOBE2004$lsb_pa_garden_time_3,GLOBE2004$lsb_pa_garden_time_4),na.rm = TRUE))
+# GLOBE2004$lsb_pa_garden_time_all<-ifelse(is.na(GLOBE2004$lsb_pa_garden_time_1) & is.na(GLOBE2004$lsb_pa_garden_time_2) & is.na(GLOBE2004$lsb_pa_garden_time_3) & is.na(GLOBE2004$lsb_pa_garden_time_4),NA,rowSums(data.frame(GLOBE2004$lsb_pa_garden_time_1,GLOBE2004$lsb_pa_garden_time_2,GLOBE2004$lsb_pa_garden_time_3,GLOBE2004$lsb_pa_garden_time_4),na.rm = TRUE))
+
+GLOBE2004$lsb_pa_garden_time_all<-
+  ifelse(is.na(GLOBE2004$lsb_pa_garden_time_1) &
+         is.na(GLOBE2004$lsb_pa_garden_time_2) &
+         is.na(GLOBE2004$lsb_pa_garden_time_3) &
+         is.na(GLOBE2004$lsb_pa_garden_time_4),
+       NA,
+       GLOBE2004 %>%
+         select(lsb_pa_garden_time_1,
+                lsb_pa_garden_time_2,
+                lsb_pa_garden_time_3,
+                lsb_pa_garden_time_4) %>%
+         rowSums(na.rm = TRUE))
 
 GLOBE2004$lsb_pa_sport_time_2<-ifelse(GLOBE2004$lsb_pa_garden_time_all==0, 0L,
                             ifelse(GLOBE2004$lsb_pa_garden_time_all<60,1,
@@ -2709,7 +2722,20 @@ GLOBE2011$lsb_pa_garden_time_2<-GLOBE2011$v20_b_s2da*(GLOBE2011$v20_b_s2ur*60+GL
 GLOBE2011$lsb_pa_garden_time_3<-GLOBE2011$v20_c_s3da*(GLOBE2011$v20_c_s3ur*60+GLOBE2011$v20_c_s3min)
 GLOBE2011$lsb_pa_garden_time_4<-GLOBE2011$v20_d_s4da*(GLOBE2011$v20_d_s4ur*60+GLOBE2011$v20_d_s4min)
 
-GLOBE2011$lsb_pa_garden_time_all<-ifelse(is.na(GLOBE2011$lsb_pa_garden_time_1) & is.na(GLOBE2011$lsb_pa_garden_time_2) & is.na(GLOBE2011$lsb_pa_garden_time_3) & is.na(GLOBE2011$lsb_pa_garden_time_4),NA,rowSums(data.frame(GLOBE2011$lsb_pa_garden_time_1,GLOBE2011$lsb_pa_garden_time_2,GLOBE2011$lsb_pa_garden_time_3,GLOBE2011$lsb_pa_garden_time_4),na.rm = TRUE))
+# GLOBE2011$lsb_pa_garden_time_all<-ifelse(is.na(GLOBE2011$lsb_pa_garden_time_1) & is.na(GLOBE2011$lsb_pa_garden_time_2) & is.na(GLOBE2011$lsb_pa_garden_time_3) & is.na(GLOBE2011$lsb_pa_garden_time_4),NA,rowSums(data.frame(GLOBE2011$lsb_pa_garden_time_1,GLOBE2011$lsb_pa_garden_time_2,GLOBE2011$lsb_pa_garden_time_3,GLOBE2011$lsb_pa_garden_time_4),na.rm = TRUE))
+
+GLOBE2011$lsb_pa_garden_time_all<-
+  ifelse(is.na(GLOBE2011$lsb_pa_garden_time_1) &
+         is.na(GLOBE2011$lsb_pa_garden_time_2) &
+         is.na(GLOBE2011$lsb_pa_garden_time_3) &
+         is.na(GLOBE2011$lsb_pa_garden_time_4),
+       NA,
+       GLOBE2011 %>%
+         select(lsb_pa_garden_time_1,
+                lsb_pa_garden_time_2,
+                lsb_pa_garden_time_3,
+                lsb_pa_garden_time_4) %>%
+         rowSums(na.rm = TRUE))
 
 lsb_GLOBE_3$lsb_pa_sport_time_3<-ifelse(GLOBE2011$lsb_pa_garden_time_all==0, 0L,
                             ifelse(GLOBE2011$lsb_pa_garden_time_all<60,1,

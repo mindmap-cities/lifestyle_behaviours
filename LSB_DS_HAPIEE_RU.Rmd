@@ -12,12 +12,12 @@ library(data.table)
 # Connecting with Opal data server
 ## Login to server and assign study data
 #Load Opal R library
-library(opal)
+library(opalr)
 # Create an opal object with the login information
 erasmus_opal <- opal.login()
 #Login to Opal server and assign the content of the HAPIEE table(s) to your RStudio environment
 #HAPIEE_W1 
-opal.assign.table.tibble(erasmus_opal, 'HAPIEE_W1', 'HAPIEE.HAPIEE_W1',variables = list('country','d_alco_wk','d_beer_wk','d_wine_wk','d_dest_wk','d_al5day','l39','l40','l41','d_packyrs','l42','d_alcfreq'))
+opal.assign.table.tibble(erasmus_opal, 'HAPIEE_W1', 'HAPIEE.HAPIEE_W1',variables = list('country','d_alco_wk','d_beer_wk','d_wine_wk','d_dest_wk','d_al5day','l39','l40','l41','d_packyrs','l42','d_alcfreq', 'l38'))
 HAPIEE_W1<- opal.execute(erasmus_opal,'HAPIEE_W1')
 #HAPIEE_W2 
 opal.assign.table.tibble(erasmus_opal, 'HAPIEE_W2', 'HAPIEE.HAPIEE_W2',variables = list('country','d_w2alco_wk','w2al9a','d_w2beer_wk','d_w2wine_wk','d_w2dest_wk','w2al1','l37a','l38','l37b','w2h7','w2l39','w2l40','d_w2alcfreq','w2l42'))

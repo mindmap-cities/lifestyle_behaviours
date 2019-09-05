@@ -1879,6 +1879,23 @@ lsb_LASA1_6$lsb_pa_walk_time_6 <- ifelse(LASA1H$lsb_pa_walk_time_6_inter<30,0,
 ```{r, echo=TRUE}
 
 ```  
+
+### **Variable label**:  Average walking for transportation    
+**Variable name**:  lsb_pa_walk_trans_3    
+**Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
+**Value type**:  decimal    
+**Variable unit**:  minutes/week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
+```  
+
+
+
 ### **Variable label**:  Average walking for transportation    
 **Variable name**:  lsb_pa_walk_trans_4    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
@@ -1906,6 +1923,23 @@ lsb_LASA1_6$lsb_pa_walk_time_6 <- ifelse(LASA1H$lsb_pa_walk_time_6_inter<30,0,
 ```{r, echo=TRUE}
 
 ```  
+
+
+### **Variable label**:  Average walking time for leisure  
+**Variable name**:  lsb_pa_walk_leis_1    
+**Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
+**Value type**:  decimal    
+**Variable unit**:  minutes/week  
+**Category coding**:  N/A  
+
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
+```  
+
+
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_2    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
@@ -3010,6 +3044,26 @@ lsb_LASA1_6$lsb_pa_sport_6<-ifelse(LASA1H$HLPHYA21==1 & LASA1H$HLPHYA25!=2,0,
 ```{r, echo=TRUE}
 
 ```  
+
+### **Variable label**:  Daily water consumption  
+**Variable name**:  lsb_water_3    
+**Variable description**:  Indicator of whether the participant drinks water on a daily basis.   
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Does not drink water on a daily basis
+1 |   Drinks water on a daily basis
+
+**Harmonization status**:  impossible  
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
+```  
+
 ### **Variable label**:  Daily water consumption  
 **Variable name**:  lsb_water_4    
 **Variable description**:  Indicator of whether the participant drinks water on a daily basis.   
