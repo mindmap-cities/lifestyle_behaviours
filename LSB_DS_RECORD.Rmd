@@ -2492,7 +2492,10 @@ lsb_RECORD_0$lsb_pa_house_time_0 <- as.numeric(RECORD_w1_2$q28_autre_4_2)*60
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
+RECORD_w1_1 <- RECORD_w1_1 %>% mutate(Qm10 = ifelse(Qm10 == 'N', NA, Qm10))
 lsb_RECORD_0$lsb_pa_sport_0<- recode(as.integer(RECORD_w1_1$Qm10),'1'=0L,'2'=1L,'3'=1L)
+
 ```   
 ### **Variable label**: Sports or exercise      
 **Variable name**:  lsb_pa_sport_1  
@@ -2774,7 +2777,7 @@ lsb_RECORD_1$lsb_pa_sport_1<- recode(as.integer(RECORD_w2$Qm9),'1'=0L,'2'=1L,'3'
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_RECORD_0$lsb_veg_0<- ifelse(RECORD_w1_1$Q30 ==0, 0L,
+lsb_RECORD_0$lsb_veg_0 <- ifelse(RECORD_w1_1$Q30 == 0, 0L,
                                 ifelse(RECORD_w1_1$Q30 > 0,1L,NA))
 
 ```  
