@@ -196,7 +196,7 @@ MyMerge <- function(x,y){
 #Reducing the table to the variables needed
 table_hunt_all <- Reduce(MyMerge, list(HUNT1,HUNT2,HUNT3))
 
-#hrmonization scripts
+#harmonization scripts
 table_hunt_all$lsb_alc_ever_0<- recode(as.integer(table_hunt_all$AlcFL2W_NT1BLQ2),'1'=1L,'2'=1L,'3'=1L,'4'=1L,'5'=0L)
 #merging to harmonized table
 lsb_HUNT_0<- merge(lsb_HUNT_0,table_hunt_all[,c("id","lsb_alc_ever_0")],by="id",all.x=TRUE)
@@ -235,7 +235,7 @@ lsb_HUNT_0<- merge(lsb_HUNT_0,table_hunt_all[,c("id","lsb_alc_ever_0")],by="id",
 **Harmonization comment**:   Study-specific variable:"About how often in the last 12 months did you drink alcohol? (Do not include low-alcohol beer)". The harmonized variable "Ever consumption of alcohol" was created using "Ever consumption of alcohol" from baseline and previous waves and current consumption of alcohol at followup waves. To create this variable, all HUNT data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.      
 **R script**:  
 ```{r, echo=TRUE}
-#hrmonization scripts
+#harmonization scripts
 table_hunt_all$lsb_alc_ever_2<- ifelse(table_hunt_all$lsb_alc_ever_0==0 & as.integer(table_hunt_all$AlcFLY_NT3BLQ1)=='8',0L,
                                 ifelse(table_hunt_all$lsb_alc_ever_0==1 | 
                                 (as.integer(table_hunt_all$AlcFLY_NT3BLQ1)>='1' & as.integer(table_hunt_all$AlcFLY_NT3BLQ1)<=7),1L,NA))
@@ -959,7 +959,7 @@ lsb_HUNT_2$lsb_smk_status_2<- recode(as.integer(HUNT3$SmoStat_NT3BLQ1),'0'=0L,'1
 All all HUNT data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
 **R script**:  
 ```{r, echo=TRUE}
-#hrmonization scripts
+#harmonization scripts
 table_hunt_all$lsb_smk_ever_0<- recode(as.integer(table_hunt_all$SmoStat_NT1BLQ2),'0'=0L,'1'=1L,'2'=1L)
 #merging to harmonized table
 lsb_HUNT_0<- merge(lsb_HUNT_0,table_hunt_all[,c("id","lsb_smk_ever_0")],by="id",all.x=TRUE)
@@ -980,7 +980,7 @@ lsb_HUNT_0<- merge(lsb_HUNT_0,table_hunt_all[,c("id","lsb_smk_ever_0")],by="id",
 **Harmonization comment**:   For followup waves, the harmonized variable was created using "Ever tobacco smoking" from baseline and previous waves and current tobacco use at followup waves. To create this variable, all HUNT data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
 **R script**:  
 ```{r, echo=TRUE}
-#hrmonization scripts
+#harmonization scripts
 table_hunt_all$lsb_smk_ever_1<- ifelse(table_hunt_all$lsb_smk_ever_0==0 & as.integer(table_hunt_all$SmoStat_NT2BLQ1)==0,0L,
                                   ifelse(table_hunt_all$lsb_smk_ever_0==1 | 
                                   (as.integer(table_hunt_all$SmoStat_NT2BLQ1)>=1 &   
@@ -1004,7 +1004,7 @@ lsb_HUNT_1<- merge(lsb_HUNT_1,table_hunt_all[,c("id","lsb_smk_ever_1")],by="id",
 **Harmonization comment**:   For followup waves, the harmonized variable was created using "Ever tobacco smoking" from baseline and previous waves and current tobacco use at followup waves. To create this variable, all HUNT data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
 **R script**:  
 ```{r, echo=TRUE}
-#hrmonization scripts
+#harmonization scripts
 table_hunt_all$lsb_smk_ever_2<- ifelse(table_hunt_all$lsb_smk_ever_1==0 & as.integer(table_hunt_all$SmoStat_NT3BLQ1)==0,0L,
                                 ifelse(table_hunt_all$lsb_smk_ever_1==1 |
                                 (as.integer(table_hunt_all$SmoStat_NT3BLQ1)>=1 & as.integer(table_hunt_all$SmoStat_NT3BLQ1)<=3),1L,NA))

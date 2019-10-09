@@ -2306,7 +2306,7 @@ lsb_LASA2_2$lsb_pa_house_2<- ifelse(LASA_extravar_PA$glphya01[LASA_extravar_PA$i
 **Harmonization comment**:   Study-specific variables ask if participant did any light or heavy household activities in the past 2 weeks. These two variables were combined to create the harmonized variable "Household activities".  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA2_3$lsb_pa_house_6<- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$id %in% LASA2H$id]==4,ifelse(as.integer(LASA2H$HLPHYA32)==1 & as.integer(LASA2H$HLPHYA36)==1,0L, ifelse(as.integer(LASA2H$HLPHYA32)==2 | as.integer(LASA2H$HLPHYA36)==2,1L,NA)),NA)
+lsb_LASA2_3$lsb_pa_house_3<- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$id %in% LASA2H$id]==4,ifelse(as.integer(LASA2H$HLPHYA32)==1 & as.integer(LASA2H$HLPHYA36)==1,0L, ifelse(as.integer(LASA2H$HLPHYA32)==2 | as.integer(LASA2H$HLPHYA36)==2,1L,NA)),NA)
 ```   
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_4  
