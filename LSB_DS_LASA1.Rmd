@@ -1160,8 +1160,6 @@ lsb_LASA1_5 <- merge(lsb_LASA1_5, lasa1_lsb_table[,c("id","lsb_smk_ever_5")],by=
 **Harmonization comment**:   The harmonized variable was created using "Ever tobacco smoking" from baseline and previous waves and "do you smoke" and "did yo smoke before" at followup waves. To create this variable, all LASA1 data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_LASA1_6$lsb_smk_ever_6 <- ifelse(as.integer(LASA1H$HMVAR32)== 1, 0L, ifelse(as.integer(LASA1H$HMVAR32)== 2,1L, ifelse((as.integer(LASA1H$HMVAR32)== '-2' & as.integer(LASA1H$HMVAR31)==2), 1L, NA)))
-
 lasa1_lsb_table$lsb_smk_ever_6_inter <- ifelse(as.integer(lasa1_lsb_table$HMVAR31)== 1 & as.integer(lasa1_lsb_table$HMVAR32)==1, 0L, ifelse(as.integer(lasa1_lsb_table$HMVAR31)== 2 | (as.integer(lasa1_lsb_table$HMVAR31)== 1 & as.integer(lasa1_lsb_table$HMVAR32)== 2),1L,NA))
 lasa1_lsb_table$lsb_smk_ever_6 <- ifelse(lasa1_lsb_table$lsb_smk_ever_5==1 | lasa1_lsb_table$lsb_smk_ever_6_inter==1,1L,
 ifelse(lasa1_lsb_table$lsb_smk_ever_5==0 & lasa1_lsb_table$lsb_smk_ever_6_inter==0,0L,NA))
