@@ -217,7 +217,7 @@ lsb_RECORD_0<- merge(lsb_RECORD_0,alc_table_record[,c("id","lsb_alc_ever_0")],by
 **Harmonization comment**:   The harmonized variable "Ever consumption of alcohol" was created using "Ever consumption of alcohol" from baseline and previous waves and current consumption of alcohol at followup waves. To create this variable, all RECORD data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.   
 **R script**:  
 ```{r, echo=TRUE}
-#hrmonization scripts
+#harmonization scripts
 alc_table_record$lsb_alc_ever_1_inter<- ifelse(alc_table_record$Qm10 =='N'  & alc_table_record$Qm10b == 1 | 
                                                is.na(alc_table_record$Qm10) & alc_table_record$Qm10b == 1,0L,
                                         ifelse(alc_table_record$Qm10 == 'N' & alc_table_record$Qm10b == 2 |
@@ -991,7 +991,7 @@ lsb_RECORD_1$lsb_smk_status_1<- recode(as.numeric(RECORD_w2$Qm18),'1'=0L,'2'=2L,
 **Harmonization comment**:   All  RECORD data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
 **R script**:  
 ```{r, echo=TRUE}
-#hrmonization scripts
+#harmonization scripts
 alc_table_record$lsb_smk_ever_0<- recode(as.numeric(alc_table_record$Qm16), '1'=0L,'2'=1L,'3'=1L,'4'=1L, .default=NA_integer_)
 #merging to harmonized table
 lsb_RECORD_0<- merge(lsb_RECORD_0,alc_table_record[,c("id","lsb_smk_ever_0")],by = "id", all.x = TRUE)
@@ -1012,7 +1012,7 @@ lsb_RECORD_0<- merge(lsb_RECORD_0,alc_table_record[,c("id","lsb_smk_ever_0")],by
 **Harmonization comment**:   For followup waves, the harmonized variable was created using "Ever tobacco smoking" from baseline and previous waves and current tobacco use at followup waves. To create this variable, all RECORD data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.  
 **R script**:  
 ```{r, echo=TRUE}
-#hrmonization scripts
+#harmonization scripts
 alc_table_record$lsb_smk_ever_1<- ifelse(alc_table_record$lsb_smk_ever_0==0 & as.numeric(alc_table_record$Qm18)==1,0L,
                                   ifelse(alc_table_record$lsb_smk_ever_0==1 | as.numeric(alc_table_record$Qm18)==2 |
                                          as.numeric(alc_table_record$Qm18)==3 | as.numeric(alc_table_record$Qm18)==4,1L,NA))
