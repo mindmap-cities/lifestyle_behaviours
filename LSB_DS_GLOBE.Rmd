@@ -2677,8 +2677,6 @@ GLOBE2004$lsb_pa_garden_time_2<-GLOBE2004$w119*(GLOBE2004$w120*60+GLOBE2004$w121
 GLOBE2004$lsb_pa_garden_time_3<-GLOBE2004$w124*(GLOBE2004$w125*60+GLOBE2004$w126)
 GLOBE2004$lsb_pa_garden_time_4<-GLOBE2004$w129*(GLOBE2004$w130*60+GLOBE2004$w131)
 
-# GLOBE2004$lsb_pa_garden_time_all<-ifelse(is.na(GLOBE2004$lsb_pa_garden_time_1) & is.na(GLOBE2004$lsb_pa_garden_time_2) & is.na(GLOBE2004$lsb_pa_garden_time_3) & is.na(GLOBE2004$lsb_pa_garden_time_4),NA,rowSums(data.frame(GLOBE2004$lsb_pa_garden_time_1,GLOBE2004$lsb_pa_garden_time_2,GLOBE2004$lsb_pa_garden_time_3,GLOBE2004$lsb_pa_garden_time_4),na.rm = TRUE))
-
 GLOBE2004$lsb_pa_garden_time_all<-
   ifelse(is.na(GLOBE2004$lsb_pa_garden_time_1) &
          is.na(GLOBE2004$lsb_pa_garden_time_2) &
@@ -2721,8 +2719,6 @@ GLOBE2011$lsb_pa_garden_time_1<-GLOBE2011$v20_a_s1da*(GLOBE2011$v20_a_s1ur*60+GL
 GLOBE2011$lsb_pa_garden_time_2<-GLOBE2011$v20_b_s2da*(GLOBE2011$v20_b_s2ur*60+GLOBE2011$v20_b_s2min)
 GLOBE2011$lsb_pa_garden_time_3<-GLOBE2011$v20_c_s3da*(GLOBE2011$v20_c_s3ur*60+GLOBE2011$v20_c_s3min)
 GLOBE2011$lsb_pa_garden_time_4<-GLOBE2011$v20_d_s4da*(GLOBE2011$v20_d_s4ur*60+GLOBE2011$v20_d_s4min)
-
-# GLOBE2011$lsb_pa_garden_time_all<-ifelse(is.na(GLOBE2011$lsb_pa_garden_time_1) & is.na(GLOBE2011$lsb_pa_garden_time_2) & is.na(GLOBE2011$lsb_pa_garden_time_3) & is.na(GLOBE2011$lsb_pa_garden_time_4),NA,rowSums(data.frame(GLOBE2011$lsb_pa_garden_time_1,GLOBE2011$lsb_pa_garden_time_2,GLOBE2011$lsb_pa_garden_time_3,GLOBE2011$lsb_pa_garden_time_4),na.rm = TRUE))
 
 GLOBE2011$lsb_pa_garden_time_all<-
   ifelse(is.na(GLOBE2011$lsb_pa_garden_time_1) &
