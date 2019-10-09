@@ -196,7 +196,7 @@ MyMerge <- function(x,y){
 }
 #Reducing the table to the variables needed
 alc_table_record <- Reduce(MyMerge, list(RECORD_w1_1[,c("id","Qm16")],RECORD_w1_2[,c("id","neverdrinker")],RECORD_w2[,c("id","Qm18","Qm10","Qm10b")]))
-#hrmonization scripts
+#harmonization scripts
 alc_table_record$lsb_alc_ever_0<- recode(as.character(alc_table_record$neverdrinker), '0' = 1L , '1' = 0L,.default= NA_integer_)
 #merging to harmonized table
 lsb_RECORD_0<- merge(lsb_RECORD_0,alc_table_record[,c("id","lsb_alc_ever_0")],by = "id", all.x = TRUE)
