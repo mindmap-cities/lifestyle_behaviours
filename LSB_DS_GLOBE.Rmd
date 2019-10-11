@@ -1964,7 +1964,7 @@ GLOBE2004$lsb_pa_cycle_2<-as.numeric(GLOBE2004$w093*(GLOBE2004$w094*60+GLOBE2004
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
+**Harmonization status**:    complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}

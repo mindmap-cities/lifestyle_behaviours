@@ -1292,7 +1292,7 @@ lsb_LASA1_1$lsb_smk_start_1 <- ifelse(as.integer(LASA1C$cmvar33)< 0, NA, LASA1C$
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
