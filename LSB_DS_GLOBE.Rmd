@@ -1154,7 +1154,7 @@ lsb_GLOBE_0$lsb_cig_qty_0<-ifelse(lsb_GLOBE_0$lsb_smk_cur_0==0,0,GLOBE1991$v141)
 **Harmonization comment**:   Was recoded to 0 when the participant responded no to "current tobacco smoking".  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_GLOBE_0$lsb_cig_qty_0<-ifelse(lsb_GLOBE_0$lsb_smk_cur_0==0,0,GLOBE1991$v141)
+lsb_GLOBE_1$lsb_cig_qty_1<-ifelse(lsb_GLOBE_1$lsb_smk_cur_1==0,0,GLOBE1997$v10b1)
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
@@ -1955,7 +1955,7 @@ lsb_GLOBE_4$lsb_pa_walk_leis_4<-GLOBE2014$G14v29_a_dag*(GLOBE2014$G14v29_a_uur*6
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-GLOBE2004$lsb_pa_cycle_2<-as.numeric(GLOBE2004$w093*(GLOBE2004$w094*60+GLOBE2004$w095)+GLOBE2004$w101*(GLOBE2004$w102*60+GLOBE2004$w103))
+lsb_GLOBE_2$lsb_pa_cycle_2<-as.numeric(GLOBE2004$w093*(GLOBE2004$w094*60+GLOBE2004$w095)+GLOBE2004$w101*(GLOBE2004$w102*60+GLOBE2004$w103))
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_3  
@@ -2422,7 +2422,7 @@ lsb_GLOBE_4$lsb_pa_house_4<-ifelse(GLOBE2014$G14v32_a_dag >0 | GLOBE2014$G14v32_
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_GLOBE_2$lsb_pa_garden_time_2<-GLOBE2004$w139*(GLOBE2004$w140*60+GLOBE2004$w141)+GLOBE2004$w142*(GLOBE2004$w143*60+GLOBE2004$w144)
+lsb_GLOBE_2$lsb_pa_house_time_2<-GLOBE2004$w139*(GLOBE2004$w140*60+GLOBE2004$w141)+GLOBE2004$w142*(GLOBE2004$w143*60+GLOBE2004$w144)
 
 ```  
 ### **Variable label**:  Average household activities time      
@@ -2436,7 +2436,7 @@ lsb_GLOBE_2$lsb_pa_garden_time_2<-GLOBE2004$w139*(GLOBE2004$w140*60+GLOBE2004$w1
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_GLOBE_3$lsb_pa_garden_time_3<-GLOBE2011$v21_a_hhda*(GLOBE2011$v21_a_hhur*60+GLOBE2011$v21_a_hhmin)+GLOBE2011$v21_b_zhda*(GLOBE2011$v21_b_zhur*60+GLOBE2011$v21_b_zhmin)
+lsb_GLOBE_3$lsb_pa_house_time_3<-GLOBE2011$v21_a_hhda*(GLOBE2011$v21_a_hhur*60+GLOBE2011$v21_a_hhmin)+GLOBE2011$v21_b_zhda*(GLOBE2011$v21_b_zhur*60+GLOBE2011$v21_b_zhmin)
 
 ```  
 ### **Variable label**:  Average household activities time      
@@ -2450,7 +2450,7 @@ lsb_GLOBE_3$lsb_pa_garden_time_3<-GLOBE2011$v21_a_hhda*(GLOBE2011$v21_a_hhur*60+
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_GLOBE_4$lsb_pa_garden_time_4<-GLOBE2014$G14v32_a_dag*(GLOBE2014$G14v32_a_uur*60+GLOBE2014$G14v32_a_min)+GLOBE2014$G14v32_b_dag*(GLOBE2014$G14v32_b_uur*60+GLOBE2014$G14v32_b_min)
+lsb_GLOBE_4$lsb_pa_house_time_4<-GLOBE2014$G14v32_a_dag*(GLOBE2014$G14v32_a_uur*60+GLOBE2014$G14v32_a_min)+GLOBE2014$G14v32_b_dag*(GLOBE2014$G14v32_b_uur*60+GLOBE2014$G14v32_b_min)
 
 ```  
 ### **Variable label**:  Average household activities time      
@@ -2690,7 +2690,7 @@ GLOBE2004$lsb_pa_garden_time_all<-
                 lsb_pa_garden_time_4) %>%
          rowSums(na.rm = TRUE))
 
-GLOBE2004$lsb_pa_sport_time_2<-ifelse(GLOBE2004$lsb_pa_garden_time_all==0, 0L,
+lsb_GLOBE_2$lsb_pa_sport_time_2<-ifelse(GLOBE2004$lsb_pa_garden_time_all==0, 0L,
                             ifelse(GLOBE2004$lsb_pa_garden_time_all<60,1,
                             ifelse(GLOBE2004$lsb_pa_garden_time_all>60 & GLOBE2004$lsb_pa_garden_time_all<120,2,
                             ifelse(GLOBE2004$lsb_pa_garden_time_all>=120,3,NA))))
