@@ -1315,7 +1315,7 @@ lsb_HAPIEE_LT_0$lsb_smk_stop_0<-as.integer(HAPIEE_W2$w2l42)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  complete  
+**Harmonization status**: impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
