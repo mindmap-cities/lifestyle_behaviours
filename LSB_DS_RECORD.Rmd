@@ -583,7 +583,7 @@ lsb_RECORD_1$lsb_alc_wine_1<- as.integer(RECORD_w2$Qm11b)*7L
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -598,7 +598,7 @@ lsb_RECORD_0$lsb_alc_beer_0 <- as.integer(RECORD_w1_1$Qm12c)*7L
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  impossible  
+**Harmonization status**:  complete  
 **Harmonization comment**:    
 **R script**:  
 ```{r, echo=TRUE}
