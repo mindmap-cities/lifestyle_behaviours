@@ -32,7 +32,10 @@ HAPIEE_W2 <- subset(HAPIEE_W2, HAPIEE_W2$country==1)
 lsb_HAPIEE_CZ_0 <- data.frame(id = HAPIEE_W1$id )
 lsb_HAPIEE_CZ_1 <- data.frame(id = HAPIEE_W2$id )
 ```
-
+## When you are done with your work, logout of Opal server
+```{r, echo=FALSE}
+opal.logout(erasmus_opal)
+```
 # Table of Contents
 1. [Alcohol consumption subdomain](#alcohol-consumption-subdomain)
 2. [Tobacco consumption subdomain](#tobacco-consumption-subdomain)
