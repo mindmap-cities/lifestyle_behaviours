@@ -34,6 +34,10 @@ lsb_LASA2_1 <- data.frame(id = LASA2F$id)
 lsb_LASA2_2 <- data.frame(id = LASA2G$id)
 lsb_LASA2_3 <- data.frame(id = LASA2H$id)
 ```
+## When you are done with your work, logout of Opal server
+```{r, echo=FALSE}
+opal.logout(erasmus_opal)
+```
 # Table of Contents
 1. [Alcohol consumption subdomain](#alcohol-consumption-subdomain)
 2. [Tobacco consumption subdomain](#tobacco-consumption-subdomain)
