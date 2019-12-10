@@ -19,7 +19,7 @@ opal.assign.table.tibble(erasmus_opal, 'Tra3_4_Baseline','CLSA_1.Tra3_4_Baseline
 CLSA_tra0 <- opal.execute(erasmus_opal,'Tra3_4_Baseline')
 
 
-opal.assign.table.tibble(erasmus_opal, 'Tra_FU1','CLSA_1.Tra_FU1',  variables=list("NUR_RCOFF_NB_TRF1", "ALC_FREQ_TRF1", "ALC_EVER_TRF1", "ALC_MLFQ_TRF1","ALC_FMFQ_TRF1", "PA2_LTHSWK_TRF1","NUT_FRUT_TRF1", "ALC_RDWD_NB_TRF1"," ALC_WHWD_NB_TRF1",  "ALC_BRWD_NB_TRF1", "ALC_LQWD_NB_TRF1", "ALC_RDWE_NB_TRF1", "ALC_WHWE_NB_TRF1", "ALC_BRWE_NB_TRF1", "ALC_LQWE_NB_TRF1", "PA2_LTHSWK_TRF1", "PA2_HVYHSWK_TRF1", "PA2_LSPRT_TRF1", "PA2_MSPRT_TRF1", "PA2_SSPRT_TRF1", "PA2_WALK_TRF1","SMK_100CG_TRF1","ICQ_SMOKE_TRF1", "SMK_OTREG_TRF1" , "SMK_SMKDL_AG_TRF1", "ALC_WHWD_NB_TRF1", "ALC_LQRWE_NB_TRF1", "ALC_LQRWD_NB_TRF1", "SMK_OTOCC_TRF1", "PA2_WALKHR_TRF1", "PA2_HVYHSWK_TRF1", "PA2_LSPRTHR_TRF1", "PA2_MSPRTHR_TRF1", "PA2_SSPRTHR_TRF1", "PA2_LSRTHR_TRF1", "PA2_MSRTHR_TRF1", "PA2_SSRTHR_TRF1", "SMK_CURRCG_TRF1", "SMK_DSTY_TRF1", "SMK_OTCURR_CG_TRF1",
+opal.assign.table.tibble(erasmus_opal, 'Tra_FU1','CLSA_1.Tra_FU1',  variables=list("NUR_RCOFF_NB_TRF1", "ALC_FREQ_TRF1", "ALC_EVER_TRF1", "ALC_MLFQ_TRF1","ALC_FMFQ_TRF1", "PA2_LTHSWK_TRF1","NUT_FRUT_TRF1", "ALC_RDWD_NB_TRF1"," ALC_WHWD_NB_TRF1",  "ALC_BRWD_NB_TRF1", "ALC_LQWD_NB_TRF1", "ALC_RDWE_NB_TRF1", "ALC_WHWE_NB_TRF1", "ALC_BRWE_NB_TRF1", "ALC_LQWE_NB_TRF1", "PA2_LTHSWK_TRF1", "PA2_HVYHSWK_TRF1", "PA2_LSPRT_TRF1", "PA2_MSPRT_TRF1", "PA2_SSPRT_TRF1", "PA2_WALK_TRF1","SMK_100CG_TRF1","ICQ_SMOKE_TRF1", "SMK_OTREG_TRF1" , "SMK_SMKDL_AG_TRF1", "ALC_WHWD_NB_TRF1", "ALC_LQRWE_NB_TRF1", "ALC_LQRWD_NB_TRF1", "SMK_OTOCC_TRF1", "PA2_WALKHR_TRF1", "PA2_HVYHSWK_TRF1", "PA2_LSPRTHR_TRF1", "PA2_MSPRTHR_TRF1", "PA2_SSPRTHR_TRF1", "PA2_LSPRTHR_TRF1", "PA2_MSPRTHR_TRF1", "PA2_SSPRTHR_TRF1", "SMK_CURRCG_TRF1", "SMK_DSTY_TRF1", "SMK_OTCURR_CG_TRF1",
 "SMK_OTCURR_SM_TRF1","SMK_OTCURR_PI_TRF1", "SMK_OTCURR_CH_TRF1", "	SMK_OTCURR_SH_TRF1", "SMK_OTOCC_TRF1", "SMK_OTCURR_SH_TRF1", "NUR_DCOFF_NB_TRF1", "NUR_RCOFF_NB_TRF1", "SMK_TYPEOT_CG_TRF1",  "SMK_TYPEOT_SM_TRF1", "SMK_TYPEOT_PI_TRF1", "SMK_TYPEOT_CH_TRF1", "SMK_TYPEOT_SH_TRF1"))
 
 CLSA_tra1 <- opal.execute(erasmus_opal,'Tra_FU1')
@@ -195,6 +195,7 @@ table(lsb_CLSA_tra1$lsb_alc_cur_1)
 ```{r, echo=TRUE}
 lsb_CLSA_tra0$lsb_alc_cur_0<-recode(as.character(CLSA_tra0$ALC_EVER_TRM), "2"=0L ,"1"=1L, .default =NA_integer_)
 table(lsb_CLSA_tra0$lsb_alc_cur_0)
+
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_1    
@@ -492,9 +493,7 @@ table( CLSA_tra1$ALC_MLFQ_TRF1, useNA="always")
 **Harmonization comment**:  complete   
 **R script**:  
 ```{r, echo=TRUE}
-#Using the lsb_alc table, in order to replace all 90, 98, 99, 777 values easily with NA. T
-# lsb_alc<-CLSA_tra0[ , grepl( "ALC" , names(CLSA_tra0 ) ) ]
-# lsb_alc[lsb_alc>90]<-NA
+
 # should we add other drinks (ALC_OTWE_NB_TRF1+CLSA_tra01$ALC_OTWD_NB_TRM) too?
 #there are really large values. Added as a note to the reference sheet. 
 lsb_CLSA_tra0$lsb_alc_total_0<- CLSA_tra0$ALC_RDWD_NB_TRM+ CLSA_tra0$ALC_WHWD_NB_TRM+ CLSA_tra0$ALC_BRWD_NB_TRM+CLSA_tra0$ALC_LQWD_NB_TRM+
@@ -527,8 +526,7 @@ summary(CLSA_tra0$ALC_LQWE_NB_TRM)
 **Harmonization comment**:   complete  
 **R script**:  
 ```{r, echo=TRUE}
-# lsb_alc_1<-CLSA_tra1[ , grepl( "ALC" , names(CLSA_tra1 ) ) ]
-# lsb_alc_1[lsb_alc_1>90]<-NA
+
 
 lsb_CLSA_tra1$lsb_alc_total_1<- CLSA_tra1$ALC_RDWD_NB_TRF1+ CLSA_tra1$ALC_WHWD_NB_TRF1+ CLSA_tra1$ALC_BRWD_NB_TRF1+CLSA_tra1$ALC_LQWD_NB_TRF1+
                                  CLSA_tra1$ALC_RDWE_NB_TRF1+CLSA_tra1$ALC_WHWE_NB_TRF1+CLSA_tra1$ALC_BRWE_NB_TRF1+CLSA_tra1$ALC_LQWE_NB_TRF1
@@ -2660,20 +2658,6 @@ lsb_CLSA_tra0$lsb_pa_sport_time_0<-ifelse(lsb_CLSA_tra0$lsb_pa_sport_0==0L,0L, i
 table(lsb_CLSA_tra0$lsb_pa_sport_time_0, useNA = "always")
 
 
-
-
-#first attempt at coding but if one of the 3 variables is NA, it codes as NA
-# lsb_CLSA_tra0$lsb_pa_sport_time_0<-ifelse(lsb_CLSA_tra0$lsb_pa_sport_0==0L,0L,
-#                                         ifelse(CLSA_tra0$PA2_LSPRTHR_MCQ==4|CLSA_tra0$PA2_MSPRTHR_MCQ==4|CLSA_tra0$PA2_SSPRTHR_MCQ==4|
-#                                         CLSA_tra0$PA2_LSPRTHR_MCQ==5| CLSA_tra0$PA2_MSPRTHR_MCQ==5|CLSA_tra0$PA2_SSPRTHR_MCQ==5,3L,
-#                                         ifelse(CLSA_tra0$PA2_LSPRTHR_MCQ==3|CLSA_tra0$PA2_MSPRTHR_MCQ==3|CLSA_tra0$PA2_SSPRTHR_MCQ==3,2L,
-#                                         ifelse(CLSA_tra0$PA2_LSPRTHR_MCQ<=2
-#                                        &CLSA_tra0$PA2_MSPRTHR_MCQ<=2&CLSA_tra0$PA2_SSPRTHR_MCQ<=2,1L,NA))))
-# 
-# table(lsb_CLSA_tra0$lsb_pa_sport_time_0, useNA = "always")
-# 
-# table(CLSA_tra0$PA2_LSPRTHR_MCQ<=2&CLSA_tra0$PA2_MSPRTHR_MCQ<=2&CLSA_tra0$PA2_SSPRTHR_MCQ<=2,useNA = "always")
-
 ```  
 ### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_1  
@@ -2697,9 +2681,6 @@ table(CLSA_tra1$PA2_LSPRTHR_TRF1,useNA = "always")
 table(CLSA_tra1$PA2_MSPRTHR_TRF1,useNA = "always")
 table(CLSA_tra1$PA2_SSPRTHR_TRF1,useNA = "always")
 
-# lsb_CLSA_tra1$lsb_pa_sport_time_1<-ifelse(lsb_CLSA_tra1$lsb_pa_sport_1==0L,0L,ifelse(CLSA_tra1$PA2_LSRTHR_TRF1==4|CLSA_tra1$PA2_MSPRTHR_TRF1==4|CLSA_tra1$PA2_SSPRTHR_TRF1==4|CLSA_tra1$PA2_LSRTHR_TRF1==5|CLSA_tra1$PA2_MSPRTHR_TRF1==5|CLSA_tra1$PA2_SSPRTHR_TRF1==5,3L,              ifelse(CLSA_tra1$PA2_LSRTHR_TRF1==3|CLSA_tra1$PA2_MSPRTHR_TRF1==3|CLSA_tra1$PA2_SSPRTHR_TRF1==3,2L,ifelse(CLSA_tra1$PA2_LSRTHR_TRF1==2|
-# CLSA_tra1$PA2_MSPRTHR_TRF1==2|CLSA_tra1$PA2_SSPRTHR_TRF1==2,1L,ifelse (CLSA_tra1$PA2_LSRTHR_TRF1==1|CLSA_tra1$PA2_MSPRTHR_TRF1==1|CLSA_tra1$PA2_SSPRTHR_TRF1==1, 1L,NA)))))
-
 sprt_time1_1<-recode(CLSA_tra1$PA2_LSPRTHR_TRF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
 sprt_time2_1<-recode(CLSA_tra1$PA2_MSPRTHR_TRF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
 sprt_time3_1<-recode(CLSA_tra1$PA2_SSPRTHR_TRF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
@@ -2712,10 +2693,7 @@ lsb_CLSA_tra1$lsb_pa_sport_time_1<-ifelse(lsb_CLSA_tra1$lsb_pa_sport_1==0L,0L, i
 
 table(lsb_CLSA_tra1$lsb_pa_sport_time_1, useNA = "always")
 
-table(CLSA_tra0$PA2_SSPRTHR_MCQ,CLSA_tra0$PA2_MSPRTHR_MCQ,useNA = "always")
-
 table(lsb_CLSA_tra1$lsb_pa_sport_time_1, lsb_CLSA_tra1$lsb_pa_sport_1, useNA = "always")
-table(CLSA_tra1$PA2_LSPRT_TRF1, CLSA_tra1$PA2_LSRTHR_TRF1)
 table(lsb_CLSA_tra1$lsb_pa_sport_time_1, useNA = "always")
 table(lsb_CLSA_tra1$lsb_pa_sport_1)
 ```  
@@ -3042,7 +3020,7 @@ table(lsb_CLSA_tra1$lsb_pa_sport_1)
 ```{r, echo=TRUE}
 
 table(CLSA_tra0$NUR_DCOFF_NB_MCQ,CLSA_tra0$NUR_RCOFF_NB_MCQ, useNA = "always")
-lsb_CLSA_tra1$lsb_coffee_qty_0<- CLSA_tra0$NUR_DCOFF_NB_MCQ,CLSA_tra0$NUR_RCOFF_NB_MCQ
+lsb_CLSA_tra0$lsb_coffee_qty_0<- CLSA_tra0$NUR_DCOFF_NB_MCQ+CLSA_tra0$NUR_RCOFF_NB_MCQ
 
 ```  
 ### **Variable label**:  Quantity daily coffee  
@@ -3061,7 +3039,7 @@ table(CLSA_tra1$NUR_RCOFF_NB_TRF1, useNA = "always")
 
 lsb_CLSA_tra1$lsb_coffee_qty_1<- CLSA_tra1$NUR_DCOFF_NB_TRF1+CLSA_tra1$NUR_RCOFF_NB_TRF1
 
-table(CLSA_tra1$lsb_coffee_qty_1,useNA = "always")
+table(lsb_CLSA_tra1$lsb_coffee_qty_1,useNA = "always")
 table(lsb_CLSA_tra1$lsb_coffee_qty_1,CLSA_tra1$NUR_RCOFF_NB_TRF1, useNA = "always")
 
 ```  
