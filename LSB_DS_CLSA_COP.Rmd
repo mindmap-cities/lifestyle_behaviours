@@ -15,13 +15,13 @@ erasmus_opal <- opal.login()
 #Login to Opal server and assign the content of the GLOBE table(s) to your RStudio environment
 opal.assign.table.tibble(erasmus_opal, 'CoP4_Baseline','CLSA_1.CoP4_Baseline', variables =list("ALC_FREQ_COM", "ALC_EVER_COM", "ALC_MLFQ_COM","ALC_FMFQ_COM", "PA2_LTHSWK_MCQ","NUT_FRUT_COM", "ALC_RDWD_NB_COM"," ALC_WHWD_NB_COM",  "ALC_BRWD_NB_COM", "ALC_LQWD_NB_COM", "ALC_RDWE_NB_COM", "ALC_WHWE_NB_COM", "ALC_BRWE_NB_COM", "ALC_LQWE_NB_COM", "PA2_LTHSWK_MCQ", "CLSA_cop0$PA2_HVYHSWK_MCQ", "NUT_GREEN_COM", "NUT_PTTO_COM", "NUT_CRRT_COM", "NUT_VGOT_COM", "PA2_LSPRT_MCQ", "PA2_MSPRT_MCQ", "PA2_SSPRT_MCQ", "PA2_WALK_MCQ","SMK_100CG_COM","ICQ_SMOKE_COM", "SMK_OTREG_COM" , "SMK_SMKDL_AG_COM", "ALC_WHWD_NB_COM",
 "PA2_WALKHR_MCQ", "PA2_HVYHSWK_MCQ", "PA2_LSPRTHR_MCQ", "PA2_MSPRTHR_MCQ", "PA2_SSPRTHR_MCQ", "SMK_CURRCG_COM", "SMK_OTCURR_CG_COM",
-"SMK_OTCURR_SM_COM","SMK_OTCURR_PI_COM", "SMK_OTCURR_CH_COM", "	SMK_OTCURR_SH_COM", "SMK_OTOCC_COM", "SMK_OTCURR_SH_COM", "SMK_TYPEOT_CG_COM", "SMK_TYPEOT_SM_COM", "SMK_TYPEOT_PI_COM", "SMK_TYPEOT_CH_COM", "SMK_TYPEOT_SH_COM"
+"SMK_OTCURR_SM_COM","SMK_OTCURR_PI_COM", "SMK_OTCURR_CH_COM", "	SMK_OTCURR_SH_COM", "SMK_OTOCC_COM", "SMK_OTCURR_SH_COM", "SMK_TYPEOT_CG_COM", "SMK_TYPEOT_SM_COM", "SMK_TYPEOT_PI_COM", "SMK_TYPEOT_CH_COM", "SMK_TYPEOT_SH_COM", "SMK_FRSTCG_AG_COM"
 ))
 
 CLSA_cop0 <- opal.execute(erasmus_opal,'CoP4_Baseline')
 
 
-opal.assign.table.tibble(erasmus_opal, 'CoP_FU1','CLSA_1.CoP_FU1',  variables=list("NUR_RCOFF_NB_COF1", "ALC_FREQ_COF1", "ALC_EVER_COF1", "ALC_MLFQ_COF1","ALC_FMFQ_COF1", "PA2_LTHSWK_COF1","NUT_FRUT_COF1", "ALC_RDWD_NB_COF1"," ALC_WHWD_NB_COF1",  "ALC_BRWD_NB_COF1", "ALC_LQWD_NB_COF1", "ALC_RDWE_NB_COF1", "ALC_WHWE_NB_COF1", "ALC_BRWE_NB_COF1", "ALC_LQWE_NB_COF1", "PA2_LTHSWK_COF1", "CLSA_cop0$PA2_HVYHSWK_COF1", "NUT_GREEN_COF1", "NUT_PTTO_COF1", "NUT_CRRT_COF1", "NUT_VGOT_COF1", "PA2_LSPRT_COF1", "PA2_MSPRT_COF1", "PA2_SSPRT_COF1", "PA2_WALK_COF1","SMK_100CG_COF1","ICQ_SMOKE_COF1", "SMK_OTREG_COF1" , "SMK_SMKDL_AG_COF1", "ALC_WHWD_NB_COF1", "ALC_LQRWE_NB_COF1", "ALC_LQRWD_NB_COF1", "SMK_OTOCC_COF1", "PA2_WALKHR_COF1", "PA2_HVYHSWK_COF1", "PA2_LSPRTHR_COF1", "PA2_MSPRTHR_COF1", "PA2_SSPRTHR_COF1", "PA2_LSRTHR_COF1", "PA2_MSRTHR_COF1", "PA2_SSRTHR_COF1", "SMK_CURRCG_COF1", "SMK_OTCURR_CG_COF1",
+opal.assign.table.tibble(erasmus_opal, 'CoP_FU1','CLSA_1.CoP_FU1',  variables=list("NUR_RCOFF_NB_COF1","NUR_DCOFF_NB_COF1", "ALC_FREQ_COF1", "ALC_EVER_COF1", "ALC_MLFQ_COF1","ALC_FMFQ_COF1", "PA2_LTHSWK_COF1","NUT_FRUT_COF1", "ALC_RDWD_NB_COF1"," ALC_WHWD_NB_COF1",  "ALC_BRWD_NB_COF1", "ALC_LQWD_NB_COF1", "ALC_RDWE_NB_COF1", "ALC_WHWE_NB_COF1", "ALC_BRWE_NB_COF1", "ALC_LQWE_NB_COF1", "PA2_LTHSWK_COF1", "CLSA_cop0$PA2_HVYHSWK_COF1", "NUT_GREEN_COF1", "NUT_PTTO_COF1", "NUT_CRRT_COF1", "NUT_VGOT_COF1", "PA2_LSPRT_COF1", "PA2_MSPRT_COF1", "PA2_SSPRT_COF1", "PA2_WALK_COF1","SMK_100CG_COF1","ICQ_SMOKE_COF1", "SMK_OTREG_COF1" , "SMK_SMKDL_AG_COF1", "ALC_WHWD_NB_COF1", "ALC_LQRWE_NB_COF1", "ALC_LQRWD_NB_COF1", "SMK_OTOCC_COF1", "PA2_WALKHR_COF1", "PA2_HVYHSWK_COF1", "PA2_LSRTHR_COF1", "PA2_MSPRTHR_COF1", "PA2_SSPRTHR_COF1", "PA2_LSRTHR_COF1", "PA2_MSRTHR_COF1", "PA2_SSRTHR_COF1", "SMK_CURRCG_COF1", "SMK_OTCURR_CG_COF1",
 "SMK_OTCURR_SM_COF1","SMK_OTCURR_PI_COF1", "SMK_OTCURR_CH_COF1", "	SMK_OTCURR_SH_COF1", "SMK_OTOCC_COF1", "SMK_OTCURR_SH_COF1", 
 "SMK_TYPEOT_CG_COF1", "SMK_TYPEOT_SM_COF1", "SMK_TYPEOT_PI_COF1", "SMK_TYPEOT_CH_COF1", "SMK_TYPEOT_SH_COF1"))
 
@@ -2662,7 +2662,6 @@ sprt_time<-rowSums(sprt_time, na.rm=TRUE)
 sprt_time<-sprt_time*7
 table(sprt_time)
 str(sprt_time)
-str(lsb_CLSA_0)
 str(lsb_CLSA_cop0$lsb_pa_sport_0)
 lsb_CLSA_cop0$lsb_pa_sport_time_0<-ifelse(lsb_CLSA_cop0$lsb_pa_sport_0==0L,0L, ifelse(sprt_time<60, 1L, ifelse(sprt_time>60&sprt_time<=120, 2L, ifelse(sprt_time>120, 3L, NA))))
 
@@ -2703,9 +2702,9 @@ table(CLSA_cop1$PA2_LSRTHR_COF1,useNA = "always")
 table(CLSA_cop1$PA2_MSPRTHR_COF1,useNA = "always")
 table(CLSA_cop1$PA2_SSPRTHR_COF1,useNA = "always")
 
-sprt_time1_1<-recode(CLSA_tra1$PA2_LSPRTHR_TRF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
-sprt_time2_1<-recode(CLSA_tra1$PA2_MSPRTHR_TRF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
-sprt_time3_1<-recode(CLSA_tra1$PA2_SSPRTHR_TRF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time1_1<-recode(CLSA_cop1$PA2_LSRTHR_COF1 , "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time2_1<-recode(CLSA_cop1$PA2_MSPRTHR_COF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time3_1<-recode(CLSA_cop1$PA2_SSPRTHR_COF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
 sprt_time_1<-cbind(sprt_time1,sprt_time2,sprt_time1)
 sprt_time_1<-rowSums(sprt_time_1, na.rm=TRUE)
 sprt_time_1<-sprt_time_1*7
@@ -3080,11 +3079,11 @@ table(lsb_CLSA_cop1$lsb_fruit_1)
 **R script**:  
 ```{r, echo=TRUE}
 
-table(CLSA_cop1$NUR_DCOFF_NB_COF1,CLSA_cop1$NUR_RCOFF_NB_COF1, useNA = "always")
+table(CLSA_cop1$NUR_DCOFF_NB_COF1, useNA = "always")
 table(CLSA_cop1$NUR_RCOFF_NB_COF1, useNA = "always")
 
 lsb_CLSA_cop1$lsb_coffee_qty_1<- CLSA_cop1$NUR_DCOFF_NB_COF1+CLSA_cop1$NUR_RCOFF_NB_COF1
-table(CLSA_cop1$lsb_coffee_qty_1,useNA = "always")
+table(lsb_CLSA_cop1$lsb_coffee_qty_1,useNA = "always")
 ```  
 ### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_2  
