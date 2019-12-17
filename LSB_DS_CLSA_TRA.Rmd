@@ -1051,7 +1051,6 @@ table(lsb_CLSA_tra0$lsb_smk_ever_0)
 #there is also the variable "Have you smoked at least 100 cigarettes in your life?  (about 4 - 5 packs)" however some Former smokers replied no to this variable. For this reason, the variable for smoking status is used for harmonization. 
 table(CLSA_tra0$SMK_DSTY_TRM, CLSA_tra0$SMK_100CG_TRM ,useNA="always")
 
-
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_1    
@@ -2654,7 +2653,7 @@ sprt_time<-rowSums(sprt_time, na.rm=TRUE)
 sprt_time<-sprt_time*7
 table(sprt_time)
 
-lsb_CLSA_tra0$lsb_pa_sport_time_0<-ifelse(lsb_CLSA_tra0$lsb_pa_sport_0==0L,0L, ifelse(sprt_time<60, 1L, ifelse(sprt_time_1>60&sprt_time<=120, 2L, ifelse(sprt_time>120, 3L, NA))))
+lsb_CLSA_tra0$lsb_pa_sport_time_0<-ifelse(lsb_CLSA_tra0$lsb_pa_sport_0==0L,0L, ifelse(sprt_time<60, 1L, ifelse(sprt_time>60&sprt_time<=120, 2L, ifelse(sprt_time>120, 3L, NA))))
 table(lsb_CLSA_tra0$lsb_pa_sport_time_0, useNA = "always")
 
 
