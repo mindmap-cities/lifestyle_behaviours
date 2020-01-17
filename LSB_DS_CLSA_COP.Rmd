@@ -13,26 +13,26 @@ library(tidyverse)
 erasmus_opal <- opal.login()
 
 #Login to Opal server and assign the content of the GLOBE table(s) to your RStudio environment
-opal.assign.table.tibble(erasmus_opal, 'CoP4_Baseline','CLSA_1.CoP4_Baseline', variables =list("ALC_FREQ_COM", "ALC_EVER_COM", "ALC_MLFQ_COM","ALC_FMFQ_COM", "PA2_LTHSWK_MCQ","NUT_FRUT_COM", "ALC_RDWD_NB_COM"," ALC_WHWD_NB_COM",  "ALC_BRWD_NB_COM", "ALC_LQWD_NB_COM", "ALC_RDWE_NB_COM", "ALC_WHWE_NB_COM", "ALC_BRWE_NB_COM", "ALC_LQWE_NB_COM", "PA2_LTHSWK_MCQ", "CLSA_cop0$PA2_HVYHSWK_MCQ", "NUT_GREEN_COM", "NUT_PTTO_COM", "NUT_CRRT_COM", "NUT_VGOT_COM", "PA2_LSPRT_MCQ", "PA2_MSPRT_MCQ", "PA2_SSPRT_MCQ", "PA2_WALK_MCQ","SMK_100CG_COM","ICQ_SMOKE_COM", "SMK_OTREG_COM" , "SMK_SMKDL_AG_COM", "ALC_WHWD_NB_COM",
+opal.assign.table.tibble(erasmus_opal, 'CoP4_Baseline','CLSA_1.CoP4_Baseline', variables =list("ALC_FREQ_COM", "ALC_EVER_COM", "ALC_MLFQ_COM","ALC_FMFQ_COM", "PA2_LTHSWK_MCQ","NUT_FRUT_COM", "ALC_RDWD_NB_COM"," ALC_WHWD_NB_COM",  "ALC_BRWD_NB_COM", "ALC_LQWD_NB_COM", "ALC_RDWE_NB_COM", "ALC_WHWE_NB_COM", "ALC_BRWE_NB_COM", "ALC_LQWE_NB_COM", "PA2_LTHSWK_MCQ", "PA2_HVYHSWK_MCQ", "NUT_GREEN_COM", "NUT_PTTO_COM", "NUT_CRRT_COM", "NUT_VGOT_COM", "PA2_LSPRT_MCQ", "PA2_MSPRT_MCQ", "PA2_SSPRT_MCQ", "PA2_WALK_MCQ","SMK_100CG_COM","ICQ_SMOKE_COM", "SMK_OTREG_COM" , "SMK_SMKDL_AG_COM", "ALC_WHWD_NB_COM",
 "PA2_WALKHR_MCQ", "PA2_HVYHSWK_MCQ", "PA2_LSPRTHR_MCQ", "PA2_MSPRTHR_MCQ", "PA2_SSPRTHR_MCQ", "SMK_CURRCG_COM", "SMK_OTCURR_CG_COM",
 "SMK_OTCURR_SM_COM","SMK_OTCURR_PI_COM", "SMK_OTCURR_CH_COM", "	SMK_OTCURR_SH_COM", "SMK_OTOCC_COM", "SMK_OTCURR_SH_COM", "SMK_TYPEOT_CG_COM", "SMK_TYPEOT_SM_COM", "SMK_TYPEOT_PI_COM", "SMK_TYPEOT_CH_COM", "SMK_TYPEOT_SH_COM", "SMK_FRSTCG_AG_COM"
 ))
 
-CLSA_cop0 <- opal.execute(erasmus_opal,'CoP4_Baseline')
+CLSA_cop_0 <- opal.execute(erasmus_opal,'CoP4_Baseline')
 
 
-opal.assign.table.tibble(erasmus_opal, 'CoP_FU1','CLSA_1.CoP_FU1',  variables=list("NUR_RCOFF_NB_COF1","NUR_DCOFF_NB_COF1", "ALC_FREQ_COF1", "ALC_EVER_COF1", "ALC_MLFQ_COF1","ALC_FMFQ_COF1", "PA2_LTHSWK_COF1","NUT_FRUT_COF1", "ALC_RDWD_NB_COF1"," ALC_WHWD_NB_COF1",  "ALC_BRWD_NB_COF1", "ALC_LQWD_NB_COF1", "ALC_RDWE_NB_COF1", "ALC_WHWE_NB_COF1", "ALC_BRWE_NB_COF1", "ALC_LQWE_NB_COF1", "PA2_LTHSWK_COF1", "CLSA_cop0$PA2_HVYHSWK_COF1", "NUT_GREEN_COF1", "NUT_PTTO_COF1", "NUT_CRRT_COF1", "NUT_VGOT_COF1", "PA2_LSPRT_COF1", "PA2_MSPRT_COF1", "PA2_SSPRT_COF1", "PA2_WALK_COF1","SMK_100CG_COF1","ICQ_SMOKE_COF1", "SMK_OTREG_COF1" , "SMK_SMKDL_AG_COF1", "ALC_WHWD_NB_COF1", "ALC_LQRWE_NB_COF1", "ALC_LQRWD_NB_COF1", "SMK_OTOCC_COF1", "PA2_WALKHR_COF1", "PA2_HVYHSWK_COF1", "PA2_LSRTHR_COF1", "PA2_MSPRTHR_COF1", "PA2_SSPRTHR_COF1", "PA2_LSRTHR_COF1", "PA2_MSRTHR_COF1", "PA2_SSRTHR_COF1", "SMK_CURRCG_COF1", "SMK_OTCURR_CG_COF1",
+opal.assign.table.tibble(erasmus_opal, 'CoP_FU1','CLSA_1.CoP_FU1',  variables=list("NUR_RCOFF_NB_COF1","NUR_DCOFF_NB_COF1", "ALC_FREQ_COF1", "ALC_EVER_COF1", "ALC_MLFQ_COF1","ALC_FMFQ_COF1", "PA2_LTHSWK_COF1","NUT_FRUT_COF1", "ALC_RDWD_NB_COF1"," ALC_WHWD_NB_COF1",  "ALC_BRWD_NB_COF1", "ALC_LQWD_NB_COF1", "ALC_RDWE_NB_COF1", "ALC_WHWE_NB_COF1", "ALC_BRWE_NB_COF1", "ALC_LQWE_NB_COF1", "PA2_LTHSWK_COF1", "CLSA_cop_0$PA2_HVYHSWK_COF1", "NUT_GREEN_COF1", "NUT_PTTO_COF1", "NUT_CRRT_COF1", "NUT_VGOT_COF1", "PA2_LSPRT_COF1", "PA2_MSPRT_COF1", "PA2_SSPRT_COF1", "PA2_WALK_COF1","SMK_100CG_COF1","ICQ_SMOKE_COF1", "SMK_OTREG_COF1" , "SMK_SMKDL_AG_COF1", "ALC_WHWD_NB_COF1", "ALC_LQRWE_NB_COF1", "ALC_LQRWD_NB_COF1", "SMK_OTOCC_COF1", "PA2_WALKHR_COF1", "PA2_HVYHSWK_COF1", "PA2_LSRTHR_COF1", "PA2_MSPRTHR_COF1", "PA2_SSPRTHR_COF1", "PA2_LSRTHR_COF1", "PA2_MSRTHR_COF1", "PA2_SSRTHR_COF1", "SMK_CURRCG_COF1", "SMK_OTCURR_CG_COF1",
 "SMK_OTCURR_SM_COF1","SMK_OTCURR_PI_COF1", "SMK_OTCURR_CH_COF1", "	SMK_OTCURR_SH_COF1", "SMK_OTOCC_COF1", "SMK_OTCURR_SH_COF1", 
 "SMK_TYPEOT_CG_COF1", "SMK_TYPEOT_SM_COF1", "SMK_TYPEOT_PI_COF1", "SMK_TYPEOT_CH_COF1", "SMK_TYPEOT_SH_COF1"))
 
-CLSA_cop1 <- opal.execute(erasmus_opal,'CoP_FU1')
+CLSA_cop_1 <- opal.execute(erasmus_opal,'CoP_FU1')
 
 
 ```
 ## Assign participant id as first column of your harmonized dataframes
 ```{r, echo=FALSE}
-lsb_CLSA_cop0 <- data.frame(id = CLSA_cop0$id)
-lsb_CLSA_cop1 <- data.frame(id = CLSA_cop1$id)
+lsb_CLSA_cop_0 <- data.frame(id = CLSA_cop_0$id)
+lsb_CLSA_cop_1 <- data.frame(id = CLSA_cop_1$id)
 
 ```
 ## When you are done with your work, logout of Opal server
@@ -65,9 +65,9 @@ opal.logout(erasmus_opal)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop0$lsb_alc_cur_0<-recode(CLSA_cop0$ALC_FREQ_COM, "01"=1L ,"02"=1L ,"03"=1L ,"04"=1L ,"05"=1L ,"06"=1L ,"96"=0L, .default =NA_integer_)
-table(lsb_CLSA_cop0$lsb_alc_cur_0)
-table(CLSA_cop0$ALC_FREQ_COM)
+lsb_CLSA_cop_0$lsb_alc_cur_0<-recode(CLSA_cop_0$ALC_FREQ_COM, "01"=1L ,"02"=1L ,"03"=1L ,"04"=1L ,"05"=1L ,"06"=1L ,"96"=0L, .default =NA_integer_)
+table(lsb_CLSA_cop_0$lsb_alc_cur_0)
+table(CLSA_cop_0$ALC_FREQ_COM)
 ```  
 ### **Variable label**:  Current consumption of alcohol  
 **Variable name**: lsb_alc_cur_1  
@@ -85,8 +85,8 @@ table(CLSA_cop0$ALC_FREQ_COM)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop1$lsb_alc_cur_1<-recode(CLSA_cop1$ALC_FREQ_COF1,"1"=1L ,"2"=1L ,"3"=1L ,"4"=1L ,"5"=1L ,"6"=1L ,"96"=0L, .default =NA_integer_)
-table(lsb_CLSA_cop1$lsb_alc_cur_1)
+lsb_CLSA_cop_1$lsb_alc_cur_1<-recode(CLSA_cop_1$ALC_FREQ_COF1,"1"=1L ,"2"=1L ,"3"=1L ,"4"=1L ,"5"=1L ,"6"=1L ,"96"=0L, .default =NA_integer_)
+table(lsb_CLSA_cop_1$lsb_alc_cur_1)
 ```  
 ### **Variable label**:  Current consumption of alcohol  
 **Variable name**: lsb_alc_cur_2  
@@ -195,8 +195,8 @@ table(lsb_CLSA_cop1$lsb_alc_cur_1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop0$lsb_alc_cur_0<-recode(as.character(CLSA_cop0$ALC_EVER_COM), "2"=0L ,"1"=1L, .default =NA_integer_)
-table(lsb_CLSA_cop0$lsb_alc_cur_0)
+lsb_CLSA_cop_0$lsb_alc_cur_0<-recode(as.character(CLSA_cop_0$ALC_EVER_COM), "2"=0L ,"1"=1L, .default =NA_integer_)
+table(lsb_CLSA_cop_0$lsb_alc_cur_0)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_1    
@@ -214,8 +214,8 @@ table(lsb_CLSA_cop0$lsb_alc_cur_0)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop1$lsb_alc_cur_1<-recode(as.character(CLSA_cop1$ALC_EVER_COF1), "2"=0L ,"1"=1L, .default =NA_integer_)
-table(lsb_CLSA_cop1$lsb_alc_cur_1)
+lsb_CLSA_cop_1$lsb_alc_cur_1<-recode(as.character(CLSA_cop_1$ALC_EVER_COF1), "2"=0L ,"1"=1L, .default =NA_integer_)
+table(lsb_CLSA_cop_1$lsb_alc_cur_1)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_2    
@@ -336,16 +336,16 @@ table(lsb_CLSA_cop1$lsb_alc_cur_1)
 #Never, 1
 
 #this code didn't work
-# lsb_CLSA_cop0$lsb_alc_binge0<-ifelse(CLSA_cop0$ALC_MLFQ_COM=="01"|CLSA_cop0$ALC_MLFQ_COM=="02"|CLSA_cop0$ALC_MLFQ_COM=="03"|CLSA_cop0$ALC_FMFQ_COM=="01"|CLSA_cop0$ALC_FMFQ_COM=="02"|CLSA_cop0$ALC_FMFQ_COM=="03",3L,ifelse(CLSA_cop0$ALC_MLFQ_COM=="04"|CLSA_cop0$ALC_FMFQ_COM=="04", 2L,ifelse(CLSA_cop0$ALC_MLFQ_COM=="05"|CLSA_cop0$ALC_MLFQ_COM=="06"|CLSA_cop0$ALC_MLFQ_COM=="07"|CLSA_cop0$ALC_MLFQ_COM=="08"|CLSA_cop0$ALC_FMFQ_COM=="05"|CLSA_cop0$ALC_FMFQ_COM=="06"|CLSA_cop0$ALC_FMFQ_COM=="07"|CLSA_cop0$ALC_FMFQ_COM=="08"|CLSA_cop0$ALC_FMFQ_COM=="96"|CLSA_cop0$ALC_MLFQ_COM=="96",1L, NA)))
+# lsb_CLSA_cop_0$lsb_alc_binge0<-ifelse(CLSA_cop_0$ALC_MLFQ_COM=="01"|CLSA_cop_0$ALC_MLFQ_COM=="02"|CLSA_cop_0$ALC_MLFQ_COM=="03"|CLSA_cop_0$ALC_FMFQ_COM=="01"|CLSA_cop_0$ALC_FMFQ_COM=="02"|CLSA_cop_0$ALC_FMFQ_COM=="03",3L,ifelse(CLSA_cop_0$ALC_MLFQ_COM=="04"|CLSA_cop_0$ALC_FMFQ_COM=="04", 2L,ifelse(CLSA_cop_0$ALC_MLFQ_COM=="05"|CLSA_cop_0$ALC_MLFQ_COM=="06"|CLSA_cop_0$ALC_MLFQ_COM=="07"|CLSA_cop_0$ALC_MLFQ_COM=="08"|CLSA_cop_0$ALC_FMFQ_COM=="05"|CLSA_cop_0$ALC_FMFQ_COM=="06"|CLSA_cop_0$ALC_FMFQ_COM=="07"|CLSA_cop_0$ALC_FMFQ_COM=="08"|CLSA_cop_0$ALC_FMFQ_COM=="96"|CLSA_cop_0$ALC_MLFQ_COM=="96",1L, NA)))
 
-lsb_CLSA_cop0$lsb_alc_binge0<-NA
-lsb_CLSA_cop0$lsb_alc_binge0[CLSA_cop0$ALC_MLFQ_COM=="01"|CLSA_cop0$ALC_MLFQ_COM=="02"|CLSA_cop0$ALC_MLFQ_COM=="03"|CLSA_cop0$ALC_FMFQ_COM=="01"|CLSA_cop0$ALC_FMFQ_COM=="02"|CLSA_cop0$ALC_FMFQ_COM=="03"]<-3L
-lsb_CLSA_cop0$lsb_alc_binge0[CLSA_cop0$ALC_MLFQ_COM=="04"|CLSA_cop0$ALC_FMFQ_COM=="04"]<-2L
-lsb_CLSA_cop0$lsb_alc_binge0[CLSA_cop0$ALC_MLFQ_COM=="05"|CLSA_cop0$ALC_MLFQ_COM=="06"|CLSA_cop0$ALC_MLFQ_COM=="07"|CLSA_cop0$ALC_FMFQ_COM=="05"|CLSA_cop0$ALC_FMFQ_COM=="06"|CLSA_cop0$ALC_FMFQ_COM=="07"|CLSA_cop0$ALC_MLFQ_COM=="96"|CLSA_cop0$ALC_FMFQ_COM=="96"]<-1L
+lsb_CLSA_cop_0$lsb_alc_binge0<-NA
+lsb_CLSA_cop_0$lsb_alc_binge0[CLSA_cop_0$ALC_MLFQ_COM=="01"|CLSA_cop_0$ALC_MLFQ_COM=="02"|CLSA_cop_0$ALC_MLFQ_COM=="03"|CLSA_cop_0$ALC_FMFQ_COM=="01"|CLSA_cop_0$ALC_FMFQ_COM=="02"|CLSA_cop_0$ALC_FMFQ_COM=="03"]<-3L
+lsb_CLSA_cop_0$lsb_alc_binge0[CLSA_cop_0$ALC_MLFQ_COM=="04"|CLSA_cop_0$ALC_FMFQ_COM=="04"]<-2L
+lsb_CLSA_cop_0$lsb_alc_binge0[CLSA_cop_0$ALC_MLFQ_COM=="05"|CLSA_cop_0$ALC_MLFQ_COM=="06"|CLSA_cop_0$ALC_MLFQ_COM=="07"|CLSA_cop_0$ALC_FMFQ_COM=="05"|CLSA_cop_0$ALC_FMFQ_COM=="06"|CLSA_cop_0$ALC_FMFQ_COM=="07"|CLSA_cop_0$ALC_MLFQ_COM=="96"|CLSA_cop_0$ALC_FMFQ_COM=="96"]<-1L
 
-table(lsb_CLSA_cop0$lsb_alc_binge0, useNA="always")
-table(CLSA_cop0$ALC_FMFQ_COM,useNA = "always")
-table(CLSA_cop0$ALC_MLFQ_COM,useNA = "always")
+table(lsb_CLSA_cop_0$lsb_alc_binge0, useNA="always")
+table(CLSA_cop_0$ALC_FMFQ_COM,useNA = "always")
+table(CLSA_cop_0$ALC_MLFQ_COM,useNA = "always")
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -376,16 +376,16 @@ table(CLSA_cop0$ALC_MLFQ_COM,useNA = "always")
 #Less than once a month, 1
 #Never, 1
 
-lsb_CLSA_cop1$lsb_alc_binge1<-NA
-lsb_CLSA_cop1$lsb_alc_binge1[CLSA_cop1$ALC_MLFQ_COF1=="1"|CLSA_cop1$ALC_MLFQ_COF1=="2"|CLSA_cop1$ALC_MLFQ_COF1=="3"|CLSA_cop1$ALC_FMFQ_COF1=="1"|CLSA_cop1$ALC_FMFQ_COF1=="2"|CLSA_cop1$ALC_FMFQ_COF1=="3"]<-3L
-lsb_CLSA_cop1$lsb_alc_binge1[CLSA_cop1$ALC_MLFQ_COF1=="4"|CLSA_cop1$ALC_FMFQ_COF1=="4"]<-2L
-lsb_CLSA_cop1$lsb_alc_binge1[CLSA_cop1$ALC_MLFQ_COF1=="5"|CLSA_cop1$ALC_MLFQ_COF1=="6"|CLSA_cop1$ALC_MLFQ_COF1=="7"|CLSA_cop1$ALC_FMFQ_COF1=="5"|CLSA_cop1$ALC_FMFQ_COF1=="6"|CLSA_cop1$ALC_FMFQ_COF1=="7"|CLSA_cop1$ALC_MLFQ_COF1=="96"|CLSA_cop1$ALC_FMFQ_COF1=="96"]<-1L
+lsb_CLSA_cop_1$lsb_alc_binge1<-NA
+lsb_CLSA_cop_1$lsb_alc_binge1[CLSA_cop_1$ALC_MLFQ_COF1=="1"|CLSA_cop_1$ALC_MLFQ_COF1=="2"|CLSA_cop_1$ALC_MLFQ_COF1=="3"|CLSA_cop_1$ALC_FMFQ_COF1=="1"|CLSA_cop_1$ALC_FMFQ_COF1=="2"|CLSA_cop_1$ALC_FMFQ_COF1=="3"]<-3L
+lsb_CLSA_cop_1$lsb_alc_binge1[CLSA_cop_1$ALC_MLFQ_COF1=="4"|CLSA_cop_1$ALC_FMFQ_COF1=="4"]<-2L
+lsb_CLSA_cop_1$lsb_alc_binge1[CLSA_cop_1$ALC_MLFQ_COF1=="5"|CLSA_cop_1$ALC_MLFQ_COF1=="6"|CLSA_cop_1$ALC_MLFQ_COF1=="7"|CLSA_cop_1$ALC_FMFQ_COF1=="5"|CLSA_cop_1$ALC_FMFQ_COF1=="6"|CLSA_cop_1$ALC_FMFQ_COF1=="7"|CLSA_cop_1$ALC_MLFQ_COF1=="96"|CLSA_cop_1$ALC_FMFQ_COF1=="96"]<-1L
 
 #this code didn't work
-#lsb_CLSA_cop1$lsb_alc_binge1<-ifelse(CLSA_cop1$ALC_MLFQ_COF1==1:3|CLSA_cop1$ALC_FMFQ_COF1==1:3,3L,ifelse(CLSA_cop1$ALC_MLFQ_COF1==4|CLSA_cop1$ALC_FMFQ_#COF1==4, 2L,ifelse(CLSA_cop1$ALC_MLFQ_COF1==5:7|CLSA_cop1$ALC_FMFQ_COF1==5:7,1L,NA)))
+#lsb_CLSA_cop_1$lsb_alc_binge1<-ifelse(CLSA_cop_1$ALC_MLFQ_COF1==1:3|CLSA_cop_1$ALC_FMFQ_COF1==1:3,3L,ifelse(CLSA_cop_1$ALC_MLFQ_COF1==4|CLSA_cop_1$ALC_FMFQ_#COF1==4, 2L,ifelse(CLSA_cop_1$ALC_MLFQ_COF1==5:7|CLSA_cop_1$ALC_FMFQ_COF1==5:7,1L,NA)))
 
-table(lsb_CLSA_cop1$lsb_alc_binge1, useNA="always")
-table( CLSA_cop1$ALC_MLFQ_COF1, useNA="always")
+table(lsb_CLSA_cop_1$lsb_alc_binge1, useNA="always")
+table( CLSA_cop_1$ALC_MLFQ_COF1, useNA="always")
 ```  
 ### **Variable label**:   Frequency of binge drinking  
 **Variable name**: lsb_alc_binge_2  
@@ -495,27 +495,27 @@ table( CLSA_cop1$ALC_MLFQ_COF1, useNA="always")
 **R script**:  
 ```{r, echo=TRUE}
 #Using the lsb_alc table, in order to replace all 90, 98, 99, 777 values easily with NA. T
-# lsb_alc<-CLSA_cop0[ , grepl( "ALC" , names(CLSA_cop0 ) ) ]
+# lsb_alc<-CLSA_cop_0[ , grepl( "ALC" , names(CLSA_cop_0 ) ) ]
 # lsb_alc[lsb_alc>90]<-NA
-# should we add other drinks (ALC_OTWE_NB_COF1+CLSA_cop01$ALC_OTWD_NB_COM) too?
+# should we add other drinks (ALC_OTWE_NB_COF1+CLSA_cop_01$ALC_OTWD_NB_COM) too?
 #there are really large values. Added as a note to the reference sheet. 
-lsb_CLSA_cop0$lsb_alc_total_0<- CLSA_cop0$ALC_RDWD_NB_COM+ CLSA_cop0$ALC_WHWD_NB_COM+ CLSA_cop0$ALC_BRWD_NB_COM+CLSA_cop0$ALC_LQWD_NB_COM+
-                                CLSA_cop0$ALC_RDWE_NB_COM+CLSA_cop0$ALC_WHWE_NB_COM+CLSA_cop0$ALC_LQWE_NB_COM
+lsb_CLSA_cop_0$lsb_alc_total_0<- CLSA_cop_0$ALC_RDWD_NB_COM+ CLSA_cop_0$ALC_WHWD_NB_COM+ CLSA_cop_0$ALC_BRWD_NB_COM+CLSA_cop_0$ALC_LQWD_NB_COM+
+                                CLSA_cop_0$ALC_RDWE_NB_COM+CLSA_cop_0$ALC_WHWE_NB_COM+CLSA_cop_0$ALC_LQWE_NB_COM
 
-table(lsb_CLSA_cop0$lsb_alc_total_0)
+table(lsb_CLSA_cop_0$lsb_alc_total_0)
 
-table(CLSA_cop0$ALC_RDWD_NB_COM)
-table(CLSA_cop0$ALC_WHWD_NB_COM)
-table(CLSA_cop0$ALC_BRWD_NB_COM)
-table(CLSA_cop0$ALC_LQWD_NB_COM)
+table(CLSA_cop_0$ALC_RDWD_NB_COM)
+table(CLSA_cop_0$ALC_WHWD_NB_COM)
+table(CLSA_cop_0$ALC_BRWD_NB_COM)
+table(CLSA_cop_0$ALC_LQWD_NB_COM)
 
-summary(CLSA_cop0$ALC_RDWD_NB_COM)
-summary(CLSA_cop0$ALC_WHWD_NB_COM)
-summary(CLSA_cop0$ALC_BRWD_NB_COM)
-summary(CLSA_cop0$ALC_LQWD_NB_COM)
-summary(CLSA_cop0$ALC_RDWE_NB_COM)
-summary(CLSA_cop0$ALC_WHWE_NB_COM)
-summary(CLSA_cop0$ALC_LQWE_NB_COM)
+summary(CLSA_cop_0$ALC_RDWD_NB_COM)
+summary(CLSA_cop_0$ALC_WHWD_NB_COM)
+summary(CLSA_cop_0$ALC_BRWD_NB_COM)
+summary(CLSA_cop_0$ALC_LQWD_NB_COM)
+summary(CLSA_cop_0$ALC_RDWE_NB_COM)
+summary(CLSA_cop_0$ALC_WHWE_NB_COM)
+summary(CLSA_cop_0$ALC_LQWE_NB_COM)
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
@@ -529,18 +529,18 @@ summary(CLSA_cop0$ALC_LQWE_NB_COM)
 **Harmonization comment**:   complete  
 **R script**:  
 ```{r, echo=TRUE}
-# lsb_alc_1<-CLSA_cop1[ , grepl( "ALC" , names(CLSA_cop1 ) ) ]
+# lsb_alc_1<-CLSA_cop_1[ , grepl( "ALC" , names(CLSA_cop_1 ) ) ]
 # lsb_alc_1[lsb_alc_1>90]<-NA
 
-lsb_CLSA_cop1$lsb_alc_total_1<- CLSA_cop1$ALC_RDWD_NB_COF1+ CLSA_cop1$ALC_WHWD_NB_COF1+ CLSA_cop1$ALC_BRWD_NB_COF1+CLSA_cop1$ALC_LQRWD_NB_COF1+
-                                 CLSA_cop1$ALC_RDWE_NB_COF1+CLSA_cop1$ALC_WHWE_NB_COF1+CLSA_cop1$ALC_BRWE_NB_COF1+CLSA_cop1$ALC_LQRWE_NB_COF1
+lsb_CLSA_cop_1$lsb_alc_total_1<- CLSA_cop_1$ALC_RDWD_NB_COF1+ CLSA_cop_1$ALC_WHWD_NB_COF1+ CLSA_cop_1$ALC_BRWD_NB_COF1+CLSA_cop_1$ALC_LQRWD_NB_COF1+
+                                 CLSA_cop_1$ALC_RDWE_NB_COF1+CLSA_cop_1$ALC_WHWE_NB_COF1+CLSA_cop_1$ALC_BRWE_NB_COF1+CLSA_cop_1$ALC_LQRWE_NB_COF1
 
-table(lsb_CLSA_cop1$lsb_alc_total_1)
+table(lsb_CLSA_cop_1$lsb_alc_total_1)
 
-table(CLSA_cop1$ALC_RDWD_NB_COF1, useNA = "always")
-table(CLSA_cop1$ALC_WHWD_NB_COF1, useNA = "always")
-table(CLSA_cop1$ALC_BRWD_NB_COF1, useNA = "always")
-table(lsb_CLSA_cop1$lsb_alc_total_1, useNA = "always")
+table(CLSA_cop_1$ALC_RDWD_NB_COF1, useNA = "always")
+table(CLSA_cop_1$ALC_WHWD_NB_COF1, useNA = "always")
+table(CLSA_cop_1$ALC_BRWD_NB_COF1, useNA = "always")
+table(lsb_CLSA_cop_1$lsb_alc_total_1, useNA = "always")
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
@@ -582,8 +582,8 @@ table(lsb_CLSA_cop1$lsb_alc_total_1, useNA = "always")
 **R script**:  
 ```{r, echo=TRUE}
 
-lsb_CLSA_cop0$lsb_alc_wine_0 <- CLSA_cop0$ALC_RDWD_NB_COM+ CLSA_cop0$ALC_WHWD_NB_COM+ CLSA_cop0$ALC_RDWE_NB_COM+ CLSA_cop0$ALC_WHWE_NB_COM
-table(lsb_CLSA_cop0$lsb_alc_wine_0)
+lsb_CLSA_cop_0$lsb_alc_wine_0 <- CLSA_cop_0$ALC_RDWD_NB_COM+ CLSA_cop_0$ALC_WHWD_NB_COM+ CLSA_cop_0$ALC_RDWE_NB_COM+ CLSA_cop_0$ALC_WHWE_NB_COM
+table(lsb_CLSA_cop_0$lsb_alc_wine_0)
 
 ```  
 ### **Variable label**:   Current quantity of wine consumed per week  
@@ -598,8 +598,8 @@ table(lsb_CLSA_cop0$lsb_alc_wine_0)
 **R script**:  
 ```{r, echo=TRUE}
 
-lsb_CLSA_cop1$lsb_alc_wine_1 <- CLSA_cop1$ALC_RDWD_NB_COF1+ CLSA_cop1$ALC_WHWD_NB_COF1+CLSA_cop1$ALC_RDWE_NB_COF1+CLSA_cop1$ALC_WHWE_NB_COF1
-table(lsb_CLSA_cop1$lsb_alc_wine_1)
+lsb_CLSA_cop_1$lsb_alc_wine_1 <- CLSA_cop_1$ALC_RDWD_NB_COF1+ CLSA_cop_1$ALC_WHWD_NB_COF1+CLSA_cop_1$ALC_RDWE_NB_COF1+CLSA_cop_1$ALC_WHWE_NB_COF1
+table(lsb_CLSA_cop_1$lsb_alc_wine_1)
 
 ```  
 ### **Variable label**:   Current quantity of wine consumed per week  
@@ -641,8 +641,8 @@ table(lsb_CLSA_cop1$lsb_alc_wine_1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop0$lsb_alc_beer_0 <- CLSA_cop0$ALC_BRWD_NB_COM+CLSA_cop0$ALC_BRWE_NB_COM
-table(lsb_CLSA_cop0$lsb_alc_beer_0)
+lsb_CLSA_cop_0$lsb_alc_beer_0 <- CLSA_cop_0$ALC_BRWD_NB_COM+CLSA_cop_0$ALC_BRWE_NB_COM
+table(lsb_CLSA_cop_0$lsb_alc_beer_0)
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_1  
@@ -656,8 +656,8 @@ table(lsb_CLSA_cop0$lsb_alc_beer_0)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop1$lsb_alc_beer_1<-CLSA_cop1$ALC_BRWD_NB_COF1+CLSA_cop1$ALC_BRWE_NB_COF1
-table(lsb_CLSA_cop1$lsb_alc_beer_1)
+lsb_CLSA_cop_1$lsb_alc_beer_1<-CLSA_cop_1$ALC_BRWD_NB_COF1+CLSA_cop_1$ALC_BRWE_NB_COF1
+table(lsb_CLSA_cop_1$lsb_alc_beer_1)
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_2  
@@ -700,8 +700,8 @@ table(lsb_CLSA_cop1$lsb_alc_beer_1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop0$lsb_alc_liq_0 <-CLSA_cop0$ALC_LQWE_NB_COM+CLSA_cop0$ALC_LQWE_NB_COM
-table(lsb_CLSA_cop0$lsb_alc_liq_0)
+lsb_CLSA_cop_0$lsb_alc_liq_0 <-CLSA_cop_0$ALC_LQWE_NB_COM+CLSA_cop_0$ALC_LQWE_NB_COM
+table(lsb_CLSA_cop_0$lsb_alc_liq_0)
 
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
@@ -717,8 +717,8 @@ table(lsb_CLSA_cop0$lsb_alc_liq_0)
 **R script**:  
 ```{r, echo=TRUE}
 
-lsb_CLSA_cop1$lsb_alc_liq_1<-CLSA_cop1$ALC_LQRWE_NB_COF1+CLSA_cop1$ALC_LQRWE_NB_COF1
-table(lsb_CLSA_cop1$lsb_alc_liq_1)
+lsb_CLSA_cop_1$lsb_alc_liq_1<-CLSA_cop_1$ALC_LQRWE_NB_COF1+CLSA_cop_1$ALC_LQRWE_NB_COF1
+table(lsb_CLSA_cop_1$lsb_alc_liq_1)
 
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
@@ -768,18 +768,18 @@ table(lsb_CLSA_cop1$lsb_alc_liq_1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-table(CLSA_cop0$ICQ_SMOKE_COM, useNA="always")
-table(CLSA_cop0$SMK_OTOCC_COM, CLSA_cop0$ICQ_SMOKE_COM)
-table(CLSA_cop0$SMK_CURRCG_COM, useNA="always")
+table(CLSA_cop_0$ICQ_SMOKE_COM, useNA="always")
+table(CLSA_cop_0$SMK_OTOCC_COM, CLSA_cop_0$ICQ_SMOKE_COM)
+table(CLSA_cop_0$SMK_CURRCG_COM, useNA="always")
 
 
-lsb_CLSA_cop0$lsb_smk_cur_0<-ifelse(CLSA_cop0$ICQ_SMOKE_COM=='1',1L,ifelse(CLSA_cop0$ICQ_SMOKE_COM=="2"|CLSA_cop0$ICQ_SMOKE_COM=="3", 0L, NA))
+lsb_CLSA_cop_0$lsb_smk_cur_0<-ifelse(CLSA_cop_0$ICQ_SMOKE_COM=='1',1L,ifelse(CLSA_cop_0$ICQ_SMOKE_COM=="2"|CLSA_cop_0$ICQ_SMOKE_COM=="3", 0L, NA))
 #to add the people who uses other tobacco products
-lsb_CLSA_cop0$lsb_smk_cur_0[CLSA_cop0$SMK_OTCURR_CG_COM=="1"| CLSA_cop0$SMK_OTCURR_SM_COM=="1" |CLSA_cop0$SMK_OTCURR_PI_COM=="1" |CLSA_cop0$SMK_OTCURR_CH_COM=="1" | CLSA_cop0$SMK_OTCURR_SH_COM=="1"]<-1
+lsb_CLSA_cop_0$lsb_smk_cur_0[CLSA_cop_0$SMK_OTCURR_CG_COM=="1"| CLSA_cop_0$SMK_OTCURR_SM_COM=="1" |CLSA_cop_0$SMK_OTCURR_PI_COM=="1" |CLSA_cop_0$SMK_OTCURR_CH_COM=="1" | CLSA_cop_0$SMK_OTCURR_SH_COM=="1"]<-1
   
-table(lsb_CLSA_cop0$lsb_smk_cur_0)
+table(lsb_CLSA_cop_0$lsb_smk_cur_0)
 
-# lsb_CLSA_cop0$lsb_smk_cur_0<-ifelse(CLSA_cop0$ICQ_SMOKE_COM=='1'|CLSA_cop0$SMK_OTCURR_CG_COM=="1"| CLSA_cop0$SMK_OTCURR_SM_COM=="1" |CLSA_cop0$SMK_OTCURR_PI_COM=="1" |CLSA_cop0$SMK_OTCURR_CH_COM=="1" | CLSA_cop0$SMK_OTCURR_SH_COM=="1", 1L,ifelse((CLSA_cop0$ICQ_SMOKE_COM=="2"|CLSA_cop0$ICQ_SMOKE_COM=="3")&(CLSA_cop0$SMK_OTCURR_CG_COM!="1"& !is.na(CLSA_cop0$SMK_OTCURR_CG_COM))& CLSA_cop0$SMK_OTCURR_SM_COM!="1" &CLSA_cop0$SMK_OTCURR_PI_COM!="1" &CLSA_cop0$SMK_OTCURR_CH_COM!="1" & CLSA_cop0$SMK_OTCURR_SH_COM!="1", 0L, NA))
+# lsb_CLSA_cop_0$lsb_smk_cur_0<-ifelse(CLSA_cop_0$ICQ_SMOKE_COM=='1'|CLSA_cop_0$SMK_OTCURR_CG_COM=="1"| CLSA_cop_0$SMK_OTCURR_SM_COM=="1" |CLSA_cop_0$SMK_OTCURR_PI_COM=="1" |CLSA_cop_0$SMK_OTCURR_CH_COM=="1" | CLSA_cop_0$SMK_OTCURR_SH_COM=="1", 1L,ifelse((CLSA_cop_0$ICQ_SMOKE_COM=="2"|CLSA_cop_0$ICQ_SMOKE_COM=="3")&(CLSA_cop_0$SMK_OTCURR_CG_COM!="1"& !is.na(CLSA_cop_0$SMK_OTCURR_CG_COM))& CLSA_cop_0$SMK_OTCURR_SM_COM!="1" &CLSA_cop_0$SMK_OTCURR_PI_COM!="1" &CLSA_cop_0$SMK_OTCURR_CH_COM!="1" & CLSA_cop_0$SMK_OTCURR_SH_COM!="1", 0L, NA))
 #using this code instead, creates lots of NAs because of the high number of NAs in the other tobacco variables. 
 
 ```  
@@ -799,13 +799,13 @@ table(lsb_CLSA_cop0$lsb_smk_cur_0)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop1$lsb_smk_cur_1<- recode(CLSA_cop1$ICQ_SMOKE_COF1, "1"=1L, "2"=0L, "3"=0L, .default =NA_integer_)
+lsb_CLSA_cop_1$lsb_smk_cur_1<- recode(CLSA_cop_1$ICQ_SMOKE_COF1, "1"=1L, "2"=0L, "3"=0L, .default =NA_integer_)
 
-lsb_CLSA_cop1$lsb_smk_cur_1<-ifelse(CLSA_cop1$ICQ_SMOKE_COF1=='1',1L,ifelse(CLSA_cop1$ICQ_SMOKE_COF1=="2"|CLSA_cop1$ICQ_SMOKE_COF1=="3", 0L, NA))
+lsb_CLSA_cop_1$lsb_smk_cur_1<-ifelse(CLSA_cop_1$ICQ_SMOKE_COF1=='1',1L,ifelse(CLSA_cop_1$ICQ_SMOKE_COF1=="2"|CLSA_cop_1$ICQ_SMOKE_COF1=="3", 0L, NA))
 #to add the people who uses other tobacco products
-lsb_CLSA_cop1$lsb_smk_cur_1[CLSA_cop1$SMK_OTCURR_CG_COF1=="1"| CLSA_cop1$SMK_OTCURR_SM_COF1=="1" |CLSA_cop1$SMK_OTCURR_PI_COF1=="1" |CLSA_cop1$SMK_OTCURR_CH_COF1=="1" | CLSA_cop1$SMK_OTCURR_SH_COF1=="1"]<-1
+lsb_CLSA_cop_1$lsb_smk_cur_1[CLSA_cop_1$SMK_OTCURR_CG_COF1=="1"| CLSA_cop_1$SMK_OTCURR_SM_COF1=="1" |CLSA_cop_1$SMK_OTCURR_PI_COF1=="1" |CLSA_cop_1$SMK_OTCURR_CH_COF1=="1" | CLSA_cop_1$SMK_OTCURR_SH_COF1=="1"]<-1
   
-table(lsb_CLSA_cop1$lsb_smk_cur_1)
+table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 ```  
 ### **Variable label**:  Current tobacco smoking  
 **Variable name**:  lsb_smk_cur_2  
@@ -915,8 +915,8 @@ table(lsb_CLSA_cop1$lsb_smk_cur_1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop0$lsb_smk_cur_0<- recode(as.character(CLSA_cop0$ICQ_SMOKE_COM), "1"=2L, "2"=0L, "3"=1L, .default =NA_integer_)
-table(lsb_CLSA_cop0$lsb_smk_cur_0)
+lsb_CLSA_cop_0$lsb_smk_cur_0<- recode(as.character(CLSA_cop_0$ICQ_SMOKE_COM), "1"=2L, "2"=0L, "3"=1L, .default =NA_integer_)
+table(lsb_CLSA_cop_0$lsb_smk_cur_0)
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -936,8 +936,8 @@ table(lsb_CLSA_cop0$lsb_smk_cur_0)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop1$lsb_smk_cur_1<- recode(CLSA_cop1$ICQ_SMOKE_COF1, "1"=2L, "2"=0L, "3"=1L, .default =NA_integer_)
-table(lsb_CLSA_cop1$lsb_smk_cur_1)
+lsb_CLSA_cop_1$lsb_smk_cur_1<- recode(CLSA_cop_1$ICQ_SMOKE_COF1, "1"=2L, "2"=0L, "3"=1L, .default =NA_integer_)
+table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -1052,18 +1052,18 @@ table(lsb_CLSA_cop1$lsb_smk_cur_1)
 **Harmonization comment**:   The study specific variables asks about ever using certain tobacco products for at least six months. 
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop0$lsb_smk_ever_0<- ifelse(CLSA_cop0$ICQ_SMOKE_COM==1 | CLSA_cop0$ICQ_SMOKE_COM==3 ,1L, ifelse(CLSA_cop0$ICQ_SMOKE_COM==2, 0L,NA))
-table(lsb_CLSA_cop0$lsb_smk_ever_0)
-lsb_CLSA_cop0$lsb_smk_ever_0[CLSA_cop0$SMK_TYPEOT_CG_COM==1| CLSA_cop0$SMK_TYPEOT_SM_COM==1| CLSA_cop0$SMK_TYPEOT_PI_COM==1| CLSA_cop0$SMK_TYPEOT_CH_COM==1|CLSA_cop0$SMK_TYPEOT_SH_COM==1]<-1L
-table(lsb_CLSA_cop0$lsb_smk_ever_0)
+lsb_CLSA_cop_0$lsb_smk_ever_0<- ifelse(CLSA_cop_0$ICQ_SMOKE_COM==1 | CLSA_cop_0$ICQ_SMOKE_COM==3 ,1L, ifelse(CLSA_cop_0$ICQ_SMOKE_COM==2, 0L,NA))
+table(lsb_CLSA_cop_0$lsb_smk_ever_0)
+lsb_CLSA_cop_0$lsb_smk_ever_0[CLSA_cop_0$SMK_TYPEOT_CG_COM==1| CLSA_cop_0$SMK_TYPEOT_SM_COM==1| CLSA_cop_0$SMK_TYPEOT_PI_COM==1| CLSA_cop_0$SMK_TYPEOT_CH_COM==1|CLSA_cop_0$SMK_TYPEOT_SH_COM==1]<-1L
+table(lsb_CLSA_cop_0$lsb_smk_ever_0)
 
 #there is a more general variable for other tobacco products SMK_OTREG_TRM- Ever used other tobacco or nicotine products
 #. However the question also includes nicotine products. 
 
 #there is also the variable "Have you smoked at least 100 cigarettes in your life?  (about 4 - 5 packs)" however some Former smokers replied no to this variable. For this reason, the variable for smoking status is used for harmonization. 
-table(CLSA_cop0$ICQ_SMOKE_COM, CLSA_cop0$SMK_100CG_COM ,useNA="always")
+table(CLSA_cop_0$ICQ_SMOKE_COM, CLSA_cop_0$SMK_100CG_COM ,useNA="always")
 
-table(CLSA_cop0$ICQ_SMOKE_COM,CLSA_cop0$SMK_OTREG_COM)
+table(CLSA_cop_0$ICQ_SMOKE_COM,CLSA_cop_0$SMK_OTREG_COM)
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1086,7 +1086,7 @@ table(CLSA_cop0$ICQ_SMOKE_COM,CLSA_cop0$SMK_OTREG_COM)
 MyMerge <- function(x,y){
   merge(x,y, by= c("id"),all=TRUE)
 }
-lsb_table <- Reduce(MyMerge, list(CLSA_cop0, CLSA_cop1))
+lsb_table <- Reduce(MyMerge, list(CLSA_cop_0, CLSA_cop_1))
 #Harmonization scripts to create "ever had "
 
 lsb_table$lsb_smk_ever_0<- ifelse(lsb_table$ICQ_SMOKE_COM==1 | lsb_table$ICQ_SMOKE_COM==3 ,1L, ifelse(lsb_table$ICQ_SMOKE_COM==2, 0L,NA))
@@ -1100,8 +1100,8 @@ lsb_table$lsb_smk_ever_1[lsb_table$SMK_TYPEOT_CG_COF1==1| lsb_table$SMK_TYPEOT_S
 
 
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_CLSA_cop1<-merge(lsb_CLSA_cop1,lsb_table[,c("id","lsb_smk_ever_1")],by="id",all.x=TRUE)
-table(lsb_CLSA_cop1$lsb_smk_ever_1)
+lsb_CLSA_cop_1<-merge(lsb_CLSA_cop_1,lsb_table[,c("id","lsb_smk_ever_1")],by="id",all.x=TRUE)
+table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1310,10 +1310,10 @@ table(lsb_CLSA_cop1$lsb_smk_ever_1)
 #There are two variables in the data 
 #At what age did you smoke your first whole cigarette? At what age did you begin to smoke daily?
 
-lsb_CLSA_cop0$lsb_smk_start_0<-CLSA_cop0$SMK_SMKDL_AG_COM
-table(CLSA_cop0$SMK_FRSTCG_AG_COM,CLSA_cop0$SMK_SMKDL_AG_COM)
-table(lsb_CLSA_cop0$lsb_smk_start_0)
-table(CLSA_cop0$SMK_SMKDL_AG_COM)
+lsb_CLSA_cop_0$lsb_smk_start_0<-CLSA_cop_0$SMK_SMKDL_AG_COM
+table(CLSA_cop_0$SMK_FRSTCG_AG_COM,CLSA_cop_0$SMK_SMKDL_AG_COM)
+table(lsb_CLSA_cop_0$lsb_smk_start_0)
+table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 
 ```  
 ### **Variable label**:  Smoking initiation age    
@@ -1549,8 +1549,8 @@ table(CLSA_cop0$SMK_SMKDL_AG_COM)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop0$lsb_pa_walk_freq_0<- as.integer(CLSA_cop0$PA2_WALK_MCQ)-1
-table(lsb_CLSA_cop0$lsb_pa_walk_freq_0)
+lsb_CLSA_cop_0$lsb_pa_walk_freq_0<- as.integer(CLSA_cop_0$PA2_WALK_MCQ)-1
+table(lsb_CLSA_cop_0$lsb_pa_walk_freq_0)
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_1    
@@ -1570,8 +1570,8 @@ table(lsb_CLSA_cop0$lsb_pa_walk_freq_0)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop1$lsb_pa_walk_freq_1<- as.integer(CLSA_cop1$PA2_WALK_COF1)-1
-table(lsb_CLSA_cop1$lsb_pa_walk_freq_1)
+lsb_CLSA_cop_1$lsb_pa_walk_freq_1<- as.integer(CLSA_cop_1$PA2_WALK_COF1)-1
+table(lsb_CLSA_cop_1$lsb_pa_walk_freq_1)
 ```  
 ### **Variable label**: Frequency of walking    
 **Variable name**:    lsb_pa_walk_freq_2    
@@ -1693,8 +1693,8 @@ table(lsb_CLSA_cop1$lsb_pa_walk_freq_1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop0$lsb_pa_walk_time_0<-as.integer(CLSA_cop0$PA2_WALKHR_MCQ)-1
-table(lsb_CLSA_cop0$lsb_pa_walk_time_0)
+lsb_CLSA_cop_0$lsb_pa_walk_time_0<-as.integer(CLSA_cop_0$PA2_WALKHR_MCQ)-1
+table(lsb_CLSA_cop_0$lsb_pa_walk_time_0)
 ```  
 ### **Variable label**:  Average walking time   
 **Variable name**:   lsb_pa_walk_time_1  
@@ -1715,8 +1715,8 @@ table(lsb_CLSA_cop0$lsb_pa_walk_time_0)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop1$lsb_pa_walk_time_1<-as.integer(CLSA_cop1$PA2_WALKHR_COF1)-1
-table(lsb_CLSA_cop1$lsb_pa_walk_time_1)
+lsb_CLSA_cop_1$lsb_pa_walk_time_1<-as.integer(CLSA_cop_1$PA2_WALKHR_COF1)-1
+table(lsb_CLSA_cop_1$lsb_pa_walk_time_1)
 ```  
 ### **Variable label**:  Average walking time    
 **Variable name**:   lsb_pa_walk_time_2  
@@ -2283,9 +2283,9 @@ table(lsb_CLSA_cop1$lsb_pa_walk_time_1)
 **Harmonization comment**:   The study-specific variable asks about whether the participant engaged in housework in the past 7 days.  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop0$lsb_pa_house_0<-ifelse(CLSA_cop0$PA2_LTHSWK_MCQ==1|CLSA_cop0$PA2_HVYHSWK_MCQ==1,1L,
-                              ifelse(CLSA_cop0$PA2_LTHSWK_MCQ==2 & CLSA_cop0$PA2_HVYHSWK_MCQ==2,0L,NA))
-table(lsb_CLSA_cop0$lsb_pa_house_0)
+lsb_CLSA_cop_0$lsb_pa_house_0<-ifelse(CLSA_cop_0$PA2_LTHSWK_MCQ==1|CLSA_cop_0$PA2_HVYHSWK_MCQ==1,1L,
+                              ifelse(CLSA_cop_0$PA2_LTHSWK_MCQ==2 & CLSA_cop_0$PA2_HVYHSWK_MCQ==2,0L,NA))
+table(lsb_CLSA_cop_0$lsb_pa_house_0)
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_1  
@@ -2303,9 +2303,9 @@ table(lsb_CLSA_cop0$lsb_pa_house_0)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop1$lsb_pa_house_1<-ifelse(CLSA_cop1$PA2_LTHSWK_COF1==1|CLSA_cop1$PA2_HVYHSWK_COF1==1,1L,
-                                     ifelse(CLSA_cop1$PA2_LTHSWK_COF1==2&CLSA_cop1$PA2_HVYHSWK_COF1==2,0L,NA))
-table(lsb_CLSA_cop1$lsb_pa_house_1)
+lsb_CLSA_cop_1$lsb_pa_house_1<-ifelse(CLSA_cop_1$PA2_LTHSWK_COF1==1|CLSA_cop_1$PA2_HVYHSWK_COF1==1,1L,
+                                     ifelse(CLSA_cop_1$PA2_LTHSWK_COF1==2&CLSA_cop_1$PA2_HVYHSWK_COF1==2,0L,NA))
+table(lsb_CLSA_cop_1$lsb_pa_house_1)
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_2  
@@ -2506,15 +2506,15 @@ table(lsb_CLSA_cop1$lsb_pa_house_1)
 **R script**:  
 ```{r, echo=TRUE}
 
-table(CLSA_cop0$PA2_LSPRT_MCQ,CLSA_cop0$PA2_MSPRT_MCQ,useNA="always")
-table(CLSA_cop0$PA2_MSPRT_MCQ,useNA="always")
-table(CLSA_cop0$PA2_SSPRT_MCQ,useNA="always")
+table(CLSA_cop_0$PA2_LSPRT_MCQ,CLSA_cop_0$PA2_MSPRT_MCQ,useNA="always")
+table(CLSA_cop_0$PA2_MSPRT_MCQ,useNA="always")
+table(CLSA_cop_0$PA2_SSPRT_MCQ,useNA="always")
 
-lsb_CLSA_cop0$lsb_pa_sport_0<-ifelse(CLSA_cop0$PA2_LSPRT_MCQ==1&CLSA_cop0$PA2_MSPRT_MCQ==1&CLSA_cop0$PA2_SSPRT_MCQ==1, 0L, ifelse(is.na(CLSA_cop0$PA2_LSPRT_MCQ)&is.na(CLSA_cop0$PA2_MSPRT_MCQ)&is.na(CLSA_cop0$PA2_SSPRT_MCQ), NA, 1L ))
-table(lsb_CLSA_cop0$lsb_pa_sport_0,useNA="always")
-table(lsb_CLSA_cop0$lsb_pa_sport_0,CLSA_cop0$PA2_LSPRT_MCQ,useNA="always")
-table(lsb_CLSA_cop0$lsb_pa_sport_0,CLSA_cop0$PA2_MSPRT_MCQ,useNA="always")
-table(lsb_CLSA_cop0$lsb_pa_sport_0,CLSA_cop0$PA2_SSPRT_MCQ,useNA="always")
+lsb_CLSA_cop_0$lsb_pa_sport_0<-ifelse(CLSA_cop_0$PA2_LSPRT_MCQ==1&CLSA_cop_0$PA2_MSPRT_MCQ==1&CLSA_cop_0$PA2_SSPRT_MCQ==1, 0L, ifelse(is.na(CLSA_cop_0$PA2_LSPRT_MCQ)&is.na(CLSA_cop_0$PA2_MSPRT_MCQ)&is.na(CLSA_cop_0$PA2_SSPRT_MCQ), NA, 1L ))
+table(lsb_CLSA_cop_0$lsb_pa_sport_0,useNA="always")
+table(lsb_CLSA_cop_0$lsb_pa_sport_0,CLSA_cop_0$PA2_LSPRT_MCQ,useNA="always")
+table(lsb_CLSA_cop_0$lsb_pa_sport_0,CLSA_cop_0$PA2_MSPRT_MCQ,useNA="always")
+table(lsb_CLSA_cop_0$lsb_pa_sport_0,CLSA_cop_0$PA2_SSPRT_MCQ,useNA="always")
 
 ```   
 ### **Variable label**: Sports or exercise      
@@ -2534,10 +2534,10 @@ table(lsb_CLSA_cop0$lsb_pa_sport_0,CLSA_cop0$PA2_SSPRT_MCQ,useNA="always")
 **R script**:  
 ```{r, echo=TRUE}
 
-lsb_CLSA_cop1$lsb_pa_sport_1<-ifelse(CLSA_cop1$PA2_LSPRT_COF1==1&CLSA_cop1$PA2_MSPRT_COF1==1&CLSA_cop1$PA2_SSPRT_COF1==1, 0L, 
-                              ifelse(is.na(CLSA_cop1$PA2_LSPRT_COF1)&is.na(CLSA_cop1$PA2_MSPRT_COF1)&is.na(CLSA_cop1$PA2_SSPRT_COF1), NA, 1L ))
+lsb_CLSA_cop_1$lsb_pa_sport_1<-ifelse(CLSA_cop_1$PA2_LSPRT_COF1==1&CLSA_cop_1$PA2_MSPRT_COF1==1&CLSA_cop_1$PA2_SSPRT_COF1==1, 0L, 
+                              ifelse(is.na(CLSA_cop_1$PA2_LSPRT_COF1)&is.na(CLSA_cop_1$PA2_MSPRT_COF1)&is.na(CLSA_cop_1$PA2_SSPRT_COF1), NA, 1L ))
 
-table(lsb_CLSA_cop1$lsb_pa_sport_1,useNA="always")
+table(lsb_CLSA_cop_1$lsb_pa_sport_1,useNA="always")
 
 ```   
 ### **Variable label**: Sports or exercise      
@@ -2649,35 +2649,35 @@ table(lsb_CLSA_cop1$lsb_pa_sport_1,useNA="always")
 **Harmonization comment**: The three study-specific variables asks on average how many hours a day the participant engaged in light/moderate/strenuous sports or recreational activities over the past 7 days; and the study specific categories are: Less than 30 minutes, 30 minutes but less than 1 hour, 1 hour but less than 2 hours, 2 hours but less than 4 hours, 4 hours or more. For the harmonization of the DataSchema variable the mid-point of each category is taken, the three variables for the sports time are added and multiplied by seven to find a weekly average. 
 **R script**:  
 ```{r, echo=TRUE}
-table(CLSA_cop0$PA2_LSPRTHR_MCQ,useNA = "always")
-table(CLSA_cop0$PA2_MSPRTHR_MCQ,useNA = "always")
-table(CLSA_cop0$PA2_SSPRTHR_MCQ,useNA = "always")
+table(CLSA_cop_0$PA2_LSPRTHR_MCQ,useNA = "always")
+table(CLSA_cop_0$PA2_MSPRTHR_MCQ,useNA = "always")
+table(CLSA_cop_0$PA2_SSPRTHR_MCQ,useNA = "always")
 
 
-sprt_time1<-recode(CLSA_cop0$PA2_LSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
-sprt_time2<-recode(CLSA_cop0$PA2_MSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
-sprt_time3<-recode(CLSA_cop0$PA2_SSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time1<-recode(CLSA_cop_0$PA2_LSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time2<-recode(CLSA_cop_0$PA2_MSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time3<-recode(CLSA_cop_0$PA2_SSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
 sprt_time<-cbind(sprt_time1,sprt_time2,sprt_time1)
 sprt_time<-rowSums(sprt_time, na.rm=TRUE)
 sprt_time<-sprt_time*7
 table(sprt_time)
 str(sprt_time)
-str(lsb_CLSA_cop0$lsb_pa_sport_0)
-lsb_CLSA_cop0$lsb_pa_sport_time_0<-ifelse(lsb_CLSA_cop0$lsb_pa_sport_0==0L,0L, ifelse(sprt_time<60, 1L, ifelse(sprt_time>60&sprt_time<=120, 2L, ifelse(sprt_time>120, 3L, NA))))
+str(lsb_CLSA_cop_0$lsb_pa_sport_0)
+lsb_CLSA_cop_0$lsb_pa_sport_time_0<-ifelse(lsb_CLSA_cop_0$lsb_pa_sport_0==0L,0L, ifelse(sprt_time<60, 1L, ifelse(sprt_time>60&sprt_time<=120, 2L, ifelse(sprt_time>120, 3L, NA))))
 
-table(lsb_CLSA_cop0$lsb_pa_sport_time_0, useNA = "always")
+table(lsb_CLSA_cop_0$lsb_pa_sport_time_0, useNA = "always")
 
 
-# lsb_CLSA_cop0$lsb_pa_sport_time_0<-ifelse(lsb_CLSA_cop0$lsb_pa_sport_0==0L,0L,
-#                                         ifelse(CLSA_cop0$PA2_LSPRTHR_MCQ==4|CLSA_cop0$PA2_MSPRTHR_MCQ==4|CLSA_cop0$PA2_SSPRTHR_MCQ==4|
-#                                          CLSA_cop0$PA2_LSPRTHR_MCQ==5|
-#                                         CLSA_cop0$PA2_MSPRTHR_MCQ==5|CLSA_cop0$PA2_SSPRTHR_MCQ==5,3L,
-#                                         ifelse(CLSA_cop0$PA2_LSPRTHR_MCQ==3|CLSA_cop0$PA2_MSPRTHR_MCQ==3|CLSA_cop0$PA2_SSPRTHR_MCQ==3,2L,
-#                                         ifelse(CLSA_cop0$PA2_LSPRTHR_MCQ==2
-#                                         |CLSA_cop0$PA2_MSPRTHR_MCQ==2|CLSA_cop0$PA2_SSPRTHR_MCQ==2|CLSA_cop0$PA2_LSPRTHR_MCQ==1|CLSA_cop0$PA2_MSPRTHR_MCQ==1|
-#                                         CLSA_cop0$PA2_SSPRTHR_MCQ==1,1L,NA))))
-# table(lsb_CLSA_cop0$lsb_pa_sport_time_0, useNA = "always")
-# table(CLSA_cop0$PA2_LSPRTHR_MCQ<=2&CLSA_cop0$PA2_MSPRTHR_MCQ<=2&CLSA_cop0$PA2_SSPRTHR_MCQ<=2,useNA = "always")
+# lsb_CLSA_cop_0$lsb_pa_sport_time_0<-ifelse(lsb_CLSA_cop_0$lsb_pa_sport_0==0L,0L,
+#                                         ifelse(CLSA_cop_0$PA2_LSPRTHR_MCQ==4|CLSA_cop_0$PA2_MSPRTHR_MCQ==4|CLSA_cop_0$PA2_SSPRTHR_MCQ==4|
+#                                          CLSA_cop_0$PA2_LSPRTHR_MCQ==5|
+#                                         CLSA_cop_0$PA2_MSPRTHR_MCQ==5|CLSA_cop_0$PA2_SSPRTHR_MCQ==5,3L,
+#                                         ifelse(CLSA_cop_0$PA2_LSPRTHR_MCQ==3|CLSA_cop_0$PA2_MSPRTHR_MCQ==3|CLSA_cop_0$PA2_SSPRTHR_MCQ==3,2L,
+#                                         ifelse(CLSA_cop_0$PA2_LSPRTHR_MCQ==2
+#                                         |CLSA_cop_0$PA2_MSPRTHR_MCQ==2|CLSA_cop_0$PA2_SSPRTHR_MCQ==2|CLSA_cop_0$PA2_LSPRTHR_MCQ==1|CLSA_cop_0$PA2_MSPRTHR_MCQ==1|
+#                                         CLSA_cop_0$PA2_SSPRTHR_MCQ==1,1L,NA))))
+# table(lsb_CLSA_cop_0$lsb_pa_sport_time_0, useNA = "always")
+# table(CLSA_cop_0$PA2_LSPRTHR_MCQ<=2&CLSA_cop_0$PA2_MSPRTHR_MCQ<=2&CLSA_cop_0$PA2_SSPRTHR_MCQ<=2,useNA = "always")
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -2698,29 +2698,29 @@ table(lsb_CLSA_cop0$lsb_pa_sport_time_0, useNA = "always")
 **Harmonization comment**:  The three study-specific variables asks on average how many hours a day the participant engaged in light/moderate/strenuous sports or recreational activities over the past 7 days; and the study specific categories are: Less than 30 minutes, 30 minutes but less than 1 hour, 1 hour but less than 2 hours, 2 hours but less than 4 hours, 4 hours or more. For the harmonization of the DataSchema variable the mid-point of each category is taken, the three variables for the sports time are added and multiplied by seven to find a weekly average.  
 **R script**:  
 ```{r, echo=TRUE}
-table(CLSA_cop1$PA2_LSRTHR_COF1,useNA = "always")
-table(CLSA_cop1$PA2_MSPRTHR_COF1,useNA = "always")
-table(CLSA_cop1$PA2_SSPRTHR_COF1,useNA = "always")
+table(CLSA_cop_1$PA2_LSRTHR_COF1,useNA = "always")
+table(CLSA_cop_1$PA2_MSPRTHR_COF1,useNA = "always")
+table(CLSA_cop_1$PA2_SSPRTHR_COF1,useNA = "always")
 
-sprt_time1_1<-recode(CLSA_cop1$PA2_LSRTHR_COF1 , "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
-sprt_time2_1<-recode(CLSA_cop1$PA2_MSPRTHR_COF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
-sprt_time3_1<-recode(CLSA_cop1$PA2_SSPRTHR_COF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time1_1<-recode(CLSA_cop_1$PA2_LSRTHR_COF1 , "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time2_1<-recode(CLSA_cop_1$PA2_MSPRTHR_COF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time3_1<-recode(CLSA_cop_1$PA2_SSPRTHR_COF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
 sprt_time_1<-cbind(sprt_time1,sprt_time2,sprt_time1)
 sprt_time_1<-rowSums(sprt_time_1, na.rm=TRUE)
 sprt_time_1<-sprt_time_1*7
 table(sprt_time_1)
 
-lsb_CLSA_cop1$lsb_pa_sport_time_1<-ifelse(lsb_CLSA_cop1$lsb_pa_sport_1==0L,0L, ifelse(sprt_time_1<60, 1L, ifelse(sprt_time_1>60&sprt_time_1<=120, 2L, ifelse(sprt_time_1>120, 3L, NA))))
+lsb_CLSA_cop_1$lsb_pa_sport_time_1<-ifelse(lsb_CLSA_cop_1$lsb_pa_sport_1==0L,0L, ifelse(sprt_time_1<60, 1L, ifelse(sprt_time_1>60&sprt_time_1<=120, 2L, ifelse(sprt_time_1>120, 3L, NA))))
 
 
-# lsb_CLSA_cop1$lsb_pa_sport_time_1<-ifelse(lsb_CLSA_cop1$lsb_pa_sport_1==0L,0L,ifelse(CLSA_cop1$PA2_LSRTHR_COF1==4|CLSA_cop1$PA2_MSPRTHR_COF1==4|CLSA_cop1$PA2_SSPRTHR_COF1==4|CLSA_cop1$PA2_LSRTHR_COF1==5|CLSA_cop1$PA2_MSPRTHR_COF1==5|CLSA_cop1$PA2_SSPRTHR_COF1==5,3L,              ifelse(CLSA_cop1$PA2_LSRTHR_COF1==3|CLSA_cop1$PA2_MSPRTHR_COF1==3|CLSA_cop1$PA2_SSPRTHR_COF1==3,2L,ifelse(CLSA_cop1$PA2_LSRTHR_COF1==2|
-# CLSA_cop1$PA2_MSPRTHR_COF1==2|CLSA_cop1$PA2_SSPRTHR_COF1==2,1L,ifelse (CLSA_cop1$PA2_LSRTHR_COF1==1|CLSA_cop1$PA2_MSPRTHR_COF1==1|CLSA_cop1$PA2_SSPRTHR_COF1==1, 1L,NA)))))
+# lsb_CLSA_cop_1$lsb_pa_sport_time_1<-ifelse(lsb_CLSA_cop_1$lsb_pa_sport_1==0L,0L,ifelse(CLSA_cop_1$PA2_LSRTHR_COF1==4|CLSA_cop_1$PA2_MSPRTHR_COF1==4|CLSA_cop_1$PA2_SSPRTHR_COF1==4|CLSA_cop_1$PA2_LSRTHR_COF1==5|CLSA_cop_1$PA2_MSPRTHR_COF1==5|CLSA_cop_1$PA2_SSPRTHR_COF1==5,3L,              ifelse(CLSA_cop_1$PA2_LSRTHR_COF1==3|CLSA_cop_1$PA2_MSPRTHR_COF1==3|CLSA_cop_1$PA2_SSPRTHR_COF1==3,2L,ifelse(CLSA_cop_1$PA2_LSRTHR_COF1==2|
+# CLSA_cop_1$PA2_MSPRTHR_COF1==2|CLSA_cop_1$PA2_SSPRTHR_COF1==2,1L,ifelse (CLSA_cop_1$PA2_LSRTHR_COF1==1|CLSA_cop_1$PA2_MSPRTHR_COF1==1|CLSA_cop_1$PA2_SSPRTHR_COF1==1, 1L,NA)))))
 # 
 # 
-# table(lsb_CLSA_cop1$lsb_pa_sport_time_1, lsb_CLSA_cop1$lsb_pa_sport_1, useNA = "always")
-# table(CLSA_cop1$PA2_LSPRT_COF1, CLSA_cop1$PA2_LSRTHR_COF1)
-# table(lsb_CLSA_cop1$lsb_pa_sport_time_1, useNA = "always")
-table(lsb_CLSA_cop1$lsb_pa_sport_time_1, useNA="always")
+# table(lsb_CLSA_cop_1$lsb_pa_sport_time_1, lsb_CLSA_cop_1$lsb_pa_sport_1, useNA = "always")
+# table(CLSA_cop_1$PA2_LSPRT_COF1, CLSA_cop_1$PA2_LSRTHR_COF1)
+# table(lsb_CLSA_cop_1$lsb_pa_sport_time_1, useNA = "always")
+table(lsb_CLSA_cop_1$lsb_pa_sport_time_1, useNA="always")
 ```  
 ### **Variable label**:  Average sports or exercise time       
 **Variable name**:  lsb_pa_sport_time_2  
@@ -2842,16 +2842,16 @@ table(lsb_CLSA_cop1$lsb_pa_sport_time_1, useNA="always")
 
 **R script**:  
 ```{r, echo=TRUE}
-table(CLSA_cop0$NUT_GREEN_COM)
-table(CLSA_cop0$NUT_PTTO_COM)
-table(CLSA_cop0$NUT_CRRT_COM)
-table(CLSA_cop0$NUT_VGOT_COM)
-table(CLSA_cop0$NUT_GREEN_COM)
+table(CLSA_cop_0$NUT_GREEN_COM)
+table(CLSA_cop_0$NUT_PTTO_COM)
+table(CLSA_cop_0$NUT_CRRT_COM)
+table(CLSA_cop_0$NUT_VGOT_COM)
+table(CLSA_cop_0$NUT_GREEN_COM)
 
-lsb_CLSA_cop0$lsb_veg_0<- ifelse(CLSA_cop0$NUT_GREEN_COM==1|CLSA_cop0$NUT_PTTO_COM==1| CLSA_cop0$NUT_CRRT_COM==1|CLSA_cop0$NUT_VGOT_COM==1,1L,
-                                 ifelse(CLSA_cop0$NUT_GREEN_COM>4&CLSA_cop0$NUT_PTTO_COM>4& CLSA_cop0$NUT_CRRT_COM>4&CLSA_cop0$NUT_VGOT_COM>4,NA, 0 ))
+lsb_CLSA_cop_0$lsb_veg_0<- ifelse(CLSA_cop_0$NUT_GREEN_COM==1|CLSA_cop_0$NUT_PTTO_COM==1| CLSA_cop_0$NUT_CRRT_COM==1|CLSA_cop_0$NUT_VGOT_COM==1,1L,
+                                 ifelse(CLSA_cop_0$NUT_GREEN_COM>4&CLSA_cop_0$NUT_PTTO_COM>4& CLSA_cop_0$NUT_CRRT_COM>4&CLSA_cop_0$NUT_VGOT_COM>4,NA, 0 ))
 
-table(lsb_CLSA_cop0$lsb_veg_0,useNA = "always")
+table(lsb_CLSA_cop_0$lsb_veg_0,useNA = "always")
 
 ```  
 ### **Variable label**:  Daily vegetable consumption  
@@ -2872,16 +2872,16 @@ table(lsb_CLSA_cop0$lsb_veg_0,useNA = "always")
 **R script**:  
 ```{r, echo=TRUE}
 
-table(CLSA_cop1$NUT_GREEN_COF1, useNA = "always")
-table(CLSA_cop1$NUT_PTTO_COF1, useNA = "always")
-table(CLSA_cop1$NUT_FRIE_COF1, useNA = "always")
-table(CLSA_cop1$NUT_CRRT_COF1, useNA = "always")
-table(CLSA_cop1$NUT_VGOT_COF1, useNA = "always")
+table(CLSA_cop_1$NUT_GREEN_COF1, useNA = "always")
+table(CLSA_cop_1$NUT_PTTO_COF1, useNA = "always")
+table(CLSA_cop_1$NUT_FRIE_COF1, useNA = "always")
+table(CLSA_cop_1$NUT_CRRT_COF1, useNA = "always")
+table(CLSA_cop_1$NUT_VGOT_COF1, useNA = "always")
 
-lsb_CLSA_cop1$lsb_veg_1<- ifelse(CLSA_cop1$NUT_GREEN_COF1==1|CLSA_cop1$NUT_PTTO_COF1==1| CLSA_cop1$NUT_CRRT_COF1==1|CLSA_cop1$NUT_VGOT_COF1==1,1,
-                                 ifelse(CLSA_cop1$NUT_GREEN_COF1>4&CLSA_cop1$NUT_PTTO_COF1>4& CLSA_cop1$NUT_CRRT_COF1>4&CLSA_cop1$NUT_VGOT_COF1>4,NA, 0 ))
+lsb_CLSA_cop_1$lsb_veg_1<- ifelse(CLSA_cop_1$NUT_GREEN_COF1==1|CLSA_cop_1$NUT_PTTO_COF1==1| CLSA_cop_1$NUT_CRRT_COF1==1|CLSA_cop_1$NUT_VGOT_COF1==1,1,
+                                 ifelse(CLSA_cop_1$NUT_GREEN_COF1>4&CLSA_cop_1$NUT_PTTO_COF1>4& CLSA_cop_1$NUT_CRRT_COF1>4&CLSA_cop_1$NUT_VGOT_COF1>4,NA, 0 ))
 
-table(lsb_CLSA_cop1$lsb_veg_1,useNA = "always")
+table(lsb_CLSA_cop_1$lsb_veg_1,useNA = "always")
 
 ```  
 ### **Variable label**:  Daily vegetable consumption  
@@ -2919,9 +2919,9 @@ table(lsb_CLSA_cop1$lsb_veg_1,useNA = "always")
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop0$lsb_fruit_0<-recode(CLSA_cop0$NUT_FRUT_COM, '1'=1L, '2'=0L, '3'=0L, '4'=0L, '0'=0L, .default=NA_integer_)
-table(CLSA_cop0$NUT_FRUT_COM)
-table(lsb_CLSA_cop0$lsb_fruit_0)
+lsb_CLSA_cop_0$lsb_fruit_0<-recode(CLSA_cop_0$NUT_FRUT_COM, '1'=1L, '2'=0L, '3'=0L, '4'=0L, '0'=0L, .default=NA_integer_)
+table(CLSA_cop_0$NUT_FRUT_COM)
+table(lsb_CLSA_cop_0$lsb_fruit_0)
 ```  
 ### **Variable label**:  Daily fruit consumption  
 **Variable name**:  lsb_fruit_1  
@@ -2939,9 +2939,9 @@ table(lsb_CLSA_cop0$lsb_fruit_0)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-table(CLSA_cop1$NUT_FRUT_COF1,useNA = "always") 
-lsb_CLSA_cop1$lsb_fruit_1<-recode(CLSA_cop1$NUT_FRUT_COF1, '1'=1L, '2'=0L, '3'=0L, '4'=0L, '0'=0L, .default=NA_integer_)
-table(lsb_CLSA_cop1$lsb_fruit_1)
+table(CLSA_cop_1$NUT_FRUT_COF1,useNA = "always") 
+lsb_CLSA_cop_1$lsb_fruit_1<-recode(CLSA_cop_1$NUT_FRUT_COF1, '1'=1L, '2'=0L, '3'=0L, '4'=0L, '0'=0L, .default=NA_integer_)
+table(lsb_CLSA_cop_1$lsb_fruit_1)
 ```  
 ### **Variable label**:  Daily fruit consumption  
 **Variable name**:  lsb_fruit_2  
@@ -3079,11 +3079,11 @@ table(lsb_CLSA_cop1$lsb_fruit_1)
 **R script**:  
 ```{r, echo=TRUE}
 
-table(CLSA_cop1$NUR_DCOFF_NB_COF1, useNA = "always")
-table(CLSA_cop1$NUR_RCOFF_NB_COF1, useNA = "always")
+table(CLSA_cop_1$NUR_DCOFF_NB_COF1, useNA = "always")
+table(CLSA_cop_1$NUR_RCOFF_NB_COF1, useNA = "always")
 
-lsb_CLSA_cop1$lsb_coffee_qty_1<- CLSA_cop1$NUR_DCOFF_NB_COF1+CLSA_cop1$NUR_RCOFF_NB_COF1
-table(lsb_CLSA_cop1$lsb_coffee_qty_1,useNA = "always")
+lsb_CLSA_cop_1$lsb_coffee_qty_1<- CLSA_cop_1$NUR_DCOFF_NB_COF1+CLSA_cop_1$NUR_RCOFF_NB_COF1
+table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
 ```  
 ### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_2  
