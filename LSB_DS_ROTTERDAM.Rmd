@@ -68,7 +68,9 @@ lsb_ROTTERDAM_3 <- data.frame(id = ROTTERDAM_3$id)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- table(ROTTERDAM_0$ep_lf3, 	ROTTERDAM_0$ep_lf3b!=888, useNA="always")
+table(ROTTERDAM_0$ep_lf3, 	ROTTERDAM_0$ep_lf3b!=888, useNA="always")
+
+table(ROTTERDAM_0$ep_lf3, 	ROTTERDAM_0$ep_lf3a, useNA="always")
 
 lsb_ROTTERDAM_0$lsb_alc_cur_0<-ifelse(ROTTERDAM_0$ep_lf3==0, 0L, ifelse(ROTTERDAM_0$ep_lf3==1, 1L, NA))
 table(lsb_ROTTERDAM_0$lsb_alc_cur_0, useNA="always")
@@ -92,6 +94,8 @@ table(lsb_ROTTERDAM_0$lsb_alc_cur_0, useNA="always")
 ```{r, echo=TRUE}
  
 table(ROTTERDAM_1$e4_didalc, useNA="always")
+
+#table(ROTTERDAM_1$e4_didalc,ROTTERDAM_1$e4_didalcpl , useNA="always")
 lsb_ROTTERDAM_1$lsb_alc_cur_1<-ifelse(ROTTERDAM_1$e4_didalc==0, 0L, ifelse(ROTTERDAM_1$e4_didalc==1, 1L, NA))
 table(lsb_ROTTERDAM_1$lsb_alc_cur_1, useNA="always")
 
@@ -211,6 +215,7 @@ table(lsb_ROTTERDAM_3$lsb_alc_cur_3, useNA="always")
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+table(ROTTERDAM_0$ep_lf3a, useNA="always")
 lsb_ROTTERDAM_0$lsb_alc_ever_0 <- ifelse(ROTTERDAM_0$ep_lf3a==0, 0L, ifelse(ROTTERDAM_0$ep_lf3a==1, 1L, NA))
 table(lsb_ROTTERDAM_0$lsb_alc_ever_0 )
 ```  
@@ -404,12 +409,28 @@ table(lsb_ROTTERDAM_1$lsb_alc_ever_1)
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+ **Harmonization status**:  complete     
+**Harmonization comment**:   The study-specific variable is "How often do you have six or more drinks on one occasion?". The study specific category "weekly 1 to 3 times per week" is coded under category 2| 1 to 2 times a week, of the harmonized variable; while the study-specific category "daily or almost daily 4 or more times per week" is coded under category 3 |  3 times a week or more.  
+
 **R script**:  
 ```{r, echo=TRUE}
- 
 
+#??
+
+table(ROTTERDAM_3$e6_EIAUDIT3)
+
+lsb_ROTTERDAM_3$lsb_alc_binge_3<- recode(as.character(ROTTERDAM_3$e6_EIAUDIT3), "0"=1L, "1"=1L, "2"=1L, "3"=2L, "4"=3L,
+                                         .default =NA_integer_)
+
+# 0 = 'never'
+# 1 = 'less than monthly'
+# 2 = 'monthly 1to 3 times per month'
+# 3 = 'weekly 1to 3 times per week'
+# 4 = 'daily or almost daily 4 or more times per week'
+# 7 = 'dont know'
+# 9 = 'missing '
+
+table(lsb_ROTTERDAM_3$lsb_alc_binge_3)
 ```  
 ### **Variable label**:   Frequency of binge drinking  
 **Variable name**: lsb_alc_binge_4  
@@ -483,8 +504,10 @@ table(lsb_ROTTERDAM_1$lsb_alc_ever_1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
-ep_lf3nd
+table(ROTTERDAM_0$ep_lf3nd, useNA="always")
+#there are some very high values. there are also lots of values  of 0.1, 0.2. 
+#??
+lsb_ROTTERDAM_0$lsb_alc_total_0<- ROTTERDAM_0$ep_lf3nd
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: lsb_alc_total_1  
@@ -493,77 +516,32 @@ ep_lf3nd
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:        
+**Harmonization status**:        
 **Harmonization comment**:   The study specific variable is: How many glasses of alcoholic beverages do you drink per week?  
 
 
 **R script**:  
 ```{r, echo=TRUE}
 
-# e4_didbe
-# en 
-# Do you drink beer?
-# 
-# integer
-# 0, 1, 7, 8, 9
-# 
-# e4_didbefr
-# en 
-# How many glasses of beer do you drink per week?
-# 
-# decimal
-# 777, 888, 999
-# 
-# e4_didwwi
-# en 
-# Do you drink white wine?
-# 
-# integer
-# 0, 1, 7, 8, 9
-# 
-# e4_didwwifr
-# en 
-# How many glasses of white wine do you drink per week?
-# 
-# decimal
-# 777, 888, 999
-# 
-# e4_didrwi
-# en 
-# Do you drink red wine?
-# 
-# integer
-# 0, 1, 7, 8, 9
-# 
-# e4_didrwifr
-# en 
-# How many glasses of red wine do you drink per week?
-# 
-# decimal
-# 777, 888, 999
-# 
-# e4_didsh
-# en 
-# Do you drink moderately strong alcoholic beverages like sherry, port, advocaat, bessenjenever, campari, liqueur, vermouth or martini?
-# 
-# integer
-# 0, 1, 7, 8, 9
-# 
-# e4_didshfr
-# en 
-# How many glasses do you drink per week?
-# 
-# decimal
-# 777, 888, 999
-# 
-# e4_didli
-# en 
-# Do you drink strong alcoholic beverages like Beerenburg, Brandy, lemon jenever, cognac, rum, jenever, JÃ¤germeister, vieux or whisky?
-# 
-# integer
-# 0, 1, 7, 8, 9
-# 
-# e4_didlifr
+ROTTERDAM_1$nb_beer     <-ifelse(ROTTERDAM_1$e4_didbe==1, ROTTERDAM_1$e4_didbefr, ifelse(ROTTERDAM_1$e4_didbe==0, 0L, NA))
+ROTTERDAM_1$nb_whitewine<-ifelse(ROTTERDAM_1$e4_didwwi==1, ROTTERDAM_1$e4_didwwifr, ifelse(ROTTERDAM_1$e4_didwwi==0, 0L, NA))
+ROTTERDAM_1$nb_redwine  <-ifelse(ROTTERDAM_1$e4_didrwi==1, ROTTERDAM_1$e4_didrwifr, ifelse(ROTTERDAM_1$e4_didrwi==0, 0L, NA))
+ROTTERDAM_1$nb_modstrong<-ifelse(ROTTERDAM_1$e4_didsh==1, ROTTERDAM_1$e4_didshfr, ifelse(ROTTERDAM_1$e4_didsh==0, 0L, NA))
+ROTTERDAM_1$nb_liq      <-ifelse(ROTTERDAM_1$e4_didli==1, ROTTERDAM_1$e4_didlifr, ifelse(ROTTERDAM_1$e4_didli==0, 0L, NA))
+  
+table(ROTTERDAM_1$e4_didwwifr)
+ROTTERDAM_1[,289:293]
+lsb_ROTTERDAM_1$lsb_alc_total_1 <- rowSums(ROTTERDAM_1[,289:293])
+  
+# ROTTERDAM_1$e4_didwwi
+# ROTTERDAM_1$e4_didwwifr
+# ROTTERDAM_1$e4_didrwi
+# ROTTERDAM_1$e4_didrwifr
+# ROTTERDAM_1$e4_didsh
+# ROTTERDAM_1$e4_didshfr
+# ROTTERDAM_1$e4_didli
+# ROTTERDAM_1$e4_didlifr
+table(lsb_ROTTERDAM_1$lsb_alc_total_1, useNA="always")
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: lsb_alc_total_2  
@@ -577,7 +555,7 @@ ep_lf3nd
 **R script**:  
 ```{r, echo=TRUE}
  
-
+# e5_EIAUDIT2, e5_EIAUDIT1
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: lsb_alc_total_3  
@@ -590,7 +568,7 @@ ep_lf3nd
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
+ # e6_EIAUDIT1, e6_EIAUDIT2
 
 ```  
 
@@ -671,11 +649,11 @@ table(lsb_ROTTERDAM_1$lsb_alc_wine_1, useNA="always")
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-table(ROTTERDAM_0$ep_lf3d)
+table(ROTTERDAM_0$ep_lf3d, useNA="always")
  
-lsb_ROTTERDAM_0$lsb_alc_total_0<- ifelse(ROTTERDAM_0$ep_lf3d==0|ROTTERDAM_0$ep_lf3d==8 , 0, ifelse(!is.na(ROTTERDAM_0$ep_lf3e), as.numeric(ROTTERDAM_0$ep_lf3e),NA))
+lsb_ROTTERDAM_0$lsb_alc_beer_0<- ifelse(ROTTERDAM_0$ep_lf3d==0|ROTTERDAM_0$ep_lf3d==8 , 0, ifelse(!is.na(ROTTERDAM_0$ep_lf3e), as.numeric(ROTTERDAM_0$ep_lf3e),NA))
 table(ROTTERDAM_0$ep_lf3e, useNA="always")
-table(lsb_ROTTERDAM_0$lsb_alc_total_0, useNA = "always")
+table(lsb_ROTTERDAM_0$lsb_alc_beer_0, useNA = "always")
 
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
@@ -690,13 +668,10 @@ table(lsb_ROTTERDAM_0$lsb_alc_total_0, useNA = "always")
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-	
 
- 
 table(ROTTERDAM_1$e4_didbe,ROTTERDAM_1$e4_didbefr, useNA="always")
 lsb_ROTTERDAM_1$lsb_alc_total_1<-ifelse(ROTTERDAM_1$e4_didbe==0|ROTTERDAM_1$e4_didbe==8 , 0,as.numeric(ROTTERDAM_1$e4_didbefr)) 
 table(lsb_ROTTERDAM_1$lsb_alc_total_1)
-
 
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
@@ -738,11 +713,16 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 **Category coding**:  N/A  
  
 
- **Harmonization status**:  impossible    
+ **Harmonization status**:      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
+#??
+# ep_lf3l- Do you drink other moderately strong alcoholic beverages like advocaat, berry jenever, campari, liqueur, vermouth or martini?
+# ep_lf3m  How many glasses of these moderately strong alcoholic beverages do you drink per week?
+# ep_lf3n do you drink strong alcoholic beverages?
+# ep_lf3o How many glasses of strong alcoholic beverages do you drink per week?
+	
 
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
@@ -753,12 +733,19 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 **Category coding**:  N/A  
  
 
- **Harmonization status**:  impossible    
+ **Harmonization status**:      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
  
-
+# e4_didsh   Do you drink moderately strong alcoholic beverages like sherry, port, advocaat, bessenjenever, campari, liqueur, vermouth or martini?
+#  
+# e4_didshfr  How many glasses do you drink per week?
+# 
+# e4_didli   Do you drink strong alcoholic beverages like Beerenburg, Brandy, lemon jenever, cognac, rum, jenever, JÃ¤germeister, vieux or whisky?
+# 
+# e4_didlifr  How many glasses do you drink per week?
+#   
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
 **Variable name**: lsb_alc_liq_2  
@@ -805,12 +792,17 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+ **Harmonization status**:  complete    
+**Harmonization comment**:  The study-specific variables used in the harmonization were "Do you smoke cigarettes?", "Do you smoke cigars?" and "Do you smoke pipes?"  
 **R script**:  
 ```{r, echo=TRUE}
- 
+table(ROTTERDAM_0$ep_lf4)
+table(ROTTERDAM_0$ep_lf5)
+table(ROTTERDAM_0$ep_lf6)
 
+lsb_ROTTERDAM_0$lsb_smk_cur_0<- ifelse(ROTTERDAM_0$ep_lf4==2|ROTTERDAM_0$ep_lf5==2|ROTTERDAM_0$ep_lf6==1 , 1L, ifelse(ROTTERDAM_0$ep_lf4==0|ROTTERDAM_0$ep_lf4==1|ROTTERDAM_0$ep_lf5==0|ROTTERDAM_0$ep_lf5==1|ROTTERDAM_0$ep_lf6==0 , 0L,NA))
+table(lsb_ROTTERDAM_0$lsb_smk_cur_0)
+ 
 ```  
 ### **Variable label**:  Current tobacco smoking  
 **Variable name**:  lsb_smk_cur_1  
@@ -824,11 +816,22 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+ **Harmonization status**:  complete      
+**Harmonization comment**:  The study-specific variables used in the harmonization were "Do you smoke cigarettes?", "Do you smoke cigars?" and "Do you smoke pipes?"  
 **R script**:  
 ```{r, echo=TRUE}
- 
+
+table(ROTTERDAM_1$e4_dict)
+table(ROTTERDAM_1$e4_dipi)
+table(ROTTERDAM_1$e4_dicg)
+
+
+lsb_ROTTERDAM_1$lsb_smk_cur_1<- ifelse(ROTTERDAM_1$e4_dict==1|ROTTERDAM_1$e4_dipi==2|ROTTERDAM_1$e4_dipi==3|ROTTERDAM_1$e4_dicg==2|ROTTERDAM_1$e4_dicg==3 , 1L, ifelse(ROTTERDAM_1$e4_dipi==0|ROTTERDAM_1$e4_dipi==1|ROTTERDAM_1$e4_dicg==0|ROTTERDAM_1$e4_dicg==1|ROTTERDAM_1$e4_dict==0|ROTTERDAM_1$e4_dict==2|ROTTERDAM_1$e4_dict==3, 0L,NA))
+
+table(lsb_ROTTERDAM_1$lsb_smk_cur_1)
+# e4_dicg Do you smoke cigars?
+# e4_dipi Do you smoke pipes?
+# e4_dict Do you smoke cigarettes?
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -843,12 +846,24 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+ **Harmonization status**:  complete      
+**Harmonization comment**:   The study-specific variables used in the harmonization were "Do you smoke cigarettes?", "Do you smoke cigars?" and "Do you smoke pipes?"  
 **R script**:  
 ```{r, echo=TRUE}
- 
 
+table(ROTTERDAM_2$e5_EILF4)
+table(ROTTERDAM_2$e5_EILF5)
+table(ROTTERDAM_2$e5_EILF6)
+
+
+lsb_ROTTERDAM_2$lsb_smk_cur_2<- ifelse(ROTTERDAM_2$e5_EILF4==4|ROTTERDAM_2$e5_EILF4==5|ROTTERDAM_2$e5_EILF4==6|
+                                         ROTTERDAM_2$e5_EILF5==2|ROTTERDAM_2$e5_EILF6==1 , 1L, 
+                                ifelse(ROTTERDAM_2$e5_EILF4==0|ROTTERDAM_2$e5_EILF4==1|ROTTERDAM_2$e5_EILF4==2| 
+                            ROTTERDAM_2$e5_EILF4==3|ROTTERDAM_2$e5_EILF5==0|ROTTERDAM_2$e5_EILF5==1|ROTTERDAM_2$e5_EILF6==0,0L,NA))
+table(lsb_ROTTERDAM_2$lsb_smk_cur_2, useNA="always")
+# e5_EILF6, 	
+# e5_EILF4, 
+# e5_EILF5
 ```  
 ### **Variable label**:  Current tobacco smoking  
 **Variable name**:  lsb_smk_cur_3  
@@ -862,11 +877,22 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+ **Harmonization status**:  complete      
+**Harmonization comment**:   The study-specific variables used in the harmonization were "Do you smoke cigarettes?", "Do you smoke cigars?" and "Do you smoke pipes?"  
 **R script**:  
 ```{r, echo=TRUE}
- 
+
+table(ROTTERDAM_3$e6_EILF4)
+table(ROTTERDAM_3$e6_EILF5)
+table(ROTTERDAM_3$e6_EILF6)
+
+
+lsb_ROTTERDAM_3$lsb_smk_cur_3<-ifelse(ROTTERDAM_3$e6_EILF4==4|ROTTERDAM_3$e6_EILF4==5|
+                              ROTTERDAM_3$e6_EILF5==2|ROTTERDAM_3$e6_EILF6==1 , 1L, 
+                              ifelse(ROTTERDAM_3$e6_EILF4==0|ROTTERDAM_3$e6_EILF4==1|ROTTERDAM_3$e6_EILF4==2| 
+                              ROTTERDAM_3$e6_EILF4==3|ROTTERDAM_3$e6_EILF5==0|ROTTERDAM_3$e6_EILF5==1|ROTTERDAM_3$e6_EILF6==0,0L,NA))
+
+table(lsb_ROTTERDAM_3$lsb_smk_cur_3, useNA="always")
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -940,12 +966,15 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 1 |   Former smoker  
 2 |   Current smoker  
 
- **Harmonization status**:  impossible    
+ **Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
+table(ROTTERDAM_0$ep_lf6)
+table(ROTTERDAM_0$ep_lf6e)
 
+lsb_ROTTERDAM_0$lsb_smk_status_0 <-  ifelse(ROTTERDAM_0$ep_lf6==1, 2L, ifelse(ROTTERDAM_0$ep_lf6==0& ROTTERDAM_0$ep_lf6e==0, 0L, ifelse(ROTTERDAM_0$ep_lf6==0&ROTTERDAM_0$ep_lf6e==1, 1L, NA)))
+table(lsb_ROTTERDAM_0$lsb_smk_status_0, useNA="always")
 ```  
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_1  
@@ -960,12 +989,15 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 1 |   Former smoker  
 2 |   Current smoker  
 
- **Harmonization status**:  impossible    
+ **Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
  
+table(ROTTERDAM_1$e4_dict)
+lsb_ROTTERDAM_1$lsb_smk_status_1<- ifelse(ROTTERDAM_1$e4_dict==0, 0L, ifelse(ROTTERDAM_1$e4_dict==1,2L, ifelse(ROTTERDAM_1$e4_dict==2|ROTTERDAM_1$e4_dict==3, 1L, NA)))
 
+table(lsb_ROTTERDAM_1$lsb_smk_status_1)
 ```  
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_2  
@@ -984,8 +1016,14 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
 
+table(ROTTERDAM_2$e5_EILF6)
+table(ROTTERDAM_2$e5_EILFE)
+table(ROTTERDAM_2$e5_EILFE, ROTTERDAM_2$e5_EILF6)
+
+lsb_ROTTERDAM_2$lsb_smk_status_2 <- ifelse(ROTTERDAM_2$e5_EILF6==1, 2L,ifelse(ROTTERDAM_2$e5_EILFE==1&ROTTERDAM_2$e5_EILF6==0, 1L,
+                                           ifelse(ROTTERDAM_2$e5_EILF6==0&ROTTERDAM_2$e5_EILFE==0, 0L, NA)))
+table(lsb_ROTTERDAM_2$lsb_smk_status_2)
 ```  
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_3  
@@ -1004,7 +1042,18 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
+table(ROTTERDAM_3$e6_EILSE5, useNA="always")
+table(ROTTERDAM_3$e6_EILF6, useNA="always")
+table(ROTTERDAM_3$e6_EILSE5,ROTTERDAM_3$e6_EILF6, useNA="always")
+
+table(ROTTERDAM_3$e6_EILFHE5, useNA="always")
+
+table(ROTTERDAM_3$e5_EILFE, ROTTERDAM_2$e5_EILF6)
+
+lsb_ROTTERDAM_3$lsb_smk_status_3 <- ifelse(ROTTERDAM_3$e6_EILF6==1, 2L,ifelse(ROTTERDAM_3$e6_EILF6==0&(ROTTERDAM_3$e6_EILSE5==1|ROTTERDAM_3$e6_EILSE5==2), 1L,
+                                           ifelse(ROTTERDAM_3$e6_EILF6==0&ROTTERDAM_3$e6_EILSE5==0, 0L, NA)))
+table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
+
 
 ```  
 ### **Variable label**:  Smoking status  
