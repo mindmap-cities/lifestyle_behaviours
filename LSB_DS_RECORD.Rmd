@@ -6,7 +6,7 @@ output: html_document
 ## Login to server and assign study data
 ```{r, echo=FALSE}
 #Load Opal R library
-library(opal)
+library(opalr)
 library(tidyverse)
 # Create an opal object with the login information
 erasmus_opal <- opal.login()
