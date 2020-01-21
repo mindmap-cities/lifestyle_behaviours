@@ -6,7 +6,7 @@ output: html_document
 ## Login to server and assign study data
 ```{r, echo=FALSE}
 #Load R libraries
-library(opal)
+library(opalr)
 library(tidyverse)
 library(epiDisplay)
 library(data.table)
