@@ -1012,14 +1012,14 @@ table(lsb_ROTTERDAM_1$lsb_smk_status_1)
 1 |   Former smoker  
 2 |   Current smoker  
 
- **Harmonization status**:  impossible    
+ **Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 table(ROTTERDAM_2$e5_EILF6)
 table(ROTTERDAM_2$e5_EILFE)
-table(ROTTERDAM_2$e5_EILFE, ROTTERDAM_2$e5_EILF6)
+# table(ROTTERDAM_2$e5_EILFE, ROTTERDAM_2$e5_EILF6)
 
 lsb_ROTTERDAM_2$lsb_smk_status_2 <- ifelse(ROTTERDAM_2$e5_EILF6==1, 2L,ifelse(ROTTERDAM_2$e5_EILFE==1&ROTTERDAM_2$e5_EILF6==0, 1L,
                                            ifelse(ROTTERDAM_2$e5_EILF6==0&ROTTERDAM_2$e5_EILFE==0, 0L, NA)))
@@ -1038,7 +1038,7 @@ table(lsb_ROTTERDAM_2$lsb_smk_status_2)
 1 |   Former smoker  
 2 |   Current smoker  
 
- **Harmonization status**:  impossible    
+ **Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1048,7 +1048,7 @@ table(ROTTERDAM_3$e6_EILSE5,ROTTERDAM_3$e6_EILF6, useNA="always")
 
 table(ROTTERDAM_3$e6_EILFHE5, useNA="always")
 
-table(ROTTERDAM_3$e5_EILFE, ROTTERDAM_2$e5_EILF6)
+# table(ROTTERDAM_3$e5_EILFE, ROTTERDAM_2$e5_EILF6)
 
 lsb_ROTTERDAM_3$lsb_smk_status_3 <- ifelse(ROTTERDAM_3$e6_EILF6==1, 2L,ifelse(ROTTERDAM_3$e6_EILF6==0&(ROTTERDAM_3$e6_EILSE5==1|ROTTERDAM_3$e6_EILSE5==2), 1L,
                                            ifelse(ROTTERDAM_3$e6_EILF6==0&ROTTERDAM_3$e6_EILSE5==0, 0L, NA)))
@@ -1129,12 +1129,20 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+ **Harmonization status**:  complete      
+**Harmonization comment**:   The DataSchema variable is harmonized using study-specific variables regarding ever smoking cigarettes, ever smoking pipes and ever smoking cigars.   
 **R script**:  
 ```{r, echo=TRUE}
- 
+table(ROTTERDAM_0$ep_lf6e) 
+table(ROTTERDAM_0$ep_lf6,ROTTERDAM_0$ep_lf6e, useNA = "always")
+table(ROTTERDAM_0$ep_lf6,ROTTERDAM_0$ep_lf6k, useNA = "always")
+table(ROTTERDAM_0$ep_lf6e,ROTTERDAM_0$ep_lf6k, useNA = "always")
 
+lsb_ROTTERDAM_0$lsb_smk_ever_0 <- ifelse(ROTTERDAM_0$ep_lf6==1|ROTTERDAM_0$ep_lf6e==1
+                                        |ROTTERDAM_0$ep_lf5==1|ROTTERDAM_0$ep_lf5==2|ROTTERDAM_0$ep_lf4==1|ROTTERDAM_0$ep_lf4==2,1L,
+                                  ifelse((ROTTERDAM_0$ep_lf6==0&ROTTERDAM_0$ep_lf6e==0)&ROTTERDAM_0$ep_lf5==0&ROTTERDAM_0$ep_lf4==0,0L,NA
+                                         ))
+table(lsb_ROTTERDAM_0$lsb_smk_ever_0,useNA = "always")
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_1    
@@ -1148,11 +1156,20 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+ **Harmonization status**:  complete      
+**Harmonization comment**:   The DataSchema variable is harmonized using study-specific variables regarding ever smoking cigarettes, ever smoking pipes and ever smoking cigars.  
 **R script**:  
 ```{r, echo=TRUE}
- 
+table(ROTTERDAM_1$e4_dicg, useNA="always")
+table(ROTTERDAM_1$e4_dipi, useNA="always")
+table(ROTTERDAM_1$e4_dict, useNA="always")
+
+lsb_ROTTERDAM_1$lsb_smk_ever_1 <- ifelse(ROTTERDAM_1$e4_dicg==1| ROTTERDAM_1$e4_dicg==2|
+                                           
+                                  ROTTERDAM_1$e4_dicg==3|ROTTERDAM_1$e4_dipi==1|ROTTERDAM_1$e4_dipi==2|ROTTERDAM_1$e4_dipi==3|
+                                    ROTTERDAM_1$e4_dict==1|ROTTERDAM_1$e4_dict==2|ROTTERDAM_1$e4_dict==3,1L,
+                                  ifelse(ROTTERDAM_1$e4_dicg==0&ROTTERDAM_1$e4_dipi==0&ROTTERDAM_1$e4_dict==0, 0L, NA))
+table(lsb_ROTTERDAM_1$lsb_smk_ever_1, useNA="always")
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1167,12 +1184,20 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  complete      
+**Harmonization comment**:   The DataSchema variable is harmonized using study-specific variables regarding ever smoking cigarettes, ever smoking pipes and ever smoking cigars. 
 **R script**:  
 ```{r, echo=TRUE}
- 
+table(ROTTERDAM_2$e5_EILF6, useNA="always")
+table(ROTTERDAM_2$e5_EILFE, useNA="always")
 
+lsb_ROTTERDAM_2$lsb_smk_ever_2 <- ifelse(ROTTERDAM_2$e5_EILF6==1|ROTTERDAM_2$e5_EILFE==1|ROTTERDAM_2$e5_EILF4==1|ROTTERDAM_2$e5_EILF4==2|
+                                          
+                                      ROTTERDAM_2$e5_EILF4==3|ROTTERDAM_2$e5_EILF4==4|ROTTERDAM_2$e5_EILF4==5|ROTTERDAM_2$e5_EILF4==6|
+                                        ROTTERDAM_2$e5_EILF5==1|ROTTERDAM_2$e5_EILF5==2, 1L,
+                                      ifelse(ROTTERDAM_2$e5_EILF6==0&ROTTERDAM_2$e5_EILFE==0&ROTTERDAM_2$e5_EILF4==0&ROTTERDAM_2$e5_EILF5==0, 0L, NA))
+                                         
+table(lsb_ROTTERDAM_2$lsb_smk_ever_2, useNA="always")                                         
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_3    
@@ -1186,11 +1211,26 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  complete      
+**Harmonization comment**:   The DataSchema variable is harmonized using study-specific variables regarding ever smoking cigarettes, ever smoking pipes and ever smoking cigars. 
 **R script**:  
 ```{r, echo=TRUE}
  
+table(ROTTERDAM_3$e6_EILF6, ROTTERDAM_3$e6_EILSE5, useNA="always")
+table(ROTTERDAM_3$e6_EILF6, ROTTERDAM_3$e6_EILF6C, useNA="always")
+table(ROTTERDAM_3$e6_EILSE5, ROTTERDAM_3$e6_EILF6C, useNA="always")
+table(ROTTERDAM_3$e6_EILF6, useNA="always")
+table(ROTTERDAM_3$e6_EILF6C, useNA="always")
+table(ROTTERDAM_3$e6_EILSE5, useNA="always")
+
+lsb_ROTTERDAM_3$lsb_smk_ever_3 <- ifelse(ROTTERDAM_3$e6_EILF6==1|ROTTERDAM_3$e6_EILSE5==1|ROTTERDAM_3$e6_EILSE5==2|ROTTERDAM_3$e6_EILF6C==1|
+                                           ROTTERDAM_3$e6_EILF6C==0|ROTTERDAM_3$e6_EILF6C==1|ROTTERDAM_3$e6_EILF4==1
+                                         |ROTTERDAM_3$e6_EILF4==2|ROTTERDAM_3$e6_EILF4==3|ROTTERDAM_3$e6_EILF4==4|ROTTERDAM_3$e6_EILF4==5|
+                                          ROTTERDAM_3$e6_EILF5==1|ROTTERDAM_3$e6_EILF5==2 , 1L, 
+                                         ifelse((ROTTERDAM_3$e6_EILF6==0 &
+                                                   ROTTERDAM_3$e6_EILSE5==0)&ROTTERDAM_3$e6_EILF4==0&ROTTERDAM_3$e6_EILF5==0, 0L, NA))
+table(lsb_ROTTERDAM_3$lsb_smk_ever_3,useNA="always")
+
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1258,12 +1298,18 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+ **Harmonization status**:  complete      
+**Harmonization comment**:   The study-specific category 'incidental less than 1 per day' is coded as 0.
 **R script**:  
 ```{r, echo=TRUE}
- 
+class(ROTTERDAM_0$ep_lf6a) 
+table(ROTTERDAM_0$ep_lf6a, ROTTERDAM_0$ep_lf6, useNA="always")
+table(ROTTERDAM_0$ep_lf6a,  useNA="always")
 
+table(lsb_ROTTERDAM_0$lsb_smk_cur_0, useNA="always")
+lsb_ROTTERDAM_0$lsb_cig_qty_0 <-ifelse(lsb_ROTTERDAM_0$lsb_smk_cur_0==0, 0L, ifelse(ROTTERDAM_0$ep_lf6a<76,ROTTERDAM_0$ep_lf6a,
+                                                                                    ifelse(ROTTERDAM_0$ep_lf6a==76, 0L,NA)))
+table(lsb_ROTTERDAM_0$lsb_cig_qty_0 , useNA="always")
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_1   
@@ -1272,12 +1318,15 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+ **Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
  
-
+table(lsb_ROTTERDAM_1$lsb_smk_cur_1, useNA="always")
+lsb_ROTTERDAM_1$lsb_cig_qty_1 <-ifelse(lsb_ROTTERDAM_1$lsb_smk_cur_1==0, 0L, ifelse(ROTTERDAM_1$e4_dictn<76,ROTTERDAM_1$e4_dictn,NA))
+table(lsb_ROTTERDAM_1$lsb_cig_qty_1, useNA="always")
+table(ROTTERDAM_1$e4_dictn, useNA="always")
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_2   
@@ -1286,12 +1335,15 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+ **Harmonization status**:  complete      
+**Harmonization comment**:   The study-specific category 'incidental less than 1 per day' is coded as 0.
 **R script**:  
 ```{r, echo=TRUE}
- 
+table(lsb_ROTTERDAM_2$lsb_smk_cur_2, useNA="always") 
 
+lsb_ROTTERDAM_2$lsb_cig_qty_2 <-ifelse(lsb_ROTTERDAM_2$lsb_smk_cur_2==0, 0L, ifelse(ROTTERDAM_2$e5_EILF6A<76,ROTTERDAM_2$e5_EILF6A,
+                                                                                    ifelse(ROTTERDAM_2$e5_EILF6A==76, 0L,NA)))
+table(lsb_ROTTERDAM_2$lsb_cig_qty_2, useNA="always")
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
 **Variable name**:  lsb_cig_qty_3   
@@ -1300,11 +1352,15 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+ **Harmonization status**:  complete     
+**Harmonization comment**:   The study-specific category 'incidental less than 1 per day' is coded as 0.
 **R script**:  
 ```{r, echo=TRUE}
+table(ROTTERDAM_3$e6_EILF6A, useNA="always")
  
+lsb_ROTTERDAM_3$lsb_cig_qty_3 <-ifelse(lsb_ROTTERDAM_3$lsb_smk_cur_3==0, 0L, ifelse(ROTTERDAM_3$e6_EILF6A<76,ROTTERDAM_3$e6_EILF6A,
+                                                                                    ifelse(ROTTERDAM_3$e6_EILF6A==76, 0L,NA)))
+table(lsb_ROTTERDAM_3$lsb_cig_qty_3, useNA="always")
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
@@ -1357,12 +1413,14 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+ **Harmonization status**:      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
  
-
+table(ROTTERDAM_0$ep_lf6b)	
+lsb_ROTTERDAM_0$lsb_smk_start_0 <- ifelse(ROTTERDAM_0$ep_lf6b<777, ROTTERDAM_0$ep_lf6b, NA )
+table(lsb_ROTTERDAM_0$lsb_smk_start_0)
 ```  
 ### **Variable label**:  Smoking initiation age    
 **Variable name**:  lsb_smk_start_1    
@@ -1377,6 +1435,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 ```{r, echo=TRUE}
  
 
+
 ```  
 ### **Variable label**:  Smoking initiation age    
 **Variable name**:  lsb_smk_start_2    
@@ -1385,11 +1444,14 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+ **Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
  
+table(ROTTERDAM_2$e5_EILF6B)	
+lsb_ROTTERDAM_2$lsb_smk_start_2 <- ifelse(ROTTERDAM_2$e5_EILF6B<777, ROTTERDAM_2$e5_EILF6B, NA )
+table(lsb_ROTTERDAM_2$lsb_smk_start_2) 
 
 ```  
 ### **Variable label**:  Smoking initiation age    
@@ -1456,11 +1518,13 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+ **Harmonization status**:  complete    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
+table(ROTTERDAM_0$ep_lf6h) 
+lsb_ROTTERDAM_0$lsb_smk_stop_0 <- ifelse(ROTTERDAM_0$ep_lf6h<777, ROTTERDAM_0$ep_lf6h, NA )
+table(lsb_ROTTERDAM_0$lsb_smk_stop_0)
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -1470,11 +1534,14 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+ **Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
+table(ROTTERDAM_1$e4_dictlps) 
+lsb_ROTTERDAM_1$lsb_smk_stop_1 <- ifelse(ROTTERDAM_1$e4_dictlps<777, ROTTERDAM_1$e4_dictlps, NA )
+table(lsb_ROTTERDAM_1$lsb_smk_stop_1)
+
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -1484,11 +1551,16 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+ **Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
  
+
+table(ROTTERDAM_2$e5_EILFH) 
+lsb_ROTTERDAM_2$lsb_smk_stop_2 <- ifelse(ROTTERDAM_2$e5_EILFH<777, ROTTERDAM_2$e5_EILFH, NA )
+table(lsb_ROTTERDAM_2$lsb_smk_stop_2)
+
 
 ```  
 ### **Variable label**:  Smoking cessation age  
@@ -1498,11 +1570,17 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+ **Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
+ 	
+
+table(ROTTERDAM_3$e6_EILFHE5) 
+lsb_ROTTERDAM_3$lsb_smk_stop_3 <- ifelse(ROTTERDAM_3$e6_EILFHE5<777, ROTTERDAM_3$e6_EILFHE5, NA )
+table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
+
+
 
 ```  
 ### **Variable label**:  Smoking cessation age  
