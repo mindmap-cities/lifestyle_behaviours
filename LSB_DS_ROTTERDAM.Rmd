@@ -64,15 +64,17 @@ lsb_ROTTERDAM_3 <- data.frame(id = ROTTERDAM_3$id)
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
- **Harmonization status**:  complete      
-**Harmonization comment**:   
+**Harmonization status**:  complete      
+**Harmonization comment**:   The study-specific variable is "Do you ever drink alcoholic beverages?" is used in harmonization. People who are currently at the same age as their answer to the question "How old were you when you stopped drinking alcoholic beverages?" were also coded as having consumed alcohol in the last 12 months. 
 **R script**:  
 ```{r, echo=TRUE}
-table(ROTTERDAM_0$ep_lf3, 	ROTTERDAM_0$ep_lf3b!=888, useNA="always")
+table(ROTTERDAM_0$ep_lf3, ROTTERDAM_0$ep_lf3b!=888, useNA="always")
+table((ROTTERDAM_0$ep_page- ROTTERDAM_0$ep_lf3b)==0, ROTTERDAM_0$ep_lf3,useNA="always")
+table(ROTTERDAM_0$ep_lf3, ROTTERDAM_0$ep_lf3a, useNA="always")
+table(ROTTERDAM_0$ep_lf3)
+lsb_ROTTERDAM_0$lsb_alc_cur_0<-ifelse(ROTTERDAM_0$ep_lf3==0 &(ROTTERDAM_0$ep_page- ROTTERDAM_0$ep_lf3b==0), 1L,
+                                      ifelse(ROTTERDAM_0$ep_lf3==0, 0L,ifelse(ROTTERDAM_0$ep_lf3==1, 1L, NA)))
 
-table(ROTTERDAM_0$ep_lf3, 	ROTTERDAM_0$ep_lf3a, useNA="always")
-
-lsb_ROTTERDAM_0$lsb_alc_cur_0<-ifelse(ROTTERDAM_0$ep_lf3==0, 0L, ifelse(ROTTERDAM_0$ep_lf3==1, 1L, NA))
 table(lsb_ROTTERDAM_0$lsb_alc_cur_0, useNA="always")
 
 ```  
@@ -88,8 +90,8 @@ table(lsb_ROTTERDAM_0$lsb_alc_cur_0, useNA="always")
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol   
 
- **Harmonization status**:  complete      
-**Harmonization comment**:   
+**Harmonization status**:  complete      
+**Harmonization comment**:  The study-specific variable is "Do you ever drink alcoholic beverages?" is used in harmonization. 
 **R script**:  
 ```{r, echo=TRUE}
  
@@ -112,7 +114,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_cur_1, useNA="always")
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   The study-specific variable asks "How often did you have a drink containing alcohol in the past year?"
 **R script**:  
 ```{r, echo=TRUE}
@@ -133,8 +135,8 @@ table(lsb_ROTTERDAM_2$lsb_alc_cur_2, useNA = "always")
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
- **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization status**:  complete  
+**Harmonization comment**:   The study-specific variable asks "How often did you have a drink containing alcohol in the past year?"
 **R script**:  
 ```{r, echo=TRUE}
 table(ROTTERDAM_3$e6_EIAUDIT1, useNA= "always")
@@ -153,7 +155,7 @@ table(lsb_ROTTERDAM_3$lsb_alc_cur_3, useNA="always")
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -172,7 +174,7 @@ table(lsb_ROTTERDAM_3$lsb_alc_cur_3, useNA="always")
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -191,7 +193,7 @@ table(lsb_ROTTERDAM_3$lsb_alc_cur_3, useNA="always")
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -211,13 +213,15 @@ table(lsb_ROTTERDAM_3$lsb_alc_cur_3, useNA="always")
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 table(ROTTERDAM_0$ep_lf3a, useNA="always")
 lsb_ROTTERDAM_0$lsb_alc_ever_0 <- ifelse(ROTTERDAM_0$ep_lf3a==0, 0L, ifelse(ROTTERDAM_0$ep_lf3a==1, 1L, NA))
 table(lsb_ROTTERDAM_0$lsb_alc_ever_0 )
+
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_1    
@@ -231,7 +235,7 @@ table(lsb_ROTTERDAM_0$lsb_alc_ever_0 )
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
- **Harmonization status**:  complete     
+**Harmonization status**:  complete     
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -252,7 +256,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_ever_1)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
- **Harmonization status**:  impossible  
+**Harmonization status**:  impossible  
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -271,7 +275,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_ever_1)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -290,7 +294,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_ever_1)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -309,7 +313,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_ever_1)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -328,7 +332,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_ever_1)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -349,12 +353,12 @@ table(lsb_ROTTERDAM_1$lsb_alc_ever_1)
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
-
+#??
+#ep_lf3p, in opal no categories
 ```  
 ### **Variable label**:   Frequency of binge drinking  
 **Variable name**: lsb_alc_binge_1  
@@ -369,7 +373,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_ever_1)
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -389,7 +393,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_ever_1)
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -409,7 +413,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_ever_1)
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
- **Harmonization status**:  complete     
+**Harmonization status**:  complete     
 **Harmonization comment**:   The study-specific variable is "How often do you have six or more drinks on one occasion?". The study specific category "weekly 1 to 3 times per week" is coded under category 2| 1 to 2 times a week, of the harmonized variable; while the study-specific category "daily or almost daily 4 or more times per week" is coded under category 3 |  3 times a week or more.  
 
 **R script**:  
@@ -445,7 +449,7 @@ table(lsb_ROTTERDAM_3$lsb_alc_binge_3)
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -465,7 +469,7 @@ table(lsb_ROTTERDAM_3$lsb_alc_binge_3)
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -485,7 +489,7 @@ table(lsb_ROTTERDAM_3$lsb_alc_binge_3)
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -500,13 +504,48 @@ table(lsb_ROTTERDAM_3$lsb_alc_binge_3)
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:         
+**Harmonization status**:  complete         
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 table(ROTTERDAM_0$ep_lf3nd, useNA="always")
 #there are some very high values. there are also lots of values  of 0.1, 0.2. 
 #??
+
+ROTTERDAM_0$nb_beer     <-ifelse(ROTTERDAM_0$ep_lf3d==1, ROTTERDAM_0$ep_lf3e, ifelse(ROTTERDAM_0$ep_lf3d==0, 0L, NA))
+ROTTERDAM_0$nb_whitewine<-ifelse(ROTTERDAM_0$ep_lf3f==1, ROTTERDAM_0$ep_lf3g, ifelse(ROTTERDAM_0$ep_lf3f==0, 0L, NA))
+ROTTERDAM_0$nb_redwine  <-ifelse(ROTTERDAM_0$ep_lf3h==1, ROTTERDAM_0$ep_lf3i, ifelse(ROTTERDAM_0$ep_lf3h==0, 0L, NA))
+ROTTERDAM_0$nb_modstrong<-ifelse(ROTTERDAM_0$ep_lf3l==1, ROTTERDAM_0$ep_lf3m, ifelse(ROTTERDAM_0$ep_lf3l==0, 0L, NA))
+ROTTERDAM_0$nb_liq      <-ifelse(ROTTERDAM_0$ep_lf3n==1, ROTTERDAM_0$ep_lf3o, ifelse(ROTTERDAM_0$ep_lf3n==0, 0L, NA))
+  
+table(ROTTERDAM_1$e4_didwwifr)
+ROTTERDAM_1[,289:293]
+lsb_ROTTERDAM_0$lsb_alc_total_0 <- rowSums(ROTTERDAM_0[,278:282])
+  
+
+table(lsb_ROTTERDAM_0$lsb_alc_total_0, useNA="always")
+
+ep_lf3d
+Do you drink beer?
+
+ep_lf3e
+How many glasses of beer do you drink per week?
+
+ep_lf3f
+Do you drink white wine?
+
+ep_lf3g
+How many glasses of white wine do you drink per week?
+
+ep_lf3h
+Do you drink red wine?
+
+ep_lf3i
+How many glasses of red wine do you drink per week?
+
+ep_lf3j
+Do you drink sherry, port, vermouth or Martini?
+  
 lsb_ROTTERDAM_0$lsb_alc_total_0<- ROTTERDAM_0$ep_lf3nd
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
@@ -550,7 +589,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1, useNA="always")
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -564,7 +603,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1, useNA="always")
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -579,7 +618,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1, useNA="always")
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -597,7 +636,7 @@ table(lsb_ROTTERDAM_0$lsb_alc_wine_0, useNA = "always")
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -615,7 +654,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_wine_1, useNA="always")
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -629,7 +668,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_wine_1, useNA="always")
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -645,7 +684,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_wine_1, useNA="always")
 **Category coding**:  N/A  
  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -664,7 +703,7 @@ table(lsb_ROTTERDAM_0$lsb_alc_beer_0, useNA = "always")
 **Category coding**:  N/A  
  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -682,7 +721,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 **Category coding**:  N/A  
  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -697,7 +736,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 **Category coding**:  N/A  
  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -713,7 +752,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 **Category coding**:  N/A  
  
 
- **Harmonization status**:      
+**Harmonization status**:      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -733,7 +772,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 **Category coding**:  N/A  
  
 
- **Harmonization status**:      
+**Harmonization status**:      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -755,7 +794,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 **Category coding**:  N/A  
  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -770,7 +809,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 **Category coding**:  N/A  
  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -792,7 +831,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
- **Harmonization status**:  complete    
+**Harmonization status**:  complete    
 **Harmonization comment**:  The study-specific variables used in the harmonization were "Do you smoke cigarettes?", "Do you smoke cigars?" and "Do you smoke pipes?"  
 **R script**:  
 ```{r, echo=TRUE}
@@ -816,7 +855,7 @@ table(lsb_ROTTERDAM_0$lsb_smk_cur_0)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:  The study-specific variables used in the harmonization were "Do you smoke cigarettes?", "Do you smoke cigars?" and "Do you smoke pipes?"  
 **R script**:  
 ```{r, echo=TRUE}
@@ -846,7 +885,7 @@ table(lsb_ROTTERDAM_1$lsb_smk_cur_1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   The study-specific variables used in the harmonization were "Do you smoke cigarettes?", "Do you smoke cigars?" and "Do you smoke pipes?"  
 **R script**:  
 ```{r, echo=TRUE}
@@ -877,7 +916,7 @@ table(lsb_ROTTERDAM_2$lsb_smk_cur_2, useNA="always")
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   The study-specific variables used in the harmonization were "Do you smoke cigarettes?", "Do you smoke cigars?" and "Do you smoke pipes?"  
 **R script**:  
 ```{r, echo=TRUE}
@@ -907,7 +946,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_cur_3, useNA="always")
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -926,7 +965,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_cur_3, useNA="always")
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -945,7 +984,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_cur_3, useNA="always")
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -966,7 +1005,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_cur_3, useNA="always")
 1 |   Former smoker  
 2 |   Current smoker  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -989,7 +1028,7 @@ table(lsb_ROTTERDAM_0$lsb_smk_status_0, useNA="always")
 1 |   Former smoker  
 2 |   Current smoker  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1012,7 +1051,7 @@ table(lsb_ROTTERDAM_1$lsb_smk_status_1)
 1 |   Former smoker  
 2 |   Current smoker  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1038,7 +1077,7 @@ table(lsb_ROTTERDAM_2$lsb_smk_status_2)
 1 |   Former smoker  
 2 |   Current smoker  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1069,7 +1108,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 1 |   Former smoker  
 2 |   Current smoker  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1089,7 +1128,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 1 |   Former smoker  
 2 |   Current smoker  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1109,7 +1148,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 1 |   Former smoker  
 2 |   Current smoker  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1129,7 +1168,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_status_3, useNA="always")
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   The DataSchema variable is harmonized using study-specific variables regarding ever smoking cigarettes, ever smoking pipes and ever smoking cigars.   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1156,7 +1195,7 @@ table(lsb_ROTTERDAM_0$lsb_smk_ever_0,useNA = "always")
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   The DataSchema variable is harmonized using study-specific variables regarding ever smoking cigarettes, ever smoking pipes and ever smoking cigars.  
 **R script**:  
 ```{r, echo=TRUE}
@@ -1245,7 +1284,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_ever_3,useNA="always")
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1264,7 +1303,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_ever_3,useNA="always")
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1283,7 +1322,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_ever_3,useNA="always")
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1298,7 +1337,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_ever_3,useNA="always")
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   The study-specific category 'incidental less than 1 per day' is coded as 0.
 **R script**:  
 ```{r, echo=TRUE}
@@ -1318,7 +1357,7 @@ table(lsb_ROTTERDAM_0$lsb_cig_qty_0 , useNA="always")
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1335,7 +1374,7 @@ table(ROTTERDAM_1$e4_dictn, useNA="always")
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   The study-specific category 'incidental less than 1 per day' is coded as 0.
 **R script**:  
 ```{r, echo=TRUE}
@@ -1352,7 +1391,7 @@ table(lsb_ROTTERDAM_2$lsb_cig_qty_2, useNA="always")
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
- **Harmonization status**:  complete     
+**Harmonization status**:  complete     
 **Harmonization comment**:   The study-specific category 'incidental less than 1 per day' is coded as 0.
 **R script**:  
 ```{r, echo=TRUE}
@@ -1370,7 +1409,7 @@ table(lsb_ROTTERDAM_3$lsb_cig_qty_3, useNA="always")
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1384,7 +1423,7 @@ table(lsb_ROTTERDAM_3$lsb_cig_qty_3, useNA="always")
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1398,7 +1437,7 @@ table(lsb_ROTTERDAM_3$lsb_cig_qty_3, useNA="always")
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1413,7 +1452,7 @@ table(lsb_ROTTERDAM_3$lsb_cig_qty_3, useNA="always")
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:      
+**Harmonization status**:      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1429,7 +1468,7 @@ table(lsb_ROTTERDAM_0$lsb_smk_start_0)
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1444,7 +1483,7 @@ table(lsb_ROTTERDAM_0$lsb_smk_start_0)
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1461,7 +1500,7 @@ table(lsb_ROTTERDAM_2$lsb_smk_start_2)
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1475,7 +1514,7 @@ table(lsb_ROTTERDAM_2$lsb_smk_start_2)
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1489,7 +1528,7 @@ table(lsb_ROTTERDAM_2$lsb_smk_start_2)
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1503,7 +1542,7 @@ table(lsb_ROTTERDAM_2$lsb_smk_start_2)
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1518,7 +1557,7 @@ table(lsb_ROTTERDAM_2$lsb_smk_start_2)
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  complete    
+**Harmonization status**:  complete    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1534,7 +1573,7 @@ table(lsb_ROTTERDAM_0$lsb_smk_stop_0)
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1551,7 +1590,7 @@ table(lsb_ROTTERDAM_1$lsb_smk_stop_1)
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1570,7 +1609,7 @@ table(lsb_ROTTERDAM_2$lsb_smk_stop_2)
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  complete      
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1590,7 +1629,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1604,7 +1643,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1618,7 +1657,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  years  
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1633,7 +1672,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  pack-years    
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1647,7 +1686,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  pack-years    
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1661,7 +1700,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  pack-years    
 **Category coding**:  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1685,11 +1724,12 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  impossible    
+**Harmonization comment**:   The study-specific variable asks the minutes the participants spent walking during the week, instead of the number of times. 
 **R script**:  
 ```{r, echo=TRUE}
- 
+# ROTTERDAM_0$ep_piwalksm 
+# ROTTERDAM_0$ep_piwalkwm
 
 ```  
 ### **Variable label**: Frequency of walking    
@@ -1706,7 +1746,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1727,7 +1767,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1748,7 +1788,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1769,7 +1809,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1790,7 +1830,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1811,7 +1851,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1834,12 +1874,28 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  complete      
+**Harmonization comment**: Two study-specific variables: "How much time do you usually spend walking per week in the winter? With walking we mean all kind of walking, including walking to go shopping." and "How much time do you usually spend walking per week in the summer? With walking we mean all kind of walking, including walking to go shopping." were used to harmonize the DataSchema variable. The average of these study-specific variables were taken. 
 **R script**:  
 ```{r, echo=TRUE}
- 
+#99.99 is not listed as missing. Is it correct?
 
+table(ROTTERDAM_0$ep_piwalksm, useNA="always" )
+summary(ROTTERDAM_0$ep_piwalksm)
+table(ROTTERDAM_0$ep_piwalkwm, useNA="always" )
+table(ROTTERDAM_0$ep_piwalkwm+ROTTERDAM_0$ep_piwalksm, useNA="always" )
+
+ROTTERDAM_0$ep_piwalkwm1<-ifelse(ROTTERDAM_0$ep_piwalkwm==99.99, NA, ROTTERDAM_0$ep_piwalkwm)
+ROTTERDAM_0$ep_piwalksm1<-ifelse(ROTTERDAM_0$ep_piwalksm==99.99, NA, ROTTERDAM_0$ep_piwalksm)
+
+ROTTERDAM_0$lsb_pa_walk_time_0 <-(ROTTERDAM_0$ep_piwalkwm1+ROTTERDAM_0$ep_piwalksm1)/2  
+table(ROTTERDAM_0$lsb_pa_walk_time_0)
+lsb_ROTTERDAM_0$lsb_pa_walk_time_0<-ifelse(ROTTERDAM_0$lsb_pa_walk_time_0<0.5, 0L,
+                                       ifelse(ROTTERDAM_0$lsb_pa_walk_time_0>=0.5 &ROTTERDAM_0$lsb_pa_walk_time_0<1,1L,
+                                           ifelse(ROTTERDAM_0$lsb_pa_walk_time_0>=1 &ROTTERDAM_0$lsb_pa_walk_time_0<2,2L,
+                                                  ifelse(ROTTERDAM_0$lsb_pa_walk_time_0>=2 &ROTTERDAM_0$lsb_pa_walk_time_0<4,3L,
+                                                         ifelse(ROTTERDAM_0$lsb_pa_walk_time_0>4,4L, NA)))))
+table(lsb_ROTTERDAM_0$lsb_pa_walk_time_0, useNA = "always")
 ```  
 ### **Variable label**:  Average walking time   
 **Variable name**:   lsb_pa_walk_time_1  
@@ -1856,7 +1912,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more   
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1878,7 +1934,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more   
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1900,7 +1956,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more   
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1922,7 +1978,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more     
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1944,7 +2000,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more     
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1966,7 +2022,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more    
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1981,7 +2037,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1995,7 +2051,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2009,7 +2065,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2023,7 +2079,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2037,7 +2093,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2052,7 +2108,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2066,7 +2122,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2080,7 +2136,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2094,7 +2150,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2108,7 +2164,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2123,12 +2179,24 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:    
+**Harmonization status**:  impossible    
+**Harmonization comment**:    Two study-specific variables: "How many times do you cycle per week in the summer?" and "How many times do you cycle per week in the winter?" averaged to harmonize this variable
 **R script**:  
 ```{r, echo=TRUE}
- 
+table(ROTTERDAM_0$ep_picyclsm)
+table(ROTTERDAM_0$ep_picyclwm)
 
+table(ROTTERDAM_0$ep_picyclsm, useNA="always" )
+table(ROTTERDAM_0$ep_picyclwm, useNA="always" )
+
+ROTTERDAM_0$ep_picyclsm1<-ifelse(ROTTERDAM_0$ep_picyclsm==99.99, NA, ROTTERDAM_0$ep_picyclsm)
+ROTTERDAM_0$ep_picyclsm1<-ifelse(ROTTERDAM_0$ep_picyclsm==99.99, NA, ROTTERDAM_0$ep_picyclsm)
+
+lsb_ROTTERDAM_0$lsb_pa_cycle_0 <-(ROTTERDAM_0$ep_picyclsm1+ROTTERDAM_0$ep_picyclsm1)*60/2  
+
+table(lsb_ROTTERDAM_0$lsb_pa_cycle_0)
+
+table(lsb_ROTTERDAM_0$lsb_pa_cycle_0 , useNA = "always")
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_1  
@@ -2137,7 +2205,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2151,7 +2219,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2165,7 +2233,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2179,7 +2247,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2193,7 +2261,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2207,7 +2275,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2227,11 +2295,19 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
+table(ROTTERDAM_0$ep_pigardsd)
+table(ROTTERDAM_0$ep_pigardwd)
+
+
+lsb_ROTTERDAM_0$lsb_pa_garden_0 <-ifelse(ROTTERDAM_0$ep_pigardsd==0&ROTTERDAM_0$ep_pigardwd==0, 0L,
+                                         ifelse((ROTTERDAM_0$ep_pigardsd>0 & ROTTERDAM_0$ep_pigardsd<77)|
+                                                  (ROTTERDAM_0$ep_pigardwd>0&ROTTERDAM_0$ep_pigardsd<77),1L, NA))
+
+table(lsb_ROTTERDAM_0$lsb_pa_garden_0, useNA="always")
 
 ```  
 ### **Variable label**:  Gardening    
@@ -2246,7 +2322,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2265,7 +2341,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2284,7 +2360,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2303,7 +2379,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2322,7 +2398,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2341,7 +2417,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2355,7 +2431,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2369,7 +2445,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2383,7 +2459,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2397,7 +2473,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2411,7 +2487,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2425,7 +2501,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2439,7 +2515,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2459,12 +2535,24 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  complete     
+**Harmonization comment**:   The study-specific variables 
+"How much time per week do you usually spend on window cleaning?", "How much time per week do you usually spend light household tasks?",
+"How much time per week do you usually spend on moderately heavy household tasks?" were used to harmonize the DataSchema variable. 
+
 **R script**:  
 ```{r, echo=TRUE}
- 
 
+table(ROTTERDAM_0$ep_picdome1,useNA="always")
+table(ROTTERDAM_0$ep_picdome2,useNA="always")
+table(ROTTERDAM_0$ep_picdome3,useNA="always")
+
+ 	
+lsb_ROTTERDAM_0$lsb_pa_garden_0 <-ifelse(ROTTERDAM_0$ep_picdome1==0&ROTTERDAM_0$ep_picdome2==0&ROTTERDAM_0$ep_picdome3==0, 0L,
+                                         ifelse((ROTTERDAM_0$ep_picdome1>0 & ROTTERDAM_0$ep_picdome1<99)|
+                                                  (ROTTERDAM_0$ep_picdome2>0&ROTTERDAM_0$ep_picdome2<99)|
+                                                  (ROTTERDAM_0$ep_picdome3>0&ROTTERDAM_0$ep_picdome3<99),1L, NA))
+table(lsb_ROTTERDAM_0$lsb_pa_garden_0, useNA="always")
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_1  
@@ -2478,7 +2566,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2497,7 +2585,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2516,7 +2604,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2535,7 +2623,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2554,7 +2642,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2573,7 +2661,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2588,11 +2676,26 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  complete     
+**Harmonization comment**: "How much time per week do you usually spend on window cleaning?", "How much time per week do you usually spend light 
+household tasks?",
+"How much time per week do you usually spend on moderately heavy household tasks?" were used to harmonize the DataSchema variable.   
 **R script**:  
 ```{r, echo=TRUE}
  
+table(ROTTERDAM_0$ep_picdome1,useNA="always")
+table(ROTTERDAM_0$ep_picdome2,useNA="always")
+table(ROTTERDAM_0$ep_picdome3,useNA="always")
+
+
+ROTTERDAM_0$ep_picdome1.<-ifelse(ROTTERDAM_0$ep_picdome1==99.99, NA, ROTTERDAM_0$ep_picdome1)
+ROTTERDAM_0$ep_picdome2.<-ifelse(ROTTERDAM_0$ep_picdome2==99.99, NA, ROTTERDAM_0$ep_picdome2)
+ROTTERDAM_0$ep_picdome3.<-ifelse(ROTTERDAM_0$ep_picdome3==99.99, NA, ROTTERDAM_0$ep_picdome3)
+
+lsb_ROTTERDAM_0$lsb_pa_house_time_0 <-(ROTTERDAM_0$ep_picdome1.+ROTTERDAM_0$ep_picdome2.+ROTTERDAM_0$ep_picdome3.)*60/3  
+table(lsb_ROTTERDAM_0$lsb_pa_house_time_0)
+ 	
+table(lsb_ROTTERDAM_0$lsb_pa_house_time_0, useNA="always")
 
 ```  
 ### **Variable label**:  Average household activities time      
@@ -2602,7 +2705,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2616,7 +2719,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2630,7 +2733,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2644,7 +2747,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2658,7 +2761,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2672,7 +2775,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2691,11 +2794,16 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  complete     
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
+table(ROTTERDAM_0$ep_pisport, useNA = "always")
+table(ROTTERDAM_0$ep_piball)
+table(ROTTERDAM_0$ep_pisport, ROTTERDAM_0$ep_piball)
+
+lsb_ROTTERDAM_0$lsb_pa_sport_0 <- ifelse(ROTTERDAM_0$ep_pisport==1,1L, ifelse(ROTTERDAM_0$ep_pisport==0,0L,NA))
+table(lsb_ROTTERDAM_0$lsb_pa_sport_0, useNA="always")
 
 ```   
 ### **Variable label**: Sports or exercise      
@@ -2710,7 +2818,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2729,7 +2837,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2748,7 +2856,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2767,7 +2875,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2786,7 +2894,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2805,7 +2913,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2827,11 +2935,79 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  complete      
+**Harmonization comment**: The study-specific variables about whether the participant participate in one of the listed forms of sport or exercise and how many hours they spent doing it are used. The-study specific variables ask about the following exercises:
+a ball game,  moving to music, Playing billiards, Dancing, Gymnastics, Stretching exercises, Rowing, Ice skating, Playing shuffleboard, Tennis, Swimming, Another sport.
+If a participant reported that he participates in any 2 of these exercises for less than an hour a week each, they are coded under the DataSchema category "between 1 and 2 hours a week".  
+
 **R script**:  
 ```{r, echo=TRUE}
- 
+table(ROTTERDAM_0$ep_piball)
+table(ROTTERDAM_0$ep_piballd., useNA= "always")
+
+
+sprt_ROTTERDAM_0 <- data.frame(id = ROTTERDAM_0$id)
+
+sprt_ROTTERDAM_0$ep_piballd.<- ifelse(ROTTERDAM_0$ep_pisport==0|ROTTERDAM_0$ep_piball==0, 0, 
+                                      ifelse(ROTTERDAM_0$ep_piballd==0, 0.5, 
+                                             ifelse(ROTTERDAM_0$ep_piballd>77, NA, ROTTERDAM_0$ep_piballd)))
+
+sprt_ROTTERDAM_0$ep_pimoved.<- ifelse(ROTTERDAM_0$ep_pisport==0|ROTTERDAM_0$ep_pimove==0, 0,
+                                      ifelse(ROTTERDAM_0$ep_pimoved==0, 0.5, 
+                                             ifelse(ROTTERDAM_0$ep_pimoved>=77, NA, ROTTERDAM_0$ep_pimoved)))
+
+sprt_ROTTERDAM_0$ep_pidancd.<- ifelse(ROTTERDAM_0$ep_pisport==0|ROTTERDAM_0$ep_pidanc==0, 0, 
+                                      ifelse(ROTTERDAM_0$ep_pidancd==0, 0.5,
+                                             ifelse(ROTTERDAM_0$ep_pidancd>=77, NA,  ROTTERDAM_0$ep_pidancd)))
+
+sprt_ROTTERDAM_0$ep_pibilld.<- ifelse(ROTTERDAM_0$ep_pisport==0|ROTTERDAM_0$ep_pibill==0, 0,
+                                      ifelse(ROTTERDAM_0$ep_pibilld==0, 0.5,
+                                             ifelse(ROTTERDAM_0$ep_pibilld>=77, NA, ROTTERDAM_0$ep_pibilld)))
+
+sprt_ROTTERDAM_0$ep_pigymd. <- ifelse(ROTTERDAM_0$ep_pisport==0|ROTTERDAM_0$ep_pigym== 0, 0,
+                                      ifelse(ROTTERDAM_0$ep_pigymd==0, 0.5,
+                                             ifelse(ROTTERDAM_0$ep_pigymd >=77, NA, ROTTERDAM_0$ep_pigymd)))
+
+sprt_ROTTERDAM_0$ep_pistred.<- ifelse(ROTTERDAM_0$ep_pisport==0|ROTTERDAM_0$ep_pistre==0, 0,
+                                      ifelse(ROTTERDAM_0$ep_pistred==0, 0.5,
+                                             ifelse(ROTTERDAM_0$ep_pistred>=77, NA, ROTTERDAM_0$ep_pistred)))
+
+sprt_ROTTERDAM_0$ep_pirowd. <- ifelse(ROTTERDAM_0$ep_pisport==0|ROTTERDAM_0$ep_pirow== 0, 0, 
+                                      ifelse(ROTTERDAM_0$ep_pirowd==0, 0.5,
+                                             ifelse(ROTTERDAM_0$ep_pirowd >=77, NA, ROTTERDAM_0$ep_pirowd)))
+
+sprt_ROTTERDAM_0$ep_piskatd.<- ifelse(ROTTERDAM_0$ep_pisport==0|ROTTERDAM_0$ep_piskat==0, 0, 
+                                      ifelse(ROTTERDAM_0$ep_piskatd==0, 0.5,
+                                             ifelse(ROTTERDAM_0$ep_piskatd>=77, NA, ROTTERDAM_0$ep_piskatd)))
+
+sprt_ROTTERDAM_0$ep_pishovd.<- ifelse(ROTTERDAM_0$ep_pisport==0|ROTTERDAM_0$ep_pishov==0, 0, 
+                                      ifelse(ROTTERDAM_0$ep_pishovd==0, 0.5,
+                                             ifelse(ROTTERDAM_0$ep_pishovd>=77, NA, ROTTERDAM_0$ep_pishovd)))
+
+sprt_ROTTERDAM_0$ep_pitennd.<- ifelse(ROTTERDAM_0$ep_pisport==0|ROTTERDAM_0$ep_pitenn==0, 0,
+                                      ifelse(ROTTERDAM_0$ep_pitennd==0, 0.5,
+                                             ifelse(ROTTERDAM_0$ep_pitennd>=77, NA, ROTTERDAM_0$ep_pitennd)))
+
+sprt_ROTTERDAM_0$ep_piswimd.<- ifelse(ROTTERDAM_0$ep_pisport==0|ROTTERDAM_0$ep_piswim==0, 0,
+                                      ifelse(ROTTERDAM_0$ep_piswimd==0, 0.5,
+                                             ifelse(ROTTERDAM_0$ep_piswimd>=77, NA, ROTTERDAM_0$ep_piswimd)))
+
+sprt_ROTTERDAM_0$ep_pispotd.<- ifelse(ROTTERDAM_0$ep_pisport==0|ROTTERDAM_0$ep_pispot==0, 0, 
+                                      ifelse(ROTTERDAM_0$ep_pispotd==0, 0.5,
+                                             ifelse(ROTTERDAM_0$ep_pispotd>=77, NA, ROTTERDAM_0$ep_pispotd)))
+
+
+sprt_ROTTERDAM_0$sport_time <- rowSums(sprt_ROTTERDAM_0[,2:13])
+
+table(sprt_ROTTERDAM_0$sport_time, useNA = "always")
+
+lsb_ROTTERDAM_0$lsb_pa_sport_time_0 <- ifelse(sprt_ROTTERDAM_0$sport_time==0,0L, 
+                                              ifelse(sprt_ROTTERDAM_0$sport_time==0.5,1L, 
+                                                     ifelse(sprt_ROTTERDAM_0$sport_time>=1& sprt_ROTTERDAM_0$sport_time<=2, 2L,
+                                                            ifelse(sprt_ROTTERDAM_0$sport_time>2, 3L, NA))))
+
+table(lsb_ROTTERDAM_0$lsb_pa_sport_time_0, useNA="always")                                              
+                                              
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -2848,7 +3024,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week   
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2869,7 +3045,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2890,7 +3066,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2911,7 +3087,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2932,7 +3108,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2953,7 +3129,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2975,7 +3151,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2994,7 +3170,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3013,7 +3189,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3033,7 +3209,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3052,7 +3228,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3071,7 +3247,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3091,12 +3267,12 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
  
-
+# table(ROTTERDAM_0$WATER_TOT_sum_RS_II1)
 ```  
 ### **Variable label**:  Daily water consumption  
 **Variable name**:  lsb_water_1    
@@ -3110,7 +3286,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3129,7 +3305,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3148,7 +3324,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3167,7 +3343,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3182,12 +3358,16 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
 
+table(ROTTERDAM_0$ep_lf1, ROTTERDAM_0$ep_lf1a, useNA = "always")
+lsb_ROTTERDAM_0$lsb_coffee_qty_0  <- ifelse(ROTTERDAM_0$ep_lf1==0, 0L, ROTTERDAM_0$ep_lf1a)
+table(lsb_ROTTERDAM_0$lsb_coffee_qty_0, useNA="always")
+
+(ROTTERDAM_0$ep_coftot_RS2_1/ROTTERDAM_0$ep_lf1a)
 ```  
 ### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_1  
@@ -3196,12 +3376,19 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  cups/day 
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
  
+	
+table(ROTTERDAM_1$e4_didcof, ROTTERDAM_1$e4_didcofn, useNA="always")
+lsb_ROTTERDAM_1$lsb_coffee_qty_1 <- ifelse(ROTTERDAM_1$e4_didcof==0, 0L, ROTTERDAM_1$e4_didcofn)
+table(lsb_ROTTERDAM_1$lsb_coffee_qty_1)
 
+
+ROTTERDAM_1$e4_coftot_RS1_4/ROTTERDAM_1$e4_didcofn
+ROTTERDAM_1$e4_coftot_RS1_4/125
 ```  
 ### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_2  
@@ -3210,11 +3397,15 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  complete    
+**Harmonization comment**:  For this wave, only grams of coffee per day was available in the study. Looking at the previous waves for which both the grams/day and cups/day were available, the average cup size is taken to be 125 grams. The study-specific variable of grams of coffee per day for this wave was divided by 125 and rounded to calculate the cups of coffee the participant consumed per day.  
 **R script**:  
 ```{r, echo=TRUE}
  
+table(ROTTERDAM_2$e5_coftot, useNA="always")
+(ROTTERDAM_2$e5_coftot/125)
+table(round(ROTTERDAM_2$e5_coftot/125), useNA="always")
+lsb_ROTTERDAM_2$lsb_coffee_qty_2<-round(ROTTERDAM_2$e5_coftot/125)
 
 ```  
 ### **Variable label**:  Quantity daily coffee  
@@ -3224,7 +3415,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  cups/day 
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3238,7 +3429,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3255,11 +3446,14 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  hours/night  
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  complete      
+**Harmonization comment**: The study-specific variable "How many hours do you sleep or get rest per night?" is used in harmonization.  
 **R script**:  
 ```{r, echo=TRUE}
- 
+
+table(ROTTERDAM_0$ep_pisleepn)
+lsb_ROTTERDAM_0$lsb_sleep_hours_0 <-ifelse(ROTTERDAM_0$ep_pisleepn>77,NA, as.integer(round(ROTTERDAM_0$ep_pisleepn)))
+table(lsb_ROTTERDAM_0$lsb_sleep_hours_0)
 
 ```  
 ### **Variable label**:  Average sleep hours  
@@ -3269,11 +3463,15 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  hours/night   
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  impossible    
+**Harmonization comment**:   The study specific variable is "During the last month, how many hours of actual sleep did you get at night?"
+
 **R script**:  
 ```{r, echo=TRUE}
  
+table(ROTTERDAM_1$e4_dipsq4, useNA="always")
+lsb_ROTTERDAM_1$lsb_sleep_hours_1 <-ifelse(ROTTERDAM_1$e4_dipsq4>=77,NA, as.integer(round(ROTTERDAM_1$e4_dipsq4)))
+table(lsb_ROTTERDAM_1$lsb_sleep_hours_1)
 
 ```  
 ### **Variable label**:  Average sleep hours  
@@ -3283,11 +3481,13 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  hours/night 
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  complete      
+**Harmonization comment**:   The study specific variable is "During the last month, how many hours of actual sleep did you get at night?"
 **R script**:  
 ```{r, echo=TRUE}
  
+lsb_ROTTERDAM_2$lsb_sleep_hours_2 <-ifelse(ROTTERDAM_2$e5_YIPSQ4>=77,NA, as.integer(round(ROTTERDAM_2$e5_YIPSQ4)))
+table(lsb_ROTTERDAM_2$lsb_sleep_hours_2)
 
 ```  
 ### **Variable label**:  Average sleep hours  
@@ -3297,11 +3497,13 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  hours/night
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  complete      
+**Harmonization comment**:  The study specific variable is "During the last month, how many hours of actual sleep did you get at night?"
 **R script**:  
 ```{r, echo=TRUE}
- 
+
+lsb_ROTTERDAM_3$lsb_sleep_hours_3 <-ifelse(ROTTERDAM_3$e6_YIPSQ4>=77,NA, as.integer(round(ROTTERDAM_3$e6_YIPSQ4)))
+table(lsb_ROTTERDAM_3$lsb_sleep_hours_3, useNA="always")
 
 ```  
 ### **Variable label**:  Average sleep hours  
@@ -3311,7 +3513,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  hours/night   
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3325,7 +3527,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 **Variable unit**:  hours/night    
 **Category coding**:  N/A  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3345,7 +3547,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3364,12 +3566,16 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  complete      
+**Harmonization comment**:  The study-specific variable is: "During the past month, how often have you had trouble sleeping because you cannot get to sleep within 30 minutes?"
 **R script**:  
 ```{r, echo=TRUE}
  
-   
+table(ROTTERDAM_1$e4_dipsq5a, useNA="always")
+
+lsb_ROTTERDAM_1$lsb_sleep_diff_1 <- ifelse(ROTTERDAM_1$e4_dipsq5a==0, 0L, ifelse(ROTTERDAM_1$e4_dipsq5a %in%c(1,2,3), 1L, NA))
+table(lsb_ROTTERDAM_1$lsb_sleep_diff_1, useNA="always")
+
 ```  
 ### **Variable label**:  Difficulty falling asleep  
 **Variable name**:  lsb_sleep_diff_2    
@@ -3383,10 +3589,15 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
- **Harmonization status**:  impossible       
-**Harmonization comment**:   
+**Harmonization status**:  complete      
+**Harmonization comment**:  The study-specific variable is: "During the past month, how often have you had trouble sleeping because you cannot get to sleep within 30 minutes?"
 **R script**:  
 ```{r, echo=TRUE}
+
+table(ROTTERDAM_2$e5_YIPSQ5A, useNA="always")
+
+lsb_ROTTERDAM_2$lsb_sleep_diff_2 <- ifelse(ROTTERDAM_2$e5_YIPSQ5A==0, 0L, ifelse(ROTTERDAM_2$e5_YIPSQ5A %in%c(1,2,3), 1L, NA))
+table(lsb_ROTTERDAM_2$lsb_sleep_diff_2, useNA="always")
 
 ```  
 ### **Variable label**:  Difficulty falling asleep  
@@ -3401,11 +3612,15 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  complete      
+**Harmonization comment**:  The study-specific variable is: "During the past month, how often have you had trouble sleeping because you cannot get to sleep within 30 minutes?"
 **R script**:  
 ```{r, echo=TRUE}
  
+table(ROTTERDAM_3$e6_YIPSQ5A, useNA="always")
+
+lsb_ROTTERDAM_3$lsb_sleep_diff_3 <- ifelse(ROTTERDAM_3$e6_YIPSQ5A==0, 0L, ifelse(ROTTERDAM_3$e6_YIPSQ5A %in%c(1,2,3), 1L, NA))
+table(lsb_ROTTERDAM_3$lsb_sleep_diff_3, useNA="always")
    
 ```  
 ### **Variable label**:  Difficulty falling asleep  
@@ -3420,7 +3635,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3439,7 +3654,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3461,11 +3676,11 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  Fairly good
 3 |  Very good  
 
- **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization status**:  impossible    
+**Harmonization comment**:  
+
 **R script**:  
 ```{r, echo=TRUE}
- 
 
 ```  
 
@@ -3483,12 +3698,17 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  Fairly good
 3 |  Very good  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  complete     
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
+table(ROTTERDAM_1$e4_dipsq6)
+lsb_ROTTERDAM_1$lsb_sleep_qlty_1 <- ifelse(ROTTERDAM_1$e4_dipsq6==0, 3L, 
+                                           ifelse(ROTTERDAM_1$e4_dipsq6==1, 2L, 
+                                                  ifelse(ROTTERDAM_1$e4_dipsq6==2, 1L, 
+                                                         ifelse(ROTTERDAM_1$e4_dipsq6==3, 0L, NA))))
 
+table(lsb_ROTTERDAM_1$lsb_sleep_qlty_1,useNA="always")
 ``` 
 
 ### **Variable label**:  Quality of sleep  
@@ -3505,11 +3725,19 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  Fairly good
 3 |  Very good  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
+table(ROTTERDAM_2$e5_YIPSQ6)
+lsb_ROTTERDAM_2$lsb_sleep_qlty_2 <- ifelse(ROTTERDAM_2$e5_YIPSQ6==0, 3L, 
+                                           ifelse(ROTTERDAM_2$e5_YIPSQ6==1, 2L, 
+                                                  ifelse(ROTTERDAM_2$e5_YIPSQ6==2, 1L, 
+                                                         ifelse(ROTTERDAM_2$e5_YIPSQ6==3, 0L, NA))))
+
+table(lsb_ROTTERDAM_2$lsb_sleep_qlty_2,useNA="always")
+ 	
+
 
 ``` 
 ### **Variable label**:  Quality of sleep  
@@ -3526,11 +3754,19 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  Fairly good
 3 |  Very good  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  complete      
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
  
+table(ROTTERDAM_3$e6_YIPSQ6)
+lsb_ROTTERDAM_3$lsb_sleep_qlty_3 <- ifelse(ROTTERDAM_3$e6_YIPSQ6==0, 3L, 
+                                           ifelse(ROTTERDAM_3$e6_YIPSQ6==1, 2L, 
+                                                  ifelse(ROTTERDAM_3$e6_YIPSQ6==2, 1L, 
+                                                         ifelse(ROTTERDAM_3$e6_YIPSQ6==3, 0L, NA))))
+
+table(lsb_ROTTERDAM_3$lsb_sleep_qlty_3,useNA="always")
+ 	
 
 ```  
 ### **Variable label**:  Quality of sleep  
@@ -3547,7 +3783,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  Fairly good
 3 |  Very good  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3568,7 +3804,7 @@ table(lsb_ROTTERDAM_3$lsb_smk_stop_3)
 2 |  Fairly good
 3 |  Very good  
 
- **Harmonization status**:  impossible    
+**Harmonization status**:  impossible    
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
