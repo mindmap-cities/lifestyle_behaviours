@@ -322,7 +322,7 @@ table(lsb_CLSA_cop_1$lsb_alc_cur_1)
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   The study-specific question is "About how often during the past 12 months would you say you had five or more drinks at the same sitting or occasion?" The study specific category of "once a week" is coded as 1 to 2 times a week and the category of "2-3 times a week" is coded in the 3 times a week or more category in the DataSchema variable.  
+**Harmonization comment**:   The study-specific question is "About how often during the past 12 months would you say you had five or more drinks at the same sitting or occasion?" The study specific category of "2-3 times a week" is coded in the DataSchema category "1 to 2 times a week". The study-specific binge drinking question asks about the frequency of 5 or more drinks for men, and 4 or more drinks for women.  
 **R script**:  
 ```{r, echo=TRUE}
 #Categories for frequency of drinking 5 or more drinks on one occasion. 
@@ -339,13 +339,14 @@ table(lsb_CLSA_cop_1$lsb_alc_cur_1)
 # lsb_CLSA_cop_0$lsb_alc_binge0<-ifelse(CLSA_cop_0$ALC_MLFQ_COM=="01"|CLSA_cop_0$ALC_MLFQ_COM=="02"|CLSA_cop_0$ALC_MLFQ_COM=="03"|CLSA_cop_0$ALC_FMFQ_COM=="01"|CLSA_cop_0$ALC_FMFQ_COM=="02"|CLSA_cop_0$ALC_FMFQ_COM=="03",3L,ifelse(CLSA_cop_0$ALC_MLFQ_COM=="04"|CLSA_cop_0$ALC_FMFQ_COM=="04", 2L,ifelse(CLSA_cop_0$ALC_MLFQ_COM=="05"|CLSA_cop_0$ALC_MLFQ_COM=="06"|CLSA_cop_0$ALC_MLFQ_COM=="07"|CLSA_cop_0$ALC_MLFQ_COM=="08"|CLSA_cop_0$ALC_FMFQ_COM=="05"|CLSA_cop_0$ALC_FMFQ_COM=="06"|CLSA_cop_0$ALC_FMFQ_COM=="07"|CLSA_cop_0$ALC_FMFQ_COM=="08"|CLSA_cop_0$ALC_FMFQ_COM=="96"|CLSA_cop_0$ALC_MLFQ_COM=="96",1L, NA)))
 
 lsb_CLSA_cop_0$lsb_alc_binge0<-NA
-lsb_CLSA_cop_0$lsb_alc_binge0[CLSA_cop_0$ALC_MLFQ_COM=="01"|CLSA_cop_0$ALC_MLFQ_COM=="02"|CLSA_cop_0$ALC_MLFQ_COM=="03"|CLSA_cop_0$ALC_FMFQ_COM=="01"|CLSA_cop_0$ALC_FMFQ_COM=="02"|CLSA_cop_0$ALC_FMFQ_COM=="03"]<-3L
-lsb_CLSA_cop_0$lsb_alc_binge0[CLSA_cop_0$ALC_MLFQ_COM=="04"|CLSA_cop_0$ALC_FMFQ_COM=="04"]<-2L
+lsb_CLSA_cop_0$lsb_alc_binge0[CLSA_cop_0$ALC_MLFQ_COM=="01"|CLSA_cop_0$ALC_MLFQ_COM=="02"|CLSA_cop_0$ALC_FMFQ_COM=="01"|CLSA_cop_0$ALC_FMFQ_COM=="02"]<-3L
+lsb_CLSA_cop_0$lsb_alc_binge0[CLSA_cop_0$ALC_MLFQ_COM=="04"|CLSA_cop_0$ALC_FMFQ_COM=="04"|CLSA_cop_0$ALC_MLFQ_COM=="03"|CLSA_cop_0$ALC_FMFQ_COM=="03"]<-2L
 lsb_CLSA_cop_0$lsb_alc_binge0[CLSA_cop_0$ALC_MLFQ_COM=="05"|CLSA_cop_0$ALC_MLFQ_COM=="06"|CLSA_cop_0$ALC_MLFQ_COM=="07"|CLSA_cop_0$ALC_FMFQ_COM=="05"|CLSA_cop_0$ALC_FMFQ_COM=="06"|CLSA_cop_0$ALC_FMFQ_COM=="07"|CLSA_cop_0$ALC_MLFQ_COM=="96"|CLSA_cop_0$ALC_FMFQ_COM=="96"]<-1L
 
 table(lsb_CLSA_cop_0$lsb_alc_binge0, useNA="always")
 table(CLSA_cop_0$ALC_FMFQ_COM,useNA = "always")
 table(CLSA_cop_0$ALC_MLFQ_COM,useNA = "always")
+
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -362,7 +363,7 @@ table(CLSA_cop_0$ALC_MLFQ_COM,useNA = "always")
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   The study-specific question is "About how often during the past 12 months would you say you had five or more drinks at the same sitting or occasion?" The study specific category of "once a week" is coded as 1 to 2 times a week and the category of "2-3 times a week" is coded in the 3 times a week or more category in the DataSchema variable.  
+**Harmonization comment**:    The study-specific question is "About how often during the past 12 months would you say you had five or more drinks at the same sitting or occasion?" The study specific category of "2-3 times a week" is coded in the DataSchema category "1 to 2 times a week".  The study-specific binge drinking question asks about the frequency of 5 or more drinks for men, and 4 or more drinks for women. 
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -377,8 +378,8 @@ table(CLSA_cop_0$ALC_MLFQ_COM,useNA = "always")
 #Never, 1
 
 lsb_CLSA_cop_1$lsb_alc_binge1<-NA
-lsb_CLSA_cop_1$lsb_alc_binge1[CLSA_cop_1$ALC_MLFQ_COF1=="1"|CLSA_cop_1$ALC_MLFQ_COF1=="2"|CLSA_cop_1$ALC_MLFQ_COF1=="3"|CLSA_cop_1$ALC_FMFQ_COF1=="1"|CLSA_cop_1$ALC_FMFQ_COF1=="2"|CLSA_cop_1$ALC_FMFQ_COF1=="3"]<-3L
-lsb_CLSA_cop_1$lsb_alc_binge1[CLSA_cop_1$ALC_MLFQ_COF1=="4"|CLSA_cop_1$ALC_FMFQ_COF1=="4"]<-2L
+lsb_CLSA_cop_1$lsb_alc_binge1[CLSA_cop_1$ALC_MLFQ_COF1=="1"|CLSA_cop_1$ALC_MLFQ_COF1=="2"|CLSA_cop_1$ALC_FMFQ_COF1=="1"|CLSA_cop_1$ALC_FMFQ_COF1=="2"]<-3L
+lsb_CLSA_cop_1$lsb_alc_binge1[CLSA_cop_1$ALC_MLFQ_COF1=="4"|CLSA_cop_1$ALC_FMFQ_COF1=="4"||CLSA_cop_1$ALC_MLFQ_COF1=="3"|CLSA_cop_1$ALC_FMFQ_COF1=="3"]<-2L
 lsb_CLSA_cop_1$lsb_alc_binge1[CLSA_cop_1$ALC_MLFQ_COF1=="5"|CLSA_cop_1$ALC_MLFQ_COF1=="6"|CLSA_cop_1$ALC_MLFQ_COF1=="7"|CLSA_cop_1$ALC_FMFQ_COF1=="5"|CLSA_cop_1$ALC_FMFQ_COF1=="6"|CLSA_cop_1$ALC_FMFQ_COF1=="7"|CLSA_cop_1$ALC_MLFQ_COF1=="96"|CLSA_cop_1$ALC_FMFQ_COF1=="96"]<-1L
 
 #this code didn't work
