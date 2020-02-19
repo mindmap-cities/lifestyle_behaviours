@@ -65,7 +65,7 @@ opal.logout(erasmus_opal)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_0$lsb_alc_cur_0<-recode(CLSA_cop_0$ALC_FREQ_COM, "01"=1L ,"02"=1L ,"03"=1L ,"04"=1L ,"05"=1L ,"06"=1L ,"96"=0L, .default =NA_integer_)
+lsb_CLSA_cop_0$lsb_alc_cur_0<-dplyr::recode(CLSA_cop_0$ALC_FREQ_COM, "01"=1L ,"02"=1L ,"03"=1L ,"04"=1L ,"05"=1L ,"06"=1L ,"96"=0L, .default =NA_integer_)
 table(lsb_CLSA_cop_0$lsb_alc_cur_0)
 table(CLSA_cop_0$ALC_FREQ_COM)
 ```  
@@ -85,7 +85,7 @@ table(CLSA_cop_0$ALC_FREQ_COM)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_1$lsb_alc_cur_1<-recode(CLSA_cop_1$ALC_FREQ_COF1,"1"=1L ,"2"=1L ,"3"=1L ,"4"=1L ,"5"=1L ,"6"=1L ,"96"=0L, .default =NA_integer_)
+lsb_CLSA_cop_1$lsb_alc_cur_1<-dplyr::recode(CLSA_cop_1$ALC_FREQ_COF1,"1"=1L ,"2"=1L ,"3"=1L ,"4"=1L ,"5"=1L ,"6"=1L ,"96"=0L, .default =NA_integer_)
 table(lsb_CLSA_cop_1$lsb_alc_cur_1)
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -195,7 +195,7 @@ table(lsb_CLSA_cop_1$lsb_alc_cur_1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_0$lsb_alc_cur_0<-recode(as.character(CLSA_cop_0$ALC_EVER_COM), "2"=0L ,"1"=1L, .default =NA_integer_)
+lsb_CLSA_cop_0$lsb_alc_cur_0<-dplyr::recode(as.character(CLSA_cop_0$ALC_EVER_COM), "2"=0L ,"1"=1L, .default =NA_integer_)
 table(lsb_CLSA_cop_0$lsb_alc_cur_0)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -214,7 +214,7 @@ table(lsb_CLSA_cop_0$lsb_alc_cur_0)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_1$lsb_alc_cur_1<-recode(as.character(CLSA_cop_1$ALC_EVER_COF1), "2"=0L ,"1"=1L, .default =NA_integer_)
+lsb_CLSA_cop_1$lsb_alc_cur_1<-dplyr::recode(as.character(CLSA_cop_1$ALC_EVER_COF1), "2"=0L ,"1"=1L, .default =NA_integer_)
 table(lsb_CLSA_cop_1$lsb_alc_cur_1)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -328,7 +328,7 @@ table(lsb_CLSA_cop_1$lsb_alc_cur_1)
 #Categories for frequency of drinking 5 or more drinks on one occasion. 
 #Almost every day (incl. 6 times a week), 3
 #4-5 times a week, 3
-#2-3 times a week, 3
+#2-3 times a week, 2
 #Once a week, 2
 #2-3 times a month, 1
 #About once a month, 1
@@ -800,7 +800,7 @@ table(lsb_CLSA_cop_0$lsb_smk_cur_0)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_1$lsb_smk_cur_1<- recode(CLSA_cop_1$ICQ_SMOKE_COF1, "1"=1L, "2"=0L, "3"=0L, .default =NA_integer_)
+lsb_CLSA_cop_1$lsb_smk_cur_1<- dplyr::recode(CLSA_cop_1$ICQ_SMOKE_COF1, "1"=1L, "2"=0L, "3"=0L, .default =NA_integer_)
 
 lsb_CLSA_cop_1$lsb_smk_cur_1<-ifelse(CLSA_cop_1$ICQ_SMOKE_COF1=='1',1L,ifelse(CLSA_cop_1$ICQ_SMOKE_COF1=="2"|CLSA_cop_1$ICQ_SMOKE_COF1=="3", 0L, NA))
 #to add the people who uses other tobacco products
@@ -916,7 +916,7 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_0$lsb_smk_cur_0<- recode(as.character(CLSA_cop_0$ICQ_SMOKE_COM), "1"=2L, "2"=0L, "3"=1L, .default =NA_integer_)
+lsb_CLSA_cop_0$lsb_smk_cur_0<- dplyr::recode(as.character(CLSA_cop_0$ICQ_SMOKE_COM), "1"=2L, "2"=0L, "3"=1L, .default =NA_integer_)
 table(lsb_CLSA_cop_0$lsb_smk_cur_0)
 
 ```  
@@ -937,7 +937,7 @@ table(lsb_CLSA_cop_0$lsb_smk_cur_0)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_1$lsb_smk_cur_1<- recode(CLSA_cop_1$ICQ_SMOKE_COF1, "1"=2L, "2"=0L, "3"=1L, .default =NA_integer_)
+lsb_CLSA_cop_1$lsb_smk_cur_1<- dplyr::recode(CLSA_cop_1$ICQ_SMOKE_COF1, "1"=2L, "2"=0L, "3"=1L, .default =NA_integer_)
 table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 
 ```  
@@ -2655,9 +2655,9 @@ table(CLSA_cop_0$PA2_MSPRTHR_MCQ,useNA = "always")
 table(CLSA_cop_0$PA2_SSPRTHR_MCQ,useNA = "always")
 
 
-sprt_time1<-recode(CLSA_cop_0$PA2_LSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
-sprt_time2<-recode(CLSA_cop_0$PA2_MSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
-sprt_time3<-recode(CLSA_cop_0$PA2_SSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time1<-dplyr::recode(CLSA_cop_0$PA2_LSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time2<-dplyr::recode(CLSA_cop_0$PA2_MSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time3<-dplyr::recode(CLSA_cop_0$PA2_SSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
 sprt_time<-cbind(sprt_time1,sprt_time2,sprt_time1)
 sprt_time<-rowSums(sprt_time, na.rm=TRUE)
 sprt_time<-sprt_time*7
@@ -2703,9 +2703,9 @@ table(CLSA_cop_1$PA2_LSRTHR_COF1,useNA = "always")
 table(CLSA_cop_1$PA2_MSPRTHR_COF1,useNA = "always")
 table(CLSA_cop_1$PA2_SSPRTHR_COF1,useNA = "always")
 
-sprt_time1_1<-recode(CLSA_cop_1$PA2_LSRTHR_COF1 , "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
-sprt_time2_1<-recode(CLSA_cop_1$PA2_MSPRTHR_COF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
-sprt_time3_1<-recode(CLSA_cop_1$PA2_SSPRTHR_COF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time1_1<-dplyr::recode(CLSA_cop_1$PA2_LSRTHR_COF1 , "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time2_1<-dplyr::recode(CLSA_cop_1$PA2_MSPRTHR_COF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time3_1<-dplyr::recode(CLSA_cop_1$PA2_SSPRTHR_COF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
 sprt_time_1<-cbind(sprt_time1,sprt_time2,sprt_time1)
 sprt_time_1<-rowSums(sprt_time_1, na.rm=TRUE)
 sprt_time_1<-sprt_time_1*7
@@ -2920,7 +2920,7 @@ table(lsb_CLSA_cop_1$lsb_veg_1,useNA = "always")
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_0$lsb_fruit_0<-recode(CLSA_cop_0$NUT_FRUT_COM, '1'=1L, '2'=0L, '3'=0L, '4'=0L, '0'=0L, .default=NA_integer_)
+lsb_CLSA_cop_0$lsb_fruit_0<-dplyr::recode(CLSA_cop_0$NUT_FRUT_COM, '1'=1L, '2'=0L, '3'=0L, '4'=0L, '0'=0L, .default=NA_integer_)
 table(CLSA_cop_0$NUT_FRUT_COM)
 table(lsb_CLSA_cop_0$lsb_fruit_0)
 ```  
@@ -2941,7 +2941,7 @@ table(lsb_CLSA_cop_0$lsb_fruit_0)
 **R script**:  
 ```{r, echo=TRUE}
 table(CLSA_cop_1$NUT_FRUT_COF1,useNA = "always") 
-lsb_CLSA_cop_1$lsb_fruit_1<-recode(CLSA_cop_1$NUT_FRUT_COF1, '1'=1L, '2'=0L, '3'=0L, '4'=0L, '0'=0L, .default=NA_integer_)
+lsb_CLSA_cop_1$lsb_fruit_1<-dplyr::recode(CLSA_cop_1$NUT_FRUT_COF1, '1'=1L, '2'=0L, '3'=0L, '4'=0L, '0'=0L, .default=NA_integer_)
 table(lsb_CLSA_cop_1$lsb_fruit_1)
 ```  
 ### **Variable label**:  Daily fruit consumption  

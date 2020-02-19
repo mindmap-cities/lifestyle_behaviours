@@ -62,7 +62,7 @@ opal.logout(erasmus_opal)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_tra_0$lsb_alc_cur_0<-recode(CLSA_tra_0$ALC_FREQ_TRM, "01"=1L ,"02"=1L ,"03"=1L ,"04"=1L ,"05"=1L ,"06"=1L ,"96"=0L, .default =NA_integer_)
+lsb_CLSA_tra_0$lsb_alc_cur_0<-dplyr::recode(CLSA_tra_0$ALC_FREQ_TRM, "01"=1L ,"02"=1L ,"03"=1L ,"04"=1L ,"05"=1L ,"06"=1L ,"96"=0L, .default =NA_integer_)
 table(lsb_CLSA_tra_0$lsb_alc_cur_0)
 table(CLSA_tra_0$ALC_FREQ_TRM)
 
@@ -83,7 +83,7 @@ table(CLSA_tra_0$ALC_FREQ_TRM)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_tra_1$lsb_alc_cur_1<-recode(CLSA_tra_1$ALC_FREQ_TRF1,"01"=1L ,"02"=1L ,"03"=1L ,"04"=1L ,"05"=1L ,"06"=1L ,"96"=0L, .default =NA_integer_)
+lsb_CLSA_tra_1$lsb_alc_cur_1<-dplyr::recode(CLSA_tra_1$ALC_FREQ_TRF1,"01"=1L ,"02"=1L ,"03"=1L ,"04"=1L ,"05"=1L ,"06"=1L ,"96"=0L, .default =NA_integer_)
 table(lsb_CLSA_tra_1$lsb_alc_cur_1)
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -193,7 +193,7 @@ table(lsb_CLSA_tra_1$lsb_alc_cur_1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_tra_0$lsb_alc_cur_0<-recode(as.character(CLSA_tra_0$ALC_EVER_TRM), "2"=0L ,"1"=1L, .default =NA_integer_)
+lsb_CLSA_tra_0$lsb_alc_cur_0<-dplyr::recode(as.character(CLSA_tra_0$ALC_EVER_TRM), "2"=0L ,"1"=1L, .default =NA_integer_)
 table(lsb_CLSA_tra_0$lsb_alc_cur_0)
 
 ```  
@@ -213,7 +213,7 @@ table(lsb_CLSA_tra_0$lsb_alc_cur_0)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_tra_1$lsb_alc_cur_1<-recode(as.character(CLSA_tra_1$ALC_EVER_TRF1), "2"=0L ,"1"=1L, .default =NA_integer_)
+lsb_CLSA_tra_1$lsb_alc_cur_1<-dplyr::recode(as.character(CLSA_tra_1$ALC_EVER_TRF1), "2"=0L ,"1"=1L, .default =NA_integer_)
 table(lsb_CLSA_tra_1$lsb_alc_cur_1)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -321,13 +321,13 @@ table(lsb_CLSA_tra_1$lsb_alc_cur_1)
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   The study-specific question is "About how often during the past 12 months would you say you had five or more drinks at the same sitting or occasion?" The study specific category of "once a week" is coded as 1 to 2 times a week and the category of "2-3 times a week" is coded in the 3 times a week or more category in the DataSchema variable.  
+**Harmonization comment**:  The study-specific question is "About how often during the past 12 months would you say you had five or more drinks at the same sitting or occasion?" The study specific category of "2-3 times a week" is coded in the DataSchema category "1 to 2 times a week".  The study-specific binge drinking question asks about the frequency of 5 or more drinks for men, and 4 or more drinks for women. 
 **R script**:  
 ```{r, echo=TRUE}
 #Categories for frequency of drinking 5 or more drinks on one occasion. 
 #Almost every day (incl. 6 times a week), 3
 #4-5 times a week, 3
-#2-3 times a week, 3
+#2-3 times a week, 2
 #Once a week, 2
 #2-3 times a month, 1
 #About once a month, 1
@@ -338,8 +338,8 @@ table(lsb_CLSA_tra_1$lsb_alc_cur_1)
 #lsb_CLSA_tra_0$lsb_alc_binge0<-ifelse(CLSA_tra_0$ALC_MLFQ_TRM=="01"|CLSA_tra_0$ALC_MLFQ_TRM=="02"|CLSA_tra_0$ALC_MLFQ_TRM=="03"|CLSA_tra_0$ALC_FMFQ_TRM=="01"|CLSA_tra_0$ALC_FMFQ_TRM=="02"|CLSA_tra_0$ALC_FMFQ_TRM=="03",3L,ifelse(CLSA_tra_0$ALC_MLFQ_TRM=="04"|CLSA_tra_0$ALC_FMFQ_TRM=="04", 2L,ifelse(CLSA_tra_0$ALC_MLFQ_TRM=="05"|CLSA_tra_0$ALC_MLFQ_TRM=="06"|CLSA_tra_0$ALC_MLFQ_TRM=="07"|CLSA_tra_0$ALC_MLFQ_TRM=="08"|CLSA_tra_0$ALC_FMFQ_TRM=="05"|CLSA_tra_0$ALC_FMFQ_TRM=="06"|CLSA_tra_0$ALC_FMFQ_TRM=="07"|CLSA_tra_0$ALC_FMFQ_TRM=="08"|CLSA_tra_0$ALC_FMFQ_TRM=="96"|CLSA_tra_0$ALC_MLFQ_TRM=="96",1L, NA)))
 
 lsb_CLSA_tra_0$lsb_alc_binge0<-NA
-lsb_CLSA_tra_0$lsb_alc_binge0[CLSA_tra_0$ALC_MLFQ_TRM=="01"|CLSA_tra_0$ALC_MLFQ_TRM=="02"|CLSA_tra_0$ALC_MLFQ_TRM=="03"|CLSA_tra_0$ALC_FMFQ_TRM=="01"|CLSA_tra_0$ALC_FMFQ_TRM=="02"|CLSA_tra_0$ALC_FMFQ_TRM=="03"]<-3L
-lsb_CLSA_tra_0$lsb_alc_binge0[CLSA_tra_0$ALC_MLFQ_TRM=="04"|CLSA_tra_0$ALC_FMFQ_TRM=="04"]<-2L
+lsb_CLSA_tra_0$lsb_alc_binge0[CLSA_tra_0$ALC_MLFQ_TRM=="01"|CLSA_tra_0$ALC_MLFQ_TRM=="02"|CLSA_tra_0$ALC_FMFQ_TRM=="01"|CLSA_tra_0$ALC_FMFQ_TRM=="02"]<-3L
+lsb_CLSA_tra_0$lsb_alc_binge0[CLSA_tra_0$ALC_MLFQ_TRM=="04"|CLSA_tra_0$ALC_FMFQ_TRM=="04"|CLSA_tra_0$ALC_FMFQ_TRM=="03"|CLSA_tra_0$ALC_MLFQ_TRM=="03"]<-2L
 lsb_CLSA_tra_0$lsb_alc_binge0[CLSA_tra_0$ALC_MLFQ_TRM=="05"|CLSA_tra_0$ALC_MLFQ_TRM=="06"|CLSA_tra_0$ALC_MLFQ_TRM=="07"|CLSA_tra_0$ALC_FMFQ_TRM=="05"|CLSA_tra_0$ALC_FMFQ_TRM=="06"|CLSA_tra_0$ALC_FMFQ_TRM=="07"|CLSA_tra_0$ALC_MLFQ_TRM=="96"|CLSA_tra_0$ALC_FMFQ_TRM=="96"]<-1L
 
 table(lsb_CLSA_tra_0$lsb_alc_binge0, useNA="always")
@@ -361,14 +361,14 @@ table(CLSA_tra_0$ALC_MLFQ_TRM,useNA = "always")
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   The study-specific question is "About how often during the past 12 months would you say you had five or more drinks at the same sitting or occasion?" The study specific category of "once a week" is coded as 1 to 2 times a week and the category of "2-3 times a week" is coded in the 3 times a week or more category in the DataSchema variable.  
+**Harmonization comment**:   The study-specific question is "About how often during the past 12 months would you say you had five or more drinks at the same sitting or occasion?" The study specific category of "2-3 times a week" is coded in the DataSchema category "1 to 2 times a week".  The study-specific binge drinking question asks about the frequency of 5 or more drinks for men, and 4 or more drinks for women. 
 **R script**:  
 ```{r, echo=TRUE}
 
 #Categories for frequency of drinking 5 or more drinks on one occasion. 
 #Almost every day (incl. 6 times a week), 3
 #4-5 times a week, 3
-#2-3 times a week, 3
+#2-3 times a week, 2
 #Once a week, 2
 #2-3 times a month, 1
 #About once a month, 1
@@ -376,8 +376,8 @@ table(CLSA_tra_0$ALC_MLFQ_TRM,useNA = "always")
 #Never, 1
 
 lsb_CLSA_tra_1$lsb_alc_binge1<-NA
-lsb_CLSA_tra_1$lsb_alc_binge1[CLSA_tra_1$ALC_MLFQ_TRF1=="01"|CLSA_tra_1$ALC_MLFQ_TRF1=="02"|CLSA_tra_1$ALC_MLFQ_TRF1=="03"|CLSA_tra_1$ALC_FMFQ_TRF1=="01"|CLSA_tra_1$ALC_FMFQ_TRF1=="02"|CLSA_tra_1$ALC_FMFQ_TRF1=="03"]<-3L
-lsb_CLSA_tra_1$lsb_alc_binge1[CLSA_tra_1$ALC_MLFQ_TRF1=="04"|CLSA_tra_1$ALC_FMFQ_TRF1=="04"]<-2L
+lsb_CLSA_tra_1$lsb_alc_binge1[CLSA_tra_1$ALC_MLFQ_TRF1=="01"|CLSA_tra_1$ALC_MLFQ_TRF1=="02"|CLSA_tra_1$ALC_FMFQ_TRF1=="01"|CLSA_tra_1$ALC_FMFQ_TRF1=="02"]<-3L
+lsb_CLSA_tra_1$lsb_alc_binge1[CLSA_tra_1$ALC_MLFQ_TRF1=="04"|CLSA_tra_1$ALC_FMFQ_TRF1=="04"|CLSA_tra_1$ALC_FMFQ_TRF1=="03"|CLSA_tra_1$ALC_MLFQ_TRF1=="03"]<-2L
 lsb_CLSA_tra_1$lsb_alc_binge1[CLSA_tra_1$ALC_MLFQ_TRF1=="05"|CLSA_tra_1$ALC_MLFQ_TRF1=="06"|CLSA_tra_1$ALC_MLFQ_TRF1=="07"|CLSA_tra_1$ALC_FMFQ_TRF1=="05"|CLSA_tra_1$ALC_FMFQ_TRF1=="06"|CLSA_tra_1$ALC_FMFQ_TRF1=="07"|CLSA_tra_1$ALC_MLFQ_TRF1=="96"|CLSA_tra_1$ALC_FMFQ_TRF1=="96"]<-1L
 
 #this code didn't work
@@ -385,6 +385,8 @@ lsb_CLSA_tra_1$lsb_alc_binge1[CLSA_tra_1$ALC_MLFQ_TRF1=="05"|CLSA_tra_1$ALC_MLFQ
 
 table(lsb_CLSA_tra_1$lsb_alc_binge1, useNA="always")
 table( CLSA_tra_1$ALC_MLFQ_TRF1, useNA="always")
+table( CLSA_tra_1$ALC_FMFQ_TRF1, useNA="always")
+
 ```  
 ### **Variable label**:   Frequency of binge drinking  
 **Variable name**: lsb_alc_binge_2  
@@ -765,7 +767,7 @@ table(lsb_CLSA_tra_1$lsb_alc_liq_1)
 **R script**:  
 ```{r, echo=TRUE}
 table(CLSA_tra_0$SMK_CURRCG_TRM, useNA="always")
-lsb_CLSA_tra_0$lsb_smk_cur_0<- recode(CLSA_tra_0$SMK_CURRCG_TRM, '3'=0L, '1'=1L,'2'=1L, .default =NA_integer_)
+lsb_CLSA_tra_0$lsb_smk_cur_0<- dplyr::recode(CLSA_tra_0$SMK_CURRCG_TRM, '3'=0L, '1'=1L,'2'=1L, .default =NA_integer_)
 
 lsb_CLSA_tra_0$lsb_smk_cur_0[CLSA_tra_0$SMK_OTCURR_CG_TRM=="1"| CLSA_tra_0$SMK_OTCURR_SM_TRM=="1"|CLSA_tra_0$SMK_OTCURR_PI_TRM=="1"| CLSA_tra_0$SMK_OTCURR_CH_TRM=="1"| CLSA_tra_0$SMK_OTCURR_SH_TRM=="1"| CLSA_tra_0$SMK_OTOCC_TRM=="1"| CLSA_tra_0$SMK_OTCURR_SH_TRM=="1"]<-1
 
@@ -787,7 +789,7 @@ table(lsb_CLSA_tra_0$lsb_smk_cur_0)
 **Harmonization comment**:  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_tra_1$lsb_smk_cur_1<- recode(CLSA_tra_1$SMK_CURRCG_TRF1, '3'=0L, '1'=1L,'2'=1L, .default =NA_integer_)
+lsb_CLSA_tra_1$lsb_smk_cur_1<- dplyr::recode(CLSA_tra_1$SMK_CURRCG_TRF1, '3'=0L, '1'=1L,'2'=1L, .default =NA_integer_)
 
 lsb_CLSA_tra_1$lsb_smk_cur_1[CLSA_tra_1$SMK_OTCURR_CG_TRF1=="1"| CLSA_tra_1$SMK_OTCURR_SM_TRF1=="1"|CLSA_tra_1$SMK_OTCURR_PI_TRF1=="1"| CLSA_tra_1$SMK_OTCURR_CH_TRF1=="1"| CLSA_tra_1$SMK_OTCURR_SH_TRF1=="1"| CLSA_tra_1$SMK_OTOCC_TRF1=="1"| CLSA_tra_1$SMK_OTCURR_SH_TRF1=="1"]<-1
 
@@ -904,7 +906,7 @@ table(lsb_CLSA_tra_1$lsb_smk_cur_1)
 ```{r, echo=TRUE}
 table(CLSA_tra_0$SMK_DSTY_TRM)
 
-lsb_CLSA_tra_0$lsb_smk_cur_0<- recode(CLSA_tra_0$SMK_DSTY_TRM, "1"=2L, "2"=2L, "3"=2L, "4"=1L, "5"=1L, "6"=0L, .default =NA_integer_)
+lsb_CLSA_tra_0$lsb_smk_cur_0<- dplyr::recode(CLSA_tra_0$SMK_DSTY_TRM, "1"=2L, "2"=2L, "3"=2L, "4"=1L, "5"=1L, "6"=0L, .default =NA_integer_)
 table(lsb_CLSA_tra_0$lsb_smk_cur_0, useNA="always")
 
 ```  
@@ -2645,9 +2647,9 @@ table(lsb_CLSA_tra_0$lsb_pa_sport_0, CLSA_tra_0$PA2_LSPRTHR_MCQ,useNA = "always"
 
 #Taking the midpoint of each category (eg. 30mins-1 hour is coded as 45 minutes and then adding the 3 sports hours variables)
 
-sprt_time1<-recode(CLSA_tra_0$PA2_LSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
-sprt_time2<-recode(CLSA_tra_0$PA2_MSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
-sprt_time3<-recode(CLSA_tra_0$PA2_SSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time1<-dplyr::recode(CLSA_tra_0$PA2_LSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time2<-dplyr::recode(CLSA_tra_0$PA2_MSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time3<-dplyr::recode(CLSA_tra_0$PA2_SSPRTHR_MCQ, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
 sprt_time<-cbind(sprt_time1,sprt_time2,sprt_time1)
 sprt_time<-rowSums(sprt_time, na.rm=TRUE)
 sprt_time<-sprt_time*7
@@ -2680,9 +2682,9 @@ table(CLSA_tra_1$PA2_LSPRTHR_TRF1,useNA = "always")
 table(CLSA_tra_1$PA2_MSPRTHR_TRF1,useNA = "always")
 table(CLSA_tra_1$PA2_SSPRTHR_TRF1,useNA = "always")
 
-sprt_time1_1<-recode(CLSA_tra_1$PA2_LSPRTHR_TRF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
-sprt_time2_1<-recode(CLSA_tra_1$PA2_MSPRTHR_TRF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
-sprt_time3_1<-recode(CLSA_tra_1$PA2_SSPRTHR_TRF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time1_1<-dplyr::recode(CLSA_tra_1$PA2_LSPRTHR_TRF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time2_1<-dplyr::recode(CLSA_tra_1$PA2_MSPRTHR_TRF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
+sprt_time3_1<-dplyr::recode(CLSA_tra_1$PA2_SSPRTHR_TRF1, "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)
 sprt_time_1<-cbind(sprt_time1,sprt_time2,sprt_time1)
 sprt_time_1<-rowSums(sprt_time_1, na.rm=TRUE)
 sprt_time_1<-sprt_time_1*7
