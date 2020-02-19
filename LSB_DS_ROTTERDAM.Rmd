@@ -357,8 +357,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_ever_1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-#??
-#ep_lf3p, in opal no categories
+
 ```  
 ### **Variable label**:   Frequency of binge drinking  
 **Variable name**: lsb_alc_binge_1  
@@ -378,7 +377,6 @@ table(lsb_ROTTERDAM_1$lsb_alc_ever_1)
 **R script**:  
 ```{r, echo=TRUE}
  
-
 ```  
 ### **Variable label**:   Frequency of binge drinking  
 **Variable name**: lsb_alc_binge_2  
@@ -414,23 +412,35 @@ table(lsb_ROTTERDAM_1$lsb_alc_ever_1)
 3 |  3 times a week or more  
 
 **Harmonization status**:  complete     
-**Harmonization comment**:   The study-specific variable is "How often do you have six or more drinks on one occasion?". The study specific category "weekly 1 to 3 times per week" is coded under category 2| 1 to 2 times a week, of the harmonized variable; while the study-specific category "daily or almost daily 4 or more times per week" is coded under category 3 |  3 times a week or more.  
+**Harmonization comment**:   The study-specific variable is "How often do you have six or more drinks on one occasion?". The study specific category "weekly 1 to 3 times per week" is coded under category 2| 1 to 2 times a week, of the harmonized variable.  
 
 **R script**:  
 ```{r, echo=TRUE}
-
-#??
-
 table(ROTTERDAM_3$e6_EIAUDIT3)
 
 lsb_ROTTERDAM_3$lsb_alc_binge_3<- dplyr::recode(as.character(ROTTERDAM_3$e6_EIAUDIT3), "0"=1L, "1"=1L, "2"=1L, "3"=2L, "4"=3L,
                                          .default =NA_integer_)
-
 # 0 = 'never'
 # 1 = 'less than monthly'
 # 2 = 'monthly 1to 3 times per month'
 # 3 = 'weekly 1to 3 times per week'
 # 4 = 'daily or almost daily 4 or more times per week'
+# 7 = 'dont know'
+# 9 = 'missing '
+# e6_EIAUDIT1
+# 0 = 'never'
+# 1 = 'monthly or less'
+# 2 = '2 to 4 times a month'
+# 3 = '2 to 3 times a week'
+# 4 = '4 or more times a week'
+# 7 = 'dont know'
+# 9 = 'missing '
+# e6_EIAUDIT2
+# 0 = '1 or 2'
+# 1 = '3 or 4'
+# 2 = '5 or 6'
+# 3 = '7, 8 or 9'
+# 4 = '10 or more'
 # 7 = 'dont know'
 # 9 = 'missing '
 
