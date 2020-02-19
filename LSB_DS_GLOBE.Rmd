@@ -346,34 +346,6 @@ lsb_GLOBE_0$lsb_alc_binge_0 <-ifelse(lsb_GLOBE_0$lsb_alc_cur_0==0|GLOBE1991$v136
                                     ifelse(as.integer(GLOBE1991$v139) %in% c(1:4) & as.integer(GLOBE1991$v138) %in% c(7,-1),1L, 
                                     NA)))))))
                                            
-                                           
-# lsb_GLOBE_0$lsb_alc_binge_0.<-dplyr::recode(as.integer(GLOBE1991$v137),"1"=3L,"2"=3L,"3"=3L,"4"=2L,"5"=1L,"6"=1L,"7"=1L)
-# table(lsb_GLOBE_0$lsb_alc_binge_0, useNA="always")	
-# table(lsb_GLOBE_0$lsb_alc_binge_0,lsb_GLOBE_0$lsb_alc_binge_0., useNA="always")	
-# 
-# bmvar28  Alcohol: number of glasses at one time
-# bmvar25 Alcohol; number of days a week 
-# 
-# v139
-# -1 does not apply
-# 1 11 or more glasses
-# 2 7 to 10 glasses
-# 3 6 glasses
-# 4 4- 5 glasses
-# 5 3 glasses
-# 6 2 glasses
-# 7 1 glass
-# 
-# v138
-# -1  does not apply
-# 1 7 days a week
-# 2 6 days a week
-# 3 5 days a week
-# 4 4 days a week
-# 5 3 days a week
-# 6 2 days a week
-# 7 <= 1 day a week
-
 ```  
 ### **Variable label**:   Frequency of binge drinking  
 **Variable name**: lsb_alc_binge_1  
