@@ -1119,15 +1119,18 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 **Harmonization comment**:   The study specific variables asks about ever using certain tobacco products for at least six months. 
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_0$lsb_smk_ever_0<- ifelse(CLSA_cop_0$ICQ_SMOKE_COM==1 | CLSA_cop_0$ICQ_SMOKE_COM==3 ,1L, ifelse(CLSA_cop_0$ICQ_SMOKE_COM==2, 0L,NA))
-table(lsb_CLSA_cop_0$lsb_smk_ever_0)
-lsb_CLSA_cop_0$lsb_smk_ever_0[CLSA_cop_0$SMK_TYPEOT_CG_COM==1| CLSA_cop_0$SMK_TYPEOT_SM_COM==1| CLSA_cop_0$SMK_TYPEOT_PI_COM==1| CLSA_cop_0$SMK_TYPEOT_CH_COM==1|CLSA_cop_0$SMK_TYPEOT_SH_COM==1]<-1L
+lsb_CLSA_cop_0$lsb_smk_ever_0 <- ifelse(CLSA_cop_0$ICQ_SMOKE_COM==1 | 
+                                        CLSA_cop_0$ICQ_SMOKE_COM==3 ,1L,
+                                 ifelse(CLSA_cop_0$ICQ_SMOKE_COM==2, 0L,NA))
 table(lsb_CLSA_cop_0$lsb_smk_ever_0)
 
-#there is a more general variable for other tobacco products SMK_OTREG_com- Ever used other tobacco or nicotine products
-#. However the question also includes nicotine products. 
+lsb_CLSA_cop_0$lsb_smk_ever_0[CLSA_cop_0$SMK_TYPEOT_CG_COM==1| 
+                              CLSA_cop_0$SMK_TYPEOT_SM_COM==1|
+                              CLSA_cop_0$SMK_TYPEOT_PI_COM==1|
+                              CLSA_cop_0$SMK_TYPEOT_CH_COM==1|
+                              CLSA_cop_0$SMK_TYPEOT_SH_COM==1]<-1L
+table(lsb_CLSA_cop_0$lsb_smk_ever_0)
 
-#there is also the variable "Have you smoked at least 100 cigarettes in your life?  (about 4 - 5 packs)" however some Former smokers replied no to this variable. For this reason, the variable for smoking status is used for harmonization. 
 table(CLSA_cop_0$ICQ_SMOKE_COM, CLSA_cop_0$SMK_100CG_COM ,useNA="always")
 
 table(CLSA_cop_0$ICQ_SMOKE_COM,CLSA_cop_0$SMK_OTREG_COM)
@@ -1146,7 +1149,7 @@ table(CLSA_cop_0$ICQ_SMOKE_COM,CLSA_cop_0$SMK_OTREG_COM)
 1 |   Ever smoked tobacco  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   The study specific variables asks about ever using certain tobacco products for at least six months. 
+**Harmonization comment**:   The study specific variables asks about ever using certain tobacco products for at least six months. The variable in the relavent wave is combined with the same variables from the baseline wave. 
 **R script**:  
 ```{r, echo=TRUE}
 #creating intermediate veriables to account for answering as Having smoked tobacco products in the previous wave. 
@@ -1156,14 +1159,29 @@ MyMerge <- function(x,y){
 lsb_table <- Reduce(MyMerge, list(CLSA_cop_0, CLSA_cop_1))
 #Harmonization scripts to create "ever had "
 
-lsb_table$lsb_smk_ever_0<- ifelse(lsb_table$ICQ_SMOKE_COM==1 | lsb_table$ICQ_SMOKE_COM==3 ,1L, ifelse(lsb_table$ICQ_SMOKE_COM==2, 0L,NA))
-lsb_table$lsb_smk_ever_0[lsb_table$SMK_TYPEOT_CG_COM==1| lsb_table$SMK_TYPEOT_SM_COM==1| lsb_table$SMK_TYPEOT_PI_COM==1| lsb_table$SMK_TYPEOT_CH_COM==1|lsb_table$SMK_TYPEOT_SH_COM==1]<-1L
+lsb_table$lsb_smk_ever_0<- ifelse(lsb_table$ICQ_SMOKE_COM==1 | 
+                                  lsb_table$ICQ_SMOKE_COM==3 ,1L, 
+                           ifelse(lsb_table$ICQ_SMOKE_COM==2, 0L,NA))
+
+lsb_table$lsb_smk_ever_0[lsb_table$SMK_TYPEOT_CG_COM==1 | 
+                         lsb_table$SMK_TYPEOT_SM_COM==1 | 
+                         lsb_table$SMK_TYPEOT_PI_COM==1 | 
+                         lsb_table$SMK_TYPEOT_CH_COM==1 |
+                         lsb_table$SMK_TYPEOT_SH_COM==1  ]<-1L
 
 
 #Direct mapping to harmonized tables keeping correct participants for each wave
 
-lsb_table$lsb_smk_ever_1<- ifelse(lsb_table$ICQ_SMOKE_COF1==1 | lsb_table$ICQ_SMOKE_COF1==3|lsb_table$lsb_smk_ever_0==1 ,1L, ifelse(lsb_table$ICQ_SMOKE_COF1==2&lsb_table$lsb_smk_ever_0==0, 0L,NA))
-lsb_table$lsb_smk_ever_1[lsb_table$SMK_TYPEOT_CG_COF1==1| lsb_table$SMK_TYPEOT_SM_COF1==1| lsb_table$SMK_TYPEOT_PI_COF1==1| lsb_table$SMK_TYPEOT_CH_COF1==1|lsb_table$SMK_TYPEOT_SH_COF1==1]<-1L
+lsb_table$lsb_smk_ever_1<- ifelse(lsb_table$ICQ_SMOKE_COF1==1 | 
+                                  lsb_table$ICQ_SMOKE_COF1==3 |
+                                  lsb_table$lsb_smk_ever_0==1 ,1L,
+                                  ifelse(lsb_table$ICQ_SMOKE_COF1==2&lsb_table$lsb_smk_ever_0==0, 0L,NA))
+
+lsb_table$lsb_smk_ever_1[lsb_table$SMK_TYPEOT_CG_COF1==1| 
+                         lsb_table$SMK_TYPEOT_SM_COF1==1| 
+                         lsb_table$SMK_TYPEOT_PI_COF1==1| 
+                         lsb_table$SMK_TYPEOT_CH_COF1==1|
+                         lsb_table$SMK_TYPEOT_SH_COF1==1]<-1L
 
 
 #Direct mapping to harmonized tables keeping correct participants for each wave
@@ -1371,13 +1389,11 @@ table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 **Category coding**:  
 
 **Harmonization status**:  complete
-**Harmonization comment**:   The variable "At what age did you begin to smoke daily?" is used for harmonization.  
+**Harmonization comment**:   The variable "At what age did you smoke your first whole cigarette?" is used in harmonization.  
 **R script**:  
 ```{r, echo=TRUE}
-#There are two variables in the data 
-#At what age did you smoke your first whole cigarette? At what age did you begin to smoke daily?
 
-lsb_CLSA_cop_0$lsb_smk_start_0 <- CLSA_cop_0$SMK_SMKDL_AG_COM
+lsb_CLSA_cop_0$lsb_smk_start_0 <- CLSA_cop_0$SMK_FRSTCG_AG_COM
 table(CLSA_cop_0$SMK_FRSTCG_AG_COM,CLSA_cop_0$SMK_SMKDL_AG_COM)
 table(lsb_CLSA_cop_0$lsb_smk_start_0)
 table(CLSA_cop_0$SMK_SMKDL_AG_COM)
