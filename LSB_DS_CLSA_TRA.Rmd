@@ -49,7 +49,7 @@ opal.logout(erasmus_opal)
 # Alcohol consumption subdomain
 
 ### **Variable label**:  Current consumption of alcohol  
-**Variable name**: lsb_alc_cur_0@
+**Variable name**: lsb_alc_cur_0
 **Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -60,7 +60,7 @@ opal.logout(erasmus_opal)
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 
@@ -80,7 +80,7 @@ lsb_CLSA_tra_0$lsb_alc_cur_0 <-
 
 
 ### **Variable label**:  Current consumption of alcohol  
-**Variable name**: lsb_alc_cur_1@  
+**Variable name**: lsb_alc_cur_1  
 **Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -91,7 +91,7 @@ lsb_CLSA_tra_0$lsb_alc_cur_0 <-
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol   
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -112,7 +112,7 @@ lsb_CLSA_tra_1$lsb_alc_cur_1 <-
 
 
 ### **Variable label**:  Current consumption of alcohol  
-**Variable name**: lsb_alc_cur_2@  
+**Variable name**: lsb_alc_cur_2  
 **Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -130,7 +130,7 @@ lsb_CLSA_tra_1$lsb_alc_cur_1 <-
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
-**Variable name**: lsb_alc_cur_3@  
+**Variable name**: lsb_alc_cur_3  
 **Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -148,7 +148,7 @@ lsb_CLSA_tra_1$lsb_alc_cur_1 <-
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
-**Variable name**: lsb_alc_cur_4@  
+**Variable name**: lsb_alc_cur_4  
 **Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -166,7 +166,7 @@ lsb_CLSA_tra_1$lsb_alc_cur_1 <-
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
-**Variable name**: lsb_alc_cur_5@  
+**Variable name**: lsb_alc_cur_5  
 **Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -184,7 +184,7 @@ lsb_CLSA_tra_1$lsb_alc_cur_1 <-
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
-**Variable name**: lsb_alc_cur_6@  
+**Variable name**: lsb_alc_cur_6  
 **Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -203,7 +203,7 @@ lsb_CLSA_tra_1$lsb_alc_cur_1 <-
 ```  
 
 ### **Variable label**:   Ever consumption of alcohol  
-**Variable name**: lsb_alc_ever_0@
+**Variable name**: lsb_alc_ever_0
 **Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -214,7 +214,7 @@ lsb_CLSA_tra_1$lsb_alc_cur_1 <-
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -231,7 +231,7 @@ lsb_CLSA_tra_0$lsb_alc_ever_0 <-
 
 
 ### **Variable label**:   Ever consumption of alcohol  
-**Variable name**: lsb_alc_ever_1@
+**Variable name**: lsb_alc_ever_1
 **Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -242,7 +242,7 @@ lsb_CLSA_tra_0$lsb_alc_ever_0 <-
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -258,7 +258,7 @@ lsb_CLSA_tra_1$lsb_alc_ever_1 <-
 
 
 ### **Variable label**:   Ever consumption of alcohol  
-**Variable name**: lsb_alc_ever_2@    
+**Variable name**: lsb_alc_ever_2    
 **Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -277,7 +277,7 @@ lsb_CLSA_tra_1$lsb_alc_ever_1 <-
 ```  
 
 ### **Variable label**:   Ever consumption of alcohol  
-**Variable name**: lsb_alc_ever_3@    
+**Variable name**: lsb_alc_ever_3    
 **Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -295,7 +295,7 @@ lsb_CLSA_tra_1$lsb_alc_ever_1 <-
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
-**Variable name**: lsb_alc_ever_4@    
+**Variable name**: lsb_alc_ever_4    
 **Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -313,7 +313,7 @@ lsb_CLSA_tra_1$lsb_alc_ever_1 <-
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
-**Variable name**: lsb_alc_ever_5@    
+**Variable name**: lsb_alc_ever_5    
 **Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -331,7 +331,7 @@ lsb_CLSA_tra_1$lsb_alc_ever_1 <-
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
-**Variable name**: lsb_alc_ever_6@    
+**Variable name**: lsb_alc_ever_6    
 **Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -362,7 +362,7 @@ lsb_CLSA_tra_1$lsb_alc_ever_1 <-
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:  The study-specific question is "About how often during the past 12 months would you say you had five or more drinks at the same sitting or occasion?" The study specific category of "2-3 times a week" is coded in the DataSchema category "1 to 2 times a week".  The study-specific binge drinking question asks about the frequency of 5 or more drinks for men, and 4 or more drinks for women. 
 **R script**:  
 ```{r, echo=TRUE}
@@ -389,7 +389,7 @@ lsb_CLSA_tra_0$lsb_alc_binge_0 <-
 
 
 ### **Variable label**:   Frequency of binge drinking  
-**Variable name**: lsb_alc_binge_1@ 
+**Variable name**: lsb_alc_binge_1 
 **Variable description**:  Frequency of drinking 4 or more drinks in one day.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -401,7 +401,7 @@ lsb_CLSA_tra_0$lsb_alc_binge_0 <-
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   The study-specific question is "About how often during the past 12 months would you say you had five or more drinks at the same sitting or occasion?" The study specific category of "2-3 times a week" is coded in the DataSchema category "1 to 2 times a week".  The study-specific binge drinking question asks about the frequency of 5 or more drinks for men, and 4 or more drinks for women. 
 **R script**:  
 ```{r, echo=TRUE}
@@ -429,7 +429,7 @@ lsb_CLSA_tra_1$lsb_alc_binge_1 <-
 
 
 ### **Variable label**:   Frequency of binge drinking  
-**Variable name**: lsb_alc_binge_2@  
+**Variable name**: lsb_alc_binge_2  
 **Variable description**:  Frequency of drinking 4 or more drinks in one day.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -448,7 +448,7 @@ lsb_CLSA_tra_1$lsb_alc_binge_1 <-
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
-**Variable name**: lsb_alc_binge_3@  
+**Variable name**: lsb_alc_binge_3  
 **Variable description**:  Frequency of drinking 4 or more drinks in one day.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -467,7 +467,7 @@ lsb_CLSA_tra_1$lsb_alc_binge_1 <-
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
-**Variable name**: lsb_alc_binge_4@  
+**Variable name**: lsb_alc_binge_4  
 **Variable description**:  Frequency of drinking 4 or more drinks in one day.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -486,7 +486,7 @@ lsb_CLSA_tra_1$lsb_alc_binge_1 <-
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
-**Variable name**: lsb_alc_binge_5@  
+**Variable name**: lsb_alc_binge_5  
 **Variable description**:  Frequency of drinking 4 or more drinks in one day.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -505,7 +505,7 @@ lsb_CLSA_tra_1$lsb_alc_binge_1 <-
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
-**Variable name**: lsb_alc_binge_6@  
+**Variable name**: lsb_alc_binge_6  
 **Variable description**:  Frequency of drinking 4 or more drinks in one day.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -525,13 +525,13 @@ lsb_CLSA_tra_1$lsb_alc_binge_1 <-
 ```  
 
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)      
-**Variable name**: lsb_alc_total_0@
+**Variable name**: lsb_alc_total_0
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:  
 **R script**:  
 ```{r, echo=TRUE}
@@ -553,13 +553,13 @@ lsb_CLSA_tra_0$lsb_alc_total_0 <-
 
 
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
-**Variable name**: lsb_alc_total_1@
+**Variable name**: lsb_alc_total_1
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:  
 **R script**:  
 
@@ -586,7 +586,7 @@ lsb_CLSA_tra_1$lsb_alc_total_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_total_1)
 
 
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
-**Variable name**: lsb_alc_total_2@  
+**Variable name**: lsb_alc_total_2  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -599,7 +599,7 @@ lsb_CLSA_tra_1$lsb_alc_total_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_total_1)
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
-**Variable name**: lsb_alc_total_3@  
+**Variable name**: lsb_alc_total_3  
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -613,13 +613,13 @@ lsb_CLSA_tra_1$lsb_alc_total_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_total_1)
 ```  
 
 ### **Variable label**:   Current quantity of wine consumed per week  
-**Variable name**: lsb_alc_wine_0@ 
+**Variable name**: lsb_alc_wine_0 
 **Variable description**:  Current quantity of wine consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 
@@ -635,13 +635,13 @@ lsb_CLSA_tra_0$lsb_alc_wine_0 <-
 ```  
 
 ### **Variable label**:   Current quantity of wine consumed per week  
-**Variable name**: lsb_alc_wine_1@
+**Variable name**: lsb_alc_wine_1
 **Variable description**:  Current quantity of wine consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -658,7 +658,7 @@ lsb_CLSA_tra_1$lsb_alc_wine_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_wine_1)
 
 
 ### **Variable label**:   Current quantity of wine consumed per week  
-**Variable name**: lsb_alc_wine_2@  
+**Variable name**: lsb_alc_wine_2  
 **Variable description**:  Current quantity of wine consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -671,7 +671,7 @@ lsb_CLSA_tra_1$lsb_alc_wine_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_wine_1)
 
 ```  
 ### **Variable label**:   Current quantity of wine consumed per week  
-**Variable name**: lsb_alc_wine_3@  
+**Variable name**: lsb_alc_wine_3  
 **Variable description**:  Current quantity of wine consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -685,14 +685,14 @@ lsb_CLSA_tra_1$lsb_alc_wine_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_wine_1)
 ```  
 
 ### **Variable label**:   Current quantity of beer consumed per week  
-**Variable name**: lsb_alc_beer_0@  
+**Variable name**: lsb_alc_beer_0  
 **Variable description**:  Current quantity of beer consumed per week.   
 **Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 
@@ -705,14 +705,14 @@ lsb_CLSA_tra_0$lsb_alc_beer_0 <-
 ```  
 
 ### **Variable label**:   Current quantity of beer consumed per week  
-**Variable name**: lsb_alc_beer_1@
+**Variable name**: lsb_alc_beer_1
 **Variable description**:  Current quantity of beer consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 
@@ -726,7 +726,7 @@ lsb_CLSA_tra_1$lsb_alc_beer_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_beer_1)
 
 
 ### **Variable label**:   Current quantity of beer consumed per week  
-**Variable name**: lsb_alc_beer_2@  
+**Variable name**: lsb_alc_beer_2  
 **Variable description**:  Current quantity of beer consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -740,7 +740,7 @@ lsb_CLSA_tra_1$lsb_alc_beer_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_beer_1)
 
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
-**Variable name**: lsb_alc_beer_3@  
+**Variable name**: lsb_alc_beer_3  
 **Variable description**:  Current quantity of beer consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -755,14 +755,14 @@ lsb_CLSA_tra_1$lsb_alc_beer_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_beer_1)
 ```  
 
 ### **Variable label**:   Current quantity of liquor consumed per week  
-**Variable name**: lsb_alc_liq_0@ 
+**Variable name**: lsb_alc_liq_0 
 **Variable description**:  Current quantity of liquor consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 
@@ -776,14 +776,14 @@ lsb_CLSA_tra_0$lsb_alc_liq_0 <-
 
 
 ### **Variable label**:   Current quantity of liquor consumed per week  
-**Variable name**: lsb_alc_liq_1@  
+**Variable name**: lsb_alc_liq_1  
 **Variable description**:  Current quantity of liquor consumed per week.   
 **Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -798,7 +798,7 @@ lsb_CLSA_tra_1$lsb_alc_liq_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_liq_1)
 
 
 ### **Variable label**:   Current quantity of liquor consumed per week  
-**Variable name**: lsb_alc_liq_2@  
+**Variable name**: lsb_alc_liq_2  
 **Variable description**:  Current quantity of liquor consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -812,7 +812,7 @@ lsb_CLSA_tra_1$lsb_alc_liq_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_liq_1)
 
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
-**Variable name**: lsb_alc_liq_3@  
+**Variable name**: lsb_alc_liq_3  
 **Variable description**:  Current quantity of liquor consumed per week.   
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -829,7 +829,7 @@ lsb_CLSA_tra_1$lsb_alc_liq_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_liq_1)
 # Tobacco consumption subdomain
 
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_smk_cur_0@  
+**Variable name**:  lsb_smk_cur_0  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -840,7 +840,7 @@ lsb_CLSA_tra_1$lsb_alc_liq_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_liq_1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   The variable related to cigarette smoking is combined with study-specific variables for using cigars, small cigars, sheesha, chewing tobacco or snuff, tobacco pipes
 **R script**:  
 
@@ -866,7 +866,7 @@ lsb_CLSA_tra_0$lsb_smk_cur_0[
 
 
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_smk_cur_1@  
+**Variable name**:  lsb_smk_cur_1  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -877,7 +877,7 @@ lsb_CLSA_tra_0$lsb_smk_cur_0[
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   The variable related to cigarette smoking is combined with study-specific variables for using cigars, small cigars, sheesha, chewing tobacco or snuff, tobacco pipes
 **R script**:  
 
@@ -902,7 +902,7 @@ lsb_CLSA_tra_1$lsb_smk_cur_1[
 
 
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_smk_cur_2@  
+**Variable name**:  lsb_smk_cur_2  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -920,7 +920,7 @@ lsb_CLSA_tra_1$lsb_smk_cur_1[
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_smk_cur_3@  
+**Variable name**:  lsb_smk_cur_3  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -938,7 +938,7 @@ lsb_CLSA_tra_1$lsb_smk_cur_1[
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_smk_cur_4@  
+**Variable name**:  lsb_smk_cur_4  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -956,7 +956,7 @@ lsb_CLSA_tra_1$lsb_smk_cur_1[
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_smk_cur_5@  
+**Variable name**:  lsb_smk_cur_5  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -974,7 +974,7 @@ lsb_CLSA_tra_1$lsb_smk_cur_1[
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_smk_cur_6@  
+**Variable name**:  lsb_smk_cur_6  
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -993,7 +993,7 @@ lsb_CLSA_tra_1$lsb_smk_cur_1[
 ```  
 
 ### **Variable label**:  Smoking status  
-**Variable name**:  lsb_smk_status_0@  
+**Variable name**:  lsb_smk_status_0  
 **Variable description**:  Smoking status of the participant.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1005,7 +1005,7 @@ lsb_CLSA_tra_1$lsb_smk_cur_1[
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**: The study-specific categories of Occasional smoker (never a daily smoker or has smoked less than 100 cigarettes lifetime) and Former occasional smoker (at least 1 whole cigarette, non-smoker now) are coded in the DataSchema category Former smoker.  
 
 **R script**:  
@@ -1025,26 +1025,7 @@ lsb_CLSA_tra_0$lsb_smk_status_0 <-
 
 
 ### **Variable label**:  Smoking status  
-**Variable name**:  lsb_smk_status_1@
-**Variable description**:  Smoking status of the participant.  
-**Value type**:  integer  
-**Variable unit**:  N/A  
-**Category coding**:  
-
-**Code** | **Category Label**  
-------------- | -------------  
-0 |   Never smoker  
-1 |   Former smoker  
-2 |   Current smoker  
-
-**Harmonization status**: impossible@
-**Harmonization comment**:   
-**R script**:  
-```{r, echo=TRUE}
-
-```  
-### **Variable label**:  Smoking status  
-**Variable name**:  lsb_smk_status_2@  
+**Variable name**:  lsb_smk_status_1
 **Variable description**:  Smoking status of the participant.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1063,7 +1044,7 @@ lsb_CLSA_tra_0$lsb_smk_status_0 <-
 
 ```  
 ### **Variable label**:  Smoking status  
-**Variable name**:  lsb_smk_status_3@  
+**Variable name**:  lsb_smk_status_2  
 **Variable description**:  Smoking status of the participant.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1082,7 +1063,7 @@ lsb_CLSA_tra_0$lsb_smk_status_0 <-
 
 ```  
 ### **Variable label**:  Smoking status  
-**Variable name**:  lsb_smk_status_4@  
+**Variable name**:  lsb_smk_status_3  
 **Variable description**:  Smoking status of the participant.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1101,7 +1082,7 @@ lsb_CLSA_tra_0$lsb_smk_status_0 <-
 
 ```  
 ### **Variable label**:  Smoking status  
-**Variable name**:  lsb_smk_status_5@  
+**Variable name**:  lsb_smk_status_4  
 **Variable description**:  Smoking status of the participant.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1120,7 +1101,26 @@ lsb_CLSA_tra_0$lsb_smk_status_0 <-
 
 ```  
 ### **Variable label**:  Smoking status  
-**Variable name**:  lsb_smk_status_6@  
+**Variable name**:  lsb_smk_status_5  
+**Variable description**:  Smoking status of the participant.  
+**Value type**:  integer  
+**Variable unit**:  N/A  
+**Category coding**:  
+
+**Code** | **Category Label**  
+------------- | -------------  
+0 |   Never smoker  
+1 |   Former smoker  
+2 |   Current smoker  
+
+**Harmonization status**: impossible
+**Harmonization comment**:   
+**R script**:  
+```{r, echo=TRUE}
+
+```  
+### **Variable label**:  Smoking status  
+**Variable name**:  lsb_smk_status_6  
 **Variable description**:  Smoking status of the participant.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1140,7 +1140,7 @@ lsb_CLSA_tra_0$lsb_smk_status_0 <-
 ```  
 
 ### **Variable label**:  Ever tobacco smoking  
-**Variable name**:  lsb_smk_ever_0@   
+**Variable name**:  lsb_smk_ever_0   
 **Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1151,7 +1151,7 @@ lsb_CLSA_tra_0$lsb_smk_status_0 <-
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   The study specific variables asks about ever using certain tobacco products for at least six months. For ever smoking cigarettes, the same study-specific variable, Type of Smoker, as used in the DataSchema variable lsb_smk_status is used. The study-specific categories of Occasional smoker (never a daily smoker or has smoked less than 100 cigarettes lifetime) and Former occasional smoker (at least 1 whole cigarette, non-smoker now) are coded in the DataSchema category Ever smoked tobacco.  
 
 **R script**:  
@@ -1196,7 +1196,7 @@ CLSA_tra_0 %>% select(SMK_DSTY_TRM) %>%
 
 
 ### **Variable label**:  Ever tobacco smoking  
-**Variable name**:  lsb_smk_ever_1@   
+**Variable name**:  lsb_smk_ever_1   
 **Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1207,7 +1207,7 @@ CLSA_tra_0 %>% select(SMK_DSTY_TRM) %>%
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   The study specific variables asks about ever using certain tobacco products for at least six months. 
 **R script**:  
 ```{r, echo=TRUE}
@@ -1215,7 +1215,7 @@ CLSA_tra_0 %>% select(SMK_DSTY_TRM) %>%
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
-**Variable name**:  lsb_smk_ever_2@    
+**Variable name**:  lsb_smk_ever_2    
 **Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1233,7 +1233,7 @@ CLSA_tra_0 %>% select(SMK_DSTY_TRM) %>%
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
-**Variable name**:  lsb_smk_ever_3@    
+**Variable name**:  lsb_smk_ever_3    
 **Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1251,7 +1251,7 @@ CLSA_tra_0 %>% select(SMK_DSTY_TRM) %>%
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
-**Variable name**:  lsb_smk_ever_4@    
+**Variable name**:  lsb_smk_ever_4    
 **Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1269,7 +1269,7 @@ CLSA_tra_0 %>% select(SMK_DSTY_TRM) %>%
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
-**Variable name**:  lsb_smk_ever_5@    
+**Variable name**:  lsb_smk_ever_5    
 **Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1287,7 +1287,7 @@ CLSA_tra_0 %>% select(SMK_DSTY_TRM) %>%
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
-**Variable name**:  lsb_smk_ever_6@    
+**Variable name**:  lsb_smk_ever_6    
 **Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1312,7 +1312,7 @@ CLSA_tra_0 %>% select(SMK_DSTY_TRM) %>%
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1334,14 +1334,14 @@ CLSA_tra_0 %>% select(SMK_DSTY_TRM) %>%
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
-**Variable name**:  lsb_cig_qty_2@   
+**Variable name**:  lsb_cig_qty_2   
 **Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
 **Variable unit**:  cigarettes/day  
@@ -1354,7 +1354,7 @@ CLSA_tra_0 %>% select(SMK_DSTY_TRM) %>%
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
-**Variable name**:  lsb_cig_qty_3@   
+**Variable name**:  lsb_cig_qty_3   
 **Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
 **Variable unit**:  cigarettes/day  
@@ -1367,7 +1367,7 @@ CLSA_tra_0 %>% select(SMK_DSTY_TRM) %>%
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
-**Variable name**:  lsb_cig_qty_4@   
+**Variable name**:  lsb_cig_qty_4   
 **Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
 **Variable unit**:  cigarettes/day  
@@ -1380,7 +1380,7 @@ CLSA_tra_0 %>% select(SMK_DSTY_TRM) %>%
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
-**Variable name**:  lsb_cig_qty_5@   
+**Variable name**:  lsb_cig_qty_5   
 **Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
 **Variable unit**:  cigarettes/day  
@@ -1393,7 +1393,7 @@ CLSA_tra_0 %>% select(SMK_DSTY_TRM) %>%
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
-**Variable name**:  lsb_cig_qty_6@
+**Variable name**:  lsb_cig_qty_6
 **Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
 **Variable unit**:  cigarettes/day  
@@ -1407,13 +1407,13 @@ CLSA_tra_0 %>% select(SMK_DSTY_TRM) %>%
 ```  
 
 ### **Variable label**:  Smoking initiation age    
-**Variable name**:  lsb_smk_start_0@ 
+**Variable name**:  lsb_smk_start_0 
 **Variable description**:  Age at which the participant started smoking any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   The variable "At what age did you begin to smoke daily?" is used for harmonization.  
 **R script**:  
 
@@ -1481,7 +1481,7 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1489,7 +1489,7 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 ```  
 
 ### **Variable label**:  Smoking initiation age    
-**Variable name**:  lsb_smk_start_2@    
+**Variable name**:  lsb_smk_start_2    
 **Variable description**:  Age at which the participant started smoking any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  years  
@@ -1502,7 +1502,7 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 
 ```  
 ### **Variable label**:  Smoking initiation age    
-**Variable name**:  lsb_smk_start_3@    
+**Variable name**:  lsb_smk_start_3    
 **Variable description**:  Age at which the participant started smoking any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  years  
@@ -1515,7 +1515,7 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 
 ```  
 ### **Variable label**:  Smoking initiation age    
-**Variable name**:  lsb_smk_start_4@    
+**Variable name**:  lsb_smk_start_4    
 **Variable description**:  Age at which the participant started smoking any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  years  
@@ -1528,7 +1528,7 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 
 ```  
 ### **Variable label**:  Smoking initiation age    
-**Variable name**:  lsb_smk_start_5@    
+**Variable name**:  lsb_smk_start_5    
 **Variable description**:  Age at which the participant started smoking any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  years  
@@ -1541,7 +1541,7 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 
 ```  
 ### **Variable label**:  Smoking initiation age    
-**Variable name**:  lsb_smk_start_6@    
+**Variable name**:  lsb_smk_start_6    
 **Variable description**:  Age at which the participant started smoking any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  years  
@@ -1561,7 +1561,7 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1574,14 +1574,14 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Smoking cessation age  
-**Variable name**:  lsb_smk_stop_2@   
+**Variable name**:  lsb_smk_stop_2   
 **Variable description**:  Age at which the participant last smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  years  
@@ -1594,7 +1594,7 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 
 ```  
 ### **Variable label**:  Smoking cessation age  
-**Variable name**:  lsb_smk_stop_3@   
+**Variable name**:  lsb_smk_stop_3   
 **Variable description**:  Age at which the participant last smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  years  
@@ -1607,7 +1607,7 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 
 ```  
 ### **Variable label**:  Smoking cessation age  
-**Variable name**:  lsb_smk_stop_4@   
+**Variable name**:  lsb_smk_stop_4   
 **Variable description**:  Age at which the participant last smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  years  
@@ -1620,7 +1620,7 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 
 ```  
 ### **Variable label**:  Smoking cessation age  
-**Variable name**:  lsb_smk_stop_5@   
+**Variable name**:  lsb_smk_stop_5   
 **Variable description**:  Age at which the participant last smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  years  
@@ -1633,7 +1633,7 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 
 ```  
 ### **Variable label**:  Smoking cessation age  
-**Variable name**:  lsb_smk_stop_6@   
+**Variable name**:  lsb_smk_stop_6   
 **Variable description**:  Age at which the participant last smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  years  
@@ -1653,7 +1653,7 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   The study-specific variable is categorical.  
 **R script**:  
 ```{r, echo=TRUE}
@@ -1666,14 +1666,14 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   The study-specific variable is categorical.
 **R script**:  
 ```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Pack years  
-**Variable name**:  lsb_smk_py_2@    
+**Variable name**:  lsb_smk_py_2    
 **Variable description**:  Number of estimated pack years of the participant.     
 **Value type**:  decimal    
 **Variable unit**:  pack-years    
@@ -1689,7 +1689,7 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 # Physical activity subdomain
 
 ### **Variable label**: Frequency of walking    
-**Variable name**:    lsb_pa_walk_freq_0@   
+**Variable name**:    lsb_pa_walk_freq_0   
 **Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1702,7 +1702,7 @@ table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="al
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1720,7 +1720,7 @@ lsb_CLSA_tra_0$lsb_pa_walk_freq_0 <-
 
 
 ### **Variable label**: Frequency of walking    
-**Variable name**:    lsb_pa_walk_freq_1@    
+**Variable name**:    lsb_pa_walk_freq_1    
 **Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1733,7 +1733,7 @@ lsb_CLSA_tra_0$lsb_pa_walk_freq_0 <-
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1752,7 +1752,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_freq_1 <-
 
 
 ### **Variable label**: Frequency of walking    
-**Variable name**:    lsb_pa_walk_freq_2@    
+**Variable name**:    lsb_pa_walk_freq_2    
 **Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1772,7 +1772,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_freq_1 <-
 
 ```  
 ### **Variable label**: Frequency of walking    
-**Variable name**:    lsb_pa_walk_freq_3@    
+**Variable name**:    lsb_pa_walk_freq_3    
 **Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1792,7 +1792,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_freq_1 <-
 
 ```  
 ### **Variable label**: Frequency of walking    
-**Variable name**:    lsb_pa_walk_freq_4@    
+**Variable name**:    lsb_pa_walk_freq_4    
 **Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1812,7 +1812,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_freq_1 <-
 
 ```  
 ### **Variable label**: Frequency of walking    
-**Variable name**:    lsb_pa_walk_freq_5@    
+**Variable name**:    lsb_pa_walk_freq_5    
 **Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1832,7 +1832,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_freq_1 <-
 
 ```  
 ### **Variable label**: Frequency of walking    
-**Variable name**:    lsb_pa_walk_freq_6@    
+**Variable name**:    lsb_pa_walk_freq_6    
 **Variable description**:  Number of times the participant went for a walk in last week.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1853,7 +1853,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_freq_1 <-
 ```  
 
 ### **Variable label**:  Average walking time     
-**Variable name**:   lsb_pa_walk_time_0@  
+**Variable name**:   lsb_pa_walk_time_0  
 **Variable description**:  Average time the participant spends walking per day.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1867,7 +1867,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_freq_1 <-
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 
@@ -1888,7 +1888,7 @@ lsb_CLSA_tra_0$lsb_pa_walk_time_0 <-
 
 
 ### **Variable label**:  Average walking time   
-**Variable name**:   lsb_pa_walk_time_1@ 
+**Variable name**:   lsb_pa_walk_time_1 
 **Variable description**:  Average time the participant spends walking per day.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1902,7 +1902,7 @@ lsb_CLSA_tra_0$lsb_pa_walk_time_0 <-
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more   
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 
@@ -1921,7 +1921,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 ```  
 
 ### **Variable label**:  Average walking time    
-**Variable name**:   lsb_pa_walk_time_2@  
+**Variable name**:   lsb_pa_walk_time_2  
 **Variable description**:  Average time the participant spends walking per day.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1942,7 +1942,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average walking time     
-**Variable name**:   lsb_pa_walk_time_3@  
+**Variable name**:   lsb_pa_walk_time_3  
 **Variable description**:  Average time the participant spends walking per day.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1963,7 +1963,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average walking time    
-**Variable name**:   lsb_pa_walk_time_4@  
+**Variable name**:   lsb_pa_walk_time_4  
 **Variable description**:  Average time the participant spends walking per day.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1984,7 +1984,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average walking time     
-**Variable name**:   lsb_pa_walk_time_5@  
+**Variable name**:   lsb_pa_walk_time_5  
 **Variable description**:  Average time the participant spends walking per day.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2005,7 +2005,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average walking time     
-**Variable name**:   lsb_pa_walk_time_6@  
+**Variable name**:   lsb_pa_walk_time_6  
 **Variable description**:  Average time the participant spends walking per day.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2033,7 +2033,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2046,14 +2046,14 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Average walking time for transportation    
-**Variable name**:  lsb_pa_walk_trans_2@    
+**Variable name**:  lsb_pa_walk_trans_2    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2066,7 +2066,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average walking time for transportation    
-**Variable name**:  lsb_pa_walk_trans_3@    
+**Variable name**:  lsb_pa_walk_trans_3    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2079,7 +2079,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average walking time for transportation    
-**Variable name**:  lsb_pa_walk_trans_4@    
+**Variable name**:  lsb_pa_walk_trans_4    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2099,7 +2099,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2112,14 +2112,14 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Average walking time for leisure  
-**Variable name**:  lsb_pa_walk_leis_2@    
+**Variable name**:  lsb_pa_walk_leis_2    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2132,7 +2132,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average walking time for leisure  
-**Variable name**:  lsb_pa_walk_leis_3@    
+**Variable name**:  lsb_pa_walk_leis_3    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2145,7 +2145,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average walking time for leisure  
-**Variable name**:  lsb_pa_walk_leis_4@    
+**Variable name**:  lsb_pa_walk_leis_4    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2165,7 +2165,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:    
 **R script**:  
 ```{r, echo=TRUE}
@@ -2178,14 +2178,14 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Average cycling time    
-**Variable name**:  lsb_pa_cycle_2@  
+**Variable name**:  lsb_pa_cycle_2  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2198,7 +2198,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average cycling time    
-**Variable name**:  lsb_pa_cycle_3@  
+**Variable name**:  lsb_pa_cycle_3  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2211,7 +2211,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average cycling time    
-**Variable name**:  lsb_pa_cycle_4@  
+**Variable name**:  lsb_pa_cycle_4  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2224,7 +2224,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average cycling time    
-**Variable name**:  lsb_pa_cycle_5@  
+**Variable name**:  lsb_pa_cycle_5  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2237,7 +2237,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average cycling time    
-**Variable name**:  lsb_pa_cycle_6@  
+**Variable name**:  lsb_pa_cycle_6  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2262,7 +2262,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**: The study-specific variable is: During the past 7 days, did you engage in any of the following activities? outdoor gardening, sweeping the balcony or the stairs.  
 
 **R script**:  
@@ -2281,14 +2281,14 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   The study-specific variable is: During the past 7 days, did you engage in any of the following activities? outdoor gardening, sweeping the balcony or the stairs.  
 **R script**:  
 ```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Gardening    
-**Variable name**:  lsb_pa_garden_2@  
+**Variable name**:  lsb_pa_garden_2  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2306,7 +2306,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Gardening    
-**Variable name**:  lsb_pa_garden_3@  
+**Variable name**:  lsb_pa_garden_3  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2324,7 +2324,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Gardening    
-**Variable name**:  lsb_pa_garden_4@  
+**Variable name**:  lsb_pa_garden_4  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2342,7 +2342,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Gardening    
-**Variable name**:  lsb_pa_garden_5@  
+**Variable name**:  lsb_pa_garden_5  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2360,7 +2360,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Gardening    
-**Variable name**:  lsb_pa_garden_6@  
+**Variable name**:  lsb_pa_garden_6  
 **Variable description**:  Indicator of whether the participant does any gardening activities.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2384,7 +2384,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2397,14 +2397,14 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Average gardening time    
-**Variable name**:  lsb_pa_garden_time_2@    
+**Variable name**:  lsb_pa_garden_time_2    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
 **Value type**:  decimal      
 **Variable unit**:  minutes/week    
@@ -2417,7 +2417,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average gardening time    
-**Variable name**:  lsb_pa_garden_time_3@    
+**Variable name**:  lsb_pa_garden_time_3    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
 **Value type**:  decimal      
 **Variable unit**:  minutes/week    
@@ -2430,7 +2430,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average gardening time    
-**Variable name**:  lsb_pa_garden_time_4@    
+**Variable name**:  lsb_pa_garden_time_4    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
 **Value type**:  decimal      
 **Variable unit**:  minutes/week    
@@ -2443,7 +2443,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average gardening time    
-**Variable name**:  lsb_pa_garden_time_5@    
+**Variable name**:  lsb_pa_garden_time_5    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
 **Value type**:  decimal      
 **Variable unit**:  minutes/week    
@@ -2456,7 +2456,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 
 ```  
 ### **Variable label**:  Average gardening time    
-**Variable name**:  lsb_pa_garden_time_6@    
+**Variable name**:  lsb_pa_garden_time_6    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
 **Value type**:  decimal      
 **Variable unit**:  minutes/week    
@@ -2470,7 +2470,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 ```  
 
 ### **Variable label**:  Household activities  
-**Variable name**:  lsb_pa_house_0@
+**Variable name**:  lsb_pa_house_0
 **Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2481,7 +2481,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_time_1 <-
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   The study-specific variable asks about whether the participant engaged in housework in the past 7 days.  
 **R script**:  
 ```{r, echo=TRUE}
@@ -2495,7 +2495,7 @@ lsb_CLSA_tra_0$lsb_pa_house_0 <-
 
 
 ### **Variable label**:  Household activities  
-**Variable name**:  lsb_pa_house_1@ 
+**Variable name**:  lsb_pa_house_1 
 **Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2506,7 +2506,7 @@ lsb_CLSA_tra_0$lsb_pa_house_0 <-
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2518,7 +2518,7 @@ lsb_CLSA_tra_1$lsb_pa_house_1 <-
 ```  
 
 ### **Variable label**:  Household activities  
-**Variable name**:  lsb_pa_house_2@  
+**Variable name**:  lsb_pa_house_2  
 **Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2536,7 +2536,7 @@ lsb_CLSA_tra_1$lsb_pa_house_1 <-
 
 ```  
 ### **Variable label**:  Household activities  
-**Variable name**:  lsb_pa_house_3@  
+**Variable name**:  lsb_pa_house_3  
 **Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2554,7 +2554,7 @@ lsb_CLSA_tra_1$lsb_pa_house_1 <-
 
 ```  
 ### **Variable label**:  Household activities  
-**Variable name**:  lsb_pa_house_4@  
+**Variable name**:  lsb_pa_house_4  
 **Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2572,7 +2572,7 @@ lsb_CLSA_tra_1$lsb_pa_house_1 <-
 
 ```  
 ### **Variable label**:  Household activities  
-**Variable name**:  lsb_pa_house_5@  
+**Variable name**:  lsb_pa_house_5  
 **Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2590,7 +2590,7 @@ lsb_CLSA_tra_1$lsb_pa_house_1 <-
 
 ```  
 ### **Variable label**:  Household activities  
-**Variable name**:  lsb_pa_house_6@  
+**Variable name**:  lsb_pa_house_6  
 **Variable description**:  Indicator of whether the participant does any household activities (light, moderate or vigorous).     
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2615,7 +2615,7 @@ lsb_CLSA_tra_1$lsb_pa_house_1 <-
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2628,14 +2628,14 @@ lsb_CLSA_tra_1$lsb_pa_house_1 <-
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Average household activities time      
-**Variable name**:  lsb_pa_house_time_2@  
+**Variable name**:  lsb_pa_house_time_2  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2648,7 +2648,7 @@ lsb_CLSA_tra_1$lsb_pa_house_1 <-
 
 ```  
 ### **Variable label**:  Average household activities time      
-**Variable name**:  lsb_pa_house_time_3@  
+**Variable name**:  lsb_pa_house_time_3  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2661,7 +2661,7 @@ lsb_CLSA_tra_1$lsb_pa_house_1 <-
 
 ```  
 ### **Variable label**:  Average household activities time      
-**Variable name**:  lsb_pa_house_time_4@  
+**Variable name**:  lsb_pa_house_time_4  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2674,7 +2674,7 @@ lsb_CLSA_tra_1$lsb_pa_house_1 <-
 
 ```  
 ### **Variable label**:  Average household activities time      
-**Variable name**:  lsb_pa_house_time_5@  
+**Variable name**:  lsb_pa_house_time_5  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2687,7 +2687,7 @@ lsb_CLSA_tra_1$lsb_pa_house_1 <-
 
 ```  
 ### **Variable label**:  Average household activities time      
-**Variable name**:  lsb_pa_house_time_6@  
+**Variable name**:  lsb_pa_house_time_6  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2700,7 +2700,7 @@ lsb_CLSA_tra_1$lsb_pa_house_1 <-
 
 ```  
 ### **Variable label**: Sports or exercise      
-**Variable name**:  lsb_pa_sport_0@ 
+**Variable name**:  lsb_pa_sport_0 
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2711,7 +2711,7 @@ lsb_CLSA_tra_1$lsb_pa_house_1 <-
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2732,7 +2732,7 @@ lsb_CLSA_tra_0$lsb_pa_sport_0 <-
 
 
 ### **Variable label**: Sports or exercise      
-**Variable name**:  lsb_pa_sport_1@ 
+**Variable name**:  lsb_pa_sport_1 
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2743,7 +2743,7 @@ lsb_CLSA_tra_0$lsb_pa_sport_0 <-
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2759,7 +2759,7 @@ lsb_CLSA_tra_1$lsb_pa_sport_1<-
 
 ```   
 ### **Variable label**: Sports or exercise      
-**Variable name**:  lsb_pa_sport_2@  
+**Variable name**:  lsb_pa_sport_2  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2777,7 +2777,7 @@ lsb_CLSA_tra_1$lsb_pa_sport_1<-
 
 ```   
 ### **Variable label**: Sports or exercise      
-**Variable name**:  lsb_pa_sport_3@  
+**Variable name**:  lsb_pa_sport_3  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2795,7 +2795,7 @@ lsb_CLSA_tra_1$lsb_pa_sport_1<-
 
 ```   
 ### **Variable label**: Sports or exercise      
-**Variable name**:  lsb_pa_sport_4@  
+**Variable name**:  lsb_pa_sport_4  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2813,7 +2813,7 @@ lsb_CLSA_tra_1$lsb_pa_sport_1<-
 
 ```   
 ### **Variable label**: Sports or exercise      
-**Variable name**:  lsb_pa_sport_5@  
+**Variable name**:  lsb_pa_sport_5  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2831,7 +2831,7 @@ lsb_CLSA_tra_1$lsb_pa_sport_1<-
 
 ```   
 ### **Variable label**: Sports or exercise      
-**Variable name**:  lsb_pa_sport_6@  
+**Variable name**:  lsb_pa_sport_6  
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2850,7 +2850,7 @@ lsb_CLSA_tra_1$lsb_pa_sport_1<-
 ```   
 
 ### **Variable label**:  Average sports or exercise time       
-**Variable name**:  lsb_pa_sport_time_0@
+**Variable name**:  lsb_pa_sport_time_0
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
 **Value type**: integer  
 **Variable unit**:  
@@ -2863,7 +2863,7 @@ lsb_CLSA_tra_1$lsb_pa_sport_1<-
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   The three study-specific variables asks on average how many hours a day the participant engaged in light/moderate/strenuous sports or recreational activities over the past 7 days; and the study specific categories are: Less than 30 minutes, 30 minutes but less than 1 hour, 1 hour but less than 2 hours, 2 hours but less than 4 hours, 4 hours or more. For the harmonization of the DataSchema variable the mid-point of each category is taken, the three variables for the sports time are added and multiplied by seven to find a weekly average. 
 
 **R script**:  
@@ -2900,7 +2900,7 @@ rm(lsb_pa_sport_time_0_temp)
 
 
 ### **Variable label**:  Average sports or exercise time       
-**Variable name**:  lsb_pa_sport_time_1@ 
+**Variable name**:  lsb_pa_sport_time_1 
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
 **Value type**: integer    
 **Variable unit**:  
@@ -2913,7 +2913,7 @@ rm(lsb_pa_sport_time_0_temp)
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week   
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   The three study-specific variables asks on average how many hours a day the participant engaged in light/moderate/strenuous sports or recreational activities over the past 7 days; and the study specific categories are: Less than 30 minutes, 30 minutes but less than 1 hour, 1 hour but less than 2 hours, 2 hours but less than 4 hours, 4 hours or more. For the harmonization of the DataSchema variable the mid-point of each category is taken, the three variables for the sports time are added and multiplied by seven to find a weekly average. 
 
 **R script**:  
@@ -2941,7 +2941,7 @@ rm(lsb_pa_sport_time_1_temp)
 
 
 ### **Variable label**:  Average sports or exercise time       
-**Variable name**:  lsb_pa_sport_time_2@  
+**Variable name**:  lsb_pa_sport_time_2  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
 **Value type**: integer   
 **Variable unit**:  
@@ -2961,7 +2961,7 @@ rm(lsb_pa_sport_time_1_temp)
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
-**Variable name**:  lsb_pa_sport_time_3@  
+**Variable name**:  lsb_pa_sport_time_3  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
 **Value type**: integer    
 **Variable unit**:  
@@ -2981,7 +2981,7 @@ rm(lsb_pa_sport_time_1_temp)
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
-**Variable name**:  lsb_pa_sport_time_4@  
+**Variable name**:  lsb_pa_sport_time_4  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
 **Value type**: integer   
 **Variable unit**:  
@@ -3001,7 +3001,7 @@ rm(lsb_pa_sport_time_1_temp)
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
-**Variable name**:  lsb_pa_sport_time_5@  
+**Variable name**:  lsb_pa_sport_time_5  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
 **Value type**: integer   
 **Variable unit**:  
@@ -3021,7 +3021,7 @@ rm(lsb_pa_sport_time_1_temp)
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
-**Variable name**:  lsb_pa_sport_time_6@  
+**Variable name**:  lsb_pa_sport_time_6  
 **Variable description**:  Average time a week the participant spent on sports or exercise.    
 **Value type**: integer   
 **Variable unit**:  
@@ -3055,7 +3055,7 @@ rm(lsb_pa_sport_time_1_temp)
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   The study-specific variable is Servgings of fruits and vegetables per day. 
 
 **R script**:  
@@ -3074,7 +3074,7 @@ rm(lsb_pa_sport_time_1_temp)
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   The study-specific variable is Servgings of fruits and vegetables per day. 
 
 **R script**:  
@@ -3082,7 +3082,7 @@ rm(lsb_pa_sport_time_1_temp)
 
 ```   
 ### **Variable label**:  Daily vegetable consumption  
-**Variable name**:  lsb_veg_2@    
+**Variable name**:  lsb_veg_2    
 **Variable description**:  Indicator of whether the participant currently consumes vegetables on a daily basis.   
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3112,7 +3112,7 @@ rm(lsb_pa_sport_time_1_temp)
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   The study-specific variable is Servgings of fruits and vegetables per day. 
 
 **R script**:  
@@ -3131,7 +3131,7 @@ rm(lsb_pa_sport_time_1_temp)
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   The study-specific variable is Servgings of fruits and vegetables per day. 
 
 **R script**:  
@@ -3139,7 +3139,7 @@ rm(lsb_pa_sport_time_1_temp)
 
 ```  
 ### **Variable label**:  Daily fruit consumption  
-**Variable name**:  lsb_fruit_2@  
+**Variable name**:  lsb_fruit_2  
 **Variable description**:  Indicator of whether the participant currently consumes fruit on a daily basis.   
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3169,7 +3169,7 @@ rm(lsb_pa_sport_time_1_temp)
 0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3187,14 +3187,14 @@ rm(lsb_pa_sport_time_1_temp)
 0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Daily water consumption  
-**Variable name**:  lsb_water_2@    
+**Variable name**:  lsb_water_2    
 **Variable description**:  Indicator of whether the participant drinks water on a daily basis.   
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3212,7 +3212,7 @@ rm(lsb_pa_sport_time_1_temp)
 
 ```  
 ### **Variable label**:  Daily water consumption  
-**Variable name**:  lsb_water_3@    
+**Variable name**:  lsb_water_3    
 **Variable description**:  Indicator of whether the participant drinks water on a daily basis.   
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3230,7 +3230,7 @@ rm(lsb_pa_sport_time_1_temp)
 
 ```  
 ### **Variable label**:  Daily water consumption  
-**Variable name**:  lsb_water_4@    
+**Variable name**:  lsb_water_4    
 **Variable description**:  Indicator of whether the participant drinks water on a daily basis.   
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3249,13 +3249,13 @@ rm(lsb_pa_sport_time_1_temp)
 ```  
 
 ### **Variable label**:  Quantity daily coffee  
-**Variable name**:  lsb_coffee_qty_0@ 
+**Variable name**:  lsb_coffee_qty_0 
 **Variable description**:  Current quantity of coffee the participant consumes per day.   
 **Value type**:  integer  
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**: There are two study-specific variables: cups of regular coffee per day and cups of decaffeinated coffee per day. These two variables are combined for the creation of the DataSchema variable.  
 
 **R script**:  
@@ -3267,13 +3267,13 @@ lsb_CLSA_tra_0$lsb_coffee_qty_0 <- CLSA_tra_0$NUR_DCOFF_NB_MCQ + CLSA_tra_0$NUR_
 ```  
 
 ### **Variable label**:  Quantity daily coffee  
-**Variable name**:  lsb_coffee_qty_1@
+**Variable name**:  lsb_coffee_qty_1
 **Variable description**:  Current quantity of coffee the participant consumes per day.   
 **Value type**:  integer  
 **Variable unit**:  cups/day 
 **Category coding**:  N/A  
 
-**Harmonization status**: complete@
+**Harmonization status**: complete
 **Harmonization comment**:   here are two study-specific variables: cups of regular coffee per day and cups of decaffeinated coffee per day. These two variables are combined for the creation of the DataSchema variable.  
 
 **R script**:  
@@ -3285,7 +3285,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 ```  
 
 ### **Variable label**:  Quantity daily coffee  
-**Variable name**:  lsb_coffee_qty_2@  
+**Variable name**:  lsb_coffee_qty_2  
 **Variable description**:  Current quantity of coffee the participant consumes per day.   
 **Value type**:  integer  
 **Variable unit**:  cups/day  
@@ -3298,7 +3298,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 
 ```  
 ### **Variable label**:  Quantity daily coffee  
-**Variable name**:  lsb_coffee_qty_3@  
+**Variable name**:  lsb_coffee_qty_3  
 **Variable description**:  Current quantity of coffee the participant consumes per day.   
 **Value type**:  integer  
 **Variable unit**:  cups/day 
@@ -3311,7 +3311,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 
 ```  
 ### **Variable label**:  Quantity daily coffee  
-**Variable name**:  lsb_coffee_qty_4@  
+**Variable name**:  lsb_coffee_qty_4  
 **Variable description**:  Current quantity of coffee the participant consumes per day.   
 **Value type**:  integer  
 **Variable unit**:  cups/day  
@@ -3333,7 +3333,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 **Variable unit**:  hours/night  
 **Category coding**:  N/A  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3346,14 +3346,14 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 **Variable unit**:  hours/night   
 **Category coding**:  N/A  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Average sleep hours  
-**Variable name**:  lsb_sleep_hours_2@  
+**Variable name**:  lsb_sleep_hours_2  
 **Variable description**:  Average number of hours the participant sleeps per night.  
 **Value type**:  integer  
 **Variable unit**:  hours/night 
@@ -3366,7 +3366,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 
 ```  
 ### **Variable label**:  Average sleep hours  
-**Variable name**:  lsb_sleep_hours_3@  
+**Variable name**:  lsb_sleep_hours_3  
 **Variable description**:  Average number of hours the participant sleeps per night.  
 **Value type**:  integer  
 **Variable unit**:  hours/night
@@ -3379,7 +3379,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 
 ```  
 ### **Variable label**:  Average sleep hours  
-**Variable name**:  lsb_sleep_hours_4@    
+**Variable name**:  lsb_sleep_hours_4    
 **Variable description**:  Average number of hours the participant sleeps per night.  
 **Value type**:  integer  
 **Variable unit**:  hours/night   
@@ -3392,7 +3392,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 
 ```  
 ### **Variable label**:  Average sleep hours  
-**Variable name**:  lsb_sleep_hours_5@  
+**Variable name**:  lsb_sleep_hours_5  
 **Variable description**:  Average number of hours the participant sleeps per night.  
 **Value type**:  integer  
 **Variable unit**:  hours/night    
@@ -3417,7 +3417,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3435,14 +3435,14 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Difficulty falling asleep  
-**Variable name**:  lsb_sleep_diff_2@    
+**Variable name**:  lsb_sleep_diff_2    
 **Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3460,7 +3460,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 
 ```  
 ### **Variable label**:  Difficulty falling asleep  
-**Variable name**:  lsb_sleep_diff_3@  
+**Variable name**:  lsb_sleep_diff_3  
 **Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3478,7 +3478,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 
 ```  
 ### **Variable label**:  Difficulty falling asleep  
-**Variable name**:  lsb_sleep_diff_4@  
+**Variable name**:  lsb_sleep_diff_4  
 **Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3496,7 +3496,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 
 ```  
 ### **Variable label**:  Difficulty falling asleep  
-**Variable name**:  lsb_sleep_diff_5@  
+**Variable name**:  lsb_sleep_diff_5  
 **Variable description**:  Indicator of whether the participant ever has any difficulty falling asleep.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3528,7 +3528,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 2 |  Fairly good
 3 |  Very good  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3549,7 +3549,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 2 |  Fairly good
 3 |  Very good  
 
-**Harmonization status**: impossible@
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3557,7 +3557,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 ``` 
 
 ### **Variable label**:  Quality of sleep  
-**Variable name**:  lsb_sleep_qlty_2@  
+**Variable name**:  lsb_sleep_qlty_2  
 **Variable description**:  Indicator of the quality of sleep of the participant.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3577,7 +3577,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 
 ``` 
 ### **Variable label**:  Quality of sleep  
-**Variable name**:  lsb_sleep_qlty_3@  
+**Variable name**:  lsb_sleep_qlty_3  
 **Variable description**:  Indicator of the quality of sleep of the participant.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3597,7 +3597,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 
 ```  
 ### **Variable label**:  Quality of sleep  
-**Variable name**:  lsb_sleep_qlty_4@  
+**Variable name**:  lsb_sleep_qlty_4  
 **Variable description**:  Indicator of the quality of sleep of the participant.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -3617,7 +3617,7 @@ lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR
 
 ```  
 ### **Variable label**:  Quality of sleep  
-**Variable name**:  lsb_sleep_qlty_5@  
+**Variable name**:  lsb_sleep_qlty_5  
 **Variable description**:  Indicator of the quality of sleep of the participant.    
 **Value type**:  integer  
 **Variable unit**:  N/A  
