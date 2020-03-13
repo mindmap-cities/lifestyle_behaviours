@@ -1970,7 +1970,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 ```  
 
 ### **Variable label**:  Average walking time for copnsportation  
-**Variable name**:  lsb_pa_walk_copns_0    
+**Variable name**:  lsb_pa_walk_trans_0    
 **Variable description**:  Minutes per week the participant spent on walking for copnsportation (utilitarian walking) in the last week.  
 **Value type**:  decimal    
 **Variable unit**:  minutes/week  
@@ -1983,7 +1983,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 
 ```  
 ### **Variable label**:  Average walking time for copnsportation    
-**Variable name**:  lsb_pa_walk_copns_1    
+**Variable name**:  lsb_pa_walk_trans_1    
 **Variable description**: Minutes per week the participant spent on walking for copnsportation (utilitarian walking) in the last week.    
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -1996,7 +1996,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 
 ```  
 ### **Variable label**:  Average walking time for copnsportation    
-**Variable name**:  lsb_pa_walk_copns_2    
+**Variable name**:  lsb_pa_walk_trans_2    
 **Variable description**:  Minutes per week the participant spent on walking for copnsportation (utilitarian walking) in the last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2009,7 +2009,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 
 ```  
 ### **Variable label**:  Average walking time for copnsportation    
-**Variable name**:  lsb_pa_walk_copns_3    
+**Variable name**:  lsb_pa_walk_trans_3    
 **Variable description**:  Minutes per week the participant spent on walking for copnsportation (utilitarian walking) in the last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
@@ -2022,7 +2022,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 
 ```  
 ### **Variable label**:  Average walking time for copnsportation    
-**Variable name**:  lsb_pa_walk_copns_4    
+**Variable name**:  lsb_pa_walk_trans_4    
 **Variable description**:  Minutes per week the participant spent on walking for copnsportation (utilitarian walking) in the last week.    
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
