@@ -431,8 +431,8 @@ lsb_CLSA_cop_1 %>% select(lsb_alc_binge_1) %>%
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  
-**Harmonization comment**:   impossible  
+**Harmonization status**:   impossible 
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -450,8 +450,8 @@ lsb_CLSA_cop_1 %>% select(lsb_alc_binge_1) %>%
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  
-**Harmonization comment**:   impossible  
+**Harmonization status**:   impossible 
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -469,8 +469,8 @@ lsb_CLSA_cop_1 %>% select(lsb_alc_binge_1) %>%
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  
-**Harmonization comment**:  impossible   
+**Harmonization status**:   impossible 
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -488,8 +488,8 @@ lsb_CLSA_cop_1 %>% select(lsb_alc_binge_1) %>%
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  
-**Harmonization comment**:   impossible  
+**Harmonization status**:   impossible 
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -507,8 +507,8 @@ lsb_CLSA_cop_1 %>% select(lsb_alc_binge_1) %>%
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  
-**Harmonization comment**:impossible     
+**Harmonization status**:  impossible    
+**Harmonization comment**: 
 **R script**:  
 ```{r, echo=TRUE}
 
@@ -521,8 +521,8 @@ lsb_CLSA_cop_1 %>% select(lsb_alc_binge_1) %>%
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
-**Harmonization comment**:  complete   
+**Harmonization status**:  complete   
+**Harmonization comment**:  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_CLSA_cop_0$lsb_alc_total_0 <- CLSA_cop_0$ALC_RDWD_NB_COM+ 
@@ -558,8 +558,8 @@ summary(CLSA_cop_0$ALC_LQWE_NB_COM)
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  
-**Harmonization comment**:   complete  
+**Harmonization status**:  complete
+**Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
 
