@@ -919,7 +919,7 @@ table(lsb_ROTTERDAM_1$lsb_smk_cur_1)
 ```{r, echo=TRUE}
 
 table(ROTTERDAM_2$e5_EILF6)
-lsb_ROTTERDAM_2$lsb_smk_cur_2<- as.integer(ROTTERDAM_2$e5_EILF6==1) 
+lsb_ROTTERDAM_2$lsb_smk_cur_2<- as.integer(ROTTERDAM_2$e5_EILF6) 
 table(lsb_ROTTERDAM_2$lsb_smk_cur_2, useNA="always")
 
 
@@ -943,8 +943,7 @@ table(lsb_ROTTERDAM_2$lsb_smk_cur_2, useNA="always")
 table(ROTTERDAM_3$e6_EILF6)
 
 lsb_ROTTERDAM_3$lsb_smk_cur_3<-ifelse(ROTTERDAM_3$e6_EILF6==1, 1L, 
-                               ifelse(ROTTERDAM_3$e6_EILF5==1|
-                                      ROTTERDAM_3$e6_EILF6==0,0L,NA))
+                               ifelse(ROTTERDAM_3$e6_EILF6==0,0L,NA))
 
 table(lsb_ROTTERDAM_3$lsb_smk_cur_3, useNA="always")
 
