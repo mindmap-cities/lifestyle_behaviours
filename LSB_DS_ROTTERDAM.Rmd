@@ -1495,12 +1495,12 @@ table(lsb_ROTTERDAM_3$lsb_cig_qty_3, useNA="always")
 **Category coding**:  
 
 **Harmonization status**:      
-**Harmonization comment**:   
+**Harmonization comment**:   The study-specific questions are : How old were you when you first started smoking?  
 **R script**:  
 ```{r, echo=TRUE}
  
 table(ROTTERDAM_0$ep_lf6b)	
-lsb_ROTTERDAM_0$lsb_smk_start_0 <- ifelse(ROTTERDAM_0$ep_lf6b<777, ROTTERDAM_0$ep_lf6b, NA )
+lsb_ROTTERDAM_0$lsb_smk_start_0 <- ifelse(ROTTERDAM_0$ep_lf6b<777, ROTTERDAM_0$ep_lf6b, ifelse(ROTTERDAM_0$ep_lf6g<777,  ROTTERDAM_0$ep_lf6g, NA ))
 table(lsb_ROTTERDAM_0$lsb_smk_start_0)
 ```  
 ### **Variable label**:  Smoking initiation age    
@@ -1526,12 +1526,14 @@ table(lsb_ROTTERDAM_0$lsb_smk_start_0)
 **Category coding**:  
 
 **Harmonization status**:  complete      
-**Harmonization comment**:   
+**Harmonization comment**:   The study-specific questions are : How old were you when you first started smoking?  
 **R script**:  
 ```{r, echo=TRUE}
- 
+ #From the order of the questions, e5_EILF6B must be for current, and e5_EILFG must be for former smokers. Added to the excel notes sheet
 table(ROTTERDAM_2$e5_EILF6B)	
-lsb_ROTTERDAM_2$lsb_smk_start_2 <- ifelse(ROTTERDAM_2$e5_EILF6B<777, ROTTERDAM_2$e5_EILF6B, NA )
+table(ROTTERDAM_2$e5_EILFG)	
+
+lsb_ROTTERDAM_2$lsb_smk_start_2 <- ifelse(ROTTERDAM_2$e5_EILF6B<777, ROTTERDAM_2$e5_EILF6B, ifelse(ROTTERDAM_2$e5_EILFG<777, ROTTERDAM_2$e5_EILFG, NA ))
 table(lsb_ROTTERDAM_2$lsb_smk_start_2) 
 
 ```  
