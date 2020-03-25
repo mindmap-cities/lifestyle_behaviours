@@ -15,7 +15,7 @@ erasmus_opal <- opal.login()
 #Login to Opal server and assign the content of the GLOBE table(s) to your RStudio environment
 opal.assign.table.tibble(erasmus_opal, 'CoP4_Baseline','CLSA_1.CoP4_Baseline', variables =list("ALC_FREQ_COM", "ALC_EVER_COM", "ALC_MLFQ_COM","ALC_FMFQ_COM", "PA2_LTHSWK_MCQ","NUT_FRUT_COM", "ALC_RDWD_NB_COM"," ALC_WHWD_NB_COM",  "ALC_BRWD_NB_COM", "ALC_LQWD_NB_COM", "ALC_RDWE_NB_COM", "ALC_WHWE_NB_COM", "ALC_BRWE_NB_COM", "ALC_LQWE_NB_COM", "PA2_LTHSWK_MCQ", "PA2_HVYHSWK_MCQ", "NUT_GREEN_COM", "NUT_PTTO_COM", "NUT_CRRT_COM", "NUT_VGOT_COM", "PA2_LSPRT_MCQ", "PA2_MSPRT_MCQ", "PA2_SSPRT_MCQ", "PA2_WALK_MCQ","SMK_100CG_COM","ICQ_SMOKE_COM", "SMK_OTREG_COM" , "SMK_SMKDL_AG_COM", "ALC_WHWD_NB_COM",
 "PA2_WALKHR_MCQ", "PA2_HVYHSWK_MCQ", "PA2_LSPRTHR_MCQ", "PA2_MSPRTHR_MCQ", "PA2_SSPRTHR_MCQ", "SMK_CURRCG_COM", "SMK_OTCURR_CG_COM",
-"SMK_OTCURR_SM_COM","SMK_OTCURR_PI_COM", "SMK_OTCURR_CH_COM", "	SMK_OTCURR_SH_COM", "SMK_OTOCC_COM", "SMK_OTCURR_SH_COM", "SMK_TYPEOT_CG_COM", "SMK_TYPEOT_SM_COM", "SMK_TYPEOT_PI_COM", "SMK_TYPEOT_CH_COM", "SMK_TYPEOT_SH_COM", "SMK_FRSTCG_AG_COM"
+"SMK_OTCURR_SM_COM","SMK_OTCURR_PI_COM", "SMK_OTCURR_CH_COM", "	SMK_OTCURR_SH_COM", "SMK_OTOCC_COM", "SMK_OTCURR_SH_COM", "SMK_TYPEOT_CG_COM", "SMK_TYPEOT_SM_COM", "SMK_TYPEOT_PI_COM", "SMK_TYPEOT_CH_COM", "SMK_TYPEOT_SH_COM", "SMK_FRSTCG_AG_COM", "SMK_CGDL_AG_COM"
 ))
 
 CLSA_cop_0 <- opal.execute(erasmus_opal,'CoP4_Baseline')
@@ -213,11 +213,11 @@ table(CLSA_cop_1$ALC_FREQ_COF1)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_0$lsb_alc_cur_0<-dplyr::recode(as.character(CLSA_cop_0$ALC_EVER_COM), 
+lsb_CLSA_cop_0$lsb_alc_ever_0<-dplyr::recode(as.character(CLSA_cop_0$ALC_EVER_COM), 
                                             "2"=0L ,
                                             "1"=1L, 
                                             .default =NA_integer_)
-table(lsb_CLSA_cop_0$lsb_alc_cur_0)
+table(lsb_CLSA_cop_0$lsb_alc_ever_0)
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -233,14 +233,29 @@ table(lsb_CLSA_cop_0$lsb_alc_cur_0)
 1 |   Ever consumed alcohol  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization comment**:   The variable in the relavent wave is combined with the same variables from the baseline wave. 
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_1$lsb_alc_cur_1<-dplyr::recode(as.character(CLSA_cop_1$ALC_EVER_COF1),
-                                            "2"=0L,
-                                            "1"=1L,
+
+table(CLSA_cop_1$ALC_EVER_COF1, useNA="always")
+
+#creating intermediate veriables to account for answering as Having smoked tobacco products in the previous wave. 
+MyMerge <- function(x,y){
+  merge(x,y, by= c("id"),all=TRUE)
+}
+lsb_table <- Reduce(MyMerge, list(CLSA_cop_0, CLSA_cop_1))
+
+lsb_table$lsb_alc_ever_0<-dplyr::recode(as.character(lsb_table$ALC_EVER_COM), 
+                                            "2"=0L ,
+                                            "1"=1L, 
                                             .default =NA_integer_)
-table(lsb_CLSA_cop_1$lsb_alc_cur_1)
+
+lsb_table$lsb_alc_ever_1<-ifelse(lsb_table$ALC_EVER_COF1==1|lsb_table$lsb_alc_ever_0==1,1L,
+                         ifelse(lsb_table$ALC_EVER_COF1==2&lsb_table$lsb_alc_ever_0==0,0L,NA))
+                                            
+lsb_CLSA_cop_1<-merge(lsb_CLSA_cop_1,lsb_table[,c("id","lsb_alc_ever_1")],by="id",all.x=TRUE)
+
+table(lsb_CLSA_cop_1$lsb_alc_ever_1)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_2    
@@ -827,7 +842,7 @@ class(lsb_CLSA_cop_1$lsb_alc_liq_1)
 1 |   Currently smokes any tobacco product  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   The variable related to cigarette smoking is combined with study-specific variables for using cigars, small cigars, sheesha, chewing tobacco or snuff, tobacco pipes
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 table(CLSA_cop_0$ICQ_SMOKE_COM, useNA="always")
@@ -835,13 +850,7 @@ table(CLSA_cop_0$SMK_OTOCC_COM, CLSA_cop_0$ICQ_SMOKE_COM)
 table(CLSA_cop_0$SMK_CURRCG_COM, useNA="always")
 
 lsb_CLSA_cop_0$lsb_smk_cur_0<-ifelse(CLSA_cop_0$ICQ_SMOKE_COM=='1',1L,ifelse(CLSA_cop_0$ICQ_SMOKE_COM=="2"|CLSA_cop_0$ICQ_SMOKE_COM=="3", 0L, NA))
-#to add the people who uses other tobacco products
-lsb_CLSA_cop_0$lsb_smk_cur_0[  CLSA_cop_0$SMK_OTCURR_CG_COM=="1"| 
-                               CLSA_cop_0$SMK_OTCURR_SM_COM=="1" |
-                               CLSA_cop_0$SMK_OTCURR_PI_COM=="1" |
-                               CLSA_cop_0$SMK_OTCURR_CH_COM=="1" | 
-                               CLSA_cop_0$SMK_OTCURR_SH_COM=="1"]<-1
-  
+
 table(lsb_CLSA_cop_0$lsb_smk_cur_0)
 
 ```  
@@ -858,19 +867,14 @@ table(lsb_CLSA_cop_0$lsb_smk_cur_0)
 1 |   Currently smokes any tobacco product  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   **Harmonization comment**:   The variable related to cigarette smoking is combined with study-specific variables for using cigars, small cigars, sheesha, chewing tobacco or snuff, tobacco pipes
+**Harmonization comment**:   
 
 **R script**:  
 ```{r, echo=TRUE}
 lsb_CLSA_cop_1$lsb_smk_cur_1<- dplyr::recode(CLSA_cop_1$ICQ_SMOKE_COF1, "1"=1L, "2"=0L, "3"=0L, .default =NA_integer_)
 
 lsb_CLSA_cop_1$lsb_smk_cur_1<-ifelse(CLSA_cop_1$ICQ_SMOKE_COF1=='1',1L,ifelse(CLSA_cop_1$ICQ_SMOKE_COF1=="2"|CLSA_cop_1$ICQ_SMOKE_COF1=="3", 0L, NA))
-#to add the people who uses other tobacco products
-lsb_CLSA_cop_1$lsb_smk_cur_1[CLSA_cop_1$SMK_OTCURR_CG_COF1=="1"| 
-                             CLSA_cop_1$SMK_OTCURR_SM_COF1=="1"|
-                             CLSA_cop_1$SMK_OTCURR_PI_COF1=="1"|
-                             CLSA_cop_1$SMK_OTCURR_CH_COF1=="1"| 
-                             CLSA_cop_1$SMK_OTCURR_SH_COF1=="1"]<-1
+
   
 table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 ```  
@@ -1116,22 +1120,13 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 1 |   Ever smoked tobacco  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   The study specific variables asks about ever using certain tobacco products for at least six months. 
+**Harmonization comment**:  
 **R script**:  
 ```{r, echo=TRUE}
 lsb_CLSA_cop_0$lsb_smk_ever_0 <- ifelse(CLSA_cop_0$ICQ_SMOKE_COM==1 | 
                                         CLSA_cop_0$ICQ_SMOKE_COM==3 ,1L,
                                  ifelse(CLSA_cop_0$ICQ_SMOKE_COM==2, 0L,NA))
 table(lsb_CLSA_cop_0$lsb_smk_ever_0)
-
-lsb_CLSA_cop_0$lsb_smk_ever_0[CLSA_cop_0$SMK_TYPEOT_CG_COM==1| 
-                              CLSA_cop_0$SMK_TYPEOT_SM_COM==1|
-                              CLSA_cop_0$SMK_TYPEOT_PI_COM==1|
-                              CLSA_cop_0$SMK_TYPEOT_CH_COM==1|
-                              CLSA_cop_0$SMK_TYPEOT_SH_COM==1]<-1L
-table(lsb_CLSA_cop_0$lsb_smk_ever_0)
-
-table(CLSA_cop_0$ICQ_SMOKE_COM, CLSA_cop_0$SMK_100CG_COM ,useNA="always")
 
 table(CLSA_cop_0$ICQ_SMOKE_COM,CLSA_cop_0$SMK_OTREG_COM)
 
@@ -1149,26 +1144,14 @@ table(CLSA_cop_0$ICQ_SMOKE_COM,CLSA_cop_0$SMK_OTREG_COM)
 1 |   Ever smoked tobacco  
 
 **Harmonization status**:  complete  
-**Harmonization comment**:   The study specific variables asks about ever using certain tobacco products for at least six months. The variable in the relavent wave is combined with the same variables from the baseline wave. 
+**Harmonization comment**: The variable in the relavent wave is combined with the same variables from the baseline wave. 
 **R script**:  
 ```{r, echo=TRUE}
-#creating intermediate veriables to account for answering as Having smoked tobacco products in the previous wave. 
-MyMerge <- function(x,y){
-  merge(x,y, by= c("id"),all=TRUE)
-}
-lsb_table <- Reduce(MyMerge, list(CLSA_cop_0, CLSA_cop_1))
 #Harmonization scripts to create "ever had "
 
 lsb_table$lsb_smk_ever_0<- ifelse(lsb_table$ICQ_SMOKE_COM==1 | 
                                   lsb_table$ICQ_SMOKE_COM==3 ,1L, 
                            ifelse(lsb_table$ICQ_SMOKE_COM==2, 0L,NA))
-
-lsb_table$lsb_smk_ever_0[lsb_table$SMK_TYPEOT_CG_COM==1 | 
-                         lsb_table$SMK_TYPEOT_SM_COM==1 | 
-                         lsb_table$SMK_TYPEOT_PI_COM==1 | 
-                         lsb_table$SMK_TYPEOT_CH_COM==1 |
-                         lsb_table$SMK_TYPEOT_SH_COM==1  ]<-1L
-
 
 #Direct mapping to harmonized tables keeping correct participants for each wave
 
@@ -1177,11 +1160,6 @@ lsb_table$lsb_smk_ever_1<- ifelse(lsb_table$ICQ_SMOKE_COF1==1 |
                                   lsb_table$lsb_smk_ever_0==1 ,1L,
                                   ifelse(lsb_table$ICQ_SMOKE_COF1==2&lsb_table$lsb_smk_ever_0==0, 0L,NA))
 
-lsb_table$lsb_smk_ever_1[lsb_table$SMK_TYPEOT_CG_COF1==1| 
-                         lsb_table$SMK_TYPEOT_SM_COF1==1| 
-                         lsb_table$SMK_TYPEOT_PI_COF1==1| 
-                         lsb_table$SMK_TYPEOT_CH_COF1==1|
-                         lsb_table$SMK_TYPEOT_SH_COF1==1]<-1L
 
 
 #Direct mapping to harmonized tables keeping correct participants for each wave
@@ -1389,13 +1367,23 @@ table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 **Category coding**:  
 
 **Harmonization status**:  complete
-**Harmonization comment**:   The variable "At what age did you smoke your first whole cigarette?" is used in harmonization.  
+**Harmonization comment**: The variable "At what age did you begin to smoke daily?" is used for harmonization for current or previous daily smokers; if a participant does not  have a valid respond to this study-specific question, the variable "At what age did you smoke your first whole cigarette?" is used for harmonization.  
 **R script**:  
 ```{r, echo=TRUE}
+table(CLSA_cop_0$SMK_FRSTCG_AG_COM, useNA="always")
+table(CLSA_cop_0$SMK_SMKDL_AG_COM, useNA="always")
+table(CLSA_cop_0$SMK_CGDL_AG_COM, useNA="always")
 
-lsb_CLSA_cop_0$lsb_smk_start_0 <- CLSA_cop_0$SMK_FRSTCG_AG_COM
+table(CLSA_cop_0$SMK_FRSTCG_AG_COM>CLSA_cop_0$SMK_SMKDL_AG_COM)
 table(CLSA_cop_0$SMK_FRSTCG_AG_COM,CLSA_cop_0$SMK_SMKDL_AG_COM)
-table(lsb_CLSA_cop_0$lsb_smk_start_0)
+
+
+
+lsb_CLSA_cop_0$lsb_smk_start_0 <-ifelse(is.na(CLSA_cop_0$SMK_CGDL_AG_COM)&!is.na(CLSA_cop_0$SMK_SMKDL_AG_COM), CLSA_cop_0$SMK_SMKDL_AG_COM,
+                                 ifelse(is.na(CLSA_cop_0$SMK_SMKDL_AG_COM)&!is.na(CLSA_cop_0$SMK_CGDL_AG_COM), CLSA_cop_0$SMK_CGDL_AG_COM,
+                                 ifelse(is.na(CLSA_cop_0$SMK_SMKDL_AG_COM)&is.na( CLSA_cop_0$SMK_CGDL_AG_COM), CLSA_cop_0$SMK_FRSTCG_AG_COM, NA)))
+
+table(lsb_CLSA_cop_0$lsb_smk_start_0, useNA = "always")
 table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 
 ```  
