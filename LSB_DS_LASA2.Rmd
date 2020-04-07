@@ -1389,7 +1389,7 @@ lsb_LASA2_3$lsb_smk_stop_3 <- ifelse(as.integer(LASA2H$HMVAR34)<0,NA,as.integer(
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_0    
 **Variable description**:  Number of estimated pack years of the participant.   
-**Value type**:  decimal    
+**Value type**:  integer    
 **Variable unit**:  pack-years    
 **Category coding**:  
 
@@ -1402,11 +1402,13 @@ lsb_LASA2_3$lsb_smk_stop_3 <- ifelse(as.integer(LASA2H$HMVAR34)<0,NA,as.integer(
 LASA2B$past_qty <- ifelse(as.integer(LASA2B$bmvar37p)==-2,0L, ifelse(as.integer(LASA2B$bmvar37p)<0,NA,as.integer(LASA2B$bmvar37p)/7))
 
 lsb_LASA2_0$lsb_smk_py_0 <- ifelse(as.numeric(LASA2B$bage) < lsb_LASA2_0$lsb_smk_start_0,NA, ifelse(as.integer(LASA2B$bmvar31)==1 | (as.integer(LASA2B$bmvar31)==2 & as.integer(LASA2B$bmvar35)==2),0L, ifelse(as.integer(LASA2B$bmvar35)==1, ((as.integer(LASA2B$bage)-lsb_LASA2_0$lsb_smk_start_0)*((lsb_LASA2_0$lsb_cig_qty_0)/20)), ifelse(as.integer(LASA2B$bmvar35)==2, ((lsb_LASA2_0$lsb_smk_stop_0 - lsb_LASA2_0$lsb_smk_start_0)*((LASA2B$past_qty)/20)),NA))))
+lsb_LASA2_0$lsb_smk_py_0 <-as.integer(round(lsb_LASA2_0$lsb_smk_py_0 ))
+
 ```  
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_1    
 **Variable description**:  Number of estimated pack years of the participant.     
-**Value type**:  decimal    
+**Value type**:  integer    
 **Variable unit**:  pack-years    
 **Category coding**:  
 
@@ -1418,11 +1420,12 @@ lsb_LASA2_0$lsb_smk_py_0 <- ifelse(as.numeric(LASA2B$bage) < lsb_LASA2_0$lsb_smk
 LASA2F$past_qty <- ifelse(as.integer(LASA2F$fmvar37p)==-2,0L, ifelse(as.integer(LASA2F$fmvar37p)<0,NA,as.integer(LASA2F$fmvar37p)/7))
 
 lsb_LASA2_1$lsb_smk_py_1 <- ifelse(as.numeric(LASA2F$fage) < lsb_LASA2_1$lsb_smk_start_1,NA, ifelse(as.integer(LASA2F$fmvar31)==1 | (as.integer(LASA2F$fmvar31)==2 & as.integer(LASA2F$fmvar35)==2),0L, ifelse(as.integer(LASA2F$fmvar35)==1, ((as.integer(LASA2F$fage)-lsb_LASA2_1$lsb_smk_start_1)*((lsb_LASA2_1$lsb_cig_qty_1)/20)), ifelse(as.integer(LASA2F$fmvar35)==2, ((lsb_LASA2_1$lsb_smk_stop_1 - lsb_LASA2_1$lsb_smk_start_1)*((LASA2F$past_qty)/20)),NA))))
+lsb_LASA2_1$lsb_smk_py_1 <-as.integer(round(lsb_LASA2_1$lsb_smk_py_1))
 ```  
 ### **Variable label**:  Pack years  
 **Variable name**:  lsb_smk_py_2    
 **Variable description**:  Number of estimated pack years of the participant.     
-**Value type**:  decimal    
+**Value type**:  integer      
 **Variable unit**:  pack-years    
 **Category coding**:  
 
@@ -1434,6 +1437,8 @@ lsb_LASA2_1$lsb_smk_py_1 <- ifelse(as.numeric(LASA2F$fage) < lsb_LASA2_1$lsb_smk
 LASA2G$past_qty <- ifelse(as.integer(LASA2G$gmvar37p)==-2,0L, ifelse(as.integer(LASA2G$gmvar37p)<0,NA,as.integer(LASA2G$gmvar37p)/7))
 
 lsb_LASA2_2$lsb_smk_py_2 <- ifelse(as.numeric(LASA2G$gage) < lsb_LASA2_2$lsb_smk_start_2,NA, ifelse(as.integer(LASA2G$gmvar31)==1 | (as.integer(LASA2G$gmvar31)==2 & as.integer(LASA2G$gmvar35)==2),0L, ifelse(as.integer(LASA2G$gmvar35)==1, ((as.integer(LASA2G$gage)-lsb_LASA2_2$lsb_smk_start_2)*((lsb_LASA2_2$lsb_cig_qty_2)/20)), ifelse(as.integer(LASA2G$gmvar35)==2, ((lsb_LASA2_2$lsb_smk_stop_2 - lsb_LASA2_2$lsb_smk_start_2)*((LASA2G$past_qty)/20)),NA))))
+lsb_LASA2_2$lsb_smk_py_2 <-as.integer(round(lsb_LASA2_2$lsb_smk_py_2))
+
 ```  
 
 # Physical activity subdomain
@@ -1767,7 +1772,7 @@ lsb_LASA2_3$lsb_pa_walk_time_3 <- ifelse(LASA2H$lsb_pa_walk_time_3_inter<30,0,
 ### **Variable label**:  Average walking time for transportation  
 **Variable name**:  lsb_pa_walk_trans_0    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1780,7 +1785,7 @@ lsb_LASA2_3$lsb_pa_walk_time_3 <- ifelse(LASA2H$lsb_pa_walk_time_3_inter<30,0,
 ### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_1    
 **Variable description**: Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1793,7 +1798,7 @@ lsb_LASA2_3$lsb_pa_walk_time_3 <- ifelse(LASA2H$lsb_pa_walk_time_3_inter<30,0,
 ### **Variable label**:  Average walking time for transportation    
 **Variable name**:  lsb_pa_walk_trans_2    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1807,7 +1812,7 @@ lsb_LASA2_3$lsb_pa_walk_time_3 <- ifelse(LASA2H$lsb_pa_walk_time_3_inter<30,0,
 ### **Variable label**:  Average walking for transportation    
 **Variable name**:  lsb_pa_walk_trans_3    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1822,7 +1827,7 @@ lsb_LASA2_3$lsb_pa_walk_time_3 <- ifelse(LASA2H$lsb_pa_walk_time_3_inter<30,0,
 ### **Variable label**:  Average walking for transportation    
 **Variable name**:  lsb_pa_walk_trans_4    
 **Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1836,7 +1841,7 @@ lsb_LASA2_3$lsb_pa_walk_time_3 <- ifelse(LASA2H$lsb_pa_walk_time_3_inter<30,0,
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_0    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1850,7 +1855,7 @@ lsb_LASA2_3$lsb_pa_walk_time_3 <- ifelse(LASA2H$lsb_pa_walk_time_3_inter<30,0,
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_1    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1864,7 +1869,7 @@ lsb_LASA2_3$lsb_pa_walk_time_3 <- ifelse(LASA2H$lsb_pa_walk_time_3_inter<30,0,
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_2    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1877,7 +1882,7 @@ lsb_LASA2_3$lsb_pa_walk_time_3 <- ifelse(LASA2H$lsb_pa_walk_time_3_inter<30,0,
 ### **Variable label**:  Average walking time for leisure  
 **Variable name**:  lsb_pa_walk_leis_3    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1890,7 +1895,7 @@ lsb_LASA2_3$lsb_pa_walk_time_3 <- ifelse(LASA2H$lsb_pa_walk_time_3_inter<30,0,
 ### **Variable label**:  Average walking for leisure  
 **Variable name**:  lsb_pa_walk_leis_4    
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1904,7 +1909,7 @@ lsb_LASA2_3$lsb_pa_walk_time_3 <- ifelse(LASA2H$lsb_pa_walk_time_3_inter<30,0,
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_0  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.  
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1920,7 +1925,7 @@ lsb_LASA2_0$lsb_pa_cycle_0 <- ifelse(LASA_extravar_PA$blphya01[LASA_extravar_PA$
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_1  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1936,7 +1941,7 @@ lsb_LASA2_1$lsb_pa_cycle_1 <- ifelse(LASA_extravar_PA$flphya01[LASA_extravar_PA$
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_2  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1952,7 +1957,7 @@ lsb_LASA2_2$lsb_pa_cycle_2 <- ifelse(LASA_extravar_PA$glphya01[LASA_extravar_PA$
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_3  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1968,7 +1973,7 @@ lsb_LASA2_3$lsb_pa_cycle_3 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_4  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1981,7 +1986,7 @@ lsb_LASA2_3$lsb_pa_cycle_3 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_5  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -1994,7 +1999,7 @@ lsb_LASA2_3$lsb_pa_cycle_3 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_6  
 **Variable description**:  Average minutes per week the participant spent on cycling in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -2151,7 +2156,7 @@ lsb_LASA2_3$lsb_pa_garden_3 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_0    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.    
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -2164,7 +2169,7 @@ lsb_LASA2_0$lsb_pa_garden_time_0 <- ifelse(LASA_extravar_PA$blphya01[LASA_extrav
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_1    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2177,7 +2182,7 @@ lsb_LASA2_1$lsb_pa_garden_time_1 <- ifelse(LASA_extravar_PA$flphya01[LASA_extrav
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_2    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2190,7 +2195,7 @@ lsb_LASA2_2$lsb_pa_garden_time_2 <- ifelse(LASA_extravar_PA$glphya01[LASA_extrav
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_3    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2203,7 +2208,7 @@ lsb_LASA2_3$lsb_pa_garden_time_3 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extrav
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_4    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2216,7 +2221,7 @@ lsb_LASA2_3$lsb_pa_garden_time_3 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extrav
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_5    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2229,7 +2234,7 @@ lsb_LASA2_3$lsb_pa_garden_time_3 <- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extrav
 ### **Variable label**:  Average gardening time    
 **Variable name**:  lsb_pa_garden_time_6    
 **Variable description**:  Average minutes per week the participant spent on gardening activities in the last week.       
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
@@ -2370,7 +2375,7 @@ lsb_LASA2_3$lsb_pa_house_3<- ifelse(LASA_extravar_PA$HLPHYA01[LASA_extravar_PA$i
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_0  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -2388,7 +2393,7 @@ lsb_LASA2_0$lsb_pa_house_time_0<- rowSums(cbind(LASA2B$lsb_pa_house_time_0_inter
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_1  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -2406,7 +2411,7 @@ lsb_LASA2_1$lsb_pa_house_time_1<- rowSums(cbind(LASA2F$lsb_pa_house_time_1_inter
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_2  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -2424,7 +2429,7 @@ lsb_LASA2_2$lsb_pa_house_time_2<- rowSums(cbind(LASA2G$lsb_pa_house_time_2_inter
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_3  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -2442,7 +2447,7 @@ lsb_LASA2_3$lsb_pa_house_time_3<- rowSums(cbind(LASA2H$lsb_pa_house_time_3_inter
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_4  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -2455,7 +2460,7 @@ lsb_LASA2_3$lsb_pa_house_time_3<- rowSums(cbind(LASA2H$lsb_pa_house_time_3_inter
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_5  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
@@ -2468,7 +2473,7 @@ lsb_LASA2_3$lsb_pa_house_time_3<- rowSums(cbind(LASA2H$lsb_pa_house_time_3_inter
 ### **Variable label**:  Average household activities time      
 **Variable name**:  lsb_pa_house_time_6  
 **Variable description**:  Average minutes per week the participant spent doing household activities in last week.  
-**Value type**:  integer  
+**Value type**:  decimal  
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
