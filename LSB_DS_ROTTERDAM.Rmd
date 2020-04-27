@@ -67,14 +67,9 @@ lsb_ROTTERDAM_3 <- data.frame(id = ROTTERDAM_3$id)
 **Harmonization comment**:   The study-specific variable is "Do you ever drink alcoholic beverages?" is used in harmonization. People who are currently at the same age as their answer to the question "How old were you when you stopped drinking alcoholic beverages?" were also coded as having consumed alcohol in the last 12 months. 
 **R script**:  
 ```{r, echo=TRUE}
-table(ROTTERDAM_0$ep_lf3, ROTTERDAM_0$ep_lf3b!=888, useNA="always")
-table((ROTTERDAM_0$ep_page- ROTTERDAM_0$ep_lf3b)==0, ROTTERDAM_0$ep_lf3,useNA="always")
-table(ROTTERDAM_0$ep_lf3, ROTTERDAM_0$ep_lf3a, useNA="always")
-table(ROTTERDAM_0$ep_lf3)
-lsb_ROTTERDAM_0$lsb_alc_cur_0<-ifelse(ROTTERDAM_0$ep_lf3==0 &(ROTTERDAM_0$ep_page- ROTTERDAM_0$ep_lf3b==0), 1L,
+## Used 'startage' instead of 'ep_page' for consistency with SDC
+lsb_ROTTERDAM_0$lsb_alc_cur_0<-ifelse(ROTTERDAM_0$ep_lf3==0 &(ROTTERDAM_0$startage - ROTTERDAM_0$ep_lf3b==0), 1L,
                                       ifelse(ROTTERDAM_0$ep_lf3==0, 0L,ifelse(ROTTERDAM_0$ep_lf3==1, 1L, NA)))
-
-table(lsb_ROTTERDAM_0$lsb_alc_cur_0, useNA="always")
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -93,12 +88,7 @@ table(lsb_ROTTERDAM_0$lsb_alc_cur_0, useNA="always")
 **Harmonization comment**:  The study-specific variable is "Do you ever drink alcoholic beverages?" is used in harmonization. 
 **R script**:  
 ```{r, echo=TRUE}
- 
-table(ROTTERDAM_1$e4_didalc, useNA="always")
-
-#table(ROTTERDAM_1$e4_didalc,ROTTERDAM_1$e4_didalcpl , useNA="always")
 lsb_ROTTERDAM_1$lsb_alc_cur_1<-ifelse(ROTTERDAM_1$e4_didalc==0, 0L, ifelse(ROTTERDAM_1$e4_didalc==1, 1L, NA))
-table(lsb_ROTTERDAM_1$lsb_alc_cur_1, useNA="always")
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -117,10 +107,10 @@ table(lsb_ROTTERDAM_1$lsb_alc_cur_1, useNA="always")
 **Harmonization comment**:   The study-specific variable asks "How often did you have a drink containing alcohol in the past year?"
 **R script**:  
 ```{r, echo=TRUE}
- 
-table(ROTTERDAM_2$e5_EIAUDIT1, useNA = "always")
-lsb_ROTTERDAM_2$lsb_alc_cur_2<- ifelse(ROTTERDAM_2$e5_EIAUDIT1==0, 0L, ifelse(is.na(ROTTERDAM_2$e5_EIAUDIT1), NA, 1L ))
-table(lsb_ROTTERDAM_2$lsb_alc_cur_2, useNA = "always")
+## Modifed script to explicitly code 1 values 
+lsb_ROTTERDAM_2$lsb_alc_cur_2<- ifelse(ROTTERDAM_2$e5_EIAUDIT1==0, 0L, 
+                                       ifelse(ROTTERDAM_2$e5_EIAUDIT1>0&ROTTERDAM_2$e5_EIAUDIT1<7, 1L, NA))
+
 ```  
 ### **Variable label**:  Current consumption of alcohol  
 **Variable name**: lsb_alc_cur_3  
@@ -138,9 +128,9 @@ table(lsb_ROTTERDAM_2$lsb_alc_cur_2, useNA = "always")
 **Harmonization comment**:   The study-specific variable asks "How often did you have a drink containing alcohol in the past year?"
 **R script**:  
 ```{r, echo=TRUE}
-table(ROTTERDAM_3$e6_EIAUDIT1, useNA= "always")
-lsb_ROTTERDAM_3$lsb_alc_cur_3<- ifelse(ROTTERDAM_3$e6_EIAUDIT1==0, 0L, ifelse(is.na(ROTTERDAM_3$e6_EIAUDIT1), NA, 1L))
-table(lsb_ROTTERDAM_3$lsb_alc_cur_3, useNA="always")
+## Modifed script to explicitly code 1 values (fixes study-specific values 7='don't know')
+lsb_ROTTERDAM_3$lsb_alc_cur_3<- ifelse(ROTTERDAM_3$e6_EIAUDIT1==0, 0L, 
+                                       ifelse(ROTTERDAM_3$e6_EIAUDIT1>0&ROTTERDAM_3$e6_EIAUDIT1<7, 1L, NA))
 ```  
 ### **Variable label**:  Current consumption of alcohol  
 **Variable name**: lsb_alc_cur_4  
