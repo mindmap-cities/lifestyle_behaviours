@@ -215,9 +215,12 @@ alc_table_rotterdam <- Reduce(MyMerge, list(ROTTERDAM_0, ROTTERDAM_1, ROTTERDAM_
                                          
 table(ROTTERDAM_0$ep_lf3a, useNA="always")
 
-alc_table_rotterdam$lsb_alc_ever_0 <- ifelse(ROTTERDAM_0$ep_lf3a==0, 0L, ifelse(ROTTERDAM_0$ep_lf3a==1, 1L, NA))
+## Changed script to include participants who answered 'yes' to 'Do you ever drink alcoholic beverages?'
+# alc_table_rotterdam$lsb_alc_ever_0 <- ifelse(ROTTERDAM_0$ep_lf3a==0, 0L, ifelse(ROTTERDAM_0$ep_lf3a==1, 1L, NA))
+alc_table_rotterdam$lsb_alc_ever_0 <- ifelse(ROTTERDAM_0$ep_lf3a==0, 0L, ifelse(ROTTERDAM_0$ep_lf3a>=1, 1L, NA))
+# table(alc_table_rotterdam$lsb_alc_ever_0)
+
 lsb_ROTTERDAM_0<- merge(lsb_ROTTERDAM_0,alc_table_rotterdam[,c("id","lsb_alc_ever_0")],by = "id", all.x = TRUE)
-table(lsb_ROTTERDAM_0$lsb_alc_ever_0 )
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -236,13 +239,19 @@ table(lsb_ROTTERDAM_0$lsb_alc_ever_0 )
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-table(ROTTERDAM_1$e4_didalcp, useNA="always")
-alc_table_rotterdam$lsb_alc_ever_1 <- ifelse(alc_table_rotterdam$lsb_alc_ever_0 ==1 | alc_table_rotterdam$e4_didalcp==1,1L,
-                                      ifelse(alc_table_rotterdam$e4_didalcp==0      & alc_table_rotterdam$lsb_alc_ever_0 ==0, 0L,NA))
+# table(ROTTERDAM_1$e4_didalc, useNA="always")
+# table(ROTTERDAM_1$e4_didalcp, useNA="always")
+# alc_table_rotterdam$lsb_alc_ever_1 <- ifelse(alc_table_rotterdam$lsb_alc_ever_0 ==1 | alc_table_rotterdam$e4_didalcp==1,1L,
+#                                       ifelse(alc_table_rotterdam$e4_didalcp==0      & alc_table_rotterdam$lsb_alc_ever_0 ==0, 0L,NA))
+
+## Changed script to include participants who answered 'yes' to 'Do you ever drink alcoholic beverages?'
+alc_table_rotterdam$lsb_alc_ever_1 <- with(alc_table_rotterdam, 
+                                           ifelse(e4_didalc==1|e4_didalcp==1|lsb_alc_ever_0==1, 1L, 
+                                             ifelse(e4_didalcp==1|lsb_alc_ever_0==0, 0L, NA)))
+table(alc_table_rotterdam$lsb_alc_ever_1, useNA = 'always')
+## 142 participants with 'Have you ever drank alcoholic beverages in the past?'='no', but lsb_alc_ever_0='yes'
 
 lsb_ROTTERDAM_1<- merge(lsb_ROTTERDAM_1,alc_table_rotterdam[,c("id","lsb_alc_ever_1")],by = "id", all.x = TRUE)
-
-table(lsb_ROTTERDAM_1$lsb_alc_ever_1)
 
 # this code creates fewer NAs but merged tables were used in the other studies
 # lsb_ROTTERDAM_1$lsb_alc_ever_1 <- ifelse(ROTTERDAM_1$e4_didalcp==0, 0L, ifelse(ROTTERDAM_1$e4_didalcp==1, 1L, NA))
