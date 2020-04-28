@@ -534,6 +534,7 @@ table(lsb_ROTTERDAM_3$lsb_alc_binge_3)
 **R script**:  
 ```{r, echo=TRUE}
 table(ROTTERDAM_0$ep_lf3nd, useNA="always")
+table(ROTTERDAM_0$ep_lf3q, useNA="always")
 
 table(ROTTERDAM_0$ep_lf3l,useNA="always")
 
@@ -543,8 +544,8 @@ ROTTERDAM_0$nb_redwine  <-ifelse(ROTTERDAM_0$ep_lf3h==1, ROTTERDAM_0$ep_lf3i, if
 # ROTTERDAM_0$nb_modstrong<-ifelse(ROTTERDAM_0$ep_lf3l==1, ROTTERDAM_0$ep_lf3m, ifelse(ROTTERDAM_0$ep_lf3l==0, 0L, NA))
 ROTTERDAM_0$nb_liq      <-ifelse(ROTTERDAM_0$ep_lf3n==1, ROTTERDAM_0$ep_lf3o, ifelse(ROTTERDAM_0$ep_lf3n==0, 0L, NA))
   
-lsb_ROTTERDAM_0$lsb_alc_total_0 <- rowSums(ROTTERDAM_0[,278:281])
-  
+# lsb_ROTTERDAM_0$lsb_alc_total_0 <- rowSums(ROTTERDAM_0[,278:281])
+lsb_ROTTERDAM_0$lsb_alc_total_0 <- with(ROTTERDAM_0, nb_beer+nb_whitewine+nb_redwine+nb_liq)
 
 table(lsb_ROTTERDAM_0$lsb_alc_total_0, useNA="always")
 
@@ -573,7 +574,7 @@ table(lsb_ROTTERDAM_0$lsb_alc_total_0, useNA="always")
 #to check the study-specific variable 
 ROTTERDAM_0$lsb_alc_total_0<-lsb_ROTTERDAM_0$lsb_alc_total_0
 table(ROTTERDAM_0$ep_lf3nd, useNA="always")
-as.integer(ROTTERDAM_0$ep_lf3nd)>as.integer(ROTTERDAM_0$lsb_alc_total_0)
+test<-as.integer(ROTTERDAM_0$ep_lf3nd)>as.integer(ROTTERDAM_0$lsb_alc_total_0)
 
 
 ```  
@@ -584,7 +585,7 @@ as.integer(ROTTERDAM_0$ep_lf3nd)>as.integer(ROTTERDAM_0$lsb_alc_total_0)
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:        
+**Harmonization status**:  complete      
 **Harmonization comment**:   The study specific variable "Do you drink moderately strong alcoholic beverages like sherry, port, advocaat, bessenjenever, campari, liqueur, vermouth or martini?" has not been used in the harmonization of this data schema variable.  
 
 **R script**:  
@@ -597,7 +598,8 @@ ROTTERDAM_1$nb_redwine  <-ifelse(ROTTERDAM_1$e4_didrwi==1, ROTTERDAM_1$e4_didrwi
 ROTTERDAM_1$nb_liq      <-ifelse(ROTTERDAM_1$e4_didli==1, ROTTERDAM_1$e4_didlifr, ifelse(ROTTERDAM_1$e4_didli==0, 0L, NA))
   
 table(ROTTERDAM_1$e4_didwwifr)
-lsb_ROTTERDAM_1$lsb_alc_total_1 <- rowSums(ROTTERDAM_1[,289:292])
+# lsb_ROTTERDAM_1$lsb_alc_total_1 <- rowSums(ROTTERDAM_1[,289:292])
+lsb_ROTTERDAM_1$lsb_alc_total_1 <- with(ROTTERDAM_1, nb_beer+nb_whitewine+nb_redwine+nb_liq)
   
 # ROTTERDAM_1$e4_didwwi
 # ROTTERDAM_1$e4_didwwifr
