@@ -619,11 +619,11 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1, useNA="always")
 **Category coding**:  N/A  
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization comment**:   Study-specific variable is "How often did you have a drink containing alcohol in the past year?" (i.e., cannot distinguish type of alcohol)
 **R script**:  
 ```{r, echo=TRUE}
  
-# e5_EIAUDIT2, e5_EIAUDIT1
+
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
 **Variable name**: lsb_alc_total_3  
@@ -633,13 +633,10 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1, useNA="always")
 **Category coding**:  N/A  
 
 **Harmonization status**:  impossible    
-**Harmonization comment**:   
+**Harmonization comment**:   Study-specific variable is "How often did you have a drink containing alcohol in the past year?" (i.e., cannot distinguish type of alcohol)
 **R script**:  
 ```{r, echo=TRUE}
- # e6_EIAUDIT1, e6_EIAUDIT2
-# How many drinks containing alcohol do you have on a typical day when you are drinking?
-# How often did you have a drink containing alcohol in the past year?
-# but if we use these variables, we can't specificy whether wine, beer, liquor or other type
+
 
 ```  
 
@@ -657,7 +654,9 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1, useNA="always")
 table(ROTTERDAM_0$ep_lf3g, useNA = "always")
 table(ROTTERDAM_0$ep_lf3i, useNA = "always")
 
-lsb_ROTTERDAM_0$lsb_alc_wine_0<-ROTTERDAM_0$ep_lf3g+ 	ROTTERDAM_0$ep_lf3i
+# lsb_ROTTERDAM_0$lsb_alc_wine_0<-ROTTERDAM_0$ep_lf3g + ROTTERDAM_0$ep_lf3i
+lsb_ROTTERDAM_0$lsb_alc_wine_0 <- with(ROTTERDAM_0, nb_whitewine + nb_redwine)
+
 table(lsb_ROTTERDAM_0$lsb_alc_wine_0, useNA = "always")
 
 ```  
@@ -676,7 +675,9 @@ table(ROTTERDAM_1$e4_didwwifr, useNA="always")
 
 table(ROTTERDAM_1$e4_didrwifr, useNA="always")
 
-lsb_ROTTERDAM_1$lsb_alc_wine_1<-ROTTERDAM_1$e4_didwwifr+ 	ROTTERDAM_1$e4_didrwifr
+# lsb_ROTTERDAM_1$lsb_alc_wine_1<-ROTTERDAM_1$e4_didwwifr+ 	ROTTERDAM_1$e4_didrwifr
+lsb_ROTTERDAM_1$lsb_alc_wine_1 <- with(ROTTERDAM_1, nb_whitewine + nb_redwine)
+
 table(lsb_ROTTERDAM_1$lsb_alc_wine_1, useNA="always")
 ```  
 ### **Variable label**:   Current quantity of wine consumed per week  
@@ -722,7 +723,9 @@ table(lsb_ROTTERDAM_1$lsb_alc_wine_1, useNA="always")
 ```{r, echo=TRUE}
 table(ROTTERDAM_0$ep_lf3d, useNA="always")
  
-lsb_ROTTERDAM_0$lsb_alc_beer_0<- ifelse(ROTTERDAM_0$ep_lf3d==0|ROTTERDAM_0$ep_lf3d==8 , 0, ifelse(!is.na(ROTTERDAM_0$ep_lf3e), as.numeric(ROTTERDAM_0$ep_lf3e),NA))
+# lsb_ROTTERDAM_0$lsb_alc_beer_0<- ifelse(ROTTERDAM_0$ep_lf3d==0|ROTTERDAM_0$ep_lf3d==8 , 0, ifelse(!is.na(ROTTERDAM_0$ep_lf3e), as.numeric(ROTTERDAM_0$ep_lf3e),NA))
+lsb_ROTTERDAM_0$lsb_alc_beer_0 <- ROTTERDAM_0$nb_beer
+
 table(ROTTERDAM_0$ep_lf3e, useNA="always")
 table(lsb_ROTTERDAM_0$lsb_alc_beer_0, useNA = "always")
 
@@ -741,8 +744,10 @@ table(lsb_ROTTERDAM_0$lsb_alc_beer_0, useNA = "always")
 ```{r, echo=TRUE}
 
 table(ROTTERDAM_1$e4_didbe,ROTTERDAM_1$e4_didbefr, useNA="always")
-lsb_ROTTERDAM_1$lsb_alc_total_1<-ifelse(ROTTERDAM_1$e4_didbe==0|ROTTERDAM_1$e4_didbe==8 , 0,as.numeric(ROTTERDAM_1$e4_didbefr)) 
-table(lsb_ROTTERDAM_1$lsb_alc_total_1)
+# lsb_ROTTERDAM_1$lsb_alc_total_1<-ifelse(ROTTERDAM_1$e4_didbe==0|ROTTERDAM_1$e4_didbe==8 , 0,as.numeric(ROTTERDAM_1$e4_didbefr)) 
+lsb_ROTTERDAM_1$lsb_alc_beer_1 <- nb_beer
+
+table(lsb_ROTTERDAM_1$lsb_alc_beer_1)
 
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
@@ -784,7 +789,7 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:      
+**Harmonization status**:  complete 
 **Harmonization comment**:    The study specific variable "Do you drink moderately strong alcoholic beverages like sherry, port, advocaat, bessenjenever, campari, liqueur, vermouth or martini?" and "Do you drink sherry, port, vermouth or Martini?" have not been used in the harmonization of this data schema variable.  "How many glasses of strong alcoholic beverages do you drink per week?" has been used in the harmonization of the DataSchema variable.  
 
 **R script**:  
@@ -792,7 +797,8 @@ table(lsb_ROTTERDAM_1$lsb_alc_total_1)
 table(ROTTERDAM_0$ep_lf3n, useNA="always")
 table(ROTTERDAM_0$ep_lf3o, useNA="always")
 
-lsb_ROTTERDAM_0$lsb_alc_liq_0<-ifelse(ROTTERDAM_0$ep_lf3n==0|ROTTERDAM_0$ep_lf3n==8 , 0,as.numeric(ROTTERDAM_0$ep_lf3o)) 
+# lsb_ROTTERDAM_0$lsb_alc_liq_0<-ifelse(ROTTERDAM_0$ep_lf3n==0|ROTTERDAM_0$ep_lf3n==8 , 0,as.numeric(ROTTERDAM_0$ep_lf3o))
+lsb_ROTTERDAM_0$lsb_alc_liq_0 <- ROTTERDAM_0$nb_liq
 table(lsb_ROTTERDAM_0$lsb_alc_liq_0, useNA="always")
 
 ```  
@@ -804,14 +810,16 @@ table(lsb_ROTTERDAM_0$lsb_alc_liq_0, useNA="always")
 **Category coding**:  N/A  
  
 
-**Harmonization status**:      
+**Harmonization status**:  complete 
 **Harmonization comment**:    The study specific variable "Do you drink moderately strong alcoholic beverages like sherry, port, advocaat, bessenjenever, campari, liqueur, vermouth or martini?" has not been used in the harmonization of this variable. "Do you drink strong alcoholic beverages like Beerenburg, Brandy, lemon jenever, cognac, rum, jenever, Jagermeister, vieux or whisky?"" has been used in the harmonization of the DataSchema variable.  
 **R script**:  
 ```{r, echo=TRUE}
 table(ROTTERDAM_1$e4_didli, useNA="always")
 table(ROTTERDAM_1$e4_didlifr, useNA="always")
 
-lsb_ROTTERDAM_1$lsb_alc_liq_1<-ifelse(ROTTERDAM_1$e4_didli==0|ROTTERDAM_1$e4_didli==8 , 0,as.numeric(ROTTERDAM_1$e4_didlifr)) 
+# lsb_ROTTERDAM_1$lsb_alc_liq_1<-ifelse(ROTTERDAM_1$e4_didli==0|ROTTERDAM_1$e4_didli==8 , 0,as.numeric(ROTTERDAM_1$e4_didlifr)) 
+lsb_ROTTERDAM_1$lsb_alc_liq_1 <- ROTTERDAM_1$nb_liq
+
 table(lsb_ROTTERDAM_1$lsb_alc_liq_1, useNA="always")
  
 
