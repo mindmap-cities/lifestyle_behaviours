@@ -36,9 +36,9 @@ opal.logout(erasmus_opal)
 library('tidyverse')
 
 ROTTERDAM_0 <- ROTTERDAM_0 %>% arrange(id)
-ROTTERDAM_1 <- ROTTERDAM_0 %>% arrange(id)
-ROTTERDAM_2 <- ROTTERDAM_0 %>% arrange(id)
-ROTTERDAM_3 <- ROTTERDAM_0 %>% arrange(id)
+ROTTERDAM_1 <- ROTTERDAM_1 %>% arrange(id)
+ROTTERDAM_2 <- ROTTERDAM_2 %>% arrange(id)
+ROTTERDAM_3 <- ROTTERDAM_3 %>% arrange(id)
 
 ```
 ## Assign participant id as first column of your harmonized dataframes
@@ -116,7 +116,7 @@ lsb_ROTTERDAM_1$lsb_alc_cur_1<-ifelse(ROTTERDAM_1$e4_didalc==0, 0L, ifelse(ROTTE
 **Harmonization comment**:   The study-specific variable asks "How often did you have a drink containing alcohol in the past year?"
 **R script**:  
 ```{r, echo=TRUE}
-## Modifed script to explicitly code 1 values 
+
 lsb_ROTTERDAM_2$lsb_alc_cur_2<- ifelse(ROTTERDAM_2$e5_EIAUDIT1==0, 0L, 
                                        ifelse(ROTTERDAM_2$e5_EIAUDIT1>0&ROTTERDAM_2$e5_EIAUDIT1<7, 1L, NA))
 
@@ -137,7 +137,7 @@ lsb_ROTTERDAM_2$lsb_alc_cur_2<- ifelse(ROTTERDAM_2$e5_EIAUDIT1==0, 0L,
 **Harmonization comment**:   The study-specific variable asks "How often did you have a drink containing alcohol in the past year?"
 **R script**:  
 ```{r, echo=TRUE}
-## Modifed script to explicitly code 1 values (fixes study-specific values 7='don't know')
+
 lsb_ROTTERDAM_3$lsb_alc_cur_3<- ifelse(ROTTERDAM_3$e6_EIAUDIT1==0, 0L, 
                                        ifelse(ROTTERDAM_3$e6_EIAUDIT1>0&ROTTERDAM_3$e6_EIAUDIT1<7, 1L, NA))
 ```  
@@ -221,17 +221,12 @@ MyMerge <- function(x,y){
 }
 #Reducing the table to the variables needed
 alc_table_rotterdam <- Reduce(MyMerge, list(ROTTERDAM_0, ROTTERDAM_1, ROTTERDAM_2, ROTTERDAM_3))
-                                         
-table(ROTTERDAM_0$ep_lf3a, useNA="always")
 
-## Changed script to include participants who answered 'yes' to 'Do you ever drink alcoholic beverages?'
-# alc_table_rotterdam$lsb_alc_ever_0 <- ifelse(ROTTERDAM_0$ep_lf3a==0, 0L, ifelse(ROTTERDAM_0$ep_lf3a==1, 1L, NA))
-alc_table_rotterdam$lsb_alc_ever_0 <- ifelse(ROTTERDAM_0$ep_lf3a==0, 0L, ifelse(ROTTERDAM_0$ep_lf3a>=1, 1L, NA))
-# table(alc_table_rotterdam$lsb_alc_ever_0)
+alc_table_rotterdam$lsb_alc_ever_0 <- ifelse(ROTTERDAM_0$ep_lf3==1, 1L,  # if currently yes
+                                             ifelse(ROTTERDAM_0$ep_lf3a==1, 1L,  # if in past yes
+                                                    ifelse(ROTTERDAM_0$ep_lf3a==0, 0L, NA)))  # if currently and in past no
 
 lsb_ROTTERDAM_0<- merge(lsb_ROTTERDAM_0,alc_table_rotterdam[,c("id","lsb_alc_ever_0")],by = "id", all.x = TRUE)
-
-test <- ifelse(lsb_ROTTERDAM_0$id==ROTTERDAM_0$id, 1, 0)
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
@@ -250,22 +245,17 @@ test <- ifelse(lsb_ROTTERDAM_0$id==ROTTERDAM_0$id, 1, 0)
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-# table(ROTTERDAM_1$e4_didalc, useNA="always")
-# table(ROTTERDAM_1$e4_didalcp, useNA="always")
-# alc_table_rotterdam$lsb_alc_ever_1 <- ifelse(alc_table_rotterdam$lsb_alc_ever_0 ==1 | alc_table_rotterdam$e4_didalcp==1,1L,
-#                                       ifelse(alc_table_rotterdam$e4_didalcp==0      & alc_table_rotterdam$lsb_alc_ever_0 ==0, 0L,NA))
 
-## Changed script to include participants who answered 'yes' to 'Do you ever drink alcoholic beverages?'
 alc_table_rotterdam$lsb_alc_ever_1 <- with(alc_table_rotterdam, 
                                            ifelse(e4_didalc==1|e4_didalcp==1|lsb_alc_ever_0==1, 1L, 
-                                             ifelse(e4_didalcp==1|lsb_alc_ever_0==0, 0L, NA)))
+                                             ifelse(e4_didalcp==0, 0L, NA)))
+
 table(alc_table_rotterdam$lsb_alc_ever_1, useNA = 'always')
+
+## Check with cohort how to handle discrepancies between lsb_alc_ever_1 and lsb_alc_ever_0
 ## 142 participants with 'Have you ever drank alcoholic beverages in the past?'='no', but lsb_alc_ever_0='yes'
 
 lsb_ROTTERDAM_1<- merge(lsb_ROTTERDAM_1,alc_table_rotterdam[,c("id","lsb_alc_ever_1")],by = "id", all.x = TRUE)
-
-# this code creates fewer NAs but merged tables were used in the other studies
-# lsb_ROTTERDAM_1$lsb_alc_ever_1 <- ifelse(ROTTERDAM_1$e4_didalcp==0, 0L, ifelse(ROTTERDAM_1$e4_didalcp==1, 1L, NA))
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
