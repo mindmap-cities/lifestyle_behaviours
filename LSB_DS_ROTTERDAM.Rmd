@@ -1761,24 +1761,18 @@ lsb_ROTTERDAM_3$lsb_smk_stop_3 <- ifelse(ROTTERDAM_3$e6_EILFHE5<777, ROTTERDAM_3
 **Harmonization comment**: Two study-specific variables: "How much time do you usually spend walking per week in the winter? With walking we mean all kind of walking, including walking to go shopping." and "How much time do you usually spend walking per week in the summer? With walking we mean all kind of walking, including walking to go shopping." were used to harmonize the DataSchema variable. The average of these study-specific variables was taken. 
 **R script**:  
 ```{r, echo=TRUE}
-#99.99 is not listed as missing. Is it correct?
-
-table(ROTTERDAM_0$ep_piwalksm, useNA="always" )
-summary(ROTTERDAM_0$ep_piwalksm)
-table(ROTTERDAM_0$ep_piwalkwm, useNA="always" )
-table(ROTTERDAM_0$ep_piwalkwm+ROTTERDAM_0$ep_piwalksm, useNA="always" )
+# 99.99 is not listed as missing. Is it correct?
 
 ROTTERDAM_0$ep_piwalkwm1<-ifelse(ROTTERDAM_0$ep_piwalkwm==99.99, NA, ROTTERDAM_0$ep_piwalkwm)
 ROTTERDAM_0$ep_piwalksm1<-ifelse(ROTTERDAM_0$ep_piwalksm==99.99, NA, ROTTERDAM_0$ep_piwalksm)
 
 ROTTERDAM_0$lsb_pa_walk_time_0 <-(ROTTERDAM_0$ep_piwalkwm1+ROTTERDAM_0$ep_piwalksm1)/2  
-table(ROTTERDAM_0$lsb_pa_walk_time_0)
 lsb_ROTTERDAM_0$lsb_pa_walk_time_0<-ifelse(ROTTERDAM_0$lsb_pa_walk_time_0<0.5, 0L,
                                        ifelse(ROTTERDAM_0$lsb_pa_walk_time_0>=0.5 &ROTTERDAM_0$lsb_pa_walk_time_0<1,1L,
                                            ifelse(ROTTERDAM_0$lsb_pa_walk_time_0>=1 &ROTTERDAM_0$lsb_pa_walk_time_0<2,2L,
                                                   ifelse(ROTTERDAM_0$lsb_pa_walk_time_0>=2 &ROTTERDAM_0$lsb_pa_walk_time_0<4,3L,
-                                                         ifelse(ROTTERDAM_0$lsb_pa_walk_time_0>4,4L, NA)))))
-table(lsb_ROTTERDAM_0$lsb_pa_walk_time_0, useNA = "always")
+                                                         ifelse(ROTTERDAM_0$lsb_pa_walk_time_0>=4,4L, NA)))))
+
 ```  
 ### **Variable label**:  Average walking time   
 **Variable name**:   lsb_pa_walk_time_1  
@@ -2062,24 +2056,16 @@ table(lsb_ROTTERDAM_0$lsb_pa_walk_time_0, useNA = "always")
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible    
+**Harmonization status**:  complete    
 **Harmonization comment**:    Two study-specific variables: "How many times do you cycle per week in the summer?" and "How many times do you cycle per week in the winter?" averaged to harmonize this variable
 **R script**:  
 ```{r, echo=TRUE}
-table(ROTTERDAM_0$ep_picyclsm)
-table(ROTTERDAM_0$ep_picyclwm)
-
-table(ROTTERDAM_0$ep_picyclsm, useNA="always" )
-table(ROTTERDAM_0$ep_picyclwm, useNA="always" )
 
 ROTTERDAM_0$ep_picyclsm1<-ifelse(ROTTERDAM_0$ep_picyclsm==99.99, NA, ROTTERDAM_0$ep_picyclsm)
 ROTTERDAM_0$ep_picyclsm1<-ifelse(ROTTERDAM_0$ep_picyclsm==99.99, NA, ROTTERDAM_0$ep_picyclsm)
 
 lsb_ROTTERDAM_0$lsb_pa_cycle_0 <-(ROTTERDAM_0$ep_picyclsm1+ROTTERDAM_0$ep_picyclsm1)*60/2  
 
-table(lsb_ROTTERDAM_0$lsb_pa_cycle_0)
-
-table(lsb_ROTTERDAM_0$lsb_pa_cycle_0 , useNA = "always")
 ```  
 ### **Variable label**:  Average cycling time    
 **Variable name**:  lsb_pa_cycle_1  
@@ -2182,15 +2168,10 @@ table(lsb_ROTTERDAM_0$lsb_pa_cycle_0 , useNA = "always")
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-table(ROTTERDAM_0$ep_pigardsd)
-table(ROTTERDAM_0$ep_pigardwd)
-
 
 lsb_ROTTERDAM_0$lsb_pa_garden_0 <-ifelse(ROTTERDAM_0$ep_pigardsd==0&ROTTERDAM_0$ep_pigardwd==0, 0L,
                                          ifelse((ROTTERDAM_0$ep_pigardsd>0 & ROTTERDAM_0$ep_pigardsd<77)|
                                                   (ROTTERDAM_0$ep_pigardwd>0&ROTTERDAM_0$ep_pigardsd<77),1L, NA))
-
-table(lsb_ROTTERDAM_0$lsb_pa_garden_0, useNA="always")
 
 ```  
 ### **Variable label**:  Gardening    
@@ -2426,16 +2407,11 @@ table(lsb_ROTTERDAM_0$lsb_pa_garden_0, useNA="always")
 **R script**:  
 ```{r, echo=TRUE}
 
-table(ROTTERDAM_0$ep_picdome1,useNA="always")
-table(ROTTERDAM_0$ep_picdome2,useNA="always")
-table(ROTTERDAM_0$ep_picdome3,useNA="always")
-
- 	
 lsb_ROTTERDAM_0$lsb_pa_garden_0 <-ifelse(ROTTERDAM_0$ep_picdome1==0&ROTTERDAM_0$ep_picdome2==0&ROTTERDAM_0$ep_picdome3==0, 0L,
                                          ifelse((ROTTERDAM_0$ep_picdome1>0 & ROTTERDAM_0$ep_picdome1<99)|
                                                   (ROTTERDAM_0$ep_picdome2>0&ROTTERDAM_0$ep_picdome2<99)|
-                                                  (ROTTERDAM_0$ep_picdome3>0&ROTTERDAM_0$ep_picdome3<99),1L, NA))
-table(lsb_ROTTERDAM_0$lsb_pa_garden_0, useNA="always")
+                                                  (ROTTERDAM_0$ep_picdome3>0&ROTTERDAM_0$ep_picdome3<99), 1L, NA))
+
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_1  
@@ -2565,20 +2541,12 @@ household tasks?",
 "How much time per week do you usually spend on moderately heavy household tasks?" were used to harmonize the DataSchema variable.   
 **R script**:  
 ```{r, echo=TRUE}
- 
-table(ROTTERDAM_0$ep_picdome1,useNA="always")
-table(ROTTERDAM_0$ep_picdome2,useNA="always")
-table(ROTTERDAM_0$ep_picdome3,useNA="always")
-
 
 ROTTERDAM_0$ep_picdome1.<-ifelse(ROTTERDAM_0$ep_picdome1==99.99, NA, ROTTERDAM_0$ep_picdome1)
 ROTTERDAM_0$ep_picdome2.<-ifelse(ROTTERDAM_0$ep_picdome2==99.99, NA, ROTTERDAM_0$ep_picdome2)
 ROTTERDAM_0$ep_picdome3.<-ifelse(ROTTERDAM_0$ep_picdome3==99.99, NA, ROTTERDAM_0$ep_picdome3)
 
 lsb_ROTTERDAM_0$lsb_pa_house_time_0 <-(ROTTERDAM_0$ep_picdome1.+ROTTERDAM_0$ep_picdome2.+ROTTERDAM_0$ep_picdome3.)*60/3  
-table(lsb_ROTTERDAM_0$lsb_pa_house_time_0)
- 	
-table(lsb_ROTTERDAM_0$lsb_pa_house_time_0, useNA="always")
 
 ```  
 ### **Variable label**:  Average household activities time      
