@@ -14,27 +14,27 @@ erasmus_opal <- opal.login()
 #Login to Opal server and assign the content of the GLOBE table(s) to your RStudio environment
 # GLOBE1991
 opal.assign.table.tibble(erasmus_opal, 'GLOBE1991', 'GLOBE.GLOBE1991', variables= list("v137","v135","v139","v138","v136","v150","v145","SEGVv429","v147","v151","v153","SEVMv168","v140","v141","v240","v131")) 
-GLOBE1991 <- opal.execute(erasmus_opal,'GLOBE1991')
+GLOBE1991 <- opal.execute(erasmus_opal,'GLOBE1991') %>% as_tibble %>% arrange(id)
 # GLOBE1997
 opal.assign.table.tibble(erasmus_opal, 'GLOBE1997', 'GLOBE.GLOBE1997',variables=list("v8d","v8b","v7","v8c","v8a","v9b","v9a","v9c","g13","v10e","v10b4","v10a","v10b3","v10b1","v10c","v10b2","v5")) 
-GLOBE1997 <- opal.execute(erasmus_opal,'GLOBE1997')
+GLOBE1997 <- opal.execute(erasmus_opal,'GLOBE1997') %>% as_tibble %>% arrange(id)
 # GLOBE2004
 opal.assign.table.tibble(erasmus_opal, 'GLOBE2004', 'GLOBE.GLOBE2004', variables=list("w075","w074","w253","w078","w076","w077","w073","w099","w089","w090","w091","w093","w094","w095","w097","w098","w099","w101","w102","w103","w105","w106","w107","w139","w140","w141","w142","w143","w144","w180","w183","w113","w118","w123","w128","w133",'w114','w115','w116','w119','w120','w121','w124','w125','w126','w129','w130','w131')) 
-GLOBE2004 <- opal.execute(erasmus_opal,'GLOBE2004')
+GLOBE2004 <- opal.execute(erasmus_opal,'GLOBE2004') %>% as_tibble %>% arrange(id)
 # GLOBE2011
 opal.assign.table.tibble(erasmus_opal, 'GLOBE2011', 'GLOBE.GLOBE2011', variables =list("v12_alc_freq","v13_alc_hv","v16_alcsoort_ra","v15_alcsoort","v16_alcsoort_r","v14_alc_binge","v17_rook_freq","v17_sig_pw","v17_sig_pd","v17_sigaar_pd","v18_rook_add","v19_a_wada","v19_a_waur","v19_a_wamin","v19_b_fida","v19_b_fiur","v19_b_fimin","v19_c_tuda","v19_c_tuur","v19_c_tumin","v21_a_hhda","v21_a_hhur","v21_a_hhmin","v21_b_zhda","v21_b_zhur","v21_b_zhmin","v32_a_ffq_groe","v32_b_ffq_rgro","v32_c_ffq_frui","v32_d_ffq_vifi","v23_b_wfda","v23_b_wfur","v23_b_wfmin","v20_a_s1ur","v20_b_s2ur","v20_c_s3ur","v20_d_s4ur","v20_a_s1min","v20_b_s2min","v20_c_s3min","v20_d_s4min","v20_a_s1da","v20_b_s2da","v20_c_s3da","v20_d_s4da")) 
-GLOBE2011 <- opal.execute(erasmus_opal,'GLOBE2011')
+GLOBE2011 <- opal.execute(erasmus_opal,'GLOBE2011') %>% as_tibble %>% arrange(id)
 # GLOBE2014
 opal.assign.table.tibble(erasmus_opal, 'GLOBE2014', 'GLOBE.GLOBE2014', variables =list("G14v26","G14v27","G14v25","G14v25freq2","G14v23_d","G14v23freqd","G14v28_a_dag","G14v28_a_uur","G14v28_a_min","G14v28_b_dag","G14v28_b_uur","G14v28_b_min","G14v29_a_dag","G14v29_a_uur","G14v29_a_min","G14v29_b_dag","G14v29_b_uur","G14v29_b_min","G14v29_c_dag","G14v29_c_uur","G14v29_c_min","G14v32_a_dag","G14v32_a_uur","G14v32_a_min","G14v32_b_dag","G14v32_b_uur","G14v32_b_min","G14v30_a_min","G14v30_b_min","G14v30_c_min","G14v30_d_min","G14v30_a_uur","G14v30_b_uur","G14v30_c_uur","G14v30_d_uur","G14v30_a_dag","G14v30_b_dag","G14v30_c_dag","G14v30_d_dag","G14v30sport_a","G14v30sport_b","G14v30sport_c","G14v30sport_d")) 
-GLOBE2014 <- opal.execute(erasmus_opal,'GLOBE2014')
+GLOBE2014 <- opal.execute(erasmus_opal,'GLOBE2014') %>% as_tibble %>% arrange(id)
 ```
 ## Assign participant id as first column of your harmonized dataframes
 ```{r, echo=FALSE}
-lsb_GLOBE_0 <- data.frame(id = GLOBE1991$id)
-lsb_GLOBE_1 <- data.frame(id = GLOBE1997$id)
-lsb_GLOBE_2 <- data.frame(id = GLOBE2004$id)
-lsb_GLOBE_3 <- data.frame(id = GLOBE2011$id)
-lsb_GLOBE_4 <- data.frame(id = GLOBE2014$id)
+lsb_GLOBE_0 <- data.frame(id = GLOBE1991$id) %>% as_tibble %>% arrange(id)
+lsb_GLOBE_1 <- data.frame(id = GLOBE1997$id) %>% as_tibble %>% arrange(id)
+lsb_GLOBE_2 <- data.frame(id = GLOBE2004$id) %>% as_tibble %>% arrange(id)
+lsb_GLOBE_3 <- data.frame(id = GLOBE2011$id) %>% as_tibble %>% arrange(id)
+lsb_GLOBE_4 <- data.frame(id = GLOBE2014$id) %>% as_tibble %>% arrange(id)
 ```
 
 ## When you are done with your work, logout of Opal server
