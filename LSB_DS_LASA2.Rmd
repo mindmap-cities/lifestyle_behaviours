@@ -13,26 +13,26 @@ library(epiDisplay)
 erasmus_opal <- opal.login()
 #Login to Opal server and assign the content of the LUCAS table(s) to your RStudio environment
 opal.assign.table.tibble(erasmus_opal, 'LASA2B', 'LASA.LASA2B',variables = list('bmalcoh6','bmalcohn','bmalcohu','bmalcuse','bmalcohu','bmalcohd','bmvar33','bmvar34','bmvar35','bmvar35p','bmvar41','bmvar31','bmvar32','blphya08','badl5a','badl5c','blphya09','badl5b','blphya07','badl5d','blphya06','blphya10','blphya11','blphya12','blphya13','blphya14','blphya15','blphya16','blphya17','blphya18','blphya19','blphya20','blphya31','blphya32','blphya33','blphya34','blphya35','blphya36','blphya37','blphya38','blphya29','blphya30','bcesd11','bqsleep2','bqsleep1','bqsleep4','bqsleep3','bmvar37','bmvar37p','bage','blphya21','blphya25'))
-LASA2B <- opal.execute(erasmus_opal,'LASA2B')
+LASA2B <- opal.execute(erasmus_opal,'LASA2B') %>% as_tibble %>% arrange(id)
 
 opal.assign.table.tibble(erasmus_opal, 'LASA2F', 'LASA.LASA2F',variables = list('fmalcoh6','fmalcohn','bmalcohu','fmalcuse','fmalcohu','fmalcohd','fmvar31','fmvar32','fmvar33','fmvar34','fmvar35','fmvar35p','fmvar41','flphya08','fadl5a','fadl5c','flphya09','fadl5b','flphya07','fadl5d','flphya06','flphya10','flphya11','flphya12','flphya13','flphya14','flphya15','flphya16','flphya17','flphya18','flphya19','flphya20','flphya31','flphya32','flphya33','flphya34','flphya35','flphya36','flphya37','flphya38','flphya29','flphya30','fcesd11','fqsleep2','fqsleep1','fqsleep4','fqsleep3','fmvar37','fmvar37p','fage','flphya21','flphya25'))
-LASA2F <- opal.execute(erasmus_opal,'LASA2F')
+LASA2F <- opal.execute(erasmus_opal,'LASA2F') %>% as_tibble %>% arrange(id)
 
 opal.assign.table.tibble(erasmus_opal, 'LASA2G', 'LASA.LASA2G',variables = list('gmalcoh6','gmalcohn','gmalcohd','gmalcohu','gmvar31','gmvar32','gmvar33','gmvar34','gmvar35','gmvar35p','gmvar41','glphya06','glphya07','glphya08','glphya09','gadl5a','gadl5b','gadl5c','gadl5d','gadl5e','glphya10','glphya11','glphya12','glphya13','glphya14','glphya15','glphya16','glphya17','glphya18','glphya19','glphya20','glphya31','glphya32','glphya33','glphya34','glphya35','glphya36','glphya37','glphya38','gqsleep1','gqsleep2','gqsleep3','gqsleep4','gqsleep5','gcesd11','gmvar37','gmvar37p','gage','glphya21','glphya25'))
-LASA2G <- opal.execute(erasmus_opal,'LASA2G')
+LASA2G <- opal.execute(erasmus_opal,'LASA2G') %>% as_tibble %>% arrange(id)
 
 opal.assign.table.tibble(erasmus_opal, 'LASA2H', 'LASA.LASA2H',variables = list('HMALCOH6','HMALCOHN','HMALCOHD','HMALCOHW','HMALCOHU','HMVAR31','HMVAR32','HMVAR33','HMVAR34','HMVAR35','HMVAR35P','HMVAR41','HLPHYA06','HLPHYA07','HLPHYA08','HLPHYA09','HADL5A','HADL5B','HADL5C','HADL5D','HLPHYA10','HLPHYA11','HLPHYA12','HLPHYA13','HLPHYA14','HLPHYA15','HLPHYA16','HLPHYA17','HLPHYA18','HLPHYA19','HLPHYA20','HLPHYA31','HLPHYA32','HLPHYA33','HLPHYA34','HLPHYA35','HLPHYA36','HLPHYA37','HLPHYA38','hqsleep1','hqsleep2','hqsleep3','hqsleep4','hqsleep5','hqsleepm','hqsleeph','hcesd11','HQSLEEP1','HMVAR37','HLPHYA21','HLPHYA25'))
-LASA2H <- opal.execute(erasmus_opal,'LASA2H')
+LASA2H <- opal.execute(erasmus_opal,'LASA2H') %>% as_tibble %>% arrange(id)
 
 opal.assign.table.tibble(erasmus_opal,'LASA_extravar_PA','LASA.LASA_extravar_PA')
 LASA_extravar_PA <- opal.execute(erasmus_opal,'LASA_extravar_PA')
 ```
 ## Assign participant id as first column of your harmonized dataframes
 ```{r, echo=FALSE}
-lsb_LASA2_0 <- data.frame(id = LASA2B$id)
-lsb_LASA2_1 <- data.frame(id = LASA2F$id)
-lsb_LASA2_2 <- data.frame(id = LASA2G$id)
-lsb_LASA2_3 <- data.frame(id = LASA2H$id)
+lsb_LASA2_0 <- data.frame(id = LASA2B$id) %>% as_tibble %>% arrange(id)
+lsb_LASA2_1 <- data.frame(id = LASA2F$id) %>% as_tibble %>% arrange(id)
+lsb_LASA2_2 <- data.frame(id = LASA2G$id) %>% as_tibble %>% arrange(id)
+lsb_LASA2_3 <- data.frame(id = LASA2H$id) %>% as_tibble %>% arrange(id)
 ```
 ## When you are done with your work, logout of Opal server
 ```{r, echo=FALSE}

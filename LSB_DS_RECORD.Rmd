@@ -13,18 +13,18 @@ erasmus_opal <- opal.login()
 #Login to Opal server and assign the content of the RECORD table(s) to your RStudio environment
 # RECORD wave 1, part 1
 opal.assign.table.tibble(erasmus_opal, 'RECORD_w1_1', 'RECORD.RECORD_w1_1', variables= list('code_barre','Q27_d_1','Q27_d_2','Q28_1_2','Q28_1_1','Q28_1_4','Q28_1_5','Q28_1_3','Q30','Q29','Qm13','Qm14','Qm77','Qm16','Qm17a','Q28_31_2','Q28_31_1','Q28_31_3','Q28_31_4','Q28_31_5','Qm12b','Qm12c','fitness','Qm10')) 
-RECORD_w1_1 <- opal.execute(erasmus_opal,'RECORD_w1_1')
+RECORD_w1_1 <- opal.execute(erasmus_opal,'RECORD_w1_1') %>% as_tibble %>% arrange(id)
 # RECORD wave 1, part 2
 opal.assign.table.tibble(erasmus_opal, 'RECORD_w1_2', 'RECORD.RECORD_w1_2',variables=list('neverdrinker','nbglass_alcohol','drinker_cgi','quitdrinker','packyear_current','packyear_former','fume_pipe','smoker','nonsmoker','formsmoker','q27_glob_tot','q27_autre_qu2','q27_trav_nqu2','q27_autre_nqu2','q27_trav_qu2','q27_course_nqu2','q27_course_qu2','q27_course_tot','q27_autre_nqu2','q27_glob_nqu','q27_util_nqu','q27_util_tot','q27_util_qu','q27_promen_qu2','q27_promen_nqu2','q27_promen_tot','q28_81_2','q28_autre_8_1','q28_autre_4_1','q28_autre_8_2','q28_autre_4_2','q28_autre_7_1','q28_autre_7_2','q28_49_1','q28_49_2','fruitleg','fruits_inf1','fruits_1j2','fruits_sup3','fruits_2j3','consommation_eau','smoker','nonsmoker','marche_utilitaire','fitness')) 
-RECORD_w1_2 <- opal.execute(erasmus_opal,'RECORD_w1_2')
+RECORD_w1_2 <- opal.execute(erasmus_opal,'RECORD_w1_2') %>% as_tibble %>% arrange(id)
 # RECORD wave 2
 opal.assign.table.tibble(erasmus_opal, 'RECORD_w2', 'RECORD.RECORD_W2', variables =list('P22_Q1_1443','P22_Q1_373','P22_Q2_1444','P22_Q2_374','P23_Q1_405','P23_Q1_404','P23_Q1_401','P26_Q2_647','P26_Q2_645','P26_Q2_646','Qm12','Qm13','Qm76','Qm75','P20_Q1_327','Qm10','Qm10b','Qm10a','Qm18','Qm19A','Qm19a','P26_Q4_655','P26_Q4_653','P26_Q4_654','P20_Q1_328','P20_Q1_329','P20_Q1_330','P23_Q31_585','P23_Q31_584','P23_Q31_583','P23_Q31_582','Qm11b','Qm11c','Qm9')) 
-RECORD_w2 <- opal.execute(erasmus_opal,'RECORD_w2')
+RECORD_w2 <- opal.execute(erasmus_opal,'RECORD_w2') %>% as_tibble %>% arrange(id)
 ```
 ## Assign participant id as first column of your harmonized dataframes
 ```{r, echo=FALSE}
-lsb_RECORD_0 <- data.frame(id = RECORD_w1_1$id)
-lsb_RECORD_1 <- data.frame(id = RECORD_w2$id)
+lsb_RECORD_0 <- data.frame(id = RECORD_w1_1$id) %>% as_tibble %>% arrange(id)
+lsb_RECORD_1 <- data.frame(id = RECORD_w2$id) %>% as_tibble %>% arrange(id)
 ```
 
 ## When you are done with your work, logout of Opal server

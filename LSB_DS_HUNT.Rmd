@@ -14,20 +14,20 @@ library(epiDisplay)
 erasmus_opal <- opal.login()
 #Login to Opal server and assign the content of the LUCAS table(s) to your RStudio environment
 opal.assign.table.tibble(erasmus_opal, 'HUNT1_data', 'HUNT.HUNT1',variables = list('AlcFL2W_NT1BLQ2','SmoCigDy_NT1BLQ2','SmoDyCu_NT1BLQ2','SmoCigDyN_NT1BLQ2','SmoDyAg_NT1BLQ2','SmoCigDyCesTm_NT1BLQ2','SmoDyDuEd_NT1BLQ2','ExeF_NT1BLQ2','SmoStat_NT1BLQ2','SmoCigarDy_NT1BLQ2','SmoPipeDy_NT1BLQ2','SmoCigDyPre_NT1BLQ2','SmoCigDy_NT1BLQ2','SmoPackYrs_NT1BLQ2'))
-HUNT1 <- opal.execute(erasmus_opal,'HUNT1_data')
+HUNT1 <- opal.execute(erasmus_opal,'HUNT1_data') %>% as_tibble %>% arrange(id)
 
 opal.assign.table.tibble(erasmus_opal, 'HUNT2_data', 'HUNT.HUNT2', variables = list('AlcNev_NT2BLQ1','AlcLiL2WN_NT2BLQ1','AlcWiL2WN_NT2BLQ1','AlcBeL2WN_NT2BLQ1','SmoDyAg_NT2BLQ1','SmoCigDyNEd_NT2BLQ1','SmoCigDyN_NT2BLQ1','SmoDyNev_NT2BLQ1','DriTeaNDy_NT2BLQ1','DriCofBoilNDy_NT2BLQ1','DriCofOtNDy_NT2BLQ1','SmoStat_NT2BLQ1','SmoDyDuEd_NT2BLQ1','InvAg_NT2BLQ1','SmoDyCesDu_NT2BLQ1','SmoPackYrs_NT2BLQ1','SmoPackYrs_NT2BLQ1'))
-HUNT2 <- opal.execute(erasmus_opal,'HUNT2_data')
+HUNT2 <- opal.execute(erasmus_opal,'HUNT2_data') %>% as_tibble %>% arrange(id)
 
 opal.assign.table.tibble(erasmus_opal, 'HUNT3_data', 'HUNT.HUNT3',variables=list('AlcBeL2WN_NT3BLQ1','AlcFLY_NT3BLQ1','AlcL4W_NT3BLQ1','AlcWiL2WN_NT3BLQ1','AlcLiL2WN_NT3BLQ1','AlcMor5GlF_NT3BLQ1','SmoNev_NT3BLQ1','SmoCigMyN_NT3BLQ1','SmoCigDyN_NT3BLQ1','SmoCigDyNEd_NT3BLQ1','SmoCigOc_NT3BLQ1','SmoCigarPipeDy_NT3BLQ1','SmoPre_NT3BLQ1','SmoCigarPipeOc_NT3BLQ1','SmoCigDy_NT3BLQ1','SmoNev_NT3BLQ1','ActSporL6M_NT3BLQ2','ExeF_NT3BLQ1','ExeInt_NT3BLQ1','FoVegF_NT3BLQ1','FoFruF_NT3BLQ1','DriWatGl_NT3BLQ1','DriCofEvnN_NT3BLQ1','DriCofOtNDy_NT3BLQ1','DriCofBoilNDy_NT3BLQ1','AlcLiL2WN_NT3BLQ1','SmoStat_NT3BLQ1','SmoDyAg_NT3BLQ1','SmoOcAg_NT3BLQ1','SmoDyDuEd_NT2BLQ1','SmoDyDuEd_NT3BLQ1','PartAg_NT3BLQ1','SmoDyCesDu_NT3BLQ1','SmoPackYrs_NT3BLQ1','SmoPackYrs_NT3BLQ1'))
-HUNT3 <- opal.execute(erasmus_opal,'HUNT3_data')
+HUNT3 <- opal.execute(erasmus_opal,'HUNT3_data') %>% as_tibble %>% arrange(id)
 
 ```
 ## Assign participant id as first column of your harmonized dataframes
 ```{r, echo=FALSE}
-lsb_HUNT_0 <- data.frame(id = HUNT1$id)
-lsb_HUNT_1<- data.frame(id= HUNT2$id)
-lsb_HUNT_2<- data.frame(id= HUNT3$id)
+lsb_HUNT_0 <- data.frame(id = HUNT1$id) %>% as_tibble %>% arrange(id)
+lsb_HUNT_1<- data.frame(id= HUNT2$id) %>% as_tibble %>% arrange(id)
+lsb_HUNT_2<- data.frame(id= HUNT3$id) %>% as_tibble %>% arrange(id)
 ```
 ## When you are done with your work, logout of Opal server
 ```{r, echo=FALSE}
