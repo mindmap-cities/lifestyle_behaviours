@@ -8,6 +8,8 @@ output: html_document
 ```{r, echo=FALSE}
 #Load R libraries
 library(opalr)
+
+library(haven)
 # Create an opal object with the login information
 erasmus_opal <- opal.login()
 
@@ -35,10 +37,10 @@ opal.logout(erasmus_opal)
 
 library('tidyverse')
 
-ROTTERDAM_0 <- ROTTERDAM_0 %>% arrange(id)
-ROTTERDAM_1 <- ROTTERDAM_1 %>% arrange(id)
-ROTTERDAM_2 <- ROTTERDAM_2 %>% arrange(id)
-ROTTERDAM_3 <- ROTTERDAM_3 %>% arrange(id)
+ROTTERDAM_0 <- ROTTERDAM_0 %>% zap_labels %>% arrange(id)
+ROTTERDAM_1 <- ROTTERDAM_1 %>% zap_labels %>% arrange(id)
+ROTTERDAM_2 <- ROTTERDAM_2 %>% zap_labels %>% arrange(id)
+ROTTERDAM_3 <- ROTTERDAM_3 %>% zap_labels %>% arrange(id)
 
 ```
 ## Assign participant id as first column of your harmonized dataframes
@@ -817,7 +819,7 @@ lsb_ROTTERDAM_1$lsb_smk_cur_1<- ifelse(ROTTERDAM_1$e4_dict==1, 1L,
 ```{r, echo=TRUE}
 
 lsb_ROTTERDAM_2$lsb_smk_cur_2<- ifelse(ROTTERDAM_2$e5_EILF6==1, 1L, 
-                                       ifelse(e5_EILF6==0, 0L, NA)) 
+                                       ifelse(ROTTERDAM_2$e5_EILF6==0, 0L, NA)) 
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -1269,7 +1271,7 @@ lsb_ROTTERDAM_2$lsb_cig_qty_2 <- with(ROTTERDAM_2,
 **Harmonization comment**:   The study-specific category 'incidental less than 1 per day' is coded as 0.
 **R script**:  
 ```{r, echo=TRUE}
-lsb_ROTTERDAM_3$lsb_cig_qty_3 <- with(lsb_ROTTERDAM_3, 
+lsb_ROTTERDAM_3$lsb_cig_qty_3 <- with(ROTTERDAM_3, 
                                       ifelse(e6_EILF6==0, 0L, 
                                              ifelse(e6_EILF6A<76, e6_EILF6A, 
                                                     ifelse(e6_EILF6A==76, 0L, NA))))
