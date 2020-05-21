@@ -244,18 +244,13 @@ lsb_ROTTERDAM_0<- merge(lsb_ROTTERDAM_0,alc_table_rotterdam[,c("id","lsb_alc_eve
 1 |   Ever consumed alcohol  
 
 **Harmonization status**:  complete     
-**Harmonization comment**:   
+**Harmonization comment**:   The harmonized variable "Ever consumption of alcohol" was created using "Ever consumption of alcohol" from baseline and previous waves and current consumption of alcohol at followup waves. To create this variable, all RS data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.
 **R script**:  
 ```{r, echo=TRUE}
 
 alc_table_rotterdam$lsb_alc_ever_1 <- with(alc_table_rotterdam, 
-                                           ifelse(e4_didalc==1|e4_didalcp==1|lsb_alc_ever_0==1, 1L, 
+                                           ifelse(!is.na(fup_visit_1)&(e4_didalc==1|e4_didalcp==1|lsb_alc_ever_0==1), 1L, 
                                              ifelse(e4_didalcp==0, 0L, NA)))
-
-table(alc_table_rotterdam$lsb_alc_ever_1, useNA = 'always')
-
-## Check with cohort how to handle discrepancies between lsb_alc_ever_1 and lsb_alc_ever_0
-## 142 participants with 'Have you ever drank alcoholic beverages in the past?'='no', but lsb_alc_ever_0='yes'
 
 lsb_ROTTERDAM_1<- merge(lsb_ROTTERDAM_1,alc_table_rotterdam[,c("id","lsb_alc_ever_1")],by = "id", all.x = TRUE)
 
@@ -917,9 +912,11 @@ lsb_ROTTERDAM_3$lsb_smk_cur_3<-ifelse(ROTTERDAM_3$e6_EILF6==1, 1L,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_ROTTERDAM_0$lsb_smk_status_0 <-  ifelse(ROTTERDAM_0$ep_lf6==1, 2L, 
+alc_table_rotterdam$lsb_smk_status_0 <-  ifelse(ROTTERDAM_0$ep_lf6==1, 2L, 
                                      ifelse(ROTTERDAM_0$ep_lf6==0 & ROTTERDAM_0$ep_lf6e==0, 0L, 
                                      ifelse(ROTTERDAM_0$ep_lf6==0 & ROTTERDAM_0$ep_lf6e==1, 1L, NA)))
+
+lsb_ROTTERDAM_0$lsb_smk_status_0 <- alc_table_rotterdam$lsb_smk_status_0
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -939,10 +936,11 @@ lsb_ROTTERDAM_0$lsb_smk_status_0 <-  ifelse(ROTTERDAM_0$ep_lf6==1, 2L,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
-lsb_ROTTERDAM_1$lsb_smk_status_1<- ifelse(ROTTERDAM_1$e4_dict==0, 0L, 
+alc_table_rotterdam$lsb_smk_status_1 <- ifelse(ROTTERDAM_1$e4_dict==0, 0L, 
                                    ifelse(ROTTERDAM_1$e4_dict==1, 2L, 
                                    ifelse(ROTTERDAM_1$e4_dict==2|ROTTERDAM_1$e4_dict==3, 1L, NA)))
+
+lsb_ROTTERDAM_1$lsb_smk_status_1 <- alc_table_rotterdam$lsb_smk_status_1
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -962,11 +960,11 @@ lsb_ROTTERDAM_1$lsb_smk_status_1<- ifelse(ROTTERDAM_1$e4_dict==0, 0L,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
-lsb_ROTTERDAM_2$lsb_smk_status_2 <- ifelse(ROTTERDAM_2$e5_EILF6==1, 2L,
+alc_table_rotterdam$lsb_smk_status_2 <- ifelse(ROTTERDAM_2$e5_EILF6==1, 2L,
                                     ifelse(ROTTERDAM_2$e5_EILF6==0 & ROTTERDAM_2$e5_EILFE==1, 1L,
                                     ifelse(ROTTERDAM_2$e5_EILF6==0 & ROTTERDAM_2$e5_EILFE==0, 0L, NA)))
 
+lsb_ROTTERDAM_2$lsb_smk_status_2 <- alc_table_rotterdam$lsb_smk_status_2
 ```  
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_3  
@@ -985,22 +983,12 @@ lsb_ROTTERDAM_2$lsb_smk_status_2 <- ifelse(ROTTERDAM_2$e5_EILF6==1, 2L,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
-lsb_ROTTERDAM_3$lsb_smk_status_3 <- ifelse(ROTTERDAM_3$e6_EILF6==1, 2L,
+alc_table_rotterdam$lsb_smk_status_3 <- ifelse(ROTTERDAM_3$e6_EILF6==1, 2L,
                                     ifelse(ROTTERDAM_3$e6_EILF6==0 & 
                                           (ROTTERDAM_3$e6_EILSE5==1|ROTTERDAM_3$e6_EILSE5==2), 1L,
                                     ifelse(ROTTERDAM_3$e6_EILF6==0&ROTTERDAM_3$e6_EILSE5==0, 0L, NA)))
 
-
-test<- Reduce(function(x, y) merge(x, y, by="id"), 
-              list(lsb_ROTTERDAM_0, lsb_ROTTERDAM_1, lsb_ROTTERDAM_2, lsb_ROTTERDAM_3))
-with(test, table(lsb_smk_status_0, lsb_smk_status_1, useNA = 'always'))
-## 524 participants with lsb_smk_status_1==0 but lsb_smk_status_0==1 or 2
-with(test, table(lsb_smk_status_1, lsb_smk_status_2, useNA = 'always'))
-## 338 participants with lsb_smk_status_2==0 but lsb_smk_status_1==1 or 2
-with(test, table(lsb_smk_status_2, lsb_smk_status_3, useNA = 'always'))
-## 40 participants with lsb_smk_status_3==0 but lsb_smk_status_2==1
-
+lsb_ROTTERDAM_3$lsb_smk_status_3 <- alc_table_rotterdam$lsb_smk_status_3
 ```  
 ### **Variable label**:  Smoking status  
 **Variable name**:  lsb_smk_status_4  
@@ -1079,10 +1067,10 @@ with(test, table(lsb_smk_status_2, lsb_smk_status_3, useNA = 'always'))
 **Harmonization comment**:  
 **R script**:  
 ```{r, echo=TRUE}
-
-lsb_ROTTERDAM_0$lsb_smk_ever_0 <- with(lsb_ROTTERDAM_0, 
+alc_table_rotterdam$lsb_smk_ever_0 <- with(alc_table_rotterdam, 
                                        ifelse(lsb_smk_status_0==2|lsb_smk_status_0==1, 1L, 
                                               ifelse(lsb_smk_status_0==0, 0L, NA)))
+lsb_ROTTERDAM_0$lsb_smk_ever_0 <- alc_table_rotterdam$lsb_smk_ever_0 
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1098,14 +1086,14 @@ lsb_ROTTERDAM_0$lsb_smk_ever_0 <- with(lsb_ROTTERDAM_0,
 1 |   Ever smoked tobacco  
 
 **Harmonization status**:  complete      
-**Harmonization comment**:   
+**Harmonization comment**:   The harmonized variable "Ever tobacco smoking" was created using "Ever tobacco smoking" from baseline and previous waves and current smoking status at followup waves. To create this variable, all RS data tables were merged by ID in order to facilitate the harmonization work and intermediate variables were created.
 **R script**:  
 ```{r, echo=TRUE}
-
-lsb_ROTTERDAM_1$lsb_smk_ever_1 <- with(lsb_ROTTERDAM_1, 
-                                       ifelse(lsb_smk_status_1==2|lsb_smk_status_1==1, 1L, 
+alc_table_rotterdam$lsb_smk_ever_1 <- with(alc_table_rotterdam, 
+                                       ifelse(!is.na(fup_visit_1)&(lsb_smk_status_1==2|lsb_smk_status_1==1|lsb_smk_ever_0==1), 1L, 
                                               ifelse(lsb_smk_status_1==0, 0L, NA)))
 
+lsb_ROTTERDAM_1$lsb_smk_ever_1 <- alc_table_rotterdam$lsb_smk_ever_1
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_2    
@@ -1123,11 +1111,11 @@ lsb_ROTTERDAM_1$lsb_smk_ever_1 <- with(lsb_ROTTERDAM_1,
 **Harmonization comment**:  
 **R script**:  
 ```{r, echo=TRUE}
-
-lsb_ROTTERDAM_2$lsb_smk_ever_2 <- with(lsb_ROTTERDAM_2, 
-                                       ifelse(lsb_smk_status_2==2|lsb_smk_status_2==1, 1L, 
+alc_table_rotterdam$lsb_smk_ever_2 <- with(alc_table_rotterdam, 
+                                       ifelse(!is.na(fup_visit_2)&(lsb_smk_status_2==2|lsb_smk_status_2==1|lsb_smk_ever_1==1), 1L, 
                                               ifelse(lsb_smk_status_2==0, 0L, NA)))
 
+lsb_ROTTERDAM_2$lsb_smk_ever_2 <- alc_table_rotterdam$lsb_smk_ever_2 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_3    
@@ -1145,11 +1133,11 @@ lsb_ROTTERDAM_2$lsb_smk_ever_2 <- with(lsb_ROTTERDAM_2,
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
-lsb_ROTTERDAM_3$lsb_smk_ever_3 <- with(lsb_ROTTERDAM_3, 
-                                       ifelse(lsb_smk_status_3==2|lsb_smk_status_3==1, 1L, 
+alc_table_rotterdam$lsb_smk_ever_3 <- with(alc_table_rotterdam, 
+                                       ifelse(!is.na(fup_visit_3)&(lsb_smk_status_3==2|lsb_smk_status_3==1|lsb_smk_ever_2==1), 1L, 
                                               ifelse(lsb_smk_status_3==0, 0L, NA)))
 
+lsb_ROTTERDAM_3$lsb_smk_ever_3 <- alc_table_rotterdam$lsb_smk_ever_3 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
 **Variable name**:  lsb_smk_ever_4    
@@ -1732,11 +1720,9 @@ lsb_ROTTERDAM_3$lsb_smk_stop_3 <- ifelse(ROTTERDAM_3$e6_EILFHE5<777, ROTTERDAM_3
 4 |  4 hours or more  
 
 **Harmonization status**:  complete      
-**Harmonization comment**: Two study-specific variables: "How much time do you usually spend walking per week in the winter? With walking we mean all kind of walking, including walking to go shopping." and "How much time do you usually spend walking per week in the summer? With walking we mean all kind of walking, including walking to go shopping." were used to harmonize the DataSchema variable. The average of these study-specific variables was taken. 
+**Harmonization comment**: Two study-specific variables: "How much time do you usually spend walking per week in the winter? With walking we mean all kind of walking, including walking to go shopping." and "How much time do you usually spend walking per week in the summer? With walking we mean all kind of walking, including walking to go shopping." were used to harmonize the DataSchema variable. The average of these study-specific variables was taken. 99.99 value considered missing.
 **R script**:  
 ```{r, echo=TRUE}
-# 99.99 is not listed as missing. Is it correct?
-
 ROTTERDAM_0$ep_piwalkwm1<-ifelse(ROTTERDAM_0$ep_piwalkwm==99.99, NA, ROTTERDAM_0$ep_piwalkwm)
 ROTTERDAM_0$ep_piwalksm1<-ifelse(ROTTERDAM_0$ep_piwalksm==99.99, NA, ROTTERDAM_0$ep_piwalksm)
 
@@ -2759,14 +2745,10 @@ lsb_ROTTERDAM_0$lsb_pa_sport_0 <- ifelse(ROTTERDAM_0$ep_pisport==1,1L, ifelse(RO
 **Harmonization status**:  complete      
 **Harmonization comment**: The study-specific variables about whether the participant participate in one of the listed forms of sport or exercise and how many hours they spent doing it are used. The-study specific variables ask about the following exercises:
 a ball game,  moving to music, Playing billiards, Dancing, Gymnastics, Stretching exercises, Rowing, Ice skating, Playing shuffleboard, Tennis, Swimming, Another sport.
-If a participant reported that he participates in any 2 of these exercises for less than an hour a week each, they are coded under the DataSchema category "between 1 and 2 hours a week".  
+If a participant reported 'yes' to an exercise but <1 hr per week, it was included in the overall calculation as 0.5 hrs per week. Thus if a participant reported that he participates in any 2 of these exercises for less than an hour a week each, they are coded under the DataSchema category "between 1 and 2 hours a week".  
 
 **R script**:  
 ```{r, echo=TRUE}
-table(ROTTERDAM_0$ep_piball)
-table(ROTTERDAM_0$ep_piballd., useNA= "always")
-
-
 sprt_ROTTERDAM_0 <- data.frame(id = ROTTERDAM_0$id)
 
 sprt_ROTTERDAM_0$ep_piballd.<- ifelse(ROTTERDAM_0$ep_pisport==0|ROTTERDAM_0$ep_piball==0, 0, 
@@ -2820,15 +2802,10 @@ sprt_ROTTERDAM_0$ep_pispotd.<- ifelse(ROTTERDAM_0$ep_pisport==0|ROTTERDAM_0$ep_p
 
 sprt_ROTTERDAM_0$sport_time <- rowSums(sprt_ROTTERDAM_0[,2:13])
 
-table(sprt_ROTTERDAM_0$sport_time, useNA = "always")
-
 lsb_ROTTERDAM_0$lsb_pa_sport_time_0 <- ifelse(sprt_ROTTERDAM_0$sport_time==0,0L, 
                                               ifelse(sprt_ROTTERDAM_0$sport_time==0.5,1L, 
                                                      ifelse(sprt_ROTTERDAM_0$sport_time>=1& sprt_ROTTERDAM_0$sport_time<=2, 2L,
                                                             ifelse(sprt_ROTTERDAM_0$sport_time>2, 3L, NA))))
-
-table(lsb_ROTTERDAM_0$lsb_pa_sport_time_0, useNA="always")                                              
-                                              
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -3183,8 +3160,6 @@ table(lsb_ROTTERDAM_0$lsb_pa_sport_time_0, useNA="always")
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-
-# lsb_ROTTERDAM_0$lsb_coffee_qty_0  <- ifelse(ROTTERDAM_0$ep_lf1==0, 0L, ROTTERDAM_0$ep_lf1a)
 lsb_ROTTERDAM_0$lsb_coffee_qty_0  <- with(ROTTERDAM_0, ifelse(ep_lf1==0, 0L, 
                                             ifelse(ep_lf1a==76, 0, 
                                                    ifelse(ep_lf1a<76, ep_lf1a, NA))))
@@ -3202,9 +3177,8 @@ table(lsb_ROTTERDAM_0$lsb_coffee_qty_0, useNA="always")
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
- 
 table(ROTTERDAM_1$e4_didcof, ROTTERDAM_1$e4_didcofn, useNA="always")
-# lsb_ROTTERDAM_1$lsb_coffee_qty_1 <- ifelse(ROTTERDAM_1$e4_didcof==0, 0L, ROTTERDAM_1$e4_didcofn)
+
 lsb_ROTTERDAM_1$lsb_coffee_qty_1  <- with(ROTTERDAM_1, ifelse(e4_didcof==0, 0L, 
                                             ifelse(e4_didcofn==76, 0, 
                                                    ifelse(e4_didcofn<76, e4_didcofn, NA))))
