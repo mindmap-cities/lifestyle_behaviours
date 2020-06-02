@@ -12,27 +12,26 @@ library(tidyverse)
 # Create an opal object with the login information
 erasmus_opal <- opal.login()
 
-#Login to Opal server and assign the content of the GLOBE table(s) to your RStudio environment
+#Login to Opal server and assign the content of the CLSA_TRA table(s) to your RStudio environment
 opal.assign.table.tibble(erasmus_opal, 'CoP4_Baseline','CLSA_1.CoP4_Baseline', variables =list("ALC_FREQ_COM", "ALC_EVER_COM", "ALC_MLFQ_COM","ALC_FMFQ_COM", "PA2_LTHSWK_MCQ","NUT_FRUT_COM", "ALC_RDWD_NB_COM"," ALC_WHWD_NB_COM",  "ALC_BRWD_NB_COM", "ALC_LQWD_NB_COM", "ALC_RDWE_NB_COM", "ALC_WHWE_NB_COM", "ALC_BRWE_NB_COM", "ALC_LQWE_NB_COM", "PA2_LTHSWK_MCQ", "PA2_HVYHSWK_MCQ", "NUT_GREEN_COM", "NUT_PTTO_COM", "NUT_CRRT_COM", "NUT_VGOT_COM", "PA2_LSPRT_MCQ", "PA2_MSPRT_MCQ", "PA2_SSPRT_MCQ", "PA2_WALK_MCQ","SMK_100CG_COM","ICQ_SMOKE_COM", "SMK_OTREG_COM" , "SMK_SMKDL_AG_COM", "ALC_WHWD_NB_COM",
 "PA2_WALKHR_MCQ", "PA2_HVYHSWK_MCQ", "PA2_LSPRTHR_MCQ", "PA2_MSPRTHR_MCQ", "PA2_SSPRTHR_MCQ", "SMK_CURRCG_COM", "SMK_OTCURR_CG_COM",
-"SMK_OTCURR_SM_COM","SMK_OTCURR_PI_COM", "SMK_OTCURR_CH_COM", "	SMK_OTCURR_SH_COM", "SMK_OTOCC_COM", "SMK_OTCURR_SH_COM", "SMK_TYPEOT_CG_COM", "SMK_TYPEOT_SM_COM", "SMK_TYPEOT_PI_COM", "SMK_TYPEOT_CH_COM", "SMK_TYPEOT_SH_COM", "SMK_FRSTCG_AG_COM", "SMK_CGDL_AG_COM"
+"SMK_OTCURR_SM_COM","SMK_OTCURR_PI_COM", "SMK_OTCURR_CH_COM", "	SMK_OTCURR_SH_COM", "SMK_OTOCC_COM", "SMK_OTCURR_SH_COM", "SMK_TYPEOT_CG_COM", "SMK_TYPEOT_SM_COM", "SMK_TYPEOT_PI_COM", "SMK_TYPEOT_CH_COM", "SMK_TYPEOT_SH_COM", "SMK_FRSTCG_AG_COM","SLE_HOUR_NB_COM"
 ))
 
-CLSA_cop_0 <- opal.execute(erasmus_opal,'CoP4_Baseline')
+CLSA_cop_0 <- opal.execute(erasmus_opal,'CoP4_Baseline') %>% as_tibble %>% arrange(id)
 
-
-opal.assign.table.tibble(erasmus_opal, 'CoP_FU1','CLSA_1.CoP_FU1',  variables=list("NUR_RCOFF_NB_COF1","NUR_DCOFF_NB_COF1", "ALC_FREQ_COF1", "ALC_EVER_COF1", "ALC_MLFQ_COF1","ALC_FMFQ_COF1", "PA2_LTHSWK_COF1","NUT_FRUT_COF1", "ALC_RDWD_NB_COF1"," ALC_WHWD_NB_COF1",  "ALC_BRWD_NB_COF1", "ALC_LQWD_NB_COF1", "ALC_RDWE_NB_COF1", "ALC_WHWE_NB_COF1", "ALC_BRWE_NB_COF1", "ALC_LQWE_NB_COF1", "PA2_LTHSWK_COF1", "CLSA_cop_0$PA2_HVYHSWK_COF1", "NUT_GREEN_COF1", "NUT_PTTO_COF1", "NUT_CRRT_COF1", "NUT_VGOT_COF1", "PA2_LSPRT_COF1", "PA2_MSPRT_COF1", "PA2_SSPRT_COF1", "PA2_WALK_COF1","SMK_100CG_COF1","ICQ_SMOKE_COF1", "SMK_OTREG_COF1" , "SMK_SMKDL_AG_COF1", "ALC_WHWD_NB_COF1", "ALC_LQRWE_NB_COF1", "ALC_LQRWD_NB_COF1", "SMK_OTOCC_COF1", "PA2_WALKHR_COF1", "PA2_HVYHSWK_COF1", "PA2_LSRTHR_COF1", "PA2_MSPRTHR_COF1", "PA2_SSPRTHR_COF1", "PA2_LSRTHR_COF1", "PA2_MSRTHR_COF1", "PA2_SSRTHR_COF1", "SMK_CURRCG_COF1", "SMK_OTCURR_CG_COF1",
+opal.assign.table.tibble(erasmus_opal, 'CoP_FU1','CLSA_1.CoP_FU1',  variables=list("NUR_RCOFF_NB_COF1","NUR_DCOFF_NB_COF1", "ALC_FREQ_COF1", "ALC_EVER_COF1", "ALC_MLFQ_COF1","ALC_FMFQ_COF1", "PA2_LTHSWK_COF1","NUT_FRUT_COF1", "ALC_RDWD_NB_COF1"," ALC_WHWD_NB_COF1",  "ALC_BRWD_NB_COF1", "ALC_LQWD_NB_COF1", "ALC_RDWE_NB_COF1", "ALC_WHWE_NB_COF1", "ALC_BRWE_NB_COF1", "ALC_LQWE_NB_COF1", "PA2_LTHSWK_COF1", "PA2_HVYHSWK_COF1", "NUT_GREEN_COF1", "NUT_PTTO_COF1", "NUT_CRRT_COF1", "NUT_VGOT_COF1", "PA2_LSPRT_COF1", "PA2_MSPRT_COF1", "PA2_SSPRT_COF1", "PA2_WALK_COF1","SMK_100CG_COF1","ICQ_SMOKE_COF1", "SMK_OTREG_COF1" , "SMK_SMKDL_AG_COF1", "ALC_WHWD_NB_COF1", "ALC_LQRWE_NB_COF1", "ALC_LQRWD_NB_COF1", "SMK_OTOCC_COF1", "PA2_WALKHR_COF1", "PA2_HVYHSWK_COF1", "PA2_LSRTHR_COF1", "PA2_MSPRTHR_COF1", "PA2_SSPRTHR_COF1", "PA2_LSRTHR_COF1", "PA2_MSRTHR_COF1", "PA2_SSRTHR_COF1", "SMK_CURRCG_COF1", "SMK_OTCURR_CG_COF1",
 "SMK_OTCURR_SM_COF1","SMK_OTCURR_PI_COF1", "SMK_OTCURR_CH_COF1", "	SMK_OTCURR_SH_COF1", "SMK_OTOCC_COF1", "SMK_OTCURR_SH_COF1", 
-"SMK_TYPEOT_CG_COF1", "SMK_TYPEOT_SM_COF1", "SMK_TYPEOT_PI_COF1", "SMK_TYPEOT_CH_COF1", "SMK_TYPEOT_SH_COF1"))
+"SMK_TYPEOT_CG_COF1", "SMK_TYPEOT_SM_COF1", "SMK_TYPEOT_PI_COF1", "SMK_TYPEOT_CH_COF1", "SMK_TYPEOT_SH_COF1","SLE_HOUR_NB_COF1"))
 
-CLSA_cop_1 <- opal.execute(erasmus_opal,'CoP_FU1')
+CLSA_cop_1 <- opal.execute(erasmus_opal,'CoP_FU1') %>% as_tibble %>% arrange(id)
 
 
 ```
 ## Assign participant id as first column of your harmonized dataframes
 ```{r, echo=FALSE}
-lsb_CLSA_cop_0 <- data.frame(id = CLSA_cop_0$id)
-lsb_CLSA_cop_1 <- data.frame(id = CLSA_cop_1$id)
+lsb_CLSA_cop_0 <- data.frame(id = CLSA_cop_0$id) %>% as_tibble() %>% as_tibble %>% arrange(id)
+lsb_CLSA_cop_1 <- data.frame(id = CLSA_cop_1$id) %>% as_tibble() %>% as_tibble %>% arrange(id)
 
 ```
 ## When you are done with your work, logout of Opal server
@@ -61,11 +60,11 @@ opal.logout(erasmus_opal)
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_0$lsb_alc_cur_0<-dplyr::recode(CLSA_cop_0$ALC_FREQ_COM, 
+lsb_CLSA_cop_0$lsb_alc_cur_0 <- dplyr::recode(CLSA_cop_0$ALC_FREQ_COM %>% as.integer, 
                                             "01"=1L ,
                                             "02"=1L ,
                                             "03"=1L ,
@@ -74,8 +73,8 @@ lsb_CLSA_cop_0$lsb_alc_cur_0<-dplyr::recode(CLSA_cop_0$ALC_FREQ_COM,
                                             "06"=1L ,
                                             "07"=1L ,
                                             "96"=0L, .default =NA_integer_)
-table(lsb_CLSA_cop_0$lsb_alc_cur_0)
-table(CLSA_cop_0$ALC_FREQ_COM)
+
+
 ```  
 ### **Variable label**:  Current consumption of alcohol  
 **Variable name**: lsb_alc_cur_1  
@@ -89,11 +88,11 @@ table(CLSA_cop_0$ALC_FREQ_COM)
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol   
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_1$lsb_alc_cur_1<-dplyr::recode(CLSA_cop_1$ALC_FREQ_COF1,
+lsb_CLSA_cop_1$lsb_alc_cur_1<-dplyr::recode(CLSA_cop_1$ALC_FREQ_COF1 %>% as.integer,
                                             "1"=1L ,
                                             "2"=1L ,
                                             "3"=1L ,
@@ -102,8 +101,7 @@ lsb_CLSA_cop_1$lsb_alc_cur_1<-dplyr::recode(CLSA_cop_1$ALC_FREQ_COF1,
                                             "6"=1L ,
                                             "7"=1L ,
                                             "96"=0L, .default =NA_integer_)
-table(lsb_CLSA_cop_1$lsb_alc_cur_1)
-table(CLSA_cop_1$ALC_FREQ_COF1)
+
 
 ```  
 ### **Variable label**:  Current consumption of alcohol  
@@ -118,7 +116,7 @@ table(CLSA_cop_1$ALC_FREQ_COF1)
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -136,7 +134,7 @@ table(CLSA_cop_1$ALC_FREQ_COF1)
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -154,7 +152,7 @@ table(CLSA_cop_1$ALC_FREQ_COF1)
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -172,7 +170,7 @@ table(CLSA_cop_1$ALC_FREQ_COF1)
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -190,7 +188,7 @@ table(CLSA_cop_1$ALC_FREQ_COF1)
 0 |  Does not currently consume alcohol   
 1 |  Currently consumes alcohol  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -209,19 +207,21 @@ table(CLSA_cop_1$ALC_FREQ_COF1)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  complete   
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_0$lsb_alc_ever_0<-dplyr::recode(as.character(CLSA_cop_0$ALC_EVER_COM), 
-                                            "2"=0L ,
-                                            "1"=1L, 
-                                            .default =NA_integer_)
-table(lsb_CLSA_cop_0$lsb_alc_ever_0)
+lsb_CLSA_cop_0$lsb_alc_ever_0 <-
+  dplyr::recode(
+    as.character(CLSA_cop_0$ALC_EVER_COM), 
+    "2"=0L ,
+    "1"=1L, 
+    .default =NA_integer_)
+
 
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
-**Variable name**: lsb_alc_ever_1    
+**Variable name**: lsb_alc_ever_1   
 **Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -232,30 +232,17 @@ table(lsb_CLSA_cop_0$lsb_alc_ever_0)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   The variable in the relavent wave is combined with the same variables from the baseline wave. 
+**Harmonization status**: complete
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+lsb_CLSA_cop_1$lsb_alc_ever_1 <-
+  dplyr::recode(
+    as.character(CLSA_cop_1$ALC_EVER_COF1),
+    "2"=0L,
+    "1"=1L,
+    .default =NA_integer_)
 
-table(CLSA_cop_1$ALC_EVER_COF1, useNA="always")
-
-#creating intermediate veriables to account for answering as Having smoked tobacco products in the previous wave. 
-MyMerge <- function(x,y){
-  merge(x,y, by= c("id"),all=TRUE)
-}
-lsb_table <- Reduce(MyMerge, list(CLSA_cop_0, CLSA_cop_1))
-
-lsb_table$lsb_alc_ever_0<-dplyr::recode(as.character(lsb_table$ALC_EVER_COM), 
-                                            "2"=0L ,
-                                            "1"=1L, 
-                                            .default =NA_integer_)
-
-lsb_table$lsb_alc_ever_1<-ifelse(lsb_table$ALC_EVER_COF1==1|lsb_table$lsb_alc_ever_0==1,1L,
-                         ifelse(lsb_table$ALC_EVER_COF1==2&lsb_table$lsb_alc_ever_0==0,0L,NA))
-                                            
-lsb_CLSA_cop_1<-merge(lsb_CLSA_cop_1,lsb_table[,c("id","lsb_alc_ever_1")],by="id",all.x=TRUE)
-
-table(lsb_CLSA_cop_1$lsb_alc_ever_1)
 ```  
 ### **Variable label**:   Ever consumption of alcohol  
 **Variable name**: lsb_alc_ever_2    
@@ -269,7 +256,7 @@ table(lsb_CLSA_cop_1$lsb_alc_ever_1)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -287,7 +274,7 @@ table(lsb_CLSA_cop_1$lsb_alc_ever_1)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -305,7 +292,7 @@ table(lsb_CLSA_cop_1$lsb_alc_ever_1)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -323,7 +310,7 @@ table(lsb_CLSA_cop_1$lsb_alc_ever_1)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -341,7 +328,7 @@ table(lsb_CLSA_cop_1$lsb_alc_ever_1)
 0 |   Never consumed alcohol  
 1 |   Ever consumed alcohol  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -349,7 +336,7 @@ table(lsb_CLSA_cop_1$lsb_alc_ever_1)
 ```  
 
 ### **Variable label**:   Frequency of binge drinking  
-**Variable name**: lsb_alc_binge_0  
+**Variable name**: lsb_alc_binge_0   
 **Variable description**:  Frequency of drinking 4 or more drinks in one day.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -361,7 +348,7 @@ table(lsb_CLSA_cop_1$lsb_alc_ever_1)
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   The study-specific question is "About how often during the past 12 months would you say you had five or more drinks at the same sitting or occasion?" The study specific category of "2-3 times a week" is coded in the DataSchema category "1 to 2 times a week". The study-specific binge drinking question asks about the frequency of 5 or more drinks for men, and 4 or more drinks for women.  
 **R script**:  
 ```{r, echo=TRUE}
@@ -370,11 +357,11 @@ CLSA_cop_0_temp <- CLSA_cop_0 %>%
   select(ALC_MLFQ_COM,ALC_FMFQ_COM) %>% 
   rowwise() %>%
   mutate(
-    ALC_COM= suppressWarnings(max(ALC_MLFQ_COM, ALC_FMFQ_COM, na.rm = TRUE))
-  ) %>% select(ALC_COM)
+    ALC_COM = suppressWarnings(max(ALC_MLFQ_COM, ALC_FMFQ_COM, na.rm = TRUE))) %>% 
+  select(ALC_COM)
 
 lsb_CLSA_cop_0$lsb_alc_binge_0 <-
-  dplyr::recode(CLSA_cop_0_temp$ALC_COM, 
+  dplyr::recode(CLSA_cop_0_temp$ALC_COM %>% as.integer, 
                 "01"=3L ,
                 "02"=3L ,
                 "03"=2L ,
@@ -385,7 +372,7 @@ lsb_CLSA_cop_0$lsb_alc_binge_0 <-
                 "96"=1L , 
                 .default =NA_integer_)
 
-table(lsb_CLSA_cop_0$lsb_alc_binge_0, useNA="always")
+rm(CLSA_cop_0_temp)
 
 ```  
 ### **Variable label**:   Frequency of binge drinking  
@@ -401,7 +388,7 @@ table(lsb_CLSA_cop_0$lsb_alc_binge_0, useNA="always")
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:    The study-specific question is "About how often during the past 12 months would you say you had five or more drinks at the same sitting or occasion?" The study specific category of "2-3 times a week" is coded in the DataSchema category "1 to 2 times a week".  The study-specific binge drinking question asks about the frequency of 5 or more drinks for men, and 4 or more drinks for women. 
 **R script**:  
 ```{r, echo=TRUE}
@@ -414,7 +401,7 @@ CLSA_cop_1_temp <- CLSA_cop_1 %>%
   ) %>% select(ALC_COF1)
 
 lsb_CLSA_cop_1$lsb_alc_binge_1 <-
-  dplyr::recode(CLSA_cop_1_temp$ALC_COF1, 
+  dplyr::recode(CLSA_cop_1_temp$ALC_COF1 %>% as.integer, 
                 "1"=3L ,
                 "2"=3L ,
                 "3"=2L ,
@@ -424,15 +411,10 @@ lsb_CLSA_cop_1$lsb_alc_binge_1 <-
                 "7"=1L ,
                 "96"=1L , 
                 .default =NA_integer_)
-
-table(lsb_CLSA_cop_1$lsb_alc_binge_1, useNA="always")
-
-# verification
-lsb_CLSA_cop_1 %>% select(lsb_alc_binge_1) %>% 
-  bind_cols(CLSA_cop_1_temp %>% select(ALC_COF1)) %>% 
-  as_tibble %>% group_by(lsb_alc_binge_1,ALC_COF1) %>% tally
+rm(CLSA_cop_1_temp)
 
 ```  
+
 ### **Variable label**:   Frequency of binge drinking  
 **Variable name**: lsb_alc_binge_2  
 **Variable description**:  Frequency of drinking 4 or more drinks in one day.  
@@ -446,7 +428,7 @@ lsb_CLSA_cop_1 %>% select(lsb_alc_binge_1) %>%
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:   impossible 
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -465,7 +447,7 @@ lsb_CLSA_cop_1 %>% select(lsb_alc_binge_1) %>%
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:   impossible 
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -484,7 +466,7 @@ lsb_CLSA_cop_1 %>% select(lsb_alc_binge_1) %>%
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:   impossible 
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -503,7 +485,7 @@ lsb_CLSA_cop_1 %>% select(lsb_alc_binge_1) %>%
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:   impossible 
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -522,7 +504,7 @@ lsb_CLSA_cop_1 %>% select(lsb_alc_binge_1) %>%
 2 |  1 to 2 times a week   
 3 |  3 times a week or more  
 
-**Harmonization status**:  impossible    
+**Harmonization status**: impossible
 **Harmonization comment**: 
 **R script**:  
 ```{r, echo=TRUE}
@@ -536,7 +518,7 @@ lsb_CLSA_cop_1 %>% select(lsb_alc_binge_1) %>%
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  complete   
+**Harmonization status**: complete
 **Harmonization comment**:  
 **R script**:  
 ```{r, echo=TRUE}
@@ -547,23 +529,9 @@ lsb_CLSA_cop_0$lsb_alc_total_0 <- CLSA_cop_0$ALC_RDWD_NB_COM+
                                   
                                   CLSA_cop_0$ALC_RDWE_NB_COM+
                                   CLSA_cop_0$ALC_WHWE_NB_COM+
-                                  CLSA_cop_0$ALC_BRWD_NB_COM+
+                                  CLSA_cop_0$ALC_BRWE_NB_COM+
                                   CLSA_cop_0$ALC_LQWE_NB_COM
 
-table(lsb_CLSA_cop_0$lsb_alc_total_0)
-class(lsb_CLSA_cop_0$lsb_alc_total_0)
-table(CLSA_cop_0$ALC_RDWD_NB_COM)
-table(CLSA_cop_0$ALC_WHWD_NB_COM)
-table(CLSA_cop_0$ALC_BRWD_NB_COM)
-table(CLSA_cop_0$ALC_LQWD_NB_COM)
-
-summary(CLSA_cop_0$ALC_RDWD_NB_COM)
-summary(CLSA_cop_0$ALC_WHWD_NB_COM)
-summary(CLSA_cop_0$ALC_BRWD_NB_COM)
-summary(CLSA_cop_0$ALC_LQWD_NB_COM)
-summary(CLSA_cop_0$ALC_RDWE_NB_COM)
-summary(CLSA_cop_0$ALC_WHWE_NB_COM)
-summary(CLSA_cop_0$ALC_LQWE_NB_COM)
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
@@ -573,30 +541,21 @@ summary(CLSA_cop_0$ALC_LQWE_NB_COM)
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  complete
+**Harmonization status**: complete
 **Harmonization comment**:     
 **R script**:  
 ```{r, echo=TRUE}
 
-lsb_CLSA_cop_1$lsb_alc_total_1 <- CLSA_cop_1$ALC_RDWD_NB_COF1+ 
-                                  CLSA_cop_1$ALC_WHWD_NB_COF1+ 
-                                  CLSA_cop_1$ALC_BRWD_NB_COF1+
+lsb_CLSA_cop_1$lsb_alc_total_1 <-  CLSA_cop_1$ALC_RDWD_NB_COF1+ 
+                                   CLSA_cop_1$ALC_WHWD_NB_COF1+ 
+                                   CLSA_cop_1$ALC_BRWD_NB_COF1+
                                   CLSA_cop_1$ALC_LQRWD_NB_COF1+
    
-                                  CLSA_cop_1$ALC_RDWE_NB_COF1+
-                                  CLSA_cop_1$ALC_WHWE_NB_COF1+
-                                  CLSA_cop_1$ALC_BRWE_NB_COF1+
+                                   CLSA_cop_1$ALC_RDWE_NB_COF1+
+                                   CLSA_cop_1$ALC_WHWE_NB_COF1+
+                                   CLSA_cop_1$ALC_BRWE_NB_COF1+
                                   CLSA_cop_1$ALC_LQRWE_NB_COF1
 
-lsb_CLSA_cop_1$lsb_alc_total_1 <-as.numeric(lsb_CLSA_cop_1$lsb_alc_total_1)
-
-table(lsb_CLSA_cop_1$lsb_alc_total_1)
-class(lsb_CLSA_cop_1$lsb_alc_total_1)
-
-table(CLSA_cop_1$ALC_RDWD_NB_COF1, useNA = "always")
-table(CLSA_cop_1$ALC_WHWD_NB_COF1, useNA = "always")
-table(CLSA_cop_1$ALC_BRWD_NB_COF1, useNA = "always")
-table(lsb_CLSA_cop_1$lsb_alc_total_1, useNA = "always")
 
 ```  
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
@@ -606,7 +565,7 @@ table(lsb_CLSA_cop_1$lsb_alc_total_1, useNA = "always")
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -619,7 +578,7 @@ table(lsb_CLSA_cop_1$lsb_alc_total_1, useNA = "always")
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -633,36 +592,36 @@ table(lsb_CLSA_cop_1$lsb_alc_total_1, useNA = "always")
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 lsb_CLSA_cop_0$lsb_alc_wine_0 <- CLSA_cop_0$ALC_RDWD_NB_COM+ 
                                  CLSA_cop_0$ALC_WHWD_NB_COM+ 
+  
                                  CLSA_cop_0$ALC_RDWE_NB_COM+ 
                                  CLSA_cop_0$ALC_WHWE_NB_COM
-class(lsb_CLSA_cop_0$lsb_alc_wine_0)
 
 ```  
 ### **Variable label**:   Current quantity of wine consumed per week  
-**Variable name**: lsb_alc_wine_1  
+**Variable name**: lsb_alc_wine_1   
 **Variable description**:  Current quantity of wine consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 lsb_CLSA_cop_1$lsb_alc_wine_1 <-  CLSA_cop_1$ALC_RDWD_NB_COF1+ 
                                   CLSA_cop_1$ALC_WHWD_NB_COF1+
+  
                                   CLSA_cop_1$ALC_RDWE_NB_COF1+ 
                                   CLSA_cop_1$ALC_WHWE_NB_COF1
-lsb_CLSA_cop_1$lsb_alc_wine_1 <- as.numeric(lsb_CLSA_cop_1$lsb_alc_wine_1)
-class(lsb_CLSA_cop_1$lsb_alc_wine_1)
+
 
 ```  
 ### **Variable label**:   Current quantity of wine consumed per week  
@@ -672,7 +631,7 @@ class(lsb_CLSA_cop_1$lsb_alc_wine_1)
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -685,7 +644,7 @@ class(lsb_CLSA_cop_1$lsb_alc_wine_1)
 **Variable unit**: drinks/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -700,14 +659,14 @@ class(lsb_CLSA_cop_1$lsb_alc_wine_1)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 lsb_CLSA_cop_0$lsb_alc_beer_0 <- CLSA_cop_0$ALC_BRWD_NB_COM+
                                  CLSA_cop_0$ALC_BRWE_NB_COM
-table(lsb_CLSA_cop_0$lsb_alc_beer_0)
-class(lsb_CLSA_cop_0$lsb_alc_beer_0)
+
+
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_1  
@@ -717,17 +676,14 @@ class(lsb_CLSA_cop_0$lsb_alc_beer_0)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_1$lsb_alc_beer_1<- CLSA_cop_1$ALC_BRWD_NB_COF1+
-                                CLSA_cop_1$ALC_BRWE_NB_COF1
+lsb_CLSA_cop_1$lsb_alc_beer_1 <- CLSA_cop_1$ALC_BRWD_NB_COF1+
+                                 CLSA_cop_1$ALC_BRWE_NB_COF1
 
-lsb_CLSA_cop_1$lsb_alc_beer_1<- as.numeric(lsb_CLSA_cop_1$lsb_alc_beer_1)
 
-table(lsb_CLSA_cop_1$lsb_alc_beer_1)
-class(lsb_CLSA_cop_1$lsb_alc_beer_1)
 ```  
 ### **Variable label**:   Current quantity of beer consumed per week  
 **Variable name**: lsb_alc_beer_2  
@@ -737,7 +693,7 @@ class(lsb_CLSA_cop_1$lsb_alc_beer_1)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -751,7 +707,7 @@ class(lsb_CLSA_cop_1$lsb_alc_beer_1)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -766,14 +722,12 @@ class(lsb_CLSA_cop_1$lsb_alc_beer_1)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_0$lsb_alc_liq_0 <- CLSA_cop_0$ALC_LQWE_NB_COM+
+lsb_CLSA_cop_0$lsb_alc_liq_0 <- CLSA_cop_0$ALC_LQWD_NB_COM+
                                 CLSA_cop_0$ALC_LQWE_NB_COM
-table(lsb_CLSA_cop_0$lsb_alc_liq_0)
-class(lsb_CLSA_cop_0$lsb_alc_liq_0)
 
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
@@ -784,18 +738,14 @@ class(lsb_CLSA_cop_0$lsb_alc_liq_0)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
-lsb_CLSA_cop_1$lsb_alc_liq_1 <- CLSA_cop_1$ALC_LQRWE_NB_COF1+
+lsb_CLSA_cop_1$lsb_alc_liq_1 <- CLSA_cop_1$ALC_LQRWD_NB_COF1+
                                 CLSA_cop_1$ALC_LQRWE_NB_COF1
 
-lsb_CLSA_cop_1$lsb_alc_liq_1 <-as.numeric(lsb_CLSA_cop_1$lsb_alc_liq_1)
-
-table(lsb_CLSA_cop_1$lsb_alc_liq_1)
-class(lsb_CLSA_cop_1$lsb_alc_liq_1)
 
 ```  
 ### **Variable label**:   Current quantity of liquor consumed per week  
@@ -806,7 +756,7 @@ class(lsb_CLSA_cop_1$lsb_alc_liq_1)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -820,7 +770,7 @@ class(lsb_CLSA_cop_1$lsb_alc_liq_1)
 **Category coding**:  N/A  
  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -830,7 +780,7 @@ class(lsb_CLSA_cop_1$lsb_alc_liq_1)
 # Tobacco consumption subdomain
 
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_smk_cur_0  
+**Variable name**:  lsb_smk_cur_0   
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -841,17 +791,30 @@ class(lsb_CLSA_cop_1$lsb_alc_liq_1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization status**: complete
+**Harmonization comment**:   The variable related to cigarette smoking is combined with study-specific variables for using cigars, small cigars, sheesha, chewing tobacco or snuff, tobacco pipes
 **R script**:  
 ```{r, echo=TRUE}
-table(CLSA_cop_0$ICQ_SMOKE_COM, useNA="always")
-table(CLSA_cop_0$SMK_OTOCC_COM, CLSA_cop_0$ICQ_SMOKE_COM)
-table(CLSA_cop_0$SMK_CURRCG_COM, useNA="always")
 
-lsb_CLSA_cop_0$lsb_smk_cur_0<-ifelse(CLSA_cop_0$ICQ_SMOKE_COM=='1',1L,ifelse(CLSA_cop_0$ICQ_SMOKE_COM=="2"|CLSA_cop_0$ICQ_SMOKE_COM=="3", 0L, NA))
+lsb_CLSA_cop_0$lsb_smk_cur_0 <- 
+  dplyr::recode(
+    CLSA_cop_0$ICQ_SMOKE_COM %>% as.integer, 
+    "1" = 1L, 
+    "2" = 0L, 
+    "3" = 0L, 
+    .default = NA_integer_)
 
-table(lsb_CLSA_cop_0$lsb_smk_cur_0)
+
+#to add the people who uses other tobacco products
+
+lsb_CLSA_cop_0$lsb_smk_cur_0[  
+                               CLSA_cop_0$SMK_OTOCC_COM     == "1" |  
+                               CLSA_cop_0$SMK_OTCURR_CG_COM == "1" | 
+                               CLSA_cop_0$SMK_OTCURR_SM_COM == "1" |
+                               CLSA_cop_0$SMK_OTCURR_PI_COM == "1" |
+                               CLSA_cop_0$SMK_OTCURR_CH_COM == "1" | 
+                               CLSA_cop_0$SMK_OTCURR_SH_COM == "1"   ] <-1
+  
 
 ```  
 ### **Variable label**:  Current tobacco smoking  
@@ -866,17 +829,30 @@ table(lsb_CLSA_cop_0$lsb_smk_cur_0)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   
+**Harmonization status**: complete
+**Harmonization comment**:  The variable related to cigarette smoking is combined with study-specific variables for using cigars, small cigars, sheesha, chewing tobacco or snuff, tobacco pipes
 
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_1$lsb_smk_cur_1<- dplyr::recode(CLSA_cop_1$ICQ_SMOKE_COF1, "1"=1L, "2"=0L, "3"=0L, .default =NA_integer_)
 
-lsb_CLSA_cop_1$lsb_smk_cur_1<-ifelse(CLSA_cop_1$ICQ_SMOKE_COF1=='1',1L,ifelse(CLSA_cop_1$ICQ_SMOKE_COF1=="2"|CLSA_cop_1$ICQ_SMOKE_COF1=="3", 0L, NA))
+lsb_CLSA_cop_1$lsb_smk_cur_1 <- 
+  dplyr::recode(
+    CLSA_cop_1$ICQ_SMOKE_COF1 %>% as.integer, 
+    "1" = 1L, 
+    "2" = 0L, 
+    "3" = 0L, 
+    .default = NA_integer_)
 
+#to add the people who uses other tobacco products
+lsb_CLSA_cop_1$lsb_smk_cur_1[  
+                               CLSA_cop_1$SMK_OTOCC_COF1     == "1" |  
+                               CLSA_cop_1$SMK_OTCURR_CG_COF1 == "1" | 
+                               CLSA_cop_1$SMK_OTCURR_SM_COF1 == "1" |
+                               CLSA_cop_1$SMK_OTCURR_PI_COF1 == "1" |
+                               CLSA_cop_1$SMK_OTCURR_CH_COF1 == "1" | 
+                               CLSA_cop_1$SMK_OTCURR_SH_COF1 == "1"   ] <- 1
   
-table(lsb_CLSA_cop_1$lsb_smk_cur_1)
+
 ```  
 ### **Variable label**:  Current tobacco smoking  
 **Variable name**:  lsb_smk_cur_2  
@@ -890,7 +866,7 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -908,7 +884,7 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -926,7 +902,7 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -944,7 +920,7 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -962,7 +938,7 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 0 |   Currently does not smoke any tobacco product  
 1 |   Currently smokes any tobacco product  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -970,7 +946,7 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 ```  
 
 ### **Variable label**:  Smoking status  
-**Variable name**:  lsb_smk_status_0  
+**Variable name**:  lsb_smk_status_0   
 **Variable description**:  Smoking status of the participant.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -982,12 +958,17 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_0$lsb_smk_cur_0<- dplyr::recode(as.character(CLSA_cop_0$ICQ_SMOKE_COM), "1"=2L, "2"=0L, "3"=1L, .default =NA_integer_)
-table(lsb_CLSA_cop_0$lsb_smk_cur_0)
+lsb_CLSA_cop_0$lsb_smk_status_0 <- 
+  dplyr::recode(
+    CLSA_cop_0$ICQ_SMOKE_COM %>% as.integer, 
+    "1" = 2L, 
+    "2" = 0L, 
+    "3" = 1L, 
+    .default =NA_integer_)
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -1003,12 +984,17 @@ table(lsb_CLSA_cop_0$lsb_smk_cur_0)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_1$lsb_smk_cur_1<- dplyr::recode(CLSA_cop_1$ICQ_SMOKE_COF1, "1"=2L, "2"=0L, "3"=1L, .default =NA_integer_)
-table(lsb_CLSA_cop_1$lsb_smk_cur_1)
+lsb_CLSA_cop_1$lsb_smk_status_1 <- 
+  dplyr::recode(
+    CLSA_cop_1$ICQ_SMOKE_COF1 %>% as.integer, 
+    "1" = 2L, 
+    "2" = 0L, 
+    "3" = 1L, 
+    .default =NA_integer_)
 
 ```  
 ### **Variable label**:  Smoking status  
@@ -1024,7 +1010,7 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1043,7 +1029,7 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1062,7 +1048,7 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1081,7 +1067,7 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1100,7 +1086,7 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 1 |   Former smoker  
 2 |   Current smoker  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1108,7 +1094,7 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 ```  
 
 ### **Variable label**:  Ever tobacco smoking  
-**Variable name**:  lsb_smk_ever_0    
+**Variable name**:  lsb_smk_ever_0     
 **Variable description**:  Indicator of whether the participant has ever smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1119,16 +1105,25 @@ table(lsb_CLSA_cop_1$lsb_smk_cur_1)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  complete  
-**Harmonization comment**:  
+**Harmonization status**: complete
+**Harmonization comment**:   The study specific variables asks about ever using certain tobacco products for at least six months. 
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_0$lsb_smk_ever_0 <- ifelse(CLSA_cop_0$ICQ_SMOKE_COM==1 | 
-                                        CLSA_cop_0$ICQ_SMOKE_COM==3 ,1L,
-                                 ifelse(CLSA_cop_0$ICQ_SMOKE_COM==2, 0L,NA))
-table(lsb_CLSA_cop_0$lsb_smk_ever_0)
+lsb_CLSA_cop_0$lsb_smk_ever_0 <- 
+  dplyr::recode(
+    CLSA_cop_0$ICQ_SMOKE_COM %>% as.integer, 
+    "1" = 1L, 
+    "2" = 0L, 
+    "3" = 1L, 
+    .default =NA_integer_)
 
-table(CLSA_cop_0$ICQ_SMOKE_COM,CLSA_cop_0$SMK_OTREG_COM)
+lsb_CLSA_cop_0$lsb_smk_ever_0[  
+                                CLSA_cop_0$SMK_OTREG_COM     == "1" |  
+                                CLSA_cop_0$SMK_TYPEOT_CG_COM == "1" | 
+                                CLSA_cop_0$SMK_TYPEOT_SM_COM == "1" |
+                                CLSA_cop_0$SMK_TYPEOT_PI_COM == "1" |
+                                CLSA_cop_0$SMK_TYPEOT_CH_COM == "1" |
+                                CLSA_cop_0$SMK_TYPEOT_SH_COM == "1"   ] <- 1L
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1143,28 +1138,47 @@ table(CLSA_cop_0$ICQ_SMOKE_COM,CLSA_cop_0$SMK_OTREG_COM)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  complete  
-**Harmonization comment**: The variable in the relavent wave is combined with the same variables from the baseline wave. 
+**Harmonization status**: complete
+**Harmonization comment**:   The study specific variables asks about ever using certain tobacco products for at least six months. The variable in the relavent wave is combined with the same variables from the baseline wave. 
 **R script**:  
 ```{r, echo=TRUE}
+#creating intermediate variables to account for answering as Having smoked tobacco products in the previous wave. 
+
+lsb_combined_waves_temp <- full_join(CLSA_cop_0,CLSA_cop_1,by = "id")
+
 #Harmonization scripts to create "ever had "
 
-lsb_table$lsb_smk_ever_0<- ifelse(lsb_table$ICQ_SMOKE_COM==1 | 
-                                  lsb_table$ICQ_SMOKE_COM==3 ,1L, 
-                           ifelse(lsb_table$ICQ_SMOKE_COM==2, 0L,NA))
+lsb_combined_waves_temp$lsb_smk_ever_0 <- 
+   dplyr::recode(
+     as.character(lsb_combined_waves_temp$ICQ_SMOKE_COM), 
+    "1" = 1L, 
+    "2" = 0L, 
+    "3" = 1L, 
+    .default =NA_integer_)
+
+lsb_combined_waves_temp$lsb_smk_ever_0[   
+                                          lsb_combined_waves_temp$SMK_OTREG_COM     == "1" | 
+                                          lsb_combined_waves_temp$SMK_TYPEOT_CG_COM == "1" | 
+                                          lsb_combined_waves_temp$SMK_TYPEOT_SM_COM == "1" | 
+                                          lsb_combined_waves_temp$SMK_TYPEOT_PI_COM == "1" | 
+                                          lsb_combined_waves_temp$SMK_TYPEOT_CH_COM == "1" |
+                                          lsb_combined_waves_temp$SMK_TYPEOT_SH_COM == "1"    ] <- 1L
+
 
 #Direct mapping to harmonized tables keeping correct participants for each wave
 
-lsb_table$lsb_smk_ever_1<- ifelse(lsb_table$ICQ_SMOKE_COF1==1 | 
-                                  lsb_table$ICQ_SMOKE_COF1==3 |
-                                  lsb_table$lsb_smk_ever_0==1 ,1L,
-                                  ifelse(lsb_table$ICQ_SMOKE_COF1==2&lsb_table$lsb_smk_ever_0==0, 0L,NA))
-
+lsb_combined_waves_temp$lsb_smk_ever_1 <- 
+  ifelse(lsb_combined_waves_temp$ICQ_SMOKE_COF1 == "1" | 
+         lsb_combined_waves_temp$ICQ_SMOKE_COF1 == "3" |
+         lsb_combined_waves_temp$lsb_smk_ever_0 ==  1     , 1L ,
+  ifelse(lsb_combined_waves_temp$ICQ_SMOKE_COF1 == "2"  &
+         lsb_combined_waves_temp$lsb_smk_ever_0 ==  0     , 0L, NA))
 
 
 #Direct mapping to harmonized tables keeping correct participants for each wave
-lsb_CLSA_cop_1<-merge(lsb_CLSA_cop_1,lsb_table[,c("id","lsb_smk_ever_1")],by="id",all.x=TRUE)
-table(lsb_CLSA_cop_1$lsb_smk_ever_1)
+lsb_CLSA_cop_1 <- left_join(lsb_CLSA_cop_1, lsb_combined_waves_temp %>% select(id, lsb_smk_ever_1), by = "id")
+
+rm(lsb_combined_waves_temp)
 
 ```  
 ### **Variable label**:  Ever tobacco smoking  
@@ -1179,7 +1193,7 @@ table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1197,7 +1211,7 @@ table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1215,7 +1229,7 @@ table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1233,7 +1247,7 @@ table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1251,7 +1265,7 @@ table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 0 |   Never smoked tobacco  
 1 |   Ever smoked tobacco  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1259,13 +1273,13 @@ table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 ```  
 
 ### **Variable label**:  Quantity cigarettes smoked    
-**Variable name**:  lsb_cig_qty_0   
+**Variable name**:  lsb_cig_qty_0 
 **Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   The study-specific variable is categorical.  
 **R script**:  
 ```{r, echo=TRUE}
@@ -1281,13 +1295,13 @@ table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 
 ```  
 ### **Variable label**:  Quantity cigarettes smoked    
-**Variable name**:  lsb_cig_qty_1   
+**Variable name**:  lsb_cig_qty_1
 **Variable description**:  Current average number of cigarettes smoked per day.  
 **Value type**:  integer  
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1300,7 +1314,7 @@ table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1313,7 +1327,7 @@ table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1326,7 +1340,7 @@ table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1339,7 +1353,7 @@ table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1352,7 +1366,7 @@ table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 **Variable unit**:  cigarettes/day  
 **Category coding**:  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1360,44 +1374,40 @@ table(lsb_CLSA_cop_1$lsb_smk_ever_1)
 ```  
 
 ### **Variable label**:  Smoking initiation age    
-**Variable name**:  lsb_smk_start_0    
+**Variable name**:  lsb_smk_start_0     
 **Variable description**:  Age at which the participant started smoking any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  complete
-**Harmonization comment**: The variable "At what age did you begin to smoke daily?" is used for harmonization for current or previous daily smokers; if a participant does not  have a valid respond to this study-specific question, the variable "At what age did you smoke your first whole cigarette?" is used for harmonization.  
+**Harmonization status**: complete
+**Harmonization comment**:   The variable "At what age did you smoke your first whole cigarette?" is used in harmonization.  
 **R script**:  
 ```{r, echo=TRUE}
-table(CLSA_cop_0$SMK_FRSTCG_AG_COM, useNA="always")
-table(CLSA_cop_0$SMK_SMKDL_AG_COM, useNA="always")
-table(CLSA_cop_0$SMK_CGDL_AG_COM, useNA="always")
 
-table(CLSA_cop_0$SMK_FRSTCG_AG_COM>CLSA_cop_0$SMK_SMKDL_AG_COM)
-table(CLSA_cop_0$SMK_FRSTCG_AG_COM,CLSA_cop_0$SMK_SMKDL_AG_COM)
-
-
-
-lsb_CLSA_cop_0$lsb_smk_start_0 <-ifelse(is.na(CLSA_cop_0$SMK_CGDL_AG_COM)&!is.na(CLSA_cop_0$SMK_SMKDL_AG_COM), CLSA_cop_0$SMK_SMKDL_AG_COM,
-                                 ifelse(is.na(CLSA_cop_0$SMK_SMKDL_AG_COM)&!is.na(CLSA_cop_0$SMK_CGDL_AG_COM), CLSA_cop_0$SMK_CGDL_AG_COM,
-                                 ifelse(is.na(CLSA_cop_0$SMK_SMKDL_AG_COM)&is.na( CLSA_cop_0$SMK_CGDL_AG_COM), CLSA_cop_0$SMK_FRSTCG_AG_COM, NA)))
-
-table(lsb_CLSA_cop_0$lsb_smk_start_0, useNA = "always")
-table(CLSA_cop_0$SMK_SMKDL_AG_COM)
+lsb_CLSA_cop_0$lsb_smk_start_0 <- CLSA_cop_0$SMK_FRSTCG_AG_COM
 
 ```  
 ### **Variable label**:  Smoking initiation age    
-**Variable name**:  lsb_smk_start_1    
+**Variable name**:  lsb_smk_start_1 
 **Variable description**:  Age at which the participant started smoking any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible  
-**Harmonization comment**:   
+**Harmonization status**: complete
 **R script**:  
 ```{r, echo=TRUE}
+
+lsb_CLSA_cop_0_age_temp <- 
+  CLSA_cop_0 %>% 
+  select(id, lsb_smk_start_1 = SMK_FRSTCG_AG_COM)
+
+lsb_CLSA_cop_1 <- 
+  left_join(lsb_CLSA_cop_1, 
+            lsb_CLSA_cop_0_age_temp, by = "id")
+
+rm(lsb_CLSA_cop_0_age_temp)
 
 ```  
 ### **Variable label**:  Smoking initiation age    
@@ -1407,7 +1417,7 @@ table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:      
 **R script**:  
 ```{r, echo=TRUE}
@@ -1420,7 +1430,7 @@ table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:    
 **R script**:  
 ```{r, echo=TRUE}
@@ -1433,7 +1443,7 @@ table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:      
 **R script**:  
 ```{r, echo=TRUE}
@@ -1446,7 +1456,7 @@ table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1459,7 +1469,7 @@ table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1467,26 +1477,26 @@ table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 ```  
 
 ### **Variable label**:  Smoking cessation age  
-**Variable name**:  lsb_smk_stop_0   
+**Variable name**:  lsb_smk_stop_0
 **Variable description**:  Age at which the participant last smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Smoking cessation age  
-**Variable name**:  lsb_smk_stop_1   
+**Variable name**:  lsb_smk_stop_1
 **Variable description**:  Age at which the participant last smoked any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1499,7 +1509,7 @@ table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1512,7 +1522,7 @@ table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1525,7 +1535,7 @@ table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1538,7 +1548,7 @@ table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1551,7 +1561,7 @@ table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 **Variable unit**:  years  
 **Category coding**:  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1559,13 +1569,13 @@ table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 ```  
 
 ### **Variable label**:  Pack years  
-**Variable name**:  lsb_smk_py_0    
+**Variable name**:  lsb_smk_py_0  
 **Variable description**:  Number of estimated pack years of the participant.   
 **Value type**:  decimal    
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1573,13 +1583,13 @@ table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 
 ```  
 ### **Variable label**:  Pack years  
-**Variable name**:  lsb_smk_py_1    
+**Variable name**:  lsb_smk_py_1  
 **Variable description**:  Number of estimated pack years of the participant.     
 **Value type**:  decimal    
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1593,7 +1603,7 @@ table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 **Variable unit**:  pack-years    
 **Category coding**:  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1616,25 +1626,19 @@ table(CLSA_cop_0$SMK_SMKDL_AG_COM)
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 lsb_CLSA_cop_0$lsb_pa_walk_freq_0 <- 
   dplyr::recode(
-    CLSA_cop_0$PA2_WALK_MCQ, 
+    CLSA_cop_0$PA2_WALK_MCQ %>% as.integer, 
     "1" = 0L, 
     "2" = 1L, 
     "3" = 2L, 
     "4" = 3L, 
     .default =NA_integer_)
-
-# verifications 
-CLSA_cop_0 %>% select(PA2_WALK_MCQ) %>% 
-  bind_cols(lsb_CLSA_cop_0 %>% select(lsb_pa_walk_freq_0)) %>% 
-  group_by(lsb_pa_walk_freq_0,PA2_WALK_MCQ) %>% 
-  tally
 
 ```  
 ### **Variable label**: Frequency of walking    
@@ -1651,25 +1655,19 @@ CLSA_cop_0 %>% select(PA2_WALK_MCQ) %>%
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 lsb_CLSA_cop_1$lsb_pa_walk_freq_1 <- 
   dplyr::recode(
-    CLSA_cop_1$PA2_WALK_COF1, 
+    CLSA_cop_1$PA2_WALK_COF1 %>% as.integer, 
     "1" = 0L, 
     "2" = 1L, 
     "3" = 2L, 
     "4" = 3L, 
     .default =NA_integer_)
-
-# verifications 
-CLSA_cop_1 %>% select(PA2_WALK_COF1) %>% 
-  bind_cols(lsb_CLSA_cop_1 %>% select(lsb_pa_walk_freq_1)) %>% 
-  group_by(lsb_pa_walk_freq_1,PA2_WALK_COF1) %>% 
-  tally
 
 ```  
 ### **Variable label**: Frequency of walking    
@@ -1686,7 +1684,7 @@ CLSA_cop_1 %>% select(PA2_WALK_COF1) %>%
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1706,7 +1704,7 @@ CLSA_cop_1 %>% select(PA2_WALK_COF1) %>%
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1726,7 +1724,7 @@ CLSA_cop_1 %>% select(PA2_WALK_COF1) %>%
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1746,7 +1744,7 @@ CLSA_cop_1 %>% select(PA2_WALK_COF1) %>%
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1766,7 +1764,7 @@ CLSA_cop_1 %>% select(PA2_WALK_COF1) %>%
 2 |  Sometimes (3-4 days)  
 3 |  Often (5-7 days)    
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1788,29 +1786,20 @@ CLSA_cop_1 %>% select(PA2_WALK_COF1) %>%
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
-lsb_CLSA_cop_0$lsb_pa_walk_time_0<-as.integer(CLSA_cop_0$PA2_WALKHR_MCQ)-1
-table(lsb_CLSA_cop_0$lsb_pa_walk_time_0)
-
 lsb_CLSA_cop_0$lsb_pa_walk_time_0 <- 
   dplyr::recode(
-    CLSA_cop_0$PA2_WALKHR_MCQ, 
+    CLSA_cop_0$PA2_WALKHR_MCQ %>% as.integer, 
     "1" = 0L, 
     "2" = 1L, 
     "3" = 2L, 
     "4" = 3L, 
     "5" = 4L, 
     .default =NA_integer_)
-
-# verifications 
-CLSA_cop_0 %>% select(PA2_WALKHR_MCQ) %>% 
-  bind_cols(lsb_CLSA_cop_0 %>% select(lsb_pa_walk_time_0)) %>% 
-  group_by(lsb_pa_walk_time_0,PA2_WALKHR_MCQ) %>% 
-  tally
 
 
 ```  
@@ -1829,14 +1818,14 @@ CLSA_cop_0 %>% select(PA2_WALKHR_MCQ) %>%
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more   
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 lsb_CLSA_cop_1$lsb_pa_walk_time_1 <- 
   dplyr::recode(
-    CLSA_cop_1$PA2_WALKHR_COF1, 
+    CLSA_cop_1$PA2_WALKHR_COF1 %>% as.integer, 
     "1" = 0L, 
     "2" = 1L, 
     "3" = 2L, 
@@ -1844,11 +1833,6 @@ lsb_CLSA_cop_1$lsb_pa_walk_time_1 <-
     "5" = 4L,
     .default =NA_integer_)
 
-# verifications 
-CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>% 
-  bind_cols(lsb_CLSA_cop_1 %>% select(lsb_pa_walk_time_1)) %>% 
-  group_by(lsb_pa_walk_time_1,PA2_WALKHR_COF1) %>% 
-  tally
 
 ```  
 ### **Variable label**:  Average walking time    
@@ -1866,7 +1850,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more   
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1887,7 +1871,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more   
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1908,7 +1892,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more     
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1929,7 +1913,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more     
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1950,7 +1934,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 3 |  2 hours but less than 4 hours  
 4 |  4 hours or more    
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1958,26 +1942,26 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 ```  
 
 ### **Variable label**:  Average walking time for copnsportation  
-**Variable name**:  lsb_pa_walk_trans_0    
-**Variable description**:  Minutes per week the participant spent on walking for copnsportation (utilitarian walking) in the last week.  
+**Variable name**:  lsb_pa_walk_trans_0 
+**Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
 **Value type**:  decimal    
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Average walking time for copnsportation    
-**Variable name**:  lsb_pa_walk_trans_1    
-**Variable description**: Minutes per week the participant spent on walking for copnsportation (utilitarian walking) in the last week.    
+**Variable name**:  lsb_pa_walk_trans_1 
+**Variable description**: Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1985,12 +1969,12 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 ```  
 ### **Variable label**:  Average walking time for copnsportation    
 **Variable name**:  lsb_pa_walk_trans_2    
-**Variable description**:  Minutes per week the participant spent on walking for copnsportation (utilitarian walking) in the last week.  
+**Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -1998,12 +1982,12 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 ```  
 ### **Variable label**:  Average walking time for copnsportation    
 **Variable name**:  lsb_pa_walk_trans_3    
-**Variable description**:  Minutes per week the participant spent on walking for copnsportation (utilitarian walking) in the last week.  
+**Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2011,12 +1995,12 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 ```  
 ### **Variable label**:  Average walking time for copnsportation    
 **Variable name**:  lsb_pa_walk_trans_4    
-**Variable description**:  Minutes per week the participant spent on walking for copnsportation (utilitarian walking) in the last week.    
+**Variable description**:  Minutes per week the participant spent on walking for transportation (utilitarian walking) in the last week.    
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2024,26 +2008,26 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 ```  
 
 ### **Variable label**:  Average walking time for leisure  
-**Variable name**:  lsb_pa_walk_leis_0    
+**Variable name**:  lsb_pa_walk_leis_0  
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
 ```  
 ### **Variable label**:  Average walking time for leisure  
-**Variable name**:  lsb_pa_walk_leis_1    
+**Variable name**:  lsb_pa_walk_leis_1
 **Variable description**:  Minutes per week the participant spent on walking for leisure in the last week.  
 **Value type**:  decimal      
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2056,7 +2040,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2069,7 +2053,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2082,7 +2066,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2096,7 +2080,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:    
 **R script**:  
 ```{r, echo=TRUE}
@@ -2109,7 +2093,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2122,7 +2106,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2135,7 +2119,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2148,7 +2132,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2161,7 +2145,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2174,7 +2158,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2193,12 +2177,13 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
-**Harmonization status**:  impossible    
+**Harmonization status**: impossible
 **Harmonization comment**: The study-specific variable is: During the past 7 days, did you engage in any of the following activities? outdoor gardening, sweeping the balcony or the stairs.  
 
 **R script**:  
 ```{r, echo=TRUE}
-#PA2_LTODA_MCQ
+
+
 ```  
 ### **Variable label**:  Gardening    
 **Variable name**:  lsb_pa_garden_1  
@@ -2212,10 +2197,11 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   The study-specific variable is: During the past 7 days, did you engage in any of the following activities? outdoor gardening, sweeping the balcony or the stairs.  
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Gardening    
@@ -2230,7 +2216,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2248,7 +2234,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2266,7 +2252,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2284,7 +2270,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2302,7 +2288,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 0 |   Does not do any gardening activities  
 1 |   Does any gardening activities  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2315,7 +2301,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2328,7 +2314,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2341,7 +2327,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2354,7 +2340,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2367,7 +2353,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2380,7 +2366,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2393,7 +2379,7 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 **Variable unit**:  minutes/week    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2412,19 +2398,17 @@ CLSA_cop_1 %>% select(PA2_WALKHR_COF1) %>%
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   The study-specific variable asks about whether the participant engaged in housework in the past 7 days.  
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_0$lsb_pa_house_0<-ifelse(CLSA_cop_0$PA2_LTHSWK_MCQ==1|CLSA_cop_0$PA2_HVYHSWK_MCQ==1,1L,
-                               ifelse(CLSA_cop_0$PA2_LTHSWK_MCQ==2 & CLSA_cop_0$PA2_HVYHSWK_MCQ==2,0L,NA))
-table(lsb_CLSA_cop_0$lsb_pa_house_0)
+lsb_CLSA_cop_0$lsb_pa_house_0<-
+  ifelse(CLSA_cop_0$PA2_LTHSWK_MCQ  == 1 | 
+         CLSA_cop_0$PA2_HVYHSWK_MCQ == 1   ,  1L,
+  ifelse(CLSA_cop_0$PA2_LTHSWK_MCQ  == 2 &
+         CLSA_cop_0$PA2_HVYHSWK_MCQ == 2   ,  0L, NA))
 
-# verifications 
-CLSA_cop_0 %>% select(PA2_LTHSWK_MCQ, PA2_HVYHSWK_MCQ) %>% 
-  bind_cols(lsb_CLSA_cop_0 %>% select(lsb_pa_house_0)) %>% 
-  group_by(lsb_pa_house_0,PA2_LTHSWK_MCQ, PA2_HVYHSWK_MCQ) %>% 
-  tally
+
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_1  
@@ -2438,20 +2422,17 @@ CLSA_cop_0 %>% select(PA2_LTHSWK_MCQ, PA2_HVYHSWK_MCQ) %>%
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_1$lsb_pa_house_1<-ifelse(CLSA_cop_1$PA2_LTHSWK_COF1==1|CLSA_cop_1$PA2_HVYHSWK_COF1==1,1L,
-                               ifelse(CLSA_cop_1$PA2_LTHSWK_COF1==2&CLSA_cop_1$PA2_HVYHSWK_COF1==2,0L,NA))
+lsb_CLSA_cop_1$lsb_pa_house_1 <-
+  ifelse(CLSA_cop_1$PA2_LTHSWK_COF1  == 1 | 
+         CLSA_cop_1$PA2_HVYHSWK_COF1 == 1    ,  1L,
+  ifelse(CLSA_cop_1$PA2_LTHSWK_COF1  == 2 &
+         CLSA_cop_1$PA2_HVYHSWK_COF1 == 2    ,  0L, NA))
 
-table(lsb_CLSA_cop_1$lsb_pa_house_1)
 
-# verifications 
-CLSA_cop_1 %>% select(PA2_LTHSWK_COF1, PA2_HVYHSWK_COF1) %>% 
-  bind_cols(lsb_CLSA_cop_1 %>% select(lsb_pa_house_1)) %>% 
-  group_by(lsb_pa_house_1,PA2_LTHSWK_COF1, PA2_HVYHSWK_COF1) %>% 
-  tally
 ```  
 ### **Variable label**:  Household activities  
 **Variable name**:  lsb_pa_house_2  
@@ -2465,7 +2446,7 @@ CLSA_cop_1 %>% select(PA2_LTHSWK_COF1, PA2_HVYHSWK_COF1) %>%
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2483,7 +2464,7 @@ CLSA_cop_1 %>% select(PA2_LTHSWK_COF1, PA2_HVYHSWK_COF1) %>%
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:   impossible   
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2501,7 +2482,7 @@ CLSA_cop_1 %>% select(PA2_LTHSWK_COF1, PA2_HVYHSWK_COF1) %>%
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2519,7 +2500,7 @@ CLSA_cop_1 %>% select(PA2_LTHSWK_COF1, PA2_HVYHSWK_COF1) %>%
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2537,7 +2518,7 @@ CLSA_cop_1 %>% select(PA2_LTHSWK_COF1, PA2_HVYHSWK_COF1) %>%
 0 |   Does not do any household activities  
 1 |   Does any household activities  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2551,7 +2532,7 @@ CLSA_cop_1 %>% select(PA2_LTHSWK_COF1, PA2_HVYHSWK_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2564,7 +2545,7 @@ CLSA_cop_1 %>% select(PA2_LTHSWK_COF1, PA2_HVYHSWK_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2577,7 +2558,7 @@ CLSA_cop_1 %>% select(PA2_LTHSWK_COF1, PA2_HVYHSWK_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2590,7 +2571,7 @@ CLSA_cop_1 %>% select(PA2_LTHSWK_COF1, PA2_HVYHSWK_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2603,7 +2584,7 @@ CLSA_cop_1 %>% select(PA2_LTHSWK_COF1, PA2_HVYHSWK_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2616,7 +2597,7 @@ CLSA_cop_1 %>% select(PA2_LTHSWK_COF1, PA2_HVYHSWK_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2629,7 +2610,7 @@ CLSA_cop_1 %>% select(PA2_LTHSWK_COF1, PA2_HVYHSWK_COF1) %>%
 **Variable unit**:  minutes/week  
 **Category coding**:  N/A  
 
-**Harmonization status**:   impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2647,39 +2628,20 @@ CLSA_cop_1 %>% select(PA2_LTHSWK_COF1, PA2_HVYHSWK_COF1) %>%
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
-table(CLSA_cop_0$PA2_LSPRT_MCQ,CLSA_cop_0$PA2_MSPRT_MCQ,useNA="always")
-table(CLSA_cop_0$PA2_MSPRT_MCQ,useNA="always")
-table(CLSA_cop_0$PA2_SSPRT_MCQ,useNA="always")
 
-lsb_CLSA_cop_0$lsb_pa_sport_0 <- ifelse(CLSA_cop_0$PA2_LSPRT_MCQ==1 &
-                                        CLSA_cop_0$PA2_MSPRT_MCQ==1 &
-                                        CLSA_cop_0$PA2_SSPRT_MCQ==1, 0L,
-                                
-                                 ifelse(is.na(CLSA_cop_0$PA2_LSPRT_MCQ) &
-                                        is.na(CLSA_cop_0$PA2_MSPRT_MCQ) &
-                                        is.na(CLSA_cop_0$PA2_SSPRT_MCQ), NA, 1L ))
+lsb_CLSA_cop_0$lsb_pa_sport_0 <- ifelse(CLSA_cop_0$PA2_LSPRT_MCQ == 1 &
+                                        CLSA_cop_0$PA2_MSPRT_MCQ == 1 &
+                                        CLSA_cop_0$PA2_SSPRT_MCQ == 1, 0L,1L )
 
-table(lsb_CLSA_cop_0$lsb_pa_sport_0,useNA="always")
-
-
-table(lsb_CLSA_cop_0$lsb_pa_sport_0,CLSA_cop_0$PA2_LSPRT_MCQ,useNA="always")
-table(lsb_CLSA_cop_0$lsb_pa_sport_0,CLSA_cop_0$PA2_MSPRT_MCQ,useNA="always")
-table(lsb_CLSA_cop_0$lsb_pa_sport_0,CLSA_cop_0$PA2_SSPRT_MCQ,useNA="always")
-
-# verifications 
-CLSA_cop_0 %>% select(PA2_LSPRT_MCQ,PA2_MSPRT_MCQ,PA2_SSPRT_MCQ) %>% 
-  bind_cols(lsb_CLSA_cop_0 %>% select(lsb_pa_sport_0)) %>% 
-  group_by(lsb_pa_sport_0,PA2_LSPRT_MCQ,PA2_MSPRT_MCQ,PA2_SSPRT_MCQ) %>% 
-  tally 
 
 ```   
 ### **Variable label**: Sports or exercise      
-**Variable name**:  lsb_pa_sport_1  
+**Variable name**:  lsb_pa_sport_1   
 **Variable description**:  Indicator of whether the participant does any sports or exercise.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -2690,26 +2652,16 @@ CLSA_cop_0 %>% select(PA2_LSPRT_MCQ,PA2_MSPRT_MCQ,PA2_SSPRT_MCQ) %>%
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
-lsb_CLSA_cop_1$lsb_pa_sport_1<-ifelse(CLSA_cop_1$PA2_LSPRT_COF1==1 &
-                                      CLSA_cop_1$PA2_MSPRT_COF1==1 &
-                                      CLSA_cop_1$PA2_SSPRT_COF1==1, 0L, 
-                                      
-                               ifelse(is.na(CLSA_cop_1$PA2_LSPRT_COF1) &
-                                      is.na(CLSA_cop_1$PA2_MSPRT_COF1) &
-                                      is.na(CLSA_cop_1$PA2_SSPRT_COF1), NA, 1L ))
+lsb_CLSA_cop_1$lsb_pa_sport_1 <- ifelse(CLSA_cop_1$PA2_LSPRT_COF1==1 &
+                                        CLSA_cop_1$PA2_MSPRT_COF1==1 &
+                                        CLSA_cop_1$PA2_SSPRT_COF1==1, 0L, 1L )
 
-table(lsb_CLSA_cop_1$lsb_pa_sport_1,useNA="always")
 
-# verifications 
-CLSA_cop_1 %>% select(PA2_LSPRT_COF1,PA2_MSPRT_COF1,PA2_SSPRT_COF1) %>% 
-  bind_cols(lsb_CLSA_cop_1 %>% select(lsb_pa_sport_1)) %>% 
-  group_by(lsb_pa_sport_1,PA2_LSPRT_COF1,PA2_MSPRT_COF1,PA2_SSPRT_COF1) %>% 
-  tally 
 
 ```   
 ### **Variable label**: Sports or exercise      
@@ -2724,7 +2676,7 @@ CLSA_cop_1 %>% select(PA2_LSPRT_COF1,PA2_MSPRT_COF1,PA2_SSPRT_COF1) %>%
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2742,7 +2694,7 @@ CLSA_cop_1 %>% select(PA2_LSPRT_COF1,PA2_MSPRT_COF1,PA2_SSPRT_COF1) %>%
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2760,7 +2712,7 @@ CLSA_cop_1 %>% select(PA2_LSPRT_COF1,PA2_MSPRT_COF1,PA2_SSPRT_COF1) %>%
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2778,7 +2730,7 @@ CLSA_cop_1 %>% select(PA2_LSPRT_COF1,PA2_MSPRT_COF1,PA2_SSPRT_COF1) %>%
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2796,7 +2748,7 @@ CLSA_cop_1 %>% select(PA2_LSPRT_COF1,PA2_MSPRT_COF1,PA2_SSPRT_COF1) %>%
 0 |  Does not do any sports or exercise   
 1 |  Does any sports or exercise
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2817,44 +2769,29 @@ CLSA_cop_1 %>% select(PA2_LSPRT_COF1,PA2_MSPRT_COF1,PA2_SSPRT_COF1) %>%
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**: The three study-specific variables asks on average how many hours a day the participant engaged in light/moderate/strenuous sports or recreational activities over the past 7 days; and the study specific categories are: Less than 30 minutes, 30 minutes but less than 1 hour, 1 hour but less than 2 hours, 2 hours but less than 4 hours, 4 hours or more. For the harmonization of the DataSchema variable the mid-point of each category is taken, the three variables for the sports time are added and multiplied by seven to find a weekly average. 
 **R script**:  
 ```{r, echo=TRUE}
 
-
 lsb_pa_sport_time_0_temp <- CLSA_cop_0 %>% 
   select(PA2_LSPRTHR_MCQ, PA2_MSPRTHR_MCQ, PA2_SSPRTHR_MCQ) %>%
+  mutate_all(as.integer) %>%
   mutate_all(~recode(., "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)) %>% 
   rowSums(na.rm = TRUE)*7
 
+lsb_pa_sport_time_0_temp <-
+  ifelse(is.na(CLSA_cop_0$PA2_LSPRTHR_MCQ) & 
+         is.na(CLSA_cop_0$PA2_MSPRTHR_MCQ) & 
+         is.na(CLSA_cop_0$PA2_SSPRTHR_MCQ),NA,lsb_pa_sport_time_0_temp)
 
 lsb_CLSA_cop_0$lsb_pa_sport_time_0 <-
-  ifelse(lsb_pa_sport_time_0_temp ==   0, 0L, 
+  ifelse(lsb_pa_sport_time_0_temp ==   0, 0L,
   ifelse(lsb_pa_sport_time_0_temp <   60, 1L, 
   ifelse(lsb_pa_sport_time_0_temp <= 120, 2L, 
-  ifelse(lsb_pa_sport_time_0_temp >  120, 3L, NA))))
+  ifelse(lsb_pa_sport_time_0_temp >  120, 3L,lsb_pa_sport_time_0_temp))))
 
-lsb_CLSA_cop_0$lsb_pa_sport_time_0 <-ifelse(lsb_CLSA_cop_0$lsb_pa_sport_0==0,0L,
-                                            ifelse(is.na(CLSA_cop_0$PA2_LSPRTHR_MCQ)&
-                                            is.na(CLSA_cop_0$PA2_MSPRTHR_MCQ)&
-                                            is.na(CLSA_cop_0$PA2_SSPRTHR_MCQ), NA,
-                                            lsb_CLSA_cop_0$lsb_pa_sport_time_0 ))
-
-
-# verification
-lsb_CLSA_cop_0 %>% select(lsb_pa_sport_time_0) %>% 
-  bind_cols(CLSA_cop_0 %>% select(PA2_LSPRTHR_MCQ, PA2_MSPRTHR_MCQ, PA2_SSPRTHR_MCQ)) %>%
-  bind_cols(lsb_pa_sport_time_0_temp %>% tibble("lsb_pa_sport_time_0_temp" = . )) %>% as_tibble %>%
-  group_by(lsb_pa_sport_time_0,lsb_pa_sport_time_0_temp,PA2_LSPRTHR_MCQ, PA2_MSPRTHR_MCQ, PA2_SSPRTHR_MCQ) %>% tally
-
-
-table(lsb_CLSA_cop_0$lsb_pa_sport_time_0, useNA = "always")
-
-
-table(CLSA_cop_0$PA2_LSPRTHR_MCQ,useNA = "always")
-table(CLSA_cop_0$PA2_MSPRTHR_MCQ,useNA = "always")
-table(CLSA_cop_0$PA2_SSPRTHR_MCQ,useNA = "always")
+rm(lsb_pa_sport_time_0_temp)
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -2871,38 +2808,31 @@ table(CLSA_cop_0$PA2_SSPRTHR_MCQ,useNA = "always")
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week   
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:  The three study-specific variables asks on average how many hours a day the participant engaged in light/moderate/strenuous sports or recreational activities over the past 7 days; and the study specific categories are: Less than 30 minutes, 30 minutes but less than 1 hour, 1 hour but less than 2 hours, 2 hours but less than 4 hours, 4 hours or more. For the harmonization of the DataSchema variable the mid-point of each category is taken, the three variables for the sports time are added and multiplied by seven to find a weekly average.  
 **R script**:  
 ```{r, echo=TRUE}
 
 lsb_pa_sport_time_1_temp <- CLSA_cop_1 %>% 
   select(PA2_LSRTHR_COF1, PA2_MSPRTHR_COF1, PA2_SSPRTHR_COF1) %>%
+  mutate_all(as.integer) %>%
   mutate_all(~recode(., "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)) %>% 
   rowSums(na.rm = TRUE)*7
 
+lsb_pa_sport_time_1_temp <-
+  ifelse(is.na(CLSA_cop_1$PA2_LSRTHR_COF1) & 
+         is.na(CLSA_cop_1$PA2_MSPRTHR_COF1) & 
+         is.na(CLSA_cop_1$PA2_SSPRTHR_COF1),NA,lsb_pa_sport_time_1_temp)
+
 lsb_CLSA_cop_1$lsb_pa_sport_time_1 <-
-  ifelse(lsb_pa_sport_time_1_temp ==   0, 0L, 
+  ifelse(lsb_pa_sport_time_1_temp ==   0, 0L,
   ifelse(lsb_pa_sport_time_1_temp <   60, 1L, 
   ifelse(lsb_pa_sport_time_1_temp <= 120, 2L, 
-  ifelse(lsb_pa_sport_time_1_temp >  120, 3L, NA))))
-
-lsb_CLSA_cop_1$lsb_pa_sport_time_1 <-ifelse(lsb_CLSA_cop_1$lsb_pa_sport_1==0,0L,
-                                            ifelse(is.na(CLSA_cop_1$PA2_LSRTHR_COF1)&
-                                            is.na(CLSA_cop_1$PA2_MSPRTHR_COF1)&
-                                            is.na(CLSA_cop_1$PA2_SSPRTHR_COF1), NA,
-                                            lsb_CLSA_cop_1$lsb_pa_sport_time_1 ))
+  ifelse(lsb_pa_sport_time_1_temp >  120, 3L,lsb_pa_sport_time_1_temp))))
 
 
-# verification
-lsb_CLSA_cop_1 %>% select(lsb_pa_sport_time_1) %>% 
-  bind_cols(CLSA_cop_1 %>% select(PA2_LSRTHR_COF1, PA2_MSPRTHR_COF1, PA2_SSPRTHR_COF1)) %>%
-  bind_cols(lsb_pa_sport_time_1_temp %>% tibble("lsb_pa_sport_time_1_temp" = . )) %>% as_tibble %>%
-  group_by(lsb_pa_sport_time_1,lsb_pa_sport_time_1_temp,PA2_LSRTHR_COF1, PA2_MSPRTHR_COF1, PA2_SSPRTHR_COF1) %>% tally
-
-
-table(lsb_CLSA_cop_1$lsb_pa_sport_time_1, useNA="always")
 rm(lsb_pa_sport_time_1_temp)
+
 
 ```  
 ### **Variable label**:  Average sports or exercise time       
@@ -2919,7 +2849,7 @@ rm(lsb_pa_sport_time_1_temp)
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2939,7 +2869,7 @@ rm(lsb_pa_sport_time_1_temp)
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2959,7 +2889,7 @@ rm(lsb_pa_sport_time_1_temp)
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2979,7 +2909,7 @@ rm(lsb_pa_sport_time_1_temp)
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -2999,7 +2929,7 @@ rm(lsb_pa_sport_time_1_temp)
 2 |  between 1 and 2 hours a week   
 3 |  more than 2 hours a week    
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3020,28 +2950,18 @@ rm(lsb_pa_sport_time_1_temp)
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:    There are five study specific variables: Consumption of green salad (lettuce, with or without other ingredients), consumption of potatoes (boiled, mashed or baked), consumption of french fries or pan-fried potatoes, poutine, consumption of carrots (fresh, frozen, canned, eaten on their own or with other food, cooked or raw), consumption of other vegetables (except carrots, potatoes or salad)? For the harmonized DataSchema variable, the daily consumption of all but consumption of french fries or pan-fried potatoes, poutine are combined.  
 
 **R script**:  
 ```{r, echo=TRUE}
-table(CLSA_cop_0$NUT_GREEN_COM)
-table(CLSA_cop_0$NUT_PTTO_COM)
-table(CLSA_cop_0$NUT_CRRT_COM)
-table(CLSA_cop_0$NUT_VGOT_COM)
-table(CLSA_cop_0$NUT_GREEN_COM)
 
-lsb_CLSA_cop_0$lsb_veg_0<- ifelse(CLSA_cop_0$NUT_GREEN_COM==1|
-                                  CLSA_cop_0$NUT_PTTO_COM ==1|
-                                  CLSA_cop_0$NUT_CRRT_COM ==1|
-                                  CLSA_cop_0$NUT_VGOT_COM ==1,  1L,
-                                  
-                           ifelse(CLSA_cop_0$NUT_GREEN_COM >  4 & 
-                                  CLSA_cop_0$NUT_PTTO_COM  >  4 & 
-                                  CLSA_cop_0$NUT_CRRT_COM  >  4 & 
-                                  CLSA_cop_0$NUT_VGOT_COM  >  4,  NA, 0L ))
 
-table(lsb_CLSA_cop_0$lsb_veg_0,useNA = "always")
+lsb_CLSA_cop_0$lsb_veg_0 <- ifelse(CLSA_cop_0$NUT_GREEN_COM == 1 |
+                                   CLSA_cop_0$NUT_PTTO_COM  == 1 |
+                                   CLSA_cop_0$NUT_CRRT_COM  == 1 |
+                                   CLSA_cop_0$NUT_VGOT_COM  == 1,  1L, 0L )
+
 
 ```  
 ### **Variable label**:  Daily vegetable consumption  
@@ -3056,28 +2976,18 @@ table(lsb_CLSA_cop_0$lsb_veg_0,useNA = "always")
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   There are five study specific variables: Consumption of green salad (lettuce, with or without other ingredients), consumption of potatoes (boiled, mashed or baked), consumption of french fries or pan-fried potatoes, poutine, consumption of carrots (fresh, frozen, canned, eaten on their own or with other food, cooked or raw), consumption of other vegetables (except carrots, potatoes or salad)? For the harmonized DataSchema variable, the daily consumption of all but consumption of french fries or pan-fried potatoes, poutine are combined.  
 
 **R script**:  
 ```{r, echo=TRUE}
 
-table(CLSA_cop_1$NUT_GREEN_COF1, useNA = "always")
-table(CLSA_cop_1$NUT_PTTO_COF1, useNA = "always")
-table(CLSA_cop_1$NUT_FRIE_COF1, useNA = "always")
-table(CLSA_cop_1$NUT_CRRT_COF1, useNA = "always")
-table(CLSA_cop_1$NUT_VGOT_COF1, useNA = "always")
 
-lsb_CLSA_cop_1$lsb_veg_1<- ifelse(CLSA_cop_1$NUT_GREEN_COF1==1|
-                                  CLSA_cop_1$NUT_PTTO_COF1 ==1|
-                                  CLSA_cop_1$NUT_CRRT_COF1 ==1|
-                                  CLSA_cop_1$NUT_VGOT_COF1 ==1,1L,
-                           ifelse(CLSA_cop_1$NUT_GREEN_COF1>4&
-                                  CLSA_cop_1$NUT_PTTO_COF1>4 &
-                                  CLSA_cop_1$NUT_CRRT_COF1>4 &
-                                  CLSA_cop_1$NUT_VGOT_COF1>4,  NA, 0L))
+lsb_CLSA_cop_1$lsb_veg_1 <- ifelse(CLSA_cop_1$NUT_GREEN_COF1 == 1 |
+                                   CLSA_cop_1$NUT_PTTO_COF1  == 1 |
+                                   CLSA_cop_1$NUT_CRRT_COF1  == 1 |
+                                   CLSA_cop_1$NUT_VGOT_COF1  == 1, 1L,0L)
 
-table(lsb_CLSA_cop_1$lsb_veg_1,useNA = "always")
 
 ```  
 ### **Variable label**:  Daily vegetable consumption  
@@ -3092,7 +3002,7 @@ table(lsb_CLSA_cop_1$lsb_veg_1,useNA = "always")
 0 |   Does not consume vegetables on a daily basis  
 1 |   Consumes vegetables on a daily basis  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3111,18 +3021,13 @@ table(lsb_CLSA_cop_1$lsb_veg_1,useNA = "always")
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-lsb_CLSA_cop_0$lsb_fruit_0<-dplyr::recode(CLSA_cop_0$NUT_FRUT_COM, 
-                                          '1'=1L,
-                                          '2'=0L, 
-                                          '3'=0L, 
-                                          '4'=0L,
-                                          '0'=0L, .default=NA_integer_)
-table(CLSA_cop_0$NUT_FRUT_COM)
-table(lsb_CLSA_cop_0$lsb_fruit_0)
+
+lsb_CLSA_cop_0$lsb_fruit_0 <- ifelse(CLSA_cop_0$NUT_FRUT_COM  == 1, 1L,0L)
+
 ```  
 ### **Variable label**:  Daily fruit consumption  
 **Variable name**:  lsb_fruit_1  
@@ -3136,18 +3041,13 @@ table(lsb_CLSA_cop_0$lsb_fruit_0)
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
-**Harmonization status**:  complete  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-table(CLSA_cop_1$NUT_FRUT_COF1,useNA = "always") 
-lsb_CLSA_cop_1$lsb_fruit_1<-dplyr::recode(CLSA_cop_1$NUT_FRUT_COF1, 
-                                          '1'=1L, 
-                                          '2'=0L, 
-                                          '3'=0L, 
-                                          '4'=0L, 
-                                          '0'=0L, .default=NA_integer_)
-table(lsb_CLSA_cop_1$lsb_fruit_1)
+
+lsb_CLSA_cop_1$lsb_fruit_1 <- ifelse(CLSA_cop_1$NUT_FRUT_COF1  == 1, 1L,0L)
+
 ```  
 ### **Variable label**:  Daily fruit consumption  
 **Variable name**:  lsb_fruit_2  
@@ -3161,7 +3061,7 @@ table(lsb_CLSA_cop_1$lsb_fruit_1)
 0 |   Does not consume fruit on a daily basis
 1 |   Consumes fruit on a daily basis  
 
-**Harmonization status**:  impossible
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3180,7 +3080,7 @@ table(lsb_CLSA_cop_1$lsb_fruit_1)
 0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3198,7 +3098,7 @@ table(lsb_CLSA_cop_1$lsb_fruit_1)
 0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3216,7 +3116,7 @@ table(lsb_CLSA_cop_1$lsb_fruit_1)
 0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3234,7 +3134,7 @@ table(lsb_CLSA_cop_1$lsb_fruit_1)
 0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3252,7 +3152,7 @@ table(lsb_CLSA_cop_1$lsb_fruit_1)
 0 |   Does not drink water on a daily basis
 1 |   Drinks water on a daily basis
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3266,7 +3166,7 @@ table(lsb_CLSA_cop_1$lsb_fruit_1)
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3274,23 +3174,20 @@ table(lsb_CLSA_cop_1$lsb_fruit_1)
 
 ```  
 ### **Variable label**:  Quantity daily coffee  
-**Variable name**:  lsb_coffee_qty_1  
+**Variable name**:  lsb_coffee_qty_1   
 **Variable description**:  Current quantity of coffee the participant consumes per day.   
 **Value type**:  integer  
 **Variable unit**:  cups/day 
 **Category coding**:  N/A  
 
-**Harmonization status**:  complete  
-**Harmonization comment**:   There are two study-specific variables: cups of regular coffee per day and cups of decaffeinated coffee per day. These two variables are combined for the creation of the DataSchema variable.  
+**Harmonization status**: complete
+**Harmonization comment**:   There are two study-specific variables: cups of regular coffee per day and cups of decaffeinated coffee per day. only caffeinated was taken for the creation of the DataSchema variable.  
 **R script**:  
 ```{r, echo=TRUE}
 
-table(CLSA_cop_1$NUR_DCOFF_NB_COF1, useNA = "always")
-table(CLSA_cop_1$NUR_RCOFF_NB_COF1, useNA = "always")
+lsb_CLSA_cop_1$lsb_coffee_qty_1 <- CLSA_cop_1$NUR_RCOFF_NB_COF1
 
-lsb_CLSA_cop_1$lsb_coffee_qty_1<- CLSA_cop_1$NUR_DCOFF_NB_COF1+
-                                  CLSA_cop_1$NUR_RCOFF_NB_COF1
-table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
+
 ```  
 ### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_2  
@@ -3299,7 +3196,7 @@ table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3312,7 +3209,7 @@ table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
 **Variable unit**:  cups/day 
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3325,7 +3222,7 @@ table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3335,29 +3232,33 @@ table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
 # Sleep quality subdomain
 
 ### **Variable label**:  Average sleep hours  
-**Variable name**:  lsb_sleep_hours_0  
+**Variable name**:  lsb_sleep_hours_0    
 **Variable description**:  Average number of hours the participant sleeps per night.  
 **Value type**:  integer  
 **Variable unit**:  hours/night  
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
 
+lsb_CLSA_cop_0$lsb_sleep_hours_0 <- CLSA_cop_0$SLE_HOUR_NB_COM
+
 ```  
 ### **Variable label**:  Average sleep hours  
-**Variable name**:  lsb_sleep_hours_1  
+**Variable name**:  lsb_sleep_hours_1   
 **Variable description**:  Average number of hours the participant sleeps per night.  
 **Value type**:  integer  
 **Variable unit**:  hours/night   
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: complete
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
+lsb_CLSA_cop_1$lsb_sleep_hours_1 <- CLSA_cop_1$SLE_HOUR_NB_COF1 
 
 ```  
 ### **Variable label**:  Average sleep hours  
@@ -3367,7 +3268,7 @@ table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
 **Variable unit**:  hours/night 
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3380,7 +3281,7 @@ table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
 **Variable unit**:  hours/night
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3393,7 +3294,7 @@ table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
 **Variable unit**:  hours/night   
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3406,7 +3307,7 @@ table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
 **Variable unit**:  hours/night    
 **Category coding**:  N/A  
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3425,10 +3326,11 @@ table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**:  impossible  
-**Harmonization comment**:   
+**Harmonization status**: impossible
+**Harmonization comment**:  
 **R script**:  
 ```{r, echo=TRUE}
+
 
 ```  
 ### **Variable label**:  Difficulty falling asleep  
@@ -3443,7 +3345,7 @@ table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3461,7 +3363,7 @@ table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3479,7 +3381,7 @@ table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3497,7 +3399,7 @@ table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
@@ -3515,7 +3417,7 @@ table(lsb_CLSA_cop_1$lsb_coffee_qty_1,useNA = "always")
 0 |  Never has difficulty falling asleep
 1 |  Sometimes has difficulty falling asleep
 
-**Harmonization status**:  impossible  
+**Harmonization status**: impossible
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}

@@ -6,31 +6,32 @@ output: html_document
 # Connecting with Opal data server
 ## Login to server and assign study data
 
+**Validation comment**: startdate_TRF1 creates error when import from OPAL
 ```{r, echo=FALSE}
 #Load R libraries
 library(opalr)
-#library(tidyverse)
+library(tidyverse)
 # Create an opal object with the login information
 erasmus_opal <- opal.login()
 
-#Login to Opal server and assign the content of the GLOBE table(s) to your RStudio environment
+#Login to Opal server and assign the content of the CLSA_TRA table(s) to your RStudio environment
 opal.assign.table.tibble(erasmus_opal, 'Tra3_4_Baseline','CLSA_1.Tra3_4_Baseline', variables =list("ALC_FREQ_TRM", "ALC_EVER_TRM", "ALC_MLFQ_TRM","ALC_FMFQ_TRM", "PA2_LTHSWK_MCQ","NUT_FRUT_TRM", "ALC_RDWD_NB_TRM"," ALC_WHWD_NB_TRM",  "ALC_BRWD_NB_TRM", "ALC_LQWD_NB_TRM", "ALC_RDWE_NB_TRM", "ALC_WHWE_NB_TRM", "ALC_BRWE_NB_TRM", "ALC_LQWE_NB_TRM", "PA2_LTHSWK_MCQ", "PA2_HVYHSWK_MCQ", "NUT_GREEN_TRM", "PA2_LSPRT_MCQ", "PA2_MSPRT_MCQ", "PA2_SSPRT_MCQ", "PA2_WALK_MCQ","SMK_100CG_TRM","ICQ_SMOKE_TRM", "SMK_OTREG_TRM" , "SMK_SMKDL_AG_TRM", "ALC_WHWD_NB_TRM",
 "PA2_WALKHR_MCQ", "PA2_HVYHSWK_MCQ", "PA2_LSPRTHR_MCQ", "PA2_MSPRTHR_MCQ", "PA2_SSPRTHR_MCQ", "SMK_CURRCG_TRM", "SMK_DSTY_TRM","SMK_CGDL_AG_TRM", "SMK_OTCURR_CG_TRM","SMK_FRSTCG_AG_TRM",
 "SMK_OTCURR_SM_TRM","SMK_OTCURR_PI_TRM", "SMK_OTCURR_CH_TRM", "	SMK_OTCURR_SH_TRM", "SMK_OTOCC_TRM", "SMK_OTCURR_SH_TRM", "NUR_DCOFF_NB_MCQ", "NUR_RCOFF_NB_MCQ", "SMK_TYPEOT_CG_TRM",  "SMK_TYPEOT_SM_TRM", "SMK_TYPEOT_PI_TRM", "SMK_TYPEOT_CH_TRM", "SMK_TYPEOT_SH_TRM", "SMK_OTCURR_CA_TRM"))
-CLSA_tra_0 <- opal.execute(erasmus_opal,'Tra3_4_Baseline')
+CLSA_tra_0 <- opal.execute(erasmus_opal,'Tra3_4_Baseline') %>% as_tibble %>% arrange(id)
 
 
 opal.assign.table.tibble(erasmus_opal, 'Tra_FU1','CLSA_1.Tra_FU1',  variables=list("NUR_RCOFF_NB_TRF1", "ALC_FREQ_TRF1", "ALC_EVER_TRF1", "ALC_MLFQ_TRF1","ALC_FMFQ_TRF1", "PA2_LTHSWK_TRF1","NUT_FRUT_TRF1", "ALC_RDWD_NB_TRF1"," ALC_WHWD_NB_TRF1",  "ALC_BRWD_NB_TRF1", "ALC_LQWD_NB_TRF1", "ALC_RDWE_NB_TRF1", "ALC_WHWE_NB_TRF1", "ALC_BRWE_NB_TRF1", "ALC_LQWE_NB_TRF1", "PA2_LTHSWK_TRF1", "PA2_HVYHSWK_TRF1", "PA2_LSPRT_TRF1", "PA2_MSPRT_TRF1", "PA2_SSPRT_TRF1", "PA2_WALK_TRF1","SMK_100CG_TRF1","ICQ_SMOKE_TRF1", "SMK_OTREG_TRF1" , "SMK_SMKDL_AG_TRF1", "ALC_WHWD_NB_TRF1", "ALC_LQRWE_NB_TRF1", "ALC_LQRWD_NB_TRF1", "SMK_OTOCC_TRF1", "PA2_WALKHR_TRF1", "PA2_HVYHSWK_TRF1", "PA2_LSPRTHR_TRF1", "PA2_MSPRTHR_TRF1", "PA2_SSPRTHR_TRF1", "PA2_LSPRTHR_TRF1", "PA2_MSPRTHR_TRF1", "PA2_SSPRTHR_TRF1", "SMK_CURRCG_TRF1", "SMK_DSTY_TRF1", "SMK_OTCURR_CG_TRF1",
 "SMK_OTCURR_SM_TRF1","SMK_OTCURR_PI_TRF1", "SMK_OTCURR_CH_TRF1", "	SMK_OTCURR_SH_TRF1", "SMK_OTOCC_TRF1", "SMK_OTCURR_SH_TRF1", "NUR_DCOFF_NB_TRF1", "NUR_RCOFF_NB_TRF1", "SMK_TYPEOT_CG_TRF1",  "SMK_TYPEOT_SM_TRF1", "SMK_TYPEOT_PI_TRF1", "SMK_TYPEOT_CH_TRF1", "SMK_TYPEOT_SH_TRF1"))
 
-CLSA_tra_1 <- opal.execute(erasmus_opal,'Tra_FU1')
+CLSA_tra_1 <- opal.execute(erasmus_opal,'Tra_FU1') %>% as_tibble %>% arrange(id)
 
 
 ```
 ## Assign participant id as first column of your harmonized dataframes
 ```{r, echo=FALSE}
-lsb_CLSA_tra_0 <- data.frame(id = CLSA_tra_0$id)
-lsb_CLSA_tra_1 <- data.frame(id = CLSA_tra_1$id)
+lsb_CLSA_tra_0 <- data.frame(id = CLSA_tra_0$id) %>% as_tibble %>% as_tibble %>% arrange(id)
+lsb_CLSA_tra_1 <- data.frame(id = CLSA_tra_1$id) %>% as_tibble %>% as_tibble %>% arrange(id)
 
 ```
 ## When you are done with your work, logout of Opal server
@@ -48,7 +49,7 @@ opal.logout(erasmus_opal)
 # Alcohol consumption subdomain
 
 ### **Variable label**:  Current consumption of alcohol  
-**Variable name**: lsb_alc_cur_0
+**Variable name**: lsb_alc_cur_0  @OK
 **Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -65,21 +66,21 @@ opal.logout(erasmus_opal)
 
 ```{r, echo=TRUE}
 lsb_CLSA_tra_0$lsb_alc_cur_0 <-
-  dplyr::recode(CLSA_tra_0$ALC_FREQ_TRM, 
-                "01"=1L ,
-                "02"=1L ,
-                "03"=1L ,
-                "04"=1L ,
-                "05"=1L ,
-                "06"=1L ,
-                "07"=1L ,
-                "96"=0L, .default =NA_integer_)
+  dplyr::recode(CLSA_tra_0$ALC_FREQ_TRM %>% as.integer, 
+                "96" = 0L ,
+                "01" = 1L ,
+                "02" = 1L ,
+                "03" = 1L ,
+                "04" = 1L ,
+                "05" = 1L ,
+                "06" = 1L ,
+                "07" = 1L , .default = NA_integer_)
+
 ```  
 
 
-
 ### **Variable label**:  Current consumption of alcohol  
-**Variable name**: lsb_alc_cur_1  
+**Variable name**: lsb_alc_cur_1  @OK
 **Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -94,16 +95,18 @@ lsb_CLSA_tra_0$lsb_alc_cur_0 <-
 **Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
+
 lsb_CLSA_tra_1$lsb_alc_cur_1 <-
-  dplyr::recode(CLSA_tra_1$ALC_FREQ_TRF1, 
+  dplyr::recode(CLSA_tra_1$ALC_FREQ_TRF1 %>% as.integer, 
+                "96"=0L , 
                 "01"=1L ,
                 "02"=1L ,
                 "03"=1L ,
                 "04"=1L ,
                 "05"=1L ,
                 "06"=1L ,
-                "07"=1L ,
-                "96"=0L, .default =NA_integer_)
+                "07"=1L ,.default =NA_integer_)
+
 
 ```
 
@@ -111,7 +114,7 @@ lsb_CLSA_tra_1$lsb_alc_cur_1 <-
 
 
 ### **Variable label**:  Current consumption of alcohol  
-**Variable name**: lsb_alc_cur_2  
+**Variable name**: lsb_alc_cur_2 
 **Variable description**:  Indicator of whether the participant currently consumes alcohol or has consumed alcohol in the past 12 months.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -202,7 +205,7 @@ lsb_CLSA_tra_1$lsb_alc_cur_1 <-
 ```  
 
 ### **Variable label**:   Ever consumption of alcohol  
-**Variable name**: lsb_alc_ever_0
+**Variable name**: lsb_alc_ever_0  @OK
 **Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -219,9 +222,9 @@ lsb_CLSA_tra_1$lsb_alc_cur_1 <-
 ```{r, echo=TRUE}
 lsb_CLSA_tra_0$lsb_alc_ever_0 <-
   dplyr::recode(
-    CLSA_tra_0$ALC_EVER_TRM, 
+    CLSA_tra_0$ALC_EVER_TRM %>% as.integer, 
     "2"=0L ,
-    "1"=1L, 
+    "1"=1L , 
     .default =NA_integer_)
 
 ```  
@@ -230,7 +233,7 @@ lsb_CLSA_tra_0$lsb_alc_ever_0 <-
 
 
 ### **Variable label**:   Ever consumption of alcohol  
-**Variable name**: lsb_alc_ever_1
+**Variable name**: lsb_alc_ever_1   @OK
 **Variable description**:  Indicator of whether the participant has ever consumed alcohol.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -242,30 +245,16 @@ lsb_CLSA_tra_0$lsb_alc_ever_0 <-
 1 |   Ever consumed alcohol  
 
 **Harmonization status**: complete
-**Harmonization comment**:  The variable in the relavent wave is combined with the same variables from the baseline wave.  
+**Harmonization comment**:   
 **R script**:  
 ```{r, echo=TRUE}
-table(CLSA_tra_1$ALC_EVER_TRF1, useNA = "always")
-MyMerge <- function(x,y){
-  merge(x,y, by= c("id"),all=TRUE)
-}
-lsb_table_tra <- Reduce(MyMerge, list(CLSA_tra_0, CLSA_tra_1))
 
-lsb_table_tra$lsb_alc_ever_0 <-
+lsb_CLSA_tra_1$lsb_alc_ever_1 <-
   dplyr::recode(
-    CLSA_tra_0$ALC_EVER_TRM, 
-    "2"=0L ,
-    "1"=1L, 
-    .default =NA_integer_)
-
-lsb_table_tra$lsb_alc_ever_1 <- ifelse(lsb_table_tra$lsb_alc_ever_0 ==1 | lsb_table_tra$ALC_EVER_TRF1==1, 1L,
-                                ifelse(lsb_table_tra$lsb_alc_ever_0 ==0 & lsb_table_tra$ALC_EVER_TRF1==2, 0L, NA))
-
-lsb_CLSA_tra_1<-merge(lsb_CLSA_tra_1,lsb_table_tra[,c("id","lsb_alc_ever_1")],by="id",all.x=TRUE)
-
-table(lsb_CLSA_tra_1$lsb_alc_ever_1)
-
-table(CLSA_cop_1$ALC_EVER_COF1, useNA="always")
+    CLSA_tra_1$ALC_EVER_TRF1 %>% as.integer, 
+    "2" = 0L ,
+    "1" = 1L ,
+    .default = NA_integer_)
 
 ```  
 
@@ -364,7 +353,7 @@ table(CLSA_cop_1$ALC_EVER_COF1, useNA="always")
 ```  
 
 ### **Variable label**:   Frequency of binge drinking  
-**Variable name**: lsb_alc_binge_0  
+**Variable name**: lsb_alc_binge_0  @OK
 **Variable description**:  Frequency of drinking 4 or more drinks in one day.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -384,11 +373,11 @@ CLSA_tra_0_temp <- CLSA_tra_0 %>%
   select(ALC_MLFQ_TRM,ALC_FMFQ_TRM) %>% 
   rowwise() %>%
   mutate(
-    ALC_TRM = suppressWarnings(max(ALC_MLFQ_TRM, ALC_FMFQ_TRM, na.rm = TRUE))
-  ) %>% select(ALC_TRM)
+    ALC_TRM = suppressWarnings(max(ALC_MLFQ_TRM, ALC_FMFQ_TRM, na.rm = TRUE))) %>% 
+  select(ALC_TRM)
 
 lsb_CLSA_tra_0$lsb_alc_binge_0 <-
-  dplyr::recode(CLSA_tra_0_temp$ALC_TRM, 
+  dplyr::recode(CLSA_tra_0_temp$ALC_TRM %>% as.integer, 
                 "01"=3L ,
                 "02"=3L ,
                 "03"=2L ,
@@ -398,12 +387,17 @@ lsb_CLSA_tra_0$lsb_alc_binge_0 <-
                 "07"=1L ,
                 "96"=1L, .default =NA_integer_)
 
+rm(CLSA_tra_0_temp)
+
+
+
+
 ```  
 
 
 
 ### **Variable label**:   Frequency of binge drinking  
-**Variable name**: lsb_alc_binge_1 
+**Variable name**: lsb_alc_binge_1   @OK
 **Variable description**:  Frequency of drinking 4 or more drinks in one day.  
 **Value type**: integer  
 **Variable unit**: N/A  
@@ -423,12 +417,12 @@ lsb_CLSA_tra_0$lsb_alc_binge_0 <-
 CLSA_tra_1_temp <- CLSA_tra_1 %>% 
   select(ALC_MLFQ_TRF1,ALC_FMFQ_TRF1) %>% 
   rowwise() %>%
-  mutate(
-    ALC_TRF1 = suppressWarnings(max(ALC_MLFQ_TRF1, ALC_FMFQ_TRF1, na.rm = TRUE))
-  ) %>% select(ALC_TRF1)
+    mutate(
+    ALC_TRF1 = suppressWarnings(max(ALC_MLFQ_TRF1, ALC_FMFQ_TRF1, na.rm = TRUE))) %>% 
+  select(ALC_TRF1)
 
 lsb_CLSA_tra_1$lsb_alc_binge_1 <-
-  dplyr::recode(CLSA_tra_1_temp$ALC_TRF1, 
+  dplyr::recode(CLSA_tra_1_temp$ALC_TRF1 %>% as.integer, 
                 "01"=3L ,
                 "02"=3L ,
                 "03"=2L ,
@@ -437,6 +431,8 @@ lsb_CLSA_tra_1$lsb_alc_binge_1 <-
                 "06"=1L ,
                 "07"=1L ,
                 "96"=1L, .default =NA_integer_)
+
+rm(CLSA_tra_1_temp)
 
 ```  
 
@@ -539,7 +535,7 @@ lsb_CLSA_tra_1$lsb_alc_binge_1 <-
 ```  
 
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)      
-**Variable name**: lsb_alc_total_0
+**Variable name**: lsb_alc_total_0   @OK
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -567,7 +563,7 @@ lsb_CLSA_tra_0$lsb_alc_total_0 <-
 
 
 ### **Variable label**:   Current quantity of alcohol consumed per week (total)  
-**Variable name**: lsb_alc_total_1
+**Variable name**: lsb_alc_total_1    @OK
 **Variable description**:  Current quantity of wine, beer and liquor consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -591,7 +587,6 @@ lsb_CLSA_tra_1$lsb_alc_total_1 <-
   CLSA_tra_1$ALC_BRWE_NB_TRF1 + 
   CLSA_tra_1$ALC_LQWE_NB_TRF1
 
-lsb_CLSA_tra_1$lsb_alc_total_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_total_1)
 
 
 ```  
@@ -627,7 +622,7 @@ lsb_CLSA_tra_1$lsb_alc_total_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_total_1)
 ```  
 
 ### **Variable label**:   Current quantity of wine consumed per week  
-**Variable name**: lsb_alc_wine_0 
+**Variable name**: lsb_alc_wine_0   @OK
 **Variable description**:  Current quantity of wine consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -649,7 +644,7 @@ lsb_CLSA_tra_0$lsb_alc_wine_0 <-
 ```  
 
 ### **Variable label**:   Current quantity of wine consumed per week  
-**Variable name**: lsb_alc_wine_1
+**Variable name**: lsb_alc_wine_1   @OK
 **Variable description**:  Current quantity of wine consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -666,7 +661,6 @@ lsb_CLSA_tra_1$lsb_alc_wine_1 <-
   CLSA_tra_1$ALC_RDWE_NB_TRF1 + 
   CLSA_tra_1$ALC_WHWE_NB_TRF1
 
-lsb_CLSA_tra_1$lsb_alc_wine_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_wine_1)
 
 ```  
 
@@ -699,7 +693,7 @@ lsb_CLSA_tra_1$lsb_alc_wine_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_wine_1)
 ```  
 
 ### **Variable label**:   Current quantity of beer consumed per week  
-**Variable name**: lsb_alc_beer_0  
+**Variable name**: lsb_alc_beer_0   @OK 
 **Variable description**:  Current quantity of beer consumed per week.   
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -719,7 +713,7 @@ lsb_CLSA_tra_0$lsb_alc_beer_0 <-
 ```  
 
 ### **Variable label**:   Current quantity of beer consumed per week  
-**Variable name**: lsb_alc_beer_1
+**Variable name**: lsb_alc_beer_1   @OK
 **Variable description**:  Current quantity of beer consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -734,7 +728,6 @@ lsb_CLSA_tra_0$lsb_alc_beer_0 <-
 lsb_CLSA_tra_1$lsb_alc_beer_1 <- 
   CLSA_tra_1$ALC_BRWD_NB_TRF1 +
   CLSA_tra_1$ALC_BRWE_NB_TRF1
-lsb_CLSA_tra_1$lsb_alc_beer_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_beer_1)
 
 ```  
 
@@ -769,7 +762,7 @@ lsb_CLSA_tra_1$lsb_alc_beer_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_beer_1)
 ```  
 
 ### **Variable label**:   Current quantity of liquor consumed per week  
-**Variable name**: lsb_alc_liq_0 
+**Variable name**: lsb_alc_liq_0    @OK
 **Variable description**:  Current quantity of liquor consumed per week.    
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -790,7 +783,7 @@ lsb_CLSA_tra_0$lsb_alc_liq_0 <-
 
 
 ### **Variable label**:   Current quantity of liquor consumed per week  
-**Variable name**: lsb_alc_liq_1  
+**Variable name**: lsb_alc_liq_1     @OK
 **Variable description**:  Current quantity of liquor consumed per week.   
 **Value type**: decimal    
 **Variable unit**: drinks/week  
@@ -806,7 +799,6 @@ lsb_CLSA_tra_1$lsb_alc_liq_1 <-
   CLSA_tra_1$ALC_LQWD_NB_TRF1 + 
   CLSA_tra_1$ALC_LQWE_NB_TRF1
 
-lsb_CLSA_tra_1$lsb_alc_liq_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_liq_1)
 
 ```  
 
@@ -843,7 +835,7 @@ lsb_CLSA_tra_1$lsb_alc_liq_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_liq_1)
 # Tobacco consumption subdomain
 
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_smk_cur_0  
+**Variable name**:  lsb_smk_cur_0     @OK
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -855,25 +847,32 @@ lsb_CLSA_tra_1$lsb_alc_liq_1 <- as.numeric(lsb_CLSA_tra_1$lsb_alc_liq_1)
 1 |   Currently smokes any tobacco product  
 
 **Harmonization status**: complete
-**Harmonization comment**:   
+**Harmonization comment**:   The variable related to cigarette smoking is combined with study-specific variables for using cigars, small cigars, sheesha, chewing tobacco or snuff, tobacco pipes
 **R script**:  
 
 ```{r, echo=TRUE}
 
 lsb_CLSA_tra_0$lsb_smk_cur_0 <- 
   dplyr::recode(
-    CLSA_tra_0$SMK_CURRCG_TRM, 
+    CLSA_tra_0$SMK_CURRCG_TRM %>% as.integer, 
     '3'=0L, 
     '2'=1L,
     '1'=1L, 
     .default =NA_integer_)
+
+lsb_CLSA_tra_0$lsb_smk_cur_0[
+    CLSA_tra_0$SMK_OTCURR_CG_TRM == "1"| 
+    CLSA_tra_0$SMK_OTCURR_SM_TRM == "1"|
+    CLSA_tra_0$SMK_OTCURR_PI_TRM == "1"| 
+    CLSA_tra_0$SMK_OTCURR_CH_TRM == "1"| 
+    CLSA_tra_0$SMK_OTCURR_SH_TRM == "1"] <- 1
 
 ```  
 
 
 
 ### **Variable label**:  Current tobacco smoking  
-**Variable name**:  lsb_smk_cur_1  
+**Variable name**:  lsb_smk_cur_1    @OK
 **Variable description**:  Indicator of whether the participant currently smokes any tobacco product.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -885,17 +884,24 @@ lsb_CLSA_tra_0$lsb_smk_cur_0 <-
 1 |   Currently smokes any tobacco product  
 
 **Harmonization status**: complete
-**Harmonization comment**:   
+**Harmonization comment**:   The variable related to cigarette smoking is combined with study-specific variables for using cigars, small cigars, sheesha, chewing tobacco or snuff, tobacco pipes
 **R script**:  
 
 ```{r, echo=TRUE}
 lsb_CLSA_tra_1$lsb_smk_cur_1 <- 
   dplyr::recode(
-    CLSA_tra_1$SMK_CURRCG_TRF1,
+    CLSA_tra_1$SMK_CURRCG_TRF1 %>% as.integer,
     '3'=0L, 
     '1'=1L,
     '2'=1L, 
     .default =NA_integer_)
+
+lsb_CLSA_tra_1$lsb_smk_cur_1[
+  CLSA_tra_1$SMK_OTCURR_CG_TRF1=="1"| 
+  CLSA_tra_1$SMK_OTCURR_SM_TRF1=="1"|
+  CLSA_tra_1$SMK_OTCURR_PI_TRF1=="1"| 
+  CLSA_tra_1$SMK_OTCURR_CH_TRF1=="1"| 
+  CLSA_tra_1$SMK_OTCURR_SH_TRF1=="1"] <- 1
 
 ```  
 
@@ -993,7 +999,7 @@ lsb_CLSA_tra_1$lsb_smk_cur_1 <-
 ```  
 
 ### **Variable label**:  Smoking status  
-**Variable name**:  lsb_smk_status_0  
+**Variable name**:  lsb_smk_status_0  @OK
 **Variable description**:  Smoking status of the participant.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1013,7 +1019,7 @@ lsb_CLSA_tra_1$lsb_smk_cur_1 <-
 
 lsb_CLSA_tra_0$lsb_smk_status_0 <- 
   dplyr::recode(
-    CLSA_tra_0$SMK_DSTY_TRM, 
+    CLSA_tra_0$SMK_DSTY_TRM %>% as.integer, 
     "1"=2L, 
     "2"=2L, 
     "3"=2L, 
@@ -1025,7 +1031,7 @@ lsb_CLSA_tra_0$lsb_smk_status_0 <-
 
 
 ### **Variable label**:  Smoking status  
-**Variable name**:  lsb_smk_status_1
+**Variable name**:  lsb_smk_status_1 
 **Variable description**:  Smoking status of the participant.  
 **Value type**:  integer  
 **Variable unit**:  N/A  
@@ -1152,13 +1158,29 @@ lsb_CLSA_tra_0$lsb_smk_status_0 <-
 1 |   Ever smoked tobacco  
 
 **Harmonization status**: complete
-**Harmonization comment**:   
+**Harmonization comment**:   The study specific variables asks about ever using certain tobacco products for at least six months. For ever smoking cigarettes, the same study-specific variable, Type of Smoker, as used in the DataSchema variable lsb_smk_status is used. The study-specific categories of Occasional smoker (never a daily smoker or has smoked less than 100 cigarettes lifetime) and Former occasional smoker (at least 1 whole cigarette, non-smoker now) are coded in the DataSchema category Ever smoked tobacco.  
 
 **R script**:  
 ```{r, echo=TRUE}
+lsb_CLSA_tra_0$lsb_smk_ever_0 <- 
+  ifelse(CLSA_tra_0$SMK_DSTY_TRM==6, 0L,ifelse(CLSA_tra_0$SMK_DSTY_TRM<6 ,1L, NA))
+
+lsb_CLSA_tra_0$lsb_smk_ever_0[CLSA_tra_0$SMK_TYPEOT_CG_TRM==1| CLSA_tra_0$SMK_TYPEOT_SM_TRM==1| CLSA_tra_0$SMK_TYPEOT_PI_TRM==1| CLSA_tra_0$SMK_TYPEOT_CH_TRM==1|CLSA_tra_0$SMK_TYPEOT_SH_TRM==1]<-1L
+
+#there is a more general variable for other tobacco products SMK_OTREG_TRM- Ever used other tobacco or nicotine products
+#. However the question also includes nicotine products. 
+
+#there is also the variable "Have you smoked at least 100 cigarettes in your life? (about 4 - 5 packs)" however some Former smokers replied no to this variable. For this reason, the variable for smoking status is used for harmonization. 
+
+```  
+
+**Validation comment**: would apply the same rule for lsb_smk_ever et lsb_smk_status
+**Validation script**:
+```{r, echo=TRUE}
+
 lsb_CLSA_tra_0$lsb_smk_ever_0<- 
   dplyr::recode(
-    CLSA_tra_0$SMK_DSTY_TRM, 
+    CLSA_tra_0$SMK_DSTY_TRM %>% as.integer, 
     "1"=1L, 
     "2"=1L, 
     "3"=1L, 
@@ -1166,7 +1188,17 @@ lsb_CLSA_tra_0$lsb_smk_ever_0<-
     "5"=1L, 
     "6"=0L, 
     .default =NA_integer_)
+
+# verifications 
+CLSA_tra_0 %>% select(SMK_DSTY_TRM) %>% 
+  bind_cols(lsb_CLSA_tra_0 %>% select(lsb_smk_ever_0)) %>% 
+  group_by(lsb_smk_ever_0,SMK_DSTY_TRM) %>% 
+  tally
+
 ```  
+
+
+
 
 
 ### **Variable label**:  Ever tobacco smoking  
@@ -1388,16 +1420,64 @@ lsb_CLSA_tra_0$lsb_smk_ever_0<-
 **Category coding**:  
 
 **Harmonization status**: complete
-**Harmonization comment**:   The variable "At what age did you begin to smoke daily?" is used for harmonization for current or previous daily smokers; if a participant does not  have a valid respond to this study-specific question, the variable "At what age did you smoke your first whole cigarette?" is used for harmonization.  
+**Harmonization comment**:   The variable "At what age did you begin to smoke daily?" is used for harmonization.  
 **R script**:  
 
 ```{r, echo=TRUE}
+#There are two variables in the data 
+#At what age did you smoke your first whole cigarette? At what age did you begin to smoke daily?
 
-lsb_CLSA_tra_0$lsb_smk_start_0 <-ifelse(is.na( CLSA_tra_0$SMK_CGDL_AG_TRM)&!is.na(CLSA_tra_0$SMK_SMKDL_AG_TRM), CLSA_tra_0$SMK_SMKDL_AG_TRM,
-                                 ifelse(is.na( CLSA_tra_0$SMK_SMKDL_AG_TRM)&!is.na(CLSA_tra_0$SMK_CGDL_AG_TRM), CLSA_tra_0$SMK_CGDL_AG_TRM,
-                                 ifelse(is.na(CLSA_tra_0$SMK_SMKDL_AG_TRM)&is.na( CLSA_tra_0$SMK_CGDL_AG_TRM), CLSA_tra_0$SMK_FRSTCG_AG_TRM, NA)))
+lsb_CLSA_tra_0$lsb_smk_start_0 <-
+  as.integer(round(CLSA_tra_0$SMK_SMKDL_AG_TRM))
 
 ```  
+
+**Validation comment**: SMK_CGDL_AG_TRM and SMK_SMKDL_AG_TRM are mutually exclusives
+and could be used to harmonize lsb_smk_start, and if the information is missing
+in SMK_SMKDL_AG_TRM, but present in SMK_SMKDL_AG_TRM, we take this one
+
+**Validation script**:
+```{r, echo=TRUE}
+
+CLSA_tra_0_temp <-
+  CLSA_tra_0 %>% select(SMK_CGDL_AG_TRM,SMK_SMKDL_AG_TRM,SMK_FRSTCG_AG_TRM) %>% 
+  mutate(
+    SMK_AG_TRM = rowSums(
+      CLSA_tra_0 %>% select(SMK_CGDL_AG_TRM,SMK_SMKDL_AG_TRM), na.rm = TRUE),
+    SMK_AG_TRM = na_if(SMK_AG_TRM,0),
+    SMK_AG_TRM = ifelse(is.na(SMK_FRSTCG_AG_TRM),SMK_AG_TRM,SMK_FRSTCG_AG_TRM),
+    # SMK_AG_TRM = ifelse(is.na(SMK_FRSTCG_AG_TRM),SMK_FRSTCG_AG_TRM,SMK_AG_TRM),
+    SMK_AG_TRM = round(SMK_AG_TRM, digits = 0) %>% as.integer) %>% 
+  select(SMK_AG_TRM)
+
+
+lsb_CLSA_tra_0$lsb_smk_start_0 <- CLSA_tra_0_temp$SMK_AG_TRM
+
+# verifications 
+CLSA_tra_0 %>% select(SMK_FRSTCG_AG_TRM, SMK_CGDL_AG_TRM,SMK_SMKDL_AG_TRM) %>%
+  bind_cols(lsb_CLSA_tra_0 %>% select(lsb_smk_start_0, lsb_smk_ever_0, lsb_smk_cur_0)) %>%
+  mutate(
+    
+    SMK_FRSTCG_AG_TRM = ifelse(is.na(SMK_FRSTCG_AG_TRM),SMK_FRSTCG_AG_TRM ,"age first cig"),
+    SMK_CGDL_AG_TRM   = ifelse(is.na(SMK_CGDL_AG_TRM),  SMK_CGDL_AG_TRM   ,"first cig - curr"),
+    SMK_SMKDL_AG_TRM  = ifelse(is.na(SMK_SMKDL_AG_TRM), SMK_SMKDL_AG_TRM  ,"first cig - former"),
+    lsb_smk_start_0   = ifelse(is.na(lsb_smk_start_0),  lsb_smk_start_0   ,"value provided") ) %>%
+  group_by(lsb_smk_cur_0,lsb_smk_ever_0, SMK_FRSTCG_AG_TRM,SMK_CGDL_AG_TRM,SMK_SMKDL_AG_TRM,lsb_smk_start_0) %>% tally
+
+
+rm(CLSA_tra_0_temp)
+
+
+table(CLSA_tra_0$SMK_FRSTCG_AG_TRM, useNA="always")
+table(CLSA_tra_0$SMK_CGDL_AG_TRM, useNA="always")
+table(CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="always")
+table(is.na(CLSA_tra_0$SMK_FRSTCG_AG_TRM),CLSA_tra_0$SMK_SMKDL_AG_TRM, useNA="always")
+
+```  
+
+
+
+
 
 
 ### **Variable label**:  Smoking initiation age
@@ -1635,7 +1715,7 @@ lsb_CLSA_tra_0$lsb_smk_start_0 <-ifelse(is.na( CLSA_tra_0$SMK_CGDL_AG_TRM)&!is.n
 
 lsb_CLSA_tra_0$lsb_pa_walk_freq_0 <- 
   dplyr::recode(
-    CLSA_tra_0$PA2_WALK_MCQ, 
+    CLSA_tra_0$PA2_WALK_MCQ %>% as.integer, 
     "1" = 0L, 
     "2" = 1L, 
     "3" = 2L, 
@@ -1666,7 +1746,7 @@ lsb_CLSA_tra_0$lsb_pa_walk_freq_0 <-
 
 lsb_CLSA_tra_1$lsb_pa_walk_freq_1 <- 
   dplyr::recode(
-    CLSA_tra_1$PA2_WALK_TRF1, 
+    CLSA_tra_1$PA2_WALK_TRF1 %>% as.integer, 
     "1" = 0L, 
     "2" = 1L, 
     "3" = 2L, 
@@ -1801,7 +1881,7 @@ lsb_CLSA_tra_1$lsb_pa_walk_freq_1 <-
 
 lsb_CLSA_tra_0$lsb_pa_walk_time_0 <- 
   dplyr::recode(
-    CLSA_tra_0$PA2_WALKHR_MCQ, 
+    CLSA_tra_0$PA2_WALKHR_MCQ %>% as.integer, 
     "1" = 0L, 
     "2" = 1L, 
     "3" = 2L, 
@@ -1836,7 +1916,7 @@ lsb_CLSA_tra_0$lsb_pa_walk_time_0 <-
 
 lsb_CLSA_tra_1$lsb_pa_walk_time_1 <- 
   dplyr::recode(
-    CLSA_tra_1$PA2_WALKHR_TRF1, 
+    CLSA_tra_1$PA2_WALKHR_TRF1 %>% as.integer, 
     "1" = 0L, 
     "2" = 1L, 
     "3" = 2L, 
@@ -2799,6 +2879,7 @@ lsb_CLSA_tra_1$lsb_pa_sport_1<-
 
 lsb_pa_sport_time_0_temp <- CLSA_tra_0 %>% 
   select(PA2_LSPRTHR_MCQ, PA2_MSPRTHR_MCQ, PA2_SSPRTHR_MCQ) %>%
+  mutate_all(as.integer) %>%
   mutate_all(~recode(., "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)) %>% 
   rowSums(na.rm = TRUE)*7
 
@@ -2810,18 +2891,26 @@ lsb_CLSA_tra_0$lsb_pa_sport_time_0 <-
   ifelse(lsb_pa_sport_time_0_temp >  120, 3L, NA))))
 
 
-lsb_CLSA_tra_0$lsb_pa_sport_time_0 <-ifelse(lsb_CLSA_tra_0$lsb_pa_sport_0==0,0L,
-                                            ifelse(is.na(CLSA_tra_0$PA2_LSPRTHR_MCQ)&
-                                            is.na(CLSA_tra_0$PA2_MSPRTHR_MCQ)&
-                                            is.na(CLSA_tra_0$PA2_SSPRTHR_MCQ), NA,
+lsb_CLSA_tra_0$lsb_pa_sport_time_0 <- 
+  ifelse(
+    CLSA_tra_0$PA2_LSPRT_MCQ == "1" & 
+    CLSA_tra_0$PA2_MSPRT_MCQ == "1" & 
+    CLSA_tra_0$PA2_SSPRT_MCQ == "1"       ,  0L ,
+    
+    ifelse(
+      is.na(CLSA_tra_0$PA2_LSPRTHR_MCQ) |
+      is.na(CLSA_tra_0$PA2_MSPRTHR_MCQ) |
+      is.na(CLSA_tra_0$PA2_SSPRTHR_MCQ)   , NA  ,
+                                            
                                             lsb_CLSA_tra_0$lsb_pa_sport_time_0 ))
+
 
 rm(lsb_pa_sport_time_0_temp)
 
 ```  
 
 
-
+**Validation comment**: a refaire ^
 
 
 
@@ -2846,6 +2935,7 @@ rm(lsb_pa_sport_time_0_temp)
 ```{r, echo=TRUE}
 lsb_pa_sport_time_1_temp <- CLSA_tra_1 %>% 
   select(PA2_LSPRTHR_TRF1, PA2_MSPRTHR_TRF1, PA2_SSPRTHR_TRF1) %>%
+  mutate_all(as.integer) %>% 
   mutate_all(~recode(., "1"=15, "2"=45, "3"=90, "4"=180, "5"=240)) %>% 
   rowSums(na.rm = TRUE)*7
 
@@ -2864,6 +2954,9 @@ lsb_CLSA_tra_1$lsb_pa_sport_time_1 <-ifelse(lsb_CLSA_tra_1$lsb_pa_sport_1==0,0L,
 rm(lsb_pa_sport_time_1_temp)
 
 ```  
+
+
+**Validation comment**: a refaire ^
 
 
 ### **Variable label**:  Average sports or exercise time       
@@ -3175,22 +3268,26 @@ rm(lsb_pa_sport_time_1_temp)
 ```  
 
 ### **Variable label**:  Quantity daily coffee  
-**Variable name**:  lsb_coffee_qty_0 
+**Variable name**:  lsb_coffee_qty_0  @OK
 **Variable description**:  Current quantity of coffee the participant consumes per day.   
 **Value type**:  integer  
 **Variable unit**:  cups/day  
 **Category coding**:  N/A  
 
 **Harmonization status**: complete
-**Harmonization comment**: There are two study-specific variables: cups of regular coffee per day and cups of decaffeinated coffee per day. These two variables are combined for the creation of the DataSchema variable.  
+**Harmonization comment**: There are two study-specific variables: cups of regular coffee per day and cups of decaffeinated coffee per day. only caffeinated was taken for the creation of the DataSchema variable. 
 
 **R script**:  
 ```{r, echo=TRUE}
 
-lsb_CLSA_tra_0$lsb_coffee_qty_0 <- CLSA_tra_0$NUR_DCOFF_NB_MCQ + CLSA_tra_0$NUR_RCOFF_NB_MCQ
+# @AG tu avais decafeinee avant, je lai change pour toi
+
+lsb_CLSA_tra_0$lsb_coffee_qty_0 <- CLSA_tra_0$NUR_RCOFF_NB_MCQ
 
 
 ```  
+
+
 
 ### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_1
@@ -3205,10 +3302,14 @@ lsb_CLSA_tra_0$lsb_coffee_qty_0 <- CLSA_tra_0$NUR_DCOFF_NB_MCQ + CLSA_tra_0$NUR_
 **R script**:  
 ```{r, echo=TRUE}
 
-lsb_CLSA_tra_1$lsb_coffee_qty_1 <- CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR_RCOFF_NB_TRF1
+lsb_CLSA_tra_1$lsb_coffee_qty_1 <- 
+  CLSA_tra_1$NUR_DCOFF_NB_TRF1 + CLSA_tra_1$NUR_RCOFF_NB_TRF1
+
 
 
 ```  
+
+**Validation comment**: sure about decaff ?
 
 ### **Variable label**:  Quantity daily coffee  
 **Variable name**:  lsb_coffee_qty_2  
