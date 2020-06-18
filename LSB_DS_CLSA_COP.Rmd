@@ -1396,6 +1396,7 @@ lsb_CLSA_cop_0$lsb_smk_start_0 <- CLSA_cop_0$SMK_FRSTCG_AG_COM
 **Category coding**:  
 
 **Harmonization status**: complete
+**Harmonization comment**: 
 **R script**:  
 ```{r, echo=TRUE}
 
